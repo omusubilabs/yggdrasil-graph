@@ -10,6 +10,7 @@
     "npm": ">=10.0.0"
   },
   "scripts": {
+    "prepare": "git config core.hooksPath .githooks",
     "predev": "npm run data:build",
     "dev": "astro dev",
     "prebuild": "npm run validate && npm run data:build",

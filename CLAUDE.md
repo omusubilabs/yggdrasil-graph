@@ -35,6 +35,28 @@ Match the existing history (`git log`): a single-line, imperative subject in
 `type(scope): summary` form (scope optional). If the body adds anything, make
 it short `-` bullets, not prose paragraphs — state what changed, not why at
 essay length. Skip the body entirely when the subject already says it all.
+Each bullet is one physical line — if it doesn't fit, cut it down, don't wrap
+it onto an indented continuation line.
+
+A `commit-msg` hook enforces the mechanical parts of this (subject format and
+length, one-line bullets, blank line before the body) — see
+[`scripts/check-commit-msg.ts`](scripts/check-commit-msg.ts). `npm install`
+wires it up via the `prepare` script (`git config core.hooksPath .githooks`);
+if a commit isn't being checked, that config is probably missing — rerun
+`npm install` or set it by hand. The hook can't judge whether a summary is
+actually terse or a body is actually necessary; that part is still on you.
+
+## Editing docs
+
+Before committing a change to README.md, CLAUDE.md, or a doc comment, reread
+the whole section, not just the lines you touched. If two lines state the same
+fact in different words — a summary line and a detail line, an old bullet and
+a new one covering the same ground — cut one instead of leaving both. This
+includes restating a definition right after using the term it defines (e.g.
+don't explain what `complete` means again right under `LOCALE_STATUS` in
+`src/i18n/config.ts` — it's already defined a few lines up in the same
+comment). Nothing checks this mechanically; it's on you to reread, not just
+append.
 
 ## Hard constraints
 

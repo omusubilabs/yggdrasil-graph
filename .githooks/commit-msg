@@ -1,0 +1,4 @@
+#!/bin/sh
+# Wired via `core.hooksPath` (set by `npm run prepare`, which `npm install`
+# runs automatically). See scripts/check-commit-msg.ts for the actual rules.
+exec npx tsx scripts/check-commit-msg.ts "$1"
