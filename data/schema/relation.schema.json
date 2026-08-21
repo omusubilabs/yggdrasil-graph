@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yggdrasil.graph/schema/relation.schema.json",
+  "title": "Relation file",
+  "description": "One file per relation family under data/relations/. Each file is a flat array of relations. `certainty` is a first-class feature, not metadata: the sources contradict each other constantly, and surfacing that disagreement is one of the most interesting things this project can do.",
+  "type": "array",
+  "items": { "$ref": "#/$defs/relation" },
+
+  "$defs": {
+    "relation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "from", "to", "type", "directed", "certainty", "sources"],
+      "properties": {
+        "id": {
+          "description": "Exactly `<from>--<to>--<type>`. Deterministic and derivable; the validator recomputes it and rejects any mismatch.",
+          "type": "string",
+          "pattern": "^[a-z0-9-]+--[a-z0-9-]+--[a-z_]+$"
+        },
+        "from": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "to": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "type": {
+          "description": "Each type belongs to exactly one family, and the validator enforces that a type only appears in its own file.",
+          "enum": [
+            "parent_of",
+            "sibling_of",
+            "married_to",
+            "consort_of",
+            "blood_brother_of",
+            "fosters",
+            "slays",
+            "causes_death_of",
+            "maims",
+            "binds",
+            "devours",
+            "destroys",
+            "owns",
+            "guards",
+            "dwells_in",
+            "rules",
+            "encircles",
+            "root_reaches",
+            "raised_in",
+            "becomes"
+          ]
+        },
+        "directed": {
+          "description": "False for symmetric relations (married_to, sibling_of, blood_brother_of). The renderer draws an arrowhead only when true.",
+          "type": "boolean"
+        },
+        "certainty": {
+          "description": "attested — the source states it outright. implied — the source entails it without stating it. variant — another source gives a different account of the same event. disputed — the sources actively contradict each other. unverified — believed true, no locus confirmed; sources MUST be empty and the relation MUST be listed in data/TODO.md.",
+          "enum": ["attested", "implied", "variant", "disputed", "unverified"]
+        },
+        "sources": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["work", "locus"],
+            "properties": {
+              "work": {
+                "description": "An id from data/sources.json. Individual works, not collections: `gylfaginning`, not `prose-edda`.",
+                "type": "string",
+                "pattern": "^[a-z0-9-]+$"
+              },
+              "locus": {
+                "description": "Chapter or stanza within the work, per that work's `locusUnit`. A bare number, or a range like `34-35`.",
+                "type": "string",
+                "pattern": "^[0-9]+(-[0-9]+)?$"
+              }
+            }
+          }
+        },
+        "contradicts": {
+          "description": "Optional. Relation ids giving a competing account of the same event. Populated on `variant` and `disputed` relations so the interface can offer the reader a toggle between readings instead of silently picking a winner.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-z0-9-]+--[a-z0-9-]+--[a-z_]+$" }
+        }
+      },
+
+      "allOf": [
+        {
+          "description": "No relation may have an empty sources array unless certainty is `unverified` — and conversely, a relation with a real locus is by definition not unverified.",
+          "if": {
+            "properties": { "certainty": { "const": "unverified" } },
+            "required": ["certainty"]
+          },
+          "then": { "properties": { "sources": { "type": "array", "maxItems": 0 } } },
+          "else": { "properties": { "sources": { "type": "array", "minItems": 1 } } }
+        },
+        {
+          "description": "Symmetric relation types must not be marked directed.",
+          "if": {
+            "properties": {
+              "type": { "enum": ["married_to", "sibling_of", "consort_of", "blood_brother_of"] }
+            },
+            "required": ["type"]
+          },
+          "then": { "properties": { "directed": { "type": "boolean", "const": false } } }
+        }
+      ]
+    }
+  }
+}

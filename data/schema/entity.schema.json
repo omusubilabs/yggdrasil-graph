@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yggdrasil.graph/schema/entity.schema.json",
+  "title": "Entity file",
+  "description": "One file per category under data/entities/. Each file is a flat array of entities. NO PROSE LIVES HERE: descriptions, epithets and blurbs belong in src/i18n/locales/<locale>/entities.json, keyed by entity.<id>.*. The Old Norse name is the one exception — it is the historical name, identical in every locale, and is data.",
+  "type": "array",
+  "minItems": 1,
+  "items": { "$ref": "#/$defs/entity" },
+
+  "$defs": {
+    "entity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "classes", "names", "attestations", "tags"],
+      "properties": {
+        "id": {
+          "description": "Stable, lowercase, ASCII. Never localized, never renamed once merged — ids are the join key for locale files, URLs and every relation.",
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$",
+          "minLength": 2,
+          "maxLength": 48
+        },
+        "type": {
+          "description": "What kind of thing this is. Drives node shape in the renderer.",
+          "enum": ["deity", "being", "world", "artifact", "place", "event"]
+        },
+        "classes": {
+          "description": "Grouping for colour and filtering. An entity may hold several — Loki is both aesir and jotnar, and that tension is the point.",
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "enum": ["aesir", "vanir", "jotnar", "beings", "worlds", "artifacts"] }
+        },
+        "names": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["non", "anglicized"],
+          "properties": {
+            "non": {
+              "description": "Normalized Old Norse. This is DATA, not a translation: it is identical in every locale. Diacritics must be correct — þ ð æ ø ǫ á é í ó ú ý.",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 64
+            },
+            "anglicized": {
+              "description": "The conventional English-language spelling, for readers who have met these names in English.",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 64
+            }
+          }
+        },
+        "attestations": {
+          "description": "Source COLLECTIONS in which this entity appears, by id from data/sources.json. Relations cite individual works and loci; entities record the coarser fact of where they turn up at all.",
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-z0-9-]+$" }
+        },
+        "tags": {
+          "description": "Controlled vocabulary. Drives the tag index behind the 'related but not adjacent' suggestions, and the Ragnarök overlay's selection of combatants. The vocabulary is closed on purpose: free-text tags would make the suggestion feature meaningless within a hundred entities.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "ragnarok-participant",
+              "ragnarok-slain",
+              "ragnarok-slayer",
+              "ragnarok-survivor",
+              "loki-kin",
+              "odin-kin",
+              "bound",
+              "wolf",
+              "serpent",
+              "shapeshifter",
+              "contested",
+              "disputed-parentage",
+              "primordial",
+              "underworld",
+              "fire",
+              "thunder",
+              "wisdom",
+              "war",
+              "fertility",
+              "sea",
+              "watchman",
+              "hostage",
+              "dwarf-forged",
+              "world-tree",
+              "nine-worlds",
+              "giant-descent"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
