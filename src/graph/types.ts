@@ -96,12 +96,29 @@ export interface GraphNode extends Entity {
   x: number;
   /** Precomputed y from the build-time force pass, in layout units. */
   y: number;
-  /** Count of incident relations; drives node radius and default-view selection. */
+  /** Count of incident relations; drives node radius. */
   degree: number;
+  /**
+   * Rank by degree, 0 = most connected. The default view shows the first ~30.
+   * With 36 seeded entities that is nearly everything, but the dataset is
+   * headed for 300–400 and the cold open must stay legible when it gets there.
+   */
+  coreRank: number;
 }
 
 export interface GraphLink extends Relation {
   family: RelationFamily;
+  /**
+   * Signed curvature for the rendered edge, in units of arc offset.
+   *
+   * Several pairs carry more than one relation — Þórr and Jǫrmungandr kill each
+   * other, so there are two `slays` edges between them, and Týr and Garmr do the
+   * same. Drawn straight they would sit exactly on top of one another and the
+   * reciprocity would be invisible, which is the single most interesting fact
+   * about those pairs. Computed once at build time so the prerendered SVG and
+   * the hydrated one agree to the pixel.
+   */
+  curve: number;
 }
 
 export interface GraphData {
