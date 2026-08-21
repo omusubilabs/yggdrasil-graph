@@ -1,0 +1,26 @@
+[
+  {
+    "id": "njord",
+    "type": "deity",
+    "classes": ["vanir"],
+    "names": { "non": "Njǫrðr", "anglicized": "Njord" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["sea", "fertility", "hostage"]
+  },
+  {
+    "id": "freyr",
+    "type": "deity",
+    "classes": ["vanir"],
+    "names": { "non": "Freyr", "anglicized": "Freyr" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["ragnarok-participant", "ragnarok-slain", "fertility", "hostage"]
+  },
+  {
+    "id": "freyja",
+    "type": "deity",
+    "classes": ["vanir"],
+    "names": { "non": "Freyja", "anglicized": "Freyja" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["fertility", "war", "hostage"]
+  }
+]

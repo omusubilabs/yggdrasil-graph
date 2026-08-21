@@ -1,0 +1,92 @@
+[
+  {
+    "id": "yggdrasil--asgard--root_reaches",
+    "from": "yggdrasil", "to": "asgard", "type": "root_reaches", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "15" }]
+  },
+  {
+    "id": "yggdrasil--jotunheim--root_reaches",
+    "from": "yggdrasil", "to": "jotunheim", "type": "root_reaches", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "15" }]
+  },
+  {
+    "id": "yggdrasil--niflheim--root_reaches",
+    "from": "yggdrasil", "to": "niflheim", "type": "root_reaches", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "15" }]
+  },
+  {
+    "id": "odin--asgard--dwells_in",
+    "from": "odin", "to": "asgard", "type": "dwells_in", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "9" }]
+  },
+  {
+    "id": "njord--asgard--dwells_in",
+    "from": "njord", "to": "asgard", "type": "dwells_in", "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "gylfaginning", "locus": "23" }]
+  },
+  {
+    "id": "thor--asgard--guards",
+    "from": "thor", "to": "asgard", "type": "guards", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "skaldskaparmal", "locus": "4" }]
+  },
+  {
+    "id": "thor--midgard--guards",
+    "from": "thor", "to": "midgard", "type": "guards", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "skaldskaparmal", "locus": "4" }]
+  },
+  {
+    "id": "heimdall--asgard--guards",
+    "from": "heimdall", "to": "asgard", "type": "guards", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "27" }]
+  },
+  {
+    "id": "surtr--muspelheim--guards",
+    "from": "surtr", "to": "muspelheim", "type": "guards", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "4" }]
+  },
+  {
+    "id": "hel--niflheim--rules",
+    "from": "hel", "to": "niflheim", "type": "rules", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "34" }]
+  },
+  {
+    "id": "jormungandr--midgard--encircles",
+    "from": "jormungandr", "to": "midgard", "type": "encircles", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "34" }]
+  },
+  {
+    "id": "angrboda--jotunheim--dwells_in",
+    "from": "angrboda", "to": "jotunheim", "type": "dwells_in", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "34" }]
+  },
+  {
+    "id": "fenrir--asgard--raised_in",
+    "from": "fenrir", "to": "asgard", "type": "raised_in", "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "gylfaginning", "locus": "34" }]
+  },
+  {
+    "id": "mimir--yggdrasil--dwells_in",
+    "from": "mimir", "to": "yggdrasil", "type": "dwells_in", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "15" }]
+  },
+  {
+    "id": "baldr--niflheim--dwells_in",
+    "from": "baldr", "to": "niflheim", "type": "dwells_in", "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "gylfaginning", "locus": "49" }, { "work": "gylfaginning", "locus": "34" }]
+  }
+]

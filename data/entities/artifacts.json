@@ -1,0 +1,34 @@
+[
+  {
+    "id": "mjolnir",
+    "type": "artifact",
+    "classes": ["artifacts"],
+    "names": { "non": "Mjǫllnir", "anglicized": "Mjolnir" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["dwarf-forged", "thunder", "ragnarok-participant"]
+  },
+  {
+    "id": "gungnir",
+    "type": "artifact",
+    "classes": ["artifacts"],
+    "names": { "non": "Gungnir", "anglicized": "Gungnir" },
+    "attestations": ["prose-edda"],
+    "tags": ["dwarf-forged", "war", "ragnarok-participant"]
+  },
+  {
+    "id": "gleipnir",
+    "type": "artifact",
+    "classes": ["artifacts"],
+    "names": { "non": "Gleipnir", "anglicized": "Gleipnir" },
+    "attestations": ["prose-edda"],
+    "tags": ["dwarf-forged", "bound"]
+  },
+  {
+    "id": "gjallarhorn",
+    "type": "artifact",
+    "classes": ["artifacts"],
+    "names": { "non": "Gjallarhorn", "anglicized": "Gjallarhorn" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["watchman", "ragnarok-participant", "contested"]
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "loki",
+    "type": "deity",
+    "classes": ["aesir", "jotnar"],
+    "names": { "non": "Loki", "anglicized": "Loki" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["ragnarok-participant", "ragnarok-slain", "ragnarok-slayer", "shapeshifter", "loki-kin", "contested", "giant-descent", "bound"]
+  },
+  {
+    "id": "surtr",
+    "type": "being",
+    "classes": ["jotnar"],
+    "names": { "non": "Surtr", "anglicized": "Surt" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["ragnarok-participant", "ragnarok-slayer", "fire", "primordial"]
+  },
+  {
+    "id": "angrboda",
+    "type": "being",
+    "classes": ["jotnar"],
+    "names": { "non": "Angrboða", "anglicized": "Angrboda" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["loki-kin"]
+  },
+  {
+    "id": "farbauti",
+    "type": "being",
+    "classes": ["jotnar"],
+    "names": { "non": "Fárbauti", "anglicized": "Farbauti" },
+    "attestations": ["prose-edda"],
+    "tags": ["loki-kin"]
+  },
+  {
+    "id": "laufey",
+    "type": "being",
+    "classes": ["jotnar"],
+    "names": { "non": "Laufey", "anglicized": "Laufey" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["loki-kin", "contested"]
+  },
+  {
+    "id": "bestla",
+    "type": "being",
+    "classes": ["jotnar"],
+    "names": { "non": "Bestla", "anglicized": "Bestla" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["odin-kin", "giant-descent"]
+  },
+  {
+    "id": "bolthorn",
+    "type": "being",
+    "classes": ["jotnar"],
+    "names": { "non": "Bǫlþorn", "anglicized": "Bolthorn" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["odin-kin", "giant-descent", "primordial"]
+  }
+]

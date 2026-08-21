@@ -1,0 +1,74 @@
+[
+  {
+    "id": "odin",
+    "type": "deity",
+    "classes": ["aesir"],
+    "names": { "non": "Óðinn", "anglicized": "Odin" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["ragnarok-participant", "ragnarok-slain", "wisdom", "war", "shapeshifter", "odin-kin", "giant-descent"]
+  },
+  {
+    "id": "thor",
+    "type": "deity",
+    "classes": ["aesir"],
+    "names": { "non": "Þórr", "anglicized": "Thor" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["ragnarok-participant", "ragnarok-slain", "ragnarok-slayer", "thunder", "odin-kin", "giant-descent"]
+  },
+  {
+    "id": "frigg",
+    "type": "deity",
+    "classes": ["aesir"],
+    "names": { "non": "Frigg", "anglicized": "Frigg" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["wisdom"]
+  },
+  {
+    "id": "baldr",
+    "type": "deity",
+    "classes": ["aesir"],
+    "names": { "non": "Baldr", "anglicized": "Balder" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["ragnarok-survivor", "odin-kin", "underworld"]
+  },
+  {
+    "id": "hod",
+    "type": "deity",
+    "classes": ["aesir"],
+    "names": { "non": "Hǫðr", "anglicized": "Hod" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["ragnarok-survivor", "odin-kin", "underworld"]
+  },
+  {
+    "id": "tyr",
+    "type": "deity",
+    "classes": ["aesir"],
+    "names": { "non": "Týr", "anglicized": "Tyr" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["ragnarok-participant", "ragnarok-slain", "ragnarok-slayer", "war", "odin-kin"]
+  },
+  {
+    "id": "heimdall",
+    "type": "deity",
+    "classes": ["aesir"],
+    "names": { "non": "Heimdallr", "anglicized": "Heimdall" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["ragnarok-participant", "ragnarok-slain", "ragnarok-slayer", "watchman", "disputed-parentage"]
+  },
+  {
+    "id": "vidar",
+    "type": "deity",
+    "classes": ["aesir"],
+    "names": { "non": "Víðarr", "anglicized": "Vidar" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["ragnarok-participant", "ragnarok-slayer", "ragnarok-survivor", "odin-kin", "contested"]
+  },
+  {
+    "id": "sif",
+    "type": "deity",
+    "classes": ["aesir"],
+    "names": { "non": "Sif", "anglicized": "Sif" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": []
+  }
+]

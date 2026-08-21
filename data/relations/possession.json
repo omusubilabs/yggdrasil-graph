@@ -1,0 +1,28 @@
+[
+  {
+    "id": "thor--mjolnir--owns",
+    "from": "thor", "to": "mjolnir", "type": "owns", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "21" }, { "work": "skaldskaparmal", "locus": "4" }]
+  },
+  {
+    "id": "odin--gungnir--owns",
+    "from": "odin", "to": "gungnir", "type": "owns", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "skaldskaparmal", "locus": "35" }, { "work": "gylfaginning", "locus": "51" }]
+  },
+  {
+    "id": "heimdall--gjallarhorn--owns",
+    "from": "heimdall", "to": "gjallarhorn", "type": "owns", "directed": true,
+    "certainty": "disputed",
+    "sources": [{ "work": "gylfaginning", "locus": "27" }, { "work": "voluspa", "locus": "46" }],
+    "contradicts": ["mimir--gjallarhorn--owns"]
+  },
+  {
+    "id": "mimir--gjallarhorn--owns",
+    "from": "mimir", "to": "gjallarhorn", "type": "owns", "directed": true,
+    "certainty": "disputed",
+    "sources": [{ "work": "gylfaginning", "locus": "15" }],
+    "contradicts": ["heimdall--gjallarhorn--owns"]
+  }
+]

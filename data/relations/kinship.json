@@ -1,0 +1,186 @@
+[
+  {
+    "id": "bolthorn--bestla--parent_of",
+    "from": "bolthorn", "to": "bestla", "type": "parent_of", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "6" }, { "work": "havamal", "locus": "141" }]
+  },
+  {
+    "id": "bestla--odin--parent_of",
+    "from": "bestla", "to": "odin", "type": "parent_of", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "6" }]
+  },
+  {
+    "id": "odin--thor--parent_of",
+    "from": "odin", "to": "thor", "type": "parent_of", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "9" }, { "work": "skaldskaparmal", "locus": "4" }]
+  },
+  {
+    "id": "odin--baldr--parent_of",
+    "from": "odin", "to": "baldr", "type": "parent_of", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "22" }]
+  },
+  {
+    "id": "frigg--baldr--parent_of",
+    "from": "frigg", "to": "baldr", "type": "parent_of", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "skaldskaparmal", "locus": "19" }]
+  },
+  {
+    "id": "odin--hod--parent_of",
+    "from": "odin", "to": "hod", "type": "parent_of", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "skaldskaparmal", "locus": "13" }]
+  },
+  {
+    "id": "odin--tyr--parent_of",
+    "from": "odin", "to": "tyr", "type": "parent_of", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "skaldskaparmal", "locus": "9" }]
+  },
+  {
+    "id": "odin--vidar--parent_of",
+    "from": "odin", "to": "vidar", "type": "parent_of", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "skaldskaparmal", "locus": "11" }, { "work": "voluspa", "locus": "54" }]
+  },
+  {
+    "id": "odin--heimdall--parent_of",
+    "from": "odin", "to": "heimdall", "type": "parent_of", "directed": true,
+    "certainty": "variant",
+    "sources": [{ "work": "skaldskaparmal", "locus": "8" }, { "work": "gylfaginning", "locus": "27" }]
+  },
+  {
+    "id": "odin--frigg--married_to",
+    "from": "odin", "to": "frigg", "type": "married_to", "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "9" }, { "work": "skaldskaparmal", "locus": "19" }]
+  },
+  {
+    "id": "thor--sif--married_to",
+    "from": "thor", "to": "sif", "type": "married_to", "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "skaldskaparmal", "locus": "4" }, { "work": "gylfaginning", "locus": "31" }]
+  },
+  {
+    "id": "baldr--hod--sibling_of",
+    "from": "baldr", "to": "hod", "type": "sibling_of", "directed": false,
+    "certainty": "implied",
+    "sources": [{ "work": "gylfaginning", "locus": "22" }, { "work": "skaldskaparmal", "locus": "13" }]
+  },
+  {
+    "id": "farbauti--loki--parent_of",
+    "from": "farbauti", "to": "loki", "type": "parent_of", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "33" }, { "work": "skaldskaparmal", "locus": "16" }]
+  },
+  {
+    "id": "laufey--loki--parent_of",
+    "from": "laufey", "to": "loki", "type": "parent_of", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "33" }, { "work": "skaldskaparmal", "locus": "16" }]
+  },
+  {
+    "id": "farbauti--laufey--consort_of",
+    "from": "farbauti", "to": "laufey", "type": "consort_of", "directed": false,
+    "certainty": "unverified",
+    "sources": []
+  },
+  {
+    "id": "loki--angrboda--consort_of",
+    "from": "loki", "to": "angrboda", "type": "consort_of", "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "34" }, { "work": "hyndluljod", "locus": "42" }]
+  },
+  {
+    "id": "loki--fenrir--parent_of",
+    "from": "loki", "to": "fenrir", "type": "parent_of", "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gylfaginning", "locus": "34" },
+      { "work": "skaldskaparmal", "locus": "16" },
+      { "work": "hyndluljod", "locus": "42" }
+    ]
+  },
+  {
+    "id": "loki--jormungandr--parent_of",
+    "from": "loki", "to": "jormungandr", "type": "parent_of", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "34" }, { "work": "skaldskaparmal", "locus": "16" }]
+  },
+  {
+    "id": "loki--hel--parent_of",
+    "from": "loki", "to": "hel", "type": "parent_of", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "34" }, { "work": "skaldskaparmal", "locus": "16" }]
+  },
+  {
+    "id": "angrboda--fenrir--parent_of",
+    "from": "angrboda", "to": "fenrir", "type": "parent_of", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "34" }, { "work": "hyndluljod", "locus": "42" }]
+  },
+  {
+    "id": "angrboda--jormungandr--parent_of",
+    "from": "angrboda", "to": "jormungandr", "type": "parent_of", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "34" }]
+  },
+  {
+    "id": "angrboda--hel--parent_of",
+    "from": "angrboda", "to": "hel", "type": "parent_of", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "34" }]
+  },
+  {
+    "id": "fenrir--skoll--parent_of",
+    "from": "fenrir", "to": "skoll", "type": "parent_of", "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "voluspa", "locus": "40" }, { "work": "gylfaginning", "locus": "12" }]
+  },
+  {
+    "id": "fenrir--hati--parent_of",
+    "from": "fenrir", "to": "hati", "type": "parent_of", "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "grimnismal", "locus": "39" }, { "work": "gylfaginning", "locus": "12" }]
+  },
+  {
+    "id": "skoll--hati--sibling_of",
+    "from": "skoll", "to": "hati", "type": "sibling_of", "directed": false,
+    "certainty": "implied",
+    "sources": [{ "work": "voluspa", "locus": "40" }, { "work": "gylfaginning", "locus": "12" }]
+  },
+  {
+    "id": "njord--freyr--parent_of",
+    "from": "njord", "to": "freyr", "type": "parent_of", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "24" }]
+  },
+  {
+    "id": "njord--freyja--parent_of",
+    "from": "njord", "to": "freyja", "type": "parent_of", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "24" }, { "work": "skaldskaparmal", "locus": "20" }]
+  },
+  {
+    "id": "freyr--freyja--sibling_of",
+    "from": "freyr", "to": "freyja", "type": "sibling_of", "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "skaldskaparmal", "locus": "20" }]
+  },
+  {
+    "id": "odin--loki--blood_brother_of",
+    "from": "odin", "to": "loki", "type": "blood_brother_of", "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "lokasenna", "locus": "9" }]
+  },
+  {
+    "id": "tyr--fenrir--fosters",
+    "from": "tyr", "to": "fenrir", "type": "fosters", "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "skaldskaparmal", "locus": "9" }, { "work": "gylfaginning", "locus": "34" }]
+  }
+]

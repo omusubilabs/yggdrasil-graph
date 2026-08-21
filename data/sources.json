@@ -1,0 +1,113 @@
+[
+  {
+    "id": "poetic-edda",
+    "kind": "collection",
+    "titles": {
+      "non": "Sæmundar Edda",
+      "en": "The Poetic Edda"
+    },
+    "date": "poems c. 900–1100; compiled in the Codex Regius c. 1270",
+    "translation": {
+      "translator": "Henry Adams Bellows",
+      "year": 1923,
+      "title": "The Poetic Edda: Translated from the Icelandic with an Introduction and Notes",
+      "publisher": "The American-Scandinavian Foundation",
+      "rights": "public-domain"
+    },
+    "url": "https://www.gutenberg.org/ebooks/73533"
+  },
+  {
+    "id": "prose-edda",
+    "kind": "collection",
+    "titles": {
+      "non": "Snorra Edda",
+      "en": "The Prose Edda"
+    },
+    "date": "c. 1220",
+    "translation": {
+      "translator": "Arthur Gilchrist Brodeur",
+      "year": 1916,
+      "title": "The Prose Edda by Snorri Sturluson, Translated from the Icelandic with an Introduction",
+      "publisher": "The American-Scandinavian Foundation",
+      "rights": "public-domain"
+    },
+    "url": "https://archive.org/details/proseedda00snor"
+  },
+  {
+    "id": "grimnismal",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": {
+      "non": "Grímnismál",
+      "en": "The Ballad of Grimnir"
+    },
+    "date": "c. 10th century",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "havamal",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": {
+      "non": "Hávamál",
+      "en": "The Ballad of the High One"
+    },
+    "date": "composite; c. 900–1100",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "hyndluljod",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": {
+      "non": "Hyndluljóð",
+      "en": "The Poem of Hyndla"
+    },
+    "date": "c. 12th century",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "lokasenna",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": {
+      "non": "Lokasenna",
+      "en": "Loki's Wrangling"
+    },
+    "date": "late 10th century",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "voluspa",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": {
+      "non": "Vǫluspá",
+      "en": "The Wise-Woman's Prophecy"
+    },
+    "date": "c. 1000",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "gylfaginning",
+    "kind": "work",
+    "partOf": "prose-edda",
+    "titles": {
+      "non": "Gylfaginning",
+      "en": "The Beguiling of Gylfi"
+    },
+    "date": "c. 1220",
+    "locusUnit": "chapter"
+  },
+  {
+    "id": "skaldskaparmal",
+    "kind": "work",
+    "partOf": "prose-edda",
+    "titles": {
+      "non": "Skáldskaparmál",
+      "en": "The Poesy of Skalds"
+    },
+    "date": "c. 1220",
+    "locusUnit": "chapter"
+  }
+]

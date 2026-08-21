@@ -1,0 +1,115 @@
+[
+  {
+    "id": "asgard",
+    "type": "world",
+    "classes": [
+      "worlds"
+    ],
+    "names": {
+      "non": "Ásgarðr",
+      "anglicized": "Asgard"
+    },
+    "attestations": [
+      "poetic-edda",
+      "prose-edda"
+    ],
+    "tags": [
+      "nine-worlds"
+    ]
+  },
+  {
+    "id": "midgard",
+    "type": "world",
+    "classes": [
+      "worlds"
+    ],
+    "names": {
+      "non": "Miðgarðr",
+      "anglicized": "Midgard"
+    },
+    "attestations": [
+      "poetic-edda",
+      "prose-edda"
+    ],
+    "tags": [
+      "nine-worlds"
+    ]
+  },
+  {
+    "id": "jotunheim",
+    "type": "world",
+    "classes": [
+      "worlds"
+    ],
+    "names": {
+      "non": "Jǫtunheimr",
+      "anglicized": "Jotunheim"
+    },
+    "attestations": [
+      "poetic-edda",
+      "prose-edda"
+    ],
+    "tags": [
+      "nine-worlds"
+    ]
+  },
+  {
+    "id": "niflheim",
+    "type": "world",
+    "classes": [
+      "worlds"
+    ],
+    "names": {
+      "non": "Niflheimr",
+      "anglicized": "Niflheim"
+    },
+    "attestations": [
+      "prose-edda"
+    ],
+    "tags": [
+      "nine-worlds",
+      "underworld",
+      "primordial"
+    ]
+  },
+  {
+    "id": "muspelheim",
+    "type": "world",
+    "classes": [
+      "worlds"
+    ],
+    "names": {
+      "non": "Múspellsheimr",
+      "anglicized": "Muspelheim"
+    },
+    "attestations": [
+      "poetic-edda",
+      "prose-edda"
+    ],
+    "tags": [
+      "nine-worlds",
+      "fire",
+      "primordial"
+    ]
+  },
+  {
+    "id": "yggdrasil",
+    "type": "place",
+    "classes": [
+      "worlds"
+    ],
+    "names": {
+      "non": "Yggdrasill",
+      "anglicized": "Yggdrasil"
+    },
+    "attestations": [
+      "poetic-edda",
+      "prose-edda"
+    ],
+    "tags": [
+      "world-tree",
+      "primordial",
+      "ragnarok-participant"
+    ]
+  }
+]
