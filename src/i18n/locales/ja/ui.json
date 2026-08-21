@@ -6,10 +6,13 @@
     "skipToContent": "グラフへ進む"
   },
   "nav": {
+    "label": "サイト",
     "home": "グラフ",
     "sources": "典拠",
     "language": "言語",
-    "languageCurrent": "現在の言語：{name}"
+    "languageCurrent": "現在の言語：{name}",
+    "openMenu": "メニューを開く",
+    "closeMenu": "メニューを閉じる"
   },
   "graph": {
     "regionLabel": "関係グラフ",
@@ -17,19 +20,24 @@
     "hint": "名前に触れてみてください。",
     "hintKeyboard": "Tab キーでグラフに入り、矢印キーで存在のあいだを移動します。",
     "loading": "グラフを起こしています",
+    "ready": "グラフの準備ができました",
     "reset": "表示を戻す",
+    "zoomControls": "拡大・縮小と再センタリング",
     "zoomIn": "拡大",
     "zoomOut": "縮小",
     "recentre": "中央に戻す",
     "clearSelection": "すべて表示",
+    "selectedAnnounce": "{name}を選択しました。関連する{count}体を表示しています。",
     "neighbourhoodOf": "{name}の周辺",
-    "everything": "グラフ全体"
+    "everything": "グラフ全体",
+    "motionReduced": "モーション低減設定のため、グラフは落ち着いたレイアウトを表示しています。"
   },
   "view": {
     "label": "表示",
     "graph": "グラフ",
     "list": "一覧",
     "listHeading": "すべての存在の一覧",
+    "listDescription": "グラフと同じデータを、通して読める形、ブラウザでの検索、スクリーンリーダーでも扱える形で示します。",
     "columnName": "名前",
     "columnOldNorse": "古ノルド語",
     "columnType": "種別",
@@ -48,7 +56,21 @@
     "citations": "典拠",
     "readMore": "{name}の詳細",
     "empty": "何も選択されていません。グラフから選んでください。",
-    "noRelations": "まだ関係が記録されていません。"
+    "noRelations": "まだ関係が記録されていません。",
+    "relationCount": "{count}件の関係",
+    "outgoing": "{name} → ",
+    "incoming": " → {name}"
+  },
+  "filters": {
+    "label": "絞り込み",
+    "heading": "表示",
+    "certainty": "確度で",
+    "family": "関係の種類で",
+    "disputedOnly": "原典が食い違うものだけ",
+    "disputedOnlyHint": "異伝と矛盾の関係のみを表示します。",
+    "clear": "絞り込みを解除",
+    "activeCount": "{count}件の絞り込みが有効",
+    "noResults": "この絞り込み条件に一致する関係はありません。"
   },
   "certainty": {
     "label": "確度",
@@ -61,7 +83,8 @@
     "disputed": "矛盾",
     "disputedHint": "原典どうしが食い違っている。",
     "unverified": "未検証",
-    "unverifiedHint": "妥当と思われるが、典拠の箇所を確認できていない。意図的に無典拠。"
+    "unverifiedHint": "妥当と思われるが、典拠の箇所を確認できていない。意図的に無典拠。",
+    "contradictedBy": "矛盾する記述：{other}"
   },
   "class": {
     "label": "分類",
@@ -81,18 +104,72 @@
     "place": "場所",
     "event": "出来事"
   },
+  "tag": {
+    "ragnarok-participant": "ラグナロクに立ち会う",
+    "ragnarok-slain": "ラグナロクで討たれる",
+    "ragnarok-slayer": "ラグナロクで討つ",
+    "ragnarok-survivor": "ラグナロクを生き延びる",
+    "loki-kin": "ロキの血族",
+    "odin-kin": "オーディンの血族",
+    "bound": "縛られし者",
+    "wolf": "狼",
+    "serpent": "大蛇",
+    "shapeshifter": "変身する者",
+    "contested": "異論あり",
+    "disputed-parentage": "親子関係に異説",
+    "primordial": "原初の存在",
+    "underworld": "死者の国に属す",
+    "fire": "火",
+    "thunder": "雷",
+    "wisdom": "知恵",
+    "war": "戦",
+    "fertility": "豊穣",
+    "sea": "海",
+    "watchman": "見張り番",
+    "hostage": "人質",
+    "dwarf-forged": "ドワーフの鍛えしもの",
+    "world-tree": "世界樹",
+    "nine-worlds": "九つの世界のひとつ",
+    "giant-descent": "巨人の血を引く"
+  },
   "entity": {
     "backToGraph": "グラフに戻る",
+    "backToGraphFrom": "{name}をグラフで見る",
     "relationsHeading": "関係",
     "sourcesHeading": "引用した典拠",
     "tagsHeading": "主題",
     "namesHeading": "名前",
-    "metaTitle": "{name} — ユグドラシル・グラフ"
+    "noDescription": "この存在についてはまだ解説が書かれていません。以下の関係がすべての記録です。",
+    "metaTitle": "{name} — ユグドラシル・グラフ",
+    "degree": "記録されている関係：{count}件"
   },
   "sources": {
     "heading": "典拠",
+    "intro": "このグラフのすべての関係は、以下のいずれかの文献の該当箇所を指し示しています。引用した版はいずれもパブリックドメインであり、その本文はここには転載していません。",
     "chapter": "第{locus}章",
     "stanza": "第{locus}節",
-    "translatedBy": "{translator}訳、{year}年"
+    "translatedBy": "{translator}訳、{year}年",
+    "composed": "成立：{date}",
+    "partOf": "『{collection}』所収",
+    "viewText": "全文を読む",
+    "uncited": "無典拠。意図的に未検証としています。"
+  },
+  "footer": {
+    "codeLicence": "コードはMITライセンスです。",
+    "dataLicence": "データセットはCC BY-SA 4.0です。",
+    "sourceCode": "ソースコード",
+    "contribute": "訂正を歓迎します",
+    "editionsNote": "引用は『詩のエッダ』がBellows版（1923年）、『散文のエッダ』がBrodeur版（1916年）に拠っています。"
+  },
+  "a11y": {
+    "nodeRole": "{name}、{type}、{count}件の関係",
+    "graphInstructions": "矢印キーで隣接する存在のあいだを移動します。Enterキーで詳細を開き、Escapeキーで選択を解除します。",
+    "selectionCleared": "選択を解除しました。グラフ全体を表示しています。",
+    "externalLink": "新しいタブで開きます"
+  },
+  "error": {
+    "notFoundTitle": "ページが見つかりません",
+    "notFoundBody": "そのパスの先には何もありません。グラフならあります。",
+    "graphFailed": "対話的なグラフを開始できませんでした。それ以外の機能は問題なく動作します。"
   }
 }

@@ -142,7 +142,7 @@ This first release is a walking skeleton, staged deliberately. Shipped:
 - [x] Interactive graph — prerendered, zooming, selecting, filtering, keyboard-traversable
 - [x] Entity panel with relations grouped by family and full citations
 - [x] Prerendered `/entity/<id>` pages for every figure
-- [x] English complete; Japanese as a real partial locale
+- [x] English complete; Japanese as a real locale (see below)
 - [x] Accessible table view, `prefers-reduced-motion` support
 - [x] CI and deploy workflows
 - [x] Unit tests for the pure core logic (`src/graph/model.ts`,
@@ -150,17 +150,13 @@ This first release is a walking skeleton, staged deliberately. Shipped:
 - [x] Resolved most of [`data/TODO.md`](data/TODO.md)'s gaps and both
       `unverified` relations (deleted, not softened — neither held up under a
       full-text search)
-- [x] Translated `entities.json` and `relations.json` into Japanese — every
-      entity description and relation label now renders in Japanese instead
-      of falling back to English. `ja` remains `partial`: `ui.json`'s
-      interface chrome is still incomplete.
+- [x] Japanese (`ja`) fully translated — `entities.json`, `relations.json`
+      and `ui.json` all render natively; `ja` is `complete` in
+      `src/i18n/config.ts`.
 
 Not built yet, roughly in the order it's worth picking them up:
 
-- [ ] **next up** — Finish translating `ja/ui.json`'s remaining interface
-      strings (filters, accessibility announcements, footer, error pages —
-      see `npm run i18n:check` for the current gap).
-- [ ] **after that** — Structured data (JSON-LD) on entity pages.
+- [ ] **next up** — Structured data (JSON-LD) on entity pages.
 - [ ] **The Ragnarǫk overlay** — a single control that dims the graph to the
       terminal pairings and traces each combatant back through the genealogy
       that produced them. The tags it needs are already in the dataset.

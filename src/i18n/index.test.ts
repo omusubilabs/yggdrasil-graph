@@ -11,12 +11,10 @@ describe('t', () => {
   });
 
   it('falls back to the source locale for a key the target locale is missing', () => {
-    // ja is a deliberately partial locale (see config.ts): find a key it
-    // doesn't have yet, rather than hardcoding one that translation work
-    // could remove from this list.
-    const missingFromJa = sourceKeys().find((key) => !hasKey('ja', key));
-    assert.ok(missingFromJa, 'expected at least one key still missing from ja');
-    assert.equal(t('ja', missingFromJa!), t('en', missingFromJa!));
+    // 'is' is a planned locale with no bundle at all (see BUNDLES in
+    // index.ts), so every key falls back to en regardless of how complete
+    // the translated locales are.
+    assert.equal(t('is', 'nav.home'), t('en', 'nav.home'));
   });
 
   it('returns the key itself when it resolves nowhere', () => {

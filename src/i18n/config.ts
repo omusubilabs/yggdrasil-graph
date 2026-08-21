@@ -17,16 +17,17 @@ export const DEFAULT_LOCALE: Locale = 'en';
  *                may not ship an empty string for a key it claims to have.
  * - `planned`  — no locale directory yet. Routing knows about it; nothing else does.
  *
- * `ja` ships as `partial` on purpose. A placeholder locale proves nothing; a
- * real one that is genuinely incomplete exercises the fallback chain, the font
- * loading, the `lang` attribute and the hreflang alternates the way a future
- * translator will actually hit them.
+ * `ja` shipped as `partial` at first, deliberately: a placeholder locale
+ * proves nothing, while a real one that is genuinely incomplete exercises the
+ * fallback chain, the font loading, the `lang` attribute and the hreflang
+ * alternates the way a future translator will actually hit them. It is now
+ * `complete`.
  */
 export type LocaleStatus = 'source' | 'complete' | 'partial' | 'planned';
 
 export const LOCALE_STATUS: Record<Locale, LocaleStatus> = {
   en: 'source',
-  ja: 'partial',
+  ja: 'complete',
   is: 'planned',
   nb: 'planned',
   sv: 'planned',
