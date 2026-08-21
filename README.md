@@ -173,7 +173,7 @@ runtime API calls — `wrangler.toml` deliberately has no `main` entry.
 npm run deploy
 ```
 
-CI deploys on push to `main` via `cloudflare/wrangler-action`. Two repository
+CI deploys on push to `main` via `cloudflare/wrangler-action@v4`. Two repository
 secrets are required:
 
 | Secret                  | What it is                                        |
