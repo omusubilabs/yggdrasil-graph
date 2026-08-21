@@ -150,13 +150,16 @@ This first release is a walking skeleton, staged deliberately. Shipped:
 - [x] Resolved most of [`data/TODO.md`](data/TODO.md)'s gaps and both
       `unverified` relations (deleted, not softened — neither held up under a
       full-text search)
+- [x] Translated `entities.json` and `relations.json` into Japanese — every
+      entity description and relation label now renders in Japanese instead
+      of falling back to English. `ja` remains `partial`: `ui.json`'s
+      interface chrome is still incomplete.
 
 Not built yet, roughly in the order it's worth picking them up:
 
-- [ ] **next up** — Expand the Japanese locale past its current coverage.
-      `src/i18n/locales/ja/` has only `ui.json`; `entities.json` and
-      `relations.json` don't exist yet, so every entity description and relation
-      label falls back to English for `ja` readers.
+- [ ] **next up** — Finish translating `ja/ui.json`'s remaining interface
+      strings (filters, accessibility announcements, footer, error pages —
+      see `npm run i18n:check` for the current gap).
 - [ ] **after that** — Structured data (JSON-LD) on entity pages.
 - [ ] **The Ragnarǫk overlay** — a single control that dims the graph to the
       terminal pairings and traces each combatant back through the genealogy

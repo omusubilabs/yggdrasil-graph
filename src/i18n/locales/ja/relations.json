@@ -1,0 +1,111 @@
+{
+  "family": {
+    "kinship": "親族",
+    "conflict": "対立",
+    "possession": "所有",
+    "location": "場所",
+    "transformation": "変身"
+  },
+  "relation": {
+    "parent_of": {
+      "label": "親",
+      "inverse": "子",
+      "phrase": "{from}は{to}の親である"
+    },
+    "sibling_of": {
+      "label": "きょうだい",
+      "inverse": "きょうだい",
+      "phrase": "{from}と{to}はきょうだいである"
+    },
+    "married_to": {
+      "label": "配偶者",
+      "inverse": "配偶者",
+      "phrase": "{from}と{to}は夫婦である"
+    },
+    "consort_of": {
+      "label": "愛人",
+      "inverse": "愛人",
+      "phrase": "{from}と{to}はともに子をもうけた"
+    },
+    "blood_brother_of": {
+      "label": "盟兄弟",
+      "inverse": "盟兄弟",
+      "phrase": "{from}と{to}は血を交わした"
+    },
+    "fosters": {
+      "label": "養育",
+      "inverse": "被養育",
+      "phrase": "{from}が{to}を育てた"
+    },
+    "slays": {
+      "label": "殺害",
+      "inverse": "被殺害",
+      "phrase": "{from}が{to}を討つ"
+    },
+    "causes_death_of": {
+      "label": "死を招く",
+      "inverse": "死を招かれる",
+      "phrase": "{from}が{to}の死を招く"
+    },
+    "maims": {
+      "label": "傷害",
+      "inverse": "被傷害",
+      "phrase": "{from}が{to}を傷つけた"
+    },
+    "binds": {
+      "label": "拘束",
+      "inverse": "被拘束",
+      "phrase": "{from}が{to}を縛めた"
+    },
+    "devours": {
+      "label": "捕食",
+      "inverse": "被捕食",
+      "phrase": "{from}が{to}を呑み込む"
+    },
+    "destroys": {
+      "label": "破壊",
+      "inverse": "被破壊",
+      "phrase": "{from}が{to}を滅ぼす"
+    },
+    "owns": {
+      "label": "所有",
+      "inverse": "帰属",
+      "phrase": "{from}が{to}を所有する"
+    },
+    "guards": {
+      "label": "守護",
+      "inverse": "被守護",
+      "phrase": "{from}が{to}を守る"
+    },
+    "dwells_in": {
+      "label": "居住",
+      "inverse": "住処",
+      "phrase": "{from}は{to}に住む"
+    },
+    "rules": {
+      "label": "統治",
+      "inverse": "被統治",
+      "phrase": "{from}が{to}を統治する"
+    },
+    "encircles": {
+      "label": "包囲",
+      "inverse": "被包囲",
+      "phrase": "{from}が{to}を取り巻く"
+    },
+    "root_reaches": {
+      "label": "根を送る",
+      "inverse": "根が届く",
+      "phrase": "{from}の根が{to}に届く"
+    },
+    "raised_in": {
+      "label": "育った地",
+      "inverse": "育てた地",
+      "phrase": "{from}は{to}で育った"
+    },
+    "becomes": {
+      "label": "変身",
+      "inverse": "化身",
+      "phrase": "{from}が{to}の姿になる"
+    }
+  }
+}

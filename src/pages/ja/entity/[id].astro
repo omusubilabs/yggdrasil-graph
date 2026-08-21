@@ -2,10 +2,9 @@
 /**
  * Japanese entity pages.
  *
- * Chrome renders in Japanese; the prose falls back to English, because
- * entities.json has not been translated yet. That is the partial locale doing
- * its job — the plumbing is exercised by real content in two languages rather
- * than by a placeholder, and the gap is visible instead of hidden.
+ * Chrome and prose both render in Japanese — entities.json and relations.json
+ * are fully translated. `ja` stays a `partial` locale (see src/i18n/config.ts):
+ * some `ui.json` interface strings still fall back to `en`.
  */
 import '../../../styles/fonts-ja.css';
 import type { GetStaticPaths } from 'astro';
