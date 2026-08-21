@@ -212,7 +212,7 @@ adding volume.
 | `implied`    | A source entails it without saying it.                                                                | Gylfaginning 34 says the Æsir raised the wolf "at home"; that it was Ásgarðr is an inference the text supports but does not make. |
 | `variant`    | Another source gives a different account of the same thing.                                           | Skáldskaparmál 8 calls Heimdallr Óðinn's son; Gylfaginning 27 gives him nine mothers and no father.                               |
 | `disputed`   | The sources actively contradict each other.                                                           | Gylfaginning 27 gives Gjallarhorn to Heimdallr; Gylfaginning 15 has Mímir drinking from it. Same book.                            |
-| `unverified` | You believe it but have no locus. `sources` must be empty and the relation must be in `data/TODO.md`. | Fárbauti and Laufey are both named as Loki's parents, but nothing describes them as a couple.                                     |
+| `unverified` | You believe it but have no locus. `sources` must be empty and the relation must be in `data/TODO.md`. | Two figures are each named as a parent of the same child, but no text ever puts the two of them in a scene together as a couple.  |
 
 Two things worth internalising:
 

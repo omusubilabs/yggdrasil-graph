@@ -143,6 +143,32 @@
     ]
   },
   {
+    "id": "skoll--sol--devours",
+    "from": "skoll",
+    "to": "sol",
+    "type": "devours",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gylfaginning", "locus": "12" },
+      { "work": "gylfaginning", "locus": "51" },
+      { "work": "grimnismal", "locus": "39" }
+    ]
+  },
+  {
+    "id": "hati--mani--devours",
+    "from": "hati",
+    "to": "mani",
+    "type": "devours",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gylfaginning", "locus": "12" },
+      { "work": "gylfaginning", "locus": "51" },
+      { "work": "grimnismal", "locus": "39" }
+    ]
+  },
+  {
     "id": "surtr--midgard--destroys",
     "from": "surtr",
     "to": "midgard",
@@ -153,14 +179,5 @@
       { "work": "gylfaginning", "locus": "51" },
       { "work": "voluspa", "locus": "52" }
     ]
-  },
-  {
-    "id": "surtr--yggdrasil--destroys",
-    "from": "surtr",
-    "to": "yggdrasil",
-    "type": "destroys",
-    "directed": true,
-    "certainty": "unverified",
-    "sources": []
   }
 ]

@@ -30,5 +30,13 @@
     "names": { "non": "Gjallarhorn", "anglicized": "Gjallarhorn" },
     "attestations": ["poetic-edda", "prose-edda"],
     "tags": ["watchman", "ragnarok-participant", "contested"]
+  },
+  {
+    "id": "naglfar",
+    "type": "artifact",
+    "classes": ["artifacts"],
+    "names": { "non": "Naglfar", "anglicized": "Naglfar" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["ragnarok-participant"]
   }
 ]

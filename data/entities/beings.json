@@ -66,6 +66,72 @@
     "tags": ["ragnarok-participant", "wolf", "disputed-parentage"]
   },
   {
+    "id": "sol",
+    "type": "being",
+    "classes": ["beings"],
+    "names": {
+      "non": "Sól",
+      "anglicized": "Sol"
+    },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "mani",
+    "type": "being",
+    "classes": ["beings"],
+    "names": {
+      "non": "Máni",
+      "anglicized": "Mani"
+    },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "sleipnir",
+    "type": "being",
+    "classes": ["beings"],
+    "names": {
+      "non": "Sleipnir",
+      "anglicized": "Sleipnir"
+    },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["loki-kin"]
+  },
+  {
+    "id": "svadilfari",
+    "type": "being",
+    "classes": ["beings"],
+    "names": {
+      "non": "Svaðilfari",
+      "anglicized": "Svadilfari"
+    },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "narfi",
+    "type": "being",
+    "classes": ["beings"],
+    "names": {
+      "non": "Nari eða Narfi",
+      "anglicized": "Narfi"
+    },
+    "attestations": ["prose-edda"],
+    "tags": ["loki-kin"]
+  },
+  {
+    "id": "vali-lokason",
+    "type": "being",
+    "classes": ["beings"],
+    "names": {
+      "non": "Váli",
+      "anglicized": "Vali"
+    },
+    "attestations": ["prose-edda"],
+    "tags": ["loki-kin", "shapeshifter"]
+  },
+  {
     "id": "mimir",
     "type": "being",
     "classes": ["beings"],

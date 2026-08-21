@@ -64,5 +64,38 @@
     },
     "attestations": ["poetic-edda", "prose-edda"],
     "tags": ["world-tree", "primordial", "ragnarok-participant"]
+  },
+  {
+    "id": "alfheim",
+    "type": "world",
+    "classes": ["worlds"],
+    "names": {
+      "non": "Álfheimr",
+      "anglicized": "Alfheim"
+    },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["nine-worlds"]
+  },
+  {
+    "id": "jarnvid",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": {
+      "non": "Járnviðr",
+      "anglicized": "Ironwood"
+    },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "bifrost",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": {
+      "non": "Bifrǫst",
+      "anglicized": "Bifrost"
+    },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["ragnarok-participant"]
   }
 ]

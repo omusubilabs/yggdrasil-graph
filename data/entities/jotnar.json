@@ -49,6 +49,14 @@
     "tags": ["loki-kin", "contested"]
   },
   {
+    "id": "hrym",
+    "type": "being",
+    "classes": ["jotnar"],
+    "names": { "non": "Hrymr", "anglicized": "Hrym" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["ragnarok-participant"]
+  },
+  {
     "id": "bestla",
     "type": "being",
     "classes": ["jotnar"],

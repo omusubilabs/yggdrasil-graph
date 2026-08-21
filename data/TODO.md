@@ -18,28 +18,10 @@ edition, that is one of the most valuable contributions this project accepts.
 
 ## Unverified relations
 
-### `farbauti--laufey--consort_of`
-
-Gylfaginning 33 and Skáldskaparmál 16 both name Fárbauti as Loki's father and
-Laufey (or Nál) as his mother, but neither text says anything about the two of
-them as a couple — no marriage, no union, not even a scene. The relation is
-recorded because the parentage implies it, and marked `unverified` because
-implication is not attestation.
-
-_Wanted:_ any locus in a registered work that puts Fárbauti and Laufey in a
-relationship with each other rather than only with their son. It may not exist.
-If a survey of the corpus concludes it does not, the right fix is to delete this
-relation, not to soften it.
-
-### `surtr--yggdrasil--destroys`
-
-Gylfaginning 51 and Vǫluspá 52 have Surtr fling fire over the earth and burn all
-the world; Vǫluspá 47 has Yggdrasill shake and groan. Neither says Surtr's fire
-takes the Ash specifically, and Vǫluspá 57's world-fire is not attributed to him
-by name. The relation is recorded because it is the reading nearly every retelling
-assumes, and marked `unverified` because the texts stop short of it.
-
-_Wanted:_ a locus that connects Surtr's fire to Yggdrasill directly.
+Nothing outstanding right now. The two entries formerly here — Fárbauti/Laufey
+as a couple, and Surtr's fire reaching Yggdrasill — were checked against the
+full text of both editions, found unsupported, and deleted rather than
+softened, per this file's own rule.
 
 ---
 
@@ -49,29 +31,23 @@ _Wanted:_ a locus that connects Surtr's fire to Yggdrasill directly.
 
 - **`sif`** — nothing in the corpus we currently cite distinguishes her in a way
   the controlled tag vocabulary covers. She is Þórr's wife (Skáldskaparmál 4) and
-  Ullr's mother (Gylfaginning 31), and the story of her golden hair is
-  Skáldskaparmál 35. Adding `ullr` would give her a second relation; the hair
-  story would justify a `dwarf-forged` connection through a new entity for the
-  hair itself, which is probably over-modelling.
+  Ullr's mother (Gylfaginning 31 — see `sif--ullr--parent_of`), and the story of
+  her golden hair is Skáldskaparmál 35. That hair story would justify a
+  `dwarf-forged` connection through a new entity for the hair itself, which is
+  probably over-modelling.
 
 ### Entities that would complete existing relations
 
-- **`sol` and `mani`** (Sól, Máni) — without them, Skǫll and Hati have parentage
-  and nothing to chase. Gylfaginning 11–12 and Grímnismál 37, 39 cover both.
-- **`jarnvid`** (Járnviðr, Ironwood) — where the wolf-brood is raised;
-  Gylfaginning 12, Vǫluspá 40.
-- **`sigyn`, `narfi`, `vali-lokason`** — Loki's other household, and the binding;
-  Gylfaginning 33 and 50. Note that Gylfaginning 33 calls the son "Nari or Narfi"
-  while 50 has both Váli and Narfi, with Váli transformed into a wolf. That is a
-  genuine variant inside one work and would make a good `variant` relation.
-- **`sleipnir`, `svadilfari`** — Loki's fourth child, and the only one who ends up
-  on the gods' side; Gylfaginning 42, Hyndluljóð 42.
-- **`ullr`** — Sif's son, Þórr's stepson; Gylfaginning 31, Skáldskaparmál 14.
-- **`hrym`, `naglfar`** — Ragnarök's fleet; Gylfaginning 43 and 51, Vǫluspá 50.
-- **`bifrost`** — Heimdallr guards it and Surtr's riders break it;
-  Gylfaginning 13, 27 and 51.
-- **`vanaheim`, `alfheim`, `svartalfheim`, `helheim`** — four of the nine worlds
-  are missing, so `nine-worlds` is currently a promise the data does not keep.
+- **`vanaheim`, `svartalfheim`, `helheim`** — three of the nine worlds are still
+  missing (Alfheim was added: Gylfaginning 17, Grímnismál 5). Searched for
+  directly, not skipped: in both editions the literal toponym never appears,
+  only periphrasis — "the land of the Vanir" (Gylfaginning 23), "the
+  Dark-Elves" (Gylfaginning 17), "the home of the Wanes" (Vafþrúðnismál 39).
+  "Svartalfaheim" appears only in Bellows' own introduction, never a
+  translated stanza. (Vǫluspá 37's "Niðavellir" is a distinct dwarf-hall, not
+  this.) Helheim may not even be a further gap — Brodeur never separates a
+  place called "Helheim" from the person Hel (Gylfaginning 34), and the
+  existing `hel` + `niflheim` entities already cover that ground.
 
 ### Relation vocabulary
 

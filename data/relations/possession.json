@@ -45,5 +45,14 @@
     "certainty": "disputed",
     "sources": [{ "work": "gylfaginning", "locus": "15" }],
     "contradicts": ["heimdall--gjallarhorn--owns"]
+  },
+  {
+    "id": "hrym--naglfar--owns",
+    "from": "hrym",
+    "to": "naglfar",
+    "type": "owns",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "51" }]
   }
 ]

@@ -137,7 +137,7 @@ Also read [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).
 
 This first release is a walking skeleton, staged deliberately. Shipped:
 
-- [x] 36 entities and 64 relations, every locus verified against the edition cited
+- [x] 49 entities and 76 relations, every locus verified against the edition cited
 - [x] JSON Schemas and a validator that fails on every integrity rule
 - [x] Interactive graph — prerendered, zooming, selecting, filtering, keyboard-traversable
 - [x] Entity panel with relations grouped by family and full citations
@@ -147,14 +147,13 @@ This first release is a walking skeleton, staged deliberately. Shipped:
 - [x] CI and deploy workflows
 - [x] Unit tests for the pure core logic (`src/graph/model.ts`,
       `src/graph/geometry.ts`, `src/i18n`) — `npm test`, `node:test` via `tsx`.
+- [x] Resolved most of [`data/TODO.md`](data/TODO.md)'s gaps and both
+      `unverified` relations (deleted, not softened — neither held up under a
+      full-text search)
 
 Not built yet, roughly in the order it's worth picking them up:
 
-- [ ] **next up** — Resolve the two `unverified` relations and the entity/relation
-      gaps listed in [`data/TODO.md`](data/TODO.md) (Sól/Máni, Jarnviðr, Sigyn's
-      household, Sleipnir, Ullr, Hrymr/Naglfar, Bifröst, and 4 of the 9 worlds).
-      Needs a citation, not code — the most valuable outside contribution too.
-- [ ] **after that** — Expand the Japanese locale past its current 24% coverage.
+- [ ] **next up** — Expand the Japanese locale past its current coverage.
       `src/i18n/locales/ja/` has only `ui.json`; `entities.json` and
       `relations.json` don't exist yet, so every entity description and relation
       label falls back to English for `ja` readers.

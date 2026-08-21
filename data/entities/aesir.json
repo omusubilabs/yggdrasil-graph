@@ -70,5 +70,21 @@
     "names": { "non": "Sif", "anglicized": "Sif" },
     "attestations": ["poetic-edda", "prose-edda"],
     "tags": []
+  },
+  {
+    "id": "ullr",
+    "type": "deity",
+    "classes": ["aesir"],
+    "names": { "non": "Ullr", "anglicized": "Ull" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "sigyn",
+    "type": "deity",
+    "classes": ["aesir"],
+    "names": { "non": "Sigyn", "anglicized": "Sigyn" },
+    "attestations": ["prose-edda"],
+    "tags": ["loki-kin"]
   }
 ]

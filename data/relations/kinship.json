@@ -117,6 +117,18 @@
     ]
   },
   {
+    "id": "sif--ullr--parent_of",
+    "from": "sif",
+    "to": "ullr",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gylfaginning", "locus": "31" },
+      { "work": "skaldskaparmal", "locus": "14" }
+    ]
+  },
+  {
     "id": "baldr--hod--sibling_of",
     "from": "baldr",
     "to": "hod",
@@ -153,13 +165,51 @@
     ]
   },
   {
-    "id": "farbauti--laufey--consort_of",
-    "from": "farbauti",
-    "to": "laufey",
-    "type": "consort_of",
+    "id": "loki--sigyn--married_to",
+    "from": "loki",
+    "to": "sigyn",
+    "type": "married_to",
     "directed": false,
-    "certainty": "unverified",
-    "sources": []
+    "certainty": "attested",
+    "sources": [
+      { "work": "gylfaginning", "locus": "33" },
+      { "work": "gylfaginning", "locus": "50" },
+      { "work": "skaldskaparmal", "locus": "16" }
+    ]
+  },
+  {
+    "id": "sigyn--narfi--parent_of",
+    "from": "sigyn",
+    "to": "narfi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "33" }]
+  },
+  {
+    "id": "loki--narfi--parent_of",
+    "from": "loki",
+    "to": "narfi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gylfaginning", "locus": "33" },
+      { "work": "gylfaginning", "locus": "50" },
+      { "work": "skaldskaparmal", "locus": "16" }
+    ]
+  },
+  {
+    "id": "loki--vali-lokason--parent_of",
+    "from": "loki",
+    "to": "vali-lokason",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "variant",
+    "sources": [
+      { "work": "gylfaginning", "locus": "50" },
+      { "work": "skaldskaparmal", "locus": "16" }
+    ]
   },
   {
     "id": "loki--angrboda--consort_of",
@@ -274,6 +324,30 @@
     "sources": [
       { "work": "voluspa", "locus": "40" },
       { "work": "gylfaginning", "locus": "12" }
+    ]
+  },
+  {
+    "id": "loki--sleipnir--parent_of",
+    "from": "loki",
+    "to": "sleipnir",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gylfaginning", "locus": "42" },
+      { "work": "hyndluljod", "locus": "42" }
+    ]
+  },
+  {
+    "id": "svadilfari--sleipnir--parent_of",
+    "from": "svadilfari",
+    "to": "sleipnir",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gylfaginning", "locus": "42" },
+      { "work": "hyndluljod", "locus": "42" }
     ]
   },
   {

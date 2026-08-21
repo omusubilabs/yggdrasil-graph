@@ -72,6 +72,15 @@
     "sources": [{ "work": "gylfaginning", "locus": "27" }]
   },
   {
+    "id": "heimdall--bifrost--guards",
+    "from": "heimdall",
+    "to": "bifrost",
+    "type": "guards",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "27" }]
+  },
+  {
     "id": "surtr--muspelheim--guards",
     "from": "surtr",
     "to": "muspelheim",
@@ -115,6 +124,39 @@
     "directed": true,
     "certainty": "implied",
     "sources": [{ "work": "gylfaginning", "locus": "34" }]
+  },
+  {
+    "id": "freyr--alfheim--rules",
+    "from": "freyr",
+    "to": "alfheim",
+    "type": "rules",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "grimnismal", "locus": "5" }]
+  },
+  {
+    "id": "skoll--jarnvid--raised_in",
+    "from": "skoll",
+    "to": "jarnvid",
+    "type": "raised_in",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [
+      { "work": "gylfaginning", "locus": "12" },
+      { "work": "voluspa", "locus": "40" }
+    ]
+  },
+  {
+    "id": "hati--jarnvid--raised_in",
+    "from": "hati",
+    "to": "jarnvid",
+    "type": "raised_in",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [
+      { "work": "gylfaginning", "locus": "12" },
+      { "work": "voluspa", "locus": "40" }
+    ]
   },
   {
     "id": "mimir--yggdrasil--dwells_in",
