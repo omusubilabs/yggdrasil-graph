@@ -1,0 +1,111 @@
+{
+  "family": {
+    "kinship": "Kinship",
+    "conflict": "Conflict",
+    "possession": "Possession",
+    "location": "Place",
+    "transformation": "Transformation"
+  },
+  "relation": {
+    "parent_of": {
+      "label": "Parent of",
+      "inverse": "Child of",
+      "phrase": "{from} is the parent of {to}"
+    },
+    "sibling_of": {
+      "label": "Sibling of",
+      "inverse": "Sibling of",
+      "phrase": "{from} and {to} are siblings"
+    },
+    "married_to": {
+      "label": "Married to",
+      "inverse": "Married to",
+      "phrase": "{from} and {to} are married"
+    },
+    "consort_of": {
+      "label": "Consort of",
+      "inverse": "Consort of",
+      "phrase": "{from} and {to} have children together"
+    },
+    "blood_brother_of": {
+      "label": "Blood-brother of",
+      "inverse": "Blood-brother of",
+      "phrase": "{from} and {to} mixed blood"
+    },
+    "fosters": {
+      "label": "Fosters",
+      "inverse": "Fostered by",
+      "phrase": "{from} raised {to}"
+    },
+    "slays": {
+      "label": "Slays",
+      "inverse": "Slain by",
+      "phrase": "{from} kills {to}"
+    },
+    "causes_death_of": {
+      "label": "Causes the death of",
+      "inverse": "Death caused by",
+      "phrase": "{from} brings about the death of {to}"
+    },
+    "maims": {
+      "label": "Maims",
+      "inverse": "Maimed by",
+      "phrase": "{from} maims {to}"
+    },
+    "binds": {
+      "label": "Binds",
+      "inverse": "Bound by",
+      "phrase": "{from} holds {to} fast"
+    },
+    "devours": {
+      "label": "Devours",
+      "inverse": "Devoured by",
+      "phrase": "{from} swallows {to}"
+    },
+    "destroys": {
+      "label": "Destroys",
+      "inverse": "Destroyed by",
+      "phrase": "{from} destroys {to}"
+    },
+    "owns": {
+      "label": "Owns",
+      "inverse": "Belongs to",
+      "phrase": "{from} owns {to}"
+    },
+    "guards": {
+      "label": "Guards",
+      "inverse": "Guarded by",
+      "phrase": "{from} defends {to}"
+    },
+    "dwells_in": {
+      "label": "Dwells in",
+      "inverse": "Home of",
+      "phrase": "{from} dwells in {to}"
+    },
+    "rules": {
+      "label": "Rules",
+      "inverse": "Ruled by",
+      "phrase": "{from} rules {to}"
+    },
+    "encircles": {
+      "label": "Encircles",
+      "inverse": "Encircled by",
+      "phrase": "{from} encircles {to}"
+    },
+    "root_reaches": {
+      "label": "Sends a root to",
+      "inverse": "Reached by a root of",
+      "phrase": "A root of {from} reaches {to}"
+    },
+    "raised_in": {
+      "label": "Raised in",
+      "inverse": "Raised there",
+      "phrase": "{from} was brought up in {to}"
+    },
+    "becomes": {
+      "label": "Becomes",
+      "inverse": "Form taken by",
+      "phrase": "{from} takes the shape of {to}"
+    }
+  }
+}

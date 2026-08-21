@@ -1,0 +1,173 @@
+{
+  "site": {
+    "title": "Yggdrasil Graph",
+    "tagline": "The end of the myth is already written in the family tree.",
+    "description": "An interactive relationship graph of Norse mythology. Gods, giants, monsters, worlds and named things, with every relation traced to a primary source.",
+    "skipToContent": "Skip to the graph"
+  },
+  "nav": {
+    "home": "Graph",
+    "sources": "Sources",
+    "language": "Language",
+    "languageCurrent": "Current language: {name}",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "graph": {
+    "regionLabel": "Relationship graph",
+    "regionDescription": "An interactive graph of {count} figures and the {links} relations between them. Use the list view below for a linear equivalent.",
+    "hint": "Touch a name.",
+    "hintKeyboard": "Tab into the graph, then move between figures with the arrow keys.",
+    "loading": "Waking the graph",
+    "ready": "Graph ready",
+    "reset": "Reset view",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "recentre": "Recentre",
+    "clearSelection": "Show everything again",
+    "selectedAnnounce": "{name} selected. Showing {count} connected figures.",
+    "neighbourhoodOf": "Around {name}",
+    "everything": "The whole graph",
+    "motionReduced": "Motion is reduced, so the graph is showing its settled layout."
+  },
+  "view": {
+    "label": "View",
+    "graph": "Graph",
+    "list": "List",
+    "listHeading": "Every figure, as a table",
+    "listDescription": "The same data as the graph, in a form you can read straight through, search with your browser, or hand to a screen reader.",
+    "columnName": "Name",
+    "columnOldNorse": "Old Norse",
+    "columnType": "Type",
+    "columnClasses": "Classes",
+    "columnRelations": "Relations"
+  },
+  "panel": {
+    "label": "Details",
+    "close": "Close details",
+    "oldNorse": "Old Norse",
+    "type": "Type",
+    "classes": "Classes",
+    "tags": "Themes",
+    "attestedIn": "Appears in",
+    "relations": "Relations",
+    "citations": "Citations",
+    "readMore": "Full account of {name}",
+    "empty": "Nothing selected. Choose a figure in the graph.",
+    "noRelations": "No relations recorded yet.",
+    "relationCount": "{count} relations",
+    "outgoing": "{name} → ",
+    "incoming": " → {name}"
+  },
+  "filters": {
+    "label": "Filters",
+    "heading": "Show",
+    "certainty": "By certainty",
+    "family": "By kind of relation",
+    "disputedOnly": "Only where the sources disagree",
+    "disputedOnlyHint": "Shows variant and disputed relations by themselves.",
+    "clear": "Clear filters",
+    "activeCount": "{count} filters active",
+    "noResults": "No relations match these filters."
+  },
+  "certainty": {
+    "label": "Certainty",
+    "attested": "Attested",
+    "attestedHint": "The source states this outright.",
+    "implied": "Implied",
+    "impliedHint": "The source entails this without saying it.",
+    "variant": "Variant",
+    "variantHint": "Another source tells it differently.",
+    "disputed": "Disputed",
+    "disputedHint": "The sources contradict each other.",
+    "unverified": "Unverified",
+    "unverifiedHint": "Believed true, but no locus has been confirmed. Deliberately uncited.",
+    "contradictedBy": "Contradicted by: {other}"
+  },
+  "class": {
+    "label": "Class",
+    "aesir": "Æsir",
+    "vanir": "Vanir",
+    "jotnar": "Jǫtnar",
+    "beings": "Other beings",
+    "worlds": "Worlds",
+    "artifacts": "Made things"
+  },
+  "type": {
+    "label": "Type",
+    "deity": "Deity",
+    "being": "Being",
+    "world": "World",
+    "artifact": "Made thing",
+    "place": "Place",
+    "event": "Event"
+  },
+  "tag": {
+    "ragnarok-participant": "Present at Ragnarǫk",
+    "ragnarok-slain": "Killed at Ragnarǫk",
+    "ragnarok-slayer": "Kills at Ragnarǫk",
+    "ragnarok-survivor": "Survives Ragnarǫk",
+    "loki-kin": "Loki's kin",
+    "odin-kin": "Óðinn's kin",
+    "bound": "Bound",
+    "wolf": "Wolf",
+    "serpent": "Serpent",
+    "shapeshifter": "Shape-shifter",
+    "contested": "Contested",
+    "disputed-parentage": "Disputed parentage",
+    "primordial": "Primordial",
+    "underworld": "Of the dead",
+    "fire": "Fire",
+    "thunder": "Thunder",
+    "wisdom": "Wisdom",
+    "war": "War",
+    "fertility": "Fertility",
+    "sea": "Sea",
+    "watchman": "Watchman",
+    "hostage": "Hostage",
+    "dwarf-forged": "Dwarf-forged",
+    "world-tree": "The World Tree",
+    "nine-worlds": "One of the Nine Worlds",
+    "giant-descent": "Of giant descent"
+  },
+  "entity": {
+    "backToGraph": "Back to the graph",
+    "backToGraphFrom": "See {name} in the graph",
+    "relationsHeading": "Relations",
+    "sourcesHeading": "Cited sources",
+    "tagsHeading": "Themes",
+    "namesHeading": "Names",
+    "noDescription": "No account has been written for this figure yet. The relations below are the whole record.",
+    "metaTitle": "{name} — Yggdrasil Graph",
+    "degree": "{count} recorded relations"
+  },
+  "sources": {
+    "heading": "Sources",
+    "intro": "Every relation in this graph points at a locus in one of these works. The editions cited are all in the public domain; their text is not reproduced here.",
+    "chapter": "ch. {locus}",
+    "stanza": "st. {locus}",
+    "translatedBy": "Translated by {translator}, {year}",
+    "composed": "Composed {date}",
+    "partOf": "In {collection}",
+    "viewText": "Read the full text",
+    "uncited": "No citation. Marked unverified on purpose."
+  },
+  "footer": {
+    "codeLicence": "Code is MIT.",
+    "dataLicence": "The dataset is CC BY-SA 4.0.",
+    "sourceCode": "Source code",
+    "contribute": "Corrections welcome",
+    "editionsNote": "Citations follow Bellows (1923) for the Poetic Edda and Brodeur (1916) for the Prose Edda."
+  },
+  "a11y": {
+    "nodeRole": "{name}, {type}, {count} relations",
+    "graphInstructions": "Arrow keys move between connected figures. Enter opens details. Escape clears the selection.",
+    "selectionCleared": "Selection cleared. Showing the whole graph.",
+    "externalLink": "opens in a new tab"
+  },
+  "error": {
+    "notFoundTitle": "No such page",
+    "notFoundBody": "That path does not lead anywhere. The graph does.",
+    "graphFailed": "The interactive graph could not start. Everything below still works."
+  }
+}

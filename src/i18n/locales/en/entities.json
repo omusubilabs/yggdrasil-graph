@@ -1,0 +1,184 @@
+{
+  "entity": {
+    "odin": {
+      "epithet": "All-father",
+      "summary": "Highest of the Æsir, half giant on his mother's side, and already promised to the wolf.",
+      "description": "Óðinn is the eldest and highest of the Æsir, and the least safe of them. Snorri traces his descent through Borr to Bestla, daughter of the giant Bǫlþorn — which makes the chief of the gods half a giant, and puts him on both sides of the war he will lose. He is a god of wisdom bought at a price: an eye at Mímir's well, nine nights on the windy tree. He rides to Ragnarǫk first, in a gold helmet, carrying the spear Gungnir, and is swallowed by Fenrir, the son of his own blood-brother."
+    },
+    "thor": {
+      "epithet": "Defender of Ásgarðr and Miðgarðr",
+      "summary": "Strongest of the gods, son of Óðinn and Earth, and the serpent's opposite number.",
+      "description": "Þórr is the strongest of gods and men, son of Óðinn by Jǫrð, the Earth. He holds Þrúðvangar and the hall Bilskirnir, and owns three things of great price, of which the hammer Mjǫllnir is the first. His life is a long argument with giants, and it ends in the middle of one: at Ragnarǫk he kills Jǫrmungandr, walks nine paces away from the body, and falls dead of its venom. The serpent is Loki's son. So is the wolf that takes his father."
+    },
+    "frigg": {
+      "epithet": "Wife of Óðinn, mother of Baldr",
+      "summary": "She knows every fate and prophesies none of them.",
+      "description": "Frigg, daughter of Fjǫrgynn, is Óðinn's wife and the foremost of the goddesses. Snorri says she knows all the fates of men though she speaks no prophecy, which is a bleak thing to know about someone. When her son Baldr dreams of his death she takes an oath from every thing in the world to spare him, and misses one shoot of mistletoe because she thought it too young to ask. Loki asks her the right question in the shape of a woman, and she answers it."
+    },
+    "baldr": {
+      "epithet": "The bright one",
+      "summary": "Best of the Æsir, killed by his blind brother, and one of the few who come back.",
+      "description": "Baldr is the second son of Óðinn, so fair that light comes off him, and so gracious that none may gainsay his judgments. His death is the hinge of the whole cycle: the gods lose him to a shoot of mistletoe, the one thing his mother did not think to ask, thrown by his blind brother Hǫðr with Loki standing behind him aiming. He goes to Hel and does not come back — until after Ragnarǫk, when he and Hǫðr return together to a world that has burnt."
+    },
+    "hod": {
+      "epithet": "The blind god",
+      "summary": "He throws the shot that kills his brother, and does not see it.",
+      "description": "Hǫðr is blind, and strong enough. Snorri says the gods would rather not have to name him, because the work of his hands will be remembered a long time. He stands outside the ring at the game where the Æsir throw things at Baldr for the pleasure of watching them not land, and Loki asks him why he is not joining in, and offers to aim for him. Skaldic convention calls him the Blind God, Baldr's Slayer, Thrower of the Mistletoe, and Son of Óðinn — four names for one afternoon. He returns from Hel with Baldr afterwards."
+    },
+    "tyr": {
+      "epithet": "The one-handed",
+      "summary": "He fed the wolf, and paid for the binding with his sword hand.",
+      "description": "Týr is the boldest of the Æsir, a god of victory and of the courage to stand still. When the gods raised Fenrir in Ásgarðr he was the only one who dared bring the wolf its meat. When they came to bind it with Gleipnir the wolf demanded a pledge, and Týr put his hand into its mouth knowing what the pledge meant. Skaldic verse calls him the One-handed God and, in the same breath, Fosterer of the Wolf. At Ragnarǫk he and the hound Garmr kill each other."
+    },
+    "heimdall": {
+      "epithet": "Warder of the gods",
+      "summary": "He hears grass grow, blows the horn that starts the end, and dies fighting Loki.",
+      "description": "Heimdallr is the White God, born of nine sisters, who keeps watch at Himinbjǫrg where Bifrǫst meets heaven. He needs less sleep than a bird, sees a hundred leagues by night or day, and hears wool growing on a sheep. Whether Óðinn fathered him is not settled: Snorri gives him nine mothers in one chapter and calls him Óðinn's son in another. He blows Gjallarhorn to wake the gods for the last battle, and there he and Loki kill each other — the watchman and the one thing he was watching for."
+    },
+    "vidar": {
+      "epithet": "The silent god",
+      "summary": "He says nothing, and he is the one who avenges Óðinn.",
+      "description": "Víðarr is called the silent god, nearly as strong as Þórr, and the gods trust him in every struggle. He has a thick shoe made of every scrap of leather ever trimmed from a toe or a heel, saved up across all time for one step. When Fenrir has swallowed his father he puts that foot on the wolf's lower jaw and takes the upper in his hand. How he finishes it depends on who is telling: Snorri has him tear the jaws apart, Vǫluspá has him drive a sword to the heart. He walks out of Ragnarǫk alive."
+    },
+    "sif": {
+      "epithet": "Wife of Þórr",
+      "summary": "Her hair was cut off by Loki, and replaced with gold made by dwarves.",
+      "description": "Sif is Þórr's wife and the mother of Ullr, who is Þórr's stepson. Loki cut off all her hair for mischief and, on being caught, promised the Black Elves would make her more; the dwarves who did it made Skíðblaðnir and the spear Gungnir in the same sitting, which is how the gods came by most of their treasures. She has fewer relations recorded here than she should, and that gap is itemized in the project's data notes rather than papered over."
+    },
+    "njord": {
+      "epithet": "Of Nóatún",
+      "summary": "A Van living among the Æsir as a hostage, father of Freyr and Freyja.",
+      "description": "Njǫrðr rules the course of the wind and stills sea and fire, and men call on him for voyages and for hunting. He is not of the race of the Æsir at all: he was raised among the Vanir and handed over as a hostage when the two families of gods made peace, with Hœnir going the other way. At Nóatún he fathered Freyr and Freyja, which means the Vanir line inside Ásgarðr runs entirely through a prisoner of war."
+    },
+    "freyr": {
+      "epithet": "Lord of the harvest",
+      "summary": "He gave away his sword for a giantess, and at Ragnarǫk he needs it.",
+      "description": "Freyr governs rain and sunshine and the fruit of the earth, and is the most renowned of the gods after the Æsir proper. He gave his good sword to his messenger Skírnir to win the giantess Gerðr. Snorri is blunt about the cost: at Ragnarǫk he faces Surtr, and the fight is hard, and he falls, and the reason he falls is that he no longer has that sword. It is the clearest case in the cycle of an ending being set up centuries in advance by an ordinary decision."
+    },
+    "freyja": {
+      "epithet": "Lady of the Vanir",
+      "summary": "Njǫrðr's daughter, Freyr's sister, and she takes half the slain.",
+      "description": "Freyja is the most renowned of the goddesses. She has the hall Fólkvangr, and wherever she rides to battle she takes half the killed and Óðinn the other half — a division that puts a Vanir hostage's daughter on equal terms with the All-father. She is Njǫrðr's daughter and Freyr's sister, wife of Óðr, owner of the necklace Brísingamen, which Loki once stole and Heimdallr once fought him for."
+    },
+    "loki": {
+      "epithet": "Son of Fárbauti and Laufey",
+      "summary": "Counted among the Æsir, fathered by a giant, and the parent of everything that ends them.",
+      "description": "Loki is the pivot of the whole graph. Snorri numbers him among the Æsir and calls him the mischief-monger of the Æsir in the same sentence, then names his father Fárbauti the giant. He and Óðinn mixed blood in olden days, which Loki reminds him of when he wants a drink. With the giantess Angrboða he fathers Fenrir, Jǫrmungandr and Hel. He brings about Baldr's death, and is bound for it. At Ragnarǫk he steers the ship of the dead, and he and Heimdallr kill each other. Isolate his descendants and you have recovered most of the opposing side."
+    },
+    "surtr": {
+      "epithet": "Guardian of Múspell",
+      "summary": "He has stood at the border of the fire-world since before the world was shaped, waiting.",
+      "description": "Surtr sits at the land's end of Múspell to defend it, and has done since before the earth was made — the fire-world is the first world to exist, older than the gods who will burn in it. His sword throws off more light than the sun. When the end comes he rides out first, with fire before him and behind him, and Bifrǫst breaks under the riders. He kills Freyr, and then flings fire over the earth and burns the whole world. He is the only figure here who was in position from the beginning."
+    },
+    "angrboda": {
+      "epithet": "Giantess of Jǫtunheimr",
+      "summary": "Mother of the wolf, the serpent and Hel.",
+      "description": "Angrboða is a giantess in Jǫtunheimr, and she is in the sources for exactly one reason: with Loki she has three children, and those three are Fenrir, Jǫrmungandr and Hel. When the gods learned that this kindred was being raised in Jǫtunheimr, and prophecy told them what it meant, they took the children — and every step they took to contain them is a step towards the ending they were trying to avoid."
+    },
+    "farbauti": {
+      "epithet": "The giant",
+      "summary": "Loki's father, named twice and never described.",
+      "description": "Fárbauti is named as Loki's father in Gylfaginning and again in the kenning lists, and that is all the corpus gives. The name has been read as something like cruel-striker, but the texts do not gloss it. He matters structurally rather than narratively: he is the reason Loki is a giant's son sitting inside Ásgarðr, and the reason Loki's children are a giant's grandchildren."
+    },
+    "laufey": {
+      "epithet": "Also called Nál",
+      "summary": "Loki's mother, and the parent he is named for.",
+      "description": "Laufey, also called Nál, is Loki's mother. Snorri names her alongside Fárbauti and moves on. What is unusual is that Loki is repeatedly called Laufeyjarson, son of Laufey, rather than by his father's name — the reverse of the normal patronymic — and the sources never explain it. Whether she is a giantess or of some other kind is not stated; this project classes her with the jǫtnar and flags the classification as contested."
+    },
+    "bestla": {
+      "epithet": "Daughter of Bǫlþorn",
+      "summary": "A giant's daughter, and the mother of Óðinn.",
+      "description": "Bestla is the daughter of the giant Bǫlþorn, and Borr took her to wife; their sons were Óðinn, Vili and Vé. She is a single sentence in the sources, and that sentence rearranges everything downstream of it — the gods who spend the whole cycle fighting giants are themselves half giant, through her, and Óðinn's most important teacher may have been her brother."
+    },
+    "bolthorn": {
+      "epithet": "The giant",
+      "summary": "Óðinn's grandfather, from whose son Óðinn learned nine songs.",
+      "description": "Bǫlþorn is a giant, Bestla's father, and therefore Óðinn's maternal grandfather. He appears twice: once in Snorri's genealogy, and once in Hávamál, where Óðinn says he took nine mighty songs from the son of Bǫlþorn — his own uncle, unnamed. The wisdom that makes Óðinn Óðinn comes to him from the giants' side of the family."
+    },
+    "fenrir": {
+      "epithet": "The wolf",
+      "summary": "Raised by the gods who feared him, bound by a ribbon, and he swallows Óðinn.",
+      "description": "Fenrir is Loki and Angrboða's eldest, and the Æsir brought him up at home in Ásgarðr because the alternative was leaving him in Jǫtunheimr. He broke the fetter Læðingr and then the fetter Drómi, and the third, Gleipnir, was made by dwarves out of six impossible things and held. He agreed to it only against a pledge, and Týr's hand was the pledge, and Týr lost it. At Ragnarǫk he comes loose, swallows Óðinn, and is killed by Óðinn's son Víðarr. His own brood are the wolves that hunt the sun and moon."
+    },
+    "jormungandr": {
+      "epithet": "The Midgard Serpent",
+      "summary": "Thrown into the sea as a child, it grew until it bit its own tail.",
+      "description": "Jǫrmungandr is the second of Loki's children by Angrboða. Óðinn threw it into the deep sea, and it grew there until it lies in the middle of the ocean encircling all the land, biting its own tail — a containment measure that became the shape of the world. Þórr fishes for it once and fails to land it. At Ragnarǫk it comes ashore, and it and Þórr kill each other: he strikes it down, walks nine paces, and falls in its venom."
+    },
+    "hel": {
+      "epithet": "Half blue-black, half flesh",
+      "summary": "Cast into Niflheimr as a child and given rule over the dead.",
+      "description": "Hel is the third of Loki's children by Angrboða. Óðinn cast her into Niflheimr and gave her authority over nine worlds, to apportion lodging to everyone sent to her — those who die of sickness or old age, rather than in battle. Snorri names her furniture: her hall Sleet-Cold, her dish Hunger, her knife Famine, her threshold Pit of Stumbling. When Baldr dies he goes to her, and she is the one who names the price of his return. At the end, her people sail."
+    },
+    "garm": {
+      "epithet": "The hound at Gnipahellir",
+      "summary": "Bound before the cave, howling; he and Týr kill each other.",
+      "description": "Garmr is bound before Gnipahellir, and Vǫluspá returns to him as a refrain — Garm howls loud, the fetters will burst, the wolf runs free. Snorri calls him the greatest of monsters and gives him to Týr at Ragnarǫk, where each becomes the other's slayer. Whether Garmr and Fenrir are two hounds or one is an old argument; the sources never resolve it, and this graph keeps them apart because that is how the sources leave them."
+    },
+    "skoll": {
+      "epithet": "The wolf at the sun's heels",
+      "summary": "He runs behind the sun, and one day he catches her.",
+      "description": "Skǫll is the wolf that follows the sun. Snorri says she fears him and he shall take her, which he does at the beginning of the end. Grímnismál puts him at Ironwood. His parentage is a knot: Vǫluspá says an old giantess in Ironwood bore the brood of Fenrir, and Snorri says an old witch there bore many giant sons in wolf shape — the two accounts fit together only if the wolves are Fenrir's, and neither text quite says so."
+    },
+    "hati": {
+      "epithet": "Hróðvitnir's son",
+      "summary": "He runs ahead of the sun, hunting the moon.",
+      "description": "Hati leaps before the sun rather than behind her, because what he is after is the moon. Grímnismál calls him the son of Hróðvitnir, and Snorri gives him the patronymic Hróðvitnisson; Hróðvitnir is generally taken as a byname for Fenrir, which would make Hati the wolf's son and Skǫll's brother, but no surviving text states the identification outright. He is recorded here as Fenrir's child with the certainty set to implied, which is the honest reading."
+    },
+    "mimir": {
+      "epithet": "Keeper of the well",
+      "summary": "Wisdom is stored in his well, and he drinks from it with Gjallarhorn.",
+      "description": "Mímir keeps the well under the root of Yggdrasill that turns toward the rime-giants, where wisdom and understanding are stored. He is full of ancient lore because he drinks from the well, and Snorri says he drinks from it with Gjallarhorn — which is a problem, because six chapters later Gjallarhorn is Heimdallr's trumpet, the one that wakes the gods. Snorri contradicts himself inside a single work, and this project records both readings rather than choosing. Óðinn gave an eye for a drink from the well, and rides back to consult Mímir when the end begins."
+    },
+    "asgard": {
+      "epithet": "The gods' stronghold",
+      "summary": "Built in the middle of the world, and it is where the wolf grew up.",
+      "description": "Ásgarðr is the city the sons of Borr made for themselves in the middle of the world, where the gods and their kindred dwell. One of Yggdrasill's three roots reaches it. Heimdallr guards its bridge and Þórr defends it, and it is where the Æsir chose to raise Fenrir rather than leave him in Jǫtunheimr — a decision that put the instrument of Óðinn's death inside his own walls for the length of its childhood."
+    },
+    "midgard": {
+      "epithet": "The middle enclosure",
+      "summary": "The world of people, ringed by a serpent.",
+      "description": "Miðgarðr is the world given to mankind, made by the sons of Borr and defended by Þórr. It is encircled by Jǫrmungandr, which lies in the ocean around all the land with its tail in its mouth — so the boundary of the human world is one of Loki's children. At the end, Surtr flings fire over it and burns it, and the sun turns black and the earth sinks into the sea."
+    },
+    "jotunheim": {
+      "epithet": "Home of the giants",
+      "summary": "Where Angrboða raised three children the gods came to collect.",
+      "description": "Jǫtunheimr is the giants' country, and one of Yggdrasill's roots stands among the rime-giants there. Angrboða was living in it when she and Loki had Fenrir, Jǫrmungandr and Hel, and the gods learned that the kindred was being nourished there and went to take them away. Much of the cycle is the Æsir travelling into Jǫtunheimr to break something, and being related to what they break."
+    },
+    "niflheim": {
+      "epithet": "The mist-world",
+      "summary": "Older than the earth, and Hel rules the dead there.",
+      "description": "Niflheimr was made many ages before the earth was shaped. The well Hvergelmir lies at its centre, and eleven rivers spring from it, and Yggdrasill's third root stands over it with Níðhǫggr gnawing from below. Óðinn cast Hel into it and gave her power over nine worlds, so the oldest of the cold places became the administration of the dead. Baldr goes there."
+    },
+    "muspelheim": {
+      "epithet": "The fire-world",
+      "summary": "The first world of all, light and hot and impassable, with Surtr on the border.",
+      "description": "Múspell is the first world to exist, in the southern region: light, hot, glowing and burning, and impassable to anyone who does not hold land there. Surtr stands at its edge with a flaming sword to keep others out — a guard posted before there was anything to guard against. Its people ride out at Ragnarǫk in a company by themselves, and Snorri notes that they are very bright."
+    },
+    "yggdrasil": {
+      "epithet": "The Ash",
+      "summary": "Three roots, three worlds, and it shakes when the end starts.",
+      "description": "Yggdrasill is the greatest and best of trees, its limbs spread over all the world and standing above heaven. Three roots hold it up: one among the Æsir, one among the rime-giants where the Yawning Void was, and one over Niflheimr, where Níðhǫggr gnaws it from beneath. Mímir's well is under the second. The gods give judgment at it every day. When Fenrir comes loose the Ash trembles, and nothing in heaven or earth is without fear."
+    },
+    "mjolnir": {
+      "epithet": "Þórr's hammer",
+      "summary": "The rime-giants know it when it goes up.",
+      "description": "Mjǫllnir is the first of Þórr's three things of great price, made by the dwarf Sindri while Loki, in the shape of a fly, tried to spoil the work. Snorri says the rime-giants and the hill-giants know it when it is raised, having lost fathers and kinsmen to it. Þórr also has a girdle that doubles his strength and iron gloves he cannot use the hammer-shaft without. After Ragnarǫk it passes to his sons Móði and Magni."
+    },
+    "gungnir": {
+      "epithet": "Óðinn's spear",
+      "summary": "Made by Ívaldi's sons; the thrust never stops.",
+      "description": "Gungnir was made by the dwarves called Ívaldi's Sons, in the same sitting that produced Sif's golden hair and the ship Skíðblaðnir, after Loki had cut Sif's hair off and needed to make it good. Loki handed it to Óðinn himself. Its virtue is that the thrust never stops. Óðinn rides out to Ragnarǫk carrying it, in a gold helmet and a fair mail-coat, and it does not save him."
+    },
+    "gleipnir": {
+      "epithet": "The fetter that held",
+      "summary": "Six impossible things, and it is soft as a ribbon.",
+      "description": "After Fenrir broke Læðingr and Drómi, Óðinn sent Skírnir down to the Black Elves for something better. The dwarves made Gleipnir out of six things: the noise a cat makes walking, a woman's beard, the roots of a rock, the sinews of a bear, the breath of a fish, and the spittle of a bird. It looks like a silk ribbon. Fenrir would not take it without a pledge, and the pledge was Týr's hand, and the gods had no intention of letting him go."
+    },
+    "gjallarhorn": {
+      "epithet": "The resounding horn",
+      "summary": "Its blast is heard in all worlds. Whose it is depends on the chapter.",
+      "description": "Gjallarhorn belongs to Heimdallr, and its blast is heard throughout all the worlds; he sounds it to wake the gods when Ragnarǫk begins, and Vǫluspá has him blow it with the horn aloft. Gjallarhorn also belongs to Mímir, who drinks from the well of wisdom with it. Both statements are Snorri's, twelve chapters apart in the same book, and there is no reconciling them. The graph records both owners and lets you see the disagreement instead of hiding it."
+    }
+  }
+}

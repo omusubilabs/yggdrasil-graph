@@ -1,0 +1,98 @@
+{
+  "site": {
+    "title": "ユグドラシル・グラフ",
+    "tagline": "神話の結末は、すでに系譜のなかに書かれている。",
+    "description": "北欧神話の関係グラフ。神々、巨人、怪物、世界、名を持つ品々を、すべて原典の典拠つきで結ぶ。",
+    "skipToContent": "グラフへ進む"
+  },
+  "nav": {
+    "home": "グラフ",
+    "sources": "典拠",
+    "language": "言語",
+    "languageCurrent": "現在の言語：{name}"
+  },
+  "graph": {
+    "regionLabel": "関係グラフ",
+    "regionDescription": "{count}体の存在と、それらを結ぶ{links}件の関係を示す対話的なグラフ。下の一覧表示でも同じ内容を読める。",
+    "hint": "名前に触れてみてください。",
+    "hintKeyboard": "Tab キーでグラフに入り、矢印キーで存在のあいだを移動します。",
+    "loading": "グラフを起こしています",
+    "reset": "表示を戻す",
+    "zoomIn": "拡大",
+    "zoomOut": "縮小",
+    "recentre": "中央に戻す",
+    "clearSelection": "すべて表示",
+    "neighbourhoodOf": "{name}の周辺",
+    "everything": "グラフ全体"
+  },
+  "view": {
+    "label": "表示",
+    "graph": "グラフ",
+    "list": "一覧",
+    "listHeading": "すべての存在の一覧",
+    "columnName": "名前",
+    "columnOldNorse": "古ノルド語",
+    "columnType": "種別",
+    "columnClasses": "分類",
+    "columnRelations": "関係"
+  },
+  "panel": {
+    "label": "詳細",
+    "close": "詳細を閉じる",
+    "oldNorse": "古ノルド語",
+    "type": "種別",
+    "classes": "分類",
+    "tags": "主題",
+    "attestedIn": "登場する文献",
+    "relations": "関係",
+    "citations": "典拠",
+    "readMore": "{name}の詳細",
+    "empty": "何も選択されていません。グラフから選んでください。",
+    "noRelations": "まだ関係が記録されていません。"
+  },
+  "certainty": {
+    "label": "確度",
+    "attested": "明記",
+    "attestedHint": "原典がそのまま述べている。",
+    "implied": "含意",
+    "impliedHint": "原典が明言はしないが、そう帰結する。",
+    "variant": "異伝",
+    "variantHint": "別の原典が異なる伝えかたをしている。",
+    "disputed": "矛盾",
+    "disputedHint": "原典どうしが食い違っている。",
+    "unverified": "未検証",
+    "unverifiedHint": "妥当と思われるが、典拠の箇所を確認できていない。意図的に無典拠。"
+  },
+  "class": {
+    "label": "分類",
+    "aesir": "アース神族",
+    "vanir": "ヴァン神族",
+    "jotnar": "巨人",
+    "beings": "その他の存在",
+    "worlds": "世界",
+    "artifacts": "作られしもの"
+  },
+  "type": {
+    "label": "種別",
+    "deity": "神",
+    "being": "存在",
+    "world": "世界",
+    "artifact": "作られしもの",
+    "place": "場所",
+    "event": "出来事"
+  },
+  "entity": {
+    "backToGraph": "グラフに戻る",
+    "relationsHeading": "関係",
+    "sourcesHeading": "引用した典拠",
+    "tagsHeading": "主題",
+    "namesHeading": "名前",
+    "metaTitle": "{name} — ユグドラシル・グラフ"
+  },
+  "sources": {
+    "heading": "典拠",
+    "chapter": "第{locus}章",
+    "stanza": "第{locus}節",
+    "translatedBy": "{translator}訳、{year}年"
+  }
+}
