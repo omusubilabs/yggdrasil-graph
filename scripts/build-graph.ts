@@ -158,10 +158,15 @@ const simulation = forceSimulation(layoutNodes)
       .distance((l) => LINK_DISTANCE[l.family])
       .strength(0.35),
   )
-  .force('charge', forceManyBody<LayoutNode>().strength((d) => -260 - d.degree * 26))
-  .force('collide', forceCollide<LayoutNode>().radius((d) => radiusOf(d.degree) + 14))
-  .force('x', forceX(0).strength(0.045))
-  .force('y', forceY(0).strength(0.045))
+  .force('charge', forceManyBody<LayoutNode>().strength((d) => -330 - d.degree * 30))
+  .force('collide', forceCollide<LayoutNode>().radius((d) => radiusOf(d.degree) + 20))
+  // The vertical pull is about three times the horizontal one, which spreads the
+  // graph into a landscape shape. Browsers are wider than they are tall, and a
+  // square layout in a 16:9 viewport wastes half the screen and shrinks every
+  // label. src/graph/simulation.ts must use these same numbers, or the graph
+  // rearranges itself the moment the simulation chunk lands.
+  .force('x', forceX(0).strength(0.026))
+  .force('y', forceY(0).strength(0.085))
   .stop();
 
 // Fixed tick count rather than a timer; 600 comfortably reaches convergence.

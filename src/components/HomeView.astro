@@ -1,0 +1,52 @@
+---
+/**
+ * The home page body: the graph, its controls, the panel, and the table.
+ *
+ * The order matters. The graph comes first because it is the argument; the
+ * table follows because it is the same argument in a form that never needs a
+ * script. Nothing above the graph asks the reader to make a choice before they
+ * are allowed to see anything.
+ */
+import type { Locale } from '../i18n/config.ts';
+import GraphCanvas from './GraphCanvas.astro';
+import GraphControls from './GraphControls.astro';
+import EntityPanel from './EntityPanel.astro';
+import EntityTable from './EntityTable.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<div class="stage">
+  <GraphCanvas locale={locale} />
+  <GraphControls locale={locale} />
+  <EntityPanel locale={locale} />
+</div>
+
+<EntityTable locale={locale} />
+
+<script>
+  // Waits for idle, then lazy-loads the d3 runtime — none of it counts against the initial route's JS budget.
+  const start = () =>
+    import('../graph/runtime.ts')
+      .then((module) => module.mount())
+      .catch((error: unknown) => {
+        console.error('graph runtime failed to start', error);
+        document.querySelector('[data-graph-error]')?.removeAttribute('hidden');
+      });
+
+  if ('requestIdleCallback' in window) {
+    window.requestIdleCallback(() => void start(), { timeout: 1500 });
+  } else {
+    window.setTimeout(() => void start(), 200);
+  }
+</script>
+
+<style>
+  .stage {
+    position: relative;
+  }
+</style>

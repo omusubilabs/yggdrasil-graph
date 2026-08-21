@@ -1,0 +1,212 @@
+---
+/**
+ * The details panel.
+ *
+ * Deliberately empty markup: the runtime fills it from the fetched payload.
+ * With no JavaScript there is nothing to fill it with — and nothing is lost,
+ * because clicking a node without the runtime navigates to the full
+ * /entity/<id> page, which carries strictly more than this panel does.
+ *
+ * So the panel stays hidden until the runtime exists, rather than sitting there
+ * as an empty box promising something it cannot deliver.
+ */
+import type { Locale } from '../i18n/config.ts';
+import { useTranslations } from '../i18n/index.ts';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<aside
+  class="panel"
+  data-entity-panel
+  hidden
+  aria-labelledby="panel-title"
+>
+  <div class="panel__bar">
+    <h2 class="panel__title" id="panel-title"></h2>
+    <button type="button" class="panel__close" data-panel-close aria-label={t('panel.close')}>
+      {/* i18n-ignore: a multiplication sign used as a close glyph, not text */}
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="panel__body" data-panel-body></div>
+</aside>
+
+<style>
+  .panel {
+    position: absolute;
+    inset-block: var(--space-md);
+    inset-inline-end: var(--space-md);
+    z-index: var(--layer-panel);
+    width: min(24rem, calc(100vw - 2 * var(--space-md)));
+    display: flex;
+    flex-direction: column;
+    background: var(--vellum-pale);
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius-md);
+    box-shadow: 0 1px 0 var(--rule);
+  }
+
+  .panel[hidden] {
+    display: none;
+  }
+
+  .panel__bar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-md) var(--space-xs);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .panel__title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    line-height: var(--leading-tight);
+  }
+
+  .panel__close {
+    flex: none;
+    background: none;
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    font-size: var(--text-md);
+    line-height: 1;
+    padding: var(--space-2xs) var(--space-xs);
+    cursor: pointer;
+    color: var(--ink-faded);
+  }
+
+  .panel__close:hover {
+    color: var(--ink);
+    border-color: var(--rule);
+  }
+
+  .panel__body {
+    overflow-y: auto;
+    padding: var(--space-md);
+    font-size: var(--text-sm);
+  }
+
+  /* Scoped globally: these classes come from src/graph/runtime.ts at runtime, past Astro's scoping. */
+  .panel__body :global(.panel__epithet) {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--ink-faded);
+    margin: 0 0 var(--space-xs);
+  }
+
+  .panel__body :global(.panel__summary) {
+    margin: 0 0 var(--space-md);
+    max-width: none;
+  }
+
+  .panel__body :global(.panel__section) {
+    margin-block: var(--space-md) 0;
+  }
+
+  .panel__body :global(.panel__section-title) {
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+    color: var(--ink-faded);
+    margin: 0 0 var(--space-2xs);
+  }
+
+  .panel__body :global(.panel__family) {
+    margin: 0 0 var(--space-sm);
+  }
+
+  .panel__body :global(.panel__family-name) {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    margin: var(--space-sm) 0 var(--space-2xs);
+  }
+
+  .panel__body :global(.panel__relations) {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-xs);
+  }
+
+  /* Block, not grid: the label and the citation want their own lines, but the
+     entity name and its certainty badge belong on one line together. */
+  .panel__body :global(.panel__relation) {
+    padding-inline-start: var(--space-sm);
+    border-inline-start: 2px solid var(--rule);
+    line-height: var(--leading-snug);
+  }
+
+  .panel__body :global(.panel__relation a) {
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+    color: var(--ink);
+    text-decoration-color: var(--rule-strong);
+  }
+
+  .panel__body :global(.panel__relation a:hover) {
+    color: var(--verdigris-deep);
+  }
+
+  .panel__body :global(.panel__relation-citation) {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--ink-faded);
+  }
+
+  .panel__body :global(.panel__relation.is-death) {
+    border-inline-start-color: var(--minium);
+  }
+
+  .panel__body :global(.panel__relation-label) {
+    display: block;
+    color: var(--ink-faded);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+  }
+
+  .panel__body :global(.panel__badge) {
+    display: inline-block;
+    vertical-align: 0.1em;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    padding: 0 0.35em;
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius-sm);
+    color: var(--ink-faded);
+  }
+
+  .panel__body :global(.panel__badge.is-disputed),
+  .panel__body :global(.panel__badge.is-variant) {
+    border-color: var(--verdigris);
+    color: var(--verdigris-deep);
+    background: var(--verdigris-wash);
+  }
+
+  .panel__body :global(.panel__more) {
+    display: inline-block;
+    margin-top: var(--space-md);
+    font-weight: var(--weight-medium);
+  }
+
+  @media (max-width: 52rem) {
+    .panel {
+      inset-block-start: auto;
+      inset-inline: var(--space-xs);
+      inset-block-end: var(--space-xs);
+      max-height: 55%;
+      width: auto;
+    }
+  }
+</style>

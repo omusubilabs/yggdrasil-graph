@@ -72,6 +72,36 @@ export const trimToRim = (
   return [round(x1 + dx * t), round(y1 + dy * t)];
 };
 
+/**
+ * Node outline as a path.
+ *
+ * Shape carries `type` and hue carries `class`, so the two never have to be
+ * read from the same channel. Every node also has a visible text label, so
+ * identity never depends on colour at all.
+ */
+export const nodeShapePath = (type: GraphNode['type'], r: number): string => {
+  const p = (n: number) => Math.round(n * 100) / 100;
+  switch (type) {
+    case 'artifact':
+      // A lozenge, like a gemstone set into the page.
+      return `M0,${p(-r * 1.25)}L${p(r)},0L0,${p(r * 1.25)}L${p(-r)},0Z`;
+    case 'world':
+    case 'place': {
+      // A hexagon: flat-topped, so worlds read as ground rather than as figures.
+      const pts = Array.from({ length: 6 }, (_, i) => {
+        const a = (Math.PI / 3) * i;
+        return `${p(r * Math.cos(a))},${p(r * Math.sin(a))}`;
+      });
+      return `M${pts.join('L')}Z`;
+    }
+    default:
+      return `M${p(-r)},0a${p(r)},${p(r)} 0 1,0 ${p(r * 2)},0a${p(r)},${p(r)} 0 1,0 ${p(-r * 2)},0Z`;
+  }
+};
+
+/** Label size in viewBox units. The best-connected figures are named larger. */
+export const labelSize = (coreRank: number): number => (coreRank < 8 ? 14 : coreRank < 20 ? 12 : 10.5);
+
 /** Class list for a node, so CSS carries colour and shape rather than inline style. */
 export const nodeClassNames = (node: GraphNode): string =>
   ['node', `node--${node.type}`, ...node.classes.map((c) => `is-${c}`)].join(' ');

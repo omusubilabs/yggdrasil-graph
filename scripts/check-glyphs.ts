@@ -67,14 +67,16 @@ const MANIFEST: FaceSpec[] = [
   },
 ];
 
-/** Noto Sans JP loads only on /ja/ routes; it only needs to cover kana, not Latin Extended-B. */
-const JAPANESE: FaceSpec & { required: string[] } = {
-  label: 'Noto Sans JP (Japanese routes only)',
-  pkg: '@fontsource/noto-sans-jp',
-  slug: 'noto-sans-jp',
-  subsets: ['japanese'],
-  faces: ['400-normal', '700-normal'],
-  required: [...'あアぁー一神話巨人世界典拠語関係'],
+/**
+ * ja checks kana/kanji only, not Latin Extended-B — it loads behind the Latin
+ * faces on /ja/ routes. Coverage is the union of ~124 sliced unicode-range
+ * files, not one file per subset.
+ */
+const JAPANESE = {
+  label: 'Noto Sans JP Variable (ja routes only)',
+  pkg: '@fontsource-variable/noto-sans-jp',
+  filePattern: /^noto-sans-jp-\d+-wght-normal\.woff2$/,
+  required: [...'あアぁー一神話巨人世界典拠語関係詳細戻選択巨古ノルド'],
 };
 
 const errors: string[] = [];
@@ -131,7 +133,29 @@ const checkFace = async (spec: FaceSpec, required: string[]) => {
 };
 
 for (const spec of MANIFEST) await checkFace(spec, REQUIRED);
-await checkFace(JAPANESE, JAPANESE.required);
+
+{
+  const dir = join('node_modules', JAPANESE.pkg, 'files');
+  if (!existsSync(dir)) {
+    errors.push(`${JAPANESE.label}: ${JAPANESE.pkg} is not installed. Run npm ci.`);
+  } else {
+    const slices = readdirSync(dir).filter((f) => JAPANESE.filePattern.test(f));
+    const covered = new Set<number>();
+    for (const file of slices) {
+      for (const cp of (await openFont(join(dir, file))) ?? []) covered.add(cp);
+    }
+    const missing = JAPANESE.required.filter((ch) => !covered.has(ch.codePointAt(0)!));
+    if (slices.length === 0) {
+      errors.push(`${JAPANESE.label}: no slice files matched ${JAPANESE.filePattern}. The package layout has changed.`);
+    }
+    if (missing.length > 0) {
+      errors.push(`${JAPANESE.label}: cannot draw ${missing.join(' ')} across its ${slices.length} slices.`);
+    }
+    rows.push(
+      `  ${missing.length === 0 && slices.length > 0 ? '✓' : '✗'} ${JAPANESE.label.padEnd(38)} ${'wght'.padEnd(12)} ${String(covered.size).padStart(5)} codepoints  [${slices.length} slices]`,
+    );
+  }
+}
 
 const walk = (dir: string): string[] => {
   let out: string[] = [];
@@ -149,7 +173,7 @@ const walk = (dir: string): string[] => {
   return out;
 };
 
-const declared = new Set([...MANIFEST, JAPANESE].map((s) => s.pkg));
+const declared = new Set([...MANIFEST.map((s) => s.pkg), JAPANESE.pkg]);
 const imported = new Set<string>();
 for (const file of walk('src')) {
   const source = readFileSync(file, 'utf8');

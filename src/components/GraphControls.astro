@@ -1,0 +1,119 @@
+---
+/**
+ * Zoom, recentre, and the disputed-relations filter.
+ *
+ * Every one of these needs the runtime, so the whole block stays hidden until
+ * the runtime marks itself ready. Rendering a dead button that a reader can
+ * press and watch do nothing is worse than rendering nothing.
+ */
+import type { Locale } from '../i18n/config.ts';
+import { useTranslations } from '../i18n/index.ts';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<div class="controls" data-graph-controls>
+  <div class="controls__group" role="group" aria-label={t('view.label')}>
+    <button type="button" data-zoom="in" aria-label={t('graph.zoomIn')}>
+      {/* i18n-ignore: mathematical symbols used as icons */}
+      <span aria-hidden="true">+</span>
+    </button>
+    <button type="button" data-zoom="out" aria-label={t('graph.zoomOut')}>
+      {/* i18n-ignore: mathematical symbols used as icons */}
+      <span aria-hidden="true">−</span>
+    </button>
+    <button type="button" data-zoom="reset">{t('graph.recentre')}</button>
+  </div>
+
+  <button type="button" class="controls__clear" data-clear-selection hidden>
+    {t('graph.clearSelection')}
+  </button>
+
+  <label class="controls__toggle">
+    <input type="checkbox" data-filter="disputed" />
+    <span>
+      <span class="controls__toggle-label">{t('filters.disputedOnly')}</span>
+      <span class="controls__toggle-hint">{t('filters.disputedOnlyHint')}</span>
+    </span>
+  </label>
+</div>
+
+<style>
+  .controls {
+    position: absolute;
+    inset-inline-start: var(--space-lg);
+    inset-block-end: var(--space-lg);
+    z-index: var(--layer-controls);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+    font-size: var(--text-sm);
+  }
+
+  /* Set by src/graph/runtime.ts once it has mounted successfully. */
+  :global(html[data-graph-runtime='ready']) .controls {
+    display: flex;
+  }
+
+  .controls__group {
+    display: flex;
+    gap: -1px;
+  }
+
+  .controls button {
+    background: var(--vellum-pale);
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius-sm);
+    padding: var(--space-2xs) var(--space-xs);
+    min-width: 2rem;
+    cursor: pointer;
+    font-size: var(--text-sm);
+  }
+
+  .controls button:hover {
+    border-color: var(--verdigris);
+    color: var(--verdigris-deep);
+  }
+
+  .controls__clear[hidden] {
+    display: none;
+  }
+
+  .controls__clear {
+    border-color: var(--verdigris) !important;
+    color: var(--verdigris-deep);
+    background: var(--verdigris-wash) !important;
+  }
+
+  .controls__toggle {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-xs);
+    max-width: 22rem;
+    cursor: pointer;
+    background: color-mix(in srgb, var(--vellum-pale) 88%, transparent);
+    padding: var(--space-2xs) var(--space-xs);
+    border-radius: var(--radius-sm);
+  }
+
+  .controls__toggle input {
+    margin-top: 0.25em;
+    accent-color: var(--verdigris);
+  }
+
+  .controls__toggle-label {
+    display: block;
+  }
+
+  .controls__toggle-hint {
+    display: block;
+    font-size: var(--text-xs);
+    color: var(--ink-faded);
+  }
+</style>

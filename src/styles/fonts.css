@@ -23,9 +23,9 @@
 @import '@fontsource/alegreya/latin-700.css';
 @import '@fontsource/alegreya/latin-ext-700.css';
 
-/* Interface chrome. Variable, so one file covers every weight we use. */
-@import '@fontsource-variable/inter/wght.css';
-@import '@fontsource-variable/inter/wght-italic.css';
+/* Interface chrome. Variable, so one file covers every weight we use.
+ * Declared by hand in inter.css — see the note there about subset bloat. */
+@import './inter.css';
 
 /* Ids, loci and citations. Apparatus should look like apparatus. */
 @import '@fontsource/source-code-pro/latin-400.css';

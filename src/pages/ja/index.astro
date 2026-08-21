@@ -1,0 +1,26 @@
+---
+/**
+ * The Japanese home page.
+ *
+ * It imports fonts-ja.css and nothing else does, which is what keeps Noto Sans
+ * JP's ~6,900-codepoint subset off every other route: the bundler cannot ship
+ * what no other page references.
+ */
+import '../../styles/fonts-ja.css';
+import Base from '../../layouts/Base.astro';
+import HomeView from '../../components/HomeView.astro';
+import { useTranslations } from '../../i18n/index.ts';
+
+const locale = 'ja' as const;
+const t = useTranslations(locale);
+---
+
+<Base
+  locale={locale}
+  route="/"
+  title={`${t('site.title')} — ${t('site.tagline')}`}
+  description={t('site.description')}
+  full
+>
+  <HomeView locale={locale} />
+</Base>

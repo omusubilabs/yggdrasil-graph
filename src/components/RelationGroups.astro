@@ -1,0 +1,172 @@
+---
+/**
+ * An entity's relations, grouped by family, with certainty and citations.
+ *
+ * Used on the prerendered /entity/<id> pages, so this is the version that a
+ * crawler and a screen reader see. The panel builds the same structure at
+ * runtime from the same model functions.
+ */
+import graph from '../generated/graph.json';
+import type { GraphData } from '../graph/types.ts';
+import { buildIndex, relationsByFamily } from '../graph/model.ts';
+import { isDeathRelation } from '../graph/geometry.ts';
+import type { Locale } from '../i18n/config.ts';
+import { localePath, useTranslations } from '../i18n/index.ts';
+import CitationList from './CitationList.astro';
+
+interface Props {
+  locale: Locale;
+  entityId: string;
+}
+
+const { locale, entityId } = Astro.props;
+const t = useTranslations(locale);
+const index = buildIndex(graph as unknown as GraphData);
+const groups = relationsByFamily(index, entityId);
+---
+
+{
+  groups.length === 0 ? (
+    <p class="relations__empty">{t('panel.noRelations')}</p>
+  ) : (
+    groups.map(([family, views]) => (
+      <section class="relations">
+        <h3 class="relations__family">{t(`family.${family}`)}</h3>
+        <ul class="relations__list">
+          {views.map(({ link, other, outgoing }) => (
+            <li class:list={['relations__item', { 'is-death': isDeathRelation(link.type) }]}>
+              <p class="relations__line">
+                <span class="relations__label">
+                  {t(`relation.${link.type}.${outgoing ? 'label' : 'inverse'}`)}
+                </span>
+                {other ? (
+                  <a class="relations__other" href={localePath(locale, `/entity/${other.id}`)}>
+                    {/* i18n-ignore: Old Norse name, data from data/entities/ */}
+                    <span class="non">{other.names.non}</span>
+                    <span class="relations__anglicized">{other.names.anglicized}</span>
+                  </a>
+                ) : null}
+                <span
+                  class:list={['relations__certainty', `is-${link.certainty}`]}
+                  title={t(`certainty.${link.certainty}Hint`)}
+                >
+                  {t(`certainty.${link.certainty}`)}
+                </span>
+              </p>
+              <CitationList locale={locale} sources={link.sources} />
+              {link.contradicts && link.contradicts.length > 0 ? (
+                <p class="relations__contradicts apparatus">
+                  {t('certainty.contradictedBy', { other: link.contradicts.join(', ') })}
+                </p>
+              ) : null}
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  )
+}
+
+<style>
+  .relations {
+    margin-block: var(--space-lg) 0;
+  }
+
+  .relations__family {
+    font-family: var(--font-ui);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+    color: var(--ink-faded);
+    margin: 0 0 var(--space-xs);
+    padding-bottom: var(--space-2xs);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .relations__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-md);
+  }
+
+  .relations__item {
+    padding-inline-start: var(--space-sm);
+    border-inline-start: 2px solid var(--rule);
+  }
+
+  /* --minium is reserved. A relation that ends a life earns the red rule; a
+     kinship or possession relation never does. */
+  .relations__item.is-death {
+    border-inline-start-color: var(--minium);
+  }
+
+  .relations__line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-2xs) var(--space-xs);
+    margin: 0;
+    max-width: none;
+  }
+
+  .relations__label {
+    color: var(--ink-faded);
+    font-size: var(--text-sm);
+  }
+
+  .relations__other {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4em;
+    text-decoration: none;
+  }
+
+  .relations__other:hover .non {
+    text-decoration: underline;
+  }
+
+  .relations__other .non {
+    font-size: var(--text-md);
+    color: var(--ink);
+  }
+
+  .relations__anglicized {
+    font-size: var(--text-xs);
+    color: var(--ink-faded);
+  }
+
+  .relations__certainty {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--ink-faded);
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius-sm);
+    padding: 0 0.35em;
+    cursor: help;
+  }
+
+  /* Where the sources disagree, say so in the interface accent rather than
+     letting it read as an ordinary footnote. Disagreement is content here. */
+  .relations__certainty.is-disputed,
+  .relations__certainty.is-variant {
+    color: var(--verdigris-deep);
+    border-color: var(--verdigris);
+    background: var(--verdigris-wash);
+  }
+
+  .relations__certainty.is-unverified {
+    font-style: italic;
+  }
+
+  .relations__contradicts {
+    margin: var(--space-2xs) 0 0;
+  }
+
+  .relations__empty {
+    color: var(--ink-faded);
+    font-style: italic;
+  }
+</style>

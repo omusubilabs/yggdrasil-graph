@@ -1,0 +1,22 @@
+---
+/**
+ * Served by Workers Static Assets via `not_found_handling = "404-page"` in
+ * wrangler.toml, with a real 404 status.
+ */
+import Base from '../layouts/Base.astro';
+import { localePath, useTranslations } from '../i18n/index.ts';
+
+const locale = 'en' as const;
+const t = useTranslations(locale);
+---
+
+<Base
+  locale={locale}
+  route="/404"
+  title={`${t('error.notFoundTitle')} — ${t('site.title')}`}
+  description={t('error.notFoundBody')}
+>
+  <h1>{t('error.notFoundTitle')}</h1>
+  <p>{t('error.notFoundBody')}</p>
+  <p><a href={localePath(locale, '/')}>{t('entity.backToGraph')}</a></p>
+</Base>

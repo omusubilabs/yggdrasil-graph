@@ -6,8 +6,24 @@
  * route. Keeping it in a separate stylesheet that only the `ja` layout imports
  * is what enforces that — the bundler cannot include what nothing references.
  */
-@import '@fontsource/noto-sans-jp/japanese-400.css';
-@import '@fontsource/noto-sans-jp/japanese-700.css';
+/*
+ * The sliced entry points, not `japanese-400.css`.
+ *
+ * The monolithic Japanese subset is a single ~1.7 MB file per weight, and a
+ * reader on a /ja/ route downloads all of it to render a page that uses a few
+ * hundred characters. These entry points split the same coverage across ~120
+ * narrow unicode-ranges, so the browser fetches only the slices the page
+ * actually needs — tens of kilobytes rather than megabytes.
+ *
+ * The variable build is used rather than the static weights, which cuts the
+ * number of slices — and therefore the size of the generated @font-face block —
+ * to a quarter, while still giving every weight the interface asks for.
+ *
+ * The cost is file count: this puts ~124 small font files into dist/. That is
+ * well inside Workers Static Assets' limits, and it is the right trade — deploy
+ * size is paid once by us, download size is paid by every reader.
+ */
+@import '@fontsource-variable/noto-sans-jp/wght.css';
 
 :root:lang(ja),
 [lang='ja'] {

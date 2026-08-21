@@ -23,3 +23,6 @@ src/generated/
 !.vscode/extensions.json
 *.log
 npm-debug.log*
+
+# Claude Code local dev config
+.claude/

@@ -1,0 +1,53 @@
+---
+import type { Locale } from '../i18n/config.ts';
+import { useTranslations } from '../i18n/index.ts';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const REPO = 'https://github.com/OWNER/yggdrasil-graph';
+---
+
+<footer class="footer">
+  <p class="footer__licence">
+    <span>{t('footer.codeLicence')}</span>
+    <span>{t('footer.dataLicence')}</span>
+  </p>
+  <p class="footer__editions">{t('footer.editionsNote')}</p>
+  <p class="footer__links">
+    <a href={REPO} rel="noopener">{t('footer.sourceCode')}</a>
+    <a href={`${REPO}/issues/new/choose`} rel="noopener">{t('footer.contribute')}</a>
+  </p>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--rule);
+    padding: var(--space-lg);
+    font-size: var(--text-sm);
+    color: var(--ink-faded);
+    display: grid;
+    gap: var(--space-2xs);
+  }
+
+  .footer p {
+    margin: 0;
+    max-width: none;
+  }
+
+  .footer__licence {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .footer__links {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-2xs);
+  }
+</style>

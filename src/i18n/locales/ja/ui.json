@@ -69,8 +69,8 @@
     "vanir": "ヴァン神族",
     "jotnar": "巨人",
     "beings": "その他の存在",
-    "worlds": "世界",
-    "artifacts": "作られしもの"
+    "worlds": "世界と場所",
+    "artifacts": "宝"
   },
   "type": {
     "label": "種別",

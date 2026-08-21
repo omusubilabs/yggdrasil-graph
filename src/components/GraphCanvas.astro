@@ -1,0 +1,439 @@
+---
+/**
+ * The graph, rendered at build time as real SVG.
+ *
+ * There is no loading state and no splash screen because there is nothing to
+ * wait for: the layout was solved during the build (scripts/build-graph.ts) and
+ * is serialised straight into this markup. The graph is on screen, legible and
+ * usable before a single byte of JavaScript arrives.
+ *
+ * "Usable" is meant literally. Every node is an <a href="/entity/<id>">, which
+ * SVG makes focusable and keyboard-activatable natively. With scripting off,
+ * with the runtime chunk still in flight, or with it failing outright, clicking
+ * a figure still takes you to that figure's page. The runtime's job is to
+ * intercept that click and show the panel instead — an enhancement over
+ * something that already works, rather than a prerequisite for it.
+ */
+import graph from '../generated/graph.json';
+import type { GraphData } from '../graph/types.ts';
+import type { Locale } from '../i18n/config.ts';
+import { localePath, useTranslations } from '../i18n/index.ts';
+import {
+  edgePath,
+  labelOffset,
+  labelSize,
+  linkClassNames,
+  nodeClassNames,
+  nodeRadius,
+  nodeShapePath,
+  trimToRim,
+  viewBoxOf,
+} from '../graph/geometry.ts';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const data = graph as unknown as GraphData;
+
+const positions = new Map(data.nodes.map((n) => [n.id, n]));
+
+const edges = data.links.flatMap((link) => {
+  const from = positions.get(link.from);
+  const to = positions.get(link.to);
+  if (!from || !to) return [];
+  const [endX, endY] = link.directed
+    ? trimToRim(from.x, from.y, to.x, to.y, nodeRadius(to.degree))
+    : [to.x, to.y];
+  return [
+    {
+      link,
+      d: edgePath(from.x, from.y, endX, endY, link.curve),
+      className: linkClassNames(link),
+    },
+  ];
+});
+---
+
+<figure class="canvas" data-graph-canvas>
+  <figcaption class="canvas__caption">
+    <h2 class="visually-hidden">{t('graph.regionLabel')}</h2>
+    <p class="canvas__hint">
+      <span>{t('graph.hint')}</span>
+      <span class="canvas__hint-kbd">{t('graph.hintKeyboard')}</span>
+    </p>
+  </figcaption>
+
+  <svg
+    class="graph"
+    data-graph
+    viewBox={viewBoxOf(data.bounds)}
+    preserveAspectRatio="xMidYMid meet"
+    role="group"
+    aria-label={t('graph.regionLabel')}
+    aria-describedby="graph-description"
+  >
+    <desc id="graph-description">
+      {t('graph.regionDescription', { count: data.nodes.length, links: data.links.length })}
+    </desc>
+
+    <defs>
+      <marker
+        id="arrow-ink"
+        viewBox="0 0 8 8"
+        refX="7"
+        refY="4"
+        markerWidth="6"
+        markerHeight="6"
+        orient="auto-start-reverse"
+      >
+        <path d="M0,1 L7,4 L0,7 Z" class="arrow arrow--ink"></path>
+      </marker>
+      <marker
+        id="arrow-minium"
+        viewBox="0 0 8 8"
+        refX="7"
+        refY="4"
+        markerWidth="6"
+        markerHeight="6"
+        orient="auto-start-reverse"
+      >
+        <path d="M0,1 L7,4 L0,7 Z" class="arrow arrow--minium"></path>
+      </marker>
+    </defs>
+
+    <g data-graph-viewport>
+      <g class="edges" aria-hidden="true">
+        {
+          edges.map((edge) => (
+            <path
+              class={edge.className}
+              d={edge.d}
+              data-link={edge.link.id}
+              data-from={edge.link.from}
+              data-to={edge.link.to}
+              data-certainty={edge.link.certainty}
+              marker-end={
+                edge.link.directed
+                  ? edge.className.includes('is-death')
+                    ? 'url(#arrow-minium)'
+                    : 'url(#arrow-ink)'
+                  : undefined
+              }
+            />
+          ))
+        }
+      </g>
+
+      <g class="nodes">
+        {
+          data.nodes.map((node) => (
+            <a
+              class={nodeClassNames(node)}
+              href={localePath(locale, `/entity/${node.id}`)}
+              data-node={node.id}
+              data-rank={node.coreRank}
+              data-degree={node.degree}
+              transform={`translate(${node.x},${node.y})`}
+              aria-label={t('a11y.nodeRole', {
+                name: node.names.anglicized,
+                type: t(`type.${node.type}`),
+                count: node.degree,
+              })}
+            >
+              <path class="node__halo" d={nodeShapePath(node.type, nodeRadius(node.degree) + 5)} />
+              <path class="node__shape" d={nodeShapePath(node.type, nodeRadius(node.degree))} />
+              {/* i18n-ignore: the Old Norse form is data from data/entities/, identical in every locale */}
+              <text class="node__label" y={labelOffset(node.degree)} font-size={labelSize(node.coreRank)}>
+                {node.names.non}
+              </text>
+            </a>
+          ))
+        }
+      </g>
+    </g>
+  </svg>
+
+  <!--
+    Announcements from the runtime: which figure was selected, how many
+    neighbours are showing, when the selection cleared. Kept separate from the
+    panel so a screen reader hears one short sentence rather than the panel's
+    whole contents re-read on every click.
+  -->
+  <p class="visually-hidden" data-graph-status role="status" aria-live="polite"></p>
+
+  <!--
+    Shown only if the runtime chunk fails to load or throws. The sentence is
+    rendered here rather than built in JavaScript so it is translated like
+    everything else, and so it is available to a script that has already failed.
+  -->
+  <p class="canvas__error" data-graph-error hidden>{t('error.graphFailed')}</p>
+
+  <div class="tip" data-graph-tip hidden aria-hidden="true">
+    <span class="tip__name" data-tip-name></span>
+    <span class="tip__summary" data-tip-summary></span>
+  </div>
+</figure>
+
+<style>
+  .canvas {
+    position: relative;
+    margin: 0;
+    height: min(78vh, 60rem);
+    min-height: 26rem;
+    background: var(--vellum);
+    border-block: 1px solid var(--rule);
+    overflow: hidden;
+  }
+
+  .canvas__caption {
+    position: absolute;
+    inset-inline-start: var(--space-lg);
+    inset-block-start: var(--space-md);
+    z-index: var(--layer-controls);
+    pointer-events: none;
+  }
+
+  .canvas__hint {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xs);
+    font-size: var(--text-sm);
+    color: var(--ink-faded);
+    max-width: 24ch;
+  }
+
+  .canvas__hint-kbd {
+    font-size: var(--text-xs);
+    opacity: 0;
+    transition: opacity var(--motion-base) var(--ease-out);
+  }
+
+  /* The keyboard instruction appears when someone is actually using a keyboard,
+     rather than sitting there permanently as noise for everyone else. */
+  .canvas:focus-within .canvas__hint-kbd {
+    opacity: 1;
+  }
+
+  .canvas__error {
+    position: absolute;
+    inset-inline: var(--space-lg);
+    inset-block-start: var(--space-lg);
+    z-index: var(--layer-controls);
+    margin: 0;
+    max-width: none;
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--vellum-deep);
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+  }
+
+  .canvas__error[hidden] {
+    display: none;
+  }
+
+  .tip {
+    position: absolute;
+    z-index: var(--layer-controls);
+    pointer-events: none;
+    max-width: 22rem;
+    padding: var(--space-2xs) var(--space-xs);
+    background: var(--vellum-pale);
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+    display: grid;
+    gap: 0.1em;
+  }
+
+  .tip[hidden] {
+    display: none;
+  }
+
+  .tip__name {
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+    line-height: var(--leading-tight);
+  }
+
+  .tip__summary {
+    color: var(--ink-faded);
+    line-height: var(--leading-snug);
+  }
+
+  .graph {
+    display: block;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+  }
+
+  /* ------------------------------------------------------------------ edges */
+
+  .edge {
+    fill: none;
+    stroke: var(--ink-faded);
+    stroke-width: var(--edge-width);
+    stroke-linecap: round;
+    opacity: var(--certainty-attested-opacity);
+    transition:
+      opacity var(--motion-base) var(--ease-out),
+      stroke var(--motion-base) var(--ease-out);
+  }
+
+  .edge.is-implied {
+    stroke-dasharray: var(--certainty-implied-dash);
+    opacity: var(--certainty-implied-opacity);
+  }
+
+  .edge.is-variant {
+    stroke-dasharray: var(--certainty-variant-dash);
+    opacity: var(--certainty-variant-opacity);
+  }
+
+  .edge.is-disputed {
+    stroke-dasharray: var(--certainty-disputed-dash);
+    opacity: var(--certainty-disputed-opacity);
+  }
+
+  .edge.is-unverified {
+    stroke-dasharray: var(--certainty-unverified-dash);
+    opacity: var(--certainty-unverified-opacity);
+  }
+
+  /* --minium is reserved. These four relation types end a life, and they are
+     the only edges in the application permitted to use it. */
+  .edge.is-death {
+    stroke: var(--minium);
+    stroke-width: var(--edge-width-strong);
+  }
+
+  .arrow--ink {
+    fill: var(--ink-faded);
+  }
+
+  .arrow--minium {
+    fill: var(--minium);
+  }
+
+  /* ------------------------------------------------------------------ nodes */
+
+  .node {
+    cursor: pointer;
+    outline: none;
+  }
+
+  .node__shape {
+    fill: var(--vellum-pale);
+    stroke: var(--ink);
+    stroke-width: var(--node-stroke);
+    transition:
+      fill var(--motion-fast) var(--ease-out),
+      stroke-width var(--motion-fast) var(--ease-out);
+  }
+
+  /* An invisible ring that widens the hit area and, on focus, becomes the ring
+     that shows where you are. `outline` does nothing inside SVG. */
+  .node__halo {
+    fill: transparent;
+    stroke: transparent;
+    stroke-width: 2.5;
+  }
+
+  .node:focus-visible .node__halo {
+    stroke: var(--verdigris);
+  }
+
+  .node__label {
+    font-family: var(--font-display);
+    fill: var(--ink);
+    text-anchor: middle;
+    /* Paint the vellum-coloured stroke first so labels stay readable where they
+       cross an edge, without needing an opaque box behind them. */
+    paint-order: stroke fill;
+    stroke: var(--vellum);
+    stroke-width: 3.5;
+    stroke-linejoin: round;
+    pointer-events: none;
+    transition: fill var(--motion-fast) var(--ease-out);
+  }
+
+  .node.is-aesir .node__shape {
+    fill: color-mix(in srgb, var(--class-aesir) 22%, var(--vellum-pale));
+    stroke: var(--class-aesir);
+  }
+  .node.is-vanir .node__shape {
+    fill: color-mix(in srgb, var(--class-vanir) 22%, var(--vellum-pale));
+    stroke: var(--class-vanir);
+  }
+  .node.is-jotnar .node__shape {
+    fill: color-mix(in srgb, var(--class-jotnar) 22%, var(--vellum-pale));
+    stroke: var(--class-jotnar);
+  }
+  .node.is-beings .node__shape {
+    fill: color-mix(in srgb, var(--class-beings) 22%, var(--vellum-pale));
+    stroke: var(--class-beings);
+  }
+  .node.is-worlds .node__shape {
+    fill: color-mix(in srgb, var(--class-worlds) 18%, var(--vellum-pale));
+    stroke: var(--class-worlds);
+  }
+  .node.is-artifacts .node__shape {
+    fill: color-mix(in srgb, var(--class-artifacts) 26%, var(--vellum-pale));
+    stroke: var(--class-artifacts);
+  }
+
+  /* Loki holds two classes, and the split fill is the whole argument of the
+     application in one node: numbered among the Æsir, fathered by a giant. */
+  .node.is-aesir.is-jotnar .node__shape {
+    fill: linear-gradient(in srgb, var(--class-aesir), var(--class-jotnar));
+    fill: color-mix(in srgb, var(--class-jotnar) 24%, var(--vellum-pale));
+    stroke: var(--class-aesir);
+    stroke-dasharray: 3 2;
+  }
+
+  .node:hover .node__shape,
+  .node:focus-visible .node__shape {
+    stroke-width: 2.5;
+  }
+
+  .node:hover .node__label,
+  .node:focus-visible .node__label {
+    fill: var(--verdigris-deep);
+  }
+
+  /* ------------------------------------------------- selection and dimming
+   *
+   * Set by the runtime on the <svg> element. Until it loads, nothing is dimmed
+   * and the whole graph is simply visible, which is the correct default.
+   */
+  :global([data-graph][data-selected]) .node:not(.is-near),
+  :global([data-graph][data-selected]) .edge:not(.is-near) {
+    opacity: 0.12;
+  }
+
+  :global([data-graph][data-selected]) .node:not(.is-near) .node__label {
+    opacity: 0;
+  }
+
+  :global([data-graph][data-selected]) .node.is-selected .node__shape {
+    stroke-width: 3;
+  }
+
+  :global([data-graph][data-filtered]) .edge.is-hidden {
+    opacity: 0.04;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .edge,
+    .node__shape,
+    .node__label,
+    .canvas__hint-kbd {
+      transition: none;
+    }
+  }
+</style>

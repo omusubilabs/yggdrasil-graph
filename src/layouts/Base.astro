@@ -1,0 +1,85 @@
+---
+/**
+ * The page shell.
+ *
+ * Emits `lang` and `dir` on <html>, a canonical URL, and hreflang alternates
+ * for every locale that has content — including x-default, without which search
+ * engines guess which variant to show a reader with no language preference.
+ *
+ * Japanese CSS is imported by the ja layout, not here, so Noto Sans JP's
+ * ~6,900-codepoint subset never reaches a reader who is not on a /ja/ route.
+ */
+import '../styles/global.css';
+import { ACTIVE_LOCALES, DEFAULT_LOCALE, LOCALE_DIR, type Locale } from '../i18n/config.ts';
+import { localePath, useTranslations } from '../i18n/index.ts';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+interface Props {
+  locale: Locale;
+  /** Path with no locale prefix, e.g. "/" or "/entity/loki". */
+  route: string;
+  title: string;
+  description: string;
+  /** Wide pages (the graph) opt out of the centred prose column. */
+  full?: boolean;
+}
+
+const { locale, route, title, description, full = false } = Astro.props;
+const t = useTranslations(locale);
+
+const site = Astro.site ?? new URL('http://localhost:4321');
+const canonical = new URL(localePath(locale, route), site);
+const alternates = ACTIVE_LOCALES.map((l) => ({
+  hreflang: l,
+  href: new URL(localePath(l, route), site).href,
+}));
+---
+
+<html lang={locale} dir={LOCALE_DIR[locale]}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical.href} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={new URL(localePath(DEFAULT_LOCALE, route), site).href}
+    />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical.href} />
+    <meta name="generator" content={Astro.generator} />
+    <slot name="head" />
+  </head>
+
+  <body data-locale={locale}>
+    <a class="skip-link" href="#main">{t('site.skipToContent')}</a>
+    <SiteHeader locale={locale} route={route} />
+    <main id="main" class:list={['main', { 'main--full': full }]} tabindex="-1">
+      <slot />
+    </main>
+    <SiteFooter locale={locale} />
+  </body>
+</html>
+
+<style>
+  .main {
+    max-width: var(--measure-wide);
+    margin: 0 auto;
+    padding: var(--space-xl) var(--space-md) var(--space-2xl);
+  }
+
+  .main:focus {
+    outline: none;
+  }
+
+  .main--full {
+    max-width: none;
+    padding: 0;
+  }
+</style>

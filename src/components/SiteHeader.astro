@@ -1,0 +1,74 @@
+---
+import type { Locale } from '../i18n/config.ts';
+import { useTranslations, localePath } from '../i18n/index.ts';
+import LanguagePicker from './LanguagePicker.astro';
+
+interface Props {
+  locale: Locale;
+  route: string;
+}
+
+const { locale, route } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<header class="header">
+  <a class="wordmark" href={localePath(locale, '/')}>
+    <span class="wordmark__name">{t('site.title')}</span>
+    <span class="wordmark__tagline">{t('site.tagline')}</span>
+  </a>
+  <nav class="nav" aria-label={t('nav.home')}>
+    <a href={localePath(locale, '/sources')}>{t('nav.sources')}</a>
+    <LanguagePicker locale={locale} route={route} />
+  </nav>
+</header>
+
+<style>
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    align-items: baseline;
+    justify-content: space-between;
+    padding: var(--space-md) var(--space-lg);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .wordmark {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xs);
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .wordmark__name {
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-tight);
+  }
+
+  .wordmark__tagline {
+    font-size: var(--text-sm);
+    color: var(--ink-faded);
+    max-width: 44ch;
+  }
+
+  .wordmark:hover .wordmark__name {
+    color: var(--verdigris-deep);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    font-size: var(--text-sm);
+  }
+
+  @media (max-width: 40rem) {
+    .wordmark__tagline {
+      display: none;
+    }
+  }
+</style>

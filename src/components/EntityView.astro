@@ -1,0 +1,218 @@
+---
+/**
+ * A single figure's page.
+ *
+ * These pages are the third and deepest level of disclosure — hover gives a
+ * name and a line, the panel gives relations and citations, this gives the
+ * whole account — and they are also the project's crawlable, screen-reader
+ * substrate. Everything a reader can learn from the graph is reachable here
+ * without executing anything, which is both an accessibility property and the
+ * reason the project is findable at all.
+ */
+import graph from '../generated/graph.json';
+import type { GraphData } from '../graph/types.ts';
+import { buildIndex } from '../graph/model.ts';
+import type { Locale } from '../i18n/config.ts';
+import { localePath, useTranslations, hasKey } from '../i18n/index.ts';
+import RelationGroups from './RelationGroups.astro';
+
+interface Props {
+  locale: Locale;
+  entityId: string;
+}
+
+const { locale, entityId } = Astro.props;
+const t = useTranslations(locale);
+const index = buildIndex(graph as unknown as GraphData);
+const node = index.nodeById.get(entityId)!;
+
+const descriptionKey = `entity.${entityId}.description`;
+const epithetKey = `entity.${entityId}.epithet`;
+const attestations = node.attestations
+  .map((id) => index.sourceById.get(id))
+  .filter((s): s is NonNullable<typeof s> => Boolean(s));
+---
+
+<article class="entity">
+  <p class="entity__back">
+    <a href={localePath(locale, '/')}>{t('entity.backToGraph')}</a>
+  </p>
+
+  <header class="entity__header">
+    {/* i18n-ignore: Old Norse name, data from data/entities/ */}
+    <h1 class="entity__name">{node.names.non}</h1>
+    <p class="entity__anglicized">{node.names.anglicized}</p>
+    {hasKey(locale, epithetKey) ? <p class="entity__epithet">{t(epithetKey)}</p> : null}
+  </header>
+
+  <div class="entity__meta">
+    <span class="entity__chip entity__chip--type">{t(`type.${node.type}`)}</span>
+    {node.classes.map((c) => <span class="entity__chip entity__chip--class">{t(`class.${c}`)}</span>)}
+    <span class="entity__chip entity__chip--quiet">
+      {t('entity.degree', { count: node.degree })}
+    </span>
+  </div>
+
+  {
+    hasKey(locale, descriptionKey) ? (
+      <div class="entity__prose">
+        <p>{t(descriptionKey)}</p>
+      </div>
+    ) : (
+      <p class="entity__prose entity__prose--empty">{t('entity.noDescription')}</p>
+    )
+  }
+
+  <section class="entity__block">
+    <h2 class="entity__block-title">{t('panel.attestedIn')}</h2>
+    <ul class="entity__sources">
+      {
+        attestations.map((source) => (
+          <li>
+            {/* i18n-ignore: work titles are Old Norse data from data/sources.json */}
+            <span class="non">{source.titles.non}</span>
+            <span class="apparatus">
+              {source.translation
+                ? t('sources.translatedBy', {
+                    translator: source.translation.translator,
+                    year: source.translation.year,
+                  })
+                : ''}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  {
+    node.tags.length > 0 ? (
+      <section class="entity__block">
+        <h2 class="entity__block-title">{t('entity.tagsHeading')}</h2>
+        <ul class="entity__tags">
+          {node.tags.map((tag) => (
+            <li class="entity__chip entity__chip--quiet">{t(`tag.${tag}`)}</li>
+          ))}
+        </ul>
+      </section>
+    ) : null
+  }
+
+  <section class="entity__block">
+    <h2 class="entity__block-title">{t('entity.relationsHeading')}</h2>
+    <RelationGroups locale={locale} entityId={entityId} />
+  </section>
+</article>
+
+<style>
+  .entity {
+    max-width: var(--measure-wide);
+  }
+
+  .entity__back {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-lg);
+  }
+
+  .entity__header {
+    margin-bottom: var(--space-md);
+  }
+
+  .entity__name {
+    font-size: var(--text-3xl);
+    margin: 0;
+  }
+
+  .entity__anglicized {
+    margin: 0;
+    color: var(--ink-faded);
+    font-size: var(--text-md);
+  }
+
+  .entity__epithet {
+    margin: var(--space-2xs) 0 0;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--text-md);
+  }
+
+  .entity__meta,
+  .entity__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs) var(--space-xs);
+    list-style: none;
+    margin: 0 0 var(--space-lg);
+    padding: 0;
+  }
+
+  .entity__chip {
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    padding: 0.15em 0.5em;
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius-sm);
+  }
+
+  /* Kind and grouping are different facts, so they should not look identical.
+     The solid chip says what a thing is; the tinted one says which family the
+     graph colours it with. */
+  .entity__chip--class {
+    border-color: currentColor;
+    background: color-mix(in srgb, currentColor 8%, transparent);
+  }
+
+  .entity__chip--quiet {
+    color: var(--ink-faded);
+    border-style: dashed;
+    text-transform: none;
+    letter-spacing: var(--tracking-normal);
+  }
+
+  .entity__prose {
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+    line-height: var(--leading-loose);
+    border-top: 1px solid var(--rule);
+    padding-top: var(--space-lg);
+  }
+
+  .entity__prose--empty {
+    font-style: italic;
+    color: var(--ink-faded);
+  }
+
+  .entity__block {
+    margin-top: var(--space-xl);
+  }
+
+  .entity__block-title {
+    font-family: var(--font-ui);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+    color: var(--ink-faded);
+    margin-bottom: var(--space-sm);
+  }
+
+  .entity__sources {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-2xs);
+  }
+
+  .entity__sources li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-xs);
+  }
+
+  .entity__sources .non {
+    font-size: var(--text-md);
+  }
+</style>

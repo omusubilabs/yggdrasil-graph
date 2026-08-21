@@ -150,12 +150,12 @@ const stripBlocks = (source: string) =>
     .replace(/<script[\s\S]*?<\/script>/gi, (m) => ' '.repeat(m.length))
     .replace(/<!--[\s\S]*?-->/g, (m) => ' '.repeat(m.length));
 
-const scanAttributes = (source: string, file: string, lines: string[]) => {
+const scanAttributes = (source: string, file: string, lines: string[], offset = 0) => {
   const attrPattern = new RegExp(`\\b(${PERCEIVABLE_ATTRS.join('|')})\\s*=\\s*("([^"]*)"|'([^']*)')`, 'g');
   for (const match of source.matchAll(attrPattern)) {
     const value = match[3] ?? match[4] ?? '';
     if (!LOOKS_LIKE_PROSE.test(value)) continue;
-    const line = lineOf(source, match.index);
+    const line = lineOf(source, match.index) + offset;
     if (isIgnored(lines, line)) continue;
     findings.push({
       file,
@@ -203,7 +203,7 @@ for (const root of ROOTS) {
       const offset = frontmatter.split('\n').length - 1;
 
       scanAstroTemplate(template, offset, file, lines);
-      scanAttributes(template, file, lines);
+      scanAttributes(template, file, lines, offset);
       scanScript(frontmatter, file, lines);
     } else {
       scanScript(source, file, lines);

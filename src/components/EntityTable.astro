@@ -1,0 +1,112 @@
+---
+/**
+ * The graph as a table.
+ *
+ * This is not a fallback and not an afterthought — it is the same dataset in a
+ * form you can read straight through, search with the browser's own find,
+ * navigate with a screen reader, or print. It is prerendered, so it exists
+ * whether or not the graph runtime ever loads.
+ */
+import graph from '../generated/graph.json';
+import type { GraphData } from '../graph/types.ts';
+import type { Locale } from '../i18n/config.ts';
+import { localePath, useTranslations } from '../i18n/index.ts';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const data = graph as unknown as GraphData;
+const rows = [...data.nodes].sort((a, b) =>
+  a.names.anglicized.localeCompare(b.names.anglicized, locale),
+);
+---
+
+<section class="list" id="list">
+  <h2>{t('view.listHeading')}</h2>
+  <p class="list__intro">{t('view.listDescription')}</p>
+
+  <div class="list__scroll">
+    <table class="list__table">
+      <thead>
+        <tr>
+          <th scope="col">{t('view.columnName')}</th>
+          <th scope="col">{t('view.columnOldNorse')}</th>
+          <th scope="col">{t('view.columnType')}</th>
+          <th scope="col">{t('view.columnClasses')}</th>
+          <th scope="col" class="list__num">{t('view.columnRelations')}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          rows.map((node) => (
+            <tr>
+              <th scope="row">
+                <a href={localePath(locale, `/entity/${node.id}`)}>{node.names.anglicized}</a>
+              </th>
+              {/* i18n-ignore: Old Norse name, data from data/entities/ */}
+              <td class="non">{node.names.non}</td>
+              <td>{t(`type.${node.type}`)}</td>
+              <td>{node.classes.map((c) => t(`class.${c}`)).join(', ')}</td>
+              <td class="list__num">{node.degree}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<style>
+  .list {
+    max-width: var(--measure-wide);
+    margin: 0 auto;
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  .list__intro {
+    color: var(--ink-faded);
+  }
+
+  .list__scroll {
+    overflow-x: auto;
+  }
+
+  .list__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+  }
+
+  .list__table th,
+  .list__table td {
+    text-align: start;
+    padding: var(--space-2xs) var(--space-sm) var(--space-2xs) 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: baseline;
+  }
+
+  .list__table thead th {
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+    color: var(--ink-faded);
+    font-weight: var(--weight-medium);
+    border-bottom-color: var(--rule-strong);
+  }
+
+  .list__table tbody th {
+    font-weight: var(--weight-normal);
+  }
+
+  .list__table .non {
+    font-size: var(--text-base);
+  }
+
+  .list__num {
+    text-align: end;
+    font-variant-numeric: tabular-nums;
+  }
+</style>

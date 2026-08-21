@@ -1,0 +1,129 @@
+---
+/**
+ * The source register, rendered for readers.
+ *
+ * The point of this page is to make the dataset checkable. Every relation in
+ * the graph points at a locus in one of these works, and every work here names
+ * the public-domain edition the loci are counted in — which matters more than
+ * it sounds, because chapter and stanza numbering differs between editions.
+ * A locus without an edition is not a citation.
+ */
+import graph from '../generated/graph.json';
+import type { GraphData } from '../graph/types.ts';
+import type { Locale } from '../i18n/config.ts';
+import { useTranslations } from '../i18n/index.ts';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const data = graph as unknown as GraphData;
+
+const collections = data.sources.filter((s) => s.kind === 'collection');
+const worksOf = (id: string) => data.sources.filter((s) => s.partOf === id);
+
+// Citations per work, for the reader.
+const citationCount = new Map<string, number>();
+for (const link of data.links) {
+  for (const ref of link.sources) {
+    citationCount.set(ref.work, (citationCount.get(ref.work) ?? 0) + 1);
+  }
+}
+---
+
+<h1>{t('sources.heading')}</h1>
+<p class="sources__intro">{t('sources.intro')}</p>
+
+{
+  collections.map((collection) => (
+    <section class="sources__collection">
+      <h2>
+        {/* i18n-ignore: work titles are Old Norse data from data/sources.json */}
+        <span class="non">{collection.titles.non}</span>
+        <span class="sources__en">{collection.titles.en}</span>
+      </h2>
+      <p class="apparatus">
+        {collection.translation
+          ? t('sources.translatedBy', {
+              translator: collection.translation.translator,
+              year: collection.translation.year,
+            })
+          : ''}
+        {' · '}
+        {t('sources.composed', { date: collection.date })}
+      </p>
+      {collection.url ? (
+        <p>
+          <a href={collection.url} rel="noopener">
+            {t('sources.viewText')}
+          </a>
+        </p>
+      ) : null}
+
+      <ul class="sources__works">
+        {worksOf(collection.id).map((work) => (
+          <li>
+            {/* i18n-ignore: work titles are Old Norse data from data/sources.json */}
+            <span class="non sources__work-title">{work.titles.non}</span>
+            <span class="sources__en">{work.titles.en}</span>
+            <span class="apparatus">
+              {t(work.locusUnit === 'stanza' ? 'sources.stanza' : 'sources.chapter', {
+                locus: String(citationCount.get(work.id) ?? 0),
+              })}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))
+}
+
+<style>
+  .sources__intro {
+    color: var(--ink-faded);
+  }
+
+  .sources__collection {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--rule);
+  }
+
+  .sources__collection h2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-2xs);
+  }
+
+  .sources__en {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    font-style: normal;
+    color: var(--ink-faded);
+  }
+
+  .sources__works {
+    list-style: none;
+    margin: var(--space-md) 0 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-xs);
+  }
+
+  .sources__works li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-sm);
+    padding-inline-start: var(--space-sm);
+    border-inline-start: 2px solid var(--rule);
+  }
+
+  .sources__work-title {
+    font-size: var(--text-md);
+  }
+</style>
