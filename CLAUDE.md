@@ -19,6 +19,8 @@ npm run validate     # data/ integrity — run after EVERY data change
 npm run i18n:check   # locale key parity against en
 npm run check:strings # no hardcoded user-facing strings in components
 npm run check:glyphs # every shipped font face can draw Old Norse
+npm run check:bundle-size # initial-route JS budget, see report-bundle-size.mjs
+npm test             # unit tests — node:test via tsx, see src/graph/*.test.ts, src/i18n/*.test.ts
 npm run typecheck    # astro check
 npm run lint         # eslint
 npm run deploy       # build, then wrangler deploy
@@ -144,6 +146,13 @@ types that qualify are listed in `DEATH_RELATION_TYPES` in
   no CSS-in-JS.
 - **`ajv` + JSON Schema as a prebuild step.** Not zod, not runtime validation.
 - **npm, lockfile committed, Node pinned in `.nvmrc` and `engines`.**
+- **Testing is Node's built-in `node:test` + `node:assert/strict`, run through
+  `tsx` (`npm test`).** Not vitest. `tsx` is already a devDependency used to run
+  every `scripts/*.ts` file directly; running tests the same way needs no new
+  dependency. Tests are co-located as `*.test.ts` next to the module they cover
+  (`src/graph/model.test.ts`, `src/graph/geometry.test.ts`, `src/i18n/*.test.ts`)
+  and use a small synthetic fixture (`src/graph/fixtures/sample-graph.ts`)
+  rather than the real dataset, so adding an entity never breaks a unit test.
 - **The visual direction is Icelandic manuscript vellum.** Greyish-tan ground,
   iron-gall ink, verdigris accent. Explicitly not the dark-background,
   glowing-cyan-node look every graph demo has. The page commits to a single
@@ -218,6 +227,15 @@ Recorded here rather than silently, as the brief asked.
 
 11. **`.claude/` is gitignored.** Local editor config does not belong in a public
     repository.
+
+## Owed work, prioritized
+
+Beyond the "Out of scope for v1" list below, three smaller items are tracked
+and prioritized in [README.md](README.md)'s Roadmap: the data gaps and
+unverified relations in [`data/TODO.md`](data/TODO.md), the `ja` locale's
+translation coverage (currently `ui.json` only — no `entities.json` or
+`relations.json`), and JSON-LD structured data on entity pages. Do not
+duplicate that detail here — check the Roadmap first.
 
 ## Out of scope for v1 — leave the seams clean
 

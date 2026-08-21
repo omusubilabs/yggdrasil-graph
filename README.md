@@ -145,9 +145,20 @@ This first release is a walking skeleton, staged deliberately. Shipped:
 - [x] English complete; Japanese as a real partial locale
 - [x] Accessible table view, `prefers-reduced-motion` support
 - [x] CI and deploy workflows
+- [x] Unit tests for the pure core logic (`src/graph/model.ts`,
+      `src/graph/geometry.ts`, `src/i18n`) — `npm test`, `node:test` via `tsx`.
 
-Not built yet, with the seams left clean:
+Not built yet, roughly in the order it's worth picking them up:
 
+- [ ] **next up** — Resolve the two `unverified` relations and the entity/relation
+      gaps listed in [`data/TODO.md`](data/TODO.md) (Sól/Máni, Jarnviðr, Sigyn's
+      household, Sleipnir, Ullr, Hrymr/Naglfar, Bifröst, and 4 of the 9 worlds).
+      Needs a citation, not code — the most valuable outside contribution too.
+- [ ] **after that** — Expand the Japanese locale past its current 24% coverage.
+      `src/i18n/locales/ja/` has only `ui.json`; `entities.json` and
+      `relations.json` don't exist yet, so every entity description and relation
+      label falls back to English for `ja` readers.
+- [ ] **after that** — Structured data (JSON-LD) on entity pages.
 - [ ] **The Ragnarǫk overlay** — a single control that dims the graph to the
       terminal pairings and traces each combatant back through the genealogy
       that produced them. The tags it needs are already in the dataset.
@@ -160,7 +171,6 @@ Not built yet, with the seams left clean:
       Swedish, Danish, Finnish. Routing and font plumbing already handle all of them.
 - [ ] **The full 300–400 entity dataset.** [`data/TODO.md`](data/TODO.md) lists
       what is missing and why each gap matters.
-- [ ] Structured data (JSON-LD) on entity pages.
 
 ---
 
