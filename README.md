@@ -156,8 +156,8 @@ This first release is a walking skeleton, staged deliberately. Shipped:
 
 Not built yet, roughly in the order it's worth picking them up:
 
-- [ ] **next up** — Structured data (JSON-LD) on entity pages.
-- [ ] **The Ragnarǫk overlay** — a single control that dims the graph to the
+- [x] Structured data (JSON-LD) on entity pages
+- [ ] **Next up: the Ragnarǫk overlay** — a single control that dims the graph to the
       terminal pairings and traces each combatant back through the genealogy
       that produced them. The tags it needs are already in the dataset.
 - [ ] **Tag-driven "you might also want" suggestions** at the end of each panel —

@@ -10,9 +10,11 @@ import '../../../styles/fonts-ja.css';
 import type { GetStaticPaths } from 'astro';
 import graph from '../../../generated/graph.json';
 import type { GraphData } from '../../../graph/types.ts';
+import { buildIndex } from '../../../graph/model.ts';
+import { buildEntityJsonLd } from '../../../graph/structured-data.ts';
 import Base from '../../../layouts/Base.astro';
 import EntityView from '../../../components/EntityView.astro';
-import { useTranslations } from '../../../i18n/index.ts';
+import { localePath, useTranslations, hasKey } from '../../../i18n/index.ts';
 
 export const getStaticPaths: GetStaticPaths = () =>
   (graph as unknown as GraphData).nodes.map((node) => ({ params: { id: node.id } }));
@@ -22,6 +24,23 @@ const t = useTranslations(locale);
 const { id } = Astro.params;
 const entityId = id!;
 const node = (graph as unknown as GraphData).nodes.find((n) => n.id === entityId)!;
+
+const index = buildIndex(graph as unknown as GraphData);
+const site = Astro.site ?? new URL('http://localhost:4321');
+const url = new URL(localePath(locale, `/entity/${entityId}`), site).href;
+const descriptionKey = `entity.${entityId}.description`;
+const description = hasKey(locale, descriptionKey)
+  ? t(descriptionKey)
+  : t(`entity.${entityId}.summary`);
+const jsonLd = buildEntityJsonLd({
+  index,
+  id: entityId,
+  url,
+  name: node.names.anglicized,
+  alternateName: node.names.non,
+  description,
+  inLanguage: locale,
+});
 ---
 
 <Base
@@ -30,5 +49,12 @@ const node = (graph as unknown as GraphData).nodes.find((n) => n.id === entityId
   title={t('entity.metaTitle', { name: `${node.names.non} · ${node.names.anglicized}` })}
   description={t(`entity.${entityId}.summary`)}
 >
+  <Fragment slot="head">
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')}
+    />
+  </Fragment>
   <EntityView locale={locale} entityId={entityId} />
 </Base>

@@ -259,12 +259,10 @@ Recorded here rather than silently, as the brief asked.
 
 ## Owed work, prioritized
 
-Beyond the "Out of scope for v1" list below, three smaller items are tracked
-and prioritized in [README.md](README.md)'s Roadmap: the data gaps and
-unverified relations in [`data/TODO.md`](data/TODO.md), the `ja` locale's
-remaining `ui.json` gap (`entities.json` and `relations.json` are now fully
-translated), and JSON-LD structured data on entity pages. Do not duplicate
-that detail here — check the Roadmap first.
+Beyond the "Out of scope for v1" list below, the remaining data gaps and
+unverified relations in [`data/TODO.md`](data/TODO.md) are tracked and
+prioritized in [README.md](README.md)'s Roadmap. Do not duplicate that detail
+here — check the Roadmap first.
 
 ## Out of scope for v1 — leave the seams clean
 
