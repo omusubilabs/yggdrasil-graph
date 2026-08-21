@@ -67,6 +67,16 @@ const t = useTranslations(locale);
     line-height: var(--leading-tight);
   }
 
+  .panel__title :global(a) {
+    color: var(--ink);
+    text-decoration-color: var(--rule-strong);
+  }
+
+  .panel__title :global(a:hover) {
+    color: var(--verdigris-deep);
+    text-decoration-color: currentColor;
+  }
+
   .panel__close {
     flex: none;
     background: none;

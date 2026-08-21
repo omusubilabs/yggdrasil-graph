@@ -146,7 +146,13 @@ export async function mount(): Promise<void> {
     if (!node) return;
     const strings = payload.entities[id];
 
-    panelTitle.textContent = node.names.non;
+    // The title is itself the route to the full account, as well as the link at
+    // the foot of the panel — the reader should not have to scroll a panel to
+    // find out that there is more.
+    const titleLink = el('a');
+    titleLink.href = linkTo(`/entity/${id}`);
+    titleLink.textContent = node.names.non;
+    panelTitle.replaceChildren(titleLink);
     panelBody.replaceChildren();
 
     if (strings?.epithet) panelBody.append(el('p', 'panel__epithet', strings.epithet));
