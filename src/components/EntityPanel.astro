@@ -21,12 +21,7 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 ---
 
-<aside
-  class="panel"
-  data-entity-panel
-  hidden
-  aria-labelledby="panel-title"
->
+<aside class="panel" data-entity-panel hidden aria-labelledby="panel-title">
   <div class="panel__bar">
     <h2 class="panel__title" id="panel-title"></h2>
     <button type="button" class="panel__close" data-panel-close aria-label={t('panel.close')}>

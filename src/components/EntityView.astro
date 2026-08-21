@@ -47,7 +47,11 @@ const attestations = node.attestations
 
   <div class="entity__meta">
     <span class="entity__chip entity__chip--type">{t(`type.${node.type}`)}</span>
-    {node.classes.map((c) => <span class="entity__chip entity__chip--class">{t(`class.${c}`)}</span>)}
+    {
+      node.classes.map((c) => (
+        <span class="entity__chip entity__chip--class">{t(`class.${c}`)}</span>
+      ))
+    }
     <span class="entity__chip entity__chip--quiet">
       {t('entity.degree', { count: node.degree })}
     </span>

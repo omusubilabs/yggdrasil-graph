@@ -1,13 +1,22 @@
 [
   {
     "id": "fenrir--odin--devours",
-    "from": "fenrir", "to": "odin", "type": "devours", "directed": true,
+    "from": "fenrir",
+    "to": "odin",
+    "type": "devours",
+    "directed": true,
     "certainty": "attested",
-    "sources": [{ "work": "gylfaginning", "locus": "51" }, { "work": "voluspa", "locus": "53" }]
+    "sources": [
+      { "work": "gylfaginning", "locus": "51" },
+      { "work": "voluspa", "locus": "53" }
+    ]
   },
   {
     "id": "vidar--fenrir--slays",
-    "from": "vidar", "to": "fenrir", "type": "slays", "directed": true,
+    "from": "vidar",
+    "to": "fenrir",
+    "type": "slays",
+    "directed": true,
     "certainty": "attested",
     "sources": [
       { "work": "gylfaginning", "locus": "51" },
@@ -17,61 +26,103 @@
   },
   {
     "id": "thor--jormungandr--slays",
-    "from": "thor", "to": "jormungandr", "type": "slays", "directed": true,
+    "from": "thor",
+    "to": "jormungandr",
+    "type": "slays",
+    "directed": true,
     "certainty": "attested",
-    "sources": [{ "work": "gylfaginning", "locus": "51" }, { "work": "voluspa", "locus": "55" }]
+    "sources": [
+      { "work": "gylfaginning", "locus": "51" },
+      { "work": "voluspa", "locus": "55" }
+    ]
   },
   {
     "id": "jormungandr--thor--slays",
-    "from": "jormungandr", "to": "thor", "type": "slays", "directed": true,
+    "from": "jormungandr",
+    "to": "thor",
+    "type": "slays",
+    "directed": true,
     "certainty": "attested",
-    "sources": [{ "work": "gylfaginning", "locus": "51" }, { "work": "voluspa", "locus": "56" }]
+    "sources": [
+      { "work": "gylfaginning", "locus": "51" },
+      { "work": "voluspa", "locus": "56" }
+    ]
   },
   {
     "id": "surtr--freyr--slays",
-    "from": "surtr", "to": "freyr", "type": "slays", "directed": true,
+    "from": "surtr",
+    "to": "freyr",
+    "type": "slays",
+    "directed": true,
     "certainty": "attested",
-    "sources": [{ "work": "gylfaginning", "locus": "51" }, { "work": "voluspa", "locus": "53" }]
+    "sources": [
+      { "work": "gylfaginning", "locus": "51" },
+      { "work": "voluspa", "locus": "53" }
+    ]
   },
   {
     "id": "tyr--garm--slays",
-    "from": "tyr", "to": "garm", "type": "slays", "directed": true,
+    "from": "tyr",
+    "to": "garm",
+    "type": "slays",
+    "directed": true,
     "certainty": "attested",
     "sources": [{ "work": "gylfaginning", "locus": "51" }]
   },
   {
     "id": "garm--tyr--slays",
-    "from": "garm", "to": "tyr", "type": "slays", "directed": true,
+    "from": "garm",
+    "to": "tyr",
+    "type": "slays",
+    "directed": true,
     "certainty": "attested",
     "sources": [{ "work": "gylfaginning", "locus": "51" }]
   },
   {
     "id": "heimdall--loki--slays",
-    "from": "heimdall", "to": "loki", "type": "slays", "directed": true,
+    "from": "heimdall",
+    "to": "loki",
+    "type": "slays",
+    "directed": true,
     "certainty": "attested",
     "sources": [{ "work": "gylfaginning", "locus": "51" }]
   },
   {
     "id": "loki--heimdall--slays",
-    "from": "loki", "to": "heimdall", "type": "slays", "directed": true,
+    "from": "loki",
+    "to": "heimdall",
+    "type": "slays",
+    "directed": true,
     "certainty": "attested",
     "sources": [{ "work": "gylfaginning", "locus": "51" }]
   },
   {
     "id": "hod--baldr--slays",
-    "from": "hod", "to": "baldr", "type": "slays", "directed": true,
+    "from": "hod",
+    "to": "baldr",
+    "type": "slays",
+    "directed": true,
     "certainty": "attested",
-    "sources": [{ "work": "gylfaginning", "locus": "49" }, { "work": "skaldskaparmal", "locus": "13" }]
+    "sources": [
+      { "work": "gylfaginning", "locus": "49" },
+      { "work": "skaldskaparmal", "locus": "13" }
+    ]
   },
   {
     "id": "loki--baldr--causes_death_of",
-    "from": "loki", "to": "baldr", "type": "causes_death_of", "directed": true,
+    "from": "loki",
+    "to": "baldr",
+    "type": "causes_death_of",
+    "directed": true,
     "certainty": "attested",
     "sources": [{ "work": "gylfaginning", "locus": "49" }]
   },
   {
     "id": "fenrir--tyr--maims",
-    "from": "fenrir", "to": "tyr", "type": "maims", "directed": true,
+    "from": "fenrir",
+    "to": "tyr",
+    "type": "maims",
+    "directed": true,
     "certainty": "attested",
     "sources": [
       { "work": "gylfaginning", "locus": "25" },
@@ -81,19 +132,34 @@
   },
   {
     "id": "gleipnir--fenrir--binds",
-    "from": "gleipnir", "to": "fenrir", "type": "binds", "directed": true,
+    "from": "gleipnir",
+    "to": "fenrir",
+    "type": "binds",
+    "directed": true,
     "certainty": "attested",
-    "sources": [{ "work": "gylfaginning", "locus": "34" }, { "work": "gylfaginning", "locus": "25" }]
+    "sources": [
+      { "work": "gylfaginning", "locus": "34" },
+      { "work": "gylfaginning", "locus": "25" }
+    ]
   },
   {
     "id": "surtr--midgard--destroys",
-    "from": "surtr", "to": "midgard", "type": "destroys", "directed": true,
+    "from": "surtr",
+    "to": "midgard",
+    "type": "destroys",
+    "directed": true,
     "certainty": "attested",
-    "sources": [{ "work": "gylfaginning", "locus": "51" }, { "work": "voluspa", "locus": "52" }]
+    "sources": [
+      { "work": "gylfaginning", "locus": "51" },
+      { "work": "voluspa", "locus": "52" }
+    ]
   },
   {
     "id": "surtr--yggdrasil--destroys",
-    "from": "surtr", "to": "yggdrasil", "type": "destroys", "directed": true,
+    "from": "surtr",
+    "to": "yggdrasil",
+    "type": "destroys",
+    "directed": true,
     "certainty": "unverified",
     "sources": []
   }

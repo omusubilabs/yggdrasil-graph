@@ -80,7 +80,9 @@ console.log(`  ${'—'.repeat(9)}`);
 console.log(`  ${kb(lazyTotal).padStart(9)}  total`);
 
 if (eagerTotal > BUDGET_BYTES) {
-  console.error(`\nFAIL: initial route is ${kb(eagerTotal)} gzipped, over the ${kb(BUDGET_BYTES)} budget.`);
+  console.error(
+    `\nFAIL: initial route is ${kb(eagerTotal)} gzipped, over the ${kb(BUDGET_BYTES)} budget.`,
+  );
   process.exit(1);
 }
 console.log(`\nOK: initial route is within budget (${kb(BUDGET_BYTES - eagerTotal)} to spare).`);

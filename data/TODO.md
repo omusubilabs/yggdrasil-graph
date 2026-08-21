@@ -26,7 +26,7 @@ them as a couple — no marriage, no union, not even a scene. The relation is
 recorded because the parentage implies it, and marked `unverified` because
 implication is not attestation.
 
-*Wanted:* any locus in a registered work that puts Fárbauti and Laufey in a
+_Wanted:_ any locus in a registered work that puts Fárbauti and Laufey in a
 relationship with each other rather than only with their son. It may not exist.
 If a survey of the corpus concludes it does not, the right fix is to delete this
 relation, not to soften it.
@@ -39,7 +39,7 @@ takes the Ash specifically, and Vǫluspá 57's world-fire is not attributed to h
 by name. The relation is recorded because it is the reading nearly every retelling
 assumes, and marked `unverified` because the texts stop short of it.
 
-*Wanted:* a locus that connects Surtr's fire to Yggdrasill directly.
+_Wanted:_ a locus that connects Surtr's fire to Yggdrasill directly.
 
 ---
 
@@ -75,7 +75,7 @@ assumes, and marked `unverified` because the texts stop short of it.
 
 ### Relation vocabulary
 
-- There is no type for *consulting* or *taking counsel*, so Óðinn riding to
+- There is no type for _consulting_ or _taking counsel_, so Óðinn riding to
   Mímir's well at Gylfaginning 51 cannot be recorded. Adding one would also cover
   Óðinn and the Norns, and Gylfaginning 15's account of Mímir's wisdom.
 - `data/relations/transformation.json` is empty. The family is real —

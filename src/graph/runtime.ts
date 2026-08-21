@@ -25,8 +25,7 @@ interface Payload {
   strings: Record<string, string>;
 }
 
-const prefersReducedMotion = () =>
-  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 export async function mount(): Promise<void> {
   const figure = document.querySelector<HTMLElement>('[data-graph-canvas]');
@@ -80,10 +79,12 @@ export async function mount(): Promise<void> {
 
   // ---------------------------------------------------------- selection
 
+  // The <g> is what moves; the <a> inside it is what takes focus.
   const nodeEls = new Map<string, SVGGraphicsElement>();
   svg.querySelectorAll<SVGGraphicsElement>('[data-node]').forEach((el) => {
     nodeEls.set(el.dataset.node!, el);
   });
+  const focusNode = (id: string) => nodeEls.get(id)?.querySelector('a')?.focus();
   const edgeEls = new Map<string, SVGPathElement>();
   svg.querySelectorAll<SVGPathElement>('[data-link]').forEach((el) => {
     edgeEls.set(el.dataset.link!, el);
@@ -121,7 +122,9 @@ export async function mount(): Promise<void> {
 
     if (clearButton) clearButton.hidden = false;
     renderPanel(id);
-    announce(s('graph.selectedAnnounce', { name: node.names.anglicized, count: near.nodes.size - 1 }));
+    announce(
+      s('graph.selectedAnnounce', { name: node.names.anglicized, count: near.nodes.size - 1 }),
+    );
   };
 
   // ----------------------------------------------------------- the panel
@@ -153,7 +156,10 @@ export async function mount(): Promise<void> {
     meta.append(
       el('span', 'panel__badge', s(`type.${node.type}`)),
       document.createTextNode(' '),
-      ...node.classes.flatMap((c) => [el('span', 'panel__badge', s(`class.${c}`)), document.createTextNode(' ')]),
+      ...node.classes.flatMap((c) => [
+        el('span', 'panel__badge', s(`class.${c}`)),
+        document.createTextNode(' '),
+      ]),
     );
     panelBody.append(meta);
 
@@ -171,7 +177,11 @@ export async function mount(): Promise<void> {
       for (const { link, other, outgoing } of views) {
         const item = el('li', `panel__relation${isDeathRelation(link.type) ? ' is-death' : ''}`);
         item.append(
-          el('span', 'panel__relation-label', s(`relation.${link.type}.${outgoing ? 'label' : 'inverse'}`)),
+          el(
+            'span',
+            'panel__relation-label',
+            s(`relation.${link.type}.${outgoing ? 'label' : 'inverse'}`),
+          ),
         );
 
         const link_ = el('a');
@@ -179,7 +189,11 @@ export async function mount(): Promise<void> {
         link_.textContent = other?.names.non ?? '';
         item.append(link_);
 
-        const badge = el('span', `panel__badge is-${link.certainty}`, s(`certainty.${link.certainty}`));
+        const badge = el(
+          'span',
+          `panel__badge is-${link.certainty}`,
+          s(`certainty.${link.certainty}`),
+        );
         badge.title = s(`certainty.${link.certainty}Hint`);
         item.append(document.createTextNode(' '), badge);
 
@@ -212,8 +226,9 @@ export async function mount(): Promise<void> {
   const linkTo = (path: string) => (locale === 'en' ? path : `/${locale}${path}`);
 
   panel?.querySelector<HTMLButtonElement>('[data-panel-close]')?.addEventListener('click', () => {
+    const wasSelected = selected;
     clearSelection();
-    if (selected) nodeEls.get(selected)?.focus();
+    if (wasSelected) focusNode(wasSelected);
   });
   clearButton?.addEventListener('click', clearSelection);
 
@@ -286,7 +301,7 @@ export async function mount(): Promise<void> {
     const next = nearestNeighbour(index, id, direction);
     if (!next) return;
     event.preventDefault();
-    nodeEls.get(next)?.focus();
+    focusNode(next);
     // Moving focus should describe where you have landed without opening
     // anything — that is what Enter is for.
     const node = index.nodeById.get(next);

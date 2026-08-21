@@ -38,11 +38,12 @@ const { locale } = Astro.props;
         document.querySelector('[data-graph-error]')?.removeAttribute('hidden');
       });
 
-  if ('requestIdleCallback' in window) {
-    window.requestIdleCallback(() => void start(), { timeout: 1500 });
-  } else {
-    window.setTimeout(() => void start(), 200);
-  }
+  // Safari has no requestIdleCallback. A short timeout is a fine stand-in:
+  // the point is only to get out of the way of first paint, and first paint
+  // here already contains the whole graph.
+  const whenIdle = window.requestIdleCallback?.bind(window);
+  if (whenIdle) whenIdle(() => void start(), { timeout: 1500 });
+  else setTimeout(() => void start(), 200);
 </script>
 
 <style>

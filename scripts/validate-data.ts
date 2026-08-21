@@ -92,7 +92,10 @@ for (const file of jsonFilesIn(ENTITY_DIR)) {
   runSchema(validateEntityFile, parsed, path);
   for (const entity of parsed) {
     if (entityOrigin.has(entity.id)) {
-      fail(path, `duplicate entity id "${entity.id}" (already defined in ${entityOrigin.get(entity.id)})`);
+      fail(
+        path,
+        `duplicate entity id "${entity.id}" (already defined in ${entityOrigin.get(entity.id)})`,
+      );
       continue;
     }
     entityOrigin.set(entity.id, path);
@@ -107,14 +110,20 @@ for (const file of jsonFilesIn(RELATION_DIR)) {
   const path = join(RELATION_DIR, file);
   const family = basename(file, '.json') as RelationFamily;
   if (!(family in RELATION_FAMILIES)) {
-    fail(path, `unknown relation family "${family}" — expected one of ${Object.keys(RELATION_FAMILIES).join(', ')}`);
+    fail(
+      path,
+      `unknown relation family "${family}" — expected one of ${Object.keys(RELATION_FAMILIES).join(', ')}`,
+    );
     continue;
   }
   const parsed = readJson<Relation[]>(path);
   runSchema(validateRelationFile, parsed, path);
   for (const relation of parsed) {
     if (relationOrigin.has(relation.id)) {
-      fail(path, `duplicate relation id "${relation.id}" (already defined in ${relationOrigin.get(relation.id)})`);
+      fail(
+        path,
+        `duplicate relation id "${relation.id}" (already defined in ${relationOrigin.get(relation.id)})`,
+      );
       continue;
     }
     relationOrigin.set(relation.id, path);
@@ -134,7 +143,11 @@ for (const source of sources) {
   if (source.kind === 'work' && source.partOf && !sourceById.has(source.partOf)) {
     fail(SOURCES_FILE, `"${source.id}" is partOf "${source.partOf}", which is not registered`);
   }
-  if (source.kind === 'work' && source.partOf && sourceById.get(source.partOf)?.kind !== 'collection') {
+  if (
+    source.kind === 'work' &&
+    source.partOf &&
+    sourceById.get(source.partOf)?.kind !== 'collection'
+  ) {
     fail(SOURCES_FILE, `"${source.id}" is partOf "${source.partOf}", which is not a collection`);
   }
 }
@@ -159,7 +172,8 @@ for (const relation of relations) {
   const family = relationFamily.get(relation.id);
 
   // §4.4 — every from/to resolves to an existing entity id.
-  if (!entityIds.has(relation.from)) fail(where, `"from" references unknown entity "${relation.from}"`);
+  if (!entityIds.has(relation.from))
+    fail(where, `"from" references unknown entity "${relation.from}"`);
   if (!entityIds.has(relation.to)) fail(where, `"to" references unknown entity "${relation.to}"`);
 
   // §4.4 — relation ids are derivable from their from/to/type triple.
@@ -178,7 +192,10 @@ for (const relation of relations) {
     : expectedId;
   const previous = seenTriples.get(canonical);
   if (previous) {
-    fail(where, `duplicates "${previous}" — ${SYMMETRIC_TYPES.includes(relation.type) ? 'this type is symmetric, so only one direction may be recorded' : 'the same triple is already defined'}`);
+    fail(
+      where,
+      `duplicates "${previous}" — ${SYMMETRIC_TYPES.includes(relation.type) ? 'this type is symmetric, so only one direction may be recorded' : 'the same triple is already defined'}`,
+    );
   } else {
     seenTriples.set(canonical, relation.id);
   }
@@ -190,7 +207,10 @@ for (const relation of relations) {
       const home = (Object.keys(RELATION_FAMILIES) as RelationFamily[]).find((f) =>
         (RELATION_FAMILIES[f] as readonly RelationType[]).includes(relation.type),
       );
-      fail(where, `type "${relation.type}" does not belong in ${family}.json${home ? ` — move it to ${home}.json` : ''}`);
+      fail(
+        where,
+        `type "${relation.type}" does not belong in ${family}.json${home ? ` — move it to ${home}.json` : ''}`,
+      );
     }
   }
 
@@ -201,7 +221,10 @@ for (const relation of relations) {
   // §4.4 — no empty sources unless unverified; and no sources if unverified.
   if (relation.certainty === 'unverified') {
     if (relation.sources.length > 0) {
-      fail(where, 'certainty is "unverified" but sources are present — if you have a locus, it is not unverified');
+      fail(
+        where,
+        'certainty is "unverified" but sources are present — if you have a locus, it is not unverified',
+      );
     }
   } else if (relation.sources.length === 0) {
     fail(
@@ -215,7 +238,10 @@ for (const relation of relations) {
     if (!source) {
       fail(where, `cites work "${ref.work}", which is not registered in ${SOURCES_FILE}`);
     } else if (source.kind !== 'work') {
-      fail(where, `cites "${ref.work}", which is a collection — cite the individual work so the locus means something`);
+      fail(
+        where,
+        `cites "${ref.work}", which is a collection — cite the individual work so the locus means something`,
+      );
     }
   }
 
@@ -228,8 +254,14 @@ for (const relation of relations) {
     }
   }
 
-  if ((relation.contradicts?.length ?? 0) > 0 && !['variant', 'disputed'].includes(relation.certainty)) {
-    fail(where, `has "contradicts" but certainty is "${relation.certainty}" — only variant and disputed relations record a competing reading`);
+  if (
+    (relation.contradicts?.length ?? 0) > 0 &&
+    !['variant', 'disputed'].includes(relation.certainty)
+  ) {
+    fail(
+      where,
+      `has "contradicts" but certainty is "${relation.certainty}" — only variant and disputed relations record a competing reading`,
+    );
   }
 }
 
@@ -238,7 +270,10 @@ for (const relation of relations) {
   for (const target of relation.contradicts ?? []) {
     const other = relations.find((r) => r.id === target);
     if (other && !(other.contradicts ?? []).includes(relation.id)) {
-      fail(`${relationOrigin.get(relation.id)} → ${relation.id}`, `contradicts "${target}", but "${target}" does not contradict it back — record it on both sides`);
+      fail(
+        `${relationOrigin.get(relation.id)} → ${relation.id}`,
+        `contradicts "${target}", but "${target}" does not contradict it back — record it on both sides`,
+      );
     }
   }
 }

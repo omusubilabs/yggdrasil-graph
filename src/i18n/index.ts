@@ -59,7 +59,11 @@ export const hasKey = (locale: Locale, key: string): boolean => key in tableFor(
  * spot in review and in a screenshot, and it never renders a blank where a
  * sentence should be.
  */
-export const t = (locale: Locale, key: string, params?: Record<string, string | number>): string => {
+export const t = (
+  locale: Locale,
+  key: string,
+  params?: Record<string, string | number>,
+): string => {
   const raw = tableFor(locale)[key] ?? tableFor(DEFAULT_LOCALE)[key] ?? key;
   if (!params) return raw;
   return raw.replace(/\{(\w+)\}/g, (match, name: string) =>

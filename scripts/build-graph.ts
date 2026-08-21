@@ -153,13 +153,22 @@ const simulation = forceSimulation(layoutNodes)
   .randomSource(random)
   .force(
     'link',
-    forceLink<LayoutNode, { source: string | LayoutNode; target: string | LayoutNode; family: RelationFamily }>(layoutLinks)
+    forceLink<
+      LayoutNode,
+      { source: string | LayoutNode; target: string | LayoutNode; family: RelationFamily }
+    >(layoutLinks)
       .id((d) => d.id)
       .distance((l) => LINK_DISTANCE[l.family])
       .strength(0.35),
   )
-  .force('charge', forceManyBody<LayoutNode>().strength((d) => -330 - d.degree * 30))
-  .force('collide', forceCollide<LayoutNode>().radius((d) => radiusOf(d.degree) + 20))
+  .force(
+    'charge',
+    forceManyBody<LayoutNode>().strength((d) => -330 - d.degree * 30),
+  )
+  .force(
+    'collide',
+    forceCollide<LayoutNode>().radius((d) => radiusOf(d.degree) + 20),
+  )
   // The vertical pull is about three times the horizontal one, which spreads the
   // graph into a landscape shape. Browsers are wider than they are tall, and a
   // square layout in a 16:9 viewport wastes half the screen and shrinks every
@@ -215,4 +224,9 @@ console.log(
 console.log(
   `  layout settled in ${TICKS} ticks, bounds ${bounds[0]},${bounds[1]} → ${bounds[2]},${bounds[3]}`,
 );
-console.log(`  most connected: ${ranked.slice(0, 6).map((e) => `${e.id}(${degree.get(e.id)})`).join(', ')}\n`);
+console.log(
+  `  most connected: ${ranked
+    .slice(0, 6)
+    .map((e) => `${e.id}(${degree.get(e.id)})`)
+    .join(', ')}\n`,
+);

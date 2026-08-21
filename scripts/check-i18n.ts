@@ -43,7 +43,8 @@ const loadLocale = (locale: Locale) => {
   for (const file of files) {
     const parsed: unknown = JSON.parse(readFileSync(join(dir, file), 'utf8'));
     for (const [key, value] of flatten(parsed)) {
-      if (merged.has(key)) errors.push(`${locale}: key "${key}" is defined twice, in ${file} and an earlier file`);
+      if (merged.has(key))
+        errors.push(`${locale}: key "${key}" is defined twice, in ${file} and an earlier file`);
       merged.set(key, value);
     }
   }
@@ -52,12 +53,15 @@ const loadLocale = (locale: Locale) => {
 
 const source = loadLocale(DEFAULT_LOCALE);
 if (!source) {
-  console.error(`\n  the source locale "${DEFAULT_LOCALE}" has no files. Nothing to check against.\n`);
+  console.error(
+    `\n  the source locale "${DEFAULT_LOCALE}" has no files. Nothing to check against.\n`,
+  );
   process.exit(1);
 }
 
 // Placeholders must survive translation, or interpolation silently drops data.
-const placeholdersIn = (value: string) => new Set([...value.matchAll(/\{(\w+)\}/g)].map((m) => m[1]!));
+const placeholdersIn = (value: string) =>
+  new Set([...value.matchAll(/\{(\w+)\}/g)].map((m) => m[1]!));
 
 for (const locale of LOCALES) {
   const status = LOCALE_STATUS[locale];
@@ -65,7 +69,9 @@ for (const locale of LOCALES) {
 
   if (status === 'planned') {
     if (loaded) {
-      errors.push(`${locale}: is declared "planned" but has files in ${LOCALES_DIR}/${locale}. Promote it to "partial" in src/i18n/config.ts.`);
+      errors.push(
+        `${locale}: is declared "planned" but has files in ${LOCALES_DIR}/${locale}. Promote it to "partial" in src/i18n/config.ts.`,
+      );
     } else {
       notes.push(`${locale} — planned, no files yet`);
     }
@@ -81,23 +87,31 @@ for (const locale of LOCALES) {
   const extra = [...loaded.keys.keys()].filter((k) => !source.keys.has(k));
 
   for (const key of extra) {
-    errors.push(`${locale}: has key "${key}", which does not exist in "${DEFAULT_LOCALE}". Add it to the source locale first, or remove it.`);
+    errors.push(
+      `${locale}: has key "${key}", which does not exist in "${DEFAULT_LOCALE}". Add it to the source locale first, or remove it.`,
+    );
   }
 
   for (const [key, value] of loaded.keys) {
     if (value.trim() === '') {
-      errors.push(`${locale}: key "${key}" is an empty string. Omit the key instead — the fallback will use "${DEFAULT_LOCALE}".`);
+      errors.push(
+        `${locale}: key "${key}" is an empty string. Omit the key instead — the fallback will use "${DEFAULT_LOCALE}".`,
+      );
     }
     const expected = placeholdersIn(source.keys.get(key) ?? '');
     const actual = placeholdersIn(value);
     for (const name of expected) {
       if (!actual.has(name)) {
-        errors.push(`${locale}: key "${key}" drops the placeholder {${name}} that "${DEFAULT_LOCALE}" defines.`);
+        errors.push(
+          `${locale}: key "${key}" drops the placeholder {${name}} that "${DEFAULT_LOCALE}" defines.`,
+        );
       }
     }
     for (const name of actual) {
       if (!expected.has(name)) {
-        errors.push(`${locale}: key "${key}" introduces the placeholder {${name}}, which "${DEFAULT_LOCALE}" does not provide.`);
+        errors.push(
+          `${locale}: key "${key}" introduces the placeholder {${name}}, which "${DEFAULT_LOCALE}" does not provide.`,
+        );
       }
     }
   }
@@ -115,7 +129,9 @@ for (const locale of LOCALES) {
   const label = locale === DEFAULT_LOCALE ? 'source' : status;
   notes.push(
     `${locale} — ${label}, ${loaded.keys.size}/${source.keys.size} keys (${coverage}%)${
-      missing.length > 0 && status === 'partial' ? `, ${missing.length} falling back to ${DEFAULT_LOCALE}` : ''
+      missing.length > 0 && status === 'partial'
+        ? `, ${missing.length} falling back to ${DEFAULT_LOCALE}`
+        : ''
     }`,
   );
 }
@@ -130,7 +146,9 @@ if (!declared) {
   const inAstro = [...declared.matchAll(/'([a-z-]+)'/g)].map((m) => m[1]!);
   const inConfig = [...LOCALES];
   if (inAstro.join(',') !== inConfig.join(',')) {
-    errors.push(`astro.config.mjs declares locales [${inAstro.join(', ')}] but src/i18n/config.ts declares [${inConfig.join(', ')}]. They must match exactly, in the same order.`);
+    errors.push(
+      `astro.config.mjs declares locales [${inAstro.join(', ')}] but src/i18n/config.ts declares [${inConfig.join(', ')}]. They must match exactly, in the same order.`,
+    );
   }
 }
 

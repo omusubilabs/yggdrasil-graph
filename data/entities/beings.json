@@ -2,152 +2,78 @@
   {
     "id": "fenrir",
     "type": "being",
-    "classes": [
-      "beings"
-    ],
+    "classes": ["beings"],
     "names": {
       "non": "Fenrisúlfr",
       "anglicized": "Fenrir"
     },
-    "attestations": [
-      "poetic-edda",
-      "prose-edda"
-    ],
-    "tags": [
-      "ragnarok-participant",
-      "ragnarok-slayer",
-      "ragnarok-slain",
-      "loki-kin",
-      "wolf",
-      "bound"
-    ]
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["ragnarok-participant", "ragnarok-slayer", "ragnarok-slain", "loki-kin", "wolf", "bound"]
   },
   {
     "id": "jormungandr",
     "type": "being",
-    "classes": [
-      "beings"
-    ],
+    "classes": ["beings"],
     "names": {
       "non": "Jǫrmungandr",
       "anglicized": "Jormungandr"
     },
-    "attestations": [
-      "poetic-edda",
-      "prose-edda"
-    ],
-    "tags": [
-      "ragnarok-participant",
-      "ragnarok-slayer",
-      "ragnarok-slain",
-      "loki-kin",
-      "serpent",
-      "sea"
-    ]
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["ragnarok-participant", "ragnarok-slayer", "ragnarok-slain", "loki-kin", "serpent", "sea"]
   },
   {
     "id": "hel",
     "type": "being",
-    "classes": [
-      "beings"
-    ],
+    "classes": ["beings"],
     "names": {
       "non": "Hel",
       "anglicized": "Hel"
     },
-    "attestations": [
-      "poetic-edda",
-      "prose-edda"
-    ],
-    "tags": [
-      "ragnarok-participant",
-      "loki-kin",
-      "underworld"
-    ]
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["ragnarok-participant", "loki-kin", "underworld"]
   },
   {
     "id": "garm",
     "type": "being",
-    "classes": [
-      "beings"
-    ],
+    "classes": ["beings"],
     "names": {
       "non": "Garmr",
       "anglicized": "Garm"
     },
-    "attestations": [
-      "poetic-edda",
-      "prose-edda"
-    ],
-    "tags": [
-      "ragnarok-participant",
-      "ragnarok-slayer",
-      "ragnarok-slain",
-      "wolf",
-      "bound",
-      "underworld",
-      "contested"
-    ]
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["ragnarok-participant", "ragnarok-slayer", "ragnarok-slain", "wolf", "bound", "underworld", "contested"]
   },
   {
     "id": "skoll",
     "type": "being",
-    "classes": [
-      "beings"
-    ],
+    "classes": ["beings"],
     "names": {
       "non": "Skǫll",
       "anglicized": "Skoll"
     },
-    "attestations": [
-      "poetic-edda",
-      "prose-edda"
-    ],
-    "tags": [
-      "ragnarok-participant",
-      "wolf",
-      "disputed-parentage"
-    ]
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["ragnarok-participant", "wolf", "disputed-parentage"]
   },
   {
     "id": "hati",
     "type": "being",
-    "classes": [
-      "beings"
-    ],
+    "classes": ["beings"],
     "names": {
       "non": "Hati Hróðvitnisson",
       "anglicized": "Hati"
     },
-    "attestations": [
-      "poetic-edda",
-      "prose-edda"
-    ],
-    "tags": [
-      "ragnarok-participant",
-      "wolf",
-      "disputed-parentage"
-    ]
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["ragnarok-participant", "wolf", "disputed-parentage"]
   },
   {
     "id": "mimir",
     "type": "being",
-    "classes": [
-      "beings"
-    ],
+    "classes": ["beings"],
     "names": {
       "non": "Mímir",
       "anglicized": "Mimir"
     },
-    "attestations": [
-      "poetic-edda",
-      "prose-edda"
-    ],
-    "tags": [
-      "wisdom",
-      "contested",
-      "ragnarok-participant",
-      "world-tree"
-    ]
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["wisdom", "contested", "ragnarok-participant", "world-tree"]
   }
 ]

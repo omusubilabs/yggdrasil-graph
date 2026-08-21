@@ -151,7 +151,10 @@ const stripBlocks = (source: string) =>
     .replace(/<!--[\s\S]*?-->/g, (m) => ' '.repeat(m.length));
 
 const scanAttributes = (source: string, file: string, lines: string[], offset = 0) => {
-  const attrPattern = new RegExp(`\\b(${PERCEIVABLE_ATTRS.join('|')})\\s*=\\s*("([^"]*)"|'([^']*)')`, 'g');
+  const attrPattern = new RegExp(
+    `\\b(${PERCEIVABLE_ATTRS.join('|')})\\s*=\\s*("([^"]*)"|'([^']*)')`,
+    'g',
+  );
   for (const match of source.matchAll(attrPattern)) {
     const value = match[3] ?? match[4] ?? '';
     if (!LOOKS_LIKE_PROSE.test(value)) continue;
@@ -167,22 +170,36 @@ const scanAttributes = (source: string, file: string, lines: string[], offset = 
 };
 
 const scanScript = (source: string, file: string, lines: string[]) => {
-  const assignment = /\.(textContent|innerText|innerHTML|title|ariaLabel)\s*=\s*(["'`])((?:(?!\2)[\s\S])*)\2/g;
+  const assignment =
+    /\.(textContent|innerText|innerHTML|title|ariaLabel)\s*=\s*(["'`])((?:(?!\2)[\s\S])*)\2/g;
   for (const match of source.matchAll(assignment)) {
     const value = match[3] ?? '';
     if (!LOOKS_LIKE_PROSE.test(value) || value.includes('${')) continue;
     const line = lineOf(source, match.index);
     if (isIgnored(lines, line)) continue;
-    findings.push({ file, line, text: `.${match[1]} = ${match[2]}${value.slice(0, 60)}…`, why: 'assigned to a perceivable DOM property' });
+    findings.push({
+      file,
+      line,
+      text: `.${match[1]} = ${match[2]}${value.slice(0, 60)}…`,
+      why: 'assigned to a perceivable DOM property',
+    });
   }
 
-  const setAttr = new RegExp(`setAttribute\\(\\s*["'\`](${PERCEIVABLE_ATTRS.join('|')})["'\`]\\s*,\\s*(["'\`])((?:(?!\\2)[\\s\\S])*)\\2`, 'g');
+  const setAttr = new RegExp(
+    `setAttribute\\(\\s*["'\`](${PERCEIVABLE_ATTRS.join('|')})["'\`]\\s*,\\s*(["'\`])((?:(?!\\2)[\\s\\S])*)\\2`,
+    'g',
+  );
   for (const match of source.matchAll(setAttr)) {
     const value = match[3] ?? '';
     if (!LOOKS_LIKE_PROSE.test(value) || value.includes('${')) continue;
     const line = lineOf(source, match.index);
     if (isIgnored(lines, line)) continue;
-    findings.push({ file, line, text: `setAttribute('${match[1]}', '${value.slice(0, 50)}')`, why: 'perceivable attribute set from a literal' });
+    findings.push({
+      file,
+      line,
+      text: `setAttribute('${match[1]}', '${value.slice(0, 50)}')`,
+      why: 'perceivable attribute set from a literal',
+    });
   }
 };
 
@@ -218,7 +235,9 @@ if (findings.length === 0) {
   process.exit(0);
 }
 
-console.error(`  ${findings.length} hardcoded user-facing string${findings.length === 1 ? '' : 's'}:\n`);
+console.error(
+  `  ${findings.length} hardcoded user-facing string${findings.length === 1 ? '' : 's'}:\n`,
+);
 for (const f of findings) {
   console.error(`    ✗ ${f.file}:${f.line}`);
   console.error(`        ${f.text}`);

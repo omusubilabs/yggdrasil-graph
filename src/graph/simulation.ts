@@ -59,7 +59,11 @@ export interface AnimateOptions {
   edgeEls: Map<string, SVGPathElement>;
 }
 
-export function animate({ index, nodeEls, edgeEls }: AnimateOptions): Simulation<SimNode, undefined> {
+export function animate({
+  index,
+  nodeEls,
+  edgeEls,
+}: AnimateOptions): Simulation<SimNode, undefined> {
   const nodes: SimNode[] = index.data.nodes.map((n) => ({
     id: n.id,
     degree: n.degree,
@@ -87,8 +91,14 @@ export function animate({ index, nodeEls, edgeEls }: AnimateOptions): Simulation
         .distance((l) => LINK_DISTANCE[l.family])
         .strength(0.35),
     )
-    .force('charge', forceManyBody<SimNode>().strength((d) => -330 - d.degree * 30))
-    .force('collide', forceCollide<SimNode>().radius((d) => nodeRadius(d.degree) + 20))
+    .force(
+      'charge',
+      forceManyBody<SimNode>().strength((d) => -330 - d.degree * 30),
+    )
+    .force(
+      'collide',
+      forceCollide<SimNode>().radius((d) => nodeRadius(d.degree) + 20),
+    )
     .force('x', forceX(0).strength(0.026))
     .force('y', forceY(0).strength(0.085))
     // Start almost cold. The layout is already correct; this is a settle, not a
@@ -101,7 +111,9 @@ export function animate({ index, nodeEls, edgeEls }: AnimateOptions): Simulation
 
   function paint() {
     for (const node of nodes) {
-      nodeEls.get(node.id)?.setAttribute('transform', `translate(${round(node.x)},${round(node.y)})`);
+      nodeEls
+        .get(node.id)
+        ?.setAttribute('transform', `translate(${round(node.x)},${round(node.y)})`);
     }
     for (const link of links) {
       const element = edgeEls.get(link.id);
@@ -110,9 +122,7 @@ export function animate({ index, nodeEls, edgeEls }: AnimateOptions): Simulation
       const to = link.target as SimNode;
       const [x1, y1] = [from.x ?? 0, from.y ?? 0];
       const [tx, ty] = [to.x ?? 0, to.y ?? 0];
-      const [x2, y2] = link.directed
-        ? trimToRim(x1, y1, tx, ty, nodeRadius(to.degree))
-        : [tx, ty];
+      const [x2, y2] = link.directed ? trimToRim(x1, y1, tx, ty, nodeRadius(to.degree)) : [tx, ty];
       element.setAttribute('d', edgePath(x1, y1, x2, y2, link.curve));
     }
   }

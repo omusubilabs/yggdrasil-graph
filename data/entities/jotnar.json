@@ -5,7 +5,16 @@
     "classes": ["aesir", "jotnar"],
     "names": { "non": "Loki", "anglicized": "Loki" },
     "attestations": ["poetic-edda", "prose-edda"],
-    "tags": ["ragnarok-participant", "ragnarok-slain", "ragnarok-slayer", "shapeshifter", "loki-kin", "contested", "giant-descent", "bound"]
+    "tags": [
+      "ragnarok-participant",
+      "ragnarok-slain",
+      "ragnarok-slayer",
+      "shapeshifter",
+      "loki-kin",
+      "contested",
+      "giant-descent",
+      "bound"
+    ]
   },
   {
     "id": "surtr",

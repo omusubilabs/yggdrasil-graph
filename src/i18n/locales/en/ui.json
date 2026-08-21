@@ -6,6 +6,7 @@
     "skipToContent": "Skip to the graph"
   },
   "nav": {
+    "label": "Site",
     "home": "Graph",
     "sources": "Sources",
     "language": "Language",
@@ -21,6 +22,7 @@
     "loading": "Waking the graph",
     "ready": "Graph ready",
     "reset": "Reset view",
+    "zoomControls": "Zoom and recentre",
     "zoomIn": "Zoom in",
     "zoomOut": "Zoom out",
     "recentre": "Recentre",

@@ -130,26 +130,42 @@ const edges = data.links.flatMap((link) => {
       <g class="nodes">
         {
           data.nodes.map((node) => (
-            <a
+            /*
+             * The <g> carries the position and the id; the <a> inside carries
+             * the link and the focus. Splitting them lets the simulation move a
+             * node by writing one transform, while keeping the thing a keyboard
+             * lands on a real anchor with a real href.
+             */
+            <g
               class={nodeClassNames(node)}
-              href={localePath(locale, `/entity/${node.id}`)}
               data-node={node.id}
               data-rank={node.coreRank}
               data-degree={node.degree}
               transform={`translate(${node.x},${node.y})`}
-              aria-label={t('a11y.nodeRole', {
-                name: node.names.anglicized,
-                type: t(`type.${node.type}`),
-                count: node.degree,
-              })}
             >
-              <path class="node__halo" d={nodeShapePath(node.type, nodeRadius(node.degree) + 5)} />
-              <path class="node__shape" d={nodeShapePath(node.type, nodeRadius(node.degree))} />
-              {/* i18n-ignore: the Old Norse form is data from data/entities/, identical in every locale */}
-              <text class="node__label" y={labelOffset(node.degree)} font-size={labelSize(node.coreRank)}>
-                {node.names.non}
-              </text>
-            </a>
+              <a
+                href={localePath(locale, `/entity/${node.id}`)}
+                aria-label={t('a11y.nodeRole', {
+                  name: node.names.anglicized,
+                  type: t(`type.${node.type}`),
+                  count: node.degree,
+                })}
+              >
+                <path
+                  class="node__halo"
+                  d={nodeShapePath(node.type, nodeRadius(node.degree) + 5)}
+                />
+                <path class="node__shape" d={nodeShapePath(node.type, nodeRadius(node.degree))} />
+                {/* i18n-ignore: the Old Norse form is data from data/entities/, identical in every locale */}
+                <text
+                  class="node__label"
+                  y={labelOffset(node.degree)}
+                  font-size={labelSize(node.coreRank)}
+                >
+                  {node.names.non}
+                </text>
+              </a>
+            </g>
           ))
         }
       </g>
@@ -344,7 +360,7 @@ const edges = data.links.flatMap((link) => {
     stroke-width: 2.5;
   }
 
-  .node:focus-visible .node__halo {
+  .node a:focus-visible .node__halo {
     stroke: var(--verdigris);
   }
 
@@ -397,12 +413,12 @@ const edges = data.links.flatMap((link) => {
   }
 
   .node:hover .node__shape,
-  .node:focus-visible .node__shape {
+  .node a:focus-visible .node__shape {
     stroke-width: 2.5;
   }
 
   .node:hover .node__label,
-  .node:focus-visible .node__label {
+  .node a:focus-visible .node__label {
     fill: var(--verdigris-deep);
   }
 

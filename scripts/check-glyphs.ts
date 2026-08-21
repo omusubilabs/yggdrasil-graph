@@ -104,10 +104,15 @@ const checkFace = async (spec: FaceSpec, required: string[]) => {
 
     for (const subset of spec.subsets) {
       // Prefer .woff2 (what ships) and fall back to .woff (same cmap).
-      const candidates = [`${spec.slug}-${subset}-${face}.woff2`, `${spec.slug}-${subset}-${face}.woff`];
+      const candidates = [
+        `${spec.slug}-${subset}-${face}.woff2`,
+        `${spec.slug}-${subset}-${face}.woff`,
+      ];
       const file = candidates.find((f) => available.includes(f));
       if (!file) {
-        errors.push(`${spec.label}: no file for subset "${subset}" at weight/style "${face}". Expected one of ${candidates.join(' or ')} in ${dir}.`);
+        errors.push(
+          `${spec.label}: no file for subset "${subset}" at weight/style "${face}". Expected one of ${candidates.join(' or ')} in ${dir}.`,
+        );
         continue;
       }
       const chars = await openFont(join(dir, file));
@@ -146,10 +151,14 @@ for (const spec of MANIFEST) await checkFace(spec, REQUIRED);
     }
     const missing = JAPANESE.required.filter((ch) => !covered.has(ch.codePointAt(0)!));
     if (slices.length === 0) {
-      errors.push(`${JAPANESE.label}: no slice files matched ${JAPANESE.filePattern}. The package layout has changed.`);
+      errors.push(
+        `${JAPANESE.label}: no slice files matched ${JAPANESE.filePattern}. The package layout has changed.`,
+      );
     }
     if (missing.length > 0) {
-      errors.push(`${JAPANESE.label}: cannot draw ${missing.join(' ')} across its ${slices.length} slices.`);
+      errors.push(
+        `${JAPANESE.label}: cannot draw ${missing.join(' ')} across its ${slices.length} slices.`,
+      );
     }
     rows.push(
       `  ${missing.length === 0 && slices.length > 0 ? '✓' : '✗'} ${JAPANESE.label.padEnd(38)} ${'wght'.padEnd(12)} ${String(covered.size).padStart(5)} codepoints  [${slices.length} slices]`,
@@ -159,7 +168,7 @@ for (const spec of MANIFEST) await checkFace(spec, REQUIRED);
 
 const walk = (dir: string): string[] => {
   let out: string[] = [];
-  let entries: string[] = [];
+  let entries: string[];
   try {
     entries = readdirSync(dir);
   } catch {
@@ -183,12 +192,16 @@ for (const file of walk('src')) {
 }
 for (const pkg of imported) {
   if (!declared.has(pkg)) {
-    errors.push(`${pkg} is imported somewhere in src/ but is not in this script's MANIFEST, so its glyph coverage is unchecked. Add it.`);
+    errors.push(
+      `${pkg} is imported somewhere in src/ but is not in this script's MANIFEST, so its glyph coverage is unchecked. Add it.`,
+    );
   }
 }
 for (const pkg of declared) {
   if (imported.size > 0 && !imported.has(pkg)) {
-    errors.push(`${pkg} is in the MANIFEST but nothing in src/ imports it. Remove it from the manifest or from package.json.`);
+    errors.push(
+      `${pkg} is in the MANIFEST but nothing in src/ imports it. Remove it from the manifest or from package.json.`,
+    );
   }
 }
 

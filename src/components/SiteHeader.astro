@@ -17,7 +17,7 @@ const t = useTranslations(locale);
     <span class="wordmark__name">{t('site.title')}</span>
     <span class="wordmark__tagline">{t('site.tagline')}</span>
   </a>
-  <nav class="nav" aria-label={t('nav.home')}>
+  <nav class="nav" aria-label={t('nav.label')}>
     <a href={localePath(locale, '/sources')}>{t('nav.sources')}</a>
     <LanguagePicker locale={locale} route={route} />
   </nav>

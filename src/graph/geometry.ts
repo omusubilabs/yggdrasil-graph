@@ -33,13 +33,7 @@ export const labelOffset = (degree: number): number => nodeRadius(degree) + 11;
  * The `d` of an edge. `curve` is the signed fan offset baked in at build time;
  * zero draws a straight line.
  */
-export const edgePath = (
-  x1: number,
-  y1: number,
-  x2: number,
-  y2: number,
-  curve: number,
-): string => {
+export const edgePath = (x1: number, y1: number, x2: number, y2: number, curve: number): string => {
   if (curve === 0) return `M${round(x1)},${round(y1)}L${round(x2)},${round(y2)}`;
   const dx = x2 - x1;
   const dy = y2 - y1;
@@ -100,7 +94,8 @@ export const nodeShapePath = (type: GraphNode['type'], r: number): string => {
 };
 
 /** Label size in viewBox units. The best-connected figures are named larger. */
-export const labelSize = (coreRank: number): number => (coreRank < 8 ? 14 : coreRank < 20 ? 12 : 10.5);
+export const labelSize = (coreRank: number): number =>
+  coreRank < 8 ? 14 : coreRank < 20 ? 12 : 10.5;
 
 /** Class list for a node, so CSS carries colour and shape rather than inline style. */
 export const nodeClassNames = (node: GraphNode): string =>
