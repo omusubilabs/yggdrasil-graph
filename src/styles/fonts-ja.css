@@ -1,0 +1,21 @@
+/*
+ * Japanese faces, imported only by the /ja/ layout.
+ *
+ * Noto Sans JP's Japanese subset is roughly 6,900 codepoints and several
+ * hundred kilobytes; it must never reach a reader who is not on a Japanese
+ * route. Keeping it in a separate stylesheet that only the `ja` layout imports
+ * is what enforces that — the bundler cannot include what nothing references.
+ */
+@import '@fontsource/noto-sans-jp/japanese-400.css';
+@import '@fontsource/noto-sans-jp/japanese-700.css';
+
+:root:lang(ja),
+[lang='ja'] {
+  /*
+   * Japanese sits in front of the Latin faces for chrome, and behind Alegreya
+   * for display, so Old Norse names keep their serif and their diacritics while
+   * the surrounding Japanese renders in Noto.
+   */
+  --font-ui: 'Noto Sans JP', 'Inter Variable', 'Inter', system-ui, sans-serif;
+  --font-display: 'Alegreya', 'Noto Serif JP', 'Noto Sans JP', Georgia, serif;
+}

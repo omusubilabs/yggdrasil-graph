@@ -1,0 +1,34 @@
+/*
+ * Self-hosted faces. Every byte is served from this origin.
+ *
+ * No Google Fonts link, no third-party font CDN, no runtime request to any
+ * host but our own. The operating entity is EU-incorporated, and a font fetch
+ * hands the reader's IP address to whoever serves it; that is a GDPR exposure
+ * taken for a convenience we do not need.
+ *
+ * Subsets are imported individually rather than pulling each family's index,
+ * so the stylesheet only declares the ranges this site can actually produce.
+ * Latin-1 Supplement (þ ð æ ø) is in `latin`; Latin Extended-B (ǫ ę ǿ) is in
+ * `latin-ext`. Both are required — see scripts/check-glyphs.ts, which reads the
+ * shipped binaries and fails the build if any face cannot draw them.
+ */
+
+/* Display and entity names. */
+@import '@fontsource/alegreya/latin-400.css';
+@import '@fontsource/alegreya/latin-ext-400.css';
+@import '@fontsource/alegreya/latin-400-italic.css';
+@import '@fontsource/alegreya/latin-ext-400-italic.css';
+@import '@fontsource/alegreya/latin-500.css';
+@import '@fontsource/alegreya/latin-ext-500.css';
+@import '@fontsource/alegreya/latin-700.css';
+@import '@fontsource/alegreya/latin-ext-700.css';
+
+/* Interface chrome. Variable, so one file covers every weight we use. */
+@import '@fontsource-variable/inter/wght.css';
+@import '@fontsource-variable/inter/wght-italic.css';
+
+/* Ids, loci and citations. Apparatus should look like apparatus. */
+@import '@fontsource/source-code-pro/latin-400.css';
+@import '@fontsource/source-code-pro/latin-ext-400.css';
+@import '@fontsource/source-code-pro/latin-600.css';
+@import '@fontsource/source-code-pro/latin-ext-600.css';

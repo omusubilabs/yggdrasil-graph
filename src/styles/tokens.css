@@ -1,0 +1,186 @@
+/*
+ * Design tokens.
+ *
+ * The direction is Icelandic manuscript vellum, not the default
+ * graph-visualisation look. No dark ground, no glowing nodes, no neon edges —
+ * that register belongs to network-monitoring dashboards and it is what every
+ * graph demo on the internet already looks like.
+ *
+ * The page commits to a single light appearance on purpose. There is no dark
+ * variant, and `color-scheme: light` is declared so the browser's own chrome
+ * agrees. A "dark vellum" is a contradiction, and the nearest honest dark
+ * palette is precisely the look this project is avoiding.
+ */
+
+:root {
+  color-scheme: light;
+
+  /* ---------------------------------------------------------- ground and ink
+   *
+   * Vellum reads greyish-tan rather than warm cream: it is skin, not paper.
+   * Iron-gall ink oxidises to brown-black and never sits at pure #000, so the
+   * primary text colour carries a little red and yellow in it.
+   */
+  --vellum: #e6e0d2;
+  --vellum-deep: #d6cebc; /* panels, wells, anything set into the page */
+  --vellum-pale: #efeade; /* the one surface that lifts off the ground */
+  --ink: #211c16; /* primary text, node strokes */
+  --ink-faded: #6c6153; /* secondary text, inactive edges */
+
+  /* Hairlines and washes, derived from ink and the accents rather than picked
+   * separately, so nothing drifts out of the family. */
+  --rule: color-mix(in srgb, var(--ink) 16%, transparent);
+  --rule-strong: color-mix(in srgb, var(--ink) 30%, transparent);
+
+  /* --------------------------------------------------------------- accents
+   *
+   * Verdigris is copper acetate — a real medieval pigment, made by hanging
+   * copper over vinegar. It is the interface accent: selection, focus, controls.
+   *
+   * Minium is red lead, the pigment that gives us the word "miniature". It is
+   * RESERVED. It marks the Ragnarǫk overlay and death relations, and nothing
+   * else. If it appears as decoration anywhere in this codebase, that is a bug,
+   * not a style choice — the whole point is that a reader learns in one glance
+   * that red means an ending.
+   */
+  --verdigris: #2e6e5e;
+  --verdigris-deep: #1f4f43;
+  --verdigris-wash: color-mix(in srgb, var(--verdigris) 12%, transparent);
+
+  --minium: #a93a24;
+  --minium-wash: color-mix(in srgb, var(--minium) 12%, transparent);
+
+  /* ------------------------------------------------------------ class hues
+   *
+   * Derived from the same pigment logic as the ground, so the palette reads as
+   * one manuscript rather than a legend bolted onto it. Each is a colour a
+   * scribe could actually have ground:
+   *
+   *   Æsir       lapis / ultramarine — the costliest pigment on the desk,
+   *              reserved in real manuscripts for the most important figures.
+   *   Vanir      terre verte, green earth — fertility gods get the earth colour.
+   *   Jǫtnar     raw umber — unrefined earth, the oldest and cheapest thing here.
+   *   Beings     madder lake — a dark rose-maroon. Deliberately far from minium
+   *              in hue so monsters never get mistaken for death itself.
+   *   Worlds     indigo — a dye rather than a mineral, cool and recessive, so
+   *              places sit behind the people standing on them.
+   *   Artifacts  orpiment — arsenic yellow, the closest a scribe got to gold
+   *              without gold. Treasure is the one thing allowed to glint.
+   *
+   * All six are dark enough to clear 4.5:1 against --vellum as text, and all
+   * six are distinguishable from each other without relying on hue alone —
+   * node shape carries `type` in parallel.
+   */
+  --class-aesir: #33507d;
+  --class-vanir: #4f6440;
+  --class-jotnar: #6e4b33;
+  --class-beings: #77334a;
+  --class-worlds: #3e4e58;
+  --class-artifacts: #8a6a1c;
+
+  /* ----------------------------------------------------------- typography
+   *
+   * A humanist serif with real irregularity for display and entity names; a
+   * quiet sans for chrome; a mono for ids, loci and citations, because those
+   * are apparatus and should look like apparatus.
+   *
+   * Every family here was checked against the Old Norse orthography by
+   * `npm run check:glyphs`, which reads the shipped binaries' character maps.
+   * IBM Plex Mono was the first choice for the apparatus face and failed that
+   * check — no ǫ, no Ǫ — which would have put tofu in the middle of Vǫluspá.
+   */
+  --font-display: 'Alegreya', 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+  --font-ui: 'Inter Variable', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Source Code Pro', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  /* Modular scale, ratio 1.2 (minor third), anchored at 1rem. */
+  --text-xs: 0.694rem;
+  --text-sm: 0.833rem;
+  --text-base: 1rem;
+  --text-md: 1.2rem;
+  --text-lg: 1.44rem;
+  --text-xl: 1.728rem;
+  --text-2xl: 2.074rem;
+  --text-3xl: 2.488rem;
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-normal: 1.6;
+  --leading-loose: 1.75;
+
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.06em;
+  --tracking-caps: 0.12em;
+
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+
+  /* Prose should not run wider than the eye can track back. */
+  --measure: 34rem;
+  --measure-wide: 46rem;
+
+  /* --------------------------------------------------------------- space */
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.25rem;
+  --space-2xl: 3.5rem;
+  --space-3xl: 5.5rem;
+
+  /* Manuscripts have no rounded rectangles. These are almost square by intent. */
+  --radius-sm: 2px;
+  --radius-md: 3px;
+
+  /* ------------------------------------------------------------- motion
+   *
+   * The load sequence and the Ragnarǫk overlay are orchestrated. Everything
+   * else is a hover state. These tokens exist so that stays true: there is no
+   * token for a long decorative transition, because nothing else should have one.
+   */
+  --motion-fast: 120ms;
+  --motion-base: 240ms;
+  --motion-entrance: 640ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* --------------------------------------------------------------- layers */
+  --layer-graph: 1;
+  --layer-controls: 10;
+  --layer-panel: 20;
+  --layer-skip-link: 100;
+
+  /* --------------------------------------------------- graph-specific sizes */
+  --node-stroke: 1.25px;
+  --edge-width: 1px;
+  --edge-width-strong: 1.75px;
+  --focus-ring: 2px;
+  --focus-offset: 2px;
+}
+
+/*
+ * Certainty is a first-class feature of the dataset, so it gets first-class
+ * tokens. The renderer must distinguish these five values visually, and it must
+ * do it with more than colour: dash pattern and opacity carry the same
+ * information for anyone who cannot separate the hues.
+ */
+:root {
+  --certainty-attested-dash: none;
+  --certainty-attested-opacity: 0.85;
+
+  --certainty-implied-dash: 5 3;
+  --certainty-implied-opacity: 0.7;
+
+  --certainty-variant-dash: 2 3;
+  --certainty-variant-opacity: 0.6;
+
+  --certainty-disputed-dash: 7 3 2 3;
+  --certainty-disputed-opacity: 0.6;
+
+  --certainty-unverified-dash: 1 4;
+  --certainty-unverified-opacity: 0.45;
+}
