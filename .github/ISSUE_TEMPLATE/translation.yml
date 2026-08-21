@@ -1,0 +1,56 @@
+name: Translation
+description: Add or correct a locale.
+title: 'i18n(<locale>): <summary>'
+labels: ['i18n']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        `en` is the source of truth for key structure. Translations add values for existing
+        keys; they never add keys of their own. `npm run i18n:check` enforces this.
+
+        Old Norse names in `names.non` are **data, not translations** — they are identical in
+        every locale and are never localized.
+
+  - type: dropdown
+    id: locale
+    attributes:
+      label: Locale
+      options:
+        - is — Icelandic
+        - nb — Norwegian Bokmål
+        - sv — Swedish
+        - da — Danish
+        - fi — Finnish
+        - ja — Japanese
+        - other (say which in the description)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Which files?
+      multiple: true
+      options:
+        - ui.json — interface chrome
+        - entities.json — entity names, epithets, descriptions
+        - relations.json — relation type labels
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What you intend to translate, and anything about the language that affects the plumbing (script, line breaking, font coverage).
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: licence
+    attributes:
+      label: Licence
+      options:
+        - label: I agree to license this contribution under CC BY-SA 4.0 (data) and MIT (code).
+          required: true

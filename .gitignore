@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+.astro/
+.wrangler/
+
+# generated data — rebuilt from data/ by `npm run data:build`.
+# This is a build artifact: never edit it, never commit it.
+src/generated/
+
+# environment / secrets
+.env
+.env.*
+!.env.example
+.dev.vars
+
+# editor + OS
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.log
+npm-debug.log*

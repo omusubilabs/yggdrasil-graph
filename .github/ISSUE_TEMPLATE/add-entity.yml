@@ -1,0 +1,93 @@
+name: Add an entity
+description: Propose a god, giant, monster, world, place, artifact or event that is missing from the graph.
+title: 'entity: <name>'
+labels: ['data', 'entity']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Every entity needs at least one relation to be visible in the graph, and every
+        relation needs a citation. If you can, propose both here.
+
+  - type: input
+    id: entity-id
+    attributes:
+      label: Proposed id
+      description: >-
+        Stable, lowercase ASCII, `^[a-z0-9-]+$`. Ids are never localized and never
+        renamed once merged — pick the plainest anglicized form (`jormungandr`, not `jǫrmungandr`).
+      placeholder: hymir
+    validations:
+      required: true
+
+  - type: input
+    id: name-non
+    attributes:
+      label: Old Norse name
+      description: The normalized Old Norse form, with correct diacritics. This is data, not a translation.
+      placeholder: Hymir
+    validations:
+      required: true
+
+  - type: input
+    id: name-anglicized
+    attributes:
+      label: Anglicized name
+      description: The conventional English-language spelling.
+      placeholder: Hymir
+    validations:
+      required: true
+
+  - type: dropdown
+    id: entity-type
+    attributes:
+      label: Type
+      options:
+        - deity
+        - being
+        - world
+        - artifact
+        - place
+        - event
+    validations:
+      required: true
+
+  - type: input
+    id: classes
+    attributes:
+      label: Classes
+      description: Comma-separated. Used for colour and grouping; an entity may hold several.
+      placeholder: jotnar
+    validations:
+      required: true
+
+  - type: textarea
+    id: relations
+    attributes:
+      label: Relations, with citations
+      description: >-
+        One per line, as `from -> to (type)` followed by the source. A relation with no
+        citation can still be proposed, but it will be merged as `certainty: unverified`.
+      placeholder: |
+        hymir -> tyr (parent_of) — Hymiskviða 9 (Bellows 1923)
+        thor -> hymir (visits) — Gylfaginning 48 (Brodeur 1916)
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Variant traditions, conflicting attestations, spelling disagreements.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: licence
+    attributes:
+      label: Licence
+      options:
+        - label: >-
+            I confirm this contribution contains no text copied from a modern copyrighted
+            translation, and I agree to license it under CC BY-SA 4.0.
+          required: true

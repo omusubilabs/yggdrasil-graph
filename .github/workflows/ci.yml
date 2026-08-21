@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Typecheck, lint, validate, build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      # Data integrity first: if the dataset is broken, nothing downstream is
+      # meaningful and the failure message is the most useful one to surface.
+      - name: Validate data
+        run: npm run validate
+
+      - name: Build graph
+        run: npm run data:build
+
+      - name: Check locale key parity
+        run: npm run i18n:check
+
+      - name: Check for hardcoded user-facing strings
+        run: npm run check:strings
+
+      - name: Check Old Norse glyph coverage in shipped fonts
+        run: npm run check:glyphs
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Format check
+        run: npm run format:check
+
+      - name: Build
+        run: npm run build
+
+      - name: Report initial-route JS budget
+        run: node scripts/report-bundle-size.mjs

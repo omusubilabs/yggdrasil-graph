@@ -1,0 +1,82 @@
+name: Correct a relation
+description: A relation in the graph is wrong, mis-cited, or missing a variant reading.
+title: 'relation: <from>--<to>--<type>'
+labels: ['data', 'relation']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **A citation is required.** This dataset's only real asset is that every claim in it
+        can be checked against a public-domain edition. A correction without a locus cannot
+        be merged, however obviously true it is — open it anyway and we will find the locus
+        together, but the citation field must be filled in with what you do know.
+
+  - type: input
+    id: relation-id
+    attributes:
+      label: Relation id
+      description: The `<from>--<to>--<type>` id as it appears in `data/relations/`, if it already exists.
+      placeholder: odin--thor--parent_of
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of correction is this?
+      options:
+        - The relation is factually wrong and should be removed
+        - The citation is wrong or points at the wrong locus
+        - The certainty value is wrong
+        - A variant reading is missing
+        - The relation is missing entirely and should be added
+    validations:
+      required: true
+
+  - type: textarea
+    id: citation
+    attributes:
+      label: Citation
+      description: >-
+        Work and locus, e.g. `Gylfaginning 34` or `Völuspá 40`. Name the edition you checked.
+        Use only public-domain editions — Bellows (1923) for the *Poetic Edda*, Brodeur (1916)
+        for the *Prose Edda*. Do not paste text from a modern copyrighted translation.
+      placeholder: |
+        Work: Gylfaginning
+        Locus: 34
+        Edition checked: Brodeur 1916
+        What it says (paraphrase, do not paste a modern translation):
+    validations:
+      required: true
+
+  - type: dropdown
+    id: certainty
+    attributes:
+      label: Proposed certainty
+      description: See CONTRIBUTING.md for what each value means.
+      options:
+        - attested — the source states it directly
+        - implied — the source entails it without stating it
+        - variant — one source says this, another says otherwise
+        - disputed — the sources actively contradict each other
+        - unverified — believed true, no locus confirmed yet
+    validations:
+      required: true
+
+  - type: textarea
+    id: reasoning
+    attributes:
+      label: Reasoning
+      description: Why the current state is wrong and what it should become.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: licence
+    attributes:
+      label: Licence
+      options:
+        - label: >-
+            I confirm this contribution contains no text copied from a modern copyrighted
+            translation, and I agree to license it under CC BY-SA 4.0.
+          required: true

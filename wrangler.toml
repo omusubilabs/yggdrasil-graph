@@ -1,0 +1,20 @@
+# Cloudflare Workers, Static Assets only.
+#
+# There is no `main` entry point on purpose: v1 has no Worker request handler
+# at all, so every request is served straight from the uploaded asset manifest.
+# Adding a `main` here would silently opt the project into a runtime, which the
+# project's constraints forbid. See CLAUDE.md.
+name = "yggdrasil-graph"
+compatibility_date = "2026-08-01"
+
+[assets]
+directory = "./dist"
+# Astro emits a prerendered 404 page; hand it to the client with a real 404.
+not_found_handling = "404-page"
+# `dist/entity/odin/index.html` should answer both `/entity/odin` and
+# `/entity/odin/`. `auto-trailing-slash` is the default and is stated here so
+# the behaviour is explicit rather than inherited.
+html_handling = "auto-trailing-slash"
+
+[observability]
+enabled = true

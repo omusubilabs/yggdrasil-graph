@@ -1,0 +1,50 @@
+name: Bug report
+description: Something in the application is broken.
+title: 'bug: <summary>'
+labels: ['bug']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For data errors — a wrong relation, a bad citation — use **Correct a relation** instead.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open /entity/loki
+        2. Click "Fenrir" in the relations list
+        3. ...
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Browser and OS
+      placeholder: Firefox 140 on Fedora 42
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: accessibility
+    attributes:
+      label: Does this affect accessibility?
+      options:
+        - label: This bug affects keyboard navigation, screen reader output, focus visibility, or reduced-motion behaviour.
+          required: false

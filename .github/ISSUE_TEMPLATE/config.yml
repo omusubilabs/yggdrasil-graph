@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question or discussion
+    url: https://github.com/OWNER/yggdrasil-graph/discussions
+    about: Ask about the data model, the sources, or how to contribute.
