@@ -29,6 +29,13 @@ npm run deploy       # build, then wrangler deploy
 `npm run validate && npm run build` is the minimum before committing a data
 change. CI runs everything above.
 
+## Commit messages
+
+Match the existing history (`git log`): a single-line, imperative subject in
+`type(scope): summary` form (scope optional). If the body adds anything, make
+it short `-` bullets, not prose paragraphs — state what changed, not why at
+essay length. Skip the body entirely when the subject already says it all.
+
 ## Hard constraints
 
 These are not preferences. Breaking one is a bug.
