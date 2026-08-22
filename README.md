@@ -187,9 +187,11 @@ Not built yet:
       giants, the Norns, three artifacts), taking the graph from 49 to 70
       entities — most of them resolving figures the existing prose already
       named but never modelled. The follow-up counsel slice added `consults`
-      and the attested Óðinn→Mímir edge. The graph now has 70 mythological
-      entities plus five form nodes and 111 relations; further tranches carry
-      the figure count toward 300–400.
+      and the attested Óðinn→Mímir edge. The relation-vocabulary tranche then
+      added Vafþrúðnir, Skírnir and Hœnir with source-backed knowledge, service
+      and hostage-exchange edges. The graph now has 73 mythological entities
+      plus five form nodes and 114 relations; further tranches carry the figure
+      count toward 300–400.
 
 ---
 

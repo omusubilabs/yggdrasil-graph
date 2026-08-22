@@ -314,6 +314,21 @@
       "epithet": "Loki's transformed son",
       "summary": "Changed into a wolf by the Æsir and made to tear apart his brother Narfi.",
       "description": "Váli Lokason appears in Snorri's account of Loki's binding as one of two sons taken by the Æsir. They change Váli into the form of a wolf, and in that form he tears Narfi apart before the gods use Narfi's entrails as Loki's bonds. His place in Loki's household belongs to a variant thread in the sources, and the transformation is something done to him, not an act he undertakes himself."
+    },
+    "hoenir": {
+      "epithet": "The hostage who returns",
+      "summary": "Given to the Vanir for Njǫrðr, he survives the fire and takes up prophecy afterward.",
+      "description": "Hœnir is one of the Æsir whom the Vanir take as a hostage in exchange for Njǫrðr, making him part of the peace between the two divine families. Vǫluspá places him much earlier beside Óðinn and Lóðurr at the creation of humankind, where he gives sense to Askr and Embla, and much later among the few gods left after Ragnarǫk, taking up the prophetic wand in the renewed world. The hostage crosses both settlements: the peace after the first war and the life after the last."
+    },
+    "skirnir": {
+      "epithet": "Freyr's messenger",
+      "summary": "He carries Freyr's suit to Gerðr and returns with a wedding date, paid with the sword Freyr later needs.",
+      "description": "Skírnir is Freyr's servant and messenger. Óðinn sends him to the dwarves for Gleipnir, and Njǫrðr sends him to learn why Freyr has stopped eating, sleeping and speaking. Freyr's answer becomes an errand: woo Gerðr on his behalf. Skírnir asks for the horse that can cross flame and the sword that fights by itself, wins Gerðr's promise, and brings back a date nine nights away. The mission succeeds; its price leaves Freyr without that sword when Surtr comes."
+    },
+    "vafthrudnir": {
+      "epithet": "The giant of the wisdom wager",
+      "summary": "He stakes his head against a disguised Óðinn and answers everything except what only Óðinn can know.",
+      "description": "Vafþrúðnir is the giant whose wisdom Frigg says no other giant can equal. Óðinn enters his hall under the name Gagnráðr, and the two test one another with questions about the first world, the nine worlds and the one that follows Ragnarǫk, wagering their heads on the result. Vafþrúðnir answers until Óðinn asks what he whispered into Baldr's ear on the pyre. Only Óðinn can know. The giant recognizes him, admits that Óðinn is wiser, and the poem ends with the wager still hanging over that admission."
     }
   }
 }

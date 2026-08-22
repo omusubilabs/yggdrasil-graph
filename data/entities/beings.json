@@ -185,5 +185,16 @@
     },
     "attestations": ["poetic-edda", "prose-edda"],
     "tags": ["world-tree", "wisdom"]
+  },
+  {
+    "id": "skirnir",
+    "type": "being",
+    "classes": ["beings"],
+    "names": {
+      "non": "Skírnir",
+      "anglicized": "Skirnir"
+    },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["messenger"]
   }
 ]

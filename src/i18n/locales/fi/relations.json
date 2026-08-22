@@ -1,7 +1,8 @@
 {
   "family": {
     "kinship": "Sukulaisuus",
-    "counsel": "Neuvonpito",
+    "counsel": "Viisaus",
+    "social": "Sosiaaliset siteet",
     "conflict": "Konflikti",
     "possession": "Omistus",
     "location": "Paikka",
@@ -42,6 +43,21 @@
       "label": "Kysyy neuvoa",
       "inverse": "Neuvoo",
       "phrase": "{from} kysyy neuvoa {to}:lta"
+    },
+    "wisdom_contest_with": {
+      "label": "Kilpailee viisaudessa",
+      "inverse": "Kilpailee viisaudessa",
+      "phrase": "{from} ja {to} mittaavat viisauttaan toisiaan vastaan"
+    },
+    "serves": {
+      "label": "Palvelee",
+      "inverse": "Palveltavana",
+      "phrase": "{from} palvelee hahmoa {to}"
+    },
+    "hostage_exchanged_for": {
+      "label": "Panttivankina vaihdettu",
+      "inverse": "Panttivankina vaihdettu",
+      "phrase": "{from} ja {to} vaihdettiin panttivankeina"
     },
     "slays": {
       "label": "Surmaa",

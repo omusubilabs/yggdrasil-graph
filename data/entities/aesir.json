@@ -142,5 +142,13 @@
     "names": { "non": "Nanna", "anglicized": "Nanna" },
     "attestations": ["prose-edda"],
     "tags": ["underworld"]
+  },
+  {
+    "id": "hoenir",
+    "type": "deity",
+    "classes": ["aesir"],
+    "names": { "non": "Hœnir", "anglicized": "Hoenir" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["hostage", "ragnarok-survivor"]
   }
 ]

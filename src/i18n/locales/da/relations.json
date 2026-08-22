@@ -1,7 +1,8 @@
 {
   "family": {
     "kinship": "Slægtskab",
-    "counsel": "Råd",
+    "counsel": "Visdom",
+    "social": "Sociale bånd",
     "conflict": "Konflikt",
     "possession": "Ejerskab",
     "location": "Sted",
@@ -42,6 +43,21 @@
       "label": "Rådspørger",
       "inverse": "Rådgiver",
       "phrase": "{from} rådspørger {to}"
+    },
+    "wisdom_contest_with": {
+      "label": "Dyster i visdom med",
+      "inverse": "Dyster i visdom med",
+      "phrase": "{from} og {to} måler deres visdom mod hinanden"
+    },
+    "serves": {
+      "label": "Tjener",
+      "inverse": "Betjent af",
+      "phrase": "{from} tjener {to}"
+    },
+    "hostage_exchanged_for": {
+      "label": "Gidsel udvekslet med",
+      "inverse": "Gidsel udvekslet med",
+      "phrase": "{from} og {to} blev udvekslet som gidsler"
     },
     "slays": {
       "label": "Dræber",

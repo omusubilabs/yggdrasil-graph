@@ -1,0 +1,23 @@
+[
+  {
+    "id": "hoenir--njord--hostage_exchanged_for",
+    "from": "hoenir",
+    "to": "njord",
+    "type": "hostage_exchanged_for",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "23" }]
+  },
+  {
+    "id": "skirnir--freyr--serves",
+    "from": "skirnir",
+    "to": "freyr",
+    "type": "serves",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gylfaginning", "locus": "34" },
+      { "work": "gylfaginning", "locus": "37" }
+    ]
+  }
+]

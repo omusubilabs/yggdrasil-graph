@@ -1,7 +1,8 @@
 {
   "family": {
     "kinship": "Slektskap",
-    "counsel": "Råd",
+    "counsel": "Visdom",
+    "social": "Sosiale bånd",
     "conflict": "Konflikt",
     "possession": "Eierskap",
     "location": "Sted",
@@ -42,6 +43,21 @@
       "label": "Rådspør",
       "inverse": "Gir råd til",
       "phrase": "{from} rådspør {to}"
+    },
+    "wisdom_contest_with": {
+      "label": "Kappes i visdom med",
+      "inverse": "Kappes i visdom med",
+      "phrase": "{from} og {to} måler sin visdom mot hverandre"
+    },
+    "serves": {
+      "label": "Tjener",
+      "inverse": "Tjent av",
+      "phrase": "{from} tjener {to}"
+    },
+    "hostage_exchanged_for": {
+      "label": "Gissel byttet mot",
+      "inverse": "Gissel byttet mot",
+      "phrase": "{from} og {to} ble utvekslet som gisler"
     },
     "slays": {
       "label": "Dreper",

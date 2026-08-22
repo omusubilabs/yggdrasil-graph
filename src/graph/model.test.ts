@@ -68,7 +68,7 @@ describe('neighbourhood', () => {
       [...nodes].sort(),
       ['aide', 'bridge', 'confidant', 'envoy', 'gate', 'mentor', 'shape'].sort(),
     );
-    assert.equal(links.size, 7);
+    assert.equal(links.size, 8);
   });
 
   it('counts a parallel pair as two links but two nodes, not three', () => {
@@ -83,7 +83,35 @@ describe('relationsByFamily', () => {
     const grouped = relationsByFamily(index, 'envoy');
     assert.deepEqual(
       grouped.map(([family]) => family),
-      ['kinship', 'counsel', 'location', 'transformation'],
+      ['kinship', 'counsel', 'social', 'location', 'transformation'],
+    );
+  });
+
+  it('exposes service as outgoing on the servant and incoming on the served figure', () => {
+    const [, servant] = relationsByFamily(index, 'envoy').find(([f]) => f === 'social')!;
+    const [, served] = relationsByFamily(index, 'aide').find(([f]) => f === 'social')!;
+    assert.deepEqual(
+      servant.map((view) => [view.link.type, view.outgoing, view.other?.id]),
+      [['serves', true, 'aide']],
+    );
+    assert.deepEqual(
+      served.map((view) => [view.link.type, view.outgoing, view.other?.id]),
+      [['serves', false, 'envoy']],
+    );
+  });
+
+  it('exposes a symmetric hostage exchange from both endpoints', () => {
+    const [, watcher] = relationsByFamily(index, 'watcher').find(([f]) => f === 'social')!;
+    const [, confidant] = relationsByFamily(index, 'confidant').find(([f]) => f === 'social')!;
+    assert.deepEqual(
+      watcher.map((view) => [view.link.type, view.link.directed, view.other?.id]),
+      [['hostage_exchanged_for', false, 'confidant']],
+    );
+    assert.deepEqual(
+      confidant
+        .filter((view) => view.link.type === 'hostage_exchanged_for')
+        .map((view) => [view.link.type, view.link.directed, view.other?.id]),
+      [['hostage_exchanged_for', false, 'watcher']],
     );
   });
 

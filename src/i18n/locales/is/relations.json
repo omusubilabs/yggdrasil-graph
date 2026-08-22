@@ -1,7 +1,8 @@
 {
   "family": {
     "kinship": "Skyldleiki",
-    "counsel": "Ráð",
+    "counsel": "Viska",
+    "social": "Félagstengsl",
     "conflict": "Átök",
     "possession": "Eign",
     "location": "Staður",
@@ -42,6 +43,21 @@
       "label": "Ráðgast við",
       "inverse": "Veitir ráð",
       "phrase": "{from} ráðgast við {to}"
+    },
+    "wisdom_contest_with": {
+      "label": "Keppir í visku við",
+      "inverse": "Keppir í visku við",
+      "phrase": "{from} og {to} reyna visku sína hvort gegn öðru"
+    },
+    "serves": {
+      "label": "Þjónar",
+      "inverse": "Þjónað af",
+      "phrase": "{from} þjónar {to}"
+    },
+    "hostage_exchanged_for": {
+      "label": "Gísl í skiptum fyrir",
+      "inverse": "Gísl í skiptum fyrir",
+      "phrase": "{from} og {to} voru látin sem gíslar í skiptum"
     },
     "slays": {
       "label": "Drepur",

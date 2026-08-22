@@ -1,7 +1,8 @@
 {
   "family": {
     "kinship": "Släktskap",
-    "counsel": "Råd",
+    "counsel": "Visdom",
+    "social": "Sociala band",
     "conflict": "Konflikt",
     "possession": "Ägande",
     "location": "Plats",
@@ -42,6 +43,21 @@
       "label": "Rådfrågar",
       "inverse": "Ger råd åt",
       "phrase": "{from} rådfrågar {to}"
+    },
+    "wisdom_contest_with": {
+      "label": "Tävlar i visdom med",
+      "inverse": "Tävlar i visdom med",
+      "phrase": "{from} och {to} mäter sin visdom mot varandra"
+    },
+    "serves": {
+      "label": "Tjänar",
+      "inverse": "Betjänad av",
+      "phrase": "{from} tjänar {to}"
+    },
+    "hostage_exchanged_for": {
+      "label": "Gisslan utbytt mot",
+      "inverse": "Gisslan utbytt mot",
+      "phrase": "{from} och {to} utbyttes som gisslan"
     },
     "slays": {
       "label": "Dräper",

@@ -89,6 +89,17 @@
     "locusUnit": "stanza"
   },
   {
+    "id": "vafthrudnismal",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": {
+      "non": "Vafþrúðnismál",
+      "en": "The Ballad of Vafthruthnir"
+    },
+    "date": "mid-10th century",
+    "locusUnit": "stanza"
+  },
+  {
     "id": "thrymskvitha",
     "kind": "work",
     "partOf": "poetic-edda",

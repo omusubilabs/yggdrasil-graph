@@ -124,6 +124,7 @@ for (const ids of Object.values(tagIndex)) ids.sort();
 const LINK_DISTANCE: Record<RelationFamily, number> = {
   kinship: 70,
   counsel: 110,
+  social: 110,
   conflict: 190,
   possession: 60,
   location: 130,

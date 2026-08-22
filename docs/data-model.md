@@ -19,6 +19,7 @@ data/
 ├── relations/         one file per family, each a flat array
 │   ├── kinship.json
 │   ├── counsel.json
+│   ├── social.json
 │   ├── conflict.json
 │   ├── possession.json
 │   ├── location.json
@@ -120,7 +121,8 @@ two things: the Ragnarǫk overlay's selection of combatants, and the
 anything if the vocabulary sprawls, which is why the schema enumerates it.
 
 Adding a tag is fine — add it to the schema enum, add a label under `tag.*` in
-`src/i18n/locales/en/ui.json`, and say in the pull request what it is for.
+every locale currently declared `complete`, and say in the pull request what it
+is for.
 
 ### No prose
 
@@ -166,7 +168,8 @@ reviewing a data pull request gets much harder.
 | Family           | Types                                                                           |
 | ---------------- | ------------------------------------------------------------------------------- |
 | `kinship`        | `parent_of` `sibling_of` `married_to` `consort_of` `blood_brother_of` `fosters` |
-| `counsel`        | `consults`                                                                      |
+| `counsel`        | `consults` `wisdom_contest_with`                                                |
+| `social`         | `serves` `hostage_exchanged_for`                                                |
 | `conflict`       | `slays` `causes_death_of` `maims` `binds` `devours` `destroys`                  |
 | `possession`     | `owns`                                                                          |
 | `location`       | `guards` `dwells_in` `rules` `encircles` `root_reaches` `raised_in`             |
@@ -188,8 +191,9 @@ file and localized family label, a position in `FAMILY_ORDER` in
 ### `directed`
 
 `false` only for the symmetric types — `married_to`, `sibling_of`, `consort_of`,
-`blood_brother_of` — and those may be recorded in **one direction only**. The
-validator rejects both `a--b--married_to` and `b--a--married_to`.
+`blood_brother_of`, `wisdom_contest_with`, `hostage_exchanged_for` — and those
+may be recorded in **one direction only**. The validator rejects both
+`a--b--married_to` and `b--a--married_to`.
 
 Directed relations get an arrowhead, and their edge stops short of the target
 node's rim so the head lands on the boundary rather than under the shape.

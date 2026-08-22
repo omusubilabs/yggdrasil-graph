@@ -314,6 +314,21 @@
       "epithet": "Lokin muutettu poika",
       "summary": "Aasat muuttavat hänet sudeksi ja pakottavat repimään veljensä Narfin kappaleiksi.",
       "description": "Váli Lokason esiintyy Snorrin kertomuksessa Lokin sitomisesta toisena kahdesta pojasta, jotka aasat ottavat kiinni. He muuttavat Válin sudeksi, ja siinä muodossa hän repii Narfin kappaleiksi ennen kuin jumalat käyttävät Narfin sisälmyksiä Lokin siteinä. Hänen paikkansa Lokin perheessä kuuluu lähteiden muunnelmaan, ja muodonmuutos tehdään hänelle eikä ole hänen itse valitsemansa teko."
+    },
+    "hoenir": {
+      "epithet": "Palaava panttivanki",
+      "summary": "Vanirille Njǫrðriin vaihdettuna hän selviää tulesta ja tarttuu sen jälkeen ennustussauvaan.",
+      "description": "Hœnir on yksi aasoista, jonka Vanir ottaa panttivangiksi Njǫrðriin vaihdossa, ja hänestä tulee näin osa kahden jumalsuvun rauhaa. Vǫluspá asettaa hänet paljon aiemmin Óðinnin ja Lóðurrin rinnalle ihmisten luomiseen, jossa hän antaa Askrille ja Emblalle ymmärryksen, ja paljon myöhemmin niiden harvojen jumalten joukkoon, jotka jäävät Ragnarökin jälkeen, ennustussauva kädessään uudistuneessa maailmassa. Panttivanki yhdistää molemmat sovinnot: rauhan ensimmäisen sodan jälkeen ja elämän viimeisen jälkeen."
+    },
+    "skirnir": {
+      "epithet": "Freyrin sanansaattaja",
+      "summary": "Hän vie Freyrin kosinnan Gerðrille ja palaa hääpäivän kanssa, maksuna miekka jota Freyr myöhemmin tarvitsee.",
+      "description": "Skírnir on Freyrin palvelija ja sanansaattaja. Óðinn lähettää hänet kääpiöiden luo hakemaan Gleipnirin, ja Njǫrðr lähettää hänet selvittämään, miksi Freyr on lakannut syömästä, nukkumasta ja puhumasta. Freyrin vastauksesta tulee tehtävä: kosi Gerðriä hänen puolestaan. Skírnir vaatii tulen läpi kulkevan hevosen ja itsestään taistelevan miekan, saa Gerðrin lupauksen ja tuo takaisin yhdeksän yön päässä olevan päivän. Tehtävä onnistuu; maksu jättää Freyrin ilman miekkaa Surtrin tullessa."
+    },
+    "vafthrudnir": {
+      "epithet": "Viisausvedon jättiläinen",
+      "summary": "Hän panee päänsä pantiksi valepukuisen Óðinnin kanssa ja vastaa kaikkeen paitsi siihen, minkä vain Óðinn voi tietää.",
+      "description": "Vafþrúðnir on jättiläinen, jonka viisauden vertaista Frigg ei sano muista jättiläisistä löytyvän. Óðinn astuu hänen saliinsa nimellä Gagnráðr, ja he koettelevat toisiaan kysymyksillä ensimmäisestä maailmasta, yhdeksästä maailmasta ja Ragnarökin jälkeisestä maailmasta, päät panoksena. Vafþrúðnir vastaa, kunnes Óðinn kysyy, mitä hän kuiskasi Baldrin korvaan roviolla. Sen voi tietää vain Óðinn. Jättiläinen tunnistaa hänet, myöntää Óðinnin viisaammaksi, ja runo päättyy vedon yhä varjostaessa tunnustusta."
     }
   }
 }

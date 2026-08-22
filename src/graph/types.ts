@@ -39,7 +39,8 @@ export type Certainty = (typeof CERTAINTIES)[number];
  */
 export const RELATION_FAMILIES = {
   kinship: ['parent_of', 'sibling_of', 'married_to', 'consort_of', 'blood_brother_of', 'fosters'],
-  counsel: ['consults'],
+  counsel: ['consults', 'wisdom_contest_with'],
+  social: ['serves', 'hostage_exchanged_for'],
   conflict: ['slays', 'causes_death_of', 'maims', 'binds', 'devours', 'destroys'],
   possession: ['owns'],
   location: ['guards', 'dwells_in', 'rules', 'encircles', 'root_reaches', 'raised_in'],
@@ -55,6 +56,8 @@ export const SYMMETRIC_TYPES: readonly RelationType[] = [
   'sibling_of',
   'consort_of',
   'blood_brother_of',
+  'wisdom_contest_with',
+  'hostage_exchanged_for',
 ];
 
 export interface Entity {

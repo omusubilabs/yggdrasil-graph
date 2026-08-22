@@ -127,5 +127,13 @@
     "names": { "non": "Þrymr", "anglicized": "Thrym" },
     "attestations": ["poetic-edda"],
     "tags": []
+  },
+  {
+    "id": "vafthrudnir",
+    "type": "being",
+    "classes": ["jotnar"],
+    "names": { "non": "Vafþrúðnir", "anglicized": "Vafthrudnir" },
+    "attestations": ["poetic-edda"],
+    "tags": ["wisdom"]
   }
 ]

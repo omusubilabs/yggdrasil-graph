@@ -1,7 +1,8 @@
 {
   "family": {
     "kinship": "親族",
-    "counsel": "助言",
+    "counsel": "知識",
+    "social": "社会的関係",
     "conflict": "対立",
     "possession": "所有",
     "location": "場所",
@@ -42,6 +43,21 @@
       "label": "助言を求める",
       "inverse": "助言する",
       "phrase": "{from}が{to}に助言を求める"
+    },
+    "wisdom_contest_with": {
+      "label": "知恵比べの相手",
+      "inverse": "知恵比べの相手",
+      "phrase": "{from}と{to}が知恵を競う"
+    },
+    "serves": {
+      "label": "仕える",
+      "inverse": "仕えられる",
+      "phrase": "{from}が{to}に仕える"
+    },
+    "hostage_exchanged_for": {
+      "label": "交換された人質",
+      "inverse": "交換された人質",
+      "phrase": "{from}と{to}が人質として交換された"
     },
     "slays": {
       "label": "殺害",

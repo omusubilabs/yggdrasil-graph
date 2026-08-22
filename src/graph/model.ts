@@ -83,6 +83,7 @@ export const relationsByFamily = (
   const FAMILY_ORDER: RelationFamily[] = [
     'kinship',
     'counsel',
+    'social',
     'conflict',
     'possession',
     'location',

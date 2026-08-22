@@ -7,5 +7,14 @@
     "directed": true,
     "certainty": "attested",
     "sources": [{ "work": "gylfaginning", "locus": "51" }]
+  },
+  {
+    "id": "odin--vafthrudnir--wisdom_contest_with",
+    "from": "odin",
+    "to": "vafthrudnir",
+    "type": "wisdom_contest_with",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "vafthrudnismal", "locus": "9-55" }]
   }
 ]

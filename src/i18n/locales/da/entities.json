@@ -314,6 +314,21 @@
       "epithet": "Lokes forvandlede søn",
       "summary": "Forvandlet til en ulv af aserne og tvunget til at rive sin bror Narfi i stykker.",
       "description": "Váli Lokason optræder i Snorres fortælling om Lokes binding som en af to sønner, aserne tager. De forvandler Váli til en ulv, og i den skikkelse river han Narfi i stykker, før guderne bruger Narfis indvolde som Lokes bånd. Hans plads i Lokes familie tilhører en variant i kilderne, og forvandlingen er noget, der gøres ved ham, ikke en handling han selv vælger."
+    },
+    "hoenir": {
+      "epithet": "Gidslet der vender tilbage",
+      "summary": "Givet til Vanir i bytte for Njǫrðr overlever han ilden og tager siden varselstaven op.",
+      "description": "Hœnir er en af Æsir, som Vanir tager som gidsel i bytte for Njǫrðr, og bliver dermed en del af freden mellem de to gudeslægter. Vǫluspá placerer ham langt tidligere ved siden af Óðinn og Lóðurr ved menneskets skabelse, hvor han giver Askr og Embla forstand, og langt senere blandt de få guder, der er tilbage efter Ragnarök, med varselstaven i den fornyede verden. Gidslet krydser begge forlig: freden efter den første krig og livet efter den sidste."
+    },
+    "skirnir": {
+      "epithet": "Freyrs sendebud",
+      "summary": "Han bærer Freyrs frieri til Gerðr og vender tilbage med en bryllupsdag, betalt med sværdet Freyr senere behøver.",
+      "description": "Skírnir er Freyrs tjener og sendebud. Óðinn sender ham til dværgene efter Gleipnir, og Njǫrðr sender ham for at finde ud af, hvorfor Freyr er holdt op med at spise, sove og tale. Freyrs svar bliver et ærinde: fri til Gerðr på hans vegne. Skírnir kræver hesten, der kan krydse ild, og sværdet, der kæmper af sig selv, vinder Gerðrs løfte og bringer en dato ni nætter borte hjem. Ærindet lykkes; betalingen efterlader Freyr uden sværdet, når Surtr kommer."
+    },
+    "vafthrudnir": {
+      "epithet": "Jætten i visdomsvæddemålet",
+      "summary": "Han sætter sit hoved mod en forklædt Óðinn og besvarer alt undtagen det, kun Óðinn kan vide.",
+      "description": "Vafþrúðnir er jætten, som Frigg siger, at ingen anden jætte kan måle sig med i visdom. Óðinn går ind i hans hal under navnet Gagnráðr, og de prøver hinanden med spørgsmål om den første verden, de ni verdener og verden efter Ragnarök, med deres hoveder som indsats. Vafþrúðnir svarer, indtil Óðinn spørger, hvad han hviskede i Baldrs øre på bålet. Kun Óðinn kan vide det. Jætten genkender ham, indrømmer at Óðinn er visere, og digtet ender, mens væddemålet stadig hænger over indrømmelsen."
     }
   }
 }

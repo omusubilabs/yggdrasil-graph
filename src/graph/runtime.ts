@@ -244,10 +244,7 @@ export async function mount(): Promise<void> {
         item.append(link_);
         item.append(el('span', 'panel__relation-label', s('relatedByTag.sharedLabel')));
         for (const tag of tags) {
-          item.append(
-            document.createTextNode(' '),
-            el('span', 'panel__badge', s(`tag.${tag}`)),
-          );
+          item.append(document.createTextNode(' '), el('span', 'panel__badge', s(`tag.${tag}`)));
         }
         list.append(item);
       }

@@ -29,6 +29,9 @@
             "blood_brother_of",
             "fosters",
             "consults",
+            "wisdom_contest_with",
+            "serves",
+            "hostage_exchanged_for",
             "slays",
             "causes_death_of",
             "maims",
@@ -96,7 +99,16 @@
           "description": "Symmetric relation types must not be marked directed.",
           "if": {
             "properties": {
-              "type": { "enum": ["married_to", "sibling_of", "consort_of", "blood_brother_of"] }
+              "type": {
+                "enum": [
+                  "married_to",
+                  "sibling_of",
+                  "consort_of",
+                  "blood_brother_of",
+                  "wisdom_contest_with",
+                  "hostage_exchanged_for"
+                ]
+              }
             },
             "required": ["type"]
           },

@@ -1,7 +1,8 @@
 {
   "family": {
     "kinship": "Kinship",
-    "counsel": "Counsel",
+    "counsel": "Knowledge",
+    "social": "Social ties",
     "conflict": "Conflict",
     "possession": "Possession",
     "location": "Place",
@@ -42,6 +43,21 @@
       "label": "Consults",
       "inverse": "Consulted by",
       "phrase": "{from} consults {to}"
+    },
+    "wisdom_contest_with": {
+      "label": "Contests in wisdom with",
+      "inverse": "Contests in wisdom with",
+      "phrase": "{from} and {to} test their wisdom against each other"
+    },
+    "serves": {
+      "label": "Serves",
+      "inverse": "Served by",
+      "phrase": "{from} serves {to}"
+    },
+    "hostage_exchanged_for": {
+      "label": "Hostage exchanged for",
+      "inverse": "Hostage exchanged for",
+      "phrase": "{from} and {to} were exchanged as hostages"
     },
     "slays": {
       "label": "Slays",

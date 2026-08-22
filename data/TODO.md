@@ -49,23 +49,6 @@ softened, per this file's own rule.
   place called "Helheim" from the person Hel (Gylfaginning 34), and the
   existing `hel` + `niflheim` entities already cover that ground.
 
-### Relation vocabulary
-
-- **Vafþrúðnir** remains blocked by the lack of a type for the reciprocal
-  wisdom-contest in Vafþrúðnismál. The `consults` type now records Óðinn taking
-  counsel from Mímir at Gylfaginning 51, but it does not fit a wager between two
-  contestants and must not be stretched to make this entity fit. Gylfaginning
-  15 likewise places the gods' tribunal and the Norns at the same well without
-  saying that Óðinn consults them, so it does not support a further edge.
-- There is also no type for a **messenger or servant relationship**. Skírnir
-  wooing Gerðr on Freyr's behalf, in exchange for Freyr's sword (Gylfaginning
-  37), is well attested but has nowhere to attach: he is not Freyr's kin, does
-  not own the sword, and does not fight him. Same gap blocks **Hœnir**, whom
-  the Vanir take as hostage in exchange for Njörðr (Gylfaginning 23) — a
-  mutual exchange, not kinship, conflict, possession, or location. Both were
-  checked against the source text and dropped from Phase 1 rather than forced
-  into `fosters` or `dwells_in`.
-
 ### Verification passes
 
 - Every locus in this repository was read in the edition it cites
