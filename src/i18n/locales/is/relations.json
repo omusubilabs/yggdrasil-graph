@@ -1,0 +1,111 @@
+{
+  "family": {
+    "kinship": "Skyldleiki",
+    "conflict": "Átök",
+    "possession": "Eign",
+    "location": "Staður",
+    "transformation": "Umbreyting"
+  },
+  "relation": {
+    "parent_of": {
+      "label": "Foreldri",
+      "inverse": "Barn",
+      "phrase": "{from} er foreldri {to}"
+    },
+    "sibling_of": {
+      "label": "Systkini",
+      "inverse": "Systkini",
+      "phrase": "{from} og {to} eru systkini"
+    },
+    "married_to": {
+      "label": "Í hjónabandi með",
+      "inverse": "Í hjónabandi með",
+      "phrase": "{from} og {to} eru gift"
+    },
+    "consort_of": {
+      "label": "Rekkjunautur",
+      "inverse": "Rekkjunautur",
+      "phrase": "{from} og {to} eignast börn saman"
+    },
+    "blood_brother_of": {
+      "label": "Fóstbróðir",
+      "inverse": "Fóstbróðir",
+      "phrase": "{from} og {to} blönduðu blóði"
+    },
+    "fosters": {
+      "label": "Fóstrar",
+      "inverse": "Fóstrað af",
+      "phrase": "{from} fóstraði {to}"
+    },
+    "slays": {
+      "label": "Drepur",
+      "inverse": "Drepið af",
+      "phrase": "{from} drepur {to}"
+    },
+    "causes_death_of": {
+      "label": "Veldur dauða",
+      "inverse": "Dó vegna",
+      "phrase": "{from} veldur dauða {to}"
+    },
+    "maims": {
+      "label": "Særir alvarlega",
+      "inverse": "Sært af",
+      "phrase": "{from} særir {to} alvarlega"
+    },
+    "binds": {
+      "label": "Bindur",
+      "inverse": "Bundið af",
+      "phrase": "{from} heldur {to} föstum"
+    },
+    "devours": {
+      "label": "Gleypir",
+      "inverse": "Gleypt af",
+      "phrase": "{from} gleypir {to}"
+    },
+    "destroys": {
+      "label": "Eyðir",
+      "inverse": "Eytt af",
+      "phrase": "{from} eyðir {to}"
+    },
+    "owns": {
+      "label": "Eigandi",
+      "inverse": "Í eigu",
+      "phrase": "{from} á {to}"
+    },
+    "guards": {
+      "label": "Verndar",
+      "inverse": "Verndað af",
+      "phrase": "{from} ver {to}"
+    },
+    "dwells_in": {
+      "label": "Býr í",
+      "inverse": "Heimkynni",
+      "phrase": "{from} býr í {to}"
+    },
+    "rules": {
+      "label": "Ræður yfir",
+      "inverse": "Stjórnað af",
+      "phrase": "{from} ræður yfir {to}"
+    },
+    "encircles": {
+      "label": "Umlykur",
+      "inverse": "Umlukið af",
+      "phrase": "{from} umlykur {to}"
+    },
+    "root_reaches": {
+      "label": "Sendir rót til",
+      "inverse": "Fær rót frá",
+      "phrase": "Rót frá {from} nær til {to}"
+    },
+    "raised_in": {
+      "label": "Ólst upp í",
+      "inverse": "Æskustöðvar",
+      "phrase": "{from} ólst upp í {to}"
+    },
+    "becomes": {
+      "label": "Verður að",
+      "inverse": "Mynd tekin af",
+      "phrase": "{from} verður að {to}"
+    }
+  }
+}

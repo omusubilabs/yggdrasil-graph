@@ -164,14 +164,13 @@ This first release is a walking skeleton, staged deliberately. Shipped:
 - [x] Finnish (`fi`) fully translated — `entities.json` and `relations.json`
       now render natively alongside `ui.json`; `fi` is `complete` in
       `src/i18n/config.ts`.
-- [x] Icelandic (`is`) added as a partial locale — `ui.json` is translated;
-      `entities.json` and `relations.json` still fall back to English.
+- [x] Icelandic (`is`) fully translated — `entities.json` and `relations.json`
+      now render natively alongside `ui.json`; `is` is `complete` in
+      `src/i18n/config.ts`.
 
 Not built yet, roughly in the order it's worth picking them up:
 
-- [ ] **next up** — Finish translating `is/entities.json` and
-      `is/relations.json`, then promote `is` to `complete`.
-- [ ] **after that** — Norwegian Bokmål, Swedish, Danish, in that order.
+- [ ] **next up** — Norwegian Bokmål, Swedish, Danish, in that order.
       Routing and font plumbing already handle all of them.
 - [ ] **The full 300–400 entity dataset.** [`data/TODO.md`](data/TODO.md) lists
       what is missing and why each gap matters.

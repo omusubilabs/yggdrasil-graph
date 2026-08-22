@@ -28,7 +28,7 @@ export type LocaleStatus = 'source' | 'complete' | 'partial' | 'planned';
 export const LOCALE_STATUS: Record<Locale, LocaleStatus> = {
   en: 'source',
   ja: 'complete',
-  is: 'partial',
+  is: 'complete',
   nb: 'planned',
   sv: 'planned',
   da: 'planned',

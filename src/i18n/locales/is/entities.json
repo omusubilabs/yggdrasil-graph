@@ -1,0 +1,184 @@
+{
+  "entity": {
+    "odin": {
+      "epithet": "Alföðr",
+      "summary": "Æðstur Ása, hálfur jötunn í móðurætt, og þegar heitinn úlfinum.",
+      "description": "Óðinn er elstur og æðstur Ásanna, og sá þeirra sem síst er að treysta. Snorri rekur ætt hans um Borr til Bestlu, dóttur jötunsins Bǫlþorns – sem gerir höfðingja goðanna hálfan jötunn og setur hann báðum megin þess stríðs sem hann mun tapa. Hann er guð visku sem keypt er dýru verði: auga við brunn Mímis, níu nætur á vindga meiði. Hann ríður fyrstur til Ragnaraka, með gullhjálm, berandi spjótið Gungni, og er gleyptur af Fenri, syni síns eigin fóstbróður."
+    },
+    "thor": {
+      "epithet": "Verndari Ásgarðs og Miðgarðs",
+      "summary": "Sterkastur goðanna, sonur Óðins og Jarðar, og andstæðingur ormsins.",
+      "description": "Þórr er sterkastur guða og manna, sonur Óðins og Jarðar. Hann heldur Þrúðvanga og salinn Bilskirni, og á þrjá dýrgripi, en hamarinn Mjǫllni fyrstan þeirra. Líf hans er langvinnt rifrildi við jötna, og því lýkur í miðju slíku: í Ragnarökum drepur hann Jǫrmungand, gengur níu skref frá hræinu og fellur dauður af eitrinu. Ormurinn er sonur Loka. Það er úlfurinn sem fellir föður hans líka."
+    },
+    "frigg": {
+      "epithet": "Kona Óðins, móðir Baldrs",
+      "summary": "Hún þekkir öll örlög og spáir engum þeirra.",
+      "description": "Frigg, dóttir Fjǫrgynns, er kona Óðins og fremst gyðjanna. Snorri segir að hún þekki öll örlög manna þótt hún mæli enga spá, sem er drungalegt að vita um einhvern. Þegar sonur hennar Baldr dreymir dauða sinn tekur hún eið af öllu í heiminum um að þyrma honum, en missir af einu mistilteinsskoti því henni þótti það of ungt til að spyrja. Loki spyr hana réttrar spurningar í konulíki, og hún svarar henni."
+    },
+    "baldr": {
+      "epithet": "Hinn bjarti",
+      "summary": "Bestur Ásanna, veginn af blindum bróður sínum, og einn hinna fáu sem snúa aftur.",
+      "description": "Baldr er annar sonur Óðins, svo fagur að af honum stafar ljós, og svo náðugur að enginn má hnekkja dómum hans. Dauði hans er hjörulið alls hringrásarinnar: goðin missa hann fyrir mistilteinsskot, hið eina sem móðir hans gleymdi að spyrja um, kastað af blindum bróður hans Hǫði með Loka standandi á bak við hann og miðandi. Hann fer til Heljar og snýr ekki aftur – fyrr en eftir Ragnarök, þegar hann og Hǫðr snúa saman aftur til heims sem hefur brunnið."
+    },
+    "hod": {
+      "epithet": "Hinn blindi guð",
+      "summary": "Hann kastar skotinu sem drepur bróður hans, og sér það ekki.",
+      "description": "Hǫðr er blindur, og nógu sterkur. Snorri segir að goðin vildu helst sleppa við að nefna hann, því verk handa hans verði lengi í minnum haft. Hann stendur utan hringsins á leiknum þar sem Æsir kasta hlutum í Baldr sér til gamans við að horfa á þá ekki lenda, og Loki spyr hann af hverju hann taki ekki þátt, og býðst til að miða fyrir hann. Skáldskapur kallar hann hinn blinda guð, bana Baldrs, kastara mistilteinsins og son Óðins – fjögur nöfn fyrir eitt síðdegi. Hann snýr aftur frá Helju með Baldri á eftir."
+    },
+    "tyr": {
+      "epithet": "Hinn einhenti",
+      "summary": "Hann fóðraði úlfinn, og galt fyrir bindinguna með sverðshendi sinni.",
+      "description": "Týr er djarfastur Ásanna, guð sigurs og hugrekkisins til að standa kyrr. Þegar goðin ólu Fenri upp í Ásgarði var hann sá eini sem þorði að færa úlfinum fæðu. Þegar þeir komu til að binda hann með Gleipni krafðist úlfurinn veðs, og Týr lagði hönd sína upp í kjaft hans vitandi hvað veðið þýddi. Skáldamál kallar hann hinn einhenta guð og, í sömu andrá, fóstra úlfsins. Í Ragnarökum drepa hann og hundurinn Garmr hvor annan."
+    },
+    "heimdall": {
+      "epithet": "Vörður goðanna",
+      "summary": "Hann heyrir gras vaxa, blæs í hornið sem markar upphaf endalokanna, og fellur berjandi við Loka.",
+      "description": "Heimdallr er hvíti guðinn, fæddur af níu systrum, sem heldur vörð við Himinbjǫrg þar sem Bifrǫst mætir himni. Hann þarf minni svefn en fugl, sér hundrað mílur nótt sem dag, og heyrir ull vaxa á sauðkind. Hvort Óðinn hafi getið hann er ekki á hreinu: Snorri gefur honum níu mæður í einum kafla og kallar hann son Óðins í öðrum. Hann blæs í Gjallarhorn til að vekja goðin fyrir síðustu orrustuna, og þar drepa hann og Loki hvor annan – varðmaðurinn og það eina sem hann var að vakta."
+    },
+    "vidar": {
+      "epithet": "Hinn þögli guð",
+      "summary": "Hann segir ekkert, og hann er sá sem hefnir Óðins.",
+      "description": "Víðarr er kallaður hinn þögli guð, næstum jafn sterkur og Þórr, og goðin treysta honum í hverri raun. Hann á þykkan skó gerðan úr sérhverri leðurrönd sem nokkru sinni hefur verið skorin af tá eða hæl, safnað saman gegnum alla tíð fyrir eitt skref. Þegar Fenrir hefur gleypt föður hans setur hann þann fót á neðri kjálka úlfsins og tekur þann efri í hönd sér. Hvernig hann lýkur því fer eftir því hver segir frá: hjá Snorra rífur hann kjálkana í sundur, í Vǫluspá rekur hann sverð í hjartað. Hann gengur lifandi út úr Ragnarökum."
+    },
+    "sif": {
+      "epithet": "Kona Þórs",
+      "summary": "Hár hennar var skorið af Loka, og því skipt út fyrir gull smíðað af dvergum.",
+      "description": "Sif er kona Þórs og móðir Ullar, sem er stjúpsonur Þórs. Loki skar allt hár hennar af sér til gamans og, þegar hann var staðinn að verki, lofaði að Svartálfar myndu gera henni meira; dvergarnir sem það gerðu smíðuðu Skíðblaðni og spjótið Gungni í sömu lotu, sem er hvernig goðin eignuðust flestar gersemar sínar. Færri tengsl eru skráð hér um hana en ætti að vera, og því er sá galli tíundaður í gagnaskýrslum verkefnisins fremur en falinn."
+    },
+    "njord": {
+      "epithet": "Frá Nóatúnum",
+      "summary": "Vanur búsettur meðal Ásanna sem gísl, faðir Freys og Freyju.",
+      "description": "Njǫrðr ræður för vindsins og lægir sjó og eld, og menn ákalla hann fyrir sjóferðir og veiðar. Hann er alls ekki af ætt Ásanna: hann var alinn upp meðal Vana og afhentur sem gísl þegar goðaættirnar tvær sömdu frið, og Hœnir fór í hina áttina. Í Nóatúnum gat hann Frey og Freyju, sem þýðir að Vanaætt innan Ásgarðs liggur öll í gegnum stríðsfanga."
+    },
+    "freyr": {
+      "epithet": "Drottinn uppskerunnar",
+      "summary": "Hann gaf frá sér sverð sitt fyrir tröllkonu, og í Ragnarökum vantar hann það.",
+      "description": "Freyr ræður regni og sólskini og ávexti jarðar, og er frægastur goðanna á eftir sjálfum Ásunum. Hann gaf sendiboða sínum Skírni gott sverð sitt til að vinna tröllkonuna Gerði. Snorri er hreinskilinn um kostnaðinn: í Ragnarökum mætir hann Surti, og bardaginn er harður, og hann fellur, og ástæðan fyrir falli hans er sú að hann hefur ekki lengur það sverð. Þetta er skýrasta dæmi hringrásarinnar um endalok sem eru undirbúin öldum fyrirfram með hversdagslegri ákvörðun."
+    },
+    "freyja": {
+      "epithet": "Húsfreyja Vana",
+      "summary": "Dóttir Njarðar, systir Freys, og hún tekur helming hinna föllnu.",
+      "description": "Freyja er frægust gyðjanna. Hún á salinn Fólkvang, og hvert sem hún ríður til orrustu tekur hún helming hinna föllnu og Óðinn hinn helminginn – skipting sem setur dóttur vanagísls til jafns við Alföðr. Hún er dóttir Njarðar og systir Freys, kona Óðs, eigandi hálsmensins Brísingamens, sem Loki stal eitt sinn og Heimdallr barðist við hann um."
+    },
+    "loki": {
+      "epithet": "Sonur Fárbauta og Laufeyjar",
+      "summary": "Talinn meðal Ásanna, getinn af jötni, og faðir alls þess sem bindur enda á þá.",
+      "description": "Loki er ásinn sem allt grafið snýst um. Snorri telur hann meðal Ásanna og kallar hann ódæðamann Ásanna í sömu setningu, og nefnir síðan föður hans, jötuninn Fárbauta. Hann og Óðinn blönduðu blóði í fyrndinni, sem Loki minnir hann á þegar hann vill fá sér drykk. Með tröllkonunni Angrboðu getur hann Fenri, Jǫrmungand og Hel. Hann veldur dauða Baldrs, og er bundinn fyrir það. Í Ragnarökum stýrir hann skipi hinna dauðu, og hann og Heimdallr drepa hvor annan. Einangrar maður afkomendur hans hefur maður endurheimt mestalla hina fylkinguna."
+    },
+    "surtr": {
+      "epithet": "Vörður Múspells",
+      "summary": "Hann hefur staðið á landamærum eldheimsins frá því fyrir sköpun heimsins, bíðandi.",
+      "description": "Surtr situr á landsenda Múspells til að verja hann, og hefur gert það frá því fyrir sköpun jarðar – eldheimurinn er fyrsti heimurinn sem varð til, eldri en goðin sem munu brenna í honum. Sverð hans varpar meira ljósi en sólin. Þegar endirinn kemur ríður hann fyrstur út, með eld fyrir framan sig og aftan, og Bifrǫst brotnar undan reiðmönnunum. Hann drepur Frey, og slöngvar svo eldi yfir jörðina og brennir allan heiminn. Hann er eina veran hér sem var til staðar frá upphafi."
+    },
+    "angrboda": {
+      "epithet": "Tröllkona úr Jǫtunheimi",
+      "summary": "Móðir úlfsins, ormsins og Heljar.",
+      "description": "Angrboða er tröllkona í Jǫtunheimi, og hún kemur fyrir í heimildunum af nákvæmlega einni ástæðu: með Loka á hún þrjú börn, og þau þrjú eru Fenrir, Jǫrmungandr og Hel. Þegar goðin fréttu að þessi ætt væri að alast upp í Jǫtunheimi, og spádómur sagði þeim hvað það þýddi, tóku þau börnin – og hvert skref sem þau stigu til að hemja þau er skref í átt að endalokunum sem þau reyndu að forðast."
+    },
+    "farbauti": {
+      "epithet": "Jötunninn",
+      "summary": "Faðir Loka, nefndur tvisvar og aldrei lýst.",
+      "description": "Fárbauti er nefndur faðir Loka í Gylfaginningu og aftur í kenningaskrám, og það er allt sem heimildirnar gefa. Nafnið hefur verið lesið sem eitthvað í líkingu við grimman-höggvara, en textarnir skýra það ekki. Hann skiptir máli byggingarlega fremur en frásagnarlega: hann er ástæðan fyrir því að Loki er sonur jötuns sitjandi innan Ásgarðs, og ástæðan fyrir því að börn Loka eru barnabörn jötuns."
+    },
+    "laufey": {
+      "epithet": "Einnig kölluð Nál",
+      "summary": "Móðir Loka, og foreldrið sem hann er kenndur við.",
+      "description": "Laufey, einnig kölluð Nál, er móðir Loka. Snorri nefnir hana við hlið Fárbauta og heldur áfram. Það sem er óvenjulegt er að Loki er endurtekið kallaður Laufeyjarson, sonur Laufeyjar, fremur en eftir nafni föður síns – öfugt við venjulegt föðurnafn – og heimildirnar útskýra það aldrei. Hvort hún sé tröllkona eða af öðru tagi er ekki tekið fram; þetta verkefni flokkar hana með jötnum og merkir þá flokkun sem umdeilda."
+    },
+    "bestla": {
+      "epithet": "Dóttir Bǫlþorns",
+      "summary": "Dóttir jötuns, og móðir Óðins.",
+      "description": "Bestla er dóttir jötunsins Bǫlþorns, og Borr tók hana sér fyrir konu; synir þeirra voru Óðinn, Vili og Vé. Hún er ein setning í heimildunum, og sú setning umraðar öllu sem á eftir kemur – goðin sem eyða allri hringrásinni í að berjast við jötna eru sjálf hálfjötnar, í gegnum hana, og mikilvægasti kennari Óðins kann að hafa verið bróðir hennar."
+    },
+    "bolthorn": {
+      "epithet": "Jötunninn",
+      "summary": "Afi Óðins, en frá syni hans lærði Óðinn níu ljóð.",
+      "description": "Bǫlþorn er jötunn, faðir Bestlu, og því móðurafi Óðins. Hann kemur fyrir tvisvar: einu sinni í ættartölu Snorra, og einu sinni í Hávamálum, þar sem Óðinn segist hafa numið níu megin ljóð af syni Bǫlþorns – sínum eigin móðurbróður, ónefndum. Viskan sem gerir Óðin að Óðni kemur til hans frá hlið jötnanna í ættinni."
+    },
+    "fenrir": {
+      "epithet": "Úlfurinn",
+      "summary": "Alinn upp af goðunum sem óttuðust hann, bundinn með borða, og hann gleypir Óðin.",
+      "description": "Fenrir er elstur barna Loka og Angrboðu, og Æsir ólu hann upp heima í Ásgarði því valkosturinn var að skilja hann eftir í Jǫtunheimi. Hann sleit fjötrana Læðing og svo Dróma, og þann þriðja, Gleipni, gerðu dvergar úr sex ómögulegum hlutum og hann hélt. Hann samþykkti það aðeins gegn veði, og hönd Týs var veðið, og Týr missti hana. Í Ragnarökum losnar hann, gleypir Óðin, og er veginn af syni Óðins, Víðari. Eigin afkvæmi hans eru úlfarnir sem elta sólina og tunglið."
+    },
+    "jormungandr": {
+      "epithet": "Miðgarðsormurinn",
+      "summary": "Kastað í sjóinn sem barn, hann óx uns hann beit í sinn eigin hala.",
+      "description": "Jǫrmungandr er annað barna Loka með Angrboðu. Óðinn kastaði honum í djúpan sjó, og þar óx hann uns hann liggur um mitt hafið sem umlykur allt landið, bítandi í sinn eigin hala – varúðarráðstöfun sem varð að lögun heimsins. Þórr veiðir hann eitt sinn og tekst ekki að draga hann að landi. Í Ragnarökum kemur hann á land, og hann og Þórr drepa hvor annan: hann slær hann niður, gengur níu skref, og fellur í eitri hans."
+    },
+    "hel": {
+      "epithet": "Hálf blásvört, hálf hold",
+      "summary": "Varpað í Niflheim sem barn og fengið vald yfir hinum dauðu.",
+      "description": "Hel er þriðja barn Loka með Angrboðu. Óðinn varpaði henni í Niflheim og gaf henni vald yfir níu heimum, til að úthluta gistingu til hvers sem til hennar er sendur – þeirra sem deyja úr sjúkdómi eða elli, fremur en í orrustu. Snorri nefnir búnað hennar: sal hennar Éljúðni, fat hennar Hungur, hníf hennar Sult, þröskuld hennar Fallandaforað. Þegar Baldr deyr fer hann til hennar, og hún er sú sem ákveður verðið fyrir endurkomu hans. Að lokum sigla hennar menn."
+    },
+    "garm": {
+      "epithet": "Hundurinn við Gnípahelli",
+      "summary": "Bundinn fyrir hellinum, gaggandi; hann og Týr drepa hvor annan.",
+      "description": "Garmr er bundinn fyrir Gnípahelli, og Vǫluspá snýr aftur til hans sem viðlag – Garmr geltir hátt, fjötrarnir munu bresta, úlfurinn hleypur laus. Snorri kallar hann mestan skrímsla og lætur hann falla í hlut Týs í Ragnarökum, þar sem hvor verður banamaður hins. Hvort Garmr og Fenrir séu tveir hundar eða einn er gömul deila; heimildirnar leysa hana aldrei úr, og þetta graf heldur þeim aðskildum því þannig skilja heimildirnar við þá."
+    },
+    "skoll": {
+      "epithet": "Úlfurinn á hælum sólarinnar",
+      "summary": "Hann hleypur á eftir sólinni, og einn daginn nær hann henni.",
+      "description": "Skǫll er úlfurinn sem eltir sólina. Snorri segir að hún óttist hann og að hann muni ná henni, sem hann gerir við upphaf endalokanna. Grímnismál setur hann í Járnvið. Ætterni hans er flókin flækja: Vǫluspá segir að gömul tröllkona í Járnviði hafi alið afkvæmi Fenris, og Snorri segir að gömul norn þar hafi alið marga jötunsyni í úlfslíki – frásagnirnar tvær samræmast aðeins ef úlfarnir eru synir Fenris, og hvorugur textinn segir það alveg berum orðum."
+    },
+    "hati": {
+      "epithet": "Sonur Hróðvitnis",
+      "summary": "Hann hleypur á undan sólinni, á eftir tunglinu.",
+      "description": "Hati stekkur á undan sólinni fremur en á eftir henni, því það sem hann sækist eftir er tunglið. Grímnismál kallar hann son Hróðvitnis, og Snorri gefur honum föðurnafnið Hróðvitnisson; Hróðvitnir er almennt talinn viðurnefni Fenris, sem myndi gera Hata að syni úlfsins og bróður Skǫlls, en enginn varðveittur texti staðfestir þá auðkenningu berum orðum. Hann er skráður hér sem barn Fenris með vissuna setta sem óbeina, sem er heiðarlegasti lesturinn."
+    },
+    "mimir": {
+      "epithet": "Verndari brunnsins",
+      "summary": "Viska er geymd í brunni hans, og hann drekkur úr honum með Gjallarhorni.",
+      "description": "Mímir varðveitir brunninn undir þeirri rót Yggdrasils sem snýr að hrímþursum, þar sem viska og skilningur eru geymd. Hann er fullur af fornri þekkingu því hann drekkur úr brunninum, og Snorri segir að hann drekki úr honum með Gjallarhorni – sem er vandamál, því sex köflum síðar er Gjallarhorn lúður Heimdallar, sá sem vekur goðin. Snorri mótsegir sjálfum sér innan eins og sama verksins, og þetta verkefni skráir báða lestrana fremur en að velja á milli. Óðinn gaf auga fyrir drykk úr brunninum, og ríður til baka til að ráðgast við Mími þegar endirinn hefst."
+    },
+    "asgard": {
+      "epithet": "Vígi goðanna",
+      "summary": "Reist í miðjum heiminum, og þar ólst úlfurinn upp.",
+      "description": "Ásgarðr er borgin sem synir Bors reistu sér í miðjum heiminum, þar sem goðin og ættmenni þeirra búa. Ein af þremur rótum Yggdrasils nær þangað. Heimdallr gætir brúar hennar og Þórr ver hana, og þar völdu Æsir að ala Fenri upp fremur en að skilja hann eftir í Jǫtunheimi – ákvörðun sem setti verkfærið sem myndi verða bani Óðins innan eigin veggja hans alla bernsku þess."
+    },
+    "midgard": {
+      "epithet": "Miðgirðingin",
+      "summary": "Heimur mannanna, hringaður af ormi.",
+      "description": "Miðgarðr er heimurinn sem gefinn var mannkyninu, gerður af sonum Bors og varinn af Þór. Hann er umlukinn Jǫrmungandi, sem liggur í hafinu umhverfis allt landið með halann í kjaftinum – svo mörk mannheimsins er eitt af börnum Loka. Í lokin slöngvar Surtr eldi yfir hann og brennir hann, og sólin sortnar og jörðin sekkur í sjóinn."
+    },
+    "jotunheim": {
+      "epithet": "Heimkynni jötna",
+      "summary": "Þar sem Angrboða ól upp þrjú börn sem goðin sóttu.",
+      "description": "Jǫtunheimr er land jötnanna, og ein af rótum Yggdrasils stendur meðal hrímþursanna þar. Angrboða bjó þar þegar hún og Loki eignuðust Fenri, Jǫrmungand og Hel, og goðin fréttu að ættin væri alin þar upp og fóru að sækja þau. Stór hluti hringrásarinnar er Æsir að ferðast inn í Jǫtunheim til að brjóta eitthvað, og að vera skyld því sem þeir brjóta."
+    },
+    "niflheim": {
+      "epithet": "Þokuheimurinn",
+      "summary": "Eldri en jörðin, og Hel ræður hinum dauðu þar.",
+      "description": "Niflheimr varð til mörgum öldum áður en jörðin var sköpuð. Brunnurinn Hvergelmir liggur í miðju hans, og ellefu ár renna úr honum, og þriðja rót Yggdrasils stendur yfir honum með Níðhǫggi naga að neðan. Óðinn varpaði Hel í hann og gaf henni vald yfir níu heimum, svo elsti kuldastaðurinn varð að stjórnsýslu hinna dauðu. Baldr fer þangað."
+    },
+    "muspelheim": {
+      "epithet": "Eldheimurinn",
+      "summary": "Fyrsti heimur allra, bjartur og heitur og ófær, með Surti á landamærunum.",
+      "description": "Múspell er fyrsti heimurinn sem varð til, í suðurátt: bjartur, heitur, glóandi og brennandi, og ófær hverjum þeim sem á þar ekki land. Surtr stendur á jaðri hans með logandi sverð til að halda öðrum úti – vörður settur áður en nokkuð var til að verja gegn. Fólk hans ríður út í Ragnarökum í eigin fylkingu, og Snorri tekur fram að þau séu mjög björt."
+    },
+    "yggdrasil": {
+      "epithet": "Askurinn",
+      "summary": "Þrjár rætur, þrír heimar, og hann skelfur þegar endirinn hefst.",
+      "description": "Yggdrasill er mestur og bestur trjáa, greinar hans dreifast yfir allan heiminn og standa upp yfir himin. Þrjár rætur halda honum uppi: ein meðal Ásanna, ein meðal hrímþursanna þar sem Ginnungagap var, og ein yfir Niflheimi, þar sem Níðhǫggr nagar hann að neðan. Brunnur Mímis er undir þeirri annarri. Goðin kveða upp dóma við hann á hverjum degi. Þegar Fenrir losnar skelfur askurinn, og ekkert á himni eða jörðu er án ótta."
+    },
+    "mjolnir": {
+      "epithet": "Hamar Þórs",
+      "summary": "Hrímþursar þekkja hann þegar hann er á lofti.",
+      "description": "Mjǫllnir er fyrstur af þremur dýrgripum Þórs, smíðaður af dvergnum Sindra á meðan Loki, í flugulíki, reyndi að spilla verkinu. Snorri segir að hrímþursar og bergrisar þekki hann þegar hann er reistur, hafi þeir misst feður og frændur fyrir honum. Þórr á einnig belti sem tvöfaldar styrk hans og járnhanska sem hann getur ekki notað hamarskaftið án. Eftir Ragnarök fer hann til sona hans, Móða og Magna."
+    },
+    "gungnir": {
+      "epithet": "Spjót Óðins",
+      "summary": "Smíðað af sonum Ívalda; lagið stöðvast aldrei.",
+      "description": "Gungnir var smíðað af dvergunum sem kallaðir eru synir Ívalda, í sömu lotu og gullhár Sifjar og skipið Skíðblaðnir urðu til, eftir að Loki hafði skorið hár Sifjar af og þurfti að bæta fyrir það. Loki afhenti Óðni það sjálfum. Kostur þess er að lagið stöðvast aldrei. Óðinn ríður út til Ragnaraka berandi það, í gullhjálmi og fögrum hringabrynju, og það bjargar honum ekki."
+    },
+    "gleipnir": {
+      "epithet": "Fjöturinn sem hélt",
+      "summary": "Sex ómögulegir hlutir, og hann er mjúkur sem borði.",
+      "description": "Eftir að Fenrir sleit Læðing og Dróma, sendi Óðinn Skírni niður til Svartálfa eftir einhverju betra. Dvergarnir gerðu Gleipni úr sex hlutum: hljóðinu sem köttur gerir á göngu, skeggi konu, rótum kletts, sinum bjarnar, anda fisks og hráka fugls. Hann lítur út eins og silkiborði. Fenrir vildi ekki taka við honum án veðs, og veðið var hönd Týs, og goðin höfðu engan hug á að láta hann sleppa."
+    },
+    "gjallarhorn": {
+      "epithet": "Gjallandi hornið",
+      "summary": "Hljómur þess heyrist í öllum heimum. Hver á það fer eftir kaflanum.",
+      "description": "Gjallarhorn tilheyrir Heimdalli, og hljómur þess heyrist um alla heima; hann blæs í það til að vekja goðin þegar Ragnarök hefjast, og Vǫluspá lætur hann blása í það með hornið á lofti. Gjallarhorn tilheyrir einnig Mími, sem drekkur úr viskubrunninum með því. Báðar fullyrðingarnar eru frá Snorra, tólf köflum í sundur í sömu bók, og þeim verður ekki komið heim og saman. Grafið skráir báða eigendur og lætur þig sjá ósamræmið í stað þess að fela það."
+    }
+  }
+}
