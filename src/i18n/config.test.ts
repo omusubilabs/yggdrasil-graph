@@ -12,7 +12,7 @@ import {
 
 describe('ACTIVE_LOCALES', () => {
   it('excludes every locale still marked planned', () => {
-    assert.deepEqual([...ACTIVE_LOCALES].sort(), ['en', 'fi', 'is', 'ja', 'nb', 'sv']);
+    assert.deepEqual([...ACTIVE_LOCALES].sort(), ['da', 'en', 'fi', 'is', 'ja', 'nb', 'sv']);
   });
 });
 

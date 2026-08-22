@@ -11,10 +11,9 @@ describe('t', () => {
   });
 
   it('falls back to the source locale for a key the target locale is missing', () => {
-    // 'da' is a planned locale with no bundle at all (see BUNDLES in
-    // index.ts), so every key falls back to en regardless of how complete
-    // the translated locales are.
-    assert.equal(t('da', 'nav.home'), t('en', 'nav.home'));
+    // 'da' is a partial locale — only ui.json is translated (see BUNDLES in
+    // index.ts) — so an entities.json key still falls back to en.
+    assert.equal(t('da', 'entity.odin.description'), t('en', 'entity.odin.description'));
   });
 
   it('returns the key itself when it resolves nowhere', () => {
@@ -92,7 +91,7 @@ describe('localePath', () => {
     assert.equal(localePath('en', '///entity/loki///'), '/entity/loki');
   });
 
-  it('round-trips through localeFromPath for every registered locale, including a planned one', () => {
+  it('round-trips through localeFromPath for every registered locale', () => {
     for (const locale of LOCALES) {
       assert.equal(localeFromPath(localePath(locale, '/entity/loki')), locale);
     }
