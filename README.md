@@ -157,14 +157,13 @@ This first release is a walking skeleton, staged deliberately. Shipped:
 - [x] The Ragnarǫk overlay — a control that dims the graph to the terminal
       pairings and traces each combatant back through the genealogy that
       produced them.
+- [x] Tag-driven "you might also want" suggestions at the end of each panel —
+      _also contested_, _also present at Ragnarǫk_, _also a shape-shifter_.
 
 Not built yet, roughly in the order it's worth picking them up:
 
-- [ ] **Next up: tag-driven "you might also want" suggestions** at the end of each panel —
-      _also contested_, _also present at Ragnarǫk_, _also a shape-shifter_. The
-      tag index is built and shipped; the query function is written and unused.
-- [ ] **URL state** — selection, filters and overlay serialized to the query
-      string, so a shared link reopens the exact view.
+- [ ] **Next up: URL state** — selection, filters and overlay serialized to
+      the query string, so a shared link reopens the exact view.
 - [ ] **Locales beyond `en` and the `ja` stub** — Icelandic, Norwegian Bokmål,
       Swedish, Danish, Finnish. Routing and font plumbing already handle all of them.
 - [ ] **The full 300–400 entity dataset.** [`data/TODO.md`](data/TODO.md) lists
