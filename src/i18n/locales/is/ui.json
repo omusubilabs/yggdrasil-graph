@@ -1,0 +1,182 @@
+{
+  "site": {
+    "title": "Yggdrasil Graph",
+    "tagline": "Endalok goðsagnarinnar eru þegar rituð í ættartrénu.",
+    "description": "Gagnvirkt tengslagraf norrænnar goðafræði. Goð, jötnar, skrímsli, heimar og nafngreindir hlutir – hvert tengsl rakið til frumheimildar.",
+    "skipToContent": "Fara í grafið"
+  },
+  "nav": {
+    "label": "Vefsvæði",
+    "home": "Graf",
+    "sources": "Heimildir",
+    "language": "Tungumál",
+    "languageCurrent": "Núverandi tungumál: {name}",
+    "openMenu": "Opna valmynd",
+    "closeMenu": "Loka valmynd"
+  },
+  "graph": {
+    "regionLabel": "Tengslagraf",
+    "regionDescription": "Gagnvirkt graf með {count} persónum og {links} tengslum þeirra á milli. Notaðu listayfirlitið hér fyrir neðan fyrir línulega framsetningu.",
+    "hint": "Snertu nafn.",
+    "hintKeyboard": "Notaðu Tab-hnappinn til að fara í grafið og færðu þig svo milli persóna með örvatökkunum.",
+    "loading": "Grafið vaknar",
+    "ready": "Graf tilbúið",
+    "reset": "Endurstilla sýn",
+    "zoomControls": "Aðdráttur og miðjun",
+    "zoomIn": "Renna að",
+    "zoomOut": "Renna frá",
+    "recentre": "Miðja",
+    "clearSelection": "Sýna allt aftur",
+    "selectedAnnounce": "Valið: {name}. Sýnir {count} tengdar persónur.",
+    "neighbourhoodOf": "Í kringum {name}",
+    "everything": "Allt grafið",
+    "motionReduced": "Hreyfing er minnkuð, svo grafið sýnir fasta uppröðun sína."
+  },
+  "view": {
+    "label": "Skoðun",
+    "graph": "Graf",
+    "list": "Listi",
+    "listHeading": "Allar persónur í töflu",
+    "listDescription": "Sömu gögn og í grafinu, á formi sem hægt er að lesa beint í gegnum, leita í með vafranum eða láta skjálesara vinna úr.",
+    "columnName": "Nafn",
+    "columnOldNorse": "Fornnorræna",
+    "columnType": "Tegund",
+    "columnClasses": "Flokkar",
+    "columnRelations": "Tengsl"
+  },
+  "panel": {
+    "label": "Upplýsingar",
+    "close": "Loka upplýsingum",
+    "oldNorse": "Fornnorræna",
+    "type": "Tegund",
+    "classes": "Flokkar",
+    "tags": "Þemu",
+    "attestedIn": "Kemur fyrir í",
+    "relations": "Tengsl",
+    "relatedByTag": "Tengt",
+    "citations": "Tilvísanir",
+    "readMore": "Öll umfjöllun um {name}",
+    "empty": "Ekkert valið. Veldu persónu í grafinu.",
+    "noRelations": "Engin tengsl skráð enn.",
+    "relationCount": "{count} tengsl",
+    "outgoing": "{name} → ",
+    "incoming": " → {name}"
+  },
+  "filters": {
+    "label": "Síur",
+    "heading": "Sýna",
+    "certainty": "Eftir vissu",
+    "family": "Eftir tengslategund",
+    "disputedOnly": "Aðeins þar sem heimildir eru ósammála",
+    "disputedOnlyHint": "Sýnir eingöngu breytileg og umdeild tengsl.",
+    "ragnarokOverlay": "Aðeins Ragnarök",
+    "ragnarokOverlayHint": "Deyfir allt nema þá sem berjast við heimsendi og ættir þeirra sem ólu þá af sér.",
+    "clear": "Hreinsa síur",
+    "activeCount": "{count} síur virkar",
+    "noResults": "Engin tengsl passa við þessar síur."
+  },
+  "certainty": {
+    "label": "Vissa",
+    "attested": "Staðfest",
+    "attestedHint": "Heimildin fullyrðir þetta beinlínis.",
+    "implied": "Óbeint",
+    "impliedHint": "Heimildin gefur þetta til kynna án þess að segja það berum orðum.",
+    "variant": "Breytilegt",
+    "variantHint": "Önnur heimild segir frá þessu á annan hátt.",
+    "disputed": "Umdeilt",
+    "disputedHint": "Heimildirnar stangast á.",
+    "unverified": "Óstaðfest",
+    "unverifiedHint": "Talið satt, en enginn tilvísunarstaður hefur verið staðfestur. Vísvitandi án heimildar.",
+    "contradictedBy": "Stangast á við: {other}"
+  },
+  "class": {
+    "label": "Flokkur",
+    "aesir": "Æsir",
+    "vanir": "Vanir",
+    "jotnar": "Jǫtnar",
+    "beings": "Aðrar verur",
+    "worlds": "Heimar og staðir",
+    "artifacts": "Gersemar"
+  },
+  "type": {
+    "label": "Tegund",
+    "deity": "Goðvera",
+    "being": "Vera",
+    "world": "Heimur",
+    "artifact": "Smíðisgripur",
+    "place": "Staður",
+    "event": "Atburður"
+  },
+  "tag": {
+    "ragnarok-participant": "Þátttakandi í Ragnarökum",
+    "ragnarok-slain": "Fellur í Ragnarökum",
+    "ragnarok-slayer": "Drepur í Ragnarökum",
+    "ragnarok-survivor": "Lifir Ragnarök af",
+    "loki-kin": "Ættingi Loka",
+    "odin-kin": "Ættingi Óðins",
+    "bound": "Bundið",
+    "wolf": "Úlfur",
+    "serpent": "Ormur",
+    "shapeshifter": "Hamskiptingur",
+    "contested": "Umdeilt",
+    "disputed-parentage": "Umdeilt ætterni",
+    "primordial": "Frumlægt",
+    "underworld": "Hinna dauðu",
+    "fire": "Eldur",
+    "thunder": "Þruma",
+    "wisdom": "Viska",
+    "war": "Stríð",
+    "fertility": "Frjósemi",
+    "sea": "Haf",
+    "watchman": "Vörður",
+    "hostage": "Gísl",
+    "dwarf-forged": "Dvergasmíðað",
+    "world-tree": "Heimstréð",
+    "nine-worlds": "Af heimunum níu",
+    "giant-descent": "Af jötnaættum"
+  },
+  "relatedByTag": {
+    "sharedLabel": "Sameiginlegt:"
+  },
+  "entity": {
+    "backToGraph": "Til baka í grafið",
+    "backToGraphFrom": "Sjá {name} í grafinu",
+    "relationsHeading": "Tengsl",
+    "relatedByTagHeading": "Tengt",
+    "sourcesHeading": "Tilvitnaðar heimildir",
+    "tagsHeading": "Þemu",
+    "namesHeading": "Nöfn",
+    "noDescription": "Engin umfjöllun hefur verið skrifuð um þessa persónu enn. Tengslin hér fyrir neðan eru öll skráin sem til er.",
+    "metaTitle": "{name} — Yggdrasil Graph",
+    "degree": "{count} skráð tengsl"
+  },
+  "sources": {
+    "heading": "Heimildir",
+    "intro": "Sérhvert tengsl í þessu grafi vísar á tiltekinn stað í einu þessara rita. Öll tilvitnuð útgáfa eru í almannaeigu (public domain); texti þeirra er ekki endurbirtur hér.",
+    "chapter": "k. {locus}",
+    "stanza": "v. {locus}",
+    "translatedBy": "Þýtt af {translator}, {year}",
+    "composed": "Samið {date}",
+    "partOf": "Í {collection}",
+    "viewText": "Lesa allan textann",
+    "uncited": "Engin tilvísun. Vísvitandi merkt óstaðfest."
+  },
+  "footer": {
+    "codeLicence": "Kóðinn er gefinn út undir MIT-leyfi.",
+    "dataLicence": "Gagnasafnið er gefið út undir CC BY-SA 4.0.",
+    "sourceCode": "Frumkóði",
+    "contribute": "Ábendingar um leiðréttingar vel þegnar",
+    "editionsNote": "Tilvísanir fylgja þýðingu Bellows (1923) á Eddukvæðum og þýðingu Brodeurs (1916) á Snorra-Eddu."
+  },
+  "a11y": {
+    "nodeRole": "{name}, {type}, {count} tengsl",
+    "graphInstructions": "Örvatakkar færa milli tengdra persóna. Enter opnar upplýsingar. Escape hreinsar valið.",
+    "selectionCleared": "Val hreinsað. Sýnir allt grafið.",
+    "externalLink": "opnast í nýjum flipa"
+  },
+  "error": {
+    "notFoundTitle": "Síða fannst ekki",
+    "notFoundBody": "Þessi slóð leiðir ekki neitt. Grafið gerir það.",
+    "graphFailed": "Ekki tókst að ræsa gagnvirka grafið. Allt hér fyrir neðan virkar samt."
+  }
+}
