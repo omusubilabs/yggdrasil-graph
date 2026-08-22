@@ -178,5 +178,23 @@
       { "work": "gylfaginning", "locus": "49" },
       { "work": "gylfaginning", "locus": "34" }
     ]
+  },
+  {
+    "id": "nanna--niflheim--dwells_in",
+    "from": "nanna",
+    "to": "niflheim",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "gylfaginning", "locus": "49" }]
+  },
+  {
+    "id": "utgarda-loki--jotunheim--dwells_in",
+    "from": "utgarda-loki",
+    "to": "jotunheim",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "gylfaginning", "locus": "45" }]
   }
 ]

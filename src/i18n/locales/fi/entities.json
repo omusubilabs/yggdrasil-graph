@@ -140,6 +140,36 @@
       "summary": "Baldrin vaimo, jonka sydän särkyy tämän hautalaivalla ennen kuin sitä on edes sytytetty.",
       "description": "Nanna on Baldrin vaimo. Kun tämän ruumis kannetaan hautalaiva Hringhorniin, hänen sydämensä särkyy siinä paikassa surusta, ja hänet poltetaan Baldrin vierellä. Jopa Helistä käsin hän pitää yllä elävien tapoja: hän lähettää Friggille pellavapaidan ja Fullalle kultasormuksen, ja Hermóðr vie ne kotiin yhdessä uutisen kanssa, että yhä on mahdollisuus, että hänen aviomiehensä voi palata."
     },
+    "skadi": {
+      "epithet": "Suksijumalatar",
+      "summary": "Tarttui aseisiin kostaakseen isänsä puolesta ja lähti aviomiehen kanssa, joka valittiin pelkkien jalkojen perusteella.",
+      "description": "Skaði marssii Ásgarðriin kypärä ja haarniska yllään kostaakseen Þjazin puolesta, ja jumalat ostavat itsensä vapaaksi omituisella sopimuksella: hän saa valita aviomiehen heidän joukostaan näkemättä muuta kuin heidän jalkansa. Hän valitsee kauneimman parin uskoen niiden kuuluvan Baldrille ja saa Njörðrin sen sijaan. Avioliitto ei suju kitkatta — hän haluaa rannikon, Skaði haluaa vuoret, joilla hänen isänsä asui — mutta sopimus pysyy voimassa, ja hän palaa Þrymheimriin suksilla, jousi mukanaan, ja häntä kutsutaan siitä lähtien suksijumalattareksi."
+    },
+    "thjazi": {
+      "epithet": "Skaðin isä",
+      "summary": "Vangitsi Lokin kotkan hahmossa ja vaihtoi tämän vapauden Iðunniin — ja maksoi siitä hengellään.",
+      "description": "Þjazi vangitsee Lokin kotkan hahmossa, liimaa hänet kiinni salkoon eikä päästä irti, ennen kuin tämä vannoo houkuttelevansa Iðunnin ulos Ásgarðrista tämän omenien kanssa. Loki pitää valansa; Þjazi kantaa Iðunnin Þrymheimiin kotka-asussaan, ja jumalat vanhenevat silminnähden sillä hetkellä, kun hän on poissa. Kun Loki lentää tämän takaisin pähkinänä Freyjan haukka-asussa, Þjazi ajaa takaa samassa hahmossa ja palaa kuoliaaksi Ásgarðrin portilla. Hänen tyttärensä on Skaði."
+    },
+    "utgarda-loki": {
+      "epithet": "Útgarðrin kuningas",
+      "summary": "Voitti Þórrin joka kilpailussa huijaamalla itse maailman muodolla.",
+      "description": "Útgarða-Loki ottaa vastaan Þórrin ja tämän seuralaiset ensin Skrýmirinä, sitoo heidän eväänsä rautasolmulla, jota kukaan ei saa auki, ja sitten jättiläisen salin kuninkaana, jossa vieraille annetaan mahdottomia tehtäviä valepuvussa: Loki häviää syömiskilpailun villitulelle, Þjálfi häviää juoksukilpailun ajatukselle, ja Þórr itse tyhjentää vain puolet merestä, tuskin nostaa Midgardin käärmettä kissaksi puettuna ja polvistuu vanhuuden edessä naisen hahmossa. Kun vieraat ovat turvallisesti portin ulkopuolella, hän selittää joka temppunsa — ja linna katoaa ennen kuin Þórr ehtii heilauttaa vasaraa häntä kohti."
+    },
+    "gerd": {
+      "epithet": "Freyrin vaimo",
+      "summary": "Niin kirkas, että taivas ja meri valaistuivat, kun hän kohotti kätensä, ja Freyr luopui miekastaan voittaakseen hänet.",
+      "description": "Gerðr on jättiläinen Gymirin ja Aurboðan tytär, kaunein kaikista naisista. Freyr näkee hänet Hliðskjálfista ja vaipuu niin täydelliseen suruun, ettei syö, nuku eikä puhu. Hän lähettää Skírnirin kosimaan tätä puolestaan ja maksaa siitä ainoalla miekalla, joka taistelee itsestään — samalla miekalla, jonka puuttuminen jättää hänet aseettomaksi Surtria vastaan Ragnarökissa. Gerðr suostuu avioliittoon yhdeksän yön kuluttua, Barreyssa."
+    },
+    "hymir": {
+      "epithet": "Jättiläinen ja pata",
+      "summary": "Soutaa merelle Þórrin kanssa ja koukuttaa Midgardin käärmeen — ja hänet nimetään, vain yhdessä runossa, Týrin isäksi.",
+      "description": "Hymir pitää taloa maailman laidalla padalla, joka on tarpeeksi suuri kaikkien jumalten oluenpanoon, ja Þórr lähtee hakemaan sitä poikana esiintyen. Yhdessä he soutavat merelle, jossa Þórr syöttää koukun härän päällä ja saa Jörmungandrin lähes rantaan, ennen kuin Hymir pelosta katkaisee siiman. Hymiskviða kutsuu häntä suoraan Týrin isäksi — ”isäni ankara omistaa padan” — kun taas Skáldskaparmál nimeää Týrin sen sijaan Óðinnin pojaksi. Kumpikaan teksti ei anna periksi, joten kaavio säilyttää molemmat."
+    },
+    "thrym": {
+      "epithet": "Jättiläisten kuningas",
+      "summary": "Varasti Þórrin vasaran ja vaati Freyjaa lunnaiksi — ja sai Mjölnirin sen sijaan takaisin syliinsä.",
+      "description": "Þrymr varastaa Mjölnirin ja hautaa sen kahdeksan peninkulman syvyyteen eikä vaihda sitä mihinkään muuhun kuin Freyjaan morsiamekseen. Freyja kieltäytyy suoralta kädeltä, joten Þórr menee häihin itse, huntu päällään ja morsiameksi pukeutuneena, Loki vierellään morsiusneitona. Kun vasara kannetaan sisään pyhittämään avioliitto, kuten tapa vaatii, Þórrin sydän nauraa: hän tappaa ensin Þrymrin ja sitten koko jättiläissalin."
+    },
     "fenrir": {
       "epithet": "Susi",
       "summary": "Jumalat, jotka pelkäsivät häntä, kasvattivat hänet, hänet kahlittiin nauhalla, ja hän nielaisee Óðinnin.",

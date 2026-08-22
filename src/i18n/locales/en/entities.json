@@ -140,6 +140,36 @@
       "summary": "Baldr's wife, and her heart breaks on his funeral ship before it is even lit.",
       "description": "Nanna is Baldr's wife. When his body is carried out to the pyre-ship Hringhorni, the sight of it breaks her heart on the spot, and she is burned beside him. Even from Hel she keeps up the forms of the living: she sends Frigg a linen smock and Fulla a gold ring, and Hermóðr carries them home along with the news that there is still a chance her husband might return."
     },
+    "skadi": {
+      "epithet": "The ski-goddess",
+      "summary": "Took up arms to avenge her father, and left with a husband chosen by his feet alone.",
+      "description": "Skaði marches on Ásgarðr in helm and mail to avenge Þjazi, and the gods buy her off with a strange bargain: she may choose a husband from among them, seeing nothing but their feet. She picks the fairest pair, certain they belong to Baldr, and gets Njörðr instead. The marriage does not sit easily — he wants the shore, she wants the mountains where her father lived — but the settlement holds, and she goes back to Þrymheimr on skis, with a bow, and is called the snowshoe-goddess ever after."
+    },
+    "thjazi": {
+      "epithet": "Skaði's father",
+      "summary": "Trapped Loki in eagle's shape and traded his freedom for Iðunn — then paid for it with his life.",
+      "description": "Þjazi catches Loki in the form of an eagle, glues him fast to a pole, and will not let him go until he swears to lure Iðunn out of Ásgarðr with her apples. Loki keeps the oath; Þjazi carries her off to Þrymheimr in his eagle's plumage, and the gods age visibly the moment she is gone. When Loki flies her back as a nut in Freyja's hawk-dress, Þjazi gives chase in the same shape and is burned and killed at the gate of Ásgarðr. His daughter is Skaði."
+    },
+    "utgarda-loki": {
+      "epithet": "King of Útgarðr",
+      "summary": "Beat Þórr at every contest by cheating with the shape of the world itself.",
+      "description": "Útgarða-Loki receives Þórr and his companions as Skrýmir first, binding their provisions with an iron knot no one can undo, then as the king of a giant's hall where the visitors are set impossible tasks in disguise: Loki loses an eating race to wildfire, Þjálfi loses a footrace to thought, and Þórr himself only half-empties the sea, barely lifts the Midgard Serpent disguised as a cat, and is brought to one knee by old age wearing a woman's shape. Once his guests are safely outside the gate, he explains every trick — and the castle vanishes before Þórr can swing the hammer at him."
+    },
+    "gerd": {
+      "epithet": "Freyr's wife",
+      "summary": "So bright that sky and sea lit up when she raised her arms, and Freyr gave up his sword to win her.",
+      "description": "Gerðr is the daughter of the giant Gymir and Aurboða, and fairest of all women. Freyr sees her from Hliðskjálf and falls into a grief so total he will not eat, sleep, or speak. He sends Skírnir to woo her on his behalf, paying for it with the one sword that fights on its own — the same sword whose absence leaves him weaponless against Surtr at Ragnarǫk. Gerðr agrees to the marriage nine nights later, at Barrey."
+    },
+    "hymir": {
+      "epithet": "The giant with the cauldron",
+      "summary": "Rows out with Þórr and hooks the Midgard Serpent — and is named, in one poem only, as Týr's father.",
+      "description": "Hymir keeps house at the edge of the world with a cauldron large enough for all the gods' brewing, and Þórr goes to fetch it disguised as a boy. Together they row out to sea, where Þórr baits a hook with an ox's head and very nearly lands Jǫrmungandr before Hymir cuts the line in fright. Hymiskviða calls him Týr's father outright — 'a kettle my father fierce doth own' — while Skáldskaparmál names Týr Óðinn's son instead. Neither text budges, so the graph keeps both."
+    },
+    "thrym": {
+      "epithet": "King of the giants",
+      "summary": "Stole Þórr's hammer and asked for Freyja as ransom — and got Mjǫllnir back in his lap instead.",
+      "description": "Þrymr steals Mjǫllnir and buries it eight leagues down, and will trade it for nothing but Freyja as his bride. Freyja refuses outright, so Þórr goes to the wedding himself, veiled and dressed as the bride, with Loki beside him as a handmaid. When the hammer is carried in to hallow the marriage, as custom asks, Þórr's heart laughs: he kills Þrymr first, then the whole hall of giants."
+    },
     "fenrir": {
       "epithet": "The wolf",
       "summary": "Raised by the gods who feared him, bound by a ribbon, and he swallows Óðinn.",

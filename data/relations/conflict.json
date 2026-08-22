@@ -206,5 +206,14 @@
     "directed": true,
     "certainty": "attested",
     "sources": [{ "work": "gylfaginning", "locus": "7" }]
+  },
+  {
+    "id": "thor--thrym--slays",
+    "from": "thor",
+    "to": "thrym",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "thrymskvitha", "locus": "31" }]
   }
 ]

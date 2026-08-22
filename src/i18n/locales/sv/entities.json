@@ -140,6 +140,36 @@
       "summary": "Baldrs hustru, och hennes hjärta brister på hans likskepp innan det ens är tänt.",
       "description": "Nanna är Baldrs hustru. När hans kropp bärs ut till likskeppet Hringhorni brister hennes hjärta genast av sorg, och hon bränns vid hans sida. Även från Hel upprätthåller hon de levandes seder: hon skickar Frigg en linneskjorta och Fulla en guldring, och Hermóðr bär dem hem tillsammans med nyheten att det ännu finns en chans att hennes make kan återvända."
     },
+    "skadi": {
+      "epithet": "Skidgudinnan",
+      "summary": "Grep till vapen för att hämnas sin far, och lämnade med en make vald efter fötterna allena.",
+      "description": "Skaði marscherar mot Ásgarðr i hjälm och brynja för att hämnas Þjazi, och gudarna köper sig fria med en märklig uppgörelse: hon får välja en make bland dem, utan att se annat än deras fötter. Hon väljer det vackraste paret, övertygad om att de tillhör Baldr, och får Njörðr i stället. Äktenskapet går inte helt smärtfritt — han vill ha kusten, hon vill ha bergen där hennes far bodde — men uppgörelsen håller, och hon återvänder till Þrymheimr på skidor, med båge, och kallas sedan skidgudinnan."
+    },
+    "thjazi": {
+      "epithet": "Skaðis far",
+      "summary": "Fångade Loke i örnhamn och bytte hans frihet mot Iðunn — och betalade för det med sitt liv.",
+      "description": "Þjazi fångar Loke i en örns skepnad, limmar fast honom vid en stång, och släpper honom inte förrän han svär att locka Iðunn ut ur Ásgarðr med hennes äpplen. Loke håller eden; Þjazi bär bort henne till Þrymheimr i sin örndräkt, och gudarna åldras synligt i samma stund hon är borta. När Loke flyger tillbaka med henne som en nöt i Freyjas hökdräkt, jagar Þjazi i samma skepnad och bränns och dräps vid Ásgarðrs port. Hans dotter är Skaði."
+    },
+    "utgarda-loki": {
+      "epithet": "Kung av Útgarðr",
+      "summary": "Besegrade Þórr i varje tävling genom att fuska med själva världens form.",
+      "description": "Útgarða-Loki tar emot Þórr och hans följeslagare först som Skrýmir, binder deras matsäck med en järnknut som ingen kan lösa, och sedan som kung i en jättehall där gästerna ställs inför omöjliga uppgifter i förklädnad: Loke förlorar en ättävling mot vildeld, Þjálfi förlorar en kapplöpning mot tanken, och Þórr själv tömmer bara halva havet, lyfter knappt Midgårdsormen förklädd till katt, och tvingas ner på ett knä av ålderdomen i en kvinnas skepnad. Så snart hans gäster är i säkerhet utanför porten förklarar han varje trick — och borgen försvinner innan Þórr hinner svinga hammaren mot honom."
+    },
+    "gerd": {
+      "epithet": "Freyrs hustru",
+      "summary": "Så ljus att himmel och hav lyste upp när hon höjde armarna, och Freyr gav bort sitt svärd för att vinna henne.",
+      "description": "Gerðr är dotter till jätten Gymir och Aurboða, och den skönaste av alla kvinnor. Freyr ser henne från Hliðskjálf och faller in i en sorg så total att han varken äter, sover eller talar. Han skickar Skírnir för att fria å hans vägnar, och betalar för det med det enda svärd som strider av sig självt — samma svärd vars frånvaro lämnar honom vapenlös mot Surtr vid Ragnarök. Gerðr samtycker till äktenskapet nio nätter senare, på Barrey."
+    },
+    "hymir": {
+      "epithet": "Jätten med grytan",
+      "summary": "Ror ut med Þórr och krokar Midgårdsormen — och kallas, i endast en dikt, Týrs far.",
+      "description": "Hymir håller hus vid världens ände med en gryta stor nog för alla gudarnas bryggning, och Þórr ger sig av för att hämta den förklädd till pojke. Tillsammans ror de ut till havs, där Þórr betar en krok med ett oxhuvud och nästan landar Jörmungandr innan Hymir av skräck skär av linan. Hymiskviða kallar honom rakt ut Týrs far — ”en gryta min far grym äger” — medan Skáldskaparmál i stället kallar Týr Óðinns son. Ingen av texterna ger vika, så grafen behåller båda."
+    },
+    "thrym": {
+      "epithet": "Jättarnas kung",
+      "summary": "Stal Þórrs hammare och krävde Freyja som lösen — och fick Mjölner tillbaka i knät i stället.",
+      "description": "Þrymr stjäl Mjölner och gräver ner den åtta mil djupt, och vill inte byta den mot något annat än Freyja som brud. Freyja vägrar blankt, så Þórr beger sig till bröllopet själv, beslöjad och klädd som bruden, med Loke vid sin sida som brudtärna. När hammaren bärs in för att viga äktenskapet, som seden kräver, skrattar Þórrs hjärta: han dräper Þrymr först, sedan hela jättesalen."
+    },
     "fenrir": {
       "epithet": "Vargen",
       "summary": "Uppfostrad av de gudar som fruktade honom, bunden med ett band, och han sväljer Óðinn.",

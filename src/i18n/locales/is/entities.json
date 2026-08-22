@@ -140,6 +140,36 @@
       "summary": "Eiginkona Baldurs, og hjarta hennar bilar á líkskipi hans áður en það er kveikt í því.",
       "description": "Nanna er eiginkona Baldurs. Þegar lík hans er borið út á líkskipið Hringhorna, bilar hjarta hennar samstundis af sorg, og hún er brennd við hlið hans. Jafnvel frá Hel heldur hún uppi siðum hinna lifandi: hún sendir Frigg línkyrtil og Fullu gullhring, og Hermóður ber þau heim ásamt fréttunum um að enn sé von um að eiginmaður hennar snúi aftur."
     },
+    "skadi": {
+      "epithet": "Skíðgyðjan",
+      "summary": "Greip til vopna til að hefna föður síns, og fór burt með eiginmann valinn eftir fótum einum saman.",
+      "description": "Skaði gengur á Ásgarð í hjálmi og brynju til að hefna Þjaza, og guðirnir kaupa sig lausa með undarlegu samkomulagi: hún má velja sér eiginmann úr hópi þeirra, en sér ekkert nema fætur þeirra. Hún velur fegurstu fæturna, viss um að þeir tilheyri Baldri, og fær Njörð í staðinn. Hjónabandið gengur ekki átakalaust fyrir sig – hann vill ströndina, hún fjöllin þar sem faðir hennar bjó – en samkomulagið stendur, og hún snýr aftur til Þrymheims á skíðum, með boga, og er upp frá því kölluð skíðgyðjan."
+    },
+    "thjazi": {
+      "epithet": "Faðir Skaða",
+      "summary": "Fangaði Loka í arnarham og keypti frelsi hans með Iðunni – og galt fyrir það með lífi sínu.",
+      "description": "Þjazi fangar Loka í arnarham, límir hann fastan við staur og sleppir honum ekki fyrr en hann sver að lokka Iðunni út úr Ásgarði með eplum sínum. Loki heldur eiðinn; Þjazi ber hana burt til Þrymheims í arnarhamnum, og guðirnir eldast sýnilega um leið og hún er farin. Þegar Loki flýgur með hana til baka sem hnetu í haukshamnum Freyju, eltir Þjazi í sama ham og er brenndur og drepinn við hlið Ásgarðs. Dóttir hans er Skaði."
+    },
+    "utgarda-loki": {
+      "epithet": "Konungur Útgarðs",
+      "summary": "Sigraði Þór í hverri raun með því að svindla með sjálfa lögun heimsins.",
+      "description": "Útgarða-Loki tekur á móti Þór og félögum hans fyrst sem Skrýmir, bindur nesti þeirra með járnhnút sem enginn getur leyst, og síðan sem konungur í sal jötuns þar sem gestirnir eru látnir takast á við ómöguleg verkefni í dulargervi: Loki tapar átkeppni fyrir villieldi, Þjálfi tapar hlaupakeppni fyrir hugsun, og Þór sjálfur tæmir aðeins hálft hafið, lyftir varla Miðgarðsorminum í kattarham, og er lagður á kné af elli í konu líki. Þegar gestir hans eru komnir heilir út fyrir hliðið útskýrir hann hvert bragð – og kastalinn hverfur áður en Þór nær að sveifla hamrinum að honum."
+    },
+    "gerd": {
+      "epithet": "Eiginkona Freys",
+      "summary": "Svo björt að himinn og haf lýstust upp þegar hún lyfti örmunum, og Freyr gaf frá sér sverð sitt til að vinna hana.",
+      "description": "Gerður er dóttir jötunsins Gymis og Aurboðu, og fegurst allra kvenna. Freyr sér hana frá Hliðskjálf og fellur í svo djúpa sorg að hann hvorki étur, sefur né talar. Hann sendir Skírni til að biðja hennar fyrir sína hönd og greiðir fyrir það með sverðinu sem berst af sjálfu sér – sama sverðinu sem fjarvera þess skilur hann eftir vopnlausan gegn Surti á Ragnarökum. Gerður samþykkir hjónabandið níu nóttum síðar, í Barey."
+    },
+    "hymir": {
+      "epithet": "Jötunninn með ketilinn",
+      "summary": "Rær á haf út með Þór og krækir í Miðgarðsorminn – og er, í einu kvæði einu, nefndur faðir Týs.",
+      "description": "Hymir heldur heimili við jaðar heimsins með katli nógu stórum fyrir allan bruggskap guðanna, og Þór fer að sækja hann dulbúinn sem drengur. Saman róa þeir á haf út, þar sem Þór beitir öngul með nautshaus og landar Jörmungandi næstum áður en Hymir sker á línuna af hræðslu. Hymiskviða kallar hann föður Týs berum orðum – „ketil á faðir minn grimmur“ – á meðan Skáldskaparmál nefnir Tý son Óðins í staðinn. Hvorugur textinn hvikar, svo línuritið heldur báðum."
+    },
+    "thrym": {
+      "epithet": "Konungur jötnanna",
+      "summary": "Stal hamri Þórs og krafðist Freyju sem lausnargjalds – og fékk Mjölni aftur í kjöltu sína í staðinn.",
+      "description": "Þrymur stelur Mjölni og grefur hann átta rasta niður, og vill ekkert í skiptum fyrir hann nema Freyju sem brúði. Freyja neitar alfarið, svo Þór fer sjálfur í brúðkaupið, hulinn slæðu og klæddur sem brúðurin, með Loka sér við hlið sem brúðarmey. Þegar hamarinn er borinn inn til að vígja hjónabandið, eins og siður krefst, hlær hjarta Þórs: hann drepur Þrym fyrstan, svo alla jötnana í salnum."
+    },
     "fenrir": {
       "epithet": "Úlfurinn",
       "summary": "Alinn upp af goðunum sem óttuðust hann, bundinn með borða, og hann gleypir Óðin.",

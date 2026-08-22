@@ -140,6 +140,36 @@
       "summary": "Baldrs kone, og hjertet hennes brister på likskipet hans før det engang er tent.",
       "description": "Nanna er Baldrs kone. Da liket hans blir båret ut til likskipet Hringhorni, brister hjertet hennes momentant av sorg, og hun blir brent ved hans side. Selv fra Hel holder hun i hevd de levendes skikker: hun sender Frigg en linskjorte og Fulla en gullring, og Hermóðr bærer dem hjem sammen med nyheten om at det fortsatt er en sjanse for at ektemannen hennes kan vende tilbake."
     },
+    "skadi": {
+      "epithet": "Skigudinnen",
+      "summary": "Grep til våpen for å hevne sin far, og dro derfra med en ektemann valgt etter føttene alene.",
+      "description": "Skaði marsjerer mot Ásgarðr i hjelm og brynje for å hevne Þjazi, og gudene kjøper seg fri med en merkelig avtale: hun får velge en ektemann blant dem, uten å se annet enn føttene deres. Hun velger det vakreste paret, overbevist om at de tilhører Baldr, og får Njörðr i stedet. Ekteskapet går ikke helt smertefritt — han vil ha kysten, hun vil ha fjellene der faren hennes bodde — men avtalen holder, og hun drar tilbake til Þrymheimr på ski, med bue, og kalles siden skigudinnen."
+    },
+    "thjazi": {
+      "epithet": "Skaðis far",
+      "summary": "Fanget Loke i ørneham og byttet friheten hans mot Iðunn — og betalte for det med livet.",
+      "description": "Þjazi fanger Loke i skikkelse av en ørn, limer ham fast til en stang, og slipper ham ikke før han sverger å lokke Iðunn ut av Ásgarðr med eplene hennes. Loke holder eden; Þjazi bærer henne bort til Þrymheimr i ørnedrakten sin, og gudene eldes synlig i det øyeblikket hun er borte. Da Loke flyr henne tilbake som en nøtt i Freyjas hauke-drakt, jager Þjazi i samme skikkelse og blir brent og drept ved porten til Ásgarðr. Datteren hans er Skaði."
+    },
+    "utgarda-loki": {
+      "epithet": "Kongen av Útgarðr",
+      "summary": "Slo Þórr i enhver konkurranse ved å jukse med selve verdens form.",
+      "description": "Útgarða-Loki tar imot Þórr og følget hans først som Skrýmir, binder proviantsekken deres med en jernknute ingen kan løse, og deretter som kongen i en jotunhall der gjestene får umulige oppgaver i forkledning: Loke taper en spisekonkurranse mot viltbrann, Þjálfi taper et kappløp mot tanken, og Þórr selv klarer bare å tømme halve havet, løfter så vidt Midgardsormen forkledd som en katt, og felles i ett kne av alderdom i en kvinnes skikkelse. Så snart gjestene er trygt utenfor porten, forklarer han hvert triks — og borgen forsvinner før Þórr rekker å svinge hammeren mot ham."
+    },
+    "gerd": {
+      "epithet": "Freyrs kone",
+      "summary": "Så lys at himmel og hav lyste opp da hun løftet armene, og Freyr ga fra seg sverdet sitt for å vinne henne.",
+      "description": "Gerðr er datter av jotunen Gymir og Aurboða, og den vakreste av alle kvinner. Freyr ser henne fra Hliðskjálf og synker ned i en sorg så total at han verken spiser, sover eller snakker. Han sender Skírnir for å fri på sine vegne, og betaler for det med det ene sverdet som kjemper av seg selv — det samme sverdet hvis fravær gjør ham våpenløs mot Surtr ved Ragnarǫk. Gerðr samtykker til ekteskapet ni netter senere, på Barrey."
+    },
+    "hymir": {
+      "epithet": "Jotunen med gryten",
+      "summary": "Ror ut med Þórr og kroker Midgardsormen — og blir, i ett dikt alene, kalt Týrs far.",
+      "description": "Hymir holder hus ved verdens ende med en gryte stor nok til alle gudenes brygging, og Þórr drar for å hente den forkledd som en gutt. Sammen ror de ut på havet, der Þórr agner en krok med et oksehode og nesten lander Jǫrmungandr før Hymir i redsel kutter snøret. Hymiskviða kaller ham rett ut Týrs far — «en gryte min far grusomme eier» — mens Skáldskaparmál kaller Týr Óðinns sønn i stedet. Ingen av tekstene gir seg, så grafen beholder begge."
+    },
+    "thrym": {
+      "epithet": "Jotnenes konge",
+      "summary": "Stjal Þórrs hammer og krevde Freyja som løsepenge — og fikk Mjǫllnir tilbake i fanget i stedet.",
+      "description": "Þrymr stjeler Mjǫllnir og graver den åtte mil ned, og vil ikke bytte den mot noe annet enn Freyja som brud. Freyja nekter blankt, så Þórr drar til bryllupet selv, tilslørt og kledd som bruden, med Loke ved sin side som brudepike. Da hammeren bæres inn for å vie ekteskapet, slik skikken krever, ler Þórrs hjerte: han dreper Þrymr først, så hele jotunhallen."
+    },
     "fenrir": {
       "epithet": "Ulven",
       "summary": "Fostret opp av gudene som fryktet ham, bundet av et bånd, og han sluker Óðinn.",

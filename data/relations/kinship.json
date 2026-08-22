@@ -65,8 +65,9 @@
     "to": "tyr",
     "type": "parent_of",
     "directed": true,
-    "certainty": "attested",
-    "sources": [{ "work": "skaldskaparmal", "locus": "9" }]
+    "certainty": "variant",
+    "sources": [{ "work": "skaldskaparmal", "locus": "9" }],
+    "contradicts": ["hymir--tyr--parent_of"]
   },
   {
     "id": "odin--vidar--parent_of",
@@ -520,5 +521,51 @@
     "directed": true,
     "certainty": "attested",
     "sources": [{ "work": "gylfaginning", "locus": "6" }]
+  },
+  {
+    "id": "thjazi--skadi--parent_of",
+    "from": "thjazi",
+    "to": "skadi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gylfaginning", "locus": "23" },
+      { "work": "skaldskaparmal", "locus": "1" }
+    ]
+  },
+  {
+    "id": "njord--skadi--married_to",
+    "from": "njord",
+    "to": "skadi",
+    "type": "married_to",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gylfaginning", "locus": "23" },
+      { "work": "skaldskaparmal", "locus": "1" }
+    ]
+  },
+  {
+    "id": "freyr--gerd--married_to",
+    "from": "freyr",
+    "to": "gerd",
+    "type": "married_to",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gylfaginning", "locus": "37" },
+      { "work": "hyndluljod", "locus": "32" }
+    ]
+  },
+  {
+    "id": "hymir--tyr--parent_of",
+    "from": "hymir",
+    "to": "tyr",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "variant",
+    "sources": [{ "work": "hymiskvitha", "locus": "5" }],
+    "contradicts": ["odin--tyr--parent_of"]
   }
 ]

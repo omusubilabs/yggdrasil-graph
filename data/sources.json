@@ -89,6 +89,28 @@
     "locusUnit": "stanza"
   },
   {
+    "id": "thrymskvitha",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": {
+      "non": "Þrymskviða",
+      "en": "The Lay of Thrym"
+    },
+    "date": "c. 900",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "hymiskvitha",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": {
+      "non": "Hymiskviða",
+      "en": "The Lay of Hymir"
+    },
+    "date": "probably first half of the 11th century",
+    "locusUnit": "stanza"
+  },
+  {
     "id": "gylfaginning",
     "kind": "work",
     "partOf": "prose-edda",

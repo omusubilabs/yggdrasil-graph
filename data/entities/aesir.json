@@ -45,7 +45,7 @@
     "classes": ["aesir"],
     "names": { "non": "Týr", "anglicized": "Tyr" },
     "attestations": ["poetic-edda", "prose-edda"],
-    "tags": ["ragnarok-participant", "ragnarok-slain", "ragnarok-slayer", "war", "odin-kin"]
+    "tags": ["ragnarok-participant", "ragnarok-slain", "ragnarok-slayer", "war", "odin-kin", "disputed-parentage"]
   },
   {
     "id": "heimdall",

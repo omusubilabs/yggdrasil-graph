@@ -79,5 +79,53 @@
     "names": { "non": "Ymir", "anglicized": "Ymir" },
     "attestations": ["poetic-edda", "prose-edda"],
     "tags": ["primordial"]
+  },
+  {
+    "id": "skadi",
+    "type": "being",
+    "classes": ["jotnar"],
+    "names": { "non": "Skaði", "anglicized": "Skadi" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "thjazi",
+    "type": "being",
+    "classes": ["jotnar"],
+    "names": { "non": "Þjazi", "anglicized": "Thjazi" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "utgarda-loki",
+    "type": "being",
+    "classes": ["jotnar"],
+    "names": { "non": "Útgarða-Loki", "anglicized": "Utgard-Loki" },
+    "attestations": ["prose-edda"],
+    "tags": ["shapeshifter"]
+  },
+  {
+    "id": "gerd",
+    "type": "being",
+    "classes": ["jotnar"],
+    "names": { "non": "Gerðr", "anglicized": "Gerd" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "hymir",
+    "type": "being",
+    "classes": ["jotnar"],
+    "names": { "non": "Hymir", "anglicized": "Hymir" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["sea"]
+  },
+  {
+    "id": "thrym",
+    "type": "being",
+    "classes": ["jotnar"],
+    "names": { "non": "Þrymr", "anglicized": "Thrym" },
+    "attestations": ["poetic-edda"],
+    "tags": []
   }
 ]
