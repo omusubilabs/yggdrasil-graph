@@ -4,7 +4,14 @@
  * the same logic to answer the same questions.
  */
 import { isDeathRelation } from './geometry.ts';
-import type { GraphData, GraphLink, GraphNode, RelationFamily, Source } from './types.ts';
+import type {
+  GraphData,
+  GraphLink,
+  GraphNode,
+  RelationFamily,
+  Source,
+  SourceRef,
+} from './types.ts';
 
 export interface GraphIndex {
   data: GraphData;
@@ -126,6 +133,39 @@ export const relatedByTag = (index: GraphIndex, id: string, limit = 6) => {
     .slice(0, limit);
 };
 
+/** Search canonical names, source spellings and stable ids without making accents mandatory. */
+export const normalizeEntityQuery = (value: string): string =>
+  value.normalize('NFKD').replace(/\p{M}/gu, '').toLocaleLowerCase('en').trim();
+
+export const searchEntities = (data: Pick<GraphData, 'nodes'>, query: string, limit = 8) => {
+  const needle = normalizeEntityQuery(query);
+  if (!needle) return [];
+
+  return data.nodes
+    .flatMap((node) => {
+      const fields = [node.id, node.names.non, node.names.anglicized, ...(node.aliases ?? [])].map(
+        normalizeEntityQuery,
+      );
+      const score = fields.reduce(
+        (best, field) =>
+          Math.min(
+            best,
+            field === needle ? 0 : field.startsWith(needle) ? 1 : field.includes(needle) ? 2 : 3,
+          ),
+        3,
+      );
+      return score < 3 ? [{ node, score }] : [];
+    })
+    .sort(
+      (a, b) =>
+        a.score - b.score ||
+        a.node.coreRank - b.node.coreRank ||
+        a.node.id.localeCompare(b.node.id),
+    )
+    .slice(0, limit)
+    .map(({ node }) => node);
+};
+
 export interface RagnarokOverlay {
   /** Death-relation edges between two entities tagged `ragnarok-participant`. */
   pairingLinkIds: Set<string>;
@@ -177,6 +217,69 @@ export const ragnarokOverlay = (index: GraphIndex): RagnarokOverlay => {
   return { pairingLinkIds, combatantIds, lineageNodeIds, lineageLinkIds };
 };
 
+const boundsFor = (nodes: GraphNode[], pad = 60): [number, number, number, number] => {
+  if (nodes.length === 0) return [0, 0, 0, 0];
+  const xs = nodes.map((node) => node.x);
+  const ys = nodes.map((node) => node.y);
+  return [
+    Math.floor(Math.min(...xs) - pad),
+    Math.floor(Math.min(...ys) - pad),
+    Math.ceil(Math.max(...xs) + pad),
+    Math.ceil(Math.max(...ys) + pad),
+  ];
+};
+
+/**
+ * The cold-open slice: the Ragnarǫk argument first, then the highest-degree
+ * figures until the graph reaches the fixed legibility limit.
+ */
+export const buildCore = (
+  data: Pick<GraphData, 'nodes' | 'links' | 'sources' | 'tagIndex'>,
+  limit = 36,
+): GraphData['core'] => {
+  const provisional: GraphData = {
+    version: 3,
+    generatedAt: '',
+    nodes: data.nodes,
+    links: data.links,
+    sources: data.sources,
+    tagIndex: data.tagIndex,
+    bounds: [0, 0, 0, 0],
+    core: { nodeIds: [], linkIds: [], bounds: [0, 0, 0, 0] },
+  };
+  const overlay = ragnarokOverlay(buildIndex(provisional));
+  const ids = new Set([...overlay.combatantIds, ...overlay.lineageNodeIds]);
+  const ranked = [...data.nodes].sort(
+    (a, b) => a.coreRank - b.coreRank || a.id.localeCompare(b.id),
+  );
+  for (const node of ranked) {
+    if (ids.size >= limit) break;
+    ids.add(node.id);
+  }
+
+  const nodeIds = ranked.filter((node) => ids.has(node.id)).map((node) => node.id);
+  const linkIds = data.links
+    .filter((link) => ids.has(link.from) && ids.has(link.to))
+    .map((link) => link.id)
+    .sort();
+  return {
+    nodeIds,
+    linkIds,
+    bounds: boundsFor(data.nodes.filter((node) => ids.has(node.id))),
+  };
+};
+
+/** Bounds for a runtime-selected set, using the same padding as the compiler. */
+export const boundsForNodeIds = (index: GraphIndex, ids: ReadonlySet<string>) =>
+  boundsFor([...ids].flatMap((id) => (index.nodeById.get(id) ? [index.nodeById.get(id)!] : [])));
+
 /** Renders a citation's locus with the unit its work counts in. */
-export const locusKey = (index: GraphIndex, work: string): 'sources.chapter' | 'sources.stanza' =>
-  index.sourceById.get(work)?.locusUnit === 'stanza' ? 'sources.stanza' : 'sources.chapter';
+export const locusKey = (
+  index: GraphIndex,
+  ref: SourceRef | string,
+): 'sources.chapter' | 'sources.stanza' | 'sources.page' => {
+  const work = typeof ref === 'string' ? ref : ref.work;
+  const unit = typeof ref === 'string' ? undefined : ref.unit;
+  const resolved = unit ?? index.sourceById.get(work)?.locusUnit ?? 'chapter';
+  return `sources.${resolved}`;
+};

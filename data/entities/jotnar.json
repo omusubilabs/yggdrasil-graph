@@ -135,5 +135,45 @@
     "names": { "non": "Vafþrúðnir", "anglicized": "Vafthrudnir" },
     "attestations": ["poetic-edda"],
     "tags": ["wisdom"]
+  },
+  {
+    "id": "gymir",
+    "type": "being",
+    "classes": ["jotnar"],
+    "names": { "non": "Gymir", "anglicized": "Gymir" },
+    "attestations": ["poetic-edda"],
+    "tags": ["giant-descent"]
+  },
+  {
+    "id": "rindr",
+    "type": "being",
+    "classes": ["jotnar"],
+    "names": { "non": "Rindr", "anglicized": "Rind" },
+    "attestations": ["poetic-edda"],
+    "tags": ["giant-descent"]
+  },
+  {
+    "id": "alvaldi",
+    "type": "being",
+    "classes": ["jotnar"],
+    "names": { "non": "Alvaldi", "anglicized": "Alvaldi" },
+    "attestations": ["poetic-edda"],
+    "tags": ["giant-descent"]
+  },
+  {
+    "id": "fjolsvith",
+    "type": "being",
+    "classes": ["jotnar"],
+    "names": { "non": "Fjǫlsviðr", "anglicized": "Fjolsvith" },
+    "attestations": ["poetic-edda"],
+    "tags": ["wisdom", "giant-descent"]
+  },
+  {
+    "id": "sinmara",
+    "type": "being",
+    "classes": ["jotnar"],
+    "names": { "non": "Sinmara", "anglicized": "Sinmara" },
+    "attestations": ["poetic-edda"],
+    "tags": ["giant-descent"]
   }
 ]

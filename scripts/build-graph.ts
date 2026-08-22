@@ -39,10 +39,11 @@ import {
   type RelationFamily,
   type Source,
 } from '../src/graph/types.ts';
+import { buildCore } from '../src/graph/model.ts';
 
 const OUT_DIR = 'src/generated';
 const OUT_FILE = join(OUT_DIR, 'graph.json');
-const GRAPH_VERSION = 2;
+const GRAPH_VERSION = 3;
 
 /** Deterministic PRNG. Any fixed seed will do; this one is arbitrary. */
 const mulberry32 = (seed: number) => () => {
@@ -214,6 +215,7 @@ const graph: GraphData = {
   sources,
   tagIndex,
   bounds,
+  core: buildCore({ nodes, links, sources, tagIndex }),
 };
 
 mkdirSync(OUT_DIR, { recursive: true });

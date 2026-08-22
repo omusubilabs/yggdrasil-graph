@@ -17,6 +17,13 @@
   "graph": {
     "regionLabel": "Relationship graph",
     "regionDescription": "An interactive graph of {count} figures and the {links} relations between them. Use the list view below for a linear equivalent.",
+    "regionDescriptionSubset": "An interactive graph showing {visible} of {total} figures and {links} relations. Search or show all to explore the full corpus; the table below is the linear equivalent.",
+    "searchLabel": "Find a figure",
+    "searchPlaceholder": "Name or alias",
+    "searchNoResults": "No matching figure.",
+    "showAll": "Show every figure",
+    "showAllHint": "Expand the graph from its core argument to the full corpus.",
+    "scopeAnnounce": "Showing {visible} of {total} figures.",
     "hint": "Touch a name.",
     "hintKeyboard": "Tab into the graph, then move between figures with the arrow keys.",
     "loading": "Waking the graph",
@@ -94,6 +101,7 @@
     "aesir": "Æsir",
     "vanir": "Vanir",
     "jotnar": "Jǫtnar",
+    "humans": "Humans",
     "beings": "Other beings",
     "worlds": "Worlds and places",
     "artifacts": "Treasures"
@@ -101,6 +109,7 @@
   "type": {
     "label": "Type",
     "deity": "Deity",
+    "human": "Human",
     "being": "Being",
     "world": "World",
     "artifact": "Made thing",
@@ -157,6 +166,7 @@
     "intro": "Every relation in this graph points at a locus in one of these works. The editions cited are all in the public domain; their text is not reproduced here.",
     "chapter": "ch. {locus}",
     "stanza": "st. {locus}",
+    "page": "p. {locus}",
     "translatedBy": "Translated by {translator}, {year}",
     "composed": "Composed {date}",
     "partOf": "In {collection}",

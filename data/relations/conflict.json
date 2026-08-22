@@ -215,5 +215,474 @@
     "directed": true,
     "certainty": "attested",
     "sources": [{ "work": "thrymskvitha", "locus": "31" }]
+  },
+  {
+    "id": "thor--lorikus--slays",
+    "from": "thor",
+    "to": "lorikus",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "thor--lora--slays",
+    "from": "thor",
+    "to": "lora",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "nithuth--volund--maims",
+    "from": "nithuth",
+    "to": "volund",
+    "type": "maims",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "volundarkvitha", "locus": "30" }]
+  },
+  {
+    "id": "hrothmar--svafnir--slays",
+    "from": "hrothmar",
+    "to": "svafnir",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "275", "unit": "page" }]
+  },
+  {
+    "id": "helgi-hjorvarthsson--hrothmar--slays",
+    "from": "helgi-hjorvarthsson",
+    "to": "hrothmar",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "278", "unit": "page" }]
+  },
+  {
+    "id": "helgi-hjorvarthsson--hati-hrimgerthar--slays",
+    "from": "helgi-hjorvarthsson",
+    "to": "hati-hrimgerthar",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "17" }]
+  },
+  {
+    "id": "alf-hrothmarsson--helgi-hjorvarthsson--slays",
+    "from": "alf-hrothmarsson",
+    "to": "helgi-hjorvarthsson",
+    "type": "slays",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "39" }]
+  },
+  {
+    "id": "helgi-hundingsbane--hunding--slays",
+    "from": "helgi-hundingsbane",
+    "to": "hunding",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-i", "locus": "10" }]
+  },
+  {
+    "id": "helgi-hundingsbane--eyjolf-hundingsson--slays",
+    "from": "helgi-hundingsbane",
+    "to": "eyjolf-hundingsson",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-i", "locus": "14" }]
+  },
+  {
+    "id": "helgi-hundingsbane--alf-hundingsson--slays",
+    "from": "helgi-hundingsbane",
+    "to": "alf-hundingsson",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-i", "locus": "14" }]
+  },
+  {
+    "id": "helgi-hundingsbane--hjorvarth-hundingsson--slays",
+    "from": "helgi-hundingsbane",
+    "to": "hjorvarth-hundingsson",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-i", "locus": "14" }]
+  },
+  {
+    "id": "helgi-hundingsbane--hervarth-hundingsson--slays",
+    "from": "helgi-hundingsbane",
+    "to": "hervarth-hundingsson",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-i", "locus": "14" }]
+  },
+  {
+    "id": "hothbrodd--isung--slays",
+    "from": "hothbrodd",
+    "to": "isung",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-i", "locus": "21" }]
+  },
+  {
+    "id": "helgi-hundingsbane--hothbrodd--slays",
+    "from": "helgi-hundingsbane",
+    "to": "hothbrodd",
+    "type": "slays",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "helgakvitha-hundingsbana-i", "locus": "57" }]
+  },
+  {
+    "id": "helgi-hundingsbane--bragi-hognisson--slays",
+    "from": "helgi-hundingsbane",
+    "to": "bragi-hognisson",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "18" }]
+  },
+  {
+    "id": "helgi-hundingsbane--hogni-helgi--slays",
+    "from": "helgi-hundingsbane",
+    "to": "hogni-helgi",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "18" }]
+  },
+  {
+    "id": "dag-hognisson--helgi-hundingsbane--slays",
+    "from": "dag-hognisson",
+    "to": "helgi-hundingsbane",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "323", "unit": "page" }]
+  },
+  {
+    "id": "borghild--sinfjotli--causes_death_of",
+    "from": "borghild",
+    "to": "sinfjotli",
+    "type": "causes_death_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "fra-dautha-sinfjotla", "locus": "335" }]
+  },
+  {
+    "id": "sigurd--regin--slays",
+    "from": "sigurd",
+    "to": "regin",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gripisspo", "locus": "11" },
+      { "work": "fafnismol", "locus": "39" }
+    ]
+  },
+  {
+    "id": "sigurd--fafnir--slays",
+    "from": "sigurd",
+    "to": "fafnir",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gripisspo", "locus": "11" },
+      { "work": "fafnismol", "locus": "4" }
+    ]
+  },
+  {
+    "id": "gunnar--sigurd--causes_death_of",
+    "from": "gunnar",
+    "to": "sigurd",
+    "type": "causes_death_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gripisspo", "locus": "50-51" },
+      { "work": "sigurtharkvitha-en-skamma", "locus": "20-23" }
+    ]
+  },
+  {
+    "id": "hogni-gjukisson--sigurd--causes_death_of",
+    "from": "hogni-gjukisson",
+    "to": "sigurd",
+    "type": "causes_death_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gripisspo", "locus": "50-51" },
+      { "work": "sigurtharkvitha-en-skamma", "locus": "17-23" }
+    ]
+  },
+  {
+    "id": "gotthorm--sigurd--causes_death_of",
+    "from": "gotthorm",
+    "to": "sigurd",
+    "type": "causes_death_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gripisspo", "locus": "50-51" },
+      { "work": "sigurtharkvitha-en-skamma", "locus": "20-23" }
+    ]
+  },
+  {
+    "id": "grimhild--sigurd--causes_death_of",
+    "from": "grimhild",
+    "to": "sigurd",
+    "type": "causes_death_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gripisspo", "locus": "51" }]
+  },
+  {
+    "id": "loki--otr--slays",
+    "from": "loki",
+    "to": "otr",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "reginsmol", "locus": "359", "unit": "page" }]
+  },
+  {
+    "id": "fafnir--hreithmar--slays",
+    "from": "fafnir",
+    "to": "hreithmar",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "reginsmol", "locus": "363", "unit": "page" }]
+  },
+  {
+    "id": "sigurd--lyngvi--slays",
+    "from": "sigurd",
+    "to": "lyngvi",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "reginsmol", "locus": "369", "unit": "page" }]
+  },
+  {
+    "id": "hodr--baldr--causes_death_of",
+    "from": "hodr",
+    "to": "baldr",
+    "type": "causes_death_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "baldrs-draumar", "locus": "9" }]
+  },
+  {
+    "id": "vali--hodr--slays",
+    "from": "vali",
+    "to": "hodr",
+    "type": "slays",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "baldrs-draumar", "locus": "11" }]
+  },
+  {
+    "id": "thor--thjazi--slays",
+    "from": "thor",
+    "to": "thjazi",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "harbarthsljoth", "locus": "19" }]
+  },
+  {
+    "id": "brynhild--hjalmgunnar--slays",
+    "from": "brynhild",
+    "to": "hjalmgunnar",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helreith-brynhildar", "locus": "8" }]
+  },
+  {
+    "id": "atli--gunnar--causes_death_of",
+    "from": "atli",
+    "to": "gunnar",
+    "type": "causes_death_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "sigurtharkvitha-en-skamma", "locus": "58" },
+      { "work": "drap-niflunga", "locus": "448-449", "unit": "page" }
+    ]
+  },
+  {
+    "id": "atli--hogni-gjukisson--causes_death_of",
+    "from": "atli",
+    "to": "hogni-gjukisson",
+    "type": "causes_death_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "drap-niflunga", "locus": "448-449", "unit": "page" },
+      { "work": "atlakvitha-en-gronlenzka", "locus": "22-25" }
+    ]
+  },
+  {
+    "id": "guthrun--erp-atlason--slays",
+    "from": "guthrun",
+    "to": "erp-atlason",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "atlakvitha-en-gronlenzka", "locus": "39-40" },
+      { "work": "atlamol-en-gronlenzku", "locus": "72-74" }
+    ]
+  },
+  {
+    "id": "guthrun--eitil--slays",
+    "from": "guthrun",
+    "to": "eitil",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "atlakvitha-en-gronlenzka", "locus": "39-40" },
+      { "work": "atlamol-en-gronlenzku", "locus": "72-74" }
+    ]
+  },
+  {
+    "id": "guthrun--atli--slays",
+    "from": "guthrun",
+    "to": "atli",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "sigurtharkvitha-en-skamma", "locus": "59" },
+      { "work": "atlakvitha-en-gronlenzka", "locus": "43-44" },
+      { "work": "atlamol-en-gronlenzku", "locus": "83-86" }
+    ]
+  },
+  {
+    "id": "hniflung--atli--slays",
+    "from": "hniflung",
+    "to": "atli",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "atlamol-en-gronlenzku", "locus": "83-86" }]
+  },
+  {
+    "id": "hogni-gjukisson--vingi--slays",
+    "from": "hogni-gjukisson",
+    "to": "vingi",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "atlamol-en-gronlenzku", "locus": "38" }]
+  },
+  {
+    "id": "bikki--svanhild--causes_death_of",
+    "from": "bikki",
+    "to": "svanhild",
+    "type": "causes_death_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "sigurtharkvitha-en-skamma", "locus": "63" },
+      { "work": "guthrunarhvot", "locus": "538-539", "unit": "page" }
+    ]
+  },
+  {
+    "id": "jormunrek--svanhild--causes_death_of",
+    "from": "jormunrek",
+    "to": "svanhild",
+    "type": "causes_death_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "guthrunarhvot", "locus": "2" },
+      { "work": "hamthesmol", "locus": "3" }
+    ]
+  },
+  {
+    "id": "bikki--randver--causes_death_of",
+    "from": "bikki",
+    "to": "randver",
+    "type": "causes_death_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "guthrunarhvot", "locus": "538-539", "unit": "page" }]
+  },
+  {
+    "id": "jormunrek--randver--causes_death_of",
+    "from": "jormunrek",
+    "to": "randver",
+    "type": "causes_death_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "guthrunarhvot", "locus": "538-539", "unit": "page" }]
+  },
+  {
+    "id": "hamther--erp-jonaksson--slays",
+    "from": "hamther",
+    "to": "erp-jonaksson",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "hamthesmol", "locus": "17-28" }]
+  },
+  {
+    "id": "sorli-jonaksson--erp-jonaksson--slays",
+    "from": "sorli-jonaksson",
+    "to": "erp-jonaksson",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "hamthesmol", "locus": "17-28" }]
+  },
+  {
+    "id": "hamther--jormunrek--maims",
+    "from": "hamther",
+    "to": "jormunrek",
+    "type": "maims",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "hamthesmol", "locus": "25" }]
+  },
+  {
+    "id": "sorli-jonaksson--jormunrek--maims",
+    "from": "sorli-jonaksson",
+    "to": "jormunrek",
+    "type": "maims",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "hamthesmol", "locus": "25" }]
+  },
+  {
+    "id": "jormunrek--hamther--causes_death_of",
+    "from": "jormunrek",
+    "to": "hamther",
+    "type": "causes_death_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "hamthesmol", "locus": "26-31" }]
+  },
+  {
+    "id": "jormunrek--sorli-jonaksson--causes_death_of",
+    "from": "jormunrek",
+    "to": "sorli-jonaksson",
+    "type": "causes_death_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "hamthesmol", "locus": "26-31" }]
   }
 ]

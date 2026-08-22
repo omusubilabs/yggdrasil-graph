@@ -196,5 +196,263 @@
     },
     "attestations": ["poetic-edda", "prose-edda"],
     "tags": ["messenger"]
+  },
+  {
+    "id": "volund",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Vǫlundr", "anglicized": "Volund" },
+    "aliases": ["Weland", "Wayland"],
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "hlathguth",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Hlaðguðr svanhvít", "anglicized": "Hlathguth Swan-White" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "hervor-hlothversdottir",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Hervǫr alvitr", "anglicized": "Hervor All-Wise" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war", "wisdom"]
+  },
+  {
+    "id": "olrun",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Ǫlrún", "anglicized": "Olrun" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "svava",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Sváva", "anglicized": "Svava" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "hati-hrimgerthar",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Hati", "anglicized": "Hati" },
+    "attestations": ["poetic-edda"],
+    "tags": ["giant-descent"]
+  },
+  {
+    "id": "hrimgerth",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Hrímgerðr", "anglicized": "Hrimgerth" },
+    "attestations": ["poetic-edda"],
+    "tags": ["giant-descent"]
+  },
+  {
+    "id": "lothin",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Loðinn", "anglicized": "Lothin" },
+    "attestations": ["poetic-edda"],
+    "tags": ["giant-descent"]
+  },
+  {
+    "id": "salgofnir",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Salgofnir", "anglicized": "Salgofnir" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "grani",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Grani", "anglicized": "Grani" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "regin",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Reginn", "anglicized": "Regin" },
+    "attestations": ["poetic-edda"],
+    "tags": ["wisdom"]
+  },
+  {
+    "id": "hreithmar",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Hreiðmarr", "anglicized": "Hreithmar" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "andvari",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Andvari", "anglicized": "Andvari" },
+    "attestations": ["poetic-edda"],
+    "tags": ["shapeshifter"]
+  },
+  {
+    "id": "otr",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Otr", "anglicized": "Otr" },
+    "attestations": ["poetic-edda"],
+    "tags": ["shapeshifter"]
+  },
+  {
+    "id": "oin",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Óinn", "anglicized": "Oin" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "lyngheith",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Lyngheiðr", "anglicized": "Lyngheith" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "lofnheith",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Lofnheiðr", "anglicized": "Lofnheith" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "ran",
+    "type": "deity",
+    "classes": ["beings"],
+    "names": { "non": "Rán", "anglicized": "Ran" },
+    "aliases": ["Ron"],
+    "attestations": ["poetic-edda"],
+    "tags": ["sea"]
+  },
+  {
+    "id": "fafnir",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Fáfnir", "anglicized": "Fafnir" },
+    "attestations": ["poetic-edda"],
+    "tags": ["shapeshifter"]
+  },
+  {
+    "id": "alvis",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Alvíss", "anglicized": "Alvis" },
+    "attestations": ["poetic-edda"],
+    "tags": ["wisdom"]
+  },
+  {
+    "id": "vithofnir",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Víðófnir", "anglicized": "Vithofnir" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "gif",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Gifr", "anglicized": "Gif" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "geri-fjolsvinnsmol",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Geri", "anglicized": "Geri" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "hlif",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Hlíf", "anglicized": "Hlif" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "hlifthrasa",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Hlífþrasa", "anglicized": "Hlifthrasa" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "thjothvara",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Þjóðvarta", "anglicized": "Thjothvara" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "bjort",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Bjǫrt", "anglicized": "Bjort" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "bleik",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Bleik", "anglicized": "Bleik" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "blith",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Blíð", "anglicized": "Blith" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "frith",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Fríð", "anglicized": "Frith" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "eir",
+    "type": "deity",
+    "classes": ["beings"],
+    "names": { "non": "Eir", "anglicized": "Eir" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "aurboda",
+    "type": "being",
+    "classes": ["beings"],
+    "names": { "non": "Aurboda", "anglicized": "Aurboda" },
+    "attestations": ["poetic-edda"],
+    "tags": []
   }
 ]

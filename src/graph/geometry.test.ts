@@ -134,12 +134,12 @@ describe('labelSize', () => {
 
 describe('nodeClassNames', () => {
   it('lists the node and type classes plus one is- class per entry', () => {
-    assert.equal(nodeClassNames(findNode('king')), 'node node--deity is-aesir');
+    assert.equal(nodeClassNames(findNode('king')), 'node node--human is-humans');
   });
 
   it('adds nothing extra when classes is empty', () => {
     const bare = { ...findNode('king'), classes: [] };
-    assert.equal(nodeClassNames(bare), 'node node--deity');
+    assert.equal(nodeClassNames(bare), 'node node--human');
   });
 });
 

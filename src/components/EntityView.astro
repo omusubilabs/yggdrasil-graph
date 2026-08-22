@@ -47,6 +47,16 @@ const attestations = node.attestations
     {hasKey(locale, epithetKey) ? <p class="entity__epithet">{t(epithetKey)}</p> : null}
   </header>
 
+  {
+    node.aliases && node.aliases.length > 0 ? (
+      <section class="entity__aliases">
+        <h2 class="entity__block-title">{t('entity.namesHeading')}</h2>
+        {/* i18n-ignore: aliases are historical names and edition spellings from data/entities/. */}
+        <p>{node.aliases.join(' · ')}</p>
+      </section>
+    ) : null
+  }
+
   <div class="entity__meta">
     <span class="entity__chip entity__chip--type">{t(`type.${node.type}`)}</span>
     {
@@ -159,6 +169,15 @@ const attestations = node.attestations
     list-style: none;
     margin: 0 0 var(--space-lg);
     padding: 0;
+  }
+
+  .entity__aliases {
+    margin-bottom: var(--space-md);
+  }
+
+  .entity__aliases p {
+    margin: 0;
+    font-family: var(--font-display);
   }
 
   .entity__chip {

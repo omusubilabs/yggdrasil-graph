@@ -8,7 +8,7 @@ listed below. That is deliberate: an uncited claim must be visible as owed work,
 not quietly parked in the data. If you can supply a locus from a public-domain
 edition, that is one of the most valuable contributions this project accepts.
 
-**Gaps.** Entities and relations we know are missing, and why they matter.
+**Gaps.** Deliberately excluded candidates and the evidence for excluding them.
 
 > **Never invent a citation to clear an item from this list.** A fabricated
 > chapter number is worse than a missing one — it poisons a dataset other people
@@ -36,10 +36,10 @@ softened, per this file's own rule.
   `dwarf-forged` connection through a new entity for the hair itself, which is
   probably over-modelling.
 
-### Entities that would complete existing relations
+### Excluded modern world names
 
-- **`vanaheim`, `svartalfheim`, `helheim`** — three of the nine worlds are still
-  missing (Alfheim was added: Gylfaginning 17, Grímnismál 5). Searched for
+- **`vanaheim`, `svartalfheim`, `helheim`** — these familiar names remain
+  excluded (Alfheim was added: Gylfaginning 17, Grímnismál 5). Searched for
   directly, not skipped: in both editions the literal toponym never appears,
   only periphrasis — "the land of the Vanir" (Gylfaginning 23), "the
   Dark-Elves" (Gylfaginning 17), "the home of the Wanes" (Vafþrúðnismál 39).

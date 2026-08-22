@@ -62,5 +62,94 @@
     "names": { "non": "Brísingamen", "anglicized": "Brisingamen" },
     "attestations": ["poetic-edda", "prose-edda"],
     "tags": []
+  },
+  {
+    "id": "volunds-sword",
+    "type": "artifact",
+    "classes": ["artifacts"],
+    "names": { "non": "Vǫlundar sverð", "anglicized": "Volund's sword" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "volunds-ring",
+    "type": "artifact",
+    "classes": ["artifacts"],
+    "names": { "non": "Vǫlundar hringr", "anglicized": "Volund's ring" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "helgis-sword",
+    "type": "artifact",
+    "classes": ["artifacts"],
+    "names": { "non": "Helga sverð", "anglicized": "Helgi's sword" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "gram",
+    "type": "artifact",
+    "classes": ["artifacts"],
+    "names": { "non": "Gramr", "anglicized": "Gram" },
+    "attestations": ["poetic-edda"],
+    "tags": ["dwarf-forged"]
+  },
+  {
+    "id": "andvaranaut",
+    "type": "artifact",
+    "classes": ["artifacts"],
+    "names": { "non": "Andvaranautr", "anglicized": "Andvaranaut" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "fear-helm",
+    "type": "artifact",
+    "classes": ["artifacts"],
+    "names": { "non": "ægishjálmr", "anglicized": "fear-helm" },
+    "aliases": ["Helm of Terror"],
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "rans-net",
+    "type": "artifact",
+    "classes": ["artifacts"],
+    "names": { "non": "Ránar net", "anglicized": "Ran's net" },
+    "attestations": ["poetic-edda"],
+    "tags": ["sea"]
+  },
+  {
+    "id": "freyrs-sword",
+    "type": "artifact",
+    "classes": ["artifacts"],
+    "names": { "non": "Freys sverð", "anglicized": "Freyr's sword" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "laevatein",
+    "type": "artifact",
+    "classes": ["artifacts"],
+    "names": { "non": "Lævateinn", "anglicized": "Laevatein" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "rithil",
+    "type": "artifact",
+    "classes": ["artifacts"],
+    "names": { "non": "Riðill", "anglicized": "Rithil" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "hrotti",
+    "type": "artifact",
+    "classes": ["artifacts"],
+    "names": { "non": "Hrotti", "anglicized": "Hrotti" },
+    "attestations": ["poetic-edda"],
+    "tags": []
   }
 ]

@@ -69,7 +69,7 @@ for (const link of data.links) {
             <span class="non sources__work-title">{work.titles.non}</span>
             <span class="sources__en">{work.titles.en}</span>
             <span class="apparatus">
-              {t(work.locusUnit === 'stanza' ? 'sources.stanza' : 'sources.chapter', {
+              {t(`sources.${work.locusUnit ?? 'chapter'}`, {
                 locus: String(citationCount.get(work.id) ?? 0),
               })}
             </span>

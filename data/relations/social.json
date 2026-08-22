@@ -19,5 +19,191 @@
       { "work": "gylfaginning", "locus": "34" },
       { "work": "gylfaginning", "locus": "37" }
     ]
+  },
+  {
+    "id": "thakkrath--nithuth--serves",
+    "from": "thakkrath",
+    "to": "nithuth",
+    "type": "serves",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "volundarkvitha", "locus": "41" }]
+  },
+  {
+    "id": "atli-hjorvarth--hjorvarth--serves",
+    "from": "atli-hjorvarth",
+    "to": "hjorvarth",
+    "type": "serves",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "273", "unit": "page" }]
+  },
+  {
+    "id": "franmar--svafnir--serves",
+    "from": "franmar",
+    "to": "svafnir",
+    "type": "serves",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "273", "unit": "page" }]
+  },
+  {
+    "id": "sigar-helgi--helgi-hjorvarthsson--serves",
+    "from": "sigar-helgi",
+    "to": "helgi-hjorvarthsson",
+    "type": "serves",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "36-37" }]
+  },
+  {
+    "id": "hjorleif-helgi--helgi-hundingsbane--serves",
+    "from": "hjorleif-helgi",
+    "to": "helgi-hundingsbane",
+    "type": "serves",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "helgakvitha-hundingsbana-i", "locus": "24" }]
+  },
+  {
+    "id": "blind--hunding--serves",
+    "from": "blind",
+    "to": "hunding",
+    "type": "serves",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "310", "unit": "page" }]
+  },
+  {
+    "id": "hlif--mengloth--serves",
+    "from": "hlif",
+    "to": "mengloth",
+    "type": "serves",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "fjolsvinnsmol", "locus": "53-56" }]
+  },
+  {
+    "id": "hlifthrasa--mengloth--serves",
+    "from": "hlifthrasa",
+    "to": "mengloth",
+    "type": "serves",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "fjolsvinnsmol", "locus": "53-56" }]
+  },
+  {
+    "id": "thjothvara--mengloth--serves",
+    "from": "thjothvara",
+    "to": "mengloth",
+    "type": "serves",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "fjolsvinnsmol", "locus": "53-56" }]
+  },
+  {
+    "id": "bjort--mengloth--serves",
+    "from": "bjort",
+    "to": "mengloth",
+    "type": "serves",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "fjolsvinnsmol", "locus": "53-56" }]
+  },
+  {
+    "id": "bleik--mengloth--serves",
+    "from": "bleik",
+    "to": "mengloth",
+    "type": "serves",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "fjolsvinnsmol", "locus": "53-56" }]
+  },
+  {
+    "id": "blith--mengloth--serves",
+    "from": "blith",
+    "to": "mengloth",
+    "type": "serves",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "fjolsvinnsmol", "locus": "53-56" }]
+  },
+  {
+    "id": "frith--mengloth--serves",
+    "from": "frith",
+    "to": "mengloth",
+    "type": "serves",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "fjolsvinnsmol", "locus": "53-56" }]
+  },
+  {
+    "id": "eir--mengloth--serves",
+    "from": "eir",
+    "to": "mengloth",
+    "type": "serves",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "fjolsvinnsmol", "locus": "53-56" }]
+  },
+  {
+    "id": "aurboda--mengloth--serves",
+    "from": "aurboda",
+    "to": "mengloth",
+    "type": "serves",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "fjolsvinnsmol", "locus": "53-56" }]
+  },
+  {
+    "id": "vingi--atli--serves",
+    "from": "vingi",
+    "to": "atli",
+    "type": "serves",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "drap-niflunga", "locus": "448", "unit": "page" },
+      { "work": "atlamol-en-gronlenzku", "locus": "4" }
+    ]
+  },
+  {
+    "id": "knefroth--atli--serves",
+    "from": "knefroth",
+    "to": "atli",
+    "type": "serves",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "drap-niflunga", "locus": "448", "unit": "page" },
+      { "work": "atlakvitha-en-gronlenzka", "locus": "1-3" }
+    ]
+  },
+  {
+    "id": "herkja--atli--serves",
+    "from": "herkja",
+    "to": "atli",
+    "type": "serves",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "guthrunarkvitha-iii", "locus": "466", "unit": "page" }]
+  },
+  {
+    "id": "beiti--atli--serves",
+    "from": "beiti",
+    "to": "atli",
+    "type": "serves",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "atlamol-en-gronlenzku", "locus": "57" }]
+  },
+  {
+    "id": "bikki--jormunrek--serves",
+    "from": "bikki",
+    "to": "jormunrek",
+    "type": "serves",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "guthrunarhvot", "locus": "538", "unit": "page" }]
   }
 ]

@@ -17,6 +17,13 @@
   "graph": {
     "regionLabel": "Suhdekaavio",
     "regionDescription": "Interaktiivinen kaavio, jossa on {count} hahmoa ja {links} suhdetta niiden välillä. Käytä alla olevaa luettelonäkymää vastaavaan lineaariseen esitykseen.",
+    "regionDescriptionSubset": "Interaktiivinen kaavio, jossa näkyy {visible}/{total} hahmoa ja {links} suhdetta. Hae tai näytä kaikki tutkiaksesi koko korpusta; alla oleva taulukko on lineaarinen vastine.",
+    "searchLabel": "Etsi hahmo",
+    "searchPlaceholder": "Nimi tai toisintonimi",
+    "searchNoResults": "Vastaavaa hahmoa ei löytynyt.",
+    "showAll": "Näytä kaikki hahmot",
+    "showAllHint": "Laajenna kaavio ytimestä koko korpukseen.",
+    "scopeAnnounce": "Näytetään {visible}/{total} hahmoa.",
     "hint": "Kosketa nimeä.",
     "hintKeyboard": "Siirry sarkaimella kaavioon ja liiku sitten hahmojen välillä nuolinäppäimillä.",
     "loading": "Herätetään kaaviota",
@@ -94,6 +101,7 @@
     "aesir": "Æsir",
     "vanir": "Vanir",
     "jotnar": "Jǫtnar",
+    "humans": "Ihmiset",
     "beings": "Muut olennot",
     "worlds": "Maailmat ja paikat",
     "artifacts": "Aarteet"
@@ -101,6 +109,7 @@
   "type": {
     "label": "Tyyppi",
     "deity": "Jumaluus",
+    "human": "Ihminen",
     "being": "Olento",
     "world": "Maailma",
     "artifact": "Tehty esine",
@@ -157,6 +166,7 @@
     "intro": "Jokainen tämän kaavion suhde viittaa kohtaan jossakin näistä teoksista. Kaikki mainitut painokset ovat vapaasti käytettävissä (public domain); niiden tekstiä ei ole toistettu tässä.",
     "chapter": "luku {locus}",
     "stanza": "säk. {locus}",
+    "page": "s. {locus}",
     "translatedBy": "Kääntänyt {translator}, {year}",
     "composed": "Sepitetty {date}",
     "partOf": "Teoksessa {collection}",

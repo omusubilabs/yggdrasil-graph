@@ -12,6 +12,7 @@ export interface UrlState {
   selected: string | null;
   disputed: boolean;
   ragnarok: boolean;
+  all: boolean;
 }
 
 export const encodeUrlState = (state: UrlState): string => {
@@ -19,6 +20,7 @@ export const encodeUrlState = (state: UrlState): string => {
   if (state.selected) params.set('selected', state.selected);
   if (state.disputed) params.set('disputed', '1');
   if (state.ragnarok) params.set('ragnarok', '1');
+  if (state.all) params.set('all', '1');
   const query = params.toString();
   return query ? `?${query}` : '';
 };
@@ -29,5 +31,6 @@ export const decodeUrlState = (search: string): UrlState => {
     selected: params.get('selected'),
     disputed: params.get('disputed') === '1',
     ragnarok: params.get('ragnarok') === '1',
+    all: params.get('all') === '1',
   };
 };

@@ -19,7 +19,7 @@ const jsonLdFor = (id: string) =>
   });
 
 describe('buildEntityJsonLd: @type mapping', () => {
-  it('maps deity to Thing', () => {
+  it('maps human to Thing', () => {
     assert.equal(jsonLdFor('king')['@type'], 'Thing');
   });
 
@@ -56,6 +56,18 @@ describe('buildEntityJsonLd: name fields', () => {
     assert.equal(jsonLd.alternateName, 'Kóngr');
   });
 
+  it('keeps multiple source aliases as alternate names', () => {
+    const jsonLd = buildEntityJsonLd({
+      index,
+      id: 'king',
+      url: 'https://example.test/entity/king',
+      name: 'King',
+      alternateName: ['Kóngr', 'Sovereign'],
+      inLanguage: 'en',
+    });
+    assert.deepEqual(jsonLd.alternateName, ['Kóngr', 'Sovereign']);
+  });
+
   it('omits description when undefined', () => {
     const jsonLd = jsonLdFor('king');
     assert.equal('description' in jsonLd, false);
@@ -78,13 +90,13 @@ describe('buildEntityJsonLd: citation', () => {
   it('dedupes and formats sourced relations in incident order', () => {
     const jsonLd = jsonLdFor('envoy');
     assert.deepEqual(jsonLd.citation, [
-      'Song of Crowns 2',
-      'Song of Crowns 3',
-      'Song of Crowns 4',
-      'Song of Crowns 5',
-      'Chronicle of Halls 1',
-      'Chronicle of Halls 2',
-      'Chronicle of Halls 7',
+      'Song of Crowns st. 2',
+      'Song of Crowns st. 3',
+      'Song of Crowns st. 4',
+      'Song of Crowns st. 5',
+      'Chronicle of Halls ch. 1',
+      'Chronicle of Halls ch. 2',
+      'Chronicle of Halls ch. 7',
     ]);
   });
 
@@ -124,7 +136,7 @@ describe('buildEntityJsonLd: certainty filter', () => {
   ];
 
   const graph: GraphData = {
-    version: 2,
+    version: 3,
     generatedAt: '2026-01-01T00:00:00.000Z',
     nodes: [
       node({
@@ -175,6 +187,7 @@ describe('buildEntityJsonLd: certainty filter', () => {
     sources,
     tagIndex: {},
     bounds: [0, 0, 0, 0],
+    core: { nodeIds: ['alpha', 'beta', 'gamma'], linkIds: [], bounds: [0, 0, 0, 0] },
   };
 
   const certaintyIndex = buildIndex(graph);
@@ -187,7 +200,7 @@ describe('buildEntityJsonLd: certainty filter', () => {
       name: 'Alpha',
       inLanguage: 'en',
     });
-    assert.ok(jsonLd.citation?.includes('Reliable Work 1'));
+    assert.ok(jsonLd.citation?.includes('Reliable Work ch. 1'));
   });
 
   it('excludes citations from disputed relations', () => {
@@ -198,7 +211,7 @@ describe('buildEntityJsonLd: certainty filter', () => {
       name: 'Alpha',
       inLanguage: 'en',
     });
-    assert.ok(!jsonLd.citation?.includes('Shaky Work 9'));
+    assert.ok(!jsonLd.citation?.includes('Shaky Work ch. 9'));
     assert.equal(jsonLd.citation?.length, 1);
   });
 });

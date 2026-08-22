@@ -42,8 +42,10 @@ const t = useTranslations(locale);
 <style>
   .picker {
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     gap: var(--space-xs);
+    min-width: 0;
   }
 
   .picker__label {
@@ -55,6 +57,7 @@ const t = useTranslations(locale);
 
   .picker__list {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--space-xs);
     list-style: none;
     margin: 0;

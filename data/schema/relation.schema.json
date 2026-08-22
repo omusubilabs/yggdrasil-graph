@@ -73,6 +73,10 @@
                 "description": "Chapter or stanza within the work, per that work's `locusUnit`. A bare number, or a range like `34-35`.",
                 "type": "string",
                 "pattern": "^[0-9]+(-[0-9]+)?$"
+              },
+              "unit": {
+                "description": "Optional override for embedded prose whose locator is a print page rather than the work's default stanza or chapter.",
+                "enum": ["chapter", "stanza", "page"]
               }
             }
           }

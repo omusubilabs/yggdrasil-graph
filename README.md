@@ -1,10 +1,10 @@
 # Yggdrasil Graph
 
-An interactive relationship graph of Norse mythology. Gods, giants, monsters,
-the nine worlds and named things are nodes; kinship, enmity, ownership, marriage
-and location are edges. Select a figure and the graph narrows to its
-neighbourhood, with every relation traced to a chapter or stanza in a
-public-domain edition of the _Poetic_ or _Prose Edda_.
+An interactive relationship graph of Norse mythology. Gods, giants, heroes,
+monsters, worlds and named things are nodes; kinship, enmity, ownership,
+marriage and location are edges. Select a figure and the graph narrows to its
+neighbourhood, with every relation traced to a chapter, stanza or printed page
+in a public-domain edition of the _Poetic_ or _Prose Edda_.
 
 **The ending of the myth cycle is already encoded in its genealogy.** Isolate
 Loki's descendants and you recover most of the opposing side at Ragnarǫk —
@@ -60,12 +60,13 @@ files. Full detail is in [`docs/data-model.md`](docs/data-model.md).
 
 ```jsonc
 {
-  "id": "loki", // stable, lowercase, never renamed
-  "type": "deity", // deity | being | world | artifact | place | event | form
-  "classes": ["aesir", "jotnar"], // an entity may hold several — Loki holds both
-  "names": { "non": "Loki", "anglicized": "Loki" },
-  "attestations": ["poetic-edda", "prose-edda"],
-  "tags": ["ragnarok-participant", "loki-kin", "shapeshifter"],
+  "id": "brynhild", // stable, lowercase, never renamed
+  "type": "human", // deity | human | being | world | artifact | place | event | form
+  "classes": ["humans"], // an entity may hold several — Loki holds two
+  "names": { "non": "Brynhildr", "anglicized": "Brynhild" },
+  "aliases": ["Brunhild", "Sigrdrifa", "Hild"], // search and JSON-LD alternate names
+  "attestations": ["poetic-edda"],
+  "tags": ["war"],
 }
 ```
 
@@ -135,11 +136,20 @@ Also read [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).
 
 ## Roadmap
 
-This first release is a walking skeleton, staged deliberately. Shipped:
+The project is still staged deliberately, but the complete target corpus and
+the scaling layer now ship together:
 
-- [x] 49 entities and 76 relations, every locus verified against the edition cited
+- [x] 376 non-form entities, five form nodes and 538 relations, every locus
+      verified against the cited edition
+- [x] All 39 works in `data/coverage.json` marked `complete`: Bellows's 34
+      poems plus two manuscript-prose works, and Brodeur's three prose works
 - [x] JSON Schemas and a validator that fails on every integrity rule
 - [x] Interactive graph — prerendered, zooming, selecting, filtering, keyboard-traversable
+- [x] Deterministic core view targeting 36 nodes, with mandatory Ragnarǫk
+      combatants and genealogy allowed to overflow; the complete graph loads
+      lazily from static JSON and `?all=1` preserves the shareable full view
+- [x] Accessible search across ids, Old Norse names, anglicized names and
+      aliases, including core-external one-hop reveal and fit
 - [x] Entity panel with relations grouped by family and full citations
 - [x] Prerendered `/entity/<id>` pages for every figure
 - [x] English complete; Japanese as a real locale (see below)
@@ -179,19 +189,10 @@ This first release is a walking skeleton, staged deliberately. Shipped:
 - [x] The `transformation` family — five source-backed form nodes make Loki's
       mare, woman, Þǫkk and salmon shapes, and Váli Lokason's forced wolf shape,
       visible as graph relations.
-
-Not built yet:
-
-- [ ] **next up** — the full 300–400 entity dataset. Phase 1 of the expansion
-      landed 21 entities and 29 relations (cosmogony, Æsir household, six
-      giants, the Norns, three artifacts), taking the graph from 49 to 70
-      entities — most of them resolving figures the existing prose already
-      named but never modelled. The follow-up counsel slice added `consults`
-      and the attested Óðinn→Mímir edge. The relation-vocabulary tranche then
-      added Vafþrúðnir, Skírnir and Hœnir with source-backed knowledge, service
-      and hostage-exchange edges. The graph now has 73 mythological entities
-      plus five form nodes and 114 relations; further tranches carry the figure
-      count toward 300–400.
+- [x] The 300–400 entity corpus expansion — aliases remain one node, human
+      figures have their own type/class, manuscript prose uses Bellows page
+      loci, every entity participates in a cited relation, and all seven
+      locales remain complete.
 
 ---
 

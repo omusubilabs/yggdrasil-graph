@@ -16,5 +16,86 @@
     "directed": false,
     "certainty": "attested",
     "sources": [{ "work": "vafthrudnismal", "locus": "9-55" }]
+  },
+  {
+    "id": "gylfi--odin--consults",
+    "from": "gylfi",
+    "to": "odin",
+    "type": "consults",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "gylfaginning", "locus": "2" }]
+  },
+  {
+    "id": "sigurd--geitir--consults",
+    "from": "sigurd",
+    "to": "geitir",
+    "type": "consults",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gripisspo", "locus": "1-3" }]
+  },
+  {
+    "id": "sigurd--gripir--consults",
+    "from": "sigurd",
+    "to": "gripir",
+    "type": "consults",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gripisspo", "locus": "6-53" }]
+  },
+  {
+    "id": "regin--lyngheith--consults",
+    "from": "regin",
+    "to": "lyngheith",
+    "type": "consults",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "reginsmol", "locus": "364", "unit": "page" }]
+  },
+  {
+    "id": "sigurd--odin--consults",
+    "from": "sigurd",
+    "to": "odin",
+    "type": "consults",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "reginsmol", "locus": "19-25" }]
+  },
+  {
+    "id": "thor--alvis--wisdom_contest_with",
+    "from": "thor",
+    "to": "alvis",
+    "type": "wisdom_contest_with",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "alvissmol", "locus": "8-35" }]
+  },
+  {
+    "id": "svipdag--groa--consults",
+    "from": "svipdag",
+    "to": "groa",
+    "type": "consults",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "grougaldr", "locus": "1-16" }]
+  },
+  {
+    "id": "svipdag--fjolsvith--consults",
+    "from": "svipdag",
+    "to": "fjolsvith",
+    "type": "consults",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "fjolsvinnsmol", "locus": "23-58" }]
+  },
+  {
+    "id": "sigurd--brynhild--consults",
+    "from": "sigurd",
+    "to": "brynhild",
+    "type": "consults",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "sigrdrifumol", "locus": "20-37" }]
   }
 ]

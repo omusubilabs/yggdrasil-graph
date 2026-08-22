@@ -32,9 +32,10 @@ const nodes: GraphNode[] = [
   node(
     {
       id: 'king',
-      type: 'deity',
-      classes: ['aesir'],
+      type: 'human',
+      classes: ['humans'],
       names: { non: 'Kóngr', anglicized: 'King' },
+      aliases: ['Sovereign'],
       attestations: [],
       tags: ['ruler'],
     },
@@ -465,11 +466,16 @@ const tagIndex: Record<string, string[]> = {
 };
 
 export const sampleGraph: GraphData = {
-  version: 2,
+  version: 3,
   generatedAt: '2026-01-01T00:00:00.000Z',
   nodes,
   links,
   sources,
   tagIndex,
   bounds: [0, 0, 130, 130],
+  core: {
+    nodeIds: nodes.map((node) => node.id),
+    linkIds: links.map((entry) => entry.id),
+    bounds: [0, 0, 130, 130],
+  },
 };

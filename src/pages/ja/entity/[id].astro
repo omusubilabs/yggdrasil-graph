@@ -37,7 +37,7 @@ const jsonLd = buildEntityJsonLd({
   id: entityId,
   url,
   name: node.names.anglicized,
-  alternateName: node.names.non,
+  alternateName: [node.names.non, ...(node.aliases ?? [])],
   description,
   inLanguage: locale,
 });

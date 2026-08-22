@@ -17,6 +17,13 @@
   "graph": {
     "regionLabel": "Relasjonsgraf",
     "regionDescription": "En interaktiv graf med {count} skikkelser og {links} relasjoner mellom dem. Bruk listevisningen nedenfor for en lineær versjon.",
+    "regionDescriptionSubset": "En interaktiv graf som viser {visible} av {total} skikkelser og {links} relasjoner. Søk eller vis alle for å utforske hele korpuset; tabellen nedenfor er den lineære versjonen.",
+    "searchLabel": "Finn en skikkelse",
+    "searchPlaceholder": "Navn eller alias",
+    "searchNoResults": "Ingen skikkelser funnet.",
+    "showAll": "Vis alle skikkelser",
+    "showAllHint": "Utvid grafen fra kjernen til hele korpuset.",
+    "scopeAnnounce": "Viser {visible} av {total} skikkelser.",
     "hint": "Trykk på et navn.",
     "hintKeyboard": "Tab deg inn i grafen, og beveg deg mellom skikkelsene med piltastene.",
     "loading": "Vekker grafen",
@@ -94,6 +101,7 @@
     "aesir": "Æsir",
     "vanir": "Vanir",
     "jotnar": "Jǫtnar",
+    "humans": "Mennesker",
     "beings": "Andre vesener",
     "worlds": "Verdener og steder",
     "artifacts": "Skatter"
@@ -101,6 +109,7 @@
   "type": {
     "label": "Type",
     "deity": "Guddom",
+    "human": "Menneske",
     "being": "Vesen",
     "world": "Verden",
     "artifact": "Laget gjenstand",
@@ -157,6 +166,7 @@
     "intro": "Hver relasjon i denne grafen peker til et sted i ett av disse verkene. De siterte utgavene er alle i det fri (public domain); teksten deres er ikke gjengitt her.",
     "chapter": "kap. {locus}",
     "stanza": "str. {locus}",
+    "page": "s. {locus}",
     "translatedBy": "Oversatt av {translator}, {year}",
     "composed": "Forfattet {date}",
     "partOf": "I {collection}",

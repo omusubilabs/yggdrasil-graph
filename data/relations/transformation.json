@@ -43,5 +43,23 @@
     "directed": true,
     "certainty": "attested",
     "sources": [{ "work": "gylfaginning", "locus": "50" }]
+  },
+  {
+    "id": "helgi-hundingsbane--helgi-haddingjaskati--becomes",
+    "from": "helgi-hundingsbane",
+    "to": "helgi-haddingjaskati",
+    "type": "becomes",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "330", "unit": "page" }]
+  },
+  {
+    "id": "sigrun--kara--becomes",
+    "from": "sigrun",
+    "to": "kara",
+    "type": "becomes",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "330", "unit": "page" }]
   }
 ]

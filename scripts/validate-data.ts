@@ -33,7 +33,13 @@ const ENTITY_DIR = join(DATA, 'entities');
 const RELATION_DIR = join(DATA, 'relations');
 const SCHEMA_DIR = join(DATA, 'schema');
 const SOURCES_FILE = join(DATA, 'sources.json');
+const COVERAGE_FILE = join(DATA, 'coverage.json');
 const TODO_FILE = join(DATA, 'TODO.md');
+
+interface CoverageEntry {
+  work: string;
+  status: 'planned' | 'complete';
+}
 
 const errors: string[] = [];
 const warnings: string[] = [];
@@ -66,6 +72,7 @@ const compile = (name: string): ValidateFunction =>
 const validateEntityFile = compile('entity');
 const validateRelationFile = compile('relation');
 const validateSourcesFile = compile('sources');
+const validateCoverageFile = compile('coverage');
 
 const runSchema = (validate: ValidateFunction, data: unknown, path: string) => {
   if (validate(data)) return;
@@ -83,6 +90,8 @@ const jsonFilesIn = (dir: string) =>
 
 const sources = readJson<Source[]>(SOURCES_FILE);
 runSchema(validateSourcesFile, sources, SOURCES_FILE);
+const coverage = readJson<CoverageEntry[]>(COVERAGE_FILE);
+runSchema(validateCoverageFile, coverage, COVERAGE_FILE);
 
 const entities: Entity[] = [];
 const entityOrigin = new Map<string, string>();
@@ -137,6 +146,32 @@ for (const file of jsonFilesIn(RELATION_DIR)) {
 const entityIds = new Set(entities.map((e) => e.id));
 const sourceById = new Map(sources.map((s) => [s.id, s]));
 
+if (sourceById.size !== sources.length) {
+  const seen = new Set<string>();
+  for (const source of sources) {
+    if (seen.has(source.id)) fail(SOURCES_FILE, `duplicate source id "${source.id}"`);
+    seen.add(source.id);
+  }
+}
+
+const coverageByWork = new Map<string, CoverageEntry>();
+for (const entry of coverage) {
+  if (coverageByWork.has(entry.work)) {
+    fail(COVERAGE_FILE, `duplicate coverage row for "${entry.work}"`);
+  }
+  coverageByWork.set(entry.work, entry);
+  const source = sourceById.get(entry.work);
+  if (!source) fail(COVERAGE_FILE, `coverage references unknown work "${entry.work}"`);
+  else if (source.kind !== 'work') {
+    fail(COVERAGE_FILE, `coverage entry "${entry.work}" resolves to a collection, not a work`);
+  }
+}
+for (const source of sources.filter((candidate) => candidate.kind === 'work')) {
+  if (!coverageByWork.has(source.id)) {
+    fail(COVERAGE_FILE, `is missing a row for registered work "${source.id}"`);
+  }
+}
+
 // §4.4 — every sources[].work resolves, and resolves to a WORK, not a collection.
 // Citing "prose-edda" instead of "gylfaginning" loses the locus's meaning.
 for (const source of sources) {
@@ -155,6 +190,20 @@ for (const source of sources) {
 // §4.4 — entity attestations resolve, and point at collections.
 for (const entity of entities) {
   const where = `${entityOrigin.get(entity.id)} → ${entity.id}`;
+
+  const normalizedNames = new Set(
+    [entity.names.non, entity.names.anglicized].map((name) =>
+      name.normalize('NFKD').replace(/\p{M}/gu, '').toLocaleLowerCase('en'),
+    ),
+  );
+  for (const alias of entity.aliases ?? []) {
+    const normalized = alias.normalize('NFKD').replace(/\p{M}/gu, '').toLocaleLowerCase('en');
+    if (normalizedNames.has(normalized)) {
+      fail(where, `alias "${alias}" duplicates a canonical name after normalization`);
+    }
+    normalizedNames.add(normalized);
+  }
+
   for (const attestation of entity.attestations) {
     const source = sourceById.get(attestation);
     if (!source) {
@@ -303,7 +352,7 @@ for (const relation of relations) {
 }
 for (const entity of entities) {
   if (!degree.has(entity.id)) {
-    warn(entity.id, 'has no relations, so it will not appear in the graph');
+    fail(entity.id, 'has no relations — every entity must enter the graph through a cited edge');
   }
   // Form nodes exist to make transformations graphable. They deliberately do
   // not enter the tag-driven "related entity" suggestions.
@@ -344,3 +393,5 @@ console.log(
     .map(([k, v]) => `${v} ${k}`)
     .join(', ')}\n`,
 );
+const completeWorks = coverage.filter((entry) => entry.status === 'complete').length;
+console.log(`  corpus coverage: ${completeWorks}/${coverage.length} works complete\n`);

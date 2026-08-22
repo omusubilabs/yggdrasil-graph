@@ -232,5 +232,371 @@
       { "work": "gylfaginning", "locus": "15" },
       { "work": "voluspa", "locus": "20" }
     ]
+  },
+  {
+    "id": "priam--troy--rules",
+    "from": "priam",
+    "to": "troy",
+    "type": "rules",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "lorikus--thrace--rules",
+    "from": "lorikus",
+    "to": "thrace",
+    "type": "rules",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "thor--thrace--rules",
+    "from": "thor",
+    "to": "thrace",
+    "type": "rules",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "odin--saxland--rules",
+    "from": "odin",
+    "to": "saxland",
+    "type": "rules",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "vegdeg--east-saxland--rules",
+    "from": "vegdeg",
+    "to": "east-saxland",
+    "type": "rules",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "baldr--westphalia--rules",
+    "from": "baldr",
+    "to": "westphalia",
+    "type": "rules",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "sigi--frankland--rules",
+    "from": "sigi",
+    "to": "frankland",
+    "type": "rules",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "skjold--reidgothland--rules",
+    "from": "skjold",
+    "to": "reidgothland",
+    "type": "rules",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "gylfi--sweden--rules",
+    "from": "gylfi",
+    "to": "sweden",
+    "type": "rules",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "odin--sigtun--dwells_in",
+    "from": "odin",
+    "to": "sigtun",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "saemingr--norway--rules",
+    "from": "saemingr",
+    "to": "norway",
+    "type": "rules",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "yngvi--sweden--rules",
+    "from": "yngvi",
+    "to": "sweden",
+    "type": "rules",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "nithuth--sweden--rules",
+    "from": "nithuth",
+    "to": "sweden",
+    "type": "rules",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "volundarkvitha", "locus": "254", "unit": "page" }]
+  },
+  {
+    "id": "volund--ulfdalir--dwells_in",
+    "from": "volund",
+    "to": "ulfdalir",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "volundarkvitha", "locus": "7" }]
+  },
+  {
+    "id": "volund--saevarstath--dwells_in",
+    "from": "volund",
+    "to": "saevarstath",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "volundarkvitha", "locus": "20" }]
+  },
+  {
+    "id": "kjar--valland--dwells_in",
+    "from": "kjar",
+    "to": "valland",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "volundarkvitha", "locus": "254", "unit": "page" }]
+  },
+  {
+    "id": "svafnir--svavaland--rules",
+    "from": "svafnir",
+    "to": "svavaland",
+    "type": "rules",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "273", "unit": "page" }]
+  },
+  {
+    "id": "lothin--tholley--dwells_in",
+    "from": "lothin",
+    "to": "tholley",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "25" }]
+  },
+  {
+    "id": "hunding--hundland--rules",
+    "from": "hunding",
+    "to": "hundland",
+    "type": "rules",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "309", "unit": "page" }]
+  },
+  {
+    "id": "granmar--svarins-hill--dwells_in",
+    "from": "granmar",
+    "to": "svarins-hill",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "315", "unit": "page" }]
+  },
+  {
+    "id": "helgi-hundingsbane--hlesey--dwells_in",
+    "from": "helgi-hundingsbane",
+    "to": "hlesey",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-i", "locus": "6" }]
+  },
+  {
+    "id": "borghild--bralund--dwells_in",
+    "from": "borghild",
+    "to": "bralund",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "309", "unit": "page" }]
+  },
+  {
+    "id": "sigrun--sevafjoll--dwells_in",
+    "from": "sigrun",
+    "to": "sevafjoll",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "35" }]
+  },
+  {
+    "id": "helgi-hundingsbane--valhall--dwells_in",
+    "from": "helgi-hundingsbane",
+    "to": "valhall",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "326", "unit": "page" }]
+  },
+  {
+    "id": "salgofnir--valhall--dwells_in",
+    "from": "salgofnir",
+    "to": "valhall",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "48" }]
+  },
+  {
+    "id": "sigmund--frankland--rules",
+    "from": "sigmund",
+    "to": "frankland",
+    "type": "rules",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "fra-dautha-sinfjotla", "locus": "334" }]
+  },
+  {
+    "id": "sigmund--denmark--dwells_in",
+    "from": "sigmund",
+    "to": "denmark",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "fra-dautha-sinfjotla", "locus": "335" }]
+  },
+  {
+    "id": "fafnir--gnitaheith--dwells_in",
+    "from": "fafnir",
+    "to": "gnitaheith",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gripisspo", "locus": "11" },
+      { "work": "reginsmol", "locus": "365", "unit": "page" }
+    ]
+  },
+  {
+    "id": "andvari--andvaris-fall--dwells_in",
+    "from": "andvari",
+    "to": "andvaris-fall",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "reginsmol", "locus": "359", "unit": "page" }]
+  },
+  {
+    "id": "rindr--vestrsalir--dwells_in",
+    "from": "rindr",
+    "to": "vestrsalir",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "baldrs-draumar", "locus": "11" }]
+  },
+  {
+    "id": "hildolf--rathseys-sound--dwells_in",
+    "from": "hildolf",
+    "to": "rathseys-sound",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "harbarthsljoth", "locus": "8" }]
+  },
+  {
+    "id": "odin--algron--dwells_in",
+    "from": "odin",
+    "to": "algron",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "harbarthsljoth", "locus": "16" }]
+  },
+  {
+    "id": "fjolvar--algron--dwells_in",
+    "from": "fjolvar",
+    "to": "algron",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "harbarthsljoth", "locus": "16" }]
+  },
+  {
+    "id": "fjolsvith--lyr--guards",
+    "from": "fjolsvith",
+    "to": "lyr",
+    "type": "guards",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "fjolsvinnsmol", "locus": "17-20" }]
+  },
+  {
+    "id": "mengloth--lyr--rules",
+    "from": "mengloth",
+    "to": "lyr",
+    "type": "rules",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "fjolsvinnsmol", "locus": "23-24" },
+      { "work": "fjolsvinnsmol", "locus": "47-48" }
+    ]
+  },
+  {
+    "id": "vithofnir--mimameith--dwells_in",
+    "from": "vithofnir",
+    "to": "mimameith",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "fjolsvinnsmol", "locus": "33-34" }]
+  },
+  {
+    "id": "gif--lyr--guards",
+    "from": "gif",
+    "to": "lyr",
+    "type": "guards",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "fjolsvinnsmol", "locus": "35-38" }]
+  },
+  {
+    "id": "geri-fjolsvinnsmol--lyr--guards",
+    "from": "geri-fjolsvinnsmol",
+    "to": "lyr",
+    "type": "guards",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "fjolsvinnsmol", "locus": "35-38" }]
+  },
+  {
+    "id": "mengloth--lyfjaberg--dwells_in",
+    "from": "mengloth",
+    "to": "lyfjaberg",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "fjolsvinnsmol", "locus": "65" }]
+  },
+  {
+    "id": "brynhild--hindarfjoll--dwells_in",
+    "from": "brynhild",
+    "to": "hindarfjoll",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "fafnismol", "locus": "42-44" }]
   }
 ]

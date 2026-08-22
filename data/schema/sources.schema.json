@@ -39,7 +39,7 @@
         },
         "locusUnit": {
           "description": "What a `locus` counts on this work. Required on works; the interface renders 'ch. 34' or 'st. 40' from it.",
-          "enum": ["chapter", "stanza"]
+          "enum": ["chapter", "stanza", "page"]
         },
         "translation": {
           "description": "The public-domain translation this project cites by. Required on collections.",

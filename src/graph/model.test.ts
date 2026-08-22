@@ -2,14 +2,17 @@ import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
 import {
+  buildCore,
   buildIndex,
   locusKey,
   neighbourhood,
   ragnarokOverlay,
   relatedByTag,
   relationsByFamily,
+  searchEntities,
 } from './model.ts';
 import { sampleGraph } from './fixtures/sample-graph.ts';
+import type { GraphNode } from './types.ts';
 
 const index = buildIndex(sampleGraph);
 
@@ -186,6 +189,23 @@ describe('relatedByTag', () => {
   });
 });
 
+describe('searchEntities', () => {
+  it('matches ids, canonical names and aliases without requiring accents', () => {
+    assert.equal(searchEntities(sampleGraph, 'kongr')[0]?.id, 'king');
+    assert.equal(searchEntities(sampleGraph, 'sovereign')[0]?.id, 'king');
+    assert.equal(searchEntities(sampleGraph, 'queen')[0]?.id, 'queen');
+  });
+
+  it('orders exact matches before prefixes and substrings', () => {
+    const results = searchEntities(sampleGraph, 'king');
+    assert.equal(results[0]?.id, 'king');
+  });
+
+  it('returns at most eight results', () => {
+    assert.ok(searchEntities(sampleGraph, 'e').length <= 8);
+  });
+});
+
 describe('ragnarokOverlay', () => {
   const overlay = ragnarokOverlay(index);
 
@@ -218,6 +238,47 @@ describe('ragnarokOverlay', () => {
   });
 });
 
+describe('buildCore', () => {
+  it('fills a 400-node graph to the fixed limit deterministically', () => {
+    const nodes: GraphNode[] = Array.from({ length: 400 }, (_, coreRank) => ({
+      id: `human-${String(coreRank).padStart(3, '0')}`,
+      type: 'human',
+      classes: ['humans'],
+      names: { non: `Maðr ${coreRank}`, anglicized: `Human ${coreRank}` },
+      attestations: [],
+      tags: [],
+      x: coreRank,
+      y: coreRank % 20,
+      degree: 400 - coreRank,
+      coreRank,
+    }));
+    const data = { nodes, links: [], sources: [], tagIndex: {} };
+    const first = buildCore(data);
+    const second = buildCore(data);
+    assert.equal(first.nodeIds.length, 36);
+    assert.deepEqual(first, second);
+    assert.deepEqual(first.nodeIds.slice(0, 3), ['human-000', 'human-001', 'human-002']);
+  });
+
+  it('keeps the full Ragnarǫk pairing and lineage even above a smaller limit', () => {
+    const core = buildCore(sampleGraph, 2);
+    assert.deepEqual(
+      new Set(core.nodeIds),
+      new Set(['champion', 'beast', 'ancestor', 'progenitor']),
+    );
+  });
+
+  it('only includes links whose endpoints are both in the core', () => {
+    const core = buildCore(sampleGraph, 2);
+    const ids = new Set(core.nodeIds);
+    for (const id of core.linkIds) {
+      const link = index.linkById.get(id)!;
+      assert.ok(ids.has(link.from));
+      assert.ok(ids.has(link.to));
+    }
+  });
+});
+
 describe('locusKey', () => {
   it('reads sources.stanza for a stanza-numbered work', () => {
     assert.equal(locusKey(index, 'song-of-crowns'), 'sources.stanza');
@@ -233,5 +294,12 @@ describe('locusKey', () => {
 
   it('defaults to sources.chapter for an unknown work', () => {
     assert.equal(locusKey(index, 'nonexistent-work'), 'sources.chapter');
+  });
+
+  it('uses an explicit page override for embedded prose', () => {
+    assert.equal(
+      locusKey(index, { work: 'song-of-crowns', locus: '332-336', unit: 'page' }),
+      'sources.page',
+    );
   });
 });

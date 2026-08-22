@@ -17,6 +17,13 @@
   "graph": {
     "regionLabel": "Tengslagraf",
     "regionDescription": "Gagnvirkt graf með {count} persónum og {links} tengslum þeirra á milli. Notaðu listayfirlitið hér fyrir neðan fyrir línulega framsetningu.",
+    "regionDescriptionSubset": "Gagnvirkt graf sem sýnir {visible} af {total} persónum og {links} tengsl. Leitaðu eða sýndu allt til að kanna allt safnið; taflan hér fyrir neðan er línuleg framsetning.",
+    "searchLabel": "Finna persónu",
+    "searchPlaceholder": "Nafn eða auknefni",
+    "searchNoResults": "Engin persóna fannst.",
+    "showAll": "Sýna allar persónur",
+    "showAllHint": "Stækka grafið frá kjarnanum yfir í allt safnið.",
+    "scopeAnnounce": "Sýni {visible} af {total} persónum.",
     "hint": "Snertu nafn.",
     "hintKeyboard": "Notaðu Tab-hnappinn til að fara í grafið og færðu þig svo milli persóna með örvatökkunum.",
     "loading": "Grafið vaknar",
@@ -94,6 +101,7 @@
     "aesir": "Æsir",
     "vanir": "Vanir",
     "jotnar": "Jǫtnar",
+    "humans": "Menn",
     "beings": "Aðrar verur",
     "worlds": "Heimar og staðir",
     "artifacts": "Gersemar"
@@ -101,6 +109,7 @@
   "type": {
     "label": "Tegund",
     "deity": "Goðvera",
+    "human": "Manneskja",
     "being": "Vera",
     "world": "Heimur",
     "artifact": "Smíðisgripur",
@@ -157,6 +166,7 @@
     "intro": "Sérhvert tengsl í þessu grafi vísar á tiltekinn stað í einu þessara rita. Öll tilvitnuð útgáfa eru í almannaeigu (public domain); texti þeirra er ekki endurbirtur hér.",
     "chapter": "k. {locus}",
     "stanza": "v. {locus}",
+    "page": "bls. {locus}",
     "translatedBy": "Þýtt af {translator}, {year}",
     "composed": "Samið {date}",
     "partOf": "Í {collection}",

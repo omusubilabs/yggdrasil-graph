@@ -3,7 +3,7 @@ import { describe, it } from 'node:test';
 
 import { decodeUrlState, encodeUrlState, type UrlState } from './urlState.ts';
 
-const DEFAULT: UrlState = { selected: null, disputed: false, ragnarok: false };
+const DEFAULT: UrlState = { selected: null, disputed: false, ragnarok: false, all: false };
 
 describe('encodeUrlState', () => {
   it('is empty for the default state', () => {
@@ -22,10 +22,14 @@ describe('encodeUrlState', () => {
     assert.equal(encodeUrlState({ ...DEFAULT, ragnarok: true }), '?ragnarok=1');
   });
 
-  it('encodes all three in a fixed order', () => {
+  it('encodes the all-entity scope alone', () => {
+    assert.equal(encodeUrlState({ ...DEFAULT, all: true }), '?all=1');
+  });
+
+  it('encodes all fields in a fixed order', () => {
     assert.equal(
-      encodeUrlState({ selected: 'odin', disputed: true, ragnarok: true }),
-      '?selected=odin&disputed=1&ragnarok=1',
+      encodeUrlState({ selected: 'odin', disputed: true, ragnarok: true, all: true }),
+      '?selected=odin&disputed=1&ragnarok=1&all=1',
     );
   });
 });
@@ -58,10 +62,11 @@ describe('decodeUrlState', () => {
 describe('encodeUrlState / decodeUrlState round-trip', () => {
   const cases: UrlState[] = [
     DEFAULT,
-    { selected: 'odin', disputed: false, ragnarok: false },
-    { selected: null, disputed: true, ragnarok: false },
-    { selected: null, disputed: false, ragnarok: true },
-    { selected: 'loki', disputed: true, ragnarok: true },
+    { ...DEFAULT, selected: 'odin' },
+    { ...DEFAULT, disputed: true },
+    { ...DEFAULT, ragnarok: true },
+    { ...DEFAULT, all: true },
+    { selected: 'loki', disputed: true, ragnarok: true, all: true },
   ];
 
   for (const state of cases) {

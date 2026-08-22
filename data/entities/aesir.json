@@ -4,6 +4,7 @@
     "type": "deity",
     "classes": ["aesir"],
     "names": { "non": "Óðinn", "anglicized": "Odin" },
+    "aliases": ["Voden", "Hnikar", "Feng", "Fjolnir", "Harbarth"],
     "attestations": ["poetic-edda", "prose-edda"],
     "tags": ["ragnarok-participant", "ragnarok-slain", "wisdom", "war", "shapeshifter", "odin-kin", "giant-descent"]
   },
@@ -12,6 +13,7 @@
     "type": "deity",
     "classes": ["aesir"],
     "names": { "non": "Þórr", "anglicized": "Thor" },
+    "aliases": ["Tror"],
     "attestations": ["poetic-edda", "prose-edda"],
     "tags": ["ragnarok-participant", "ragnarok-slain", "ragnarok-slayer", "thunder", "odin-kin", "giant-descent"]
   },
@@ -20,6 +22,7 @@
     "type": "deity",
     "classes": ["aesir"],
     "names": { "non": "Frigg", "anglicized": "Frigg" },
+    "aliases": ["Frigida"],
     "attestations": ["poetic-edda", "prose-edda"],
     "tags": ["wisdom"]
   },
@@ -28,6 +31,7 @@
     "type": "deity",
     "classes": ["aesir"],
     "names": { "non": "Baldr", "anglicized": "Balder" },
+    "aliases": ["Beldeg"],
     "attestations": ["poetic-edda", "prose-edda"],
     "tags": ["ragnarok-survivor", "odin-kin", "underworld"]
   },
@@ -52,6 +56,7 @@
     "type": "deity",
     "classes": ["aesir"],
     "names": { "non": "Heimdallr", "anglicized": "Heimdall" },
+    "aliases": ["Ríg"],
     "attestations": ["poetic-edda", "prose-edda"],
     "tags": ["ragnarok-participant", "ragnarok-slain", "ragnarok-slayer", "watchman", "disputed-parentage"]
   },
@@ -68,6 +73,7 @@
     "type": "deity",
     "classes": ["aesir"],
     "names": { "non": "Sif", "anglicized": "Sif" },
+    "aliases": ["Sibil"],
     "attestations": ["poetic-edda", "prose-edda"],
     "tags": []
   },
@@ -150,5 +156,29 @@
     "names": { "non": "Hœnir", "anglicized": "Hoenir" },
     "attestations": ["poetic-edda", "prose-edda"],
     "tags": ["hostage", "ragnarok-survivor"]
+  },
+  {
+    "id": "hodr",
+    "type": "deity",
+    "classes": ["aesir"],
+    "names": { "non": "Hǫðr", "anglicized": "Hodr" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "vali",
+    "type": "deity",
+    "classes": ["aesir"],
+    "names": { "non": "Váli", "anglicized": "Vali" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["odin-kin", "war", "ragnarok-survivor"]
+  },
+  {
+    "id": "meili",
+    "type": "deity",
+    "classes": ["aesir"],
+    "names": { "non": "Meili", "anglicized": "Meili" },
+    "attestations": ["poetic-edda"],
+    "tags": ["odin-kin"]
   }
 ]

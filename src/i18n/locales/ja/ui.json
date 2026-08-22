@@ -17,6 +17,13 @@
   "graph": {
     "regionLabel": "関係グラフ",
     "regionDescription": "{count}体の存在と、それらを結ぶ{links}件の関係を示す対話的なグラフ。下の一覧表示でも同じ内容を読める。",
+    "regionDescriptionSubset": "全{total}体のうち{visible}体と、それらを結ぶ{links}件の関係を表示する対話的なグラフ。検索または全件表示でコーパス全体を探索でき、下の一覧でも同じ内容を読めます。",
+    "searchLabel": "存在を探す",
+    "searchPlaceholder": "名前または異名",
+    "searchNoResults": "一致する存在はありません。",
+    "showAll": "すべての存在を表示",
+    "showAllHint": "中心となる構造からコーパス全体へグラフを広げます。",
+    "scopeAnnounce": "全{total}体のうち{visible}体を表示しています。",
     "hint": "名前に触れてみてください。",
     "hintKeyboard": "Tab キーでグラフに入り、矢印キーで存在のあいだを移動します。",
     "loading": "グラフを起こしています",
@@ -94,6 +101,7 @@
     "aesir": "アース神族",
     "vanir": "ヴァン神族",
     "jotnar": "巨人",
+    "humans": "人間",
     "beings": "その他の存在",
     "worlds": "世界と場所",
     "artifacts": "宝"
@@ -101,6 +109,7 @@
   "type": {
     "label": "種別",
     "deity": "神",
+    "human": "人間",
     "being": "存在",
     "world": "世界",
     "artifact": "作られしもの",
@@ -157,6 +166,7 @@
     "intro": "このグラフのすべての関係は、以下のいずれかの文献の該当箇所を指し示しています。引用した版はいずれもパブリックドメインであり、その本文はここには転載していません。",
     "chapter": "第{locus}章",
     "stanza": "第{locus}節",
+    "page": "{locus}頁",
     "translatedBy": "{translator}訳、{year}年",
     "composed": "成立：{date}",
     "partOf": "『{collection}』所収",

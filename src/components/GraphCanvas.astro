@@ -39,22 +39,27 @@ const t = useTranslations(locale);
 const data = graph as unknown as GraphData;
 
 const positions = new Map(data.nodes.map((n) => [n.id, n]));
+const coreNodeIds = new Set(data.core.nodeIds);
+const coreLinkIds = new Set(data.core.linkIds);
+const coreNodes = data.nodes.filter((node) => coreNodeIds.has(node.id));
 
-const edges = data.links.flatMap((link) => {
-  const from = positions.get(link.from);
-  const to = positions.get(link.to);
-  if (!from || !to) return [];
-  const [endX, endY] = link.directed
-    ? trimToRim(from.x, from.y, to.x, to.y, nodeRadius(to.degree))
-    : [to.x, to.y];
-  return [
-    {
-      link,
-      d: edgePath(from.x, from.y, endX, endY, link.curve),
-      className: linkClassNames(link),
-    },
-  ];
-});
+const edges = data.links
+  .filter((link) => coreLinkIds.has(link.id))
+  .flatMap((link) => {
+    const from = positions.get(link.from);
+    const to = positions.get(link.to);
+    if (!from || !to) return [];
+    const [endX, endY] = link.directed
+      ? trimToRim(from.x, from.y, to.x, to.y, nodeRadius(to.degree))
+      : [to.x, to.y];
+    return [
+      {
+        link,
+        d: edgePath(from.x, from.y, endX, endY, link.curve),
+        className: linkClassNames(link),
+      },
+    ];
+  });
 ---
 
 <figure class="canvas" data-graph-canvas>
@@ -69,14 +74,20 @@ const edges = data.links.flatMap((link) => {
   <svg
     class="graph"
     data-graph
-    viewBox={viewBoxOf(data.bounds)}
+    viewBox={viewBoxOf(data.core.bounds)}
     preserveAspectRatio="xMidYMid meet"
     role="group"
     aria-label={t('graph.regionLabel')}
     aria-describedby="graph-description"
   >
     <desc id="graph-description">
-      {t('graph.regionDescription', { count: data.nodes.length, links: data.links.length })}
+      {
+        t('graph.regionDescriptionSubset', {
+          visible: coreNodes.length,
+          total: data.nodes.length,
+          links: edges.length,
+        })
+      }
     </desc>
 
     <defs>
@@ -105,7 +116,7 @@ const edges = data.links.flatMap((link) => {
     </defs>
 
     <g data-graph-viewport>
-      <g class="edges" aria-hidden="true">
+      <g class="edges" data-graph-edges aria-hidden="true">
         {
           edges.map((edge) => (
             <path
@@ -127,9 +138,9 @@ const edges = data.links.flatMap((link) => {
         }
       </g>
 
-      <g class="nodes">
+      <g class="nodes" data-graph-nodes>
         {
-          data.nodes.map((node) => (
+          coreNodes.map((node) => (
             /*
              * The <g> carries the position and the id; the <a> inside carries
              * the link and the focus. Splitting them lets the simulation move a
@@ -391,6 +402,10 @@ const edges = data.links.flatMap((link) => {
     fill: color-mix(in srgb, var(--class-jotnar) 22%, var(--vellum-pale));
     stroke: var(--class-jotnar);
   }
+  .node.is-humans .node__shape {
+    fill: color-mix(in srgb, var(--class-humans) 22%, var(--vellum-pale));
+    stroke: var(--class-humans);
+  }
   .node.is-beings .node__shape {
     fill: color-mix(in srgb, var(--class-beings) 22%, var(--vellum-pale));
     stroke: var(--class-beings);
@@ -411,6 +426,11 @@ const edges = data.links.flatMap((link) => {
     fill: color-mix(in srgb, var(--class-jotnar) 24%, var(--vellum-pale));
     stroke: var(--class-aesir);
     stroke-dasharray: 3 2;
+  }
+
+  .node.is-out-of-scope,
+  .edge.is-out-of-scope {
+    display: none;
   }
 
   .node:hover .node__shape,

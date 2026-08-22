@@ -17,6 +17,13 @@
   "graph": {
     "regionLabel": "Relationsgraf",
     "regionDescription": "En interaktiv graf över {count} gestalter och de {links} relationerna mellan dem. Använd listvyn nedan för en linjär motsvarighet.",
+    "regionDescriptionSubset": "En interaktiv graf som visar {visible} av {total} gestalter och {links} relationer. Sök eller visa alla för att utforska hela korpusen; tabellen nedan är den linjära motsvarigheten.",
+    "searchLabel": "Hitta en gestalt",
+    "searchPlaceholder": "Namn eller alternativnamn",
+    "searchNoResults": "Ingen gestalt hittades.",
+    "showAll": "Visa alla gestalter",
+    "showAllHint": "Utöka grafen från kärnan till hela korpusen.",
+    "scopeAnnounce": "Visar {visible} av {total} gestalter.",
     "hint": "Rör vid ett namn.",
     "hintKeyboard": "Tabba in i grafen och rör dig sedan mellan gestalterna med piltangenterna.",
     "loading": "Väcker grafen",
@@ -94,6 +101,7 @@
     "aesir": "Æsir",
     "vanir": "Vanir",
     "jotnar": "Jǫtnar",
+    "humans": "Människor",
     "beings": "Andra varelser",
     "worlds": "Världar och platser",
     "artifacts": "Skatter"
@@ -101,6 +109,7 @@
   "type": {
     "label": "Typ",
     "deity": "Gudom",
+    "human": "Människa",
     "being": "Varelse",
     "world": "Värld",
     "artifact": "Tillverkat ting",
@@ -157,6 +166,7 @@
     "intro": "Varje relation i denna graf pekar på ett ställe i ett av dessa verk. De citerade utgåvorna är samtliga fria från upphovsrätt; deras text återges inte här.",
     "chapter": "kap. {locus}",
     "stanza": "vers {locus}",
+    "page": "s. {locus}",
     "translatedBy": "Översatt av {translator}, {year}",
     "composed": "Författad {date}",
     "partOf": "I {collection}",

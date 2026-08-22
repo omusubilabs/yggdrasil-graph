@@ -13,6 +13,7 @@ data/
 │   ├── vanir.json
 │   ├── jotnar.json
 │   ├── beings.json
+│   ├── humans.json
 │   ├── forms.json
 │   ├── worlds.json
 │   └── artifacts.json
@@ -24,8 +25,9 @@ data/
 │   ├── possession.json
 │   ├── location.json
 │   └── transformation.json
-├── schema/            JSON Schema (2020-12) for the three shapes above
+├── schema/            JSON Schema (2020-12) for entities, relations, sources and coverage
 ├── sources.json       every work that may be cited
+├── coverage.json      one planned/complete audit row per work
 ├── TODO.md            owed work: unverified relations and known gaps
 └── LICENSE            CC BY-SA 4.0
 ```
@@ -35,8 +37,8 @@ data/
 `scripts/build-graph.ts`, is gitignored, and must never be edited.
 
 The split is the point: contributors touch a small readable JSON file, and the
-application consumes one optimised artifact that also carries a solved layout, a
-degree count and a tag index.
+application consumes one optimised artifact that also carries a solved layout,
+a degree count, a tag index and the deterministic core subgraph.
 
 ---
 
@@ -44,12 +46,13 @@ degree count and a tag index.
 
 ```jsonc
 {
-  "id": "jormungandr",
-  "type": "being",
-  "classes": ["beings"],
-  "names": { "non": "Jǫrmungandr", "anglicized": "Jormungandr" },
-  "attestations": ["poetic-edda", "prose-edda"],
-  "tags": ["ragnarok-participant", "loki-kin", "serpent", "sea"],
+  "id": "brynhild",
+  "type": "human",
+  "classes": ["humans"],
+  "names": { "non": "Brynhildr", "anglicized": "Brynhild" },
+  "aliases": ["Brunhild", "Sigrdrifa", "Hild"],
+  "attestations": ["poetic-edda"],
+  "tags": ["war"],
 }
 ```
 
@@ -66,14 +69,14 @@ Snorri uses both names for both.
 
 ### `type`
 
-`deity` · `being` · `world` · `artifact` · `place` · `event` · `form`
+`deity` · `human` · `being` · `world` · `artifact` · `place` · `event` · `form`
 
 Drives node **shape** in the renderer: circles for people, hexagons for worlds
 and places, lozenges for made things, and a ring for assumed forms.
 
 ### `classes`
 
-`aesir` · `vanir` · `jotnar` · `beings` · `worlds` · `artifacts`
+`aesir` · `vanir` · `jotnar` · `humans` · `beings` · `worlds` · `artifacts`
 
 Drives node **colour**. An entity may hold several, and the interesting ones do:
 Loki is `["aesir", "jotnar"]`, because Gylfaginning 33 numbers him among the
@@ -102,6 +105,13 @@ why it lives here rather than in `src/i18n/`. It is the only string in
 Orthography matters: `þ ð æ ø ǫ ę ǿ á é í ó ú ý` must all be correct.
 `npm run check:glyphs` verifies every shipped font face can actually draw them
 by reading the binaries' character maps.
+
+### `aliases`
+
+Optional alternate names and edition spellings for the same subject. Aliases
+do not create nodes: search indexes them and entity JSON-LD emits them as
+`alternateName`. The validator rejects an alias that normalizes to either
+canonical name, so spelling-only duplicates do not silently enter the index.
 
 ### `attestations`
 
@@ -223,7 +233,8 @@ individual poem or book, never a collection. `"prose-edda"` with a locus of
 chapter 34.
 
 `locus` is a bare number or a range (`"34-35"`), counted in the unit the work
-declares (`chapter` or `stanza`).
+declares (`chapter`, `stanza` or `page`). A reference may set `unit: "page"` to
+override a poem's usual stanza unit for unnumbered manuscript-derived prose.
 
 **A relation may only have an empty `sources` array if `certainty` is
 `unverified`, and an `unverified` relation may only have an empty one.** If you
@@ -278,12 +289,20 @@ Seed example: the Heimdallr/Mímir Gjallarhorn conflict — see
 }
 ```
 
-`locusUnit` is what lets the interface render "ch. 34" against Gylfaginning and
-"st. 40" against Vǫluspá.
+`locusUnit` is what lets the interface render "ch. 34" against Gylfaginning,
+"st. 40" against Vǫluspá and a printed page against the two standalone prose
+works.
 
 The `rights: "public-domain"` field is a constant, not a variable. Only
 public-domain editions may be registered, and no text from them is reproduced
 anywhere in this repository.
+
+### Coverage
+
+`data/coverage.json` contains exactly one `planned` or `complete` row for every
+work in `sources.json`. Collections never appear in the ledger. Validation
+rejects missing, duplicate, unknown and collection rows, then reports the
+completed-work count.
 
 ---
 
@@ -311,10 +330,14 @@ convention.
 12. `contradicts` targets exist, are not self-references, are mutual, and only
     appear on `variant` or `disputed` relations.
 13. `partOf` on a work resolves to something that is actually a collection.
+14. Every alias remains distinct from both canonical names after case and
+    diacritic normalization.
+15. Every work has exactly one coverage row, and every coverage row names a work.
+16. Every entity participates in at least one cited relation.
 
-**Warnings** (not failures): an entity with no relations will not appear in the
-graph; a non-form entity with no tags will never surface as a suggestion. Form
-nodes deliberately carry no tags so shapes do not pollute related-entity results.
+**Warning** (not a failure): a non-form entity with no tags will never surface
+as a suggestion. Form nodes deliberately carry no tags so shapes do not pollute
+related-entity results.
 
 ---
 

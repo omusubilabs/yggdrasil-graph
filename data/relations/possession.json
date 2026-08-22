@@ -91,5 +91,140 @@
       { "work": "gylfaginning", "locus": "21" },
       { "work": "thrymskvitha", "locus": "12" }
     ]
+  },
+  {
+    "id": "nithuth--volunds-sword--owns",
+    "from": "nithuth",
+    "to": "volunds-sword",
+    "type": "owns",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "volundarkvitha", "locus": "19" }]
+  },
+  {
+    "id": "bothvild--volunds-ring--owns",
+    "from": "bothvild",
+    "to": "volunds-ring",
+    "type": "owns",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "volundarkvitha", "locus": "19" }]
+  },
+  {
+    "id": "helgi-hjorvarthsson--helgis-sword--owns",
+    "from": "helgi-hjorvarthsson",
+    "to": "helgis-sword",
+    "type": "owns",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "278", "unit": "page" }]
+  },
+  {
+    "id": "dag-hognisson--vandilsve--owns",
+    "from": "dag-hognisson",
+    "to": "vandilsve",
+    "type": "owns",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "34" }]
+  },
+  {
+    "id": "dag-hognisson--vigdalir--owns",
+    "from": "dag-hognisson",
+    "to": "vigdalir",
+    "type": "owns",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "34" }]
+  },
+  {
+    "id": "sigurd--grani--owns",
+    "from": "sigurd",
+    "to": "grani",
+    "type": "owns",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "gripisspo", "locus": "13" }]
+  },
+  {
+    "id": "andvari--andvaranaut--owns",
+    "from": "andvari",
+    "to": "andvaranaut",
+    "type": "owns",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "reginsmol", "locus": "361", "unit": "page" }]
+  },
+  {
+    "id": "fafnir--andvaranaut--owns",
+    "from": "fafnir",
+    "to": "andvaranaut",
+    "type": "owns",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "reginsmol", "locus": "364", "unit": "page" }]
+  },
+  {
+    "id": "fafnir--fear-helm--owns",
+    "from": "fafnir",
+    "to": "fear-helm",
+    "type": "owns",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "reginsmol", "locus": "365", "unit": "page" }]
+  },
+  {
+    "id": "sigurd--gram--owns",
+    "from": "sigurd",
+    "to": "gram",
+    "type": "owns",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "reginsmol", "locus": "365", "unit": "page" }]
+  },
+  {
+    "id": "ran--rans-net--owns",
+    "from": "ran",
+    "to": "rans-net",
+    "type": "owns",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "reginsmol", "locus": "359", "unit": "page" }]
+  },
+  {
+    "id": "freyr--freyrs-sword--owns",
+    "from": "freyr",
+    "to": "freyrs-sword",
+    "type": "owns",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "skirnismol", "locus": "9" }]
+  },
+  {
+    "id": "sinmara--laevatein--owns",
+    "from": "sinmara",
+    "to": "laevatein",
+    "type": "owns",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "fjolsvinnsmol", "locus": "42" }]
+  },
+  {
+    "id": "regin--rithil--owns",
+    "from": "regin",
+    "to": "rithil",
+    "type": "owns",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "fafnismol", "locus": "380", "unit": "page" }]
+  },
+  {
+    "id": "sigurd--hrotti--owns",
+    "from": "sigurd",
+    "to": "hrotti",
+    "type": "owns",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "fafnismol", "locus": "385", "unit": "page" }]
   }
 ]

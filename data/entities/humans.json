@@ -1,0 +1,1771 @@
+[
+  {
+    "id": "priam",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Príam", "anglicized": "Priam" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "miinon",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Mínon", "anglicized": "Miinon" },
+    "aliases": ["Mennon"],
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "troan",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Tróan", "anglicized": "Troan" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "lorikus",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Lorikus", "anglicized": "Lorikus" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "lora",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Lóra", "anglicized": "Lora" },
+    "aliases": ["Glora"],
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "loridi",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Lóriði", "anglicized": "Loridi" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "einridi",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Einriði", "anglicized": "Einridi" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "vingethor",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Vingeþórr", "anglicized": "Vingethor" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "vingener",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Vingener", "anglicized": "Vingener" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "moda",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Móða", "anglicized": "Moda" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "magi",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Magi", "anglicized": "Magi" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "seskef",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Seskef", "anglicized": "Seskef" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "bedvig",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Beðvig", "anglicized": "Bedvig" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "athra",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Aþra", "anglicized": "Athra" },
+    "aliases": ["Annarr"],
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "itermann",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Ítermann", "anglicized": "Itermann" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "heremod",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Heremóð", "anglicized": "Heremod" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "skjold",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Skjǫldr", "anglicized": "Skjold" },
+    "aliases": ["Skjaldun"],
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "bjaf",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Bjáf", "anglicized": "Bjaf" },
+    "aliases": ["Bjarr"],
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "jat",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Ját", "anglicized": "Jat" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "gudolfr",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Guðólfr", "anglicized": "Gudolfr" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "finn",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Finnr", "anglicized": "Finn" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "friallaf",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Fríallaf", "anglicized": "Friallaf" },
+    "aliases": ["Fridleifr"],
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "vegdeg",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Vegdeg", "anglicized": "Vegdeg" },
+    "attestations": ["prose-edda"],
+    "tags": ["odin-kin"]
+  },
+  {
+    "id": "vitgils",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Vitgils", "anglicized": "Vitgils" },
+    "attestations": ["prose-edda"],
+    "tags": ["odin-kin"]
+  },
+  {
+    "id": "vitta",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Vitta", "anglicized": "Vitta" },
+    "attestations": ["prose-edda"],
+    "tags": ["odin-kin"]
+  },
+  {
+    "id": "hengist",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Heingistr", "anglicized": "Hengist" },
+    "attestations": ["prose-edda"],
+    "tags": ["odin-kin"]
+  },
+  {
+    "id": "sigarr",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Sigarr", "anglicized": "Sigarr" },
+    "attestations": ["prose-edda"],
+    "tags": ["odin-kin"]
+  },
+  {
+    "id": "svebdeg",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Svebdeg", "anglicized": "Svebdeg" },
+    "aliases": ["Svipdagr"],
+    "attestations": ["prose-edda"],
+    "tags": ["odin-kin"]
+  },
+  {
+    "id": "brandr",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Brandr", "anglicized": "Brand" },
+    "attestations": ["prose-edda"],
+    "tags": ["odin-kin"]
+  },
+  {
+    "id": "frjodigar",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Frjóðigar", "anglicized": "Frjodigar" },
+    "aliases": ["Fróði"],
+    "attestations": ["prose-edda"],
+    "tags": ["odin-kin"]
+  },
+  {
+    "id": "freovin",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Freovin", "anglicized": "Freovin" },
+    "attestations": ["prose-edda"],
+    "tags": ["odin-kin"]
+  },
+  {
+    "id": "uvigg",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Uvigg", "anglicized": "Uvigg" },
+    "attestations": ["prose-edda"],
+    "tags": ["odin-kin"]
+  },
+  {
+    "id": "gevis",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Gevis", "anglicized": "Gevis" },
+    "aliases": ["Gave"],
+    "attestations": ["prose-edda"],
+    "tags": ["odin-kin"]
+  },
+  {
+    "id": "sigi",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Sigi", "anglicized": "Sigi" },
+    "attestations": ["prose-edda"],
+    "tags": ["odin-kin"]
+  },
+  {
+    "id": "rerir",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Rerir", "anglicized": "Rerir" },
+    "attestations": ["prose-edda"],
+    "tags": ["odin-kin"]
+  },
+  {
+    "id": "saemingr",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Sæmingr", "anglicized": "Saeming" },
+    "attestations": ["prose-edda"],
+    "tags": ["odin-kin"]
+  },
+  {
+    "id": "yngvi",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Yngvi", "anglicized": "Yngvi" },
+    "attestations": ["prose-edda"],
+    "tags": ["odin-kin"]
+  },
+  {
+    "id": "gylfi",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Gylfi", "anglicized": "Gylfi" },
+    "attestations": ["prose-edda"],
+    "tags": ["wisdom"]
+  },
+  {
+    "id": "adam",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Adam", "anglicized": "Adam" },
+    "attestations": ["prose-edda"],
+    "tags": ["primordial"]
+  },
+  {
+    "id": "eve",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Eva", "anglicized": "Eve" },
+    "attestations": ["prose-edda"],
+    "tags": ["primordial"]
+  },
+  {
+    "id": "nithuth",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Niðuðr", "anglicized": "Nithuth" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "bothvild",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Bǫðvildr", "anglicized": "Bothvild" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "slagfith",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Slagfiðr", "anglicized": "Slagfith" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "egil-volundar",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Egill", "anglicized": "Egil" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "hlothver",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hlǫðvér", "anglicized": "Hlothver" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "kjar",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Kjárr", "anglicized": "Kjar" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "thakkrath",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Þakkráðr", "anglicized": "Thakkrath" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "ai",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Ái", "anglicized": "Ai" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "edda",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Edda", "anglicized": "Edda" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "thrael",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Þræll", "anglicized": "Thrall" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "thir",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Þír", "anglicized": "Thir" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "fjosnir",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Fjósnir", "anglicized": "Fjosnir" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "klur",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Klúrr", "anglicized": "Klur" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "hreim",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hreimr", "anglicized": "Hreim" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "kleggi",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Kleggi", "anglicized": "Kleggi" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "kefsir",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Kefsir", "anglicized": "Kefsir" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "fulnir-rigsthula",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Fúlnir", "anglicized": "Fulnir" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "drumb",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Drumbr", "anglicized": "Drumb" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "digraldi",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Digraldi", "anglicized": "Digraldi" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "drott",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Drǫttr", "anglicized": "Drott" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "leggjaldi",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Leggjaldi", "anglicized": "Leggjaldi" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "lut",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Lútr", "anglicized": "Lut" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "hosvir",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hǫsvir", "anglicized": "Hosvir" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "drumba",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Drumba", "anglicized": "Drumba" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "kumba",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Kumba", "anglicized": "Kumba" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "okkvinkalfa",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Ǫkkvinkálfa", "anglicized": "Okkvinkalfa" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "arinnefja",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Arinnefja", "anglicized": "Arinnefja" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "ysja",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Ysja", "anglicized": "Ysja" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "ambott",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Ambátt", "anglicized": "Ambott" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "eikintjasna",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Eikintjasna", "anglicized": "Eikintjasna" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "totrughypja",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Tötrughypja", "anglicized": "Totrughypja" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "tronubeina",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Trönubeina", "anglicized": "Tronubeina" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "afi",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Afi", "anglicized": "Afi" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "amma",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Amma", "anglicized": "Amma" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "karl",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Karl", "anglicized": "Karl" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "snor",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Snör", "anglicized": "Snor" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "hal",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Halr", "anglicized": "Hal" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "dreng",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Drengr", "anglicized": "Dreng" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "holth",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hǫldr", "anglicized": "Holth" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "thegn",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Þegn", "anglicized": "Thegn" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "smith-rigsthula",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Smiðr", "anglicized": "Smith" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "breith",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Breiðr", "anglicized": "Breith" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "bondi",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Bóndi", "anglicized": "Bondi" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "bundinskeggi",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Bundinskeggi", "anglicized": "Bundinskeggi" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "bui",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Búi", "anglicized": "Bui" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "boddi",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Boddi", "anglicized": "Boddi" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "brattskegg",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Brattskeggr", "anglicized": "Brattskegg" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "segg",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Seggr", "anglicized": "Segg" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "snot",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Snot", "anglicized": "Snot" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "bruth",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Brúðr", "anglicized": "Bruth" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "svanni",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Svanni", "anglicized": "Svanni" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "svarri",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Svarri", "anglicized": "Svarri" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "sprakki",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Sprakki", "anglicized": "Sprakki" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "fljoth",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Fljóð", "anglicized": "Fljoth" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "sprund",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Sprund", "anglicized": "Sprund" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "vif",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Víf", "anglicized": "Vif" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "feima",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Feima", "anglicized": "Feima" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "ristil",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Ristill", "anglicized": "Ristil" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "fathir",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Faðir", "anglicized": "Fathir" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "mothir",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Móðir", "anglicized": "Mothir" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "jarl",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Jarl", "anglicized": "Jarl" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"],
+    "aliases": ["Rig-Jarl"]
+  },
+  {
+    "id": "hersir",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hersir", "anglicized": "Hersir" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "erna",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Erna", "anglicized": "Erna" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "bur-rigsthula",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Burr", "anglicized": "Bur" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "barn",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Barn", "anglicized": "Barn" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "joth",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Jóðr", "anglicized": "Joth" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "athal",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Aðal", "anglicized": "Athal" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "arfi",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Arfi", "anglicized": "Arfi" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "mogr",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Mǫgr", "anglicized": "Mog" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "nith-rigsthula",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Niðr", "anglicized": "Nith" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "svein",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Sveinn", "anglicized": "Svein" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "sun",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Sunr", "anglicized": "Sun" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "nithjung",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Niðjungr", "anglicized": "Nithjung" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "kund",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Kundr", "anglicized": "Kund" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "kon",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Konr ungr", "anglicized": "Kon the Young" },
+    "attestations": ["poetic-edda"],
+    "tags": ["wisdom", "war"],
+    "aliases": ["Rig"]
+  },
+  {
+    "id": "hjorvarth",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hjǫrvarðr", "anglicized": "Hjorvarth" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "alfhild-hjorvarth",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Álfhildr", "anglicized": "Alfhild" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "hethin-hjorvarthsson",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Heðinn", "anglicized": "Hethin" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "saereith",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Særeiðr", "anglicized": "Saereith" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "humlung",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Humlungr", "anglicized": "Humlung" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "sinrjoth",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Sinrjóð", "anglicized": "Sinrjoth" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "hymling",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hymlingr", "anglicized": "Hymling" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "svafnir",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Svafnir", "anglicized": "Svafnir" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "sigrlin",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Sigrlinn", "anglicized": "Sigrlin" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "ithmund",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Iðmundr", "anglicized": "Ithmund" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "atli-hjorvarth",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Atli", "anglicized": "Atli" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "franmar",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Fránmarr", "anglicized": "Franmar" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "alof",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Álof", "anglicized": "Alof" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "hrothmar",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hróðmarr", "anglicized": "Hrothmar" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "helgi-hjorvarthsson",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Helgi Hjǫrvarðsson", "anglicized": "Helgi Hjorvarthsson" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "eylimi",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Eylimi", "anglicized": "Eylimi" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "sigar-helgi",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Sigarr", "anglicized": "Sigar" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "alf-hrothmarsson",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Álfr", "anglicized": "Alf" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "volsung",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Vǫlsungr", "anglicized": "Volsung" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "sigmund",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Sigmundr", "anglicized": "Sigmund" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "borghild",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Borghildr", "anglicized": "Borghild" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "helgi-hundingsbane",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Helgi Hundingsbani", "anglicized": "Helgi Hundingsbane" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "hagal",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hagall", "anglicized": "Hagal" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "hamal",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hamall", "anglicized": "Hamal" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "hunding",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hundingr", "anglicized": "Hunding" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "haeming",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hæmingr", "anglicized": "Haeming" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "hogni-helgi",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hǫgni", "anglicized": "Hogni" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "sigrun",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Sigrún", "anglicized": "Sigrun" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "granmar",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Granmarr", "anglicized": "Granmar" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "hothbrodd",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hǫðbroddr", "anglicized": "Hothbrodd" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "gothmund",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Guðmundr", "anglicized": "Gothmund" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "starkath-granmarsson",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Starkaðr", "anglicized": "Starkath" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "eyjolf-hundingsson",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Eyjólfr", "anglicized": "Eyjolf" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "alf-hundingsson",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Álfr", "anglicized": "Alf" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "hjorvarth-hundingsson",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hjǫrvarðr", "anglicized": "Hjorvarth" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "hervarth-hundingsson",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hervarðr", "anglicized": "Hervarth" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"],
+    "aliases": ["Hovarth"]
+  },
+  {
+    "id": "isung",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Ísungr", "anglicized": "Isung" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "hjorleif-helgi",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hjǫrleifr", "anglicized": "Hjorleif" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "sinfjotli",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Sinfjǫtli", "anglicized": "Sinfjotli" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "hring-helgi",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hringr", "anglicized": "Hring" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "atli-hringsson",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Atli", "anglicized": "Atli" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "yngvi-hringsson",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Yngvi", "anglicized": "Yngvi" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "alf-old",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Álfr inn gamli", "anglicized": "Alf the Old" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "blind",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Blindr", "anglicized": "Blind" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "bragi-hognisson",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Bragi", "anglicized": "Bragi" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "dag-hognisson",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Dagr", "anglicized": "Dag" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "helgi-haddingjaskati",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Helgi Haddingjaskati", "anglicized": "Helgi Haddingjaskati" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "halfdan-kara",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Halfdan", "anglicized": "Halfdan" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "kara",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Kára", "anglicized": "Kara" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "hamund",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hamundr", "anglicized": "Hamund" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "hjordis",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hjǫrdís", "anglicized": "Hjordis" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "sigurd",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Sigurðr", "anglicized": "Sigurd" },
+    "aliases": ["Sigurth"],
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "alf-hjalpreksson",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Álfr Hjálpreksson", "anglicized": "Alf Hjalpreksson" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "hjalprek",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hjálprekr", "anglicized": "Hjalprek" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "gripir",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Gripir", "anglicized": "Gripir" },
+    "attestations": ["poetic-edda"],
+    "tags": ["wisdom"]
+  },
+  {
+    "id": "geitir",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Geitir", "anglicized": "Geitir" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "gjuki",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Gjúki", "anglicized": "Gjuki" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "heimir",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Heimir", "anglicized": "Heimir" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "brynhild",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Brynhildr", "anglicized": "Brynhild" },
+    "aliases": ["Brunhild", "Sigrdrifa", "Hild"],
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "buthli",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Buðli", "anglicized": "Buthli" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "grimhild",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Grímhildr", "anglicized": "Grimhild" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "gunnar",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Gunnarr", "anglicized": "Gunnar" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "guthrun",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Guðrún", "anglicized": "Guthrun" },
+    "aliases": ["Gudrun"],
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "hogni-gjukisson",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hǫgni Gjúkason", "anglicized": "Hogni Gjukisson" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "gotthorm",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Gotþormr", "anglicized": "Gotthorm" },
+    "aliases": ["Guttorm"],
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "lyngvi",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Lyngvi", "anglicized": "Lyngvi" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "hildolf",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hildólfr", "anglicized": "Hildolf" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "fjolvar",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Fjǫlvarr", "anglicized": "Fjolvar" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "svipdag",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Svipdagr", "anglicized": "Svipdag" },
+    "attestations": ["poetic-edda"],
+    "tags": ["wisdom"]
+  },
+  {
+    "id": "groa",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Gróa", "anglicized": "Groa" },
+    "attestations": ["poetic-edda"],
+    "tags": ["wisdom"]
+  },
+  {
+    "id": "mengloth",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Menglǫð", "anglicized": "Mengloth" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "solbjart",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Sólbjartr", "anglicized": "Solbjart" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "gjaflaug",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Gjaflaug", "anglicized": "Gjaflaug" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "gollrond",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Gullrǫnd", "anglicized": "Gollrond" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "herborg",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Herborg", "anglicized": "Herborg" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "atli",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Atli", "anglicized": "Atli" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "svanhild",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Svanhildr", "anglicized": "Svanhild" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "oddrun",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Oddrún", "anglicized": "Oddrun" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "jonak",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Jónakr", "anglicized": "Jonak" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "bikki",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Bikki", "anglicized": "Bikki" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "jormunrek",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Jǫrmunrekr", "anglicized": "Jormunrek" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "hjalmgunnar",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hjálmgunnarr", "anglicized": "Hjalmgunnar" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "erp-atlason",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Erpr Atlason", "anglicized": "Erp Atlason" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "eitil",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Eitill", "anglicized": "Eitil" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "vingi",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Vingi", "anglicized": "Vingi" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "knefroth",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Knefrǫðr", "anglicized": "Knefroth" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "glaumvor",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Glaumvǫr", "anglicized": "Glaumvor" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "kostbera",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Kostbera", "anglicized": "Kostbera" },
+    "aliases": ["Bera"],
+    "attestations": ["poetic-edda"],
+    "tags": ["wisdom"]
+  },
+  {
+    "id": "solar",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Sólarr", "anglicized": "Solar" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "snaevar",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Snævarr", "anglicized": "Snaevar" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "gjuki-hognisson",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Gjúki Hǫgnason", "anglicized": "Gjuki Hognisson" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "thora",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Þóra", "anglicized": "Thora" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "hokon",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hákon", "anglicized": "Hokon" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "herkja",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Herkja", "anglicized": "Herkja" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "heithrek-oddrun",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Heiðrekr", "anglicized": "Heithrek" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "borgny",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Borgný", "anglicized": "Borgny" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "vilmund",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Vilmundr", "anglicized": "Vilmund" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "orkning",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Orkningr", "anglicized": "Orkning" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "beiti",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Beiti", "anglicized": "Beiti" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "hniflung",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hniflungr", "anglicized": "Hniflung" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "hamther",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Hamðir", "anglicized": "Hamther" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "sorli-jonaksson",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Sǫrli Jónaksson", "anglicized": "Sorli Jonaksson" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "erp-jonaksson",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Erpr Jónaksson", "anglicized": "Erp Jonaksson" },
+    "attestations": ["poetic-edda"],
+    "tags": ["war"]
+  },
+  {
+    "id": "randver",
+    "type": "human",
+    "classes": ["humans"],
+    "names": { "non": "Randvér", "anglicized": "Randver" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  }
+]

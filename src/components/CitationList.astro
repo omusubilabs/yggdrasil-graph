@@ -28,7 +28,7 @@ const byId = new Map(data.sources.map((s) => [s.id, s]));
     <ul class="citations">
       {sources.map((ref) => {
         const work = byId.get(ref.work);
-        const unit = work?.locusUnit === 'stanza' ? 'sources.stanza' : 'sources.chapter';
+        const unit = `sources.${ref.unit ?? work?.locusUnit ?? 'chapter'}`;
         return (
           <li class="apparatus">
             {/* i18n-ignore: work titles are Old Norse data from data/sources.json */}

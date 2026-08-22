@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yggdrasil.graph/schema/coverage.schema.json",
+  "title": "Corpus coverage register",
+  "description": "One row per citable work in data/sources.json. A work becomes complete only after its primary-text body has been read end to end in the edition registered by its collection.",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["work", "status"],
+    "properties": {
+      "work": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+      "status": { "enum": ["planned", "complete"] }
+    }
+  }
+}

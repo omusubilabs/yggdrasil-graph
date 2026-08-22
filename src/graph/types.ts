@@ -9,6 +9,7 @@
 
 export const ENTITY_TYPES = [
   'deity',
+  'human',
   'being',
   'world',
   'artifact',
@@ -22,6 +23,7 @@ export const ENTITY_CLASSES = [
   'aesir',
   'vanir',
   'jotnar',
+  'humans',
   'beings',
   'worlds',
   'artifacts',
@@ -65,6 +67,8 @@ export interface Entity {
   type: EntityType;
   classes: EntityClass[];
   names: { non: string; anglicized: string };
+  /** Alternative names and edition spellings. Historical data, never localized. */
+  aliases?: string[];
   attestations: string[];
   tags: string[];
 }
@@ -72,6 +76,8 @@ export interface Entity {
 export interface SourceRef {
   work: string;
   locus: string;
+  /** Overrides the work's default unit for embedded, unnumbered prose. */
+  unit?: 'chapter' | 'stanza' | 'page';
 }
 
 export interface Relation {
@@ -91,7 +97,7 @@ export interface Source {
   partOf?: string;
   titles: { non: string; en: string };
   date: string;
-  locusUnit?: 'chapter' | 'stanza';
+  locusUnit?: 'chapter' | 'stanza' | 'page';
   translation?: {
     translator: string;
     year: number;
@@ -144,4 +150,10 @@ export interface GraphData {
   tagIndex: Record<string, string[]>;
   /** Extent of the baked layout: [minX, minY, maxX, maxY]. */
   bounds: [number, number, number, number];
+  /** The thesis-led cold-open slice rendered before the lazy payload arrives. */
+  core: {
+    nodeIds: string[];
+    linkIds: string[];
+    bounds: [number, number, number, number];
+  };
 }

@@ -39,7 +39,10 @@
     "type": "parent_of",
     "directed": true,
     "certainty": "attested",
-    "sources": [{ "work": "gylfaginning", "locus": "22" }]
+    "sources": [
+      { "work": "gylfaginning", "locus": "22" },
+      { "work": "prologue", "locus": "4" }
+    ]
   },
   {
     "id": "frigg--baldr--parent_of",
@@ -114,7 +117,8 @@
     "certainty": "attested",
     "sources": [
       { "work": "skaldskaparmal", "locus": "4" },
-      { "work": "gylfaginning", "locus": "31" }
+      { "work": "gylfaginning", "locus": "31" },
+      { "work": "prologue", "locus": "3" }
     ]
   },
   {
@@ -567,5 +571,2651 @@
     "certainty": "variant",
     "sources": [{ "work": "hymiskvitha", "locus": "5" }],
     "contradicts": ["odin--tyr--parent_of"]
+  },
+  {
+    "id": "priam--troan--parent_of",
+    "from": "priam",
+    "to": "troan",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "miinon--troan--married_to",
+    "from": "miinon",
+    "to": "troan",
+    "type": "married_to",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "miinon--thor--parent_of",
+    "from": "miinon",
+    "to": "thor",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "troan--thor--parent_of",
+    "from": "troan",
+    "to": "thor",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "thor--loridi--parent_of",
+    "from": "thor",
+    "to": "loridi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "loridi--einridi--parent_of",
+    "from": "loridi",
+    "to": "einridi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "einridi--vingethor--parent_of",
+    "from": "einridi",
+    "to": "vingethor",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "vingethor--vingener--parent_of",
+    "from": "vingethor",
+    "to": "vingener",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "vingener--moda--parent_of",
+    "from": "vingener",
+    "to": "moda",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "moda--magi--parent_of",
+    "from": "moda",
+    "to": "magi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "magi--seskef--parent_of",
+    "from": "magi",
+    "to": "seskef",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "seskef--bedvig--parent_of",
+    "from": "seskef",
+    "to": "bedvig",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "bedvig--athra--parent_of",
+    "from": "bedvig",
+    "to": "athra",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "athra--itermann--parent_of",
+    "from": "athra",
+    "to": "itermann",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "itermann--heremod--parent_of",
+    "from": "itermann",
+    "to": "heremod",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "heremod--skjold--parent_of",
+    "from": "heremod",
+    "to": "skjold",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "skjold--bjaf--parent_of",
+    "from": "skjold",
+    "to": "bjaf",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "bjaf--jat--parent_of",
+    "from": "bjaf",
+    "to": "jat",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "jat--gudolfr--parent_of",
+    "from": "jat",
+    "to": "gudolfr",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "gudolfr--finn--parent_of",
+    "from": "gudolfr",
+    "to": "finn",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "finn--friallaf--parent_of",
+    "from": "finn",
+    "to": "friallaf",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "friallaf--odin--parent_of",
+    "from": "friallaf",
+    "to": "odin",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "odin--vegdeg--parent_of",
+    "from": "odin",
+    "to": "vegdeg",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "vegdeg--vitgils--parent_of",
+    "from": "vegdeg",
+    "to": "vitgils",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "vitgils--vitta--parent_of",
+    "from": "vitgils",
+    "to": "vitta",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "vitta--hengist--parent_of",
+    "from": "vitta",
+    "to": "hengist",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "vitgils--sigarr--parent_of",
+    "from": "vitgils",
+    "to": "sigarr",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "sigarr--svebdeg--parent_of",
+    "from": "sigarr",
+    "to": "svebdeg",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "baldr--brandr--parent_of",
+    "from": "baldr",
+    "to": "brandr",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "brandr--frjodigar--parent_of",
+    "from": "brandr",
+    "to": "frjodigar",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "frjodigar--freovin--parent_of",
+    "from": "frjodigar",
+    "to": "freovin",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "freovin--uvigg--parent_of",
+    "from": "freovin",
+    "to": "uvigg",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "uvigg--gevis--parent_of",
+    "from": "uvigg",
+    "to": "gevis",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "odin--sigi--parent_of",
+    "from": "odin",
+    "to": "sigi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "sigi--rerir--parent_of",
+    "from": "sigi",
+    "to": "rerir",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "odin--skjold--parent_of",
+    "from": "odin",
+    "to": "skjold",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "skjold--friallaf--parent_of",
+    "from": "skjold",
+    "to": "friallaf",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "odin--saemingr--parent_of",
+    "from": "odin",
+    "to": "saemingr",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "odin--yngvi--parent_of",
+    "from": "odin",
+    "to": "yngvi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "4" }]
+  },
+  {
+    "id": "lorikus--thor--fosters",
+    "from": "lorikus",
+    "to": "thor",
+    "type": "fosters",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "prologue", "locus": "3" }]
+  },
+  {
+    "id": "adam--eve--married_to",
+    "from": "adam",
+    "to": "eve",
+    "type": "married_to",
+    "directed": false,
+    "certainty": "implied",
+    "sources": [{ "work": "prologue", "locus": "1" }]
+  },
+  {
+    "id": "nithuth--bothvild--parent_of",
+    "from": "nithuth",
+    "to": "bothvild",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "volundarkvitha", "locus": "38" }]
+  },
+  {
+    "id": "hlothver--hlathguth--parent_of",
+    "from": "hlothver",
+    "to": "hlathguth",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "volundarkvitha", "locus": "2" }]
+  },
+  {
+    "id": "hlothver--hervor-hlothversdottir--parent_of",
+    "from": "hlothver",
+    "to": "hervor-hlothversdottir",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "volundarkvitha", "locus": "2" }]
+  },
+  {
+    "id": "kjar--olrun--parent_of",
+    "from": "kjar",
+    "to": "olrun",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "volundarkvitha", "locus": "2" }]
+  },
+  {
+    "id": "egil-volundar--olrun--consort_of",
+    "from": "egil-volundar",
+    "to": "olrun",
+    "type": "consort_of",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "volundarkvitha", "locus": "254", "unit": "page" }]
+  },
+  {
+    "id": "slagfith--hlathguth--consort_of",
+    "from": "slagfith",
+    "to": "hlathguth",
+    "type": "consort_of",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "volundarkvitha", "locus": "254", "unit": "page" }]
+  },
+  {
+    "id": "volund--hervor-hlothversdottir--consort_of",
+    "from": "volund",
+    "to": "hervor-hlothversdottir",
+    "type": "consort_of",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "volundarkvitha", "locus": "254", "unit": "page" }]
+  },
+  {
+    "id": "ai--edda--consort_of",
+    "from": "ai",
+    "to": "edda",
+    "type": "consort_of",
+    "directed": false,
+    "certainty": "implied",
+    "sources": [{ "work": "rigsthula", "locus": "2-6" }]
+  },
+  {
+    "id": "ai--thrael--parent_of",
+    "from": "ai",
+    "to": "thrael",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "rigsthula", "locus": "2-7" }]
+  },
+  {
+    "id": "edda--thrael--parent_of",
+    "from": "edda",
+    "to": "thrael",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "7" }]
+  },
+  {
+    "id": "heimdall--thrael--parent_of",
+    "from": "heimdall",
+    "to": "thrael",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "rigsthula", "locus": "2-7" }]
+  },
+  {
+    "id": "thrael--thir--consort_of",
+    "from": "thrael",
+    "to": "thir",
+    "type": "consort_of",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "11" }]
+  },
+  {
+    "id": "thrael--fjosnir--parent_of",
+    "from": "thrael",
+    "to": "fjosnir",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thir--fjosnir--parent_of",
+    "from": "thir",
+    "to": "fjosnir",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thrael--klur--parent_of",
+    "from": "thrael",
+    "to": "klur",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thir--klur--parent_of",
+    "from": "thir",
+    "to": "klur",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thrael--hreim--parent_of",
+    "from": "thrael",
+    "to": "hreim",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thir--hreim--parent_of",
+    "from": "thir",
+    "to": "hreim",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thrael--kleggi--parent_of",
+    "from": "thrael",
+    "to": "kleggi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thir--kleggi--parent_of",
+    "from": "thir",
+    "to": "kleggi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thrael--kefsir--parent_of",
+    "from": "thrael",
+    "to": "kefsir",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thir--kefsir--parent_of",
+    "from": "thir",
+    "to": "kefsir",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thrael--fulnir-rigsthula--parent_of",
+    "from": "thrael",
+    "to": "fulnir-rigsthula",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thir--fulnir-rigsthula--parent_of",
+    "from": "thir",
+    "to": "fulnir-rigsthula",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thrael--drumb--parent_of",
+    "from": "thrael",
+    "to": "drumb",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thir--drumb--parent_of",
+    "from": "thir",
+    "to": "drumb",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thrael--digraldi--parent_of",
+    "from": "thrael",
+    "to": "digraldi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thir--digraldi--parent_of",
+    "from": "thir",
+    "to": "digraldi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thrael--drott--parent_of",
+    "from": "thrael",
+    "to": "drott",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thir--drott--parent_of",
+    "from": "thir",
+    "to": "drott",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thrael--leggjaldi--parent_of",
+    "from": "thrael",
+    "to": "leggjaldi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thir--leggjaldi--parent_of",
+    "from": "thir",
+    "to": "leggjaldi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thrael--lut--parent_of",
+    "from": "thrael",
+    "to": "lut",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thir--lut--parent_of",
+    "from": "thir",
+    "to": "lut",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thrael--hosvir--parent_of",
+    "from": "thrael",
+    "to": "hosvir",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thir--hosvir--parent_of",
+    "from": "thir",
+    "to": "hosvir",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "12" }]
+  },
+  {
+    "id": "thrael--drumba--parent_of",
+    "from": "thrael",
+    "to": "drumba",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "13" }]
+  },
+  {
+    "id": "thir--drumba--parent_of",
+    "from": "thir",
+    "to": "drumba",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "13" }]
+  },
+  {
+    "id": "thrael--kumba--parent_of",
+    "from": "thrael",
+    "to": "kumba",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "13" }]
+  },
+  {
+    "id": "thir--kumba--parent_of",
+    "from": "thir",
+    "to": "kumba",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "13" }]
+  },
+  {
+    "id": "thrael--okkvinkalfa--parent_of",
+    "from": "thrael",
+    "to": "okkvinkalfa",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "13" }]
+  },
+  {
+    "id": "thir--okkvinkalfa--parent_of",
+    "from": "thir",
+    "to": "okkvinkalfa",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "13" }]
+  },
+  {
+    "id": "thrael--arinnefja--parent_of",
+    "from": "thrael",
+    "to": "arinnefja",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "13" }]
+  },
+  {
+    "id": "thir--arinnefja--parent_of",
+    "from": "thir",
+    "to": "arinnefja",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "13" }]
+  },
+  {
+    "id": "thrael--ysja--parent_of",
+    "from": "thrael",
+    "to": "ysja",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "13" }]
+  },
+  {
+    "id": "thir--ysja--parent_of",
+    "from": "thir",
+    "to": "ysja",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "13" }]
+  },
+  {
+    "id": "thrael--ambott--parent_of",
+    "from": "thrael",
+    "to": "ambott",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "13" }]
+  },
+  {
+    "id": "thir--ambott--parent_of",
+    "from": "thir",
+    "to": "ambott",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "13" }]
+  },
+  {
+    "id": "thrael--eikintjasna--parent_of",
+    "from": "thrael",
+    "to": "eikintjasna",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "13" }]
+  },
+  {
+    "id": "thir--eikintjasna--parent_of",
+    "from": "thir",
+    "to": "eikintjasna",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "13" }]
+  },
+  {
+    "id": "thrael--totrughypja--parent_of",
+    "from": "thrael",
+    "to": "totrughypja",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "13" }]
+  },
+  {
+    "id": "thir--totrughypja--parent_of",
+    "from": "thir",
+    "to": "totrughypja",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "13" }]
+  },
+  {
+    "id": "thrael--tronubeina--parent_of",
+    "from": "thrael",
+    "to": "tronubeina",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "13" }]
+  },
+  {
+    "id": "thir--tronubeina--parent_of",
+    "from": "thir",
+    "to": "tronubeina",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "13" }]
+  },
+  {
+    "id": "afi--amma--consort_of",
+    "from": "afi",
+    "to": "amma",
+    "type": "consort_of",
+    "directed": false,
+    "certainty": "implied",
+    "sources": [{ "work": "rigsthula", "locus": "14-20" }]
+  },
+  {
+    "id": "afi--karl--parent_of",
+    "from": "afi",
+    "to": "karl",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "rigsthula", "locus": "14-21" }]
+  },
+  {
+    "id": "amma--karl--parent_of",
+    "from": "amma",
+    "to": "karl",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "21" }]
+  },
+  {
+    "id": "heimdall--karl--parent_of",
+    "from": "heimdall",
+    "to": "karl",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "rigsthula", "locus": "17-21" }]
+  },
+  {
+    "id": "karl--snor--married_to",
+    "from": "karl",
+    "to": "snor",
+    "type": "married_to",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "23" }]
+  },
+  {
+    "id": "karl--hal--parent_of",
+    "from": "karl",
+    "to": "hal",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "snor--hal--parent_of",
+    "from": "snor",
+    "to": "hal",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "karl--dreng--parent_of",
+    "from": "karl",
+    "to": "dreng",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "snor--dreng--parent_of",
+    "from": "snor",
+    "to": "dreng",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "karl--holth--parent_of",
+    "from": "karl",
+    "to": "holth",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "snor--holth--parent_of",
+    "from": "snor",
+    "to": "holth",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "karl--thegn--parent_of",
+    "from": "karl",
+    "to": "thegn",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "snor--thegn--parent_of",
+    "from": "snor",
+    "to": "thegn",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "karl--smith-rigsthula--parent_of",
+    "from": "karl",
+    "to": "smith-rigsthula",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "snor--smith-rigsthula--parent_of",
+    "from": "snor",
+    "to": "smith-rigsthula",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "karl--breith--parent_of",
+    "from": "karl",
+    "to": "breith",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "snor--breith--parent_of",
+    "from": "snor",
+    "to": "breith",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "karl--bondi--parent_of",
+    "from": "karl",
+    "to": "bondi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "snor--bondi--parent_of",
+    "from": "snor",
+    "to": "bondi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "karl--bundinskeggi--parent_of",
+    "from": "karl",
+    "to": "bundinskeggi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "snor--bundinskeggi--parent_of",
+    "from": "snor",
+    "to": "bundinskeggi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "karl--bui--parent_of",
+    "from": "karl",
+    "to": "bui",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "snor--bui--parent_of",
+    "from": "snor",
+    "to": "bui",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "karl--boddi--parent_of",
+    "from": "karl",
+    "to": "boddi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "snor--boddi--parent_of",
+    "from": "snor",
+    "to": "boddi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "karl--brattskegg--parent_of",
+    "from": "karl",
+    "to": "brattskegg",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "snor--brattskegg--parent_of",
+    "from": "snor",
+    "to": "brattskegg",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "karl--segg--parent_of",
+    "from": "karl",
+    "to": "segg",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "snor--segg--parent_of",
+    "from": "snor",
+    "to": "segg",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "24" }]
+  },
+  {
+    "id": "karl--snot--parent_of",
+    "from": "karl",
+    "to": "snot",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "25" }]
+  },
+  {
+    "id": "snor--snot--parent_of",
+    "from": "snor",
+    "to": "snot",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "25" }]
+  },
+  {
+    "id": "karl--bruth--parent_of",
+    "from": "karl",
+    "to": "bruth",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "25" }]
+  },
+  {
+    "id": "snor--bruth--parent_of",
+    "from": "snor",
+    "to": "bruth",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "25" }]
+  },
+  {
+    "id": "karl--svanni--parent_of",
+    "from": "karl",
+    "to": "svanni",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "25" }]
+  },
+  {
+    "id": "snor--svanni--parent_of",
+    "from": "snor",
+    "to": "svanni",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "25" }]
+  },
+  {
+    "id": "karl--svarri--parent_of",
+    "from": "karl",
+    "to": "svarri",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "25" }]
+  },
+  {
+    "id": "snor--svarri--parent_of",
+    "from": "snor",
+    "to": "svarri",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "25" }]
+  },
+  {
+    "id": "karl--sprakki--parent_of",
+    "from": "karl",
+    "to": "sprakki",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "25" }]
+  },
+  {
+    "id": "snor--sprakki--parent_of",
+    "from": "snor",
+    "to": "sprakki",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "25" }]
+  },
+  {
+    "id": "karl--fljoth--parent_of",
+    "from": "karl",
+    "to": "fljoth",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "25" }]
+  },
+  {
+    "id": "snor--fljoth--parent_of",
+    "from": "snor",
+    "to": "fljoth",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "25" }]
+  },
+  {
+    "id": "karl--sprund--parent_of",
+    "from": "karl",
+    "to": "sprund",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "25" }]
+  },
+  {
+    "id": "snor--sprund--parent_of",
+    "from": "snor",
+    "to": "sprund",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "25" }]
+  },
+  {
+    "id": "karl--vif--parent_of",
+    "from": "karl",
+    "to": "vif",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "25" }]
+  },
+  {
+    "id": "snor--vif--parent_of",
+    "from": "snor",
+    "to": "vif",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "25" }]
+  },
+  {
+    "id": "karl--feima--parent_of",
+    "from": "karl",
+    "to": "feima",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "25" }]
+  },
+  {
+    "id": "snor--feima--parent_of",
+    "from": "snor",
+    "to": "feima",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "25" }]
+  },
+  {
+    "id": "karl--ristil--parent_of",
+    "from": "karl",
+    "to": "ristil",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "25" }]
+  },
+  {
+    "id": "snor--ristil--parent_of",
+    "from": "snor",
+    "to": "ristil",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "25" }]
+  },
+  {
+    "id": "fathir--mothir--consort_of",
+    "from": "fathir",
+    "to": "mothir",
+    "type": "consort_of",
+    "directed": false,
+    "certainty": "implied",
+    "sources": [{ "work": "rigsthula", "locus": "27-33" }]
+  },
+  {
+    "id": "fathir--jarl--parent_of",
+    "from": "fathir",
+    "to": "jarl",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "rigsthula", "locus": "27-34" }]
+  },
+  {
+    "id": "mothir--jarl--parent_of",
+    "from": "mothir",
+    "to": "jarl",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "34" }]
+  },
+  {
+    "id": "heimdall--jarl--parent_of",
+    "from": "heimdall",
+    "to": "jarl",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "36" }]
+  },
+  {
+    "id": "hersir--erna--parent_of",
+    "from": "hersir",
+    "to": "erna",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "40" }]
+  },
+  {
+    "id": "jarl--erna--married_to",
+    "from": "jarl",
+    "to": "erna",
+    "type": "married_to",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "41" }]
+  },
+  {
+    "id": "jarl--bur-rigsthula--parent_of",
+    "from": "jarl",
+    "to": "bur-rigsthula",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "erna--bur-rigsthula--parent_of",
+    "from": "erna",
+    "to": "bur-rigsthula",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "jarl--barn--parent_of",
+    "from": "jarl",
+    "to": "barn",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "erna--barn--parent_of",
+    "from": "erna",
+    "to": "barn",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "jarl--joth--parent_of",
+    "from": "jarl",
+    "to": "joth",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "erna--joth--parent_of",
+    "from": "erna",
+    "to": "joth",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "jarl--athal--parent_of",
+    "from": "jarl",
+    "to": "athal",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "erna--athal--parent_of",
+    "from": "erna",
+    "to": "athal",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "jarl--arfi--parent_of",
+    "from": "jarl",
+    "to": "arfi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "erna--arfi--parent_of",
+    "from": "erna",
+    "to": "arfi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "jarl--mogr--parent_of",
+    "from": "jarl",
+    "to": "mogr",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "erna--mogr--parent_of",
+    "from": "erna",
+    "to": "mogr",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "jarl--nith-rigsthula--parent_of",
+    "from": "jarl",
+    "to": "nith-rigsthula",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "erna--nith-rigsthula--parent_of",
+    "from": "erna",
+    "to": "nith-rigsthula",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "jarl--svein--parent_of",
+    "from": "jarl",
+    "to": "svein",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "erna--svein--parent_of",
+    "from": "erna",
+    "to": "svein",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "jarl--sun--parent_of",
+    "from": "jarl",
+    "to": "sun",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "erna--sun--parent_of",
+    "from": "erna",
+    "to": "sun",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "jarl--nithjung--parent_of",
+    "from": "jarl",
+    "to": "nithjung",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "erna--nithjung--parent_of",
+    "from": "erna",
+    "to": "nithjung",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "jarl--kund--parent_of",
+    "from": "jarl",
+    "to": "kund",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "erna--kund--parent_of",
+    "from": "erna",
+    "to": "kund",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "jarl--kon--parent_of",
+    "from": "jarl",
+    "to": "kon",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "erna--kon--parent_of",
+    "from": "erna",
+    "to": "kon",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "rigsthula", "locus": "42" }]
+  },
+  {
+    "id": "hjorvarth--alfhild-hjorvarth--consort_of",
+    "from": "hjorvarth",
+    "to": "alfhild-hjorvarth",
+    "type": "consort_of",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "272", "unit": "page" }]
+  },
+  {
+    "id": "hjorvarth--hethin-hjorvarthsson--parent_of",
+    "from": "hjorvarth",
+    "to": "hethin-hjorvarthsson",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "272", "unit": "page" }]
+  },
+  {
+    "id": "alfhild-hjorvarth--hethin-hjorvarthsson--parent_of",
+    "from": "alfhild-hjorvarth",
+    "to": "hethin-hjorvarthsson",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "272", "unit": "page" }]
+  },
+  {
+    "id": "hjorvarth--saereith--consort_of",
+    "from": "hjorvarth",
+    "to": "saereith",
+    "type": "consort_of",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "272", "unit": "page" }]
+  },
+  {
+    "id": "hjorvarth--humlung--parent_of",
+    "from": "hjorvarth",
+    "to": "humlung",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "272", "unit": "page" }]
+  },
+  {
+    "id": "saereith--humlung--parent_of",
+    "from": "saereith",
+    "to": "humlung",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "272", "unit": "page" }]
+  },
+  {
+    "id": "hjorvarth--sinrjoth--consort_of",
+    "from": "hjorvarth",
+    "to": "sinrjoth",
+    "type": "consort_of",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "273", "unit": "page" }]
+  },
+  {
+    "id": "hjorvarth--hymling--parent_of",
+    "from": "hjorvarth",
+    "to": "hymling",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "273", "unit": "page" }]
+  },
+  {
+    "id": "sinrjoth--hymling--parent_of",
+    "from": "sinrjoth",
+    "to": "hymling",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "273", "unit": "page" }]
+  },
+  {
+    "id": "svafnir--sigrlin--parent_of",
+    "from": "svafnir",
+    "to": "sigrlin",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "1" }]
+  },
+  {
+    "id": "ithmund--atli-hjorvarth--parent_of",
+    "from": "ithmund",
+    "to": "atli-hjorvarth",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "2" }]
+  },
+  {
+    "id": "franmar--alof--parent_of",
+    "from": "franmar",
+    "to": "alof",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "273", "unit": "page" }]
+  },
+  {
+    "id": "franmar--sigrlin--fosters",
+    "from": "franmar",
+    "to": "sigrlin",
+    "type": "fosters",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "273", "unit": "page" }]
+  },
+  {
+    "id": "hjorvarth--sigrlin--married_to",
+    "from": "hjorvarth",
+    "to": "sigrlin",
+    "type": "married_to",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "275", "unit": "page" }]
+  },
+  {
+    "id": "atli-hjorvarth--alof--consort_of",
+    "from": "atli-hjorvarth",
+    "to": "alof",
+    "type": "consort_of",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "275", "unit": "page" }]
+  },
+  {
+    "id": "hjorvarth--helgi-hjorvarthsson--parent_of",
+    "from": "hjorvarth",
+    "to": "helgi-hjorvarthsson",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "276", "unit": "page" }]
+  },
+  {
+    "id": "sigrlin--helgi-hjorvarthsson--parent_of",
+    "from": "sigrlin",
+    "to": "helgi-hjorvarthsson",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "276", "unit": "page" }]
+  },
+  {
+    "id": "eylimi--svava--parent_of",
+    "from": "eylimi",
+    "to": "svava",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "36" }]
+  },
+  {
+    "id": "helgi-hjorvarthsson--svava--consort_of",
+    "from": "helgi-hjorvarthsson",
+    "to": "svava",
+    "type": "consort_of",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "284", "unit": "page" }]
+  },
+  {
+    "id": "hati-hrimgerthar--hrimgerth--parent_of",
+    "from": "hati-hrimgerthar",
+    "to": "hrimgerth",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "17" }]
+  },
+  {
+    "id": "hrothmar--alf-hrothmarsson--parent_of",
+    "from": "hrothmar",
+    "to": "alf-hrothmarsson",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hjorvarthssonar", "locus": "286", "unit": "page" }]
+  },
+  {
+    "id": "volsung--sigmund--parent_of",
+    "from": "volsung",
+    "to": "sigmund",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "309", "unit": "page" }]
+  },
+  {
+    "id": "sigmund--borghild--married_to",
+    "from": "sigmund",
+    "to": "borghild",
+    "type": "married_to",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "309", "unit": "page" }]
+  },
+  {
+    "id": "sigmund--helgi-hundingsbane--parent_of",
+    "from": "sigmund",
+    "to": "helgi-hundingsbane",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-i", "locus": "6" }]
+  },
+  {
+    "id": "borghild--helgi-hundingsbane--parent_of",
+    "from": "borghild",
+    "to": "helgi-hundingsbane",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-i", "locus": "1" }]
+  },
+  {
+    "id": "hagal--helgi-hundingsbane--fosters",
+    "from": "hagal",
+    "to": "helgi-hundingsbane",
+    "type": "fosters",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "309", "unit": "page" }]
+  },
+  {
+    "id": "hagal--hamal--parent_of",
+    "from": "hagal",
+    "to": "hamal",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "310", "unit": "page" }]
+  },
+  {
+    "id": "hunding--haeming--parent_of",
+    "from": "hunding",
+    "to": "haeming",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "309", "unit": "page" }]
+  },
+  {
+    "id": "helgi-hundingsbane--sinfjotli--sibling_of",
+    "from": "helgi-hundingsbane",
+    "to": "sinfjotli",
+    "type": "sibling_of",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-i", "locus": "8" }]
+  },
+  {
+    "id": "hunding--eyjolf-hundingsson--parent_of",
+    "from": "hunding",
+    "to": "eyjolf-hundingsson",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-i", "locus": "11-14" }]
+  },
+  {
+    "id": "hunding--alf-hundingsson--parent_of",
+    "from": "hunding",
+    "to": "alf-hundingsson",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-i", "locus": "11-14" }]
+  },
+  {
+    "id": "hunding--hjorvarth-hundingsson--parent_of",
+    "from": "hunding",
+    "to": "hjorvarth-hundingsson",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-i", "locus": "11-14" }]
+  },
+  {
+    "id": "hunding--hervarth-hundingsson--parent_of",
+    "from": "hunding",
+    "to": "hervarth-hundingsson",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-i", "locus": "11-14" }]
+  },
+  {
+    "id": "hogni-helgi--sigrun--parent_of",
+    "from": "hogni-helgi",
+    "to": "sigrun",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-i", "locus": "18" }]
+  },
+  {
+    "id": "granmar--hothbrodd--parent_of",
+    "from": "granmar",
+    "to": "hothbrodd",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "315", "unit": "page" }]
+  },
+  {
+    "id": "granmar--gothmund--parent_of",
+    "from": "granmar",
+    "to": "gothmund",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "315", "unit": "page" }]
+  },
+  {
+    "id": "granmar--starkath-granmarsson--parent_of",
+    "from": "granmar",
+    "to": "starkath-granmarsson",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "315", "unit": "page" }]
+  },
+  {
+    "id": "hring-helgi--atli-hringsson--parent_of",
+    "from": "hring-helgi",
+    "to": "atli-hringsson",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-i", "locus": "54" }]
+  },
+  {
+    "id": "hring-helgi--yngvi-hringsson--parent_of",
+    "from": "hring-helgi",
+    "to": "yngvi-hringsson",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-i", "locus": "54" }]
+  },
+  {
+    "id": "hring-helgi--alf-old--parent_of",
+    "from": "hring-helgi",
+    "to": "alf-old",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-i", "locus": "54" }]
+  },
+  {
+    "id": "hogni-helgi--bragi-hognisson--parent_of",
+    "from": "hogni-helgi",
+    "to": "bragi-hognisson",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "319", "unit": "page" }]
+  },
+  {
+    "id": "hogni-helgi--dag-hognisson--parent_of",
+    "from": "hogni-helgi",
+    "to": "dag-hognisson",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "319", "unit": "page" }]
+  },
+  {
+    "id": "helgi-hundingsbane--sigrun--married_to",
+    "from": "helgi-hundingsbane",
+    "to": "sigrun",
+    "type": "married_to",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "323", "unit": "page" }]
+  },
+  {
+    "id": "halfdan-kara--kara--parent_of",
+    "from": "halfdan-kara",
+    "to": "kara",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "helgakvitha-hundingsbana-ii", "locus": "330", "unit": "page" }]
+  },
+  {
+    "id": "sigmund--hamund--parent_of",
+    "from": "sigmund",
+    "to": "hamund",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "fra-dautha-sinfjotla", "locus": "334" }]
+  },
+  {
+    "id": "sigmund--hjordis--married_to",
+    "from": "sigmund",
+    "to": "hjordis",
+    "type": "married_to",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "fra-dautha-sinfjotla", "locus": "335" }]
+  },
+  {
+    "id": "eylimi--hjordis--parent_of",
+    "from": "eylimi",
+    "to": "hjordis",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "fra-dautha-sinfjotla", "locus": "335" }]
+  },
+  {
+    "id": "sigmund--sigurd--parent_of",
+    "from": "sigmund",
+    "to": "sigurd",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "fra-dautha-sinfjotla", "locus": "335" }]
+  },
+  {
+    "id": "hjordis--sigurd--parent_of",
+    "from": "hjordis",
+    "to": "sigurd",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "fra-dautha-sinfjotla", "locus": "335" }]
+  },
+  {
+    "id": "hjordis--alf-hjalpreksson--married_to",
+    "from": "hjordis",
+    "to": "alf-hjalpreksson",
+    "type": "married_to",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "fra-dautha-sinfjotla", "locus": "335" }]
+  },
+  {
+    "id": "hjalprek--alf-hjalpreksson--parent_of",
+    "from": "hjalprek",
+    "to": "alf-hjalpreksson",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "fra-dautha-sinfjotla", "locus": "335" }]
+  },
+  {
+    "id": "alf-hjalpreksson--sigurd--fosters",
+    "from": "alf-hjalpreksson",
+    "to": "sigurd",
+    "type": "fosters",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "fra-dautha-sinfjotla", "locus": "335" }]
+  },
+  {
+    "id": "eylimi--gripir--parent_of",
+    "from": "eylimi",
+    "to": "gripir",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gripisspo", "locus": "341", "unit": "page" }]
+  },
+  {
+    "id": "gripir--hjordis--sibling_of",
+    "from": "gripir",
+    "to": "hjordis",
+    "type": "sibling_of",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "gripisspo", "locus": "341", "unit": "page" }]
+  },
+  {
+    "id": "buthli--brynhild--parent_of",
+    "from": "buthli",
+    "to": "brynhild",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gripisspo", "locus": "27" }]
+  },
+  {
+    "id": "heimir--brynhild--fosters",
+    "from": "heimir",
+    "to": "brynhild",
+    "type": "fosters",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gripisspo", "locus": "27" }]
+  },
+  {
+    "id": "grimhild--guthrun--parent_of",
+    "from": "grimhild",
+    "to": "guthrun",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gripisspo", "locus": "33" }]
+  },
+  {
+    "id": "grimhild--gunnar--parent_of",
+    "from": "grimhild",
+    "to": "gunnar",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gripisspo", "locus": "35" }]
+  },
+  {
+    "id": "gjuki--gunnar--parent_of",
+    "from": "gjuki",
+    "to": "gunnar",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gripisspo", "locus": "50" }]
+  },
+  {
+    "id": "gjuki--hogni-gjukisson--parent_of",
+    "from": "gjuki",
+    "to": "hogni-gjukisson",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gripisspo", "locus": "50" }]
+  },
+  {
+    "id": "gjuki--gotthorm--parent_of",
+    "from": "gjuki",
+    "to": "gotthorm",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gripisspo", "locus": "50" }]
+  },
+  {
+    "id": "sigurd--guthrun--married_to",
+    "from": "sigurd",
+    "to": "guthrun",
+    "type": "married_to",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "gripisspo", "locus": "45" }]
+  },
+  {
+    "id": "gunnar--brynhild--married_to",
+    "from": "gunnar",
+    "to": "brynhild",
+    "type": "married_to",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "gripisspo", "locus": "45" }]
+  },
+  {
+    "id": "hreithmar--regin--parent_of",
+    "from": "hreithmar",
+    "to": "regin",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "reginsmol", "locus": "359", "unit": "page" }]
+  },
+  {
+    "id": "hreithmar--otr--parent_of",
+    "from": "hreithmar",
+    "to": "otr",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "reginsmol", "locus": "359", "unit": "page" }]
+  },
+  {
+    "id": "hreithmar--fafnir--parent_of",
+    "from": "hreithmar",
+    "to": "fafnir",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "reginsmol", "locus": "363", "unit": "page" }]
+  },
+  {
+    "id": "hreithmar--lyngheith--parent_of",
+    "from": "hreithmar",
+    "to": "lyngheith",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "reginsmol", "locus": "10" }]
+  },
+  {
+    "id": "hreithmar--lofnheith--parent_of",
+    "from": "hreithmar",
+    "to": "lofnheith",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "reginsmol", "locus": "10" }]
+  },
+  {
+    "id": "oin--andvari--parent_of",
+    "from": "oin",
+    "to": "andvari",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "reginsmol", "locus": "2" }]
+  },
+  {
+    "id": "hunding--lyngvi--parent_of",
+    "from": "hunding",
+    "to": "lyngvi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "reginsmol", "locus": "369", "unit": "page" }]
+  },
+  {
+    "id": "regin--sigurd--fosters",
+    "from": "regin",
+    "to": "sigurd",
+    "type": "fosters",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "reginsmol", "locus": "14" }]
+  },
+  {
+    "id": "gymir--gerd--parent_of",
+    "from": "gymir",
+    "to": "gerd",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "skirnismol", "locus": "12" }]
+  },
+  {
+    "id": "odin--vali--parent_of",
+    "from": "odin",
+    "to": "vali",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "baldrs-draumar", "locus": "11" }]
+  },
+  {
+    "id": "rindr--vali--parent_of",
+    "from": "rindr",
+    "to": "vali",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "baldrs-draumar", "locus": "11" }]
+  },
+  {
+    "id": "thor--meili--sibling_of",
+    "from": "thor",
+    "to": "meili",
+    "type": "sibling_of",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "harbarthsljoth", "locus": "9" }]
+  },
+  {
+    "id": "alvaldi--thjazi--parent_of",
+    "from": "alvaldi",
+    "to": "thjazi",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "harbarthsljoth", "locus": "19" }]
+  },
+  {
+    "id": "groa--svipdag--parent_of",
+    "from": "groa",
+    "to": "svipdag",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "grougaldr", "locus": "1-2" }]
+  },
+  {
+    "id": "solbjart--svipdag--parent_of",
+    "from": "solbjart",
+    "to": "svipdag",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "fjolsvinnsmol", "locus": "63" }]
+  },
+  {
+    "id": "svipdag--mengloth--consort_of",
+    "from": "svipdag",
+    "to": "mengloth",
+    "type": "consort_of",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "fjolsvinnsmol", "locus": "58-66" }]
+  },
+  {
+    "id": "gjaflaug--gjuki--sibling_of",
+    "from": "gjaflaug",
+    "to": "gjuki",
+    "type": "sibling_of",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "guthrunarkvitha-i", "locus": "4" }]
+  },
+  {
+    "id": "gjuki--gollrond--parent_of",
+    "from": "gjuki",
+    "to": "gollrond",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "guthrunarkvitha-i", "locus": "11" }]
+  },
+  {
+    "id": "herborg--gollrond--fosters",
+    "from": "herborg",
+    "to": "gollrond",
+    "type": "fosters",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "guthrunarkvitha-i", "locus": "11" }]
+  },
+  {
+    "id": "gjuki--guthrun--parent_of",
+    "from": "gjuki",
+    "to": "guthrun",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "guthrunarkvitha-i", "locus": "15" }]
+  },
+  {
+    "id": "buthli--atli--parent_of",
+    "from": "buthli",
+    "to": "atli",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "sigurtharkvitha-en-skamma", "locus": "55" }]
+  },
+  {
+    "id": "atli--brynhild--sibling_of",
+    "from": "atli",
+    "to": "brynhild",
+    "type": "sibling_of",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [
+      { "work": "guthrunarkvitha-i", "locus": "24" },
+      { "work": "sigurtharkvitha-en-skamma", "locus": "55" }
+    ]
+  },
+  {
+    "id": "sigurd--svanhild--parent_of",
+    "from": "sigurd",
+    "to": "svanhild",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "sigurtharkvitha-en-skamma", "locus": "62" }]
+  },
+  {
+    "id": "guthrun--svanhild--parent_of",
+    "from": "guthrun",
+    "to": "svanhild",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "sigurtharkvitha-en-skamma", "locus": "62" }]
+  },
+  {
+    "id": "guthrun--atli--married_to",
+    "from": "guthrun",
+    "to": "atli",
+    "type": "married_to",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [
+      { "work": "guthrunarkvitha-ii", "locus": "27-34" },
+      { "work": "sigurtharkvitha-en-skamma", "locus": "55" }
+    ]
+  },
+  {
+    "id": "atli--oddrun--sibling_of",
+    "from": "atli",
+    "to": "oddrun",
+    "type": "sibling_of",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "oddrunargratr", "locus": "2" }]
+  },
+  {
+    "id": "gunnar--oddrun--consort_of",
+    "from": "gunnar",
+    "to": "oddrun",
+    "type": "consort_of",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [
+      { "work": "sigurtharkvitha-en-skamma", "locus": "57" },
+      { "work": "oddrunargratr", "locus": "19-21" }
+    ]
+  },
+  {
+    "id": "atli--erp-atlason--parent_of",
+    "from": "atli",
+    "to": "erp-atlason",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "drap-niflunga", "locus": "448", "unit": "page" },
+      { "work": "atlakvitha-en-gronlenzka", "locus": "40-41" }
+    ]
+  },
+  {
+    "id": "guthrun--erp-atlason--parent_of",
+    "from": "guthrun",
+    "to": "erp-atlason",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "atlakvitha-en-gronlenzka", "locus": "40-41" }]
+  },
+  {
+    "id": "atli--eitil--parent_of",
+    "from": "atli",
+    "to": "eitil",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "drap-niflunga", "locus": "448", "unit": "page" },
+      { "work": "atlakvitha-en-gronlenzka", "locus": "40-41" }
+    ]
+  },
+  {
+    "id": "guthrun--eitil--parent_of",
+    "from": "guthrun",
+    "to": "eitil",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "atlakvitha-en-gronlenzka", "locus": "40-41" }]
+  },
+  {
+    "id": "gunnar--glaumvor--married_to",
+    "from": "gunnar",
+    "to": "glaumvor",
+    "type": "married_to",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [
+      { "work": "drap-niflunga", "locus": "449", "unit": "page" },
+      { "work": "atlamol-en-gronlenzku", "locus": "6" }
+    ]
+  },
+  {
+    "id": "hogni-gjukisson--kostbera--married_to",
+    "from": "hogni-gjukisson",
+    "to": "kostbera",
+    "type": "married_to",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [
+      { "work": "drap-niflunga", "locus": "449", "unit": "page" },
+      { "work": "atlamol-en-gronlenzku", "locus": "6" }
+    ]
+  },
+  {
+    "id": "hogni-gjukisson--solar--parent_of",
+    "from": "hogni-gjukisson",
+    "to": "solar",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "drap-niflunga", "locus": "449", "unit": "page" },
+      { "work": "atlamol-en-gronlenzku", "locus": "28" }
+    ]
+  },
+  {
+    "id": "kostbera--solar--parent_of",
+    "from": "kostbera",
+    "to": "solar",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "drap-niflunga", "locus": "449", "unit": "page" }]
+  },
+  {
+    "id": "hogni-gjukisson--snaevar--parent_of",
+    "from": "hogni-gjukisson",
+    "to": "snaevar",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "drap-niflunga", "locus": "449", "unit": "page" },
+      { "work": "atlamol-en-gronlenzku", "locus": "28" }
+    ]
+  },
+  {
+    "id": "kostbera--snaevar--parent_of",
+    "from": "kostbera",
+    "to": "snaevar",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "drap-niflunga", "locus": "449", "unit": "page" }]
+  },
+  {
+    "id": "hogni-gjukisson--gjuki-hognisson--parent_of",
+    "from": "hogni-gjukisson",
+    "to": "gjuki-hognisson",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "drap-niflunga", "locus": "449", "unit": "page" }]
+  },
+  {
+    "id": "kostbera--gjuki-hognisson--parent_of",
+    "from": "kostbera",
+    "to": "gjuki-hognisson",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "drap-niflunga", "locus": "449", "unit": "page" }]
+  },
+  {
+    "id": "hokon--thora--parent_of",
+    "from": "hokon",
+    "to": "thora",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "guthrunarkvitha-ii", "locus": "14" }]
+  },
+  {
+    "id": "heithrek-oddrun--borgny--parent_of",
+    "from": "heithrek-oddrun",
+    "to": "borgny",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "oddrunargratr", "locus": "1" }]
+  },
+  {
+    "id": "borgny--vilmund--consort_of",
+    "from": "borgny",
+    "to": "vilmund",
+    "type": "consort_of",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "oddrunargratr", "locus": "5" }]
+  },
+  {
+    "id": "kostbera--orkning--sibling_of",
+    "from": "kostbera",
+    "to": "orkning",
+    "type": "sibling_of",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "atlamol-en-gronlenzku", "locus": "28" }]
+  },
+  {
+    "id": "hogni-gjukisson--hniflung--parent_of",
+    "from": "hogni-gjukisson",
+    "to": "hniflung",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "atlamol-en-gronlenzku", "locus": "83-86" }]
+  },
+  {
+    "id": "guthrun--jonak--married_to",
+    "from": "guthrun",
+    "to": "jonak",
+    "type": "married_to",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "guthrunarhvot", "locus": "538", "unit": "page" }]
+  },
+  {
+    "id": "guthrun--hamther--parent_of",
+    "from": "guthrun",
+    "to": "hamther",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "guthrunarhvot", "locus": "538", "unit": "page" }]
+  },
+  {
+    "id": "jonak--hamther--parent_of",
+    "from": "jonak",
+    "to": "hamther",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "guthrunarhvot", "locus": "538", "unit": "page" },
+      { "work": "hamthesmol", "locus": "26" }
+    ]
+  },
+  {
+    "id": "guthrun--sorli-jonaksson--parent_of",
+    "from": "guthrun",
+    "to": "sorli-jonaksson",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "guthrunarhvot", "locus": "538", "unit": "page" }]
+  },
+  {
+    "id": "jonak--sorli-jonaksson--parent_of",
+    "from": "jonak",
+    "to": "sorli-jonaksson",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "guthrunarhvot", "locus": "538", "unit": "page" },
+      { "work": "hamthesmol", "locus": "26" }
+    ]
+  },
+  {
+    "id": "guthrun--erp-jonaksson--parent_of",
+    "from": "guthrun",
+    "to": "erp-jonaksson",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "variant",
+    "sources": [{ "work": "guthrunarhvot", "locus": "538", "unit": "page" }]
+  },
+  {
+    "id": "jonak--erp-jonaksson--parent_of",
+    "from": "jonak",
+    "to": "erp-jonaksson",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "guthrunarhvot", "locus": "538", "unit": "page" },
+      { "work": "hamthesmol", "locus": "13-16" }
+    ]
+  },
+  {
+    "id": "jormunrek--svanhild--married_to",
+    "from": "jormunrek",
+    "to": "svanhild",
+    "type": "married_to",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "guthrunarhvot", "locus": "538", "unit": "page" }]
+  },
+  {
+    "id": "jormunrek--randver--parent_of",
+    "from": "jormunrek",
+    "to": "randver",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "guthrunarhvot", "locus": "538", "unit": "page" }]
   }
 ]

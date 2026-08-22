@@ -97,5 +97,273 @@
     },
     "attestations": ["poetic-edda", "prose-edda"],
     "tags": ["ragnarok-participant"]
+  },
+  {
+    "id": "troy",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Trója", "anglicized": "Troy" },
+    "aliases": ["Turkland"],
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "thrace",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Þrakía", "anglicized": "Thrace" },
+    "aliases": ["Thrudheim"],
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "saxland",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Saxland", "anglicized": "Saxland" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "east-saxland",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Austr-Saxland", "anglicized": "East Saxland" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "westphalia",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Vestfal", "anglicized": "Westphalia" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "frankland",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Frakkland", "anglicized": "Frankland" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "reidgothland",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Reiðgotaland", "anglicized": "Reidgothland" },
+    "aliases": ["Jutland"],
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "sweden",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Svíþjóð", "anglicized": "Sweden" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "sigtun",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Sigtún", "anglicized": "Sigtun" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "norway",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Noregr", "anglicized": "Norway" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "ulfdalir",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Úlfdalir", "anglicized": "Wolf-Dales" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "saevarstath",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Sævarstaðr", "anglicized": "Saevarstath" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "valland",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Valland", "anglicized": "Valland" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "svavaland",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Svávaland", "anglicized": "Svavaland" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "tholley",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Þolley", "anglicized": "Tholley" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "hundland",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Hundland", "anglicized": "Hundland" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "svarins-hill",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Svarinshaugr", "anglicized": "Svarin's hill" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "hlesey",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Hlésey", "anglicized": "Hlesey" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "bralund",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Brálundr", "anglicized": "Bralund" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "sevafjoll",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Sefafjǫll", "anglicized": "Sevafjoll" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "valhall",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Valhǫll", "anglicized": "Valhall" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "vandilsve",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Vandilsvé", "anglicized": "Vandilsve" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "vigdalir",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Vígdalir", "anglicized": "Vigdalir" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "denmark",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Danmǫrk", "anglicized": "Denmark" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "gnitaheith",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Gnitaheiðr", "anglicized": "Gnitaheith" },
+    "aliases": ["Gnitaheath"],
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "andvaris-fall",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Andvarafors", "anglicized": "Andvari's fall" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "vestrsalir",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Vestrsalir", "anglicized": "Vestrsalir" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "rathseys-sound",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Ráðseyjarsund", "anglicized": "Rathsey's sound" },
+    "attestations": ["poetic-edda"],
+    "tags": ["sea"]
+  },
+  {
+    "id": "algron",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Algrœn", "anglicized": "Algron" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "lyr",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Lýr", "anglicized": "Lyr" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "mimameith",
+    "type": "world",
+    "classes": ["worlds"],
+    "names": { "non": "Mímameiðr", "anglicized": "Mimameith" },
+    "attestations": ["poetic-edda"],
+    "tags": ["world-tree"]
+  },
+  {
+    "id": "lyfjaberg",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Lyfjaberg", "anglicized": "Lyfjaberg" },
+    "attestations": ["poetic-edda"],
+    "tags": []
+  },
+  {
+    "id": "hindarfjoll",
+    "type": "place",
+    "classes": ["worlds"],
+    "names": { "non": "Hindarfjǫll", "anglicized": "Hindarfjoll" },
+    "attestations": ["poetic-edda"],
+    "tags": []
   }
 ]

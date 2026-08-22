@@ -142,5 +142,237 @@
     },
     "date": "c. 1220",
     "locusUnit": "chapter"
+  },
+  {
+    "id": "prologue",
+    "kind": "work",
+    "partOf": "prose-edda",
+    "titles": { "non": "Formáli", "en": "Prologue" },
+    "date": "c. 1220",
+    "locusUnit": "chapter"
+  },
+  {
+    "id": "skirnismol",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Skírnismál", "en": "The Ballad of Skirnir" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "harbarthsljoth",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Hárbarðsljóð", "en": "The Lay of Harbarth" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "alvissmol",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Alvíssmál", "en": "The Ballad of Alvis" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "baldrs-draumar",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Baldrs draumar", "en": "Baldr's Dreams" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "rigsthula",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Rígsþula", "en": "The Lay of Rig" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "grougaldr",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Grógaldr", "en": "The Spell of Groa" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "fjolsvinnsmol",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Fjölsvinnsmál", "en": "The Ballad of Fjolsvith" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "volundarkvitha",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Völundarkviða", "en": "The Lay of Volund" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "helgakvitha-hjorvarthssonar",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Helgakviða Hjörvarðssonar", "en": "The Lay of Helgi the Son of Hjorvarth" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "helgakvitha-hundingsbana-i",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Helgakviða Hundingsbana I", "en": "The First Lay of Helgi Hundingsbane" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "helgakvitha-hundingsbana-ii",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Helgakviða Hundingsbana II", "en": "The Second Lay of Helgi Hundingsbane" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "fra-dautha-sinfjotla",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Frá dauða Sinfjötla", "en": "The Death of Sinfjotli" },
+    "date": "date uncertain",
+    "locusUnit": "page"
+  },
+  {
+    "id": "gripisspo",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Grípisspá", "en": "Gripir's Prophecy" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "reginsmol",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Reginsmál", "en": "The Ballad of Regin" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "fafnismol",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Fáfnismál", "en": "The Ballad of Fafnir" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "sigrdrifumol",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Sigrdrífumál", "en": "The Ballad of the Victory-Bringer" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "brot-af-sigurtharkvithu",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Brot af Sigurðarkviðu", "en": "Fragment of a Sigurth Lay" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "guthrunarkvitha-i",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Guðrúnarkviða I", "en": "The First Lay of Guthrun" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "sigurtharkvitha-en-skamma",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Sigurðarkviða en skamma", "en": "The Short Lay of Sigurth" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "helreith-brynhildar",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Helreið Brynhildar", "en": "Brynhild's Hell-Ride" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "drap-niflunga",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Dráp Niflunga", "en": "The Slaying of the Niflungs" },
+    "date": "date uncertain",
+    "locusUnit": "page"
+  },
+  {
+    "id": "guthrunarkvitha-ii",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Guðrúnarkviða II, en forna", "en": "The Second, or Old, Lay of Guthrun" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "guthrunarkvitha-iii",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Guðrúnarkviða III", "en": "The Third Lay of Guthrun" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "oddrunargratr",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Oddrúnargrátr", "en": "The Lament of Oddrun" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "atlakvitha-en-gronlenzka",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Atlakviða en grœnlenzka", "en": "The Greenland Lay of Atli" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "atlamol-en-gronlenzku",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Atlamál en grœnlenzku", "en": "The Greenland Ballad of Atli" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "guthrunarhvot",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Guðrúnarhvöt", "en": "Guthrun's Inciting" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
+  },
+  {
+    "id": "hamthesmol",
+    "kind": "work",
+    "partOf": "poetic-edda",
+    "titles": { "non": "Hamðismál", "en": "The Ballad of Hamther" },
+    "date": "date uncertain",
+    "locusUnit": "stanza"
   }
 ]

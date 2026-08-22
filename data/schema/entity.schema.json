@@ -22,14 +22,16 @@
         },
         "type": {
           "description": "What kind of thing this is. Drives node shape in the renderer.",
-          "enum": ["deity", "being", "world", "artifact", "place", "event", "form"]
+          "enum": ["deity", "human", "being", "world", "artifact", "place", "event", "form"]
         },
         "classes": {
           "description": "Grouping for colour and filtering. An entity may hold several — Loki is both aesir and jotnar, and that tension is the point.",
           "type": "array",
           "minItems": 1,
           "uniqueItems": true,
-          "items": { "enum": ["aesir", "vanir", "jotnar", "beings", "worlds", "artifacts"] }
+          "items": {
+            "enum": ["aesir", "vanir", "jotnar", "humans", "beings", "worlds", "artifacts"]
+          }
         },
         "names": {
           "type": "object",
@@ -49,6 +51,12 @@
               "maxLength": 64
             }
           }
+        },
+        "aliases": {
+          "description": "Alternative names and edition spellings for the same referent. These are historical/source data, not translated prose.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1, "maxLength": 64 }
         },
         "attestations": {
           "description": "Source COLLECTIONS in which this entity appears, by id from data/sources.json. Relations cite individual works and loci; entities record the coarser fact of where they turn up at all.",

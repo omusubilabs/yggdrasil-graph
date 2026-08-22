@@ -18,6 +18,22 @@ const t = useTranslations(locale);
 ---
 
 <div class="controls" data-graph-controls>
+  <div class="controls__search">
+    <label for="graph-entity-search">{t('graph.searchLabel')}</label>
+    <input
+      id="graph-entity-search"
+      type="search"
+      autocomplete="off"
+      placeholder={t('graph.searchPlaceholder')}
+      role="combobox"
+      aria-autocomplete="list"
+      aria-expanded="false"
+      aria-controls="graph-search-results"
+      data-entity-search
+    />
+    <ul id="graph-search-results" class="controls__results" role="listbox" hidden></ul>
+  </div>
+
   <div class="controls__group" role="group" aria-label={t('graph.zoomControls')}>
     <button type="button" data-zoom="in" aria-label={t('graph.zoomIn')}>
       {/* i18n-ignore: mathematical symbols used as icons */}
@@ -33,6 +49,14 @@ const t = useTranslations(locale);
   <button type="button" class="controls__clear" data-clear-selection hidden>
     {t('graph.clearSelection')}
   </button>
+
+  <label class="controls__toggle">
+    <input type="checkbox" data-show-all />
+    <span>
+      <span class="controls__toggle-label">{t('graph.showAll')}</span>
+      <span class="controls__toggle-hint">{t('graph.showAllHint')}</span>
+    </span>
+  </label>
 
   <label class="controls__toggle">
     <input type="checkbox" data-filter="disputed" />
@@ -72,6 +96,81 @@ const t = useTranslations(locale);
   .controls__group {
     display: flex;
     gap: -1px;
+  }
+
+  .controls__search {
+    position: relative;
+    display: grid;
+    gap: var(--space-3xs);
+    width: min(22rem, calc(100vw - 2 * var(--space-lg)));
+    padding: var(--space-xs);
+    background: color-mix(in srgb, var(--vellum-pale) 94%, transparent);
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius-sm);
+  }
+
+  .controls__search label {
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+  }
+
+  .controls__search input {
+    width: 100%;
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius-sm);
+    background: var(--vellum-pale);
+    color: var(--ink);
+    padding: var(--space-2xs) var(--space-xs);
+    font: inherit;
+  }
+
+  .controls__search input:focus-visible {
+    outline: 2px solid var(--verdigris);
+    outline-offset: 1px;
+  }
+
+  .controls__results {
+    position: absolute;
+    inset-inline: 0;
+    inset-block-end: calc(100% + var(--space-2xs));
+    z-index: 1;
+    max-height: 18rem;
+    overflow-y: auto;
+    list-style: none;
+    margin: 0;
+    padding: var(--space-2xs);
+    background: var(--vellum-pale);
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius-sm);
+  }
+
+  .controls__results[hidden] {
+    display: none;
+  }
+
+  .controls__results :global([role='option']) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--space-xs);
+    padding: var(--space-2xs) var(--space-xs);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+  }
+
+  .controls__results :global([role='option'][aria-selected='true']) {
+    background: var(--verdigris-wash);
+    color: var(--verdigris-deep);
+  }
+
+  .controls__results :global(.search-result__non) {
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+  }
+
+  .controls__results :global(.search-result__en) {
+    color: var(--ink-faded);
+    align-self: baseline;
   }
 
   .controls button {

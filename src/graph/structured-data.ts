@@ -8,6 +8,7 @@ import type { Certainty, EntityType } from './types.ts';
 
 const SCHEMA_TYPE: Record<EntityType, 'Thing' | 'Place' | 'Event'> = {
   deity: 'Thing',
+  human: 'Thing',
   being: 'Thing',
   artifact: 'Thing',
   world: 'Place',
@@ -29,7 +30,7 @@ export interface EntityJsonLd {
   '@id': string;
   url: string;
   name: string;
-  alternateName?: string;
+  alternateName?: string | string[];
   description?: string;
   inLanguage: string;
   citation?: string[];
@@ -40,7 +41,7 @@ export interface BuildEntityJsonLdOptions {
   id: string;
   url: string;
   name: string;
-  alternateName?: string;
+  alternateName?: string | string[];
   description?: string;
   inLanguage: string;
 }
@@ -57,7 +58,13 @@ export const buildEntityJsonLd = (opts: BuildEntityJsonLdOptions): EntityJsonLd 
     name,
     inLanguage,
   };
-  if (alternateName && alternateName !== name) jsonLd.alternateName = alternateName;
+  if (alternateName) {
+    const alternatives = (Array.isArray(alternateName) ? alternateName : [alternateName]).filter(
+      (candidate) => candidate !== name,
+    );
+    if (alternatives.length === 1) jsonLd.alternateName = alternatives[0]!;
+    else if (alternatives.length > 1) jsonLd.alternateName = alternatives;
+  }
   if (description) jsonLd.description = description;
 
   const citations = new Map<string, string>();
@@ -65,7 +72,11 @@ export const buildEntityJsonLd = (opts: BuildEntityJsonLdOptions): EntityJsonLd 
     if (!CLAIMABLE_CERTAINTY.has(link.certainty)) continue;
     for (const ref of link.sources) {
       const work = index.sourceById.get(ref.work);
-      const label = work ? `${work.titles.en} ${ref.locus}` : `${ref.work} ${ref.locus}`;
+      const unit = ref.unit ?? work?.locusUnit;
+      const marker = unit === 'page' ? 'p. ' : unit === 'stanza' ? 'st. ' : 'ch. ';
+      const label = work
+        ? `${work.titles.en} ${marker}${ref.locus}`
+        : `${ref.work} ${marker}${ref.locus}`;
       citations.set(`${ref.work}--${ref.locus}`, label);
     }
   }
