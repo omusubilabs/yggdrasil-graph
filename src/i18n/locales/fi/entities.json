@@ -269,6 +269,21 @@
       "epithet": "Kaikuva torvi",
       "summary": "Sen puhallus kuuluu kaikissa maailmoissa. Kenen se on, riippuu luvusta.",
       "description": "Gjallarhorn kuuluu Heimdallrille, ja sen puhallus kuuluu kaikkialla maailmoissa; hän puhaltaa sitä herättääkseen jumalat, kun Ragnarök alkaa, ja Vǫluspá kuvaa hänet puhaltamassa sitä torvi koholla. Gjallarhorn kuuluu myös Mímirille, joka juo viisauden lähteestä sillä. Molemmat väitteet ovat Snorrin, kaksitoista lukua toisistaan samassa kirjassa, eikä niitä voi sovittaa yhteen. Kaavio kirjaa molemmat omistajat ja antaa nähdä ristiriidan sen sijaan että peittäisi sen."
+    },
+    "draupnir": {
+      "epithet": "Óðinnin sormus",
+      "summary": "Tiputtaa kahdeksan uutta samanpainoista sormusta joka yhdeksäs yö.",
+      "description": "Draupnir on sormus, jonka kääpiö Sindri takoo Brokkrille vietäväksi Ásgarðriin, ja sen hyve on, että kahdeksan samanpainoista sormusta putoaa siitä joka yhdeksäs yö. Óðinn voittaa tuomion, joka tekee siitä toiseksi parhaan kolmesta lahjasta Mjǫllnirin jälkeen, ja asettaa sen Baldrin roviolle — velan, jonka hän perii, kun Baldr lähettää sormuksen takaisin Helistä Hermóðrin mukana, ele, joka ei maksa hänelle mitään eikä anna Óðinnille takaisin muuta kuin itse tosiasian."
+    },
+    "skidbladnir": {
+      "epithet": "Freyrin laiva",
+      "summary": "Tarpeeksi suuri kaikille jumalille aseistettuina, ja taittuu pieneksi kuin tasku.",
+      "description": "Skíðblaðnirin tekevät kääpiöt, joita kutsutaan Ívaldin pojiksi, samassa toimeksiannossa, joka tuotti Sifin kultaiset hiukset ja keihään Gungnir. Se on rakennettu niin taitavasti, että sillä on aina myötätuuli heti kun purje nostetaan, minne tahansa se on matkalla, ja se voi kuljettaa kaikki aasat aseistettuina — mutta kun sitä ei tarvita merellä, se taittuu kokoon kuin kangas ja mahtuu kukkaroon. Loki antaa sen Freyrille."
+    },
+    "brisingamen": {
+      "epithet": "Freyjan kaulakoru",
+      "summary": "Yksin hänen omansa — ja puettiin Þórrille vain kerran, tehdäkseen hääasun uskottavaksi.",
+      "description": "Brísingamen kuuluu Freyjalle, ja Snorri mainitsee sen hänen omaisuutensa joukossa kertomatta, kuka sen teki tai miten hän sen sai. Kun jumalat pukevat Þórrin morsiameksi voittaakseen Mjǫllnirin takaisin Þrymriltä, kaulakoru ripustetaan hänen kaulaansa muun valeasun kanssa — ainoa kerta lähteissä, jolloin se lähtee hänen luotaan, ja vain koska vasara oli enemmän arvoinen."
     }
   }
 }

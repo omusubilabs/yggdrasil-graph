@@ -269,6 +269,21 @@
       "epithet": "Det gjallende hornet",
       "summary": "Lyden høres i alle verdener. Hvem det tilhører, avhenger av kapittelet.",
       "description": "Gjallarhorn tilhører Heimdallr, og lyden av det høres gjennom alle verdener; han blåser i det for å vekke gudene når Ragnarök begynner, og i Vǫluspá blåser han i det med hornet løftet. Gjallarhorn tilhører også Mímir, som drikker av visdommens brønn med det. Begge påstandene kommer fra Snorri, tolv kapitler fra hverandre i samme bok, og de lar seg ikke forene. Grafen registrerer begge eierne og lar deg se uenigheten i stedet for å skjule den."
+    },
+    "draupnir": {
+      "epithet": "Óðinns ring",
+      "summary": "Drypper åtte nye ringer av samme vekt hver niende natt.",
+      "description": "Draupnir er ringen dvergen Sindri lager til Brokkr, som skal bære den til Ásgarðr, og dens kraft er at åtte ringer av lik vekt faller fra den hver niende natt. Óðinn vinner dommen som gjør den til den nest beste av de tre gavene, etter Mjǫllnir, og legger den på Baldrs likbål — en gjeld han krever inn når Baldr sender ringen tilbake fra Hel med Hermóðr, en gest som ikke koster ham noe og ikke gir Óðinn noe tilbake annet enn selve faktumet."
+    },
+    "skidbladnir": {
+      "epithet": "Freyrs skip",
+      "summary": "Stort nok for alle gudene i fullt væpning, og foldes lite nok til en lomme.",
+      "description": "Skíðblaðnir er laget av dvergene som kalles Ívaldis sønner, i samme oppdrag som frembrakte Sifs gylne hår og spydet Gungnir. Det er bygget med slik dyktighet at det alltid har medvind i det seilet heises, uansett hvor det er på vei, og det kan bære alle Æsene i fullt væpning — men når det ikke er bruk for det på sjøen, foldes det sammen som en klut og får plass i en lomme. Loke gir det til Freyr."
+    },
+    "brisingamen": {
+      "epithet": "Freyjas smykke",
+      "summary": "Hennes alene — og satt på Þórr bare én gang, for å gjøre en bryllupsforkledning troverdig.",
+      "description": "Brísingamen tilhører Freyja, og Snorri nevner det blant hennes eiendeler uten å si hvem som laget det eller hvordan hun fikk det. Da gudene kler Þórr ut som bruden for å vinne tilbake Mjǫllnir fra Þrymr, blir smykket hengt om halsen hans sammen med resten av forkledningen — det eneste gangen i kildene det forlater henne, og bare fordi en hammer var verdt mer."
     }
   }
 }

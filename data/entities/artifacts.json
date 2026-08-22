@@ -38,5 +38,29 @@
     "names": { "non": "Naglfar", "anglicized": "Naglfar" },
     "attestations": ["poetic-edda", "prose-edda"],
     "tags": ["ragnarok-participant"]
+  },
+  {
+    "id": "draupnir",
+    "type": "artifact",
+    "classes": ["artifacts"],
+    "names": { "non": "Draupnir", "anglicized": "Draupnir" },
+    "attestations": ["prose-edda"],
+    "tags": ["dwarf-forged"]
+  },
+  {
+    "id": "skidbladnir",
+    "type": "artifact",
+    "classes": ["artifacts"],
+    "names": { "non": "Skíðblaðnir", "anglicized": "Skidbladnir" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["dwarf-forged"]
+  },
+  {
+    "id": "brisingamen",
+    "type": "artifact",
+    "classes": ["artifacts"],
+    "names": { "non": "Brísingamen", "anglicized": "Brisingamen" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": []
   }
 ]

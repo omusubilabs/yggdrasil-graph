@@ -269,6 +269,21 @@
       "epithet": "Gjallandi hornið",
       "summary": "Hljómur þess heyrist í öllum heimum. Hver á það fer eftir kaflanum.",
       "description": "Gjallarhorn tilheyrir Heimdalli, og hljómur þess heyrist um alla heima; hann blæs í það til að vekja goðin þegar Ragnarök hefjast, og Vǫluspá lætur hann blása í það með hornið á lofti. Gjallarhorn tilheyrir einnig Mími, sem drekkur úr viskubrunninum með því. Báðar fullyrðingarnar eru frá Snorra, tólf köflum í sundur í sömu bók, og þeim verður ekki komið heim og saman. Grafið skráir báða eigendur og lætur þig sjá ósamræmið í stað þess að fela það."
+    },
+    "draupnir": {
+      "epithet": "Hringur Óðins",
+      "summary": "Dreypir átta hringjum til viðbótar af sömu þyngd á hverri níundu nótt.",
+      "description": "Draupnir er hringurinn sem dvergurinn Sindri smíðar fyrir Brokk til að bera til Ásgarðs, og dyggð hans er sú að átta hringir af jafnri þyngd falla úr honum á hverri níundu nótt. Óðinn vinnur dóminn sem gerir hann að næstbesta af gjöfunum þremur, á eftir Mjölni, og leggur hann á bálköst Baldurs – skuld sem hann innheimtir þegar Baldur sendir hringinn til baka úr Helju með Hermóði, athöfn sem kostar hann ekkert og gefur Óðni ekkert til baka nema staðreyndina sjálfa."
+    },
+    "skidbladnir": {
+      "epithet": "Skip Freys",
+      "summary": "Nógu stórt fyrir alla guði með vopnum, og brotið nógu lítið fyrir vasa.",
+      "description": "Skíðblaðnir er smíðað af dvergunum sem kallaðir eru synir Ívalda, í sömu smíð og gaf gullið hár Sifjar og spjótið Gungni. Það er svo listilega smíðað að það hefur ávallt hagstæðan byr um leið og seglið er dregið upp, hvert sem það stefnir, og getur borið alla Ása alvopnaða – en þegar engin þörf er á því á sjó má brjóta það saman eins og klút og geyma í pyngju. Loki gefur það Frey."
+    },
+    "brisingamen": {
+      "epithet": "Men Freyju",
+      "summary": "Hennar eitt – og sett á Þór aðeins einu sinni, til að gera brúðardulargervi trúverðugt.",
+      "description": "Brísingamen tilheyrir Freyju, og Snorri nefnir það meðal eigna hennar án þess að segja hver smíðaði það eða hvernig hún eignaðist það. Þegar guðirnir klæða Þór sem brúðina til að ná Mjölni aftur frá Þrym, er menið sett um háls hans ásamt öðru dulargervi – eina skiptið í heimildunum sem það yfirgefur hana, og aðeins vegna þess að hamar var meira virði."
     }
   }
 }

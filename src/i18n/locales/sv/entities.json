@@ -269,6 +269,21 @@
       "epithet": "Det gjallande hornet",
       "summary": "Dess stöt hörs i alla världar. Vems det är beror på kapitlet.",
       "description": "Gjallarhorn tillhör Heimdallr, och dess stöt hörs genom alla världarna; han blåser i det för att väcka gudarna när Ragnarök börjar, och Vǫluspá låter honom blåsa med hornet höjt. Gjallarhorn tillhör också Mímir, som dricker ur visdomens brunn med det. Båda uppgifterna är Snorres, tolv kapitel ifrån varandra i samma bok, och det går inte att förena dem. Grafen registrerar båda ägarna och låter dig se oenigheten istället för att dölja den."
+    },
+    "draupnir": {
+      "epithet": "Óðinns ring",
+      "summary": "Droppar åtta nya ringar av samma vikt varje nionde natt.",
+      "description": "Draupnir är ringen som dvärgen Sindri smider åt Brokkr att bära till Ásgarðr, och dess dygd är att åtta ringar av samma vikt faller från den varje nionde natt. Óðinn vinner domen som gör den till den näst bästa av de tre gåvorna, efter Mjölner, och lägger den på Baldrs bål — en skuld han driver in när Baldr skickar tillbaka ringen från Hel med Hermóðr, en gest som inte kostar honom något och inte ger Óðinn något tillbaka annat än själva faktumet."
+    },
+    "skidbladnir": {
+      "epithet": "Freyrs skepp",
+      "summary": "Stort nog för alla gudarna beväpnade, och vikbart nog för en ficka.",
+      "description": "Skíðblaðnir är gjort av dvärgarna som kallas Ívaldis söner, i samma uppdrag som gav Sifs gyllene hår och spjutet Gungner. Det är byggt med sådan skicklighet att det alltid har medvind så snart seglet hissas, vart det än är på väg, och det kan bära alla asar beväpnade — men när det inte behövs till sjöss viks det ihop som en trasa och får plats i en ficka. Loke ger det till Freyr."
+    },
+    "brisingamen": {
+      "epithet": "Freyjas smycke",
+      "summary": "Hennes ensam — och satt på Þórr endast en gång, för att göra en bröllopsförklädnad trovärdig.",
+      "description": "Brísingamen tillhör Freyja, och Snorre nämner det bland hennes ägodelar utan att säga vem som gjorde det eller hur hon fick det. När gudarna klär ut Þórr till bruden för att vinna tillbaka Mjölner från Þrymr, hängs smycket om hans hals tillsammans med resten av förklädnaden — den enda gången i källorna det lämnar henne, och bara för att en hammare var värd mer."
     }
   }
 }

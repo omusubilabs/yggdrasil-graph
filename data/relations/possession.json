@@ -54,5 +54,42 @@
     "directed": true,
     "certainty": "attested",
     "sources": [{ "work": "gylfaginning", "locus": "51" }]
+  },
+  {
+    "id": "odin--draupnir--owns",
+    "from": "odin",
+    "to": "draupnir",
+    "type": "owns",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "skaldskaparmal", "locus": "35" },
+      { "work": "gylfaginning", "locus": "49" }
+    ]
+  },
+  {
+    "id": "freyr--skidbladnir--owns",
+    "from": "freyr",
+    "to": "skidbladnir",
+    "type": "owns",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gylfaginning", "locus": "43" },
+      { "work": "skaldskaparmal", "locus": "35" },
+      { "work": "grimnismal", "locus": "43" }
+    ]
+  },
+  {
+    "id": "freyja--brisingamen--owns",
+    "from": "freyja",
+    "to": "brisingamen",
+    "type": "owns",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gylfaginning", "locus": "21" },
+      { "work": "thrymskvitha", "locus": "12" }
+    ]
   }
 ]

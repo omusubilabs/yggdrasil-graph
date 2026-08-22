@@ -269,6 +269,21 @@
       "epithet": "The resounding horn",
       "summary": "Its blast is heard in all worlds. Whose it is depends on the chapter.",
       "description": "Gjallarhorn belongs to Heimdallr, and its blast is heard throughout all the worlds; he sounds it to wake the gods when Ragnarǫk begins, and Vǫluspá has him blow it with the horn aloft. Gjallarhorn also belongs to Mímir, who drinks from the well of wisdom with it. Both statements are Snorri's, twelve chapters apart in the same book, and there is no reconciling them. The graph records both owners and lets you see the disagreement instead of hiding it."
+    },
+    "draupnir": {
+      "epithet": "Óðinn's ring",
+      "summary": "Drops eight more rings of its own weight every ninth night.",
+      "description": "Draupnir is the ring the dwarf Sindri makes for Brokkr to carry to Ásgarðr, and its virtue is that eight rings of equal weight fall from it every ninth night. Óðinn wins the judgment that names it the second-best of the three gifts, after Mjǫllnir, and lays it on Baldr's pyre — a debt he collects on when Baldr sends the ring back from Hel with Hermóðr, a gesture that costs him nothing and gives Óðinn nothing back but the fact of it."
+    },
+    "skidbladnir": {
+      "epithet": "Freyr's ship",
+      "summary": "Big enough for every god in arms, and folds small enough for a pocket.",
+      "description": "Skíðblaðnir is made by the dwarves called Ívaldi's Sons, in the same commission that produced Sif's golden hair and the spear Gungnir. It is built with such skill that it always has a fair wind the moment its sail is raised, wherever it is bound, and it can carry all the Æsir under arms — yet when there is no use for it at sea, it folds up like a cloth and fits in a pouch. Loki gives it to Freyr."
+    },
+    "brisingamen": {
+      "epithet": "Freyja's necklace",
+      "summary": "Hers alone — and put on Þórr only once, to make a wedding disguise convincing.",
+      "description": "Brísingamen belongs to Freyja, and Snorri names it among her possessions without saying who made it or how she came by it. When the gods dress Þórr as the bride to win back Mjǫllnir from Þrymr, the necklace goes around his neck along with the rest of the disguise — the one time in the sources it leaves her, and only because a hammer was worth more."
     }
   }
 }

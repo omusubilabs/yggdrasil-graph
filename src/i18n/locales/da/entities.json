@@ -269,6 +269,21 @@
       "epithet": "Det genlydende horn",
       "summary": "Dets stød høres i alle verdener. Hvis det er, afhænger af kapitlet.",
       "description": "Gjallarhorn tilhører Heimdallr, og dets stød høres gennem alle verdenerne; han blæser i det for at vække guderne, når Ragnarök begynder, og Vǫluspá lader ham blæse med hornet hævet. Gjallarhorn tilhører også Mímir, som drikker af visdommens brønd med det. Begge udsagn er Snorres, tolv kapitler fra hinanden i samme bog, og der er ingen forening af dem. Grafen registrerer begge ejere og lader dig se uenigheden i stedet for at skjule den."
+    },
+    "draupnir": {
+      "epithet": "Óðinns ring",
+      "summary": "Drypper otte nye ringe af samme vægt hver niende nat.",
+      "description": "Draupnir er ringen, som dværgen Sindri smeder til Brokkr til at bære til Ásgarðr, og dens dyd er, at otte ringe af samme vægt falder fra den hver niende nat. Óðinn vinder dommen, der gør den til den næstbedste af de tre gaver, efter Mjǫllnir, og lægger den på Baldrs bål — en gæld, han inddriver, da Baldr sender ringen tilbage fra Hel med Hermóðr, en gestus, der ikke koster ham noget og ikke giver Óðinn andet tilbage end selve kendsgerningen."
+    },
+    "skidbladnir": {
+      "epithet": "Freyrs skib",
+      "summary": "Stort nok til alle guderne bevæbnede, og foldes lille nok til en pung.",
+      "description": "Skíðblaðnir er lavet af dværgene, der kaldes Ívaldis sønner, i samme opgave, der frembragte Sifs gyldne hår og spyddet Gungnir. Det er bygget med sådan dygtighed, at det altid har medvind, så snart sejlet hejses, uanset hvor det er på vej hen, og det kan bære alle æserne bevæbnede — men når der ikke er brug for det på havet, foldes det sammen som en klud og kan være i en pung. Loke giver det til Freyr."
+    },
+    "brisingamen": {
+      "epithet": "Freyjas halskæde",
+      "summary": "Hendes alene — og sat på Þórr kun én gang, for at gøre en bryllupsforklædning troværdig.",
+      "description": "Brísingamen tilhører Freyja, og Snorre nævner det blandt hendes ejendele uden at sige, hvem der lavede det, eller hvordan hun fik det. Da guderne klæder Þórr ud som bruden for at vinde Mjǫllnir tilbage fra Þrymr, bliver halskæden hængt om hans hals sammen med resten af forklædningen — den eneste gang i kilderne, den forlader hende, og kun fordi en hammer var mere værd."
     }
   }
 }
