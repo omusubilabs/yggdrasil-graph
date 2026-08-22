@@ -1,0 +1,111 @@
+{
+  "family": {
+    "kinship": "Slægtskab",
+    "conflict": "Konflikt",
+    "possession": "Ejerskab",
+    "location": "Sted",
+    "transformation": "Forvandling"
+  },
+  "relation": {
+    "parent_of": {
+      "label": "Forælder til",
+      "inverse": "Barn af",
+      "phrase": "{from} er forælder til {to}"
+    },
+    "sibling_of": {
+      "label": "Søskende til",
+      "inverse": "Søskende til",
+      "phrase": "{from} og {to} er søskende"
+    },
+    "married_to": {
+      "label": "Gift med",
+      "inverse": "Gift med",
+      "phrase": "{from} og {to} er gift"
+    },
+    "consort_of": {
+      "label": "Partner til",
+      "inverse": "Partner til",
+      "phrase": "{from} og {to} har børn sammen"
+    },
+    "blood_brother_of": {
+      "label": "Fostbroder til",
+      "inverse": "Fostbroder til",
+      "phrase": "{from} og {to} blandede blod"
+    },
+    "fosters": {
+      "label": "Opfostrer",
+      "inverse": "Opfostret af",
+      "phrase": "{from} opfostrede {to}"
+    },
+    "slays": {
+      "label": "Dræber",
+      "inverse": "Dræbt af",
+      "phrase": "{from} dræber {to}"
+    },
+    "causes_death_of": {
+      "label": "Forårsager døden for",
+      "inverse": "Død forårsaget af",
+      "phrase": "{from} forårsager {to}s død"
+    },
+    "maims": {
+      "label": "Lemlæster",
+      "inverse": "Lemlæstet af",
+      "phrase": "{from} lemlæster {to}"
+    },
+    "binds": {
+      "label": "Binder",
+      "inverse": "Bundet af",
+      "phrase": "{from} holder {to} fanget"
+    },
+    "devours": {
+      "label": "Opsluger",
+      "inverse": "Opslugt af",
+      "phrase": "{from} opsluger {to}"
+    },
+    "destroys": {
+      "label": "Ødelægger",
+      "inverse": "Ødelagt af",
+      "phrase": "{from} ødelægger {to}"
+    },
+    "owns": {
+      "label": "Ejer",
+      "inverse": "Tilhører",
+      "phrase": "{from} ejer {to}"
+    },
+    "guards": {
+      "label": "Vogter",
+      "inverse": "Vogtet af",
+      "phrase": "{from} forsvarer {to}"
+    },
+    "dwells_in": {
+      "label": "Bor i",
+      "inverse": "Hjem for",
+      "phrase": "{from} bor i {to}"
+    },
+    "rules": {
+      "label": "Styrer",
+      "inverse": "Styret af",
+      "phrase": "{from} styrer {to}"
+    },
+    "encircles": {
+      "label": "Omslutter",
+      "inverse": "Omsluttet af",
+      "phrase": "{from} omslutter {to}"
+    },
+    "root_reaches": {
+      "label": "Sender en rod til",
+      "inverse": "Nået af en rod fra",
+      "phrase": "En rod af {from} når {to}"
+    },
+    "raised_in": {
+      "label": "Opvokset i",
+      "inverse": "Opvækststed",
+      "phrase": "{from} voksede op i {to}"
+    },
+    "becomes": {
+      "label": "Bliver til",
+      "inverse": "Skikkelse antaget af",
+      "phrase": "{from} antager skikkelsen af {to}"
+    }
+  }
+}

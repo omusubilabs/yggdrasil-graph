@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
+import type { Locale } from './config.ts';
 import { LOCALES } from './config.ts';
 import { hasKey, localeFromPath, localePath, sourceKeys, t, useTranslations } from './index.ts';
 
@@ -10,10 +11,12 @@ describe('t', () => {
     assert.equal(t('en', 'nav.home'), 'Graph');
   });
 
-  it('falls back to the source locale for a key the target locale is missing', () => {
-    // 'da' is a partial locale — only ui.json is translated (see BUNDLES in
-    // index.ts) — so an entities.json key still falls back to en.
-    assert.equal(t('da', 'entity.odin.description'), t('en', 'entity.odin.description'));
+  it('falls back to the source locale for a key the target locale has no bundle for', () => {
+    // Every registered locale is now `complete` (see LOCALE_STATUS in
+    // config.ts), so there is no real locale left with a gap to exercise
+    // here. The cast stands in for a locale with no entry in BUNDLES at all
+    // — the same path a newly-registered, not-yet-scaffolded locale takes.
+    assert.equal(t('xx' as Locale, 'nav.home'), t('en', 'nav.home'));
   });
 
   it('returns the key itself when it resolves nowhere', () => {

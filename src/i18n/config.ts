@@ -31,7 +31,7 @@ export const LOCALE_STATUS: Record<Locale, LocaleStatus> = {
   is: 'complete',
   nb: 'complete',
   sv: 'complete',
-  da: 'partial',
+  da: 'complete',
   fi: 'complete',
 };
 

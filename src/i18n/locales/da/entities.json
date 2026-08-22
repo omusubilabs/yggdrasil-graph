@@ -1,0 +1,184 @@
+{
+  "entity": {
+    "odin": {
+      "epithet": "Alfader",
+      "summary": "Højest af Æsir, halvt jætte på sin mors side, og allerede lovet til ulven.",
+      "description": "Óðinn er den ældste og højeste af Æsir, og den mindst sikre af dem. Snorre sporer hans afstamning gennem Borr til Bestla, datter af jætten Bǫlþorn — hvilket gør gudernes høvding til halvt jætte, og placerer ham på begge sider i den krig, han vil tabe. Han er en visdommens gud, købt til en pris: et øje ved Mímirs brønd, ni nætter i det blæsende træ. Han rider først ud til Ragnarök, i en gylden hjelm, bærende spydet Gungnir, og bliver slugt af Fenrir, sønnen af hans egen fostbror."
+    },
+    "thor": {
+      "epithet": "Ásgarðrs og Miðgarðrs forsvarer",
+      "summary": "Stærkest af guderne, søn af Óðinn og Jorden, og slangens modstykke.",
+      "description": "Þórr er den stærkeste af guder og mennesker, søn af Óðinn og Jǫrð, Jorden. Han holder Þrúðvangar og hallen Bilskirnir, og ejer tre kostbare ting, hvoraf hammeren Mjǫllnir er den første. Hans liv er en lang strid med jætter, og den ender midt i en: ved Ragnarök dræber han Jǫrmungandr, går ni skridt væk fra kroppen og falder død af dens gift. Slangen er Lokes søn. Det er ulven, der tager hans far, også."
+    },
+    "frigg": {
+      "epithet": "Óðinns hustru, Baldrs mor",
+      "summary": "Hun kender alles skæbne og spår ingen af dem.",
+      "description": "Frigg, datter af Fjǫrgynn, er Óðinns hustru og den fornemste af gudinderne. Snorre siger, at hun kender alle menneskers skæbner, skønt hun aldrig spår, hvilket er en trist ting at vide om nogen. Da hendes søn Baldr drømmer om sin død, tager hun en ed af alt i verden om at skåne ham, men glemmer en enkelt mistelten, fordi hun syntes den var for ung at spørge. Loke stiller hende det rette spørgsmål i en kvindes skikkelse, og hun svarer."
+    },
+    "baldr": {
+      "epithet": "Den lyse",
+      "summary": "Bedst af Æsir, dræbt af sin blinde bror, og en af de få, der vender tilbage.",
+      "description": "Baldr er Óðinns anden søn, så fager at lys stråler fra ham, og så nådig at ingen tør bestride hans domme. Hans død er hele kredsløbets omdrejningspunkt: guderne mister ham til en mistelten, den ene ting hans mor glemte at spørge, kastet af hans blinde bror Hǫðr med Loke stående bag ham og sigtende. Han farer til Hel og kommer ikke tilbage — før efter Ragnarök, hvor han og Hǫðr vender tilbage sammen til en verden, der er brændt."
+    },
+    "hod": {
+      "epithet": "Den blinde gud",
+      "summary": "Han kaster kastet, der dræber hans bror, og ser det ikke.",
+      "description": "Hǫðr er blind, og stærk nok. Snorre siger, at guderne helst ikke ville nævne ham, fordi hans hænders værk vil blive husket længe. Han står uden for ringen ved legen, hvor Æsir kaster ting mod Baldr for fornøjelsen ved at se dem ikke ramme, og Loke spørger ham, hvorfor han ikke deltager, og tilbyder at sigte for ham. Skjaldetraditionen kalder ham Den Blinde Gud, Baldrs Banemand, Misteltenens Kaster og Óðinns Søn — fire navne for én eftermiddag. Han vender tilbage fra Hel sammen med Baldr bagefter."
+    },
+    "tyr": {
+      "epithet": "Den enhåndede",
+      "summary": "Han fodrede ulven, og betalte for bindingen med sin sværdhånd.",
+      "description": "Týr er den dristigste af Æsir, en sejrens gud og modet til at stå stille. Da guderne opfostrede Fenrir i Ásgarðr, var han den eneste, der turde bringe ulven dens føde. Da de kom for at binde den med Gleipnir, krævede ulven et pant, og Týr stak sin hånd i dens gab velvidende, hvad pantet betød. Skjaldevers kalder ham Den Enhåndede Gud og, i samme åndedrag, Ulvens Fosterfar. Ved Ragnarök dræber han og hunden Garmr hinanden."
+    },
+    "heimdall": {
+      "epithet": "Gudernes vogter",
+      "summary": "Han hører græsset gro, blæser hornet der indleder enden, og dør i kamp mod Loke.",
+      "description": "Heimdallr er Den Hvide Gud, født af ni søstre, som holder vagt ved Himinbjǫrg, hvor Bifrǫst møder himlen. Han behøver mindre søvn end en fugl, ser hundrede mil både nat og dag, og hører ulden gro på et får. Hvorvidt Óðinn er hans far, er ikke afklaret: Snorre giver ham ni mødre i ét kapitel og kalder ham Óðinns søn i et andet. Han blæser i Gjallarhorn for at vække guderne til den sidste kamp, og der dræber han og Loke hinanden — vogteren og det ene, han holdt udkig efter."
+    },
+    "vidar": {
+      "epithet": "Den tavse gud",
+      "summary": "Han siger intet, og det er ham, der hævner Óðinn.",
+      "description": "Víðarr kaldes den tavse gud, næsten lige så stærk som Þórr, og guderne stoler på ham i enhver kamp. Han har en tyk sko lavet af hvert eneste stykke læder, der nogensinde er skåret fra en tå eller en hæl, gemt gennem alle tider til ét eneste skridt. Da Fenrir har slugt hans far, sætter han den fod mod ulvens underkæbe og tager den øvre i sin hånd. Hvordan han fuldender det, afhænger af hvem der fortæller det: Snorre lader ham rive kæberne fra hinanden, Vǫluspá lader ham drive et sværd i hjertet. Han går levende ud af Ragnarök."
+    },
+    "sif": {
+      "epithet": "Þórrs hustru",
+      "summary": "Hendes hår blev klippet af Loke, og erstattet med guld smedet af dværge.",
+      "description": "Sif er Þórrs hustru og mor til Ullr, som er Þórrs stedsøn. Loke klippede alt hendes hår af for ballade og lovede, da han blev grebet, at De Sorte Alfer ville lave nyt til hende; dværgene, der gjorde det, fremstillede Skíðblaðnir og spydet Gungnir ved samme lejlighed, hvilket er, hvordan guderne fik de fleste af deres skatte. Hun har færre relationer registreret her, end hun burde have, og det hul er noteret i projektets datanoter snarere end pyntet over."
+    },
+    "njord": {
+      "epithet": "Fra Nóatún",
+      "summary": "En van, der lever blandt Æsir som gidsel, far til Freyr og Freyja.",
+      "description": "Njǫrðr styrer vindens gang og stiller hav og ild, og mennesker påkalder ham for rejser og for jagt. Han er slet ikke af Æsirs slægt: han blev opfostret blandt Vanir og overdraget som gidsel, da de to gudeslægter sluttede fred, mens Hœnir gik den anden vej. Ved Nóatún blev han far til Freyr og Freyja, hvilket betyder, at Vanirs blodlinje inde i Ásgarðr udelukkende går gennem en krigsfange."
+    },
+    "freyr": {
+      "epithet": "Høstens herre",
+      "summary": "Han gav sit sværd bort for en jættekvinde, og ved Ragnarök har han brug for det.",
+      "description": "Freyr råder over regn og solskin og jordens grøde, og er den mest ærede af guderne næst efter Æsir selv. Han gav sit gode sværd til sit sendebud Skírnir for at vinde jættekvinden Gerðr. Snorre er ligeud om prisen: ved Ragnarök møder han Surtr, og kampen er hård, og han falder, og grunden til, at han falder, er, at han ikke længere har det sværd. Det er kredsløbets tydeligste eksempel på en afslutning, der blev forberedt århundreder i forvejen af en hverdagsagtig beslutning."
+    },
+    "freyja": {
+      "epithet": "Vanirs frue",
+      "summary": "Njǫrðrs datter, Freyrs søster, og hun tager halvdelen af de faldne.",
+      "description": "Freyja er den mest ærede af gudinderne. Hun har hallen Fólkvangr, og hvor hun end rider til kamp, tager hun halvdelen af de dræbte og Óðinn den anden halvdel — en fordeling, der stiller en vanisk gidsels datter på lige fod med Alfaderen. Hun er Njǫrðrs datter og Freyrs søster, hustru til Óðr, ejer af halskæden Brísingamen, som Loke engang stjal, og som Heimdallr engang kæmpede med ham om."
+    },
+    "loki": {
+      "epithet": "Søn af Fárbauti og Laufey",
+      "summary": "Regnet blandt Æsir, avlet af en jætte, og ophav til alt, der bliver deres undergang.",
+      "description": "Loke er hele grafens omdrejningspunkt. Snorre regner ham blandt Æsir og kalder ham Æsirs ballademager i samme sætning, og navngiver derefter hans far Fárbauti jætten. Han og Óðinn blandede blod i gamle dage, hvilket Loke minder ham om, når han vil have en drink. Med jættekvinden Angrboða avler han Fenrir, Jǫrmungandr og Hel. Han bringer Baldrs død, og bindes for det. Ved Ragnarök styrer han de dødes skib, og han og Heimdallr dræber hinanden. Isoler hans efterkommere, og du har genfundet det meste af modstandersiden."
+    },
+    "surtr": {
+      "epithet": "Múspells vogter",
+      "summary": "Han har stået ved ildverdenens grænse siden før verden blev formet, og venter.",
+      "description": "Surtr sidder ved Múspells yderste grænse for at forsvare den, og har gjort det siden før jorden blev skabt — ildverdenen er den første verden, der har eksisteret, ældre end guderne, der skal brænde i den. Hans sværd kaster mere lys end solen. Når enden kommer, rider han først ud, med ild foran sig og bag sig, og Bifrǫst brister under rytterne. Han dræber Freyr, og slynger derefter ild over jorden og brænder hele verden. Han er den eneste skikkelse her, der var på plads fra begyndelsen."
+    },
+    "angrboda": {
+      "epithet": "Jættekvinde fra Jǫtunheimr",
+      "summary": "Mor til ulven, slangen og Hel.",
+      "description": "Angrboða er en jættekvinde i Jǫtunheimr, og hun er i kilderne af netop én grund: med Loke får hun tre børn, og de tre er Fenrir, Jǫrmungandr og Hel. Da guderne fik at vide, at denne slægt blev opfostret i Jǫtunheimr, og profetien fortalte dem, hvad det betød, tog de børnene — og hvert skridt, de tog for at holde dem i skak, er et skridt mod den afslutning, de forsøgte at undgå."
+    },
+    "farbauti": {
+      "epithet": "Jætten",
+      "summary": "Lokes far, nævnt to gange og aldrig beskrevet.",
+      "description": "Fárbauti nævnes som Lokes far i Gylfaginning og igen i kenninglisterne, og det er alt, korpusset giver. Navnet er blevet tolket som noget i retning af grum slagsmand, men teksterne forklarer det ikke. Han betyder mere strukturelt end fortællemæssigt: han er grunden til, at Loke er en jættes søn, der sidder inde i Ásgarðr, og grunden til, at Lokes børn er en jættes børnebørn."
+    },
+    "laufey": {
+      "epithet": "Også kaldet Nál",
+      "summary": "Lokes mor, og den forælder han er opkaldt efter.",
+      "description": "Laufey, også kaldet Nál, er Lokes mor. Snorre nævner hende ved siden af Fárbauti og går videre. Det usædvanlige er, at Loke gentagne gange kaldes Laufeyjarson, Laufeys søn, snarere end ved sin fars navn — det omvendte af det normale patronymikon — og kilderne forklarer det aldrig. Hvorvidt hun er en jættekvinde eller af en anden slags, angives ikke; dette projekt klassificerer hende blandt jǫtnar og markerer klassifikationen som omstridt."
+    },
+    "bestla": {
+      "epithet": "Bǫlþorns datter",
+      "summary": "En jættes datter, og Óðinns mor.",
+      "description": "Bestla er datter af jætten Bǫlþorn, og Borr tog hende til hustru; deres sønner var Óðinn, Vili og Vé. Hun er én eneste sætning i kilderne, og den sætning omordner alt, der følger efter den — guderne, der bruger hele kredsløbet på at bekæmpe jætter, er selv halvjætter, gennem hende, og Óðinns vigtigste lærer kan have været hendes bror."
+    },
+    "bolthorn": {
+      "epithet": "Jætten",
+      "summary": "Óðinns morfar, fra hvis søn Óðinn lærte ni sange.",
+      "description": "Bǫlþorn er en jætte, Bestlas far, og dermed Óðinns morfar. Han optræder to gange: én gang i Snorres slægtstavle, og én gang i Hávamál, hvor Óðinn siger, at han tog ni mægtige sange fra Bǫlþorns søn — sin egen morbror, unavngiven. Visdommen, der gør Óðinn til Óðinn, kommer til ham fra jætternes side af familien."
+    },
+    "fenrir": {
+      "epithet": "Ulven",
+      "summary": "Opfostret af de guder, der frygtede ham, bundet med et bånd, og han sluger Óðinn.",
+      "description": "Fenrir er Lokes og Angrboðas ældste, og Æsir opfostrede ham hjemme i Ásgarðr, fordi alternativet var at efterlade ham i Jǫtunheimr. Han brød lænken Læðingr og derefter lænken Drómi, og den tredje, Gleipnir, blev lavet af dværge af seks umulige ting og holdt. Han gik kun med til den mod et pant, og Týrs hånd var pantet, og Týr mistede den. Ved Ragnarök river han sig løs, sluger Óðinn, og bliver dræbt af Óðinns søn Víðarr. Hans egen yngel er ulvene, der jager solen og månen."
+    },
+    "jormungandr": {
+      "epithet": "Midgårdsormen",
+      "summary": "Kastet i havet som barn, den voksede, til den bed sig selv i halen.",
+      "description": "Jǫrmungandr er det andet af Lokes børn med Angrboða. Óðinn kastede den i det dybe hav, og der voksede den, indtil den lå midt i havet og omsluttede hele landet, bidende sig selv i halen — en indeslutningsforanstaltning, der blev til verdens form. Þórr fisker efter den én gang og lykkes ikke med at få den op. Ved Ragnarök går den i land, og den og Þórr dræber hinanden: han slår den ned, går ni skridt, og falder om af dens gift."
+    },
+    "hel": {
+      "epithet": "Halvt blåsort, halvt kød",
+      "summary": "Kastet i Niflheimr som barn og givet magten over de døde.",
+      "description": "Hel er den tredje af Lokes børn med Angrboða. Óðinn kastede hende i Niflheimr og gav hende myndighed over ni verdener til at fordele husly til alle, der sendes til hende — dem, der dør af sygdom eller alderdom, snarere end i kamp. Snorre navngiver hendes bohave: hendes hal Slud-Kold, hendes fad Hunger, hendes kniv Hungersnød, hendes tærskel Snublegrube. Da Baldr dør, farer han til hende, og det er hende, der sætter prisen for hans tilbagevenden. Ved enden sejler hendes folk."
+    },
+    "garm": {
+      "epithet": "Hunden ved Gnipahellir",
+      "summary": "Bundet foran hulen, hylende; han og Týr dræber hinanden.",
+      "description": "Garmr er bundet foran Gnipahellir, og Vǫluspá vender tilbage til ham som et omkvæd — Garm hyler højt, lænkerne vil briste, ulven løber fri. Snorre kalder ham det største af uhyrer og lader ham møde Týr ved Ragnarök, hvor hver især bliver den andens banemand. Hvorvidt Garmr og Fenrir er to hunde eller én, er en gammel strid; kilderne løser det aldrig, og denne graf holder dem adskilt, fordi det er sådan, kilderne efterlader dem."
+    },
+    "skoll": {
+      "epithet": "Ulven ved solens hæle",
+      "summary": "Han løber bag solen, og en dag indhenter han hende.",
+      "description": "Skǫll er ulven, der følger solen. Snorre siger, at hun frygter ham, og at han skal tage hende, hvilket han gør ved endens begyndelse. Grímnismál placerer ham i Jernskoven. Hans afstamning er en knude: Vǫluspá siger, at en gammel jættekvinde i Jernskoven fødte Fenrirs yngel, og Snorre siger, at en gammel troldkvinde der fødte mange jættesønner i ulveskikkelse — de to beretninger passer kun sammen, hvis ulvene er Fenrirs, og ingen tekst siger det helt ligeud."
+    },
+    "hati": {
+      "epithet": "Hróðvitnirs søn",
+      "summary": "Han løber foran solen og jager månen.",
+      "description": "Hati springer foran solen snarere end bag hende, for det, han er ude efter, er månen. Grímnismál kalder ham søn af Hróðvitnir, og Snorre giver ham patronymikonet Hróðvitnisson; Hróðvitnir opfattes almindeligvis som et tilnavn for Fenrir, hvilket ville gøre Hati til ulvens søn og Skǫlls bror, men ingen bevaret tekst udtaler identifikationen ligeud. Han er registreret her som Fenrirs barn med sikkerhedsgraden sat til underforstået, hvilket er den ærlige læsning."
+    },
+    "mimir": {
+      "epithet": "Brøndens vogter",
+      "summary": "Visdom opbevares i hans brønd, og han drikker af den med Gjallarhorn.",
+      "description": "Mímir vogter brønden under den rod af Yggdrasill, der vender mod rimturserne, hvor visdom og forstand opbevares. Han er fuld af ældgammel viden, fordi han drikker af brønden, og Snorre siger, at han drikker af den med Gjallarhorn — hvilket er et problem, fordi Gjallarhorn seks kapitler senere er Heimdallrs trompet, den der vækker guderne. Snorre modsiger sig selv inden for ét og samme værk, og dette projekt registrerer begge læsninger snarere end at vælge. Óðinn gav et øje for en slurk fra brønden, og rider tilbage for at rådspørge Mímir, når enden begynder."
+    },
+    "asgard": {
+      "epithet": "Gudernes borg",
+      "summary": "Bygget midt i verden, og det er der, ulven voksede op.",
+      "description": "Ásgarðr er byen, som Borrs sønner byggede til sig selv midt i verden, hvor guderne og deres slægt bor. En af Yggdrasills tre rødder når dertil. Heimdallr vogter dens bro og Þórr forsvarer den, og det er der, Æsir valgte at opfostre Fenrir i stedet for at efterlade ham i Jǫtunheimr — en beslutning, der placerede redskabet for Óðinns død inden for sine egne mure gennem hele dets opvækst."
+    },
+    "midgard": {
+      "epithet": "Den midterste indhegning",
+      "summary": "Menneskenes verden, omgivet af en slange.",
+      "description": "Miðgarðr er verdenen givet til menneskeheden, lavet af Borrs sønner og forsvaret af Þórr. Den er omsluttet af Jǫrmungandr, som ligger i havet omkring alt landet med halen i munden — så grænsen for menneskenes verden er et af Lokes børn. Ved enden slynger Surtr ild over den og brænder den, og solen sortner, og jorden synker i havet."
+    },
+    "jotunheim": {
+      "epithet": "Jætternes hjem",
+      "summary": "Hvor Angrboða opfostrede tre børn, som guderne kom for at hente.",
+      "description": "Jǫtunheimr er jætternes land, og en af Yggdrasills rødder står blandt rimturserne der. Angrboða boede der, da hun og Loke fik Fenrir, Jǫrmungandr og Hel, og guderne fik at vide, at slægten blev opfostret der, og drog af sted for at tage dem derfra. Meget af kredsløbet er Æsir, der rejser ind i Jǫtunheimr for at ødelægge noget, og er beslægtet med det, de ødelægger."
+    },
+    "niflheim": {
+      "epithet": "Tågeverdenen",
+      "summary": "Ældre end jorden, og Hel styrer de døde der.",
+      "description": "Niflheimr blev skabt mange tidsaldre før jorden blev formet. Brønden Hvergelmir ligger i dens midte, og elve floder udspringer fra den, og Yggdrasills tredje rod står over den med Níðhǫggr gnavende nedefra. Óðinn kastede Hel dertil og gav hende magt over ni verdener, så den ældste af de kolde steder blev de dødes forvaltning. Baldr farer dertil."
+    },
+    "muspelheim": {
+      "epithet": "Ildverdenen",
+      "summary": "Den allerførste verden, lys og hed og utilgængelig, med Surtr ved grænsen.",
+      "description": "Múspell er den første verden, der har eksisteret, i den sydlige egn: lys, hed, glødende og brændende, og utilgængelig for den, der ikke har land der. Surtr står ved dens grænse med et flammende sværd for at holde andre ude — en vagtpost sat, før der var noget at vogte imod. Dens folk rider ud ved Ragnarök i en flok for sig selv, og Snorre bemærker, at de er meget lyse."
+    },
+    "yggdrasil": {
+      "epithet": "Asken",
+      "summary": "Tre rødder, tre verdener, og den ryster, når enden begynder.",
+      "description": "Yggdrasill er det største og bedste af træer, dets grene breder sig over hele verden og står over himlen. Tre rødder holder det oppe: én blandt Æsir, én blandt rimturserne, hvor Ginnungagap var, og én over Niflheimr, hvor Níðhǫggr gnaver det nedefra. Mímirs brønd ligger under den anden. Guderne afsiger dom ved det hver dag. Når Fenrir river sig løs, ryster Asken, og intet i himmel eller på jord er uden frygt."
+    },
+    "mjolnir": {
+      "epithet": "Þórrs hammer",
+      "summary": "Rimturserne kender det, når den hæves.",
+      "description": "Mjǫllnir er den første af Þórrs tre kostbare ting, lavet af dværgen Sindri, mens Loke, i en flues skikkelse, forsøgte at ødelægge arbejdet. Snorre siger, at rimturserne og bjergjætterne kender det, når den hæves, efter at have mistet fædre og frænder til den. Þórr har også et bælte, der fordobler hans styrke, og jernhandsker, han ikke kan bruge hammerens skaft uden. Efter Ragnarök går den videre til hans sønner Móði og Magni."
+    },
+    "gungnir": {
+      "epithet": "Óðinns spyd",
+      "summary": "Lavet af Ivaldes sønner; stødet stopper aldrig.",
+      "description": "Gungnir blev lavet af dværgene kaldet Ivaldes Sønner, ved samme lejlighed som frembragte Sifs gyldne hår og skibet Skíðblaðnir, efter at Loke havde klippet Sifs hår af og skulle gøre det godt igen. Loke overrakte det til Óðinn selv. Dets egenskab er, at stødet aldrig stopper. Óðinn rider ud til Ragnarök bærende det, i en gylden hjelm og en fager brynje, og det redder ham ikke."
+    },
+    "gleipnir": {
+      "epithet": "Lænken der holdt",
+      "summary": "Seks umulige ting, og den er blød som et bånd.",
+      "description": "Efter at Fenrir brød Læðingr og Drómi, sendte Óðinn Skírnir ned til De Sorte Alfer efter noget bedre. Dværgene lavede Gleipnir af seks ting: lyden af en kats gang, en kvindes skæg, en klippes rødder, en bjørns sener, en fisks ånde og en fugls spyt. Den ligner et silkebånd. Fenrir ville ikke tage imod den uden et pant, og pantet var Týrs hånd, og guderne havde ingen hensigt om at lade ham gå fri."
+    },
+    "gjallarhorn": {
+      "epithet": "Det genlydende horn",
+      "summary": "Dets stød høres i alle verdener. Hvis det er, afhænger af kapitlet.",
+      "description": "Gjallarhorn tilhører Heimdallr, og dets stød høres gennem alle verdenerne; han blæser i det for at vække guderne, når Ragnarök begynder, og Vǫluspá lader ham blæse med hornet hævet. Gjallarhorn tilhører også Mímir, som drikker af visdommens brønd med det. Begge udsagn er Snorres, tolv kapitler fra hinanden i samme bog, og der er ingen forening af dem. Grafen registrerer begge ejere og lader dig se uenigheden i stedet for at skjule den."
+    }
+  }
+}
