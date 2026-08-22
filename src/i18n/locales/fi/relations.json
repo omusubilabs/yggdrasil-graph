@@ -1,0 +1,111 @@
+{
+  "family": {
+    "kinship": "Sukulaisuus",
+    "conflict": "Konflikti",
+    "possession": "Omistus",
+    "location": "Paikka",
+    "transformation": "Muodonmuutos"
+  },
+  "relation": {
+    "parent_of": {
+      "label": "Vanhempi",
+      "inverse": "Lapsi",
+      "phrase": "{from} on {to}:n vanhempi"
+    },
+    "sibling_of": {
+      "label": "Sisarus",
+      "inverse": "Sisarus",
+      "phrase": "{from} ja {to} ovat sisaruksia"
+    },
+    "married_to": {
+      "label": "Naimisissa",
+      "inverse": "Naimisissa",
+      "phrase": "{from} ja {to} ovat naimisissa"
+    },
+    "consort_of": {
+      "label": "Kumppani",
+      "inverse": "Kumppani",
+      "phrase": "{from} ja {to} saavat yhteisiä lapsia"
+    },
+    "blood_brother_of": {
+      "label": "Veriveli",
+      "inverse": "Veriveli",
+      "phrase": "{from} ja {to} sekoittivat vertaan"
+    },
+    "fosters": {
+      "label": "Kasvattaa",
+      "inverse": "Kasvatettu",
+      "phrase": "{from} kasvatti {to}:n"
+    },
+    "slays": {
+      "label": "Surmaa",
+      "inverse": "Surmattu",
+      "phrase": "{from} surmaa {to}:n"
+    },
+    "causes_death_of": {
+      "label": "Aiheuttaa kuoleman",
+      "inverse": "Kuoleman aiheuttama",
+      "phrase": "{from} aiheuttaa {to}:n kuoleman"
+    },
+    "maims": {
+      "label": "Silpoo",
+      "inverse": "Silvottu",
+      "phrase": "{from} silpoo {to}:n"
+    },
+    "binds": {
+      "label": "Kahlitsee",
+      "inverse": "Kahlittu",
+      "phrase": "{from} kahlitsee {to}:n"
+    },
+    "devours": {
+      "label": "Nielaisee",
+      "inverse": "Nielaisty",
+      "phrase": "{from} nielaisee {to}:n"
+    },
+    "destroys": {
+      "label": "Tuhoaa",
+      "inverse": "Tuhottu",
+      "phrase": "{from} tuhoaa {to}:n"
+    },
+    "owns": {
+      "label": "Omistaa",
+      "inverse": "Kuuluu",
+      "phrase": "{from} omistaa {to}:n"
+    },
+    "guards": {
+      "label": "Vartioi",
+      "inverse": "Vartioitu",
+      "phrase": "{from} on {to}:n vartija"
+    },
+    "dwells_in": {
+      "label": "Asuu",
+      "inverse": "Koti",
+      "phrase": "{from} asuu {to}:n sisällä"
+    },
+    "rules": {
+      "label": "Hallitsee",
+      "inverse": "Hallittu",
+      "phrase": "{from} on {to}:n hallitsija"
+    },
+    "encircles": {
+      "label": "Kiertää",
+      "inverse": "Kierretty",
+      "phrase": "{from} kiertää {to}:n ympäri"
+    },
+    "root_reaches": {
+      "label": "Lähettää juuren",
+      "inverse": "Juuren tavoittama",
+      "phrase": "{from}:n juuri ulottuu {to}:n luo"
+    },
+    "raised_in": {
+      "label": "Kasvoi paikassa",
+      "inverse": "Kasvupaikka",
+      "phrase": "{from} kasvoi {to}:n sisällä"
+    },
+    "becomes": {
+      "label": "Muuttuu",
+      "inverse": "Ottama muoto",
+      "phrase": "{from} muuttuu {to}:ksi"
+    }
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "entity": {
+    "odin": {
+      "epithet": "Kaikkien isä",
+      "summary": "Æsirin ylin, äitinsä puolelta puoliksi jättiläinen ja jo luvattu sudelle.",
+      "description": "Óðinn on Æsirin vanhin ja ylin, ja heistä vaarallisin. Snorri jäljittää hänen sukunsa Borrin kautta Bestlaan, jättiläinen Bǫlþornin tyttäreen — mikä tekee jumalten päämiehestä puoliksi jättiläisen ja asettaa hänet sotaan, jonka hän häviää, molemmille puolille. Hän on viisauden jumala, jonka viisaus on ostettu hinnalla: silmä Mímirin lähteestä, yhdeksän yötä tuulisessa puussa. Hän ratsastaa Ragnarökiin ensimmäisenä, kultakypärä päässään ja keihäs Gungnir mukanaan, ja hänet nielaisee Fenrir, hänen oman verivelensä poika."
+    },
+    "thor": {
+      "epithet": "Ásgarðrin ja Miðgarðrin puolustaja",
+      "summary": "Jumalista vahvin, Óðinnin ja Maan poika, ja käärmeen vastapari.",
+      "description": "Þórr on vahvin jumalista ja ihmisistä, Óðinnin poika Jǫrðista, Maasta. Hän hallitsee Þrúðvangaria ja Bilskirnir-salia, ja omistaa kolme suuriarvoista esinettä, joista vasara Mjǫllnir on ensimmäinen. Hänen elämänsä on pitkä kiista jättiläisten kanssa, ja se päättyy kesken kiistan: Ragnarökissa hän surmaa Jǫrmungandrin, astuu yhdeksän askelta pois ruumiin luota ja kaatuu kuolleena sen myrkkyyn. Käärme on Lokin poika. Niin on sudekin, joka vie hänen isänsä."
+    },
+    "frigg": {
+      "epithet": "Óðinnin vaimo, Baldrin äiti",
+      "summary": "Hän tietää jokaisen kohtalon eikä ennusta yhtäkään niistä.",
+      "description": "Frigg, Fjǫrgynnin tytär, on Óðinnin vaimo ja jumalattarista ylin. Snorri sanoo hänen tietävän kaikkien ihmisten kohtalot, vaikkei hän lausu ainuttakaan ennustusta — synkkä asia tietää jostakusta. Kun hänen poikansa Baldr näkee unta kuolemastaan, hän ottaa valan jokaiselta maailman asialta säästää tämä, ja jättää väliin yhden misteliverson, koska piti sitä liian nuorena kysyttäväksi. Loki kysyy häneltä oikean kysymyksen naisen hahmossa, ja hän vastaa siihen."
+    },
+    "baldr": {
+      "epithet": "Kirkas",
+      "summary": "Æsirin paras, sokean veljensä surmaama, yksi harvoista jotka palaavat.",
+      "description": "Baldr on Óðinnin toinen poika, niin kaunis että hänestä lähtee valoa, ja niin armollinen ettei kukaan aseta hänen tuomioitaan kyseenalaiseksi. Hänen kuolemansa on koko kierron sarana: jumalat menettävät hänet misteliversolle, ainoalle asialle jota hänen äitinsä ei tullut kysyneeksi, sen heittää hänen sokea veljensä Hǫðr, Lokin seisoessa takana tähtäämässä. Hän menee Heliin eikä palaa — ennen kuin Ragnarökin jälkeen, jolloin hän ja Hǫðr palaavat yhdessä palaneeseen maailmaan."
+    },
+    "hod": {
+      "epithet": "Sokea jumala",
+      "summary": "Hän heittää heiton joka surmaa hänen veljensä, näkemättä sitä.",
+      "description": "Hǫðr on sokea, ja tarpeeksi vahva. Snorri sanoo, etteivät jumalat mielellään edes lausu hänen nimeään, sillä hänen kättensä työ muistetaan pitkään. Hän seisoo piirin ulkopuolella leikissä, jossa Æsir heittelee esineitä Baldria kohti huvikseen, kun ne eivät osu, ja Loki kysyy häneltä miksei tämä osallistu, ja tarjoutuu tähtäämään hänen puolestaan. Skaldirunous kutsuu häntä Sokeaksi Jumalaksi, Baldrin Surmaajaksi, Mistelin Heittäjäksi ja Óðinnin Pojaksi — neljä nimeä yhdestä iltapäivästä. Hän palaa Helistä Baldrin kanssa myöhemmin."
+    },
+    "tyr": {
+      "epithet": "Yksikätinen",
+      "summary": "Hän ruokki sutta, ja maksoi kahlitsemisesta miekkakädellään.",
+      "description": "Týr on Æsirin rohkein, voiton jumala ja sen rohkeuden jumala, joka pysyy paikallaan. Kun jumalat kasvattivat Fenririä Ásgarðrissa, hän oli ainoa joka uskalsi tuoda sudelle sen ruoan. Kun he tulivat kahlitsemaan sitä Gleipnirillä, susi vaati pantin, ja Týr työnsi kätensä sen kitaan tietäen, mitä pantti tarkoitti. Skaldirunous kutsuu häntä Yksikätiseksi Jumalaksi ja samassa hengenvedossa Suden Kasvattajaksi. Ragnarökissa hän ja koira Garmr surmaavat toisensa."
+    },
+    "heimdall": {
+      "epithet": "Jumalten vartija",
+      "summary": "Hän kuulee ruohon kasvavan, puhaltaa torven joka käynnistää lopun, ja kuolee taistellen Lokia vastaan.",
+      "description": "Heimdallr on Valkoinen Jumala, syntynyt yhdeksästä sisaresta, joka vartioi Himinbjǫrgissa siellä missä Bifrǫst kohtaa taivaan. Hän tarvitsee vähemmän unta kuin lintu, näkee sata peninkulmaa yötä ja päivää, ja kuulee villan kasvavan lampaassa. Onko Óðinn hänen isänsä, ei ole varmaa: Snorri antaa hänelle yhdeksän äitiä yhdessä luvussa ja kutsuu häntä Óðinnin pojaksi toisessa. Hän puhaltaa Gjallarhornia herättääkseen jumalat viimeiseen taisteluun, ja siellä hän ja Loki surmaavat toisensa — vartija ja se ainoa asia, jota hän vartioi."
+    },
+    "vidar": {
+      "epithet": "Hiljainen jumala",
+      "summary": "Hän ei sano mitään, ja hän on se joka kostaa Óðinnin puolesta.",
+      "description": "Víðarr on nimeltään hiljainen jumala, lähes yhtä vahva kuin Þórr, ja jumalat luottavat häneen jokaisessa kamppailussa. Hänellä on paksu kenkä, tehty jokaisesta koskaan varpaasta tai kantapäästä leikatusta nahkatilkusta, säästetty kaiken ajan halki yhtä askelta varten. Kun Fenrir on nielaissut hänen isänsä, hän painaa tuon jalan suden alaleuan päälle ja tarttuu yläleukaan kädellään. Miten hän lopulta tekee sen, riippuu kertojasta: Snorrilla hän repii leuat auki, Vǫluspássa hän lyö miekan sydämeen. Hän kävelee Ragnarökista elävänä."
+    },
+    "sif": {
+      "epithet": "Þórrin vaimo",
+      "summary": "Loki leikkasi hänen hiuksensa, ja ne korvattiin kääpiöiden takomalla kullalla.",
+      "description": "Sif on Þórrin vaimo ja Ullrin äiti, joka on Þórrin poikapuoli. Loki leikkasi kaikki hänen hiuksensa ilkeyttään, ja jäätyään kiinni lupasi Mustien Haltioiden tekevän hänelle lisää; kääpiöt, jotka tekivät sen, tekivät samalla istumalla myös Skíðblaðnirin ja keihään Gungnir, ja niin jumalat saivat suurimman osan aarteistaan. Hänestä on kirjattu tänne vähemmän suhteita kuin pitäisi, ja tuo aukko on eritelty hankkeen datamuistiinpanoissa sen sijaan että se peiteltäisiin."
+    },
+    "njord": {
+      "epithet": "Nóatúnista",
+      "summary": "Vanir joka asuu Æsirin joukossa panttivankina, Freyrin ja Freyjan isä.",
+      "description": "Njǫrðr hallitsee tuulen kulkua ja tyynnyttää meren ja tulen, ja miehet kutsuvat häntä avuksi matkoille ja metsästykseen. Hän ei kuulu lainkaan Æsirin sukuun: hänet kasvatettiin Vanirin keskuudessa ja luovutettiin panttivankina, kun jumalten kaksi sukua tekivät rauhan, Hœnirin mennessä toiseen suuntaan. Nóatúnissa hän siitti Freyrin ja Freyjan, mikä tarkoittaa, että Vanirin sukulinja Ásgarðrin sisällä kulkee kokonaan sotavangin kautta."
+    },
+    "freyr": {
+      "epithet": "Sadon herra",
+      "summary": "Hän antoi miekkansa pois jättiläisnaisen vuoksi, ja Ragnarökissa hän tarvitsisi sitä.",
+      "description": "Freyr hallitsee sadetta ja auringonpaistetta ja maan hedelmiä, ja on Æsirin jälkeen jumalista mainehikkain. Hän antoi hyvän miekkansa sanansaattajalleen Skírnirille voittaakseen jättiläisnainen Gerðrin. Snorri on suora hinnasta: Ragnarökissa hän kohtaa Surtrin, taistelu on kova, ja hän kaatuu, ja syy siihen että hän kaatuu on se, ettei hänellä enää ole sitä miekkaa. Se on kierron selvin tapaus lopusta, joka on rakennettu vuosisatoja etukäteen tavallisella päätöksellä."
+    },
+    "freyja": {
+      "epithet": "Vanirin valtiatar",
+      "summary": "Njǫrðrin tytär, Freyrin sisar, ja hän ottaa puolet kaatuneista.",
+      "description": "Freyja on jumalattarista mainehikkain. Hänellä on sali Fólkvangr, ja minne ikinä hän ratsastaa taisteluun, hän ottaa puolet surmatuista ja Óðinn toisen puolen — jako joka asettaa Vanir-panttivangin tyttären tasavertaiseksi Kaikkien isän kanssa. Hän on Njǫrðrin tytär ja Freyrin sisar, Óðrin vaimo, kaulakoru Brísingamenin omistaja, jonka Loki kerran varasti ja josta Heimdallr kerran taisteli häntä vastaan."
+    },
+    "loki": {
+      "epithet": "Fárbautin ja Laufeyn poika",
+      "summary": "Luettu Æsirin joukkoon, jättiläisen siittämä, ja kaiken sen vanhempi, mikä lopulta tuhoaa heidät.",
+      "description": "Loki on koko kaavion saranakohta. Snorri lukee hänet Æsirin joukkoon ja kutsuu häntä Æsirin ilkityöntekijäksi samassa lauseessa, ja nimeää sitten hänen isäkseen jättiläinen Fárbautin. Hän ja Óðinn sekoittivat verta muinoin, minkä Loki muistuttaa tälle mieleen, kun haluaa juoman. Jättiläisnaisen Angrboðan kanssa hän siittää Fenririn, Jǫrmungandrin ja Helin. Hän aiheuttaa Baldrin kuoleman, ja hänet kahlitaan sen tähden. Ragnarökissa hän ohjaa kuolleiden laivaa, ja hän ja Heimdallr surmaavat toisensa. Eristä hänen jälkeläisensä, ja olet saanut takaisin suurimman osan vastapuolesta."
+    },
+    "surtr": {
+      "epithet": "Múspellin vartija",
+      "summary": "Hän on seisonut tulimaailman rajalla siitä asti kun maailmaa ei vielä muovattu, odottaen.",
+      "description": "Surtr istuu Múspellin äärellä puolustamassa sitä, ja on tehnyt niin siitä asti kun maata ei vielä ollut tehty — tulimaailma on ensimmäinen olemassa oleva maailma, vanhempi kuin jumalat, jotka siinä palavat. Hänen miekkansa loistaa kirkkaammin kuin aurinko. Kun loppu tulee, hän ratsastaa ensimmäisenä, tuli edessään ja takanaan, ja Bifrǫst murtuu ratsastajien alla. Hän surmaa Freyrin, ja singahduttaa sitten tulen yli maan ja polttaa koko maailman. Hän on ainoa täällä esiintyvä hahmo, joka oli paikallaan alusta asti."
+    },
+    "angrboda": {
+      "epithet": "Jǫtunheimrin jättiläisnainen",
+      "summary": "Suden, käärmeen ja Helin äiti.",
+      "description": "Angrboða on jättiläisnainen Jǫtunheimrissa, ja hän on lähteissä yhdestä ainoasta syystä: hänellä on Lokin kanssa kolme lasta, ja ne kolme ovat Fenrir, Jǫrmungandr ja Hel. Kun jumalat saivat tietää, että tätä sukua kasvatettiin Jǫtunheimrissa, ja ennustus kertoi heille mitä se merkitsi, he ottivat lapset — ja jokainen askel, jonka he ottivat hillitäkseen näitä, on askel kohti sitä loppua, jota he yrittivät välttää."
+    },
+    "farbauti": {
+      "epithet": "Jättiläinen",
+      "summary": "Lokin isä, mainittu kahdesti eikä koskaan kuvailtu.",
+      "description": "Fárbauti mainitaan Lokin isänä Gylfaginningissa ja jälleen kenning-luetteloissa, ja siinä on kaikki mitä lähdeaineisto antaa. Nimi on tulkittu jonkinlaiseksi julma-iskijäksi, mutta tekstit eivät sitä selitä. Hän on merkittävä rakenteellisesti, ei kerronnallisesti: hän on syy siihen, että Loki on jättiläisen poika Ásgarðrin sisällä istumassa, ja syy siihen, että Lokin lapset ovat jättiläisen lapsenlapsia."
+    },
+    "laufey": {
+      "epithet": "Kutsutaan myös Náliksi",
+      "summary": "Lokin äiti, ja se vanhempi jonka mukaan hänet on nimetty.",
+      "description": "Laufey, jota kutsutaan myös Náliksi, on Lokin äiti. Snorri nimeää hänet Fárbautin rinnalla ja jatkaa matkaa. Poikkeuksellista on, että Lokia kutsutaan toistuvasti Laufeyjarsoniksi, Laufeyn pojaksi, eikä isänsä mukaan — tavanomaisen isännimikäytännön vastaisesti — eivätkä lähteet koskaan selitä miksi. Onko hän jättiläisnainen vai jotain muuta, ei ole sanottu; tämä hanke luokittelee hänet jǫtnarin joukkoon ja merkitsee luokituksen kiistanalaiseksi."
+    },
+    "bestla": {
+      "epithet": "Bǫlþornin tytär",
+      "summary": "Jättiläisen tytär, ja Óðinnin äiti.",
+      "description": "Bestla on jättiläinen Bǫlþornin tytär, ja Borr otti hänet vaimokseen; heidän poikansa olivat Óðinn, Vili ja Vé. Hänestä on lähteissä yksi ainoa lause, ja se lause järjestää uudelleen kaiken sen jälkeisen — jumalat, jotka viettävät koko kierron taistellen jättiläisiä vastaan, ovat itse puoliksi jättiläisiä hänen kauttaan, ja Óðinnin tärkein opettaja saattoi olla hänen veljensä."
+    },
+    "bolthorn": {
+      "epithet": "Jättiläinen",
+      "summary": "Óðinnin isoisä, jonka pojalta Óðinn oppi yhdeksän laulua.",
+      "description": "Bǫlþorn on jättiläinen, Bestlan isä, ja siten Óðinnin äidinpuoleinen isoisä. Hän esiintyy kahdesti: kerran Snorrin sukuluettelossa, ja kerran Hávamálissa, jossa Óðinn sanoo ottaneensa yhdeksän mahtavaa laulua Bǫlþornin pojalta — omalta, nimeämättömältä enoltaan. Viisaus, joka tekee Óðinnista Óðinnin, tulee hänelle suvun jättiläispuolelta."
+    },
+    "fenrir": {
+      "epithet": "Susi",
+      "summary": "Jumalat, jotka pelkäsivät häntä, kasvattivat hänet, hänet kahlittiin nauhalla, ja hän nielaisee Óðinnin.",
+      "description": "Fenrir on Lokin ja Angrboðan esikoinen, ja Æsir kasvatti hänet kotonaan Ásgarðrissa, koska vaihtoehto olisi ollut jättää hänet Jǫtunheimriin. Hän katkaisi kahleen Læðingr ja sitten kahleen Drómi, ja kolmas, Gleipnir, jonka kääpiöt tekivät kuudesta mahdottomasta asiasta, piti. Hän suostui siihen vain pantin vastineeksi, ja Týrin käsi oli pantti, ja Týr menetti sen. Ragnarökissa hän pääsee irti, nielaisee Óðinnin, ja Óðinnin poika Víðarr surmaa hänet. Hänen oma sikiönsä ovat sudet, jotka jahtaavat aurinkoa ja kuuta."
+    },
+    "jormungandr": {
+      "epithet": "Miðgarðr-käärme",
+      "summary": "Heitettynä mereen lapsena, se kasvoi kunnes puri omaa häntäänsä.",
+      "description": "Jǫrmungandr on toinen Lokin lapsista Angrboðan kanssa. Óðinn heitti sen syvälle mereen, ja se kasvoi siellä kunnes makaa keskellä valtamerta kaiken maan ympärillä, purren omaa häntäänsä — hillitsemistoimenpide, josta tuli maailman muoto. Þórr kalastaa sitä kerran eikä saa sitä ylös. Ragnarökissa se nousee maihin, ja se ja Þórr surmaavat toisensa: hän lyö sen kumoon, astuu yhdeksän askelta ja kaatuu sen myrkkyyn."
+    },
+    "hel": {
+      "epithet": "Puoliksi sinimusta, puoliksi lihaa",
+      "summary": "Heitettynä Niflheimriin lapsena ja annettu hallitsemaan kuolleita.",
+      "description": "Hel on kolmas Lokin lapsista Angrboðan kanssa. Óðinn heitti hänet Niflheimriin ja antoi hänelle vallan yhdeksän maailman yli, jakamaan majapaikan jokaiselle hänen luokseen lähetetylle — niille, jotka kuolevat sairauteen tai vanhuuteen, eivätkä taistelussa. Snorri nimeää hänen huonekalunsa: hänen salinsa Räntäkylmä, hänen astiansa Nälkä, hänen veitsensä Kato, hänen kynnyksensä Kompastumiskuilu. Kun Baldr kuolee, hän menee Helin luo, ja Hel on se, joka määrää hinnan hänen paluulleen. Lopulta hänen väkensä purjehtii."
+    },
+    "garm": {
+      "epithet": "Koira Gnipahellirissä",
+      "summary": "Kahlittuna luolan edessä, ulvoen; hän ja Týr surmaavat toisensa.",
+      "description": "Garmr on kahlittu Gnipahellirin edessä, ja Vǫluspá palaa hänen luokseen kertosäkeenä — Garmr ulvoo kovaa, kahleet murtuvat, susi juoksee vapaana. Snorri kutsuu häntä hirviöistä suurimmaksi ja antaa hänet Týrille Ragnarökissa, jossa kumpikin surmaa toisen. Onko Garmr ja Fenrir kaksi koiraa vai yksi, on vanha kiista; lähteet eivät koskaan ratkaise sitä, ja tämä kaavio pitää heidät erillään, koska niin lähteet ne jättävät."
+    },
+    "skoll": {
+      "epithet": "Susi auringon kannoilla",
+      "summary": "Hän juoksee auringon perässä, ja eräänä päivänä hän saa sen kiinni.",
+      "description": "Skǫll on susi, joka seuraa aurinkoa. Snorri sanoo tämän pelkäävän sitä, ja että susi vie hänet, minkä se tekeekin lopun alkaessa. Grímnismál sijoittaa hänet Rautametsään. Hänen syntyperänsä on solmu: Vǫluspá sanoo vanhan jättiläisnaisen Rautametsässä synnyttäneen Fenririn sikiöt, ja Snorri sanoo vanhan noidan siellä synnyttäneen monta jättiläispoikaa susien hahmossa — kaksi kertomusta sopivat yhteen vain jos sudet ovat Fenririn, eikä kumpikaan teksti aivan sano niin."
+    },
+    "hati": {
+      "epithet": "Hróðvitnirin poika",
+      "summary": "Hän juoksee auringon edellä, jahdaten kuuta.",
+      "description": "Hati hyppää auringon edellä eikä perässä, koska se minkä perässä hän on, on kuu. Grímnismál kutsuu häntä Hróðvitnirin pojaksi, ja Snorri antaa hänelle isännimen Hróðvitnisson; Hróðvitnir tulkitaan yleisesti Fenririn lisänimeksi, mikä tekisi Hatista suden pojan ja Skǫllin veljen, mutta mikään säilynyt teksti ei sano tätä suoraan. Hänet on kirjattu tänne Fenririn lapseksi varmuusasteella epäsuora, mikä on rehellinen tulkinta."
+    },
+    "mimir": {
+      "epithet": "Lähteen vartija",
+      "summary": "Viisaus on varastoitu hänen lähteeseensä, ja hän juo siitä Gjallarhornilla.",
+      "description": "Mímir vartioi Yggdrasillin sen juuren alla olevaa lähdettä, joka kääntyy kohti riimijättiläisiä, ja jossa viisaus ja ymmärrys ovat varastoituna. Hän on täynnä muinaista tietoa, koska juo lähteestä, ja Snorri sanoo hänen juovan siitä Gjallarhornilla — mikä on ongelma, koska kuusi lukua myöhemmin Gjallarhorn on Heimdallrin torvi, se joka herättää jumalat. Snorri on ristiriidassa itsensä kanssa yhden ainoan teoksen sisällä, ja tämä hanke kirjaa molemmat tulkinnat sen sijaan että valitsisi. Óðinn antoi silmän juomasta lähteestä, ja ratsastaa takaisin neuvottelemaan Mímirin kanssa, kun loppu alkaa."
+    },
+    "asgard": {
+      "epithet": "Jumalten linnoitus",
+      "summary": "Rakennettu keskelle maailmaa, ja siellä susi kasvoi aikuiseksi.",
+      "description": "Ásgarðr on kaupunki, jonka Borrin pojat rakensivat itselleen keskelle maailmaa, jossa jumalat ja heidän sukunsa asuvat. Yksi Yggdrasillin kolmesta juuresta ulottuu sinne. Heimdallr vartioi sen siltaa ja Þórr puolustaa sitä, ja siellä Æsir päätti kasvattaa Fenririn sen sijaan että olisi jättänyt hänet Jǫtunheimriin — päätös, joka toi Óðinnin kuoleman välikappaleen hänen omien muuriensa sisään koko sen lapsuuden ajaksi."
+    },
+    "midgard": {
+      "epithet": "Keskinen aitaus",
+      "summary": "Ihmisten maailma, käärmeen ympäröimä.",
+      "description": "Miðgarðr on ihmiskunnalle annettu maailma, jonka Borrin pojat tekivät ja jota Þórr puolustaa. Sen ympäröi Jǫrmungandr, joka makaa valtameressä kaiken maan kehänä häntä suussaan — niin ihmisten maailman raja on yksi Lokin lapsista. Lopussa Surtr singahduttaa tulen sen yli ja polttaa sen, ja aurinko mustuu ja maa vajoaa mereen."
+    },
+    "jotunheim": {
+      "epithet": "Jättiläisten koti",
+      "summary": "Missä Angrboða kasvatti kolme lasta, jotka jumalat tulivat noutamaan.",
+      "description": "Jǫtunheimr on jättiläisten maa, ja yksi Yggdrasillin juurista seisoo siellä riimijättiläisten keskellä. Angrboða asui siellä, kun hänellä ja Lokilla oli Fenrir, Jǫrmungandr ja Hel, ja jumalat saivat tietää, että tätä sukua ravittiin siellä, ja lähtivät viemään heidät pois. Suuri osa kierrosta on Æsiriä matkaamassa Jǫtunheimriin rikkomaan jotain, ja olemassa sukua sille, minkä he rikkovat."
+    },
+    "niflheim": {
+      "epithet": "Sumumaailma",
+      "summary": "Vanhempi kuin maa, ja Hel hallitsee siellä kuolleita.",
+      "description": "Niflheimr tehtiin monta aikakautta ennen kuin maa muovattiin. Lähde Hvergelmir sijaitsee sen keskellä, ja siitä versoo yksitoista jokea, ja Yggdrasillin kolmas juuri seisoo sen yllä Níðhǫggrin jyrsiessä alhaalta. Óðinn heitti Helin sinne ja antoi hänelle vallan yhdeksän maailman yli, joten vanhimmasta kylmästä paikasta tuli kuolleiden hallinto. Baldr menee sinne."
+    },
+    "muspelheim": {
+      "epithet": "Tulimaailma",
+      "summary": "Kaikkein ensimmäinen maailma, valoisa ja kuuma ja läpipääsemätön, Surtr rajalla.",
+      "description": "Múspell on ensimmäinen olemassa oleva maailma, eteläisellä seudulla: valoisa, kuuma, hehkuva ja palava, ja läpipääsemätön kenelle tahansa, joka ei omista siellä maata. Surtr seisoo sen rajalla liekehtivä miekka kädessään pitämässä muut loitolla — vartio asetettu ennen kuin oli mitään vartioitavaa. Sen väki ratsastaa Ragnarökissa omana joukkonaan, ja Snorri huomauttaa, että he ovat hyvin kirkkaita."
+    },
+    "yggdrasil": {
+      "epithet": "Saarni",
+      "summary": "Kolme juurta, kolme maailmaa, ja se vapisee kun loppu alkaa.",
+      "description": "Yggdrasill on suurin ja paras puista, sen oksat leviävät yli koko maailman ja kohoavat taivaan yläpuolelle. Kolme juurta kannattelee sitä: yksi Æsirin luona, yksi riimijättiläisten luona siellä missä Ammottava Tyhjyys oli, ja yksi Niflheimrin yllä, missä Níðhǫggr jyrsii sitä alhaalta. Mímirin lähde on toisen alla. Jumalat pitävät siellä tuomionsa joka päivä. Kun Fenrir pääsee irti, Saarni värisee, eikä mikään taivaassa tai maan päällä ole pelotta."
+    },
+    "mjolnir": {
+      "epithet": "Þórrin vasara",
+      "summary": "Riimijättiläiset tunnistavat sen, kun se nousee.",
+      "description": "Mjǫllnir on ensimmäinen Þórrin kolmesta suuriarvoisesta esineestä, jonka teki kääpiö Sindri, kun Loki, kärpäsen hahmossa, yritti pilata työn. Snorri sanoo, että riimijättiläiset ja vuorijättiläiset tunnistavat sen, kun se nostetaan, koska ovat menettäneet sille isiä ja sukulaisia. Þórrilla on myös vyö, joka kaksinkertaistaa hänen voimansa, ja rautakäsineet, joita ilman hän ei voi käyttää vasaran vartta. Ragnarökin jälkeen se siirtyy hänen pojilleen Móðille ja Magnille."
+    },
+    "gungnir": {
+      "epithet": "Óðinnin keihäs",
+      "summary": "Ívaldin poikien tekemä; pisto ei koskaan pysähdy.",
+      "description": "Gungnirin tekivät kääpiöt nimeltä Ívaldin Pojat, samalla istumalla joka tuotti Sifin kultaiset hiukset ja laivan Skíðblaðnir, sen jälkeen kun Loki oli leikannut Sifin hiukset ja hänen piti hyvittää se. Loki ojensi sen Óðinnille itselleen. Sen erikoisuus on, ettei pisto koskaan pysähdy. Óðinn ratsastaa Ragnarökiin kantaen sitä, kultakypärässä ja kauniissa haarniskassa, eikä se pelasta häntä."
+    },
+    "gleipnir": {
+      "epithet": "Kahle joka piti",
+      "summary": "Kuusi mahdotonta asiaa, ja se on pehmeä kuin nauha.",
+      "description": "Kun Fenrir oli katkaissut Læðingrin ja Drómin, Óðinn lähetti Skírnirin alas Mustien Haltioiden luo hakemaan jotain parempaa. Kääpiöt tekivät Gleipnirin kuudesta asiasta: kissan askelten äänestä, naisen parrasta, kiven juurista, karhun jänteistä, kalan hengityksestä ja linnun syljestä. Se näyttää silkkinauhalta. Fenrir ei ottanut sitä ilman panttia, ja pantti oli Týrin käsi, eikä jumalilla ollut aikomustakaan päästää häntä irti."
+    },
+    "gjallarhorn": {
+      "epithet": "Kaikuva torvi",
+      "summary": "Sen puhallus kuuluu kaikissa maailmoissa. Kenen se on, riippuu luvusta.",
+      "description": "Gjallarhorn kuuluu Heimdallrille, ja sen puhallus kuuluu kaikkialla maailmoissa; hän puhaltaa sitä herättääkseen jumalat, kun Ragnarök alkaa, ja Vǫluspá kuvaa hänet puhaltamassa sitä torvi koholla. Gjallarhorn kuuluu myös Mímirille, joka juo viisauden lähteestä sillä. Molemmat väitteet ovat Snorrin, kaksitoista lukua toisistaan samassa kirjassa, eikä niitä voi sovittaa yhteen. Kaavio kirjaa molemmat omistajat ja antaa nähdä ristiriidan sen sijaan että peittäisi sen."
+    }
+  }
+}
