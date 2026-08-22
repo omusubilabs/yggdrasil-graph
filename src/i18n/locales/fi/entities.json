@@ -95,6 +95,36 @@
       "summary": "Óðinnin isoisä, jonka pojalta Óðinn oppi yhdeksän laulua.",
       "description": "Bǫlþorn on jättiläinen, Bestlan isä, ja siten Óðinnin äidinpuoleinen isoisä. Hän esiintyy kahdesti: kerran Snorrin sukuluettelossa, ja kerran Hávamálissa, jossa Óðinn sanoo ottaneensa yhdeksän mahtavaa laulua Bǫlþornin pojalta — omalta, nimeämättömältä enoltaan. Viisaus, joka tekee Óðinnista Óðinnin, tulee hänelle suvun jättiläispuolelta."
     },
+    "ymir": {
+      "epithet": "Ensimmäinen jättiläinen",
+      "summary": "Syntyi sulavasta huurteesta ennen kuin maa oli olemassa, ja hänet surmasivat omat lapsenlapsenlapsensa maailman luomiseksi.",
+      "description": "Ymir syntyy, kun Múspellin lämmin ilma kohtaa Niflheimin huurteen Ginnungagapissa, ennen kuin mitään maata on olemassa. Hänen kainalostaan kasvaa poika ja tytär, ja toinen hänen jaloistaan siittää pojan toisen kanssa — koko hyrmyjättiläisten suku polveutuu hänestä ilman äitiä missään kohtaa. Auðumla ravitsee häntä maidollaan, kun taas hänen kielensä vapauttaa Búrin läheisestä jäästä. Borrin pojat surmaavat hänet tämän vuoksi ja rakentavat maailman siitä, mitä jää jäljelle: hänen verestään tulee meri, lihastaan maa, luistaan vuoret, kallostaan taivas."
+    },
+    "audhumbla": {
+      "epithet": "Lehmä",
+      "summary": "Syntyi samasta sulavasta huurteesta kuin Ymir, ja hän ruokkii tätä.",
+      "description": "Auðumla nousee sulavasta huurteesta Ymirin vierestä ja ruokkii tätä neljästä maitovirrasta. Hän itse elää suolasta nuolemalla Gapin jäälohkareita — ja kolmen päivän aikana hänen kielensä vapauttaa miehen jäästä: hiukset ensimmäisenä päivänä, pään toisena, ja kolmantena Búrin, kokonaisena. Lähteet eivät kerro, mistä hän itse tuli, vain sen, mitä hän tekee sillä vähällä, mitä on syötävää."
+    },
+    "buri": {
+      "epithet": "Jäästä vapautettu",
+      "summary": "Lehmä nuoli hänet esiin suolaisesta huurrelohkareesta kolmena päivänä peräkkäin, ja jumalten suku alkaa hänestä.",
+      "description": "Búri ei tule mistään eikä keneltäkään: Auðumla, Ymiriä ravitseva lehmä, nuolee suolaista huurretta kolme päivää, ja kolmantena siellä seisoo mies. Hän on kaunis ja mahtava, eikä teksti anna hänelle vanhempia eikä enempää tarinaa kuin tämän. Hänestä tulee Borrin isä, ja Borrin kautta koko aasojen suku polveutuu jäähän ilmestyneestä kasvosta."
+    },
+    "borr": {
+      "epithet": "Óðinnin, Vilin ja Vén isä",
+      "summary": "Búrin poika ja jättiläisen tyttären aviomies — toinen puoli Óðinnin verta.",
+      "description": "Borr on Búrin poika, ja hän ottaa vaimokseen Bestlan, jättiläinen Bǫlþornin tyttären. Heidän kolme poikaansa ovat Óðinn, Vili ja Vé. Yhdessä Borr ja Bestla panevat jättiläisen veren ja jäästä syntyneen muukalaisen veren samoihin lapsiin — perheen kaksi puoliskoa, jotka käyttävät koko kiertokulun toistensa kanssa sotimiseen, ovat jo naimisissa keskenään yhtä sukupolvea aiemmin."
+    },
+    "vili": {
+      "epithet": "Óðinnin veli",
+      "summary": "Yksi Borrin kolmesta pojasta, jotka luovat maailman, ja yksi kolmesta, jotka surmaavat Ymirin sitä varten.",
+      "description": "Vili on Óðinnin veli, yksi Borrin ja Bestlan kolmesta pojasta. Yhdessä Óðinnin ja Vén kanssa hän surmaa Ymirin ja muovaa maan, meren ja taivaan jättiläisen ruumiista — samat kolme nimeä, jotka Loki myöhemmin heittää Friggiä vasten tämän rakastajina, ainoassa muussa paikassa, jossa lähteet ylipäätään mainitsevat hänet."
+    },
+    "ve": {
+      "epithet": "Óðinnin veli",
+      "summary": "Borrin kolmas poika, läsnä maailman luomisessa ja harvoin mainittu sen jälkeen.",
+      "description": "Vé on Óðinnin veli, nuorin Borrin ja Bestlan kolmesta pojasta. Hän seisoo Óðinnin ja Vilin rinnalla, kun Ymir kuolee ja maailma muovataan sen jälkeen, eivätkä lähteet kerro hänestä juuri mitään tämän yhden tapahtuman lisäksi — nimi, joka ilmestyy kaiken alussa ja vaikenee sitten."
+    },
     "fenrir": {
       "epithet": "Susi",
       "summary": "Jumalat, jotka pelkäsivät häntä, kasvattivat hänet, hänet kahlittiin nauhalla, ja hän nielaisee Óðinnin.",

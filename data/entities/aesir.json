@@ -86,5 +86,37 @@
     "names": { "non": "Sigyn", "anglicized": "Sigyn" },
     "attestations": ["prose-edda"],
     "tags": ["loki-kin"]
+  },
+  {
+    "id": "buri",
+    "type": "deity",
+    "classes": ["aesir"],
+    "names": { "non": "Búri", "anglicized": "Buri" },
+    "attestations": ["prose-edda"],
+    "tags": ["primordial", "odin-kin"]
+  },
+  {
+    "id": "borr",
+    "type": "deity",
+    "classes": ["aesir"],
+    "names": { "non": "Borr", "anglicized": "Bor" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["primordial", "odin-kin"]
+  },
+  {
+    "id": "vili",
+    "type": "deity",
+    "classes": ["aesir"],
+    "names": { "non": "Vili", "anglicized": "Vili" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["odin-kin", "giant-descent"]
+  },
+  {
+    "id": "ve",
+    "type": "deity",
+    "classes": ["aesir"],
+    "names": { "non": "Vé", "anglicized": "Ve" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["odin-kin", "giant-descent"]
   }
 ]

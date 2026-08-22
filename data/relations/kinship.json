@@ -400,5 +400,107 @@
       { "work": "skaldskaparmal", "locus": "9" },
       { "work": "gylfaginning", "locus": "34" }
     ]
+  },
+  {
+    "id": "buri--borr--parent_of",
+    "from": "buri",
+    "to": "borr",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "6" }]
+  },
+  {
+    "id": "borr--bestla--married_to",
+    "from": "borr",
+    "to": "bestla",
+    "type": "married_to",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "6" }]
+  },
+  {
+    "id": "borr--odin--parent_of",
+    "from": "borr",
+    "to": "odin",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gylfaginning", "locus": "6" },
+      { "work": "hyndluljod", "locus": "31" }
+    ]
+  },
+  {
+    "id": "borr--vili--parent_of",
+    "from": "borr",
+    "to": "vili",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "6" }]
+  },
+  {
+    "id": "borr--ve--parent_of",
+    "from": "borr",
+    "to": "ve",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "6" }]
+  },
+  {
+    "id": "bestla--vili--parent_of",
+    "from": "bestla",
+    "to": "vili",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "6" }]
+  },
+  {
+    "id": "bestla--ve--parent_of",
+    "from": "bestla",
+    "to": "ve",
+    "type": "parent_of",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "6" }]
+  },
+  {
+    "id": "odin--vili--sibling_of",
+    "from": "odin",
+    "to": "vili",
+    "type": "sibling_of",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "6" }]
+  },
+  {
+    "id": "odin--ve--sibling_of",
+    "from": "odin",
+    "to": "ve",
+    "type": "sibling_of",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "6" }]
+  },
+  {
+    "id": "vili--ve--sibling_of",
+    "from": "vili",
+    "to": "ve",
+    "type": "sibling_of",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "6" }]
+  },
+  {
+    "id": "audhumbla--ymir--fosters",
+    "from": "audhumbla",
+    "to": "ymir",
+    "type": "fosters",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "6" }]
   }
 ]

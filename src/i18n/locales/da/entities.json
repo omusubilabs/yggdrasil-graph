@@ -95,6 +95,36 @@
       "summary": "Óðinns morfar, fra hvis søn Óðinn lærte ni sange.",
       "description": "Bǫlþorn er en jætte, Bestlas far, og dermed Óðinns morfar. Han optræder to gange: én gang i Snorres slægtstavle, og én gang i Hávamál, hvor Óðinn siger, at han tog ni mægtige sange fra Bǫlþorns søn — sin egen morbror, unavngiven. Visdommen, der gør Óðinn til Óðinn, kommer til ham fra jætternes side af familien."
     },
+    "ymir": {
+      "epithet": "Den første jætte",
+      "summary": "Født af smeltende rim før jorden fandtes, og dræbt af sine egne oldebørn for at skabe den.",
+      "description": "Ymir bliver til, når varm luft fra Múspell møder rimen fra Niflheim i Ginnungagap, før der findes nogen jord at stå på. Under hans arm vokser en søn og en datter frem, og det ene af hans ben avler en søn med det andet — hele rimtursernes slægt stammer fra ham uden en mor noget sted i den. Auðumla nærer ham med sin mælk, mens hendes tunge befrier Búri fra isen lige ved siden af. Borrs sønner dræber ham for det og bygger verden af det, der er tilbage: hans blod bliver havet, hans kød landet, hans knogler bjergene, hans kranium himlen."
+    },
+    "audhumbla": {
+      "epithet": "Koen",
+      "summary": "Formet af den samme smeltende rim som Ymir, og hun nærer ham.",
+      "description": "Auðumla kommer ud af den smeltende rim ved siden af Ymir og nærer ham fra fire mælkefloder. Selv lever hun af salt ved at slikke Gabets isblokke — og over tre dage befrier hendes tunge en mand fra isen: hår den første dag, et hoved den anden, og på den tredje Búri, hel. Kilderne siger intet om, hvor hun selv kom fra, kun hvad hun gør med det lidt, der er at spise."
+    },
+    "buri": {
+      "epithet": "Befriet fra isen",
+      "summary": "Slikket frem af en blok saltet rim af en ko, tre dage i træk, og gudernes slægt begynder med ham.",
+      "description": "Búri kommer hverken fra noget eller nogen steder: Auðumla, koen der nærer Ymir, slikker den saltede rim i tre dage, og på den tredje står der en mand. Han er smuk og mægtig, og teksten giver ham hverken forældre eller mere historie end det. Han bliver far til Borr, og gennem Borr stammer hele æsernes slægt fra et ansigt, der dukkede op i isen."
+    },
+    "borr": {
+      "epithet": "Far til Óðinn, Vili og Vé",
+      "summary": "Búris søn, og ægtemand til en jættes datter — den anden halvdel af Óðinns blod.",
+      "description": "Borr er Búris søn og tager Bestla, datter af jætten Bǫlþorn, til hustru. Deres tre sønner er Óðinn, Vili og Vé. Sammen sætter Borr og Bestla en jættes blod og en isfødt fremmeds blod i de samme børn — de to halvdele af familien, der bruger hele kredsløbet på at bekrige hinanden, er allerede gift med hinanden én generation tidligere."
+    },
+    "vili": {
+      "epithet": "Óðinns bror",
+      "summary": "En af Borrs tre sønner, der skaber verden, og en af de tre, der dræber Ymir for at gøre det.",
+      "description": "Vili er Óðinns bror, en af Borrs og Bestlas tre sønner. Sammen med Óðinn og Vé dræber han Ymir og former jord, hav og himmel af jættens krop — de samme tre navne, som Loki senere slynger mod Frigg som hendes elskere, det eneste andet sted kilderne overhovedet nævner ham."
+    },
+    "ve": {
+      "epithet": "Óðinns bror",
+      "summary": "Den tredje søn af Borr, til stede ved verdens skabelse og sjældent nævnt siden.",
+      "description": "Vé er Óðinns bror, den yngste af Borrs og Bestlas tre sønner. Han står ved siden af Óðinn og Vili, da Ymir dør, og verden formes derefter, og ud over den ene episode har kilderne næsten intet at sige om ham — et navn, der dukker op ved alts begyndelse og derefter forstummer."
+    },
     "fenrir": {
       "epithet": "Ulven",
       "summary": "Opfostret af de guder, der frygtede ham, bundet med et bånd, og han sluger Óðinn.",

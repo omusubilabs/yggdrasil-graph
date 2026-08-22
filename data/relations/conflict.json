@@ -179,5 +179,32 @@
       { "work": "gylfaginning", "locus": "51" },
       { "work": "voluspa", "locus": "52" }
     ]
+  },
+  {
+    "id": "odin--ymir--slays",
+    "from": "odin",
+    "to": "ymir",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "7" }]
+  },
+  {
+    "id": "vili--ymir--slays",
+    "from": "vili",
+    "to": "ymir",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "7" }]
+  },
+  {
+    "id": "ve--ymir--slays",
+    "from": "ve",
+    "to": "ymir",
+    "type": "slays",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "7" }]
   }
 ]

@@ -95,6 +95,36 @@
       "summary": "Óðinn's grandfather, from whose son Óðinn learned nine songs.",
       "description": "Bǫlþorn is a giant, Bestla's father, and therefore Óðinn's maternal grandfather. He appears twice: once in Snorri's genealogy, and once in Hávamál, where Óðinn says he took nine mighty songs from the son of Bǫlþorn — his own uncle, unnamed. The wisdom that makes Óðinn Óðinn comes to him from the giants' side of the family."
     },
+    "ymir": {
+      "epithet": "The first giant",
+      "summary": "Born from melting rime before the earth existed, and killed by his own great-grandsons to make it.",
+      "description": "Ymir forms when warm air off Múspell meets the rime of Niflheim in the Yawning Void, before there is an earth to stand on. He sweats a son and a daughter from under his arm, and one of his legs fathers a son on the other — the whole race of Rime-Giants descends from him without a mother anywhere in it. Auðumla nourishes him with her milk while her tongue frees Búri from the ice nearby. Borr's sons kill him for it, and build the world from what is left: his blood is the sea, his flesh the land, his bones the mountains, his skull the sky."
+    },
+    "audhumbla": {
+      "epithet": "The cow",
+      "summary": "Formed from the same melting rime as Ymir, and she feeds him.",
+      "description": "Auðumla comes out of the melting rime beside Ymir and feeds him from four rivers of milk. She herself lives on salt, licking the ice-blocks of the Void — and over three days her tongue frees a man from the ice: hair the first day, a head the second, and on the third Búri, whole. Nothing in the sources explains where she came from before that, only what she does with what little there is to eat."
+    },
+    "buri": {
+      "epithet": "Freed from the ice",
+      "summary": "Licked out of a block of salty rime by a cow, three days running, and the line of the gods begins with him.",
+      "description": "Búri comes from nowhere and nothing: Auðumla, the cow that nourishes Ymir, licks the salt-rimed ice for three days, and on the third a man stands there. He is fair and mighty, and the text gives him no parents and no story beyond that. He fathers Borr, and through Borr the whole line of the Æsir descends from a face that appeared in ice."
+    },
+    "borr": {
+      "epithet": "Father of Óðinn, Vili and Vé",
+      "summary": "Búri's son, and the husband of a giant's daughter — the other half of Óðinn's blood.",
+      "description": "Borr is Búri's son, and takes Bestla, daughter of the giant Bǫlþorn, to wife. Their three sons are Óðinn, Vili and Vé. Between them, Borr and Bestla put a giant's blood and an ice-born stranger's blood into the same children — the two halves of the family that spend the whole cycle at war are already married to each other one generation up."
+    },
+    "vili": {
+      "epithet": "Óðinn's brother",
+      "summary": "One of the three sons of Borr who make the world, and one of the three who kill Ymir to do it.",
+      "description": "Vili is Óðinn's brother, one of the three sons of Borr and Bestla. With Óðinn and Vé he kills Ymir and shapes earth, sea and sky from the giant's body — the same three names Loki later throws at Frigg as her lovers, in the one other place the sources name him at all."
+    },
+    "ve": {
+      "epithet": "Óðinn's brother",
+      "summary": "The third son of Borr, present at the making of the world and rarely named again.",
+      "description": "Vé is Óðinn's brother, the youngest of Borr and Bestla's three sons. He stands beside Óðinn and Vili at Ymir's death and the shaping of the world that follows it, and beyond that single episode the sources have almost nothing to say about him — a name that appears at the beginning of everything and then goes quiet."
+    },
     "fenrir": {
       "epithet": "The wolf",
       "summary": "Raised by the gods who feared him, bound by a ribbon, and he swallows Óðinn.",

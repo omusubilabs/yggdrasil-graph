@@ -141,5 +141,16 @@
     },
     "attestations": ["poetic-edda", "prose-edda"],
     "tags": ["wisdom", "contested", "ragnarok-participant", "world-tree"]
+  },
+  {
+    "id": "audhumbla",
+    "type": "being",
+    "classes": ["beings"],
+    "names": {
+      "non": "Auðumla",
+      "anglicized": "Audhumbla"
+    },
+    "attestations": ["prose-edda"],
+    "tags": ["primordial"]
   }
 ]

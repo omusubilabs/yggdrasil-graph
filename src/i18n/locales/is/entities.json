@@ -95,6 +95,36 @@
       "summary": "Afi Óðins, en frá syni hans lærði Óðinn níu ljóð.",
       "description": "Bǫlþorn er jötunn, faðir Bestlu, og því móðurafi Óðins. Hann kemur fyrir tvisvar: einu sinni í ættartölu Snorra, og einu sinni í Hávamálum, þar sem Óðinn segist hafa numið níu megin ljóð af syni Bǫlþorns – sínum eigin móðurbróður, ónefndum. Viskan sem gerir Óðin að Óðni kemur til hans frá hlið jötnanna í ættinni."
     },
+    "ymir": {
+      "epithet": "Fyrsti jötunninn",
+      "summary": "Fæddist úr bráðnandi hrími áður en jörðin var til, og var veginn af eigin langafabörnum til að skapa hana.",
+      "description": "Ymir verður til þegar hlýtt loft frá Múspelli mætir hrími Niflheims í Ginnungagapi, áður en nokkur jörð er til að standa á. Undan hendi hans vex sonur og dóttir, og annar fótur hans getur son við hinum – öll ætt hrímþursa er komin af honum án nokkurrar móður. Auðumla nærir hann með mjólk sinni á meðan tunga hennar frelsar Búra úr ísnum skammt frá. Synir Borrs drepa hann fyrir vikið og smíða heiminn úr því sem eftir er: blóð hans verður sjórinn, hold hans landið, bein hans fjöllin, hauskúpa hans himinninn."
+    },
+    "audhumbla": {
+      "epithet": "Kýrin",
+      "summary": "Varð til úr sama bráðnandi hrími og Ymir, og hún nærir hann.",
+      "description": "Auðumla verður til úr bráðnandi hríminu við hlið Ymis og nærir hann af fjórum mjólkurám. Sjálf lifir hún á salti og sleikir ísblokkir Gapsins – og á þremur dögum frelsar tunga hennar mann úr ísnum: hár fyrsta daginn, höfuð annan daginn, og á þriðja degi Búra, heilan. Heimildirnar segja ekkert um hvaðan hún sjálf kom, aðeins hvað hún gerir við það litla sem er að éta."
+    },
+    "buri": {
+      "epithet": "Frelsaður úr ísnum",
+      "summary": "Sleiktur úr saltri hrímblokk af kú, þrjá daga í röð, og ætt guðanna hefst með honum.",
+      "description": "Búri kemur hvergi að og af engu: Auðumla, kýrin sem nærir Ymi, sleikir hið salta hrím í þrjá daga, og á þeim þriðja stendur þar maður. Hann er fríður og máttugur, og heimildin gefur honum hvorki foreldra né frekari sögu. Hann getur Borr, og fyrir Borr er öll ætt Ása komin af andliti sem birtist í ís."
+    },
+    "borr": {
+      "epithet": "Faðir Óðins, Vilja og Vés",
+      "summary": "Sonur Búra, og eiginmaður dóttur jötuns – hinn helmingur blóðs Óðins.",
+      "description": "Borr er sonur Búra og gengur að eiga Bestlu, dóttur jötunsins Bǫlþorns. Synir þeirra þrír eru Óðinn, Vili og Vé. Þannig setja Borr og Bestla blóð jötuns og blóð ísborins ókunnugs manns í sömu börnin – þeir tveir helmingar ættarinnar sem heyja alla hringrásina eru þegar giftir hvor öðrum einni kynslóð fyrr."
+    },
+    "vili": {
+      "epithet": "Bróðir Óðins",
+      "summary": "Einn af þremur sonum Borrs sem skapa heiminn, og einn af þremur sem drepa Ymi til þess.",
+      "description": "Vili er bróðir Óðins, einn af þremur sonum Borrs og Bestlu. Ásamt Óðni og Vé drepur hann Ymi og mótar jörð, sjó og himin úr líkama jötunsins – sömu þrjú nöfnin sem Loki síðar slöngvar að Frigg sem elskhugum hennar, á eina staðnum öðrum þar sem heimildirnar nefna hann yfirleitt."
+    },
+    "ve": {
+      "epithet": "Bróðir Óðins",
+      "summary": "Þriðji sonur Borrs, viðstaddur sköpun heimsins og sjaldan nefndur síðan.",
+      "description": "Vé er bróðir Óðins, yngstur af þremur sonum Borrs og Bestlu. Hann stendur við hlið Óðins og Vilja þegar Ymir deyr og heimurinn er mótaður í kjölfarið, og handan þess eina atburðar hafa heimildirnar nær ekkert að segja um hann – nafn sem birtist við upphaf alls og þagnar svo."
+    },
     "fenrir": {
       "epithet": "Úlfurinn",
       "summary": "Alinn upp af goðunum sem óttuðust hann, bundinn með borða, og hann gleypir Óðin.",
