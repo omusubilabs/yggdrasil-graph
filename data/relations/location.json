@@ -196,5 +196,41 @@
     "directed": true,
     "certainty": "implied",
     "sources": [{ "work": "gylfaginning", "locus": "45" }]
+  },
+  {
+    "id": "urd--yggdrasil--dwells_in",
+    "from": "urd",
+    "to": "yggdrasil",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gylfaginning", "locus": "15" },
+      { "work": "voluspa", "locus": "20" }
+    ]
+  },
+  {
+    "id": "verdandi--yggdrasil--dwells_in",
+    "from": "verdandi",
+    "to": "yggdrasil",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gylfaginning", "locus": "15" },
+      { "work": "voluspa", "locus": "20" }
+    ]
+  },
+  {
+    "id": "skuld--yggdrasil--dwells_in",
+    "from": "skuld",
+    "to": "yggdrasil",
+    "type": "dwells_in",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [
+      { "work": "gylfaginning", "locus": "15" },
+      { "work": "voluspa", "locus": "20" }
+    ]
   }
 ]

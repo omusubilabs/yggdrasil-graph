@@ -200,6 +200,21 @@
       "summary": "Han springer framför solen och jagar månen.",
       "description": "Hati hoppar framför solen snarare än bakom henne, för det han jagar är månen. Grímnismál kallar honom Hróðvitnirs son, och Snorre ger honom patronymikonet Hróðvitnisson; Hróðvitnir tolkas allmänt som ett tillnamn för Fenrir, vilket skulle göra Hati vargens son och Skǫlls broder, men ingen bevarad text uttalar identifikationen rakt ut. Han registreras här som Fenrirs barn med säkerhetsgraden satt till underförstådd, vilket är den ärliga läsningen."
     },
+    "urd": {
+      "epithet": "Den äldsta nornan",
+      "summary": "Hennes källa vattnar Yggdrasil, och hennes namn betyder det som redan har hänt.",
+      "description": "Urðr är den först nämnda av de tre jungfrur som kommer från hallen vid källan under Yggdrasils tredje rot, och den källan bär hennes namn — gudarna håller sin ting där varje dag och rider ut över Bifrǫst för att nå dit. Hon, Verðandi och Skuld skär i veden och fastställer människosönernas öden: några får ett långt liv, andra ett kort, och texten är rättfram om varför — goda nornor av hederlig ätt ger ett gott liv, medan onda nornor styr resten."
+    },
+    "verdandi": {
+      "epithet": "Den mellersta nornan",
+      "summary": "En av tre jungfrur under Yggdrasil som fastställer människornas öden.",
+      "description": "Verðandi kommer från hallen vid Urðrs källa tillsammans med Urðr och Skuld, och tillsammans skär de öde i veden och tilldelar längden på varje människoliv. Vǫluspá nämner alla tre i samma andetag och säger inget mer om henne själv — av källornas många nornor är hon en av de tre som betyder mest, och korpuset skiljer henne aldrig tillräckligt länge från sina systrar för att ge henne en egen historia."
+    },
+    "skuld": {
+      "epithet": "Den yngsta nornan",
+      "summary": "Fastställer öden under Yggdrasil, och rider på annat håll för att välja de fallna.",
+      "description": "Skuld är den tredje av jungfrurna som kommer från hallen vid Urðrs källa för att skära i veden och fastställa längden på människors liv. Snorre nämner en norna vid namn Skuld igen senare, bland valkyriorna som rider till varje strid och avgör dess utgång — om det är samma gestalt i två roller eller två skilda väsen som delar namn säger texten inte, och denna graf ska inte vara den som avgör det."
+    },
     "mimir": {
       "epithet": "Brunnens väktare",
       "summary": "Visdom förvaras i hans brunn, och han dricker ur den med Gjallarhorn.",

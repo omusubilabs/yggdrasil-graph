@@ -200,6 +200,21 @@
       "summary": "Hän juoksee auringon edellä, jahdaten kuuta.",
       "description": "Hati hyppää auringon edellä eikä perässä, koska se minkä perässä hän on, on kuu. Grímnismál kutsuu häntä Hróðvitnirin pojaksi, ja Snorri antaa hänelle isännimen Hróðvitnisson; Hróðvitnir tulkitaan yleisesti Fenririn lisänimeksi, mikä tekisi Hatista suden pojan ja Skǫllin veljen, mutta mikään säilynyt teksti ei sano tätä suoraan. Hänet on kirjattu tänne Fenririn lapseksi varmuusasteella epäsuora, mikä on rehellinen tulkinta."
     },
+    "urd": {
+      "epithet": "Vanhin norna",
+      "summary": "Hänen lähteensä kastelee Yggdrasilia, ja hänen nimensä tarkoittaa sitä, mikä on jo tapahtunut.",
+      "description": "Urðr on ensimmäisenä mainittu kolmesta neidosta, jotka tulevat salista Yggdrasilin kolmannen juuren alla olevan lähteen luota, ja tuo lähde kantaa hänen nimeään — jumalat pitävät siellä käräjänsä joka päivä ratsastaen Bifrǫstin yli päästäkseen sinne. Hän, Verðandi ja Skuld kaivertavat kohtalon puuhun ja jakavat ihmisten poikien elämän pituuden: toiset saavat pitkän elämän, toiset lyhyen, ja teksti on suora sen suhteen, miksi — hyvät ja kunniallista sukua olevat nornat säätävät hyvän elämän, kun taas pahat nornat hallitsevat muita."
+    },
+    "verdandi": {
+      "epithet": "Keskimmäinen norna",
+      "summary": "Yksi kolmesta neidosta Yggdrasilin alla, jotka säätävät ihmisten kohtalot.",
+      "description": "Verðandi tulee Urðrin lähteen luona olevasta salista yhdessä Urðrin ja Skuldin kanssa, ja yhdessä he kaivertavat kohtalon puuhun ja jakavat jokaisen ihmiselämän pituuden. Vǫluspá mainitsee kaikki kolme samassa hengenvedossa eikä kerro hänestä enempää yksinään — lähteiden monista nornoista hän on yksi kolmesta tärkeimmästä, eikä teksti koskaan erota häntä sisaristaan tarpeeksi pitkäksi aikaa antaakseen hänelle oman tarinan."
+    },
+    "skuld": {
+      "epithet": "Nuorin norna",
+      "summary": "Säätää kohtaloita Yggdrasilin alla, ja ratsastaa muualla valitsemassa kaatuneita.",
+      "description": "Skuld on kolmas neidoista, jotka tulevat Urðrin lähteen luona olevasta salista kaivertamaan puuhun ja säätämään ihmisten elämän pituuden. Snorri mainitsee myöhemmin uudelleen norn-nimeltä Skuldin, valkyrioiden joukossa, jotka ratsastavat jokaiseen taisteluun ja päättävät sen lopputuloksen — onko kyseessä sama hahmo kahdessa roolissa vai kaksi erillistä olentoa, jotka jakavat nimen, sitä teksti ei kerro, eikä tämä kaavio ole se, joka sen ratkaisee."
+    },
     "mimir": {
       "epithet": "Lähteen vartija",
       "summary": "Viisaus on varastoitu hänen lähteeseensä, ja hän juo siitä Gjallarhornilla.",

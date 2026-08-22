@@ -200,6 +200,21 @@
       "summary": "Han løber foran solen og jager månen.",
       "description": "Hati springer foran solen snarere end bag hende, for det, han er ude efter, er månen. Grímnismál kalder ham søn af Hróðvitnir, og Snorre giver ham patronymikonet Hróðvitnisson; Hróðvitnir opfattes almindeligvis som et tilnavn for Fenrir, hvilket ville gøre Hati til ulvens søn og Skǫlls bror, men ingen bevaret tekst udtaler identifikationen ligeud. Han er registreret her som Fenrirs barn med sikkerhedsgraden sat til underforstået, hvilket er den ærlige læsning."
     },
+    "urd": {
+      "epithet": "Den ældste norne",
+      "summary": "Hendes kilde vander Yggdrasil, og hendes navn betyder det, der allerede er sket.",
+      "description": "Urðr er den først nævnte af de tre jomfruer, der kommer fra hallen ved kilden under Yggdrasils tredje rod, og den kilde bærer hendes navn — guderne holder deres ting der hver dag og rider ud over Bifrǫst for at nå derhen. Hun, Verðandi og Skuld skærer i veden og fastsætter menneskesønnernes skæbner: nogle får et langt liv, andre et kort, og teksten er ligeud om hvorfor — gode norner af hæderlig æt giver et godt liv, mens onde norner styrer resten."
+    },
+    "verdandi": {
+      "epithet": "Den mellemste norne",
+      "summary": "En af tre jomfruer under Yggdrasil, der fastsætter menneskers skæbner.",
+      "description": "Verðandi kommer fra hallen ved Urðrs kilde sammen med Urðr og Skuld, og sammen skærer de skæbne ind i veden og tildeler længden på hvert menneskeliv. Vǫluspá nævner alle tre i samme åndedrag og siger ikke mere om hende alene — af kildernes mange norner er hun en af de tre, der betyder mest, og korpuset adskiller hende aldrig længe nok fra sine søstre til at give hende sin egen historie."
+    },
+    "skuld": {
+      "epithet": "Den yngste norne",
+      "summary": "Fastsætter skæbner under Yggdrasil, og rider andetsteds for at vælge de faldne.",
+      "description": "Skuld er den tredje af jomfruerne, der kommer fra hallen ved Urðrs kilde for at skære i veden og fastsætte længden på menneskers liv. Snorre nævner en norne ved navn Skuld igen senere, blandt valkyrierne, der rider til hvert slag og afgør dets udfald — om det er samme skikkelse i to roller eller to adskilte væsener, der deler navn, siger teksten ikke, og denne graf skal ikke være den, der afgør det."
+    },
     "mimir": {
       "epithet": "Brøndens vogter",
       "summary": "Visdom opbevares i hans brønd, og han drikker af den med Gjallarhorn.",

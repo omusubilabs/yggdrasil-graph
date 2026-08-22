@@ -200,6 +200,21 @@
       "summary": "Han løper foran solen, på jakt etter månen.",
       "description": "Hati løper foran solen i stedet for bak henne, fordi det han er ute etter, er månen. Grímnismál kaller ham sønn av Hróðvitnir, og Snorri gir ham patronymet Hróðvitnisson; Hróðvitnir oppfattes vanligvis som et tilnavn for Fenrir, noe som ville gjøre Hati til ulvens sønn og Skǫlls bror, men ingen bevart tekst sier identifikasjonen rett ut. Han er registrert her som Fenrirs barn med sikkerheten satt til underforstått, som er den ærlige lesningen."
     },
+    "urd": {
+      "epithet": "Den eldste nornen",
+      "summary": "Kilden hennes vanner Yggdrasil, og navnet hennes betyr det som allerede har hendt.",
+      "description": "Urðr er den først nevnte av de tre møyene som kommer fra hallen ved kilden under Yggdrasils tredje rot, og den kilden bærer hennes navn — gudene holder sitt tingmøte der hver dag, og rir ut over Bifrǫst for å nå dit. Hun, Verðandi og Skuld skjærer i veden og fastsetter skjebnen til menneskenes sønner: noen får et langt liv, andre et kort, og teksten er ærlig om hvorfor — gode norner av hederlig ætt gir et godt liv, mens onde norner styrer resten."
+    },
+    "verdandi": {
+      "epithet": "Den midterste nornen",
+      "summary": "En av tre møyer under Yggdrasil som fastsetter menneskenes skjebner.",
+      "description": "Verðandi kommer fra hallen ved Urðrs kilde sammen med Urðr og Skuld, og sammen skjærer de skjebne inn i veden og tildeler lengden på hvert menneskeliv. Vǫluspá nevner alle tre i samme åndedrag og sier ikke mer om henne alene — av kildenes mange norner er hun en av de tre som betyr mest, og korpuset skiller henne aldri lenge nok fra søstrene til å gi henne en egen historie."
+    },
+    "skuld": {
+      "epithet": "Den yngste nornen",
+      "summary": "Fastsetter skjebner under Yggdrasil, og andre steder rir hun for å velge de falne.",
+      "description": "Skuld er den tredje av møyene som kommer fra hallen ved Urðrs kilde for å skjære i veden og fastsette lengden på menneskers liv. Snorri nevner en norne ved navn Skuld igjen senere, blant valkyriene som rir til hvert slag og avgjør utfallet — om det er samme skikkelse i to roller eller to atskilte vesener som deler navn, sier ikke teksten, og denne grafen skal ikke være den som avgjør det."
+    },
     "mimir": {
       "epithet": "Brønnens vokter",
       "summary": "Visdom er lagret i brønnen hans, og han drikker av den med Gjallarhorn.",

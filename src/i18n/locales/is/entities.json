@@ -200,6 +200,21 @@
       "summary": "Hann hleypur á undan sólinni, á eftir tunglinu.",
       "description": "Hati stekkur á undan sólinni fremur en á eftir henni, því það sem hann sækist eftir er tunglið. Grímnismál kallar hann son Hróðvitnis, og Snorri gefur honum föðurnafnið Hróðvitnisson; Hróðvitnir er almennt talinn viðurnefni Fenris, sem myndi gera Hata að syni úlfsins og bróður Skǫlls, en enginn varðveittur texti staðfestir þá auðkenningu berum orðum. Hann er skráður hér sem barn Fenris með vissuna setta sem óbeina, sem er heiðarlegasti lesturinn."
     },
+    "urd": {
+      "epithet": "Elsta nornin",
+      "summary": "Brunnur hennar vökvar Yggdrasil, og nafn hennar merkir það sem þegar hefur gerst.",
+      "description": "Urður er fyrst nefnd af meyjunum þremur sem koma úr höllinni við brunninn undir þriðju rót Yggdrasils, og sá brunnur ber nafn hennar – guðirnir halda þar dóm sinn á hverjum degi, ríðandi út yfir Bifröst til að ná þangað. Hún, Verðandi og Skuld rista í viðinn og ákveða örlög mannanna sona: sumum er gefið langt líf, öðrum stutt, og textinn er hreinskilinn um hvers vegna – góðar nornir af heiðvirðri ætt veita gott líf, en illar nornir stjórna hinum."
+    },
+    "verdandi": {
+      "epithet": "Miðnornin",
+      "summary": "Ein af þremur meyjum undir Yggdrasil sem ákveða örlög manna.",
+      "description": "Verðandi kemur úr höllinni við brunn Urðar ásamt Urði og Skuld, og saman rista þær örlög í við og úthluta lengd hvers mannslífs. Völuspá nefnir allar þrjár í sömu andránni og segir ekki meira um hana sérstaklega – af hinum mörgu nornum heimildanna er hún ein af þeim þremur sem mestu skipta, og heimildirnar skilja hana aldrei nógu lengi frá systrum sínum til að gefa henni eigin sögu."
+    },
+    "skuld": {
+      "epithet": "Yngsta nornin",
+      "summary": "Ákveður örlög undir Yggdrasil, og ríður annars staðar til að velja hina föllnu.",
+      "description": "Skuld er þriðja meyjan sem kemur úr höllinni við brunn Urðar til að rista í við og ákveða lengd mannslífa. Snorri nefnir norn að nafni Skuld aftur síðar, meðal valkyrjanna sem ríða til hverrar orrustu og ráða úrslitum hennar – hvort það sé sama veran í tveimur myndum eða tvær aðskildar verur sem deila nafni, segir textinn ekki, og þessi línurit ætlar ekki að skera úr um það."
+    },
     "mimir": {
       "epithet": "Verndari brunnsins",
       "summary": "Viska er geymd í brunni hans, og hann drekkur úr honum með Gjallarhorni.",

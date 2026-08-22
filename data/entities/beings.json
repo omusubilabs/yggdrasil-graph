@@ -152,5 +152,38 @@
     },
     "attestations": ["prose-edda"],
     "tags": ["primordial"]
+  },
+  {
+    "id": "urd",
+    "type": "being",
+    "classes": ["beings"],
+    "names": {
+      "non": "Urðr",
+      "anglicized": "Urd"
+    },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["world-tree", "wisdom"]
+  },
+  {
+    "id": "verdandi",
+    "type": "being",
+    "classes": ["beings"],
+    "names": {
+      "non": "Verðandi",
+      "anglicized": "Verdandi"
+    },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["world-tree", "wisdom"]
+  },
+  {
+    "id": "skuld",
+    "type": "being",
+    "classes": ["beings"],
+    "names": {
+      "non": "Skuld",
+      "anglicized": "Skuld"
+    },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["world-tree", "wisdom"]
   }
 ]

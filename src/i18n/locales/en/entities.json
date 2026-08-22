@@ -200,6 +200,21 @@
       "summary": "He runs ahead of the sun, hunting the moon.",
       "description": "Hati leaps before the sun rather than behind her, because what he is after is the moon. Grímnismál calls him the son of Hróðvitnir, and Snorri gives him the patronymic Hróðvitnisson; Hróðvitnir is generally taken as a byname for Fenrir, which would make Hati the wolf's son and Skǫll's brother, but no surviving text states the identification outright. He is recorded here as Fenrir's child with the certainty set to implied, which is the honest reading."
     },
+    "urd": {
+      "epithet": "The eldest Norn",
+      "summary": "Her well waters Yggdrasill, and her name means what has already happened.",
+      "description": "Urðr is the first-named of the three maidens who come from the hall by the well under Yggdrasill's third root, and that well is called by her name — the gods hold their tribunal there every day, riding out over Bifrǫst to reach it. She, Verðandi and Skuld score the wood and set the fates of the sons of men: some are given a long life and some a short one, and the text is blunt about why — good norns of honorable race appoint a good life, and evil norns govern the rest."
+    },
+    "verdandi": {
+      "epithet": "The middle Norn",
+      "summary": "One of three maidens under Yggdrasill who set the fates of men.",
+      "description": "Verðandi comes from the hall at Urðr's well with Urðr and Skuld, and together they score fate onto wood and allot the length of every human life. Vǫluspá names all three in one breath and says no more about her individually — of the sources' many norns, she is one of the three who matter most, and the corpus never separates her from her sisters long enough to give her a story of her own."
+    },
+    "skuld": {
+      "epithet": "The youngest Norn",
+      "summary": "Sets fates under Yggdrasill, and elsewhere rides to choose the slain.",
+      "description": "Skuld is the third of the maidens who come from the hall at Urðr's well to score wood and set the length of men's lives. Snorri names a norn called Skuld again later, among the Valkyrs who ride to every battle and decide its outcome — whether that is the same figure worn two ways or two separate beings sharing a name, the text does not say, and this graph is not the one to decide it."
+    },
     "mimir": {
       "epithet": "Keeper of the well",
       "summary": "Wisdom is stored in his well, and he drinks from it with Gjallarhorn.",
