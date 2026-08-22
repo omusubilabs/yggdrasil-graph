@@ -1,0 +1,182 @@
+{
+  "site": {
+    "title": "Yggdrasil Graph",
+    "tagline": "Mytens slutt er allerede skrevet i slektstreet.",
+    "description": "En interaktiv relasjonsgraf over norrøn mytologi. Guder, jotner, monstre, verdener og navngitte ting, der hver relasjon er sporet tilbake til en primærkilde.",
+    "skipToContent": "Hopp til grafen"
+  },
+  "nav": {
+    "label": "Nettsted",
+    "home": "Graf",
+    "sources": "Kilder",
+    "language": "Språk",
+    "languageCurrent": "Gjeldende språk: {name}",
+    "openMenu": "Åpne meny",
+    "closeMenu": "Lukk meny"
+  },
+  "graph": {
+    "regionLabel": "Relasjonsgraf",
+    "regionDescription": "En interaktiv graf med {count} skikkelser og {links} relasjoner mellom dem. Bruk listevisningen nedenfor for en lineær versjon.",
+    "hint": "Trykk på et navn.",
+    "hintKeyboard": "Tab deg inn i grafen, og beveg deg mellom skikkelsene med piltastene.",
+    "loading": "Vekker grafen",
+    "ready": "Grafen er klar",
+    "reset": "Tilbakestill visning",
+    "zoomControls": "Zoom og sentrering",
+    "zoomIn": "Zoom inn",
+    "zoomOut": "Zoom ut",
+    "recentre": "Sentrer på nytt",
+    "clearSelection": "Vis alt igjen",
+    "selectedAnnounce": "{name} valgt. Viser {count} tilknyttede skikkelser.",
+    "neighbourhoodOf": "Rundt {name}",
+    "everything": "Hele grafen",
+    "motionReduced": "Bevegelse er redusert, så grafen viser sitt faste oppsett."
+  },
+  "view": {
+    "label": "Visning",
+    "graph": "Graf",
+    "list": "Liste",
+    "listHeading": "Alle skikkelser, som en tabell",
+    "listDescription": "Samme data som grafen, i en form du kan lese rett gjennom, søke i med nettleseren eller gi til en skjermleser.",
+    "columnName": "Navn",
+    "columnOldNorse": "Norrønt",
+    "columnType": "Type",
+    "columnClasses": "Klasser",
+    "columnRelations": "Relasjoner"
+  },
+  "panel": {
+    "label": "Detaljer",
+    "close": "Lukk detaljer",
+    "oldNorse": "Norrønt",
+    "type": "Type",
+    "classes": "Klasser",
+    "tags": "Temaer",
+    "attestedIn": "Forekommer i",
+    "relations": "Relasjoner",
+    "relatedByTag": "Relatert",
+    "citations": "Kildehenvisninger",
+    "readMore": "Fullstendig omtale av {name}",
+    "empty": "Ingenting valgt. Velg en skikkelse i grafen.",
+    "noRelations": "Ingen relasjoner registrert ennå.",
+    "relationCount": "{count} relasjoner",
+    "outgoing": "{name} → ",
+    "incoming": " → {name}"
+  },
+  "filters": {
+    "label": "Filtre",
+    "heading": "Vis",
+    "certainty": "Etter sikkerhet",
+    "family": "Etter relasjonstype",
+    "disputedOnly": "Kun der kildene er uenige",
+    "disputedOnlyHint": "Viser bare varierende og omstridte relasjoner.",
+    "ragnarokOverlay": "Kun Ragnarök",
+    "ragnarokOverlayHint": "Demper alt unntatt de stridende ved verdens ende og blodslinjene som frembrakte dem.",
+    "clear": "Fjern filtre",
+    "activeCount": "{count} filtre aktive",
+    "noResults": "Ingen relasjoner samsvarer med disse filtrene."
+  },
+  "certainty": {
+    "label": "Sikkerhet",
+    "attested": "Attestert",
+    "attestedHint": "Kilden sier dette rett ut.",
+    "implied": "Underforstått",
+    "impliedHint": "Kilden innebærer dette uten å si det direkte.",
+    "variant": "Variant",
+    "variantHint": "En annen kilde forteller det annerledes.",
+    "disputed": "Omstridt",
+    "disputedHint": "Kildene motsier hverandre.",
+    "unverified": "Ubekreftet",
+    "unverifiedHint": "Antatt sann, men ingen bekreftet kildehenvisning er funnet. Bevisst uten kildehenvisning.",
+    "contradictedBy": "Motsagt av: {other}"
+  },
+  "class": {
+    "label": "Klasse",
+    "aesir": "Æsir",
+    "vanir": "Vanir",
+    "jotnar": "Jǫtnar",
+    "beings": "Andre vesener",
+    "worlds": "Verdener og steder",
+    "artifacts": "Skatter"
+  },
+  "type": {
+    "label": "Type",
+    "deity": "Guddom",
+    "being": "Vesen",
+    "world": "Verden",
+    "artifact": "Laget gjenstand",
+    "place": "Sted",
+    "event": "Hendelse"
+  },
+  "tag": {
+    "ragnarok-participant": "Til stede ved Ragnarök",
+    "ragnarok-slain": "Drept ved Ragnarök",
+    "ragnarok-slayer": "Dreper ved Ragnarök",
+    "ragnarok-survivor": "Overlever Ragnarök",
+    "loki-kin": "Lokis slekt",
+    "odin-kin": "Odins slekt",
+    "bound": "Bundet",
+    "wolf": "Ulv",
+    "serpent": "Slange",
+    "shapeshifter": "Hamskifter",
+    "contested": "Omstridt",
+    "disputed-parentage": "Omstridt opphav",
+    "primordial": "Urgammel",
+    "underworld": "Blant de døde",
+    "fire": "Ild",
+    "thunder": "Torden",
+    "wisdom": "Visdom",
+    "war": "Krig",
+    "fertility": "Fruktbarhet",
+    "sea": "Hav",
+    "watchman": "Vaktmann",
+    "hostage": "Gissel",
+    "dwarf-forged": "Smidd av dverger",
+    "world-tree": "Verdenstreet",
+    "nine-worlds": "En av de ni verdener",
+    "giant-descent": "Av jotneætt"
+  },
+  "relatedByTag": {
+    "sharedLabel": "Felles:"
+  },
+  "entity": {
+    "backToGraph": "Tilbake til grafen",
+    "backToGraphFrom": "Se {name} i grafen",
+    "relationsHeading": "Relasjoner",
+    "relatedByTagHeading": "Relatert",
+    "sourcesHeading": "Siterte kilder",
+    "tagsHeading": "Temaer",
+    "namesHeading": "Navn",
+    "noDescription": "Ingen omtale er skrevet for denne skikkelsen ennå. Relasjonene nedenfor er hele det registrerte.",
+    "metaTitle": "{name} — Yggdrasil Graph",
+    "degree": "{count} registrerte relasjoner"
+  },
+  "sources": {
+    "heading": "Kilder",
+    "intro": "Hver relasjon i denne grafen peker til et sted i ett av disse verkene. De siterte utgavene er alle i det fri (public domain); teksten deres er ikke gjengitt her.",
+    "chapter": "kap. {locus}",
+    "stanza": "str. {locus}",
+    "translatedBy": "Oversatt av {translator}, {year}",
+    "composed": "Forfattet {date}",
+    "partOf": "I {collection}",
+    "viewText": "Les hele teksten",
+    "uncited": "Ingen kildehenvisning. Bevisst merket ubekreftet."
+  },
+  "footer": {
+    "codeLicence": "Koden er MIT-lisensiert.",
+    "dataLicence": "Datasettet er CC BY-SA 4.0-lisensiert.",
+    "sourceCode": "Kildekode",
+    "contribute": "Rettelser er velkomne",
+    "editionsNote": "Kildehenvisninger følger Bellows (1923) for Den poetiske Edda og Brodeur (1916) for Snorres Edda."
+  },
+  "a11y": {
+    "nodeRole": "{name}, {type}, {count} relasjoner",
+    "graphInstructions": "Piltastene beveger mellom tilknyttede skikkelser. Enter åpner detaljer. Escape fjerner valget.",
+    "selectionCleared": "Valg fjernet. Viser hele grafen.",
+    "externalLink": "åpnes i en ny fane"
+  },
+  "error": {
+    "notFoundTitle": "Siden finnes ikke",
+    "notFoundBody": "Denne stien fører ingen steder. Grafen gjør det.",
+    "graphFailed": "Den interaktive grafen kunne ikke starte. Alt nedenfor fungerer likevel."
+  }
+}

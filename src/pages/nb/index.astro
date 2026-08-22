@@ -1,0 +1,18 @@
+---
+import Base from '../../layouts/Base.astro';
+import HomeView from '../../components/HomeView.astro';
+import { useTranslations } from '../../i18n/index.ts';
+
+const locale = 'nb' as const;
+const t = useTranslations(locale);
+---
+
+<Base
+  locale={locale}
+  route="/"
+  title={`${t('site.title')} — ${t('site.tagline')}`}
+  description={t('site.description')}
+  full
+>
+  <HomeView locale={locale} />
+</Base>
