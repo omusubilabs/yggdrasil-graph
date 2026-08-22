@@ -22,6 +22,7 @@ import {
   type GraphIndex,
 } from './model.ts';
 import { isDeathRelation } from './geometry.ts';
+import { decodeUrlState, encodeUrlState } from './urlState.ts';
 import type { GraphData } from './types.ts';
 
 interface Payload {
@@ -112,6 +113,7 @@ export async function mount(): Promise<void> {
     if (panel) panel.hidden = true;
     if (clearButton) clearButton.hidden = true;
     announce(s('a11y.selectionCleared'));
+    syncUrl();
   };
 
   const select_ = (id: string) => {
@@ -132,6 +134,7 @@ export async function mount(): Promise<void> {
     announce(
       s('graph.selectedAnnounce', { name: node.names.anglicized, count: near.nodes.size - 1 }),
     );
+    syncUrl();
   };
 
   // ----------------------------------------------------------- the panel
@@ -354,6 +357,7 @@ export async function mount(): Promise<void> {
       const contested = link?.certainty === 'disputed' || link?.certainty === 'variant';
       element.classList.toggle('is-hidden', only && !contested);
     }
+    syncUrl();
   });
 
   const ragnarok = ragnarokOverlay(index);
@@ -369,7 +373,41 @@ export async function mount(): Promise<void> {
       element.classList.toggle('is-ragnarok-pairing', on && ragnarok.pairingLinkIds.has(linkId));
       element.classList.toggle('is-ragnarok-lineage', on && ragnarok.lineageLinkIds.has(linkId));
     }
+    syncUrl();
   });
+
+  // Mirrors selected/disputed/ragnarok to the query string so a copied link
+  // reopens the same view. Deliberately replaceState, not pushState — toggling
+  // a filter shouldn't spam browser history — and deliberately no `popstate`
+  // listener: the brief is "a shared link reopens the view", not "back undoes
+  // an action", and generic re-hydration on back/forward is a bigger feature.
+  function syncUrl() {
+    const query = encodeUrlState({
+      selected,
+      disputed: disputedToggle?.checked ?? false,
+      ragnarok: ragnarokToggle?.checked ?? false,
+    });
+    history.replaceState(null, '', `${window.location.pathname}${query}${window.location.hash}`);
+  }
+
+  // ------------------------------------------------------- url hydration
+
+  const initial = decodeUrlState(window.location.search);
+  if (initial.disputed && disputedToggle) {
+    disputedToggle.checked = true;
+    disputedToggle.dispatchEvent(new Event('change'));
+  }
+  if (initial.ragnarok && ragnarokToggle) {
+    ragnarokToggle.checked = true;
+    ragnarokToggle.dispatchEvent(new Event('change'));
+  }
+  if (initial.selected && index.nodeById.has(initial.selected)) {
+    select_(initial.selected);
+    focusNode(initial.selected);
+  }
+  // Unconditional: normalises away a stale/invalid ?selected= that select_()
+  // silently ignored, rather than leaving it dangling in the address bar.
+  syncUrl();
 
   // --------------------------------------------------- optional motion
 

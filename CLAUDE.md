@@ -268,7 +268,6 @@ here — check the Roadmap first.
 
 Do not build these without being asked. The data and the seams for them exist.
 
-- **URL state serialization** for selection, filters and overlay.
 - **Locales beyond `en` and the `ja` stub.**
 - **The full 300–400 entity dataset.** `data/TODO.md` lists what is missing and
   why each one matters.
