@@ -495,6 +495,24 @@
     "sources": [{ "work": "gylfaginning", "locus": "6" }]
   },
   {
+    "id": "bragi--idunn--married_to",
+    "from": "bragi",
+    "to": "idunn",
+    "type": "married_to",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "26" }]
+  },
+  {
+    "id": "baldr--nanna--married_to",
+    "from": "baldr",
+    "to": "nanna",
+    "type": "married_to",
+    "directed": false,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "49" }]
+  },
+  {
     "id": "audhumbla--ymir--fosters",
     "from": "audhumbla",
     "to": "ymir",

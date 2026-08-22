@@ -125,6 +125,21 @@
       "summary": "Þriðji sonur Borrs, viðstaddur sköpun heimsins og sjaldan nefndur síðan.",
       "description": "Vé er bróðir Óðins, yngstur af þremur sonum Borrs og Bestlu. Hann stendur við hlið Óðins og Vilja þegar Ymir deyr og heimurinn er mótaður í kjölfarið, og handan þess eina atburðar hafa heimildirnar nær ekkert að segja um hann – nafn sem birtist við upphaf alls og þagnar svo."
     },
+    "idunn": {
+      "epithet": "Verndari eplanna",
+      "summary": "Eiginkona Braga, og ástæða þess að guðirnir eldast ekki.",
+      "description": "Iðunn geymir, í öskukistu, eplin sem guðirnir verða að bragða þegar ellin sækir að þeim, og við að bragða þau verða þeir ungir á ný – hlutverk sem allur hópurinn reiðir sig á án þess að nokkru sinni segja það beinum orðum. Hún er eiginkona Braga. Í eina skiptið sem hún og eplin hverfa kallar Hár það „nærri því örvæntingarfullt“ og frestar að segja söguna; það hefði getað farið mjög illa fyrir alla."
+    },
+    "bragi": {
+      "epithet": "Guð skáldskapar",
+      "summary": "Frægur fyrir mælsku umfram alla aðra, og ástæða þess að skáldskapur sjálfur er nefndur eftir honum.",
+      "description": "Bragi er frægur fyrir speki og umfram allt fyrir mælsku; hann kann mest í skáldskap, og skáldlistin sjálf – bragur – dregur nafn sitt af honum. Hann er eiginmaður Iðunnar. Í veislunni í Lokasennu reynir hann að meina Loka inngöngu, og það gagnast honum ekkert: Loki ásakar hann um heigulshátt frammi fyrir öllum, og einmitt gáfa Braga, hið rétta orð, virðist yfirgefa hann."
+    },
+    "nanna": {
+      "epithet": "Dóttir Nefs",
+      "summary": "Eiginkona Baldurs, og hjarta hennar bilar á líkskipi hans áður en það er kveikt í því.",
+      "description": "Nanna er eiginkona Baldurs. Þegar lík hans er borið út á líkskipið Hringhorna, bilar hjarta hennar samstundis af sorg, og hún er brennd við hlið hans. Jafnvel frá Hel heldur hún uppi siðum hinna lifandi: hún sendir Frigg línkyrtil og Fullu gullhring, og Hermóður ber þau heim ásamt fréttunum um að enn sé von um að eiginmaður hennar snúi aftur."
+    },
     "fenrir": {
       "epithet": "Úlfurinn",
       "summary": "Alinn upp af goðunum sem óttuðust hann, bundinn með borða, og hann gleypir Óðin.",

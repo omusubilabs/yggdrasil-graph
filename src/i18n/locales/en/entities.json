@@ -125,6 +125,21 @@
       "summary": "The third son of Borr, present at the making of the world and rarely named again.",
       "description": "Vé is Óðinn's brother, the youngest of Borr and Bestla's three sons. He stands beside Óðinn and Vili at Ymir's death and the shaping of the world that follows it, and beyond that single episode the sources have almost nothing to say about him — a name that appears at the beginning of everything and then goes quiet."
     },
+    "idunn": {
+      "epithet": "Keeper of the apples",
+      "summary": "Bragi's wife, and the reason the gods do not grow old.",
+      "description": "Iðunn keeps, in a chest of ash-wood, the apples the gods must taste whenever age comes on them, and tasting them they are young again — a duty the whole company depends on without ever quite saying so out loud. She is Bragi's wife. The one time she and her apples go missing, Hárr calls it 'near being desperate' and puts off telling the story for later; it very nearly went badly for everyone."
+    },
+    "bragi": {
+      "epithet": "God of poetry",
+      "summary": "Renowned for eloquence beyond any other, and the reason poetry itself is called by his name.",
+      "description": "Bragi is famed for wisdom and above all for fluency of speech; he knows more of skaldcraft than anyone, and skaldic art itself takes its name — bragr — from him. He is Iðunn's husband. At the feast in Lokasenna he tries to bar Loki from the hall, and it does him no good: Loki taunts him with cowardice in front of everyone, and Bragi's own gift, the right word, seems to be exactly what deserts him."
+    },
+    "nanna": {
+      "epithet": "Daughter of Nepr",
+      "summary": "Baldr's wife, and her heart breaks on his funeral ship before it is even lit.",
+      "description": "Nanna is Baldr's wife. When his body is carried out to the pyre-ship Hringhorni, the sight of it breaks her heart on the spot, and she is burned beside him. Even from Hel she keeps up the forms of the living: she sends Frigg a linen smock and Fulla a gold ring, and Hermóðr carries them home along with the news that there is still a chance her husband might return."
+    },
     "fenrir": {
       "epithet": "The wolf",
       "summary": "Raised by the gods who feared him, bound by a ribbon, and he swallows Óðinn.",

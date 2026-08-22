@@ -118,5 +118,29 @@
     "names": { "non": "Vé", "anglicized": "Ve" },
     "attestations": ["poetic-edda", "prose-edda"],
     "tags": ["odin-kin", "giant-descent"]
+  },
+  {
+    "id": "idunn",
+    "type": "deity",
+    "classes": ["aesir"],
+    "names": { "non": "Iðunn", "anglicized": "Idun" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "bragi",
+    "type": "deity",
+    "classes": ["aesir"],
+    "names": { "non": "Bragi", "anglicized": "Bragi" },
+    "attestations": ["poetic-edda", "prose-edda"],
+    "tags": ["wisdom"]
+  },
+  {
+    "id": "nanna",
+    "type": "deity",
+    "classes": ["aesir"],
+    "names": { "non": "Nanna", "anglicized": "Nanna" },
+    "attestations": ["prose-edda"],
+    "tags": ["underworld"]
   }
 ]

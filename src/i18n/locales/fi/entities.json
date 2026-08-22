@@ -125,6 +125,21 @@
       "summary": "Borrin kolmas poika, läsnä maailman luomisessa ja harvoin mainittu sen jälkeen.",
       "description": "Vé on Óðinnin veli, nuorin Borrin ja Bestlan kolmesta pojasta. Hän seisoo Óðinnin ja Vilin rinnalla, kun Ymir kuolee ja maailma muovataan sen jälkeen, eivätkä lähteet kerro hänestä juuri mitään tämän yhden tapahtuman lisäksi — nimi, joka ilmestyy kaiken alussa ja vaikenee sitten."
     },
+    "idunn": {
+      "epithet": "Omenien vartija",
+      "summary": "Bragin vaimo, ja syy siihen, miksi jumalat eivät vanhene.",
+      "description": "Iðunn säilyttää saarnipuisessa arkussa omenoita, joita jumalten on maistettava aina vanhuuden lähestyessä, ja niitä maistamalla he nuortuvat jälleen — velvollisuus, johon koko joukko luottaa sanomatta sitä koskaan ääneen. Hän on Bragin vaimo. Ainoalla kerralla, kun hän ja hänen omenansa katoavat, Hárr kutsuu sitä ”lähes epätoivoiseksi” ja lykkää tarinan kertomista; se olisi voinut päättyä hyvin huonosti kaikkien kannalta."
+    },
+    "bragi": {
+      "epithet": "Runouden jumala",
+      "summary": "Kaunopuheisuudessaan ylitse muiden tunnettu, ja syy siihen, miksi runoutta itseään kutsutaan hänen nimellään.",
+      "description": "Bragi tunnetaan viisaudestaan ja ennen kaikkea sanavalmiudestaan; hän osaa skaldirunoudesta enemmän kuin kukaan muu, ja itse skaldirunous — bragr — on saanut nimensä hänestä. Hän on Iðunnin aviomies. Lokasennan pidoissa hän yrittää estää Lokia pääsemästä saliin, eikä siitä ole hänelle mitään hyötyä: Loki syyttää häntä pelkuruudesta kaikkien edessä, ja juuri Bragin oma lahja, oikea sana, tuntuu olevan se, mikä hänet pettää."
+    },
+    "nanna": {
+      "epithet": "Nepin tytär",
+      "summary": "Baldrin vaimo, jonka sydän särkyy tämän hautalaivalla ennen kuin sitä on edes sytytetty.",
+      "description": "Nanna on Baldrin vaimo. Kun tämän ruumis kannetaan hautalaiva Hringhorniin, hänen sydämensä särkyy siinä paikassa surusta, ja hänet poltetaan Baldrin vierellä. Jopa Helistä käsin hän pitää yllä elävien tapoja: hän lähettää Friggille pellavapaidan ja Fullalle kultasormuksen, ja Hermóðr vie ne kotiin yhdessä uutisen kanssa, että yhä on mahdollisuus, että hänen aviomiehensä voi palata."
+    },
     "fenrir": {
       "epithet": "Susi",
       "summary": "Jumalat, jotka pelkäsivät häntä, kasvattivat hänet, hänet kahlittiin nauhalla, ja hän nielaisee Óðinnin.",

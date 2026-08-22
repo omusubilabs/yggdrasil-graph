@@ -125,6 +125,21 @@
       "summary": "Den tredje sonen till Borr, närvarande vid världens skapelse och sällan nämnd sedan dess.",
       "description": "Vé är Óðinns bror, den yngste av Borrs och Bestlas tre söner. Han står vid Óðinns och Vilis sida när Ymir dör och världen formas därefter, och bortom det enda avsnittet har källorna nästan inget att säga om honom — ett namn som dyker upp vid allts början och sedan tystnar."
     },
+    "idunn": {
+      "epithet": "Äpplenas väktare",
+      "summary": "Bragis hustru, och anledningen till att gudarna inte åldras.",
+      "description": "Iðunn förvarar, i ett skrin av askträ, de äpplen som gudarna måste smaka när ålderdomen närmar sig, och genom att smaka dem blir de unga igen — en plikt hela skaran förlitar sig på utan att någonsin riktigt säga det rakt ut. Hon är Bragis hustru. Den enda gången hon och hennes äpplen försvinner kallar Hárr det ”nära att bli desperat” och skjuter upp att berätta historien; det hade kunnat gå mycket illa för alla."
+    },
+    "bragi": {
+      "epithet": "Diktkonstens gud",
+      "summary": "Berömd för vältalighet bortom alla andra, och anledningen till att diktkonsten själv bär hans namn.",
+      "description": "Bragi är känd för vishet och framför allt för sitt flytande tal; han kan mer om skaldekonst än någon annan, och själva skaldekonsten — bragr — har sitt namn efter honom. Han är Iðunns make. Vid gästabudet i Lokasenna försöker han neka Loke tillträde till hallen, och det hjälper honom inte alls: Loke anklagar honom för feghet inför alla, och just Bragis gåva, det rätta ordet, tycks vara det som sviker honom."
+    },
+    "nanna": {
+      "epithet": "Dotter till Nepr",
+      "summary": "Baldrs hustru, och hennes hjärta brister på hans likskepp innan det ens är tänt.",
+      "description": "Nanna är Baldrs hustru. När hans kropp bärs ut till likskeppet Hringhorni brister hennes hjärta genast av sorg, och hon bränns vid hans sida. Även från Hel upprätthåller hon de levandes seder: hon skickar Frigg en linneskjorta och Fulla en guldring, och Hermóðr bär dem hem tillsammans med nyheten att det ännu finns en chans att hennes make kan återvända."
+    },
     "fenrir": {
       "epithet": "Vargen",
       "summary": "Uppfostrad av de gudar som fruktade honom, bunden med ett band, och han sväljer Óðinn.",
