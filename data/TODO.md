@@ -53,7 +53,18 @@ softened, per this file's own rule.
 
 - There is no type for _consulting_ or _taking counsel_, so Óðinn riding to
   Mímir's well at Gylfaginning 51 cannot be recorded. Adding one would also cover
-  Óðinn and the Norns, and Gylfaginning 15's account of Mímir's wisdom.
+  Óðinn and the Norns, and Gylfaginning 15's account of Mímir's wisdom, and the
+  wisdom-contest with **Vafþrúðnir** (Vafþrúðnismál) — checked directly against
+  Bellows during the Phase 1 entity expansion and left out for exactly this
+  reason, not for lack of a citation.
+- There is also no type for a **messenger or servant relationship**. Skírnir
+  wooing Gerðr on Freyr's behalf, in exchange for Freyr's sword (Gylfaginning
+  37), is well attested but has nowhere to attach: he is not Freyr's kin, does
+  not own the sword, and does not fight him. Same gap blocks **Hœnir**, whom
+  the Vanir take as hostage in exchange for Njörðr (Gylfaginning 23) — a
+  mutual exchange, not kinship, conflict, possession, or location. Both were
+  checked against the source text and dropped from Phase 1 rather than forced
+  into `fosters` or `dwells_in`.
 - `data/relations/transformation.json` is empty. The family is real —
   Gylfaginning 42 (Loki as a mare), 49 (as a woman, and as Þǫkk), 50 (as a salmon)
   — but every one of those needs an entity for what Loki becomes, and shape-shifts

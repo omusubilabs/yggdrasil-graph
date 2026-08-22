@@ -126,8 +126,11 @@ Three fields, three depths — the line under the name, the hover text, and the
 full account on `/entity/hymir`. Write your own sentences; do not paraphrase a
 translation closely enough that it remains the translator's.
 
-Other locales are optional. `en` is the source of truth, and anything missing
-elsewhere falls back to it key by key.
+`en` is the source of truth for the key structure, but check
+[`src/i18n/config.ts`](../src/i18n/config.ts) before skipping the rest: every
+locale currently declared `complete` must carry the same three keys for your
+new id too, or `npm run i18n:check` fails the build. Only a locale declared
+`partial` or `planned` may go without them.
 
 ## 6. Run the checks
 

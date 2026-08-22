@@ -179,9 +179,13 @@ This first release is a walking skeleton, staged deliberately. Shipped:
 
 Not built yet:
 
-- [ ] **next up** — the full 300–400 entity dataset.
-      [`data/TODO.md`](data/TODO.md) lists what is missing and why each gap
-      matters.
+- [ ] **next up** — the full 300–400 entity dataset. Phase 1 of the expansion
+      landed 21 entities and 29 relations (cosmogony, Æsir household, six
+      giants, the Norns, three artifacts), taking the graph from 49 to 70
+      entities — most of them resolving figures the existing prose already
+      named but never modelled. Still open: a `consults` relation type and a
+      populated `transformation` family (see `data/TODO.md`), then further
+      tranches toward 300–400.
 
 ---
 
