@@ -105,7 +105,8 @@
     "world": "World",
     "artifact": "Made thing",
     "place": "Place",
-    "event": "Event"
+    "event": "Event",
+    "form": "Form"
   },
   "tag": {
     "ragnarok-participant": "Present at Ragnarǫk",

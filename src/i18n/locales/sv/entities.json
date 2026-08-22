@@ -284,6 +284,36 @@
       "epithet": "Freyjas smycke",
       "summary": "Hennes ensam — och satt på Þórr endast en gång, för att göra en bröllopsförklädnad trovärdig.",
       "description": "Brísingamen tillhör Freyja, och Snorre nämner det bland hennes ägodelar utan att säga vem som gjorde det eller hur hon fick det. När gudarna klär ut Þórr till bruden för att vinna tillbaka Mjölner från Þrymr, hängs smycket om hans hals tillsammans med resten av förklädnaden — den enda gången i källorna det lämnar henne, och bara för att en hammare var värd mer."
+    },
+    "mare": {
+      "epithet": "Skepnaden som födde Sleipnir",
+      "summary": "Loke lockar Svaðilfari in i skogen i denna skepnad och föder senare det åttafotade fölet.",
+      "description": "Ett sto springer ut ur skogen och lockar hingsten Svaðilfari bort från byggmästarens arbete, så att han förlorar lönen han nästan hade vunnit av gudarna. Texten säger aldrig rakt ut att stoet är Loke. I stället berättar den att Loke hade sådant umgänge med Svaðilfari att han senare födde Sleipnir. Identiteten är därför en stark slutsats men markeras ärligt som underförstådd i grafen."
+    },
+    "salmon": {
+      "epithet": "Lokes sista gömställe",
+      "summary": "Han tar denna skepnad vid Fránangrsfallet, uppfinner nätet och fångas av Þórr.",
+      "description": "Loke gömmer sig vid Fránangrsfallet i skepnad av en lax medan han räknar ut hur gudarna kan fånga honom. Därmed uppfinner han det första fisknätet och lämnar dess mönster i askan när de kommer. Gudarna återskapar nätet, och efter att han en gång hoppat över det griper Þórr honom i stjärten — Snorres förklaring till varför laxen smalnar av baktill."
+    },
+    "thokk": {
+      "epithet": "Jättinnan som inte ville gråta",
+      "summary": "Den enda vägran håller Baldr i Hel — och texten säger att människor tog henne för Loke.",
+      "description": "Þǫkk sitter i en grotta när sändebuden ber allt levande och dött att gråta Baldr ur Hel. Hon ensam vägrar, Hels villkor uppfylls inte och Baldr stannar bland de döda. Snorre avslutar avsnittet med att säga att människor trodde att jättinnan var Loke Laufeyjarson. Identiteten återges som deras uppfattning och fastslås inte av berättaren, så grafen markerar den som underförstådd."
+    },
+    "woman": {
+      "epithet": "Skepnaden som fann Baldrs svaghet",
+      "summary": "Loke går in i Fensalir i denna skepnad och frågar Frigg vad som undkom hennes eder.",
+      "description": "Loke gör sig till en kvinnas skepnad och går till Frigg i Fensalir. Genom att fråga om alla ting har svurit att inte skada Baldr får han veta att misteln ensam ansågs för ung för att avlägga ed. Han går därifrån i samma förklädnad, drar upp skottet och lägger det enda farliga i händerna på Baldrs blinde bror."
+    },
+    "wolf": {
+      "epithet": "Skepnaden Váli tvingades in i",
+      "summary": "Asarna förvandlar Lokes son till en varg, och han sliter sönder sin bror Narfi.",
+      "description": "Denna varg är inte ett eget djur och inte en skepnad som Váli själv väljer. När gudarna griper Loke förvandlar de hans son Váli till en varg och låter den ena brodern slita sönder den andra. De använder Narfis inälvor till att binda Loke, och banden blir till järn. Skepnaden visar en förvandling som påtvingats som straff, inte Vális egen list."
+    },
+    "vali-lokason": {
+      "epithet": "Lokes förvandlade son",
+      "summary": "Förvandlad till en varg av asarna och tvingad att slita sönder sin bror Narfi.",
+      "description": "Váli Lokason förekommer i Snorres berättelse om Lokes fjättrande som en av två söner som asarna tar. De förvandlar Váli till en varg, och i den skepnaden sliter han sönder Narfi innan gudarna använder Narfis inälvor som Lokes band. Hans plats i Lokes familj tillhör en variant i källorna, och förvandlingen är något som görs med honom, inte en handling han själv väljer."
     }
   }
 }

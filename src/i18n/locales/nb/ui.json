@@ -105,7 +105,8 @@
     "world": "Verden",
     "artifact": "Laget gjenstand",
     "place": "Sted",
-    "event": "Hendelse"
+    "event": "Hendelse",
+    "form": "Skikkelse"
   },
   "tag": {
     "ragnarok-participant": "Til stede ved Ragnarök",

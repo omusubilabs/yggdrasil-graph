@@ -105,7 +105,8 @@
     "world": "Heimur",
     "artifact": "Smíðisgripur",
     "place": "Staður",
-    "event": "Atburður"
+    "event": "Atburður",
+    "form": "Hamur"
   },
   "tag": {
     "ragnarok-participant": "Þátttakandi í Ragnarökum",

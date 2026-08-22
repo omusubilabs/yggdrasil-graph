@@ -65,11 +65,6 @@ softened, per this file's own rule.
   mutual exchange, not kinship, conflict, possession, or location. Both were
   checked against the source text and dropped from Phase 1 rather than forced
   into `fosters` or `dwells_in`.
-- `data/relations/transformation.json` is empty. The family is real —
-  Gylfaginning 42 (Loki as a mare), 49 (as a woman, and as Þǫkk), 50 (as a salmon)
-  — but every one of those needs an entity for what Loki becomes, and shape-shifts
-  may want their own modelling rather than a plain edge. Left deliberately empty
-  rather than filled with something we would have to unpick.
 
 ### Verification passes
 

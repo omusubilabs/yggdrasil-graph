@@ -284,6 +284,36 @@
       "epithet": "Men Freyju",
       "summary": "Hennar eitt – og sett á Þór aðeins einu sinni, til að gera brúðardulargervi trúverðugt.",
       "description": "Brísingamen tilheyrir Freyju, og Snorri nefnir það meðal eigna hennar án þess að segja hver smíðaði það eða hvernig hún eignaðist það. Þegar guðirnir klæða Þór sem brúðina til að ná Mjölni aftur frá Þrym, er menið sett um háls hans ásamt öðru dulargervi – eina skiptið í heimildunum sem það yfirgefur hana, og aðeins vegna þess að hamar var meira virði."
+    },
+    "mare": {
+      "epithet": "Hamurinn sem ól Sleipni",
+      "summary": "Loki lokkar Svaðilfara út í skóg í þessum ham og fæðir síðar áttfætta folaldið.",
+      "description": "Merr hleypur úr skógi og lokkar stóðhestinn Svaðilfara frá borgarsmíðinni, svo smiðurinn missir þau laun sem hann var nærri búinn að vinna af goðunum. Textinn segir aldrei berum orðum að merrin sé Loki. Þess í stað segir hann að Loki hafi átt mök við Svaðilfara og síðar alið Sleipni. Samsemdin er því sterk ályktun, en er heiðarlega merkt sem óbein í grafinu."
+    },
+    "salmon": {
+      "epithet": "Síðasta fylgsni Loka",
+      "summary": "Hann bregður sér í laxslíki við Fránangrsfoss, finnur upp netið og Þór fangar hann.",
+      "description": "Loki felur sig við Fránangrsfoss í líki lax meðan hann íhugar hvernig goðin muni reyna að ná honum. Þar finnur hann upp fyrsta fiskinetið og skilur lögun þess eftir í öskunni þegar þau koma. Goðin endurgera netið, og eftir að Loki stekkur einu sinni yfir það grípur Þór um sporðinn á honum – skýring Snorra á því hvers vegna laxinn mjókkar aftur."
+    },
+    "thokk": {
+      "epithet": "Gýgurin sem grét ekki",
+      "summary": "Ein synjun heldur Baldri í Helju – og textinn segir að menn hafi talið hana Loka.",
+      "description": "Þǫkk situr í helli þegar sendiboðar biðja allt lifandi og dautt að gráta Baldur úr Helju. Hún ein neitar, skilyrði Heljar bregst og Baldur verður eftir meðal dauðra. Snorri lýkur frásögninni með því að segja að menn hafi talið gýgina vera Loka Laufeyjarson. Samsemdin er sögð sem álit manna en ekki fullyrt af sögumanni, og er því merkt óbein í grafinu."
+    },
+    "woman": {
+      "epithet": "Hamurinn sem fann veikleika Baldurs",
+      "summary": "Loki gengur í þessu líki til Fensala og spyr Frigg hvað hafi sloppið við eiða hennar.",
+      "description": "Loki bregður sér í konu líki og fer til Friggjar í Fensölum. Með því að spyrja hvort allir hlutir hafi svarið að granda ekki Baldri kemst hann að því að mistilteinninn einn þótti of ungur til að krefja um eið. Hann hverfur á braut í sama dulargervi, slítur upp sprotann og fær blindum bróður Baldurs eina hlutinn sem getur skaðað hann."
+    },
+    "wolf": {
+      "epithet": "Hamurinn sem Váli var neyddur í",
+      "summary": "Æsirnir breyta syni Loka í varg og hann rífur Narfa bróður sinn í sundur.",
+      "description": "Þessi vargur er ekki sérstakt dýr og ekki hamur sem Váli velur sjálfur. Þegar goðin taka Loka breyta þau Vála syni hans í varg og láta annan bróðurinn rífa hinn í sundur. Þau nota þarma Narfa til að binda Loka og böndin verða að járni. Hamurinn skráir umbreytingu sem er þröngvað upp á hann til refsingar, ekki bragðvísi Vála sjálfs."
+    },
+    "vali-lokason": {
+      "epithet": "Umbreyttur sonur Loka",
+      "summary": "Æsirnir breyta honum í varg og láta hann rífa Narfa bróður sinn í sundur.",
+      "description": "Váli Lokason birtist í frásögn Snorra af fjötrun Loka sem annar tveggja sona sem æsirnir taka. Þeir breyta Vála í vargslíki, og í þeim ham rífur hann Narfa í sundur áður en goðin nota þarma Narfa sem fjötur Loka. Staða hans í fjölskyldu Loka tilheyrir afbrigði í heimildunum, og umbreytingin er gerð á honum en ekki verk sem hann velur sjálfur."
     }
   }
 }

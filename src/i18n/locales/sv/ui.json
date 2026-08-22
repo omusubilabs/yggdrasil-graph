@@ -105,7 +105,8 @@
     "world": "Värld",
     "artifact": "Tillverkat ting",
     "place": "Plats",
-    "event": "Händelse"
+    "event": "Händelse",
+    "form": "Skepnad"
   },
   "tag": {
     "ragnarok-participant": "Närvarande vid Ragnarök",

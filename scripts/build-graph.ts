@@ -42,7 +42,7 @@ import {
 
 const OUT_DIR = 'src/generated';
 const OUT_FILE = join(OUT_DIR, 'graph.json');
-const GRAPH_VERSION = 1;
+const GRAPH_VERSION = 2;
 
 /** Deterministic PRNG. Any fixed seed will do; this one is arbitrary. */
 const mulberry32 = (seed: number) => () => {

@@ -257,6 +257,19 @@ const nodes: GraphNode[] = [
     },
     18,
   ),
+  // A form node, used to prove that transformation relations participate in
+  // the same neighbourhood and relation grouping model as every other edge.
+  node(
+    {
+      id: 'shape',
+      type: 'form',
+      classes: ['beings'],
+      names: { non: 'Hamr', anglicized: 'Shape' },
+      attestations: [],
+      tags: [],
+    },
+    19,
+  ),
 ];
 
 const links: GraphLink[] = [
@@ -387,6 +400,15 @@ const links: GraphLink[] = [
     sources: [{ work: 'song-of-crowns', locus: '6' }],
     family: 'kinship',
   }),
+  link({
+    from: 'envoy',
+    to: 'shape',
+    type: 'becomes',
+    directed: true,
+    certainty: 'attested',
+    sources: [{ work: 'chronicle-of-halls', locus: '7' }],
+    family: 'transformation',
+  }),
 ];
 
 const sources: Source[] = [
@@ -425,7 +447,7 @@ const tagIndex: Record<string, string[]> = {
 };
 
 export const sampleGraph: GraphData = {
-  version: 1,
+  version: 2,
   generatedAt: '2026-01-01T00:00:00.000Z',
   nodes,
   links,

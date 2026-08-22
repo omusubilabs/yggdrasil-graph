@@ -305,7 +305,9 @@ for (const entity of entities) {
   if (!degree.has(entity.id)) {
     warn(entity.id, 'has no relations, so it will not appear in the graph');
   }
-  if (entity.tags.length === 0) {
+  // Form nodes exist to make transformations graphable. They deliberately do
+  // not enter the tag-driven "related entity" suggestions.
+  if (entity.type !== 'form' && entity.tags.length === 0) {
     warn(entity.id, 'has no tags, so it will never surface as a related-entity suggestion');
   }
 }

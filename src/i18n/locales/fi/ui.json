@@ -105,7 +105,8 @@
     "world": "Maailma",
     "artifact": "Tehty esine",
     "place": "Paikka",
-    "event": "Tapahtuma"
+    "event": "Tapahtuma",
+    "form": "Muoto"
   },
   "tag": {
     "ragnarok-participant": "Läsnä Ragnarökissa",

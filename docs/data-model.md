@@ -13,6 +13,7 @@ data/
 │   ├── vanir.json
 │   ├── jotnar.json
 │   ├── beings.json
+│   ├── forms.json
 │   ├── worlds.json
 │   └── artifacts.json
 ├── relations/         one file per family, each a flat array
@@ -64,10 +65,10 @@ Snorri uses both names for both.
 
 ### `type`
 
-`deity` · `being` · `world` · `artifact` · `place` · `event`
+`deity` · `being` · `world` · `artifact` · `place` · `event` · `form`
 
 Drives node **shape** in the renderer: circles for people, hexagons for worlds
-and places, lozenges for made things.
+and places, lozenges for made things, and a ring for assumed forms.
 
 ### `classes`
 
@@ -87,15 +88,15 @@ in `jotnar.json` because that is his descent; his classes say he is both.
 
 ### `names`
 
-| Key          | Meaning                                        |
-| ------------ | ---------------------------------------------- |
-| `non`        | Normalized Old Norse, with correct diacritics. |
-| `anglicized` | The conventional English-language spelling.    |
+| Key          | Meaning                                                          |
+| ------------ | ---------------------------------------------------------------- |
+| `non`        | Normalized Old Norse name or form term, with correct diacritics. |
+| `anglicized` | The conventional English-language spelling or form gloss.        |
 
-`names.non` is **data, not a translation.** It is the historical name and is
-identical in every locale, which is why it lives here rather than in
-`src/i18n/`. It is the only string in `data/entities/` and the only exception to
-"no prose in entity files".
+`names.non` is **data, not a translation.** It is the historical name, or the
+Old Norse term when `type` is `form`, and is identical in every locale. That is
+why it lives here rather than in `src/i18n/`. It is the only string in
+`data/entities/` and the only exception to "no prose in entity files".
 
 Orthography matters: `þ ð æ ø ǫ ę ǿ á é í ó ú ý` must all be correct.
 `npm run check:glyphs` verifies every shipped font face can actually draw them
@@ -107,8 +108,8 @@ Source **collections** — `poetic-edda`, `prose-edda` — in which the entity
 appears at all. Relations cite individual works and loci; this is the coarser
 fact, and it drives the "Appears in" block on entity pages.
 
-Only list a collection if the name appears in the poems or the prose text
-itself. A name that appears only in a translator's footnote is not an
+Only list a collection if the name or form term appears in the poems or the
+prose text itself. A term that appears only in a translator's footnote is not an
 attestation.
 
 ### `tags`
@@ -171,11 +172,11 @@ reviewing a data pull request gets much harder.
 | `location`       | `guards` `dwells_in` `rules` `encircles` `root_reaches` `raised_in`             |
 | `transformation` | `becomes`                                                                       |
 
-`transformation.json` is currently an empty array. The family is real —
-Gylfaginning 42, 49 and 50 are all shape-shifts — but each needs an entity for
-what Loki becomes, and shape-shifting may deserve its own modelling rather than
-a plain edge. It is left empty rather than filled with something we would have
-to unpick. See `data/TODO.md`.
+Transformation targets are `form` nodes from `forms.json`. A form represents a
+kind of shape, not one occurrence: if the same figure takes the same form at
+several loci, one `becomes` relation gathers those citations. A named persona
+such as Þǫkk remains distinct from the generic `woman` form because the name is
+itself part of what the source asks the reader to notice.
 
 Adding a type means updating the schema enum, `RELATION_FAMILIES` in
 `src/graph/types.ts`, and its `label`, `inverse` and `phrase` in every locale
@@ -308,7 +309,8 @@ convention.
 13. `partOf` on a work resolves to something that is actually a collection.
 
 **Warnings** (not failures): an entity with no relations will not appear in the
-graph; an entity with no tags will never surface as a suggestion.
+graph; a non-form entity with no tags will never surface as a suggestion. Form
+nodes deliberately carry no tags so shapes do not pollute related-entity results.
 
 ---
 

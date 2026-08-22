@@ -7,7 +7,15 @@
  * they only work together.
  */
 
-export const ENTITY_TYPES = ['deity', 'being', 'world', 'artifact', 'place', 'event'] as const;
+export const ENTITY_TYPES = [
+  'deity',
+  'being',
+  'world',
+  'artifact',
+  'place',
+  'event',
+  'form',
+] as const;
 export type EntityType = (typeof ENTITY_TYPES)[number];
 
 export const ENTITY_CLASSES = [

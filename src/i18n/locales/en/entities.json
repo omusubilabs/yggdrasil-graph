@@ -284,6 +284,36 @@
       "epithet": "Freyja's necklace",
       "summary": "Hers alone — and put on Þórr only once, to make a wedding disguise convincing.",
       "description": "Brísingamen belongs to Freyja, and Snorri names it among her possessions without saying who made it or how she came by it. When the gods dress Þórr as the bride to win back Mjǫllnir from Þrymr, the necklace goes around his neck along with the rest of the disguise — the one time in the sources it leaves her, and only because a hammer was worth more."
+    },
+    "mare": {
+      "epithet": "The form that bore Sleipnir",
+      "summary": "Loki draws Svaðilfari into the woods in this shape and later bears the eight-legged foal.",
+      "description": "A mare runs out of the woods and draws the stallion Svaðilfari away from the builder's work, costing him the bargain he had nearly won from the gods. The text never says outright that the mare is Loki. It says instead that Loki had dealings with Svaðilfari and later gave birth to Sleipnir, which makes the identity an inference strong enough to record and honest enough to mark implied."
+    },
+    "salmon": {
+      "epithet": "Loki's last hiding place",
+      "summary": "He takes this shape at Fránangr-Falls, invents the net, and is caught by Þórr.",
+      "description": "Loki hides at Fránangr-Falls in the likeness of a salmon while he works out how the gods might catch him. In doing so he invents the first fishing net and leaves its pattern in the ashes when they arrive. The gods remake it, and after he leaps the net once, Þórr catches him by the tail — the reason Snorri gives for the salmon's tapering back."
+    },
+    "thokk": {
+      "epithet": "The giantess who would not weep",
+      "summary": "The one refusal that keeps Baldr in Hel — and the text says people took her for Loki.",
+      "description": "Þǫkk sits in a cave when the messengers ask every living and dead thing to weep Baldr out of Hel. She alone refuses, so Hel's condition fails and Baldr remains among the dead. Snorri closes the episode by saying that people believed the giantess was Loki Laufeyjarson. The identification is reported rather than asserted by the narrator, so the graph keeps it visible as implied."
+    },
+    "woman": {
+      "epithet": "The shape that found Baldr's weakness",
+      "summary": "Loki enters Fensalir in this likeness and asks Frigg what escaped her oaths.",
+      "description": "Loki makes himself into the likeness of a woman and goes to Frigg at Fensalir. By asking whether every thing has sworn not to harm Baldr, he learns that mistletoe alone was thought too young to bind with an oath. He leaves in the same disguise, pulls up the shoot, and puts the one dangerous thing in the hands of Baldr's blind brother."
+    },
+    "wolf": {
+      "epithet": "The shape forced on Váli",
+      "summary": "The Æsir turn Loki's son into a wolf, and he tears apart his brother Narfi.",
+      "description": "This wolf is not a separate beast and not a shape Váli chooses. When the gods seize Loki, they change his son Váli into a wolf and make one brother tear the other apart. They use Narfi's entrails to bind Loki, and the bonds turn to iron. The form records a transformation inflicted as punishment, not a display of Váli's own cunning."
+    },
+    "vali-lokason": {
+      "epithet": "Loki's transformed son",
+      "summary": "Changed into a wolf by the Æsir and made to tear apart his brother Narfi.",
+      "description": "Váli Lokason appears in Snorri's account of Loki's binding as one of two sons taken by the Æsir. They change Váli into the form of a wolf, and in that form he tears Narfi apart before the gods use Narfi's entrails as Loki's bonds. His place in Loki's household belongs to a variant thread in the sources, and the transformation is something done to him, not an act he undertakes himself."
     }
   }
 }

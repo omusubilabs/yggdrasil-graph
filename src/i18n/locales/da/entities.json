@@ -284,6 +284,36 @@
       "epithet": "Freyjas halskæde",
       "summary": "Hendes alene — og sat på Þórr kun én gang, for at gøre en bryllupsforklædning troværdig.",
       "description": "Brísingamen tilhører Freyja, og Snorre nævner det blandt hendes ejendele uden at sige, hvem der lavede det, eller hvordan hun fik det. Da guderne klæder Þórr ud som bruden for at vinde Mjǫllnir tilbage fra Þrymr, bliver halskæden hængt om hans hals sammen med resten af forklædningen — den eneste gang i kilderne, den forlader hende, og kun fordi en hammer var mere værd."
+    },
+    "mare": {
+      "epithet": "Skikkelsen der fødte Sleipnir",
+      "summary": "Loke lokker Svaðilfari ind i skoven i denne skikkelse og føder senere det ottebenede føl.",
+      "description": "En hoppe løber ud af skoven og lokker hingsten Svaðilfari væk fra bygmesterens arbejde, så han mister den løn, han næsten havde vundet fra guderne. Teksten siger aldrig direkte, at hoppen er Loke. I stedet fortæller den, at Loke havde en sådan færd med Svaðilfari, at han senere fødte Sleipnir. Identiteten er derfor en stærk slutning, men er ærligt markeret som underforstået i grafen."
+    },
+    "salmon": {
+      "epithet": "Lokes sidste skjulested",
+      "summary": "Han tager denne skikkelse ved Fránangr-faldet, opfinder nettet og bliver fanget af Þórr.",
+      "description": "Loke skjuler sig ved Fránangr-faldet i skikkelse af en laks, mens han regner ud, hvordan guderne kan fange ham. Derved opfinder han det første fiskenet og efterlader dets mønster i asken, da de kommer. Guderne genskaber nettet, og efter at han én gang springer over det, griber Þórr ham i halen — Snorres forklaring på, hvorfor laksen bliver smallere bagtil."
+    },
+    "thokk": {
+      "epithet": "Jættekvinden der ikke ville græde",
+      "summary": "Det ene afslag holder Baldr i Hel — og teksten siger, at folk tog hende for Loke.",
+      "description": "Þǫkk sidder i en hule, da sendebuddene beder alt levende og dødt om at græde Baldr ud af Hel. Hun alene nægter, Hels betingelse bliver ikke opfyldt, og Baldr bliver blandt de døde. Snorre afslutter episoden med at sige, at folk mente, jættekvinden var Loke Laufeyjarson. Identiteten gengives som deres opfattelse og fastslås ikke af fortælleren, så grafen markerer den som underforstået."
+    },
+    "woman": {
+      "epithet": "Skikkelsen der fandt Baldrs svaghed",
+      "summary": "Loke går ind i Fensalir i denne skikkelse og spørger Frigg, hvad der undslap hendes eder.",
+      "description": "Loke gør sig til en kvindes skikkelse og går til Frigg i Fensalir. Ved at spørge, om alle ting har svoret ikke at skade Baldr, får han at vide, at misteltenen alene blev anset for for ung til at aflægge ed. Han går bort i samme forklædning, river skuddet op og lægger den eneste farlige ting i hænderne på Baldrs blinde bror."
+    },
+    "wolf": {
+      "epithet": "Skikkelsen Váli blev tvunget ind i",
+      "summary": "Aserne forvandler Lokes søn til en ulv, og han river sin bror Narfi i stykker.",
+      "description": "Denne ulv er ikke et selvstændigt dyr og ikke en skikkelse, Váli selv vælger. Da guderne griber Loke, forvandler de hans søn Váli til en ulv og lader den ene bror rive den anden i stykker. De bruger Narfis indvolde til at binde Loke, og båndene bliver til jern. Skikkelsen viser en forvandling påtvunget som straf, ikke Vális egen snedighed."
+    },
+    "vali-lokason": {
+      "epithet": "Lokes forvandlede søn",
+      "summary": "Forvandlet til en ulv af aserne og tvunget til at rive sin bror Narfi i stykker.",
+      "description": "Váli Lokason optræder i Snorres fortælling om Lokes binding som en af to sønner, aserne tager. De forvandler Váli til en ulv, og i den skikkelse river han Narfi i stykker, før guderne bruger Narfis indvolde som Lokes bånd. Hans plads i Lokes familie tilhører en variant i kilderne, og forvandlingen er noget, der gøres ved ham, ikke en handling han selv vælger."
     }
   }
 }

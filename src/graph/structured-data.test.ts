@@ -31,6 +31,10 @@ describe('buildEntityJsonLd: @type mapping', () => {
   it('maps artifact to Thing', () => {
     assert.equal(jsonLdFor('blade')['@type'], 'Thing');
   });
+
+  it('maps form to Thing', () => {
+    assert.equal(jsonLdFor('shape')['@type'], 'Thing');
+  });
 });
 
 describe('buildEntityJsonLd: name fields', () => {
@@ -80,6 +84,7 @@ describe('buildEntityJsonLd: citation', () => {
       'Song of Crowns 5',
       'Chronicle of Halls 1',
       'Chronicle of Halls 2',
+      'Chronicle of Halls 7',
     ]);
   });
 
@@ -104,12 +109,22 @@ describe('buildEntityJsonLd: certainty filter', () => {
   });
 
   const sources: Source[] = [
-    { id: 'reliable-work', kind: 'work', titles: { non: 'Áreiðanlegt', en: 'Reliable Work' }, date: 'undated' },
-    { id: 'shaky-work', kind: 'work', titles: { non: 'Vafasamt', en: 'Shaky Work' }, date: 'undated' },
+    {
+      id: 'reliable-work',
+      kind: 'work',
+      titles: { non: 'Áreiðanlegt', en: 'Reliable Work' },
+      date: 'undated',
+    },
+    {
+      id: 'shaky-work',
+      kind: 'work',
+      titles: { non: 'Vafasamt', en: 'Shaky Work' },
+      date: 'undated',
+    },
   ];
 
   const graph: GraphData = {
-    version: 1,
+    version: 2,
     generatedAt: '2026-01-01T00:00:00.000Z',
     nodes: [
       node({

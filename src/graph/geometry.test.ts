@@ -101,6 +101,14 @@ describe('nodeShapePath', () => {
     assert.equal(nodeShapePath('world', 10), 'M10,0L5,8.66L-5,8.66L-10,0L-5,-8.66L5,-8.66Z');
   });
 
+  it('draws a form as a stable double circle distinct from a person', () => {
+    assert.equal(
+      nodeShapePath('form', 10),
+      'M-10,0a10,10 0 1,0 20,0a10,10 0 1,0 -20,0ZM-4.6,0a4.6,4.6 0 1,0 9.2,0a4.6,4.6 0 1,0 -9.2,0Z',
+    );
+    assert.notEqual(nodeShapePath('form', 10), nodeShapePath('being', 10));
+  });
+
   it('draws a circle arc for every other type', () => {
     assert.equal(nodeShapePath('deity', 10), 'M-10,0a10,10 0 1,0 20,0a10,10 0 1,0 -20,0Z');
     assert.equal(nodeShapePath('being', 10), nodeShapePath('deity', 10));

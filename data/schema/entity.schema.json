@@ -22,7 +22,7 @@
         },
         "type": {
           "description": "What kind of thing this is. Drives node shape in the renderer.",
-          "enum": ["deity", "being", "world", "artifact", "place", "event"]
+          "enum": ["deity", "being", "world", "artifact", "place", "event", "form"]
         },
         "classes": {
           "description": "Grouping for colour and filtering. An entity may hold several — Loki is both aesir and jotnar, and that tension is the point.",
@@ -37,13 +37,13 @@
           "required": ["non", "anglicized"],
           "properties": {
             "non": {
-              "description": "Normalized Old Norse. This is DATA, not a translation: it is identical in every locale. Diacritics must be correct — þ ð æ ø ǫ á é í ó ú ý.",
+              "description": "Normalized Old Norse name, or the Old Norse term for a form node. This is DATA, not a translation: it is identical in every locale. Diacritics must be correct — þ ð æ ø ǫ á é í ó ú ý.",
               "type": "string",
               "minLength": 1,
               "maxLength": 64
             },
             "anglicized": {
-              "description": "The conventional English-language spelling, for readers who have met these names in English.",
+              "description": "The conventional English-language spelling, or the English gloss for a form node.",
               "type": "string",
               "minLength": 1,
               "maxLength": 64

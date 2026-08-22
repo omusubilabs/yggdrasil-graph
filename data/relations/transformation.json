@@ -1,1 +1,47 @@
-[]
+[
+  {
+    "id": "loki--mare--becomes",
+    "from": "loki",
+    "to": "mare",
+    "type": "becomes",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "gylfaginning", "locus": "42" }]
+  },
+  {
+    "id": "loki--salmon--becomes",
+    "from": "loki",
+    "to": "salmon",
+    "type": "becomes",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "50" }]
+  },
+  {
+    "id": "loki--thokk--becomes",
+    "from": "loki",
+    "to": "thokk",
+    "type": "becomes",
+    "directed": true,
+    "certainty": "implied",
+    "sources": [{ "work": "gylfaginning", "locus": "49" }]
+  },
+  {
+    "id": "loki--woman--becomes",
+    "from": "loki",
+    "to": "woman",
+    "type": "becomes",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "49" }]
+  },
+  {
+    "id": "vali-lokason--wolf--becomes",
+    "from": "vali-lokason",
+    "to": "wolf",
+    "type": "becomes",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "50" }]
+  }
+]

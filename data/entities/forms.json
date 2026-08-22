@@ -1,0 +1,42 @@
+[
+  {
+    "id": "mare",
+    "type": "form",
+    "classes": ["beings"],
+    "names": { "non": "Merr", "anglicized": "Mare" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "salmon",
+    "type": "form",
+    "classes": ["beings"],
+    "names": { "non": "Lax", "anglicized": "Salmon" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "thokk",
+    "type": "form",
+    "classes": ["jotnar"],
+    "names": { "non": "Þǫkk", "anglicized": "Thokk" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "woman",
+    "type": "form",
+    "classes": ["beings"],
+    "names": { "non": "Kona", "anglicized": "Woman" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  },
+  {
+    "id": "wolf",
+    "type": "form",
+    "classes": ["beings"],
+    "names": { "non": "Vargr", "anglicized": "Wolf" },
+    "attestations": ["prose-edda"],
+    "tags": []
+  }
+]

@@ -1,7 +1,7 @@
-# Adding an entity
+# Adding an entity or form
 
-A checklist for putting a new figure into the graph. If you would rather see one
-worked end to end with the citation-hunting included, read the
+A checklist for putting a new figure or assumed form into the graph. If you
+would rather see one worked end to end with the citation-hunting included, read the
 [Ullr example in CONTRIBUTING.md](../CONTRIBUTING.md#worked-example-adding-ullr-and-his-mother)
 first — this page is the version you keep open while you work.
 
@@ -11,9 +11,9 @@ For what each field means, see [the data model](data-model.md).
 
 ## Before you start
 
-**Does the figure earn a node?** An entity with no relations is invisible in the
+**Does it earn a node?** An entity with no relations is invisible in the
 graph — `npm run validate` will warn you about it. The useful unit of work is
-therefore _a figure plus at least one cited relation_, not a figure alone.
+therefore _a figure or form plus at least one cited relation_, not a node alone.
 
 **Do you have a locus?** If not, that is fine, but it changes what you write:
 the relation goes in as `certainty: "unverified"` with empty `sources` and an
@@ -41,11 +41,17 @@ One file per group, under `data/entities/`:
 | `vanir.json`     | Vanir                                                                              |
 | `jotnar.json`    | Giants — including Loki, whose descent is giant even though his `classes` say both |
 | `beings.json`    | Monsters, animals, and anything that fits nowhere else                             |
+| `forms.json`     | Shapes assumed through transformation; categories, not individual events           |
 | `worlds.json`    | Worlds and named places, including Yggdrasill                                      |
 | `artifacts.json` | Made things                                                                        |
 
 The file records origin. `classes` records how the graph colours it. They can
 disagree, and for Loki they do.
+
+A form node is one reusable shape category. Aggregate several citations for the
+same actor and shape on one `becomes` relation; do not create an event node per
+appearance. Keep a named persona such as `thokk` separate from a generic form
+such as `woman`. Form nodes have `type: "form"` and deliberately empty tags.
 
 ## 3. Write the entity
 
@@ -54,7 +60,7 @@ Keep the file sorted by id.
 ```jsonc
 {
   "id": "hymir",
-  "type": "being", // deity | being | world | artifact | place | event
+  "type": "being", // deity | being | world | artifact | place | event | form
   "classes": ["jotnar"], // may hold several
   "names": {
     "non": "Hymir", // Old Norse, correct diacritics — this is data
@@ -147,8 +153,9 @@ roughly this order of frequency:
 - a relation type in the wrong family's file
 - an `unverified` relation you forgot to list in `data/TODO.md`
 
-It will also **warn** — not fail — if your new entity has no relations or no
-tags. Both warnings are worth acting on.
+It will also **warn** — not fail — if your new entity has no relations, or if a
+non-form entity has no tags. Both warnings are worth acting on; tagless form
+nodes are intentional and exempt from the second warning.
 
 ## 7. Look at it
 

@@ -284,6 +284,36 @@
       "epithet": "Freyjan kaulakoru",
       "summary": "Yksin hänen omansa — ja puettiin Þórrille vain kerran, tehdäkseen hääasun uskottavaksi.",
       "description": "Brísingamen kuuluu Freyjalle, ja Snorri mainitsee sen hänen omaisuutensa joukossa kertomatta, kuka sen teki tai miten hän sen sai. Kun jumalat pukevat Þórrin morsiameksi voittaakseen Mjǫllnirin takaisin Þrymriltä, kaulakoru ripustetaan hänen kaulaansa muun valeasun kanssa — ainoa kerta lähteissä, jolloin se lähtee hänen luotaan, ja vain koska vasara oli enemmän arvoinen."
+    },
+    "mare": {
+      "epithet": "Sleipnirin synnyttänyt muoto",
+      "summary": "Loki houkuttelee Svaðilfarin metsään tässä muodossa ja synnyttää myöhemmin kahdeksanjalkaisen varsan.",
+      "description": "Tamma juoksee metsästä ja houkuttelee ori Svaðilfarin pois rakentajan työstä, jolloin tämä menettää palkkion, jonka oli melkein voittanut jumalilta. Teksti ei sano suoraan, että tamma on Loki. Sen sijaan se kertoo Lokin olleen tekemisissä Svaðilfarin kanssa ja synnyttäneen myöhemmin Sleipnirin. Samuus on siis vahva päätelmä, mutta kaaviossa se merkitään rehellisesti epäsuoraksi."
+    },
+    "salmon": {
+      "epithet": "Lokin viimeinen piilopaikka",
+      "summary": "Hän ottaa tämän muodon Fránangrin putouksella, keksii verkon ja joutuu Þórrin vangiksi.",
+      "description": "Loki piiloutuu Fránangrin putouksella lohen hahmossa pohtiessaan, miten jumalat voisivat saada hänet kiinni. Samalla hän keksii ensimmäisen kalaverkon ja jättää sen kuvion tuhkaan jumalten saapuessa. Jumalat rakentavat verkon uudelleen, ja kun Loki on kerran hypännyt sen yli, Þórr tarttuu häntä pyrstöstä — Snorrin selitys sille, miksi lohi kapenee takaosastaan."
+    },
+    "thokk": {
+      "epithet": "Jättiläisnainen, joka ei itkenyt",
+      "summary": "Yksi kieltäytyminen pitää Baldrin Helissä — ja tekstin mukaan ihmiset pitivät häntä Lokina.",
+      "description": "Þǫkk istuu luolassa, kun sanansaattajat pyytävät kaikkea elävää ja kuollutta itkemään Baldrin pois Helistä. Hän yksin kieltäytyy, Helin ehto jää täyttymättä ja Baldr jää kuolleiden joukkoon. Snorri päättää kohtauksen sanomalla ihmisten uskoneen jättiläisnaisen olleen Loki Laufeyjarson. Samuus esitetään ihmisten käsityksenä eikä kertojan vahvistamana, joten kaavio merkitsee sen epäsuoraksi."
+    },
+    "woman": {
+      "epithet": "Baldrin heikkouden löytänyt muoto",
+      "summary": "Loki astuu tässä muodossa Fensaliriin ja kysyy Friggiltä, mikä jäi hänen valojensa ulkopuolelle.",
+      "description": "Loki muuttaa itsensä naisen näköiseksi ja menee Friggin luo Fensaliriin. Kysymällä, ovatko kaikki asiat vannoneet, etteivät vahingoita Baldria, hän saa tietää mistelin olleen ainoa, jota pidettiin liian nuorena valaan. Loki lähtee samassa valeasussa, repii verson maasta ja antaa ainoan vaarallisen asian Baldrin sokean veljen käsiin."
+    },
+    "wolf": {
+      "epithet": "Muoto, johon Váli pakotettiin",
+      "summary": "Aasat muuttavat Lokin pojan sudeksi, ja hän repii veljensä Narfin kappaleiksi.",
+      "description": "Tämä susi ei ole erillinen peto eikä muoto, jonka Váli itse valitsee. Kun jumalat ottavat Lokin kiinni, he muuttavat hänen poikansa Válin sudeksi ja panevat toisen veljen repimään toisen kappaleiksi. He sitovat Lokin Narfin sisälmyksillä, ja siteet muuttuvat raudaksi. Muoto kuvaa rangaistukseksi pakotettua muutosta, ei Válin omaa viekkautta."
+    },
+    "vali-lokason": {
+      "epithet": "Lokin muutettu poika",
+      "summary": "Aasat muuttavat hänet sudeksi ja pakottavat repimään veljensä Narfin kappaleiksi.",
+      "description": "Váli Lokason esiintyy Snorrin kertomuksessa Lokin sitomisesta toisena kahdesta pojasta, jotka aasat ottavat kiinni. He muuttavat Válin sudeksi, ja siinä muodossa hän repii Narfin kappaleiksi ennen kuin jumalat käyttävät Narfin sisälmyksiä Lokin siteinä. Hänen paikkansa Lokin perheessä kuuluu lähteiden muunnelmaan, ja muodonmuutos tehdään hänelle eikä ole hänen itse valitsemansa teko."
     }
   }
 }

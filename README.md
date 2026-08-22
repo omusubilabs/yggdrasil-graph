@@ -61,7 +61,7 @@ files. Full detail is in [`docs/data-model.md`](docs/data-model.md).
 ```jsonc
 {
   "id": "loki", // stable, lowercase, never renamed
-  "type": "deity", // deity | being | world | artifact | place | event
+  "type": "deity", // deity | being | world | artifact | place | event | form
   "classes": ["aesir", "jotnar"], // an entity may hold several — Loki holds both
   "names": { "non": "Loki", "anglicized": "Loki" },
   "attestations": ["poetic-edda", "prose-edda"],
@@ -71,8 +71,8 @@ files. Full detail is in [`docs/data-model.md`](docs/data-model.md).
 
 No prose lives in entity files. Descriptions are in
 `src/i18n/locales/<locale>/entities.json`, so they can be translated. The Old
-Norse name is the exception: it is the historical name and is identical in every
-language.
+Norse name or form term is the exception: it is source data and is identical in
+every language.
 
 **Relations** live in `data/relations/`, one file per family:
 
@@ -176,6 +176,9 @@ This first release is a walking skeleton, staged deliberately. Shipped:
 - [x] Danish (`da`) fully translated — `entities.json` and `relations.json`
       now render natively alongside `ui.json`; `da` is `complete` in
       `src/i18n/config.ts`. All six post-v1 locales are now shipped.
+- [x] The `transformation` family — five source-backed form nodes make Loki's
+      mare, woman, Þǫkk and salmon shapes, and Váli Lokason's forced wolf shape,
+      visible as graph relations.
 
 Not built yet:
 
@@ -184,9 +187,9 @@ Not built yet:
       giants, the Norns, three artifacts), taking the graph from 49 to 70
       entities — most of them resolving figures the existing prose already
       named but never modelled. The follow-up counsel slice added `consults`
-      and the attested Óðinn→Mímir edge, taking the graph to 106 relations.
-      Still open: a populated `transformation` family (see `data/TODO.md`),
-      then further tranches toward 300–400.
+      and the attested Óðinn→Mímir edge. The graph now has 70 mythological
+      entities plus five form nodes and 111 relations; further tranches carry
+      the figure count toward 300–400.
 
 ---
 

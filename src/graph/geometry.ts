@@ -75,6 +75,8 @@ export const trimToRim = (
  */
 export const nodeShapePath = (type: GraphNode['type'], r: number): string => {
   const p = (n: number) => Math.round(n * 100) / 100;
+  const circle = (radius: number) =>
+    `M${p(-radius)},0a${p(radius)},${p(radius)} 0 1,0 ${p(radius * 2)},0a${p(radius)},${p(radius)} 0 1,0 ${p(-radius * 2)},0Z`;
   switch (type) {
     case 'artifact':
       // A lozenge, like a gemstone set into the page.
@@ -88,8 +90,12 @@ export const nodeShapePath = (type: GraphNode['type'], r: number): string => {
       });
       return `M${pts.join('L')}Z`;
     }
+    case 'form':
+      // Two concentric subpaths with even-odd fill make a ring: still round
+      // enough to read as a living shape, but visibly not another person.
+      return `${circle(r)}${circle(r * 0.46)}`;
     default:
-      return `M${p(-r)},0a${p(r)},${p(r)} 0 1,0 ${p(r * 2)},0a${p(r)},${p(r)} 0 1,0 ${p(-r * 2)},0Z`;
+      return circle(r);
   }
 };
 

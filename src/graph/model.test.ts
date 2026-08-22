@@ -66,9 +66,9 @@ describe('neighbourhood', () => {
     const { nodes, links } = neighbourhood(index, 'envoy');
     assert.deepEqual(
       [...nodes].sort(),
-      ['aide', 'bridge', 'confidant', 'envoy', 'gate', 'mentor'].sort(),
+      ['aide', 'bridge', 'confidant', 'envoy', 'gate', 'mentor', 'shape'].sort(),
     );
-    assert.equal(links.size, 6);
+    assert.equal(links.size, 7);
   });
 
   it('counts a parallel pair as two links but two nodes, not three', () => {
@@ -83,7 +83,7 @@ describe('relationsByFamily', () => {
     const grouped = relationsByFamily(index, 'envoy');
     assert.deepEqual(
       grouped.map(([family]) => family),
-      ['kinship', 'counsel', 'location'],
+      ['kinship', 'counsel', 'location', 'transformation'],
     );
   });
 
@@ -109,6 +109,19 @@ describe('relationsByFamily', () => {
 
   it('returns an empty list for an id with no incident links', () => {
     assert.deepEqual(relationsByFamily(index, 'loner'), []);
+  });
+
+  it('exposes a transformation as outgoing on the actor and incoming on the form', () => {
+    const [, outgoing] = relationsByFamily(index, 'envoy').find(([f]) => f === 'transformation')!;
+    const [, incoming] = relationsByFamily(index, 'shape').find(([f]) => f === 'transformation')!;
+    assert.deepEqual(
+      outgoing.map((view) => [view.link.type, view.outgoing, view.other?.id]),
+      [['becomes', true, 'shape']],
+    );
+    assert.deepEqual(
+      incoming.map((view) => [view.link.type, view.outgoing, view.other?.id]),
+      [['becomes', false, 'envoy']],
+    );
   });
 });
 

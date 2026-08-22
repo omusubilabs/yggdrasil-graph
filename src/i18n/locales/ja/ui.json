@@ -105,7 +105,8 @@
     "world": "世界",
     "artifact": "作られしもの",
     "place": "場所",
-    "event": "出来事"
+    "event": "出来事",
+    "form": "形態"
   },
   "tag": {
     "ragnarok-participant": "ラグナロクに立ち会う",

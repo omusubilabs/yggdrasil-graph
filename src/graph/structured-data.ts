@@ -13,6 +13,7 @@ const SCHEMA_TYPE: Record<EntityType, 'Thing' | 'Place' | 'Event'> = {
   world: 'Place',
   place: 'Place',
   event: 'Event',
+  form: 'Thing',
 };
 
 /**
