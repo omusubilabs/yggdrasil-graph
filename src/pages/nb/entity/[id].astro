@@ -2,8 +2,9 @@
 /**
  * Norwegian Bokmål entity pages.
  *
- * `nb` stays a `partial` locale (see src/i18n/config.ts): only ui.json is
- * translated, so entities.json/relations.json keys fall back to en.
+ * Any entities.json/relations.json key `nb` has not (yet) translated falls
+ * back to en — see LOCALE_STATUS in src/i18n/config.ts for nb's current
+ * completeness.
  */
 import type { GetStaticPaths } from 'astro';
 import graph from '../../../generated/graph.json';

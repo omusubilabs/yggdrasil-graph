@@ -29,7 +29,7 @@ export const LOCALE_STATUS: Record<Locale, LocaleStatus> = {
   en: 'source',
   ja: 'complete',
   is: 'complete',
-  nb: 'partial',
+  nb: 'complete',
   sv: 'planned',
   da: 'planned',
   fi: 'complete',
