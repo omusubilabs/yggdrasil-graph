@@ -53,6 +53,7 @@
     "tags": "主題",
     "attestedIn": "登場する文献",
     "relations": "関係",
+    "relatedByTag": "関連",
     "citations": "典拠",
     "readMore": "{name}の詳細",
     "empty": "何も選択されていません。グラフから選んでください。",
@@ -134,10 +135,14 @@
     "nine-worlds": "九つの世界のひとつ",
     "giant-descent": "巨人の血を引く"
   },
+  "relatedByTag": {
+    "sharedLabel": "共通項："
+  },
   "entity": {
     "backToGraph": "グラフに戻る",
     "backToGraphFrom": "{name}をグラフで見る",
     "relationsHeading": "関係",
+    "relatedByTagHeading": "関連",
     "sourcesHeading": "引用した典拠",
     "tagsHeading": "主題",
     "namesHeading": "名前",

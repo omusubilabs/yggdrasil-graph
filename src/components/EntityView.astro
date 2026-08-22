@@ -11,10 +11,11 @@
  */
 import graph from '../generated/graph.json';
 import type { GraphData } from '../graph/types.ts';
-import { buildIndex } from '../graph/model.ts';
+import { buildIndex, relatedByTag } from '../graph/model.ts';
 import type { Locale } from '../i18n/config.ts';
 import { localePath, useTranslations, hasKey } from '../i18n/index.ts';
 import RelationGroups from './RelationGroups.astro';
+import RelatedByTag from './RelatedByTag.astro';
 
 interface Props {
   locale: Locale;
@@ -25,6 +26,7 @@ const { locale, entityId } = Astro.props;
 const t = useTranslations(locale);
 const index = buildIndex(graph as unknown as GraphData);
 const node = index.nodeById.get(entityId)!;
+const suggestions = relatedByTag(index, entityId);
 
 const descriptionKey = `entity.${entityId}.description`;
 const epithetKey = `entity.${entityId}.epithet`;
@@ -106,6 +108,15 @@ const attestations = node.attestations
     <h2 class="entity__block-title">{t('entity.relationsHeading')}</h2>
     <RelationGroups locale={locale} entityId={entityId} />
   </section>
+
+  {
+    suggestions.length > 0 && (
+      <section class="entity__block">
+        <h2 class="entity__block-title">{t('entity.relatedByTagHeading')}</h2>
+        <RelatedByTag locale={locale} entityId={entityId} />
+      </section>
+    )
+  }
 </article>
 
 <style>

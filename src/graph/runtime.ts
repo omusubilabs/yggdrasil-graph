@@ -13,7 +13,14 @@
  */
 import { select, type Selection } from 'd3-selection';
 import { zoom, zoomIdentity, type D3ZoomEvent, type ZoomBehavior } from 'd3-zoom';
-import { buildIndex, neighbourhood, ragnarokOverlay, relationsByFamily, type GraphIndex } from './model.ts';
+import {
+  buildIndex,
+  neighbourhood,
+  ragnarokOverlay,
+  relatedByTag,
+  relationsByFamily,
+  type GraphIndex,
+} from './model.ts';
 import { isDeathRelation } from './geometry.ts';
 import type { GraphData } from './types.ts';
 
@@ -217,6 +224,28 @@ export async function mount(): Promise<void> {
                 .join(' · '),
         );
         item.append(citation);
+        list.append(item);
+      }
+      panelBody.append(list);
+    }
+
+    const suggestions = relatedByTag(index, id);
+    if (suggestions.length > 0) {
+      panelBody.append(el('p', 'panel__section-title', s('panel.relatedByTag')));
+      const list = el('ul', 'panel__relations');
+      for (const { node: other, tags } of suggestions) {
+        const item = el('li', 'panel__relation');
+        const link_ = el('a');
+        link_.href = linkTo(`/entity/${other.id}`);
+        link_.textContent = other.names.non;
+        item.append(link_);
+        item.append(el('span', 'panel__relation-label', s('relatedByTag.sharedLabel')));
+        for (const tag of tags) {
+          item.append(
+            document.createTextNode(' '),
+            el('span', 'panel__badge', s(`tag.${tag}`)),
+          );
+        }
         list.append(item);
       }
       panelBody.append(list);

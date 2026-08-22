@@ -1,0 +1,118 @@
+---
+/**
+ * Suggestions for where to go next when the graph's edges don't say —
+ * entities that share a tag with this one but are not already adjacent to it.
+ *
+ * Used on the prerendered /entity/<id> pages, as the list inside the section
+ * EntityView.astro renders around it (heading included) — mirroring
+ * RelationGroups.astro, which is list-only for the same reason: Astro scopes
+ * <style> per component, so a heading owned by this component could not pick
+ * up EntityView.astro's `.entity__block-title` rule. The panel builds the
+ * same structure at runtime from the same relatedByTag() query.
+ */
+import graph from '../generated/graph.json';
+import type { GraphData } from '../graph/types.ts';
+import { buildIndex, relatedByTag } from '../graph/model.ts';
+import type { Locale } from '../i18n/config.ts';
+import { localePath, useTranslations } from '../i18n/index.ts';
+
+interface Props {
+  locale: Locale;
+  entityId: string;
+}
+
+const { locale, entityId } = Astro.props;
+const t = useTranslations(locale);
+const index = buildIndex(graph as unknown as GraphData);
+const suggestions = relatedByTag(index, entityId);
+---
+
+<ul class="related__list">
+  {
+    suggestions.map(({ node, tags }) => (
+      <li class="related__item">
+        <a class="related__link" href={localePath(locale, `/entity/${node.id}`)}>
+          {/* i18n-ignore: Old Norse name, data from data/entities/ */}
+          <span class="non">{node.names.non}</span>
+          <span class="related__anglicized">{node.names.anglicized}</span>
+        </a>
+        <p class="related__reason">
+          <span class="related__reason-label">{t('relatedByTag.sharedLabel')}</span>
+          <ul class="related__tags">
+            {tags.map((tag) => (
+              <li class="apparatus">{t(`tag.${tag}`)}</li>
+            ))}
+          </ul>
+        </p>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .related__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-md);
+  }
+
+  .related__item {
+    padding-inline-start: var(--space-sm);
+    border-inline-start: 2px solid var(--rule);
+  }
+
+  .related__link {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4em;
+    text-decoration: none;
+  }
+
+  .related__link:hover .non {
+    text-decoration: underline;
+  }
+
+  .related__link .non {
+    font-size: var(--text-md);
+    color: var(--ink);
+  }
+
+  .related__anglicized {
+    font-size: var(--text-xs);
+    color: var(--ink-faded);
+  }
+
+  .related__reason {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-2xs) var(--space-xs);
+    margin: var(--space-2xs) 0 0;
+  }
+
+  .related__reason-label {
+    font-family: var(--font-ui);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-wide);
+    color: var(--ink-faded);
+  }
+
+  .related__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs) var(--space-sm);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .related__tags li {
+    display: inline-flex;
+    padding: 0.05em 0.4em;
+    background: var(--vellum-deep);
+    border-radius: var(--radius-sm);
+  }
+</style>

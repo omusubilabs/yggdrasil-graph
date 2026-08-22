@@ -53,6 +53,7 @@
     "tags": "Themes",
     "attestedIn": "Appears in",
     "relations": "Relations",
+    "relatedByTag": "Related",
     "citations": "Citations",
     "readMore": "Full account of {name}",
     "empty": "Nothing selected. Choose a figure in the graph.",
@@ -134,10 +135,14 @@
     "nine-worlds": "One of the Nine Worlds",
     "giant-descent": "Of giant descent"
   },
+  "relatedByTag": {
+    "sharedLabel": "Shared:"
+  },
   "entity": {
     "backToGraph": "Back to the graph",
     "backToGraphFrom": "See {name} in the graph",
     "relationsHeading": "Relations",
+    "relatedByTagHeading": "Related",
     "sourcesHeading": "Cited sources",
     "tagsHeading": "Themes",
     "namesHeading": "Names",
