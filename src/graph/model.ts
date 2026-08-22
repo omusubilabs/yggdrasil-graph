@@ -3,6 +3,7 @@
  * d3 — so the Astro build, the browser runtime and any future test can all use
  * the same logic to answer the same questions.
  */
+import { isDeathRelation } from './geometry.ts';
 import type { GraphData, GraphLink, GraphNode, RelationFamily, Source } from './types.ts';
 
 export interface GraphIndex {
@@ -121,6 +122,57 @@ export const relatedByTag = (index: GraphIndex, id: string, limit = 6) => {
   return [...shared.values()]
     .sort((a, b) => b.tags.length - a.tags.length || a.node.id.localeCompare(b.node.id))
     .slice(0, limit);
+};
+
+export interface RagnarokOverlay {
+  /** Death-relation edges between two entities tagged `ragnarok-participant`. */
+  pairingLinkIds: Set<string>;
+  /** Endpoints of those edges. */
+  combatantIds: Set<string>;
+  /** Ancestors of combatants, reached by walking `parent_of` upward. */
+  lineageNodeIds: Set<string>;
+  /** The `parent_of` edges used to reach them. */
+  lineageLinkIds: Set<string>;
+}
+
+/**
+ * The Ragnarök overlay's selection: which combat pairings count as "terminal",
+ * and the bloodlines that produced each combatant.
+ *
+ * A death relation only counts if both ends are tagged `ragnarok-participant`
+ * — that's what keeps pre-Ragnarök deaths like Höðr slaying Baldr out of the
+ * result (both are tagged `ragnarok-survivor`, not `ragnarok-participant`).
+ */
+export const ragnarokOverlay = (index: GraphIndex): RagnarokOverlay => {
+  const pairingLinkIds = new Set<string>();
+  const combatantIds = new Set<string>();
+
+  for (const link of index.data.links) {
+    if (!isDeathRelation(link.type)) continue;
+    const from = index.nodeById.get(link.from);
+    const to = index.nodeById.get(link.to);
+    if (!from?.tags.includes('ragnarok-participant')) continue;
+    if (!to?.tags.includes('ragnarok-participant')) continue;
+    pairingLinkIds.add(link.id);
+    combatantIds.add(link.from);
+    combatantIds.add(link.to);
+  }
+
+  const lineageNodeIds = new Set<string>();
+  const lineageLinkIds = new Set<string>();
+  const queue = [...combatantIds];
+  while (queue.length) {
+    const id = queue.pop()!;
+    for (const link of index.incident.get(id) ?? []) {
+      if (link.type !== 'parent_of' || link.to !== id) continue; // walk upward only
+      if (lineageNodeIds.has(link.from)) continue;
+      lineageNodeIds.add(link.from);
+      lineageLinkIds.add(link.id);
+      queue.push(link.from);
+    }
+  }
+
+  return { pairingLinkIds, combatantIds, lineageNodeIds, lineageLinkIds };
 };
 
 /** Renders a citation's locus with the unit its work counts in. */

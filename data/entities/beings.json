@@ -74,7 +74,7 @@
       "anglicized": "Sol"
     },
     "attestations": ["prose-edda"],
-    "tags": []
+    "tags": ["ragnarok-participant"]
   },
   {
     "id": "mani",
@@ -85,7 +85,7 @@
       "anglicized": "Mani"
     },
     "attestations": ["prose-edda"],
-    "tags": []
+    "tags": ["ragnarok-participant"]
   },
   {
     "id": "sleipnir",

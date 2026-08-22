@@ -68,6 +68,8 @@
     "family": "関係の種類で",
     "disputedOnly": "原典が食い違うものだけ",
     "disputedOnlyHint": "異伝と矛盾の関係のみを表示します。",
+    "ragnarokOverlay": "ラグナロクのみ",
+    "ragnarokOverlayHint": "世界の終わりで戦う者たちと、彼らを生んだ血統だけを残して他を暗くします。",
     "clear": "絞り込みを解除",
     "activeCount": "{count}件の絞り込みが有効",
     "noResults": "この絞り込み条件に一致する関係はありません。"

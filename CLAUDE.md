@@ -268,9 +268,6 @@ here — check the Roadmap first.
 
 Do not build these without being asked. The data and the seams for them exist.
 
-- **The Ragnarǫk overlay.** The tags it needs are in the dataset already
-  (`ragnarok-participant`, `ragnarok-slain`, `ragnarok-slayer`,
-  `ragnarok-survivor`). `--minium-wash` is reserved for it.
 - **Tag-driven related-entity suggestions.** `relatedByTag()` in
   `src/graph/model.ts` is written and unused; `tagIndex` is built and shipped.
 - **URL state serialization** for selection, filters and overlay.

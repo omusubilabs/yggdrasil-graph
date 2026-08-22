@@ -198,6 +198,65 @@ const nodes: GraphNode[] = [
     },
     13,
   ),
+  // A small, isolated subgraph for ragnarokOverlay, kept off every other node
+  // so it can't perturb the incident/neighbourhood counts asserted elsewhere.
+  node(
+    {
+      id: 'champion',
+      type: 'deity',
+      classes: ['aesir'],
+      names: { non: 'Kappi', anglicized: 'Champion' },
+      attestations: [],
+      tags: ['ragnarok-participant'],
+    },
+    14,
+  ),
+  node(
+    {
+      id: 'beast',
+      type: 'being',
+      classes: ['beings'],
+      names: { non: 'Dýr', anglicized: 'Beast' },
+      attestations: [],
+      tags: ['ragnarok-participant'],
+    },
+    15,
+  ),
+  // Untagged, so its kill of beast must NOT count as a terminal pairing.
+  node(
+    {
+      id: 'rogue',
+      type: 'being',
+      classes: ['beings'],
+      names: { non: 'Útlagi', anglicized: 'Rogue' },
+      attestations: [],
+      tags: [],
+    },
+    16,
+  ),
+  // champion's parent and grandparent, to exercise the multi-hop lineage walk.
+  node(
+    {
+      id: 'ancestor',
+      type: 'deity',
+      classes: ['aesir'],
+      names: { non: 'Forfaðir', anglicized: 'Ancestor' },
+      attestations: [],
+      tags: [],
+    },
+    17,
+  ),
+  node(
+    {
+      id: 'progenitor',
+      type: 'deity',
+      classes: ['aesir'],
+      names: { non: 'Ættfaðir', anglicized: 'Progenitor' },
+      attestations: [],
+      tags: [],
+    },
+    18,
+  ),
 ];
 
 const links: GraphLink[] = [
@@ -282,6 +341,43 @@ const links: GraphLink[] = [
     sources: [],
     family: 'possession',
   }),
+  link({
+    from: 'champion',
+    to: 'beast',
+    type: 'slays',
+    directed: true,
+    certainty: 'attested',
+    sources: [{ work: 'chronicle-of-halls', locus: '5' }],
+    family: 'conflict',
+  }),
+  // rogue is untagged, so this must be excluded from the terminal pairings.
+  link({
+    from: 'rogue',
+    to: 'beast',
+    type: 'slays',
+    directed: true,
+    certainty: 'attested',
+    sources: [{ work: 'chronicle-of-halls', locus: '6' }],
+    family: 'conflict',
+  }),
+  link({
+    from: 'ancestor',
+    to: 'champion',
+    type: 'parent_of',
+    directed: true,
+    certainty: 'attested',
+    sources: [{ work: 'song-of-crowns', locus: '5' }],
+    family: 'kinship',
+  }),
+  link({
+    from: 'progenitor',
+    to: 'ancestor',
+    type: 'parent_of',
+    directed: true,
+    certainty: 'attested',
+    sources: [{ work: 'song-of-crowns', locus: '6' }],
+    family: 'kinship',
+  }),
 ];
 
 const sources: Source[] = [
@@ -308,6 +404,10 @@ const sources: Source[] = [
   },
 ];
 
+// champion and beast also carry "ragnarok-participant" but are deliberately
+// left out of this index — ragnarokOverlay() reads tags directly, not this
+// map, and adding them here would surface them in relatedByTag(queen)'s
+// results and break that describe block's fixed expectations.
 const tagIndex: Record<string, string[]> = {
   ruler: ['king', 'queen', 'envoy', 'watcher'],
   'ragnarok-participant': ['queen', 'envoy'],

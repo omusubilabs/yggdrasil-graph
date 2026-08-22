@@ -1,6 +1,6 @@
 ---
 /**
- * Zoom, recentre, and the disputed-relations filter.
+ * Zoom, recentre, the disputed-relations filter, and the Ragnarök overlay.
  *
  * Every one of these needs the runtime, so the whole block stays hidden until
  * the runtime marks itself ready. Rendering a dead button that a reader can
@@ -39,6 +39,14 @@ const t = useTranslations(locale);
     <span>
       <span class="controls__toggle-label">{t('filters.disputedOnly')}</span>
       <span class="controls__toggle-hint">{t('filters.disputedOnlyHint')}</span>
+    </span>
+  </label>
+
+  <label class="controls__toggle">
+    <input type="checkbox" data-filter="ragnarok" />
+    <span>
+      <span class="controls__toggle-label">{t('filters.ragnarokOverlay')}</span>
+      <span class="controls__toggle-hint">{t('filters.ragnarokOverlayHint')}</span>
     </span>
   </label>
 </div>

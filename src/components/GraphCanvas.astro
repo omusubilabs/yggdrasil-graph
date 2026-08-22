@@ -444,6 +444,38 @@ const edges = data.links.flatMap((link) => {
     opacity: 0.04;
   }
 
+  /* --------------------------------------------------------- Ragnarök overlay
+   *
+   * Set by the runtime when the overlay toggle is checked. Dims everything
+   * except the terminal pairings and the bloodlines that produced them.
+   * `--minium` already colours the pairing edges via `.edge.is-death`; the
+   * lineage trace gets the lighter `--minium-wash` so it reads as "led to
+   * this" rather than "is this".
+   */
+  :global([data-graph][data-ragnarok]) .node:not(.is-ragnarok-combatant):not(.is-ragnarok-lineage),
+  :global([data-graph][data-ragnarok]) .edge:not(.is-ragnarok-pairing):not(.is-ragnarok-lineage) {
+    opacity: 0.08;
+  }
+
+  :global([data-graph][data-ragnarok])
+    .node:not(.is-ragnarok-combatant):not(.is-ragnarok-lineage)
+    .node__label {
+    opacity: 0;
+  }
+
+  :global([data-graph][data-ragnarok]) .node.is-ragnarok-combatant .node__shape {
+    stroke: var(--minium);
+    stroke-width: 2.5;
+  }
+
+  :global([data-graph][data-ragnarok]) .node.is-ragnarok-lineage .node__shape {
+    fill: var(--minium-wash);
+  }
+
+  :global([data-graph][data-ragnarok]) .edge.is-ragnarok-lineage {
+    stroke: var(--minium-wash);
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .edge,
     .node__shape,

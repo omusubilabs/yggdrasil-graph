@@ -13,7 +13,7 @@
  */
 import { select, type Selection } from 'd3-selection';
 import { zoom, zoomIdentity, type D3ZoomEvent, type ZoomBehavior } from 'd3-zoom';
-import { buildIndex, neighbourhood, relationsByFamily, type GraphIndex } from './model.ts';
+import { buildIndex, neighbourhood, ragnarokOverlay, relationsByFamily, type GraphIndex } from './model.ts';
 import { isDeathRelation } from './geometry.ts';
 import type { GraphData } from './types.ts';
 
@@ -324,6 +324,21 @@ export async function mount(): Promise<void> {
       const link = index.linkById.get(linkId);
       const contested = link?.certainty === 'disputed' || link?.certainty === 'variant';
       element.classList.toggle('is-hidden', only && !contested);
+    }
+  });
+
+  const ragnarok = ragnarokOverlay(index);
+  const ragnarokToggle = controls?.querySelector<HTMLInputElement>('[data-filter="ragnarok"]');
+  ragnarokToggle?.addEventListener('change', () => {
+    const on = ragnarokToggle.checked;
+    svg.toggleAttribute('data-ragnarok', on);
+    for (const [nodeId, element] of nodeEls) {
+      element.classList.toggle('is-ragnarok-combatant', on && ragnarok.combatantIds.has(nodeId));
+      element.classList.toggle('is-ragnarok-lineage', on && ragnarok.lineageNodeIds.has(nodeId));
+    }
+    for (const [linkId, element] of edgeEls) {
+      element.classList.toggle('is-ragnarok-pairing', on && ragnarok.pairingLinkIds.has(linkId));
+      element.classList.toggle('is-ragnarok-lineage', on && ragnarok.lineageLinkIds.has(linkId));
     }
   });
 

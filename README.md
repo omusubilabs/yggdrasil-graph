@@ -153,14 +153,14 @@ This first release is a walking skeleton, staged deliberately. Shipped:
 - [x] Japanese (`ja`) fully translated — `entities.json`, `relations.json`
       and `ui.json` all render natively; `ja` is `complete` in
       `src/i18n/config.ts`.
+- [x] Structured data (JSON-LD) on entity pages
+- [x] The Ragnarǫk overlay — a control that dims the graph to the terminal
+      pairings and traces each combatant back through the genealogy that
+      produced them.
 
 Not built yet, roughly in the order it's worth picking them up:
 
-- [x] Structured data (JSON-LD) on entity pages
-- [ ] **Next up: the Ragnarǫk overlay** — a single control that dims the graph to the
-      terminal pairings and traces each combatant back through the genealogy
-      that produced them. The tags it needs are already in the dataset.
-- [ ] **Tag-driven "you might also want" suggestions** at the end of each panel —
+- [ ] **Next up: tag-driven "you might also want" suggestions** at the end of each panel —
       _also contested_, _also present at Ragnarǫk_, _also a shape-shifter_. The
       tag index is built and shipped; the query function is written and unused.
 - [ ] **URL state** — selection, filters and overlay serialized to the query

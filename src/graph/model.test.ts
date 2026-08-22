@@ -1,7 +1,14 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
-import { buildIndex, locusKey, neighbourhood, relatedByTag, relationsByFamily } from './model.ts';
+import {
+  buildIndex,
+  locusKey,
+  neighbourhood,
+  ragnarokOverlay,
+  relatedByTag,
+  relationsByFamily,
+} from './model.ts';
 import { sampleGraph } from './fixtures/sample-graph.ts';
 
 const index = buildIndex(sampleGraph);
@@ -135,6 +142,38 @@ describe('relatedByTag', () => {
 
   it('returns nothing for an unknown id', () => {
     assert.deepEqual(relatedByTag(index, 'nobody'), []);
+  });
+});
+
+describe('ragnarokOverlay', () => {
+  const overlay = ragnarokOverlay(index);
+
+  it('counts a death relation as a terminal pairing only when both ends are tagged', () => {
+    assert.ok(overlay.pairingLinkIds.has('champion--beast--slays'));
+    assert.ok(!overlay.pairingLinkIds.has('rogue--beast--slays'));
+  });
+
+  it('collects both endpoints of a pairing as combatants', () => {
+    assert.ok(overlay.combatantIds.has('champion'));
+    assert.ok(overlay.combatantIds.has('beast'));
+    assert.ok(!overlay.combatantIds.has('rogue'));
+  });
+
+  it('walks parent_of upward through multiple generations', () => {
+    assert.deepEqual([...overlay.lineageNodeIds].sort(), ['ancestor', 'progenitor']);
+    assert.deepEqual(
+      [...overlay.lineageLinkIds].sort(),
+      ['ancestor--champion--parent_of', 'progenitor--ancestor--parent_of'].sort(),
+    );
+  });
+
+  it('produces no lineage for a combatant with no parent_of edge', () => {
+    // beast has no parent_of edge at all; it must not appear as anyone's ancestor.
+    assert.ok(!overlay.lineageNodeIds.has('beast'));
+  });
+
+  it('still counts beast as a combatant via its tagged pairing, despite the excluded one', () => {
+    assert.ok(overlay.combatantIds.has('beast'));
   });
 });
 
