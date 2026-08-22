@@ -1,6 +1,7 @@
 {
   "family": {
     "kinship": "Slægtskab",
+    "counsel": "Råd",
     "conflict": "Konflikt",
     "possession": "Ejerskab",
     "location": "Sted",
@@ -36,6 +37,11 @@
       "label": "Opfostrer",
       "inverse": "Opfostret af",
       "phrase": "{from} opfostrede {to}"
+    },
+    "consults": {
+      "label": "Rådspørger",
+      "inverse": "Rådgiver",
+      "phrase": "{from} rådspørger {to}"
     },
     "slays": {
       "label": "Dræber",

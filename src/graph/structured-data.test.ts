@@ -77,6 +77,7 @@ describe('buildEntityJsonLd: citation', () => {
       'Song of Crowns 2',
       'Song of Crowns 3',
       'Song of Crowns 4',
+      'Song of Crowns 5',
       'Chronicle of Halls 1',
       'Chronicle of Halls 2',
     ]);

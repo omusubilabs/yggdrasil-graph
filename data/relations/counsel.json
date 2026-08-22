@@ -1,0 +1,11 @@
+[
+  {
+    "id": "odin--mimir--consults",
+    "from": "odin",
+    "to": "mimir",
+    "type": "consults",
+    "directed": true,
+    "certainty": "attested",
+    "sources": [{ "work": "gylfaginning", "locus": "51" }]
+  }
+]

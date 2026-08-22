@@ -1,6 +1,7 @@
 {
   "family": {
     "kinship": "Skyldleiki",
+    "counsel": "Ráð",
     "conflict": "Átök",
     "possession": "Eign",
     "location": "Staður",
@@ -36,6 +37,11 @@
       "label": "Fóstrar",
       "inverse": "Fóstrað af",
       "phrase": "{from} fóstraði {to}"
+    },
+    "consults": {
+      "label": "Ráðgast við",
+      "inverse": "Veitir ráð",
+      "phrase": "{from} ráðgast við {to}"
     },
     "slays": {
       "label": "Drepur",

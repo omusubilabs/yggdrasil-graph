@@ -68,7 +68,7 @@ describe('neighbourhood', () => {
       [...nodes].sort(),
       ['aide', 'bridge', 'confidant', 'envoy', 'gate', 'mentor'].sort(),
     );
-    assert.equal(links.size, 5);
+    assert.equal(links.size, 6);
   });
 
   it('counts a parallel pair as two links but two nodes, not three', () => {
@@ -83,7 +83,7 @@ describe('relationsByFamily', () => {
     const grouped = relationsByFamily(index, 'envoy');
     assert.deepEqual(
       grouped.map(([family]) => family),
-      ['kinship', 'location'],
+      ['kinship', 'counsel', 'location'],
     );
   });
 

@@ -298,6 +298,15 @@ const links: GraphLink[] = [
   }),
   link({
     from: 'envoy',
+    to: 'mentor',
+    type: 'consults',
+    directed: true,
+    certainty: 'attested',
+    sources: [{ work: 'song-of-crowns', locus: '5' }],
+    family: 'counsel',
+  }),
+  link({
+    from: 'envoy',
     to: 'bridge',
     type: 'guards',
     directed: true,

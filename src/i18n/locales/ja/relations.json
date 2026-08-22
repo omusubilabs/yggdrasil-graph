@@ -1,6 +1,7 @@
 {
   "family": {
     "kinship": "親族",
+    "counsel": "助言",
     "conflict": "対立",
     "possession": "所有",
     "location": "場所",
@@ -36,6 +37,11 @@
       "label": "養育",
       "inverse": "被養育",
       "phrase": "{from}が{to}を育てた"
+    },
+    "consults": {
+      "label": "助言を求める",
+      "inverse": "助言する",
+      "phrase": "{from}が{to}に助言を求める"
     },
     "slays": {
       "label": "殺害",

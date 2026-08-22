@@ -183,9 +183,10 @@ Not built yet:
       landed 21 entities and 29 relations (cosmogony, Æsir household, six
       giants, the Norns, three artifacts), taking the graph from 49 to 70
       entities — most of them resolving figures the existing prose already
-      named but never modelled. Still open: a `consults` relation type and a
-      populated `transformation` family (see `data/TODO.md`), then further
-      tranches toward 300–400.
+      named but never modelled. The follow-up counsel slice added `consults`
+      and the attested Óðinn→Mímir edge, taking the graph to 106 relations.
+      Still open: a populated `transformation` family (see `data/TODO.md`),
+      then further tranches toward 300–400.
 
 ---
 

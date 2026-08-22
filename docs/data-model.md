@@ -17,6 +17,7 @@ data/
 │   └── artifacts.json
 ├── relations/         one file per family, each a flat array
 │   ├── kinship.json
+│   ├── counsel.json
 │   ├── conflict.json
 │   ├── possession.json
 │   ├── location.json
@@ -164,6 +165,7 @@ reviewing a data pull request gets much harder.
 | Family           | Types                                                                           |
 | ---------------- | ------------------------------------------------------------------------------- |
 | `kinship`        | `parent_of` `sibling_of` `married_to` `consort_of` `blood_brother_of` `fosters` |
+| `counsel`        | `consults`                                                                      |
 | `conflict`       | `slays` `causes_death_of` `maims` `binds` `devours` `destroys`                  |
 | `possession`     | `owns`                                                                          |
 | `location`       | `guards` `dwells_in` `rules` `encircles` `root_reaches` `raised_in`             |
@@ -175,10 +177,12 @@ what Loki becomes, and shape-shifting may deserve its own modelling rather than
 a plain edge. It is left empty rather than filled with something we would have
 to unpick. See `data/TODO.md`.
 
-Adding a type means touching four places: the schema enum, `RELATION_FAMILIES`
-in `src/graph/types.ts`, `LINK_DISTANCE` in both `scripts/build-graph.ts` and
-`src/graph/simulation.ts`, and the labels in
-`src/i18n/locales/en/relations.json`.
+Adding a type means updating the schema enum, `RELATION_FAMILIES` in
+`src/graph/types.ts`, and its `label`, `inverse` and `phrase` in every locale
+currently declared `complete`. Adding a new family also requires its relation
+file and localized family label, a position in `FAMILY_ORDER` in
+`src/graph/model.ts`, and identical `LINK_DISTANCE` entries in
+`scripts/build-graph.ts` and `src/graph/simulation.ts`.
 
 ### `directed`
 

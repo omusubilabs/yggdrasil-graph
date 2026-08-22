@@ -51,12 +51,12 @@ softened, per this file's own rule.
 
 ### Relation vocabulary
 
-- There is no type for _consulting_ or _taking counsel_, so Óðinn riding to
-  Mímir's well at Gylfaginning 51 cannot be recorded. Adding one would also cover
-  Óðinn and the Norns, and Gylfaginning 15's account of Mímir's wisdom, and the
-  wisdom-contest with **Vafþrúðnir** (Vafþrúðnismál) — checked directly against
-  Bellows during the Phase 1 entity expansion and left out for exactly this
-  reason, not for lack of a citation.
+- **Vafþrúðnir** remains blocked by the lack of a type for the reciprocal
+  wisdom-contest in Vafþrúðnismál. The `consults` type now records Óðinn taking
+  counsel from Mímir at Gylfaginning 51, but it does not fit a wager between two
+  contestants and must not be stretched to make this entity fit. Gylfaginning
+  15 likewise places the gods' tribunal and the Norns at the same well without
+  saying that Óðinn consults them, so it does not support a further edge.
 - There is also no type for a **messenger or servant relationship**. Skírnir
   wooing Gerðr on Freyr's behalf, in exchange for Freyr's sword (Gylfaginning
   37), is well attested but has nowhere to attach: he is not Freyr's kin, does

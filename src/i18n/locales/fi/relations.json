@@ -1,6 +1,7 @@
 {
   "family": {
     "kinship": "Sukulaisuus",
+    "counsel": "Neuvonpito",
     "conflict": "Konflikti",
     "possession": "Omistus",
     "location": "Paikka",
@@ -36,6 +37,11 @@
       "label": "Kasvattaa",
       "inverse": "Kasvatettu",
       "phrase": "{from} kasvatti {to}:n"
+    },
+    "consults": {
+      "label": "Kysyy neuvoa",
+      "inverse": "Neuvoo",
+      "phrase": "{from} kysyy neuvoa {to}:lta"
     },
     "slays": {
       "label": "Surmaa",

@@ -31,6 +31,7 @@ export type Certainty = (typeof CERTAINTIES)[number];
  */
 export const RELATION_FAMILIES = {
   kinship: ['parent_of', 'sibling_of', 'married_to', 'consort_of', 'blood_brother_of', 'fosters'],
+  counsel: ['consults'],
   conflict: ['slays', 'causes_death_of', 'maims', 'binds', 'devours', 'destroys'],
   possession: ['owns'],
   location: ['guards', 'dwells_in', 'rules', 'encircles', 'root_reaches', 'raised_in'],

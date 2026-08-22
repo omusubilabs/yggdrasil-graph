@@ -1,6 +1,7 @@
 {
   "family": {
     "kinship": "Kinship",
+    "counsel": "Counsel",
     "conflict": "Conflict",
     "possession": "Possession",
     "location": "Place",
@@ -36,6 +37,11 @@
       "label": "Fosters",
       "inverse": "Fostered by",
       "phrase": "{from} raised {to}"
+    },
+    "consults": {
+      "label": "Consults",
+      "inverse": "Consulted by",
+      "phrase": "{from} consults {to}"
     },
     "slays": {
       "label": "Slays",

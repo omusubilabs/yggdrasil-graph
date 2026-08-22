@@ -46,6 +46,7 @@ interface SimLink {
 /** Must match LINK_DISTANCE in scripts/build-graph.ts, or the graph drifts. */
 const LINK_DISTANCE: Record<RelationFamily, number> = {
   kinship: 70,
+  counsel: 110,
   conflict: 190,
   possession: 60,
   location: 130,
