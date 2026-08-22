@@ -1,0 +1,111 @@
+{
+  "family": {
+    "kinship": "Släktskap",
+    "conflict": "Konflikt",
+    "possession": "Ägande",
+    "location": "Plats",
+    "transformation": "Förvandling"
+  },
+  "relation": {
+    "parent_of": {
+      "label": "Förälder till",
+      "inverse": "Barn till",
+      "phrase": "{from} är förälder till {to}"
+    },
+    "sibling_of": {
+      "label": "Syskon till",
+      "inverse": "Syskon till",
+      "phrase": "{from} och {to} är syskon"
+    },
+    "married_to": {
+      "label": "Gift med",
+      "inverse": "Gift med",
+      "phrase": "{from} och {to} är gifta"
+    },
+    "consort_of": {
+      "label": "Partner till",
+      "inverse": "Partner till",
+      "phrase": "{from} och {to} har barn tillsammans"
+    },
+    "blood_brother_of": {
+      "label": "Blodsbroder till",
+      "inverse": "Blodsbroder till",
+      "phrase": "{from} och {to} blandade blod"
+    },
+    "fosters": {
+      "label": "Fostrar",
+      "inverse": "Fostrad av",
+      "phrase": "{from} fostrade {to}"
+    },
+    "slays": {
+      "label": "Dräper",
+      "inverse": "Dräpt av",
+      "phrase": "{from} dödar {to}"
+    },
+    "causes_death_of": {
+      "label": "Vållar döden för",
+      "inverse": "Död vållad av",
+      "phrase": "{from} vållar {to}s död"
+    },
+    "maims": {
+      "label": "Lemlästar",
+      "inverse": "Lemlästad av",
+      "phrase": "{from} lemlästar {to}"
+    },
+    "binds": {
+      "label": "Binder",
+      "inverse": "Bunden av",
+      "phrase": "{from} håller {to} fången"
+    },
+    "devours": {
+      "label": "Sväljer",
+      "inverse": "Sväljd av",
+      "phrase": "{from} sväljer {to}"
+    },
+    "destroys": {
+      "label": "Förgör",
+      "inverse": "Förgjord av",
+      "phrase": "{from} förgör {to}"
+    },
+    "owns": {
+      "label": "Äger",
+      "inverse": "Tillhör",
+      "phrase": "{from} äger {to}"
+    },
+    "guards": {
+      "label": "Vaktar",
+      "inverse": "Vaktad av",
+      "phrase": "{from} försvarar {to}"
+    },
+    "dwells_in": {
+      "label": "Bor i",
+      "inverse": "Hem för",
+      "phrase": "{from} bor i {to}"
+    },
+    "rules": {
+      "label": "Styr",
+      "inverse": "Styrd av",
+      "phrase": "{from} styr {to}"
+    },
+    "encircles": {
+      "label": "Omsluter",
+      "inverse": "Omsluten av",
+      "phrase": "{from} omsluter {to}"
+    },
+    "root_reaches": {
+      "label": "Sträcker en rot till",
+      "inverse": "Nås av en rot från",
+      "phrase": "En rot av {from} når {to}"
+    },
+    "raised_in": {
+      "label": "Uppfostrad i",
+      "inverse": "Uppfostringsplats",
+      "phrase": "{from} växte upp i {to}"
+    },
+    "becomes": {
+      "label": "Blir",
+      "inverse": "Skepnad antagen av",
+      "phrase": "{from} antar skepnaden av {to}"
+    }
+  }
+}
