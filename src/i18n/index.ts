@@ -27,6 +27,7 @@ import isRelations from './locales/is/relations.json' with { type: 'json' };
 import nbUi from './locales/nb/ui.json' with { type: 'json' };
 import nbEntities from './locales/nb/entities.json' with { type: 'json' };
 import nbRelations from './locales/nb/relations.json' with { type: 'json' };
+import svUi from './locales/sv/ui.json' with { type: 'json' };
 
 type Dict = Record<string, unknown>;
 
@@ -40,6 +41,7 @@ const BUNDLES: Partial<Record<Locale, Dict[]>> = {
   fi: [fiUi as Dict, fiEntities as Dict, fiRelations as Dict],
   is: [isUi as Dict, isEntities as Dict, isRelations as Dict],
   nb: [nbUi as Dict, nbEntities as Dict, nbRelations as Dict],
+  sv: [svUi as Dict],
 };
 
 const flatten = (input: Dict, prefix = '', out: Record<string, string> = {}) => {

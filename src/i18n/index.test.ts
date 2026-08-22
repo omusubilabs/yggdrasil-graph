@@ -11,10 +11,10 @@ describe('t', () => {
   });
 
   it('falls back to the source locale for a key the target locale is missing', () => {
-    // 'sv' is a planned locale with no bundle at all (see BUNDLES in
+    // 'da' is a planned locale with no bundle at all (see BUNDLES in
     // index.ts), so every key falls back to en regardless of how complete
     // the translated locales are.
-    assert.equal(t('sv', 'nav.home'), t('en', 'nav.home'));
+    assert.equal(t('da', 'nav.home'), t('en', 'nav.home'));
   });
 
   it('returns the key itself when it resolves nowhere', () => {
