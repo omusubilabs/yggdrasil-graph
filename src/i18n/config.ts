@@ -32,7 +32,7 @@ export const LOCALE_STATUS: Record<Locale, LocaleStatus> = {
   nb: 'planned',
   sv: 'planned',
   da: 'planned',
-  fi: 'planned',
+  fi: 'partial',
 };
 
 /**

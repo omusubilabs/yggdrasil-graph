@@ -1,0 +1,182 @@
+{
+  "site": {
+    "title": "Yggdrasil Graph",
+    "tagline": "Myytin loppu on jo kirjoitettu sukupuuhun.",
+    "description": "Pohjoismaisen mytologian interaktiivinen suhdekaavio. Jumalat, jättiläiset, hirviöt, maailmat ja nimetyt asiat – jokainen suhde on jäljitetty alkuperäislähteeseen.",
+    "skipToContent": "Siirry kaavioon"
+  },
+  "nav": {
+    "label": "Sivusto",
+    "home": "Kaavio",
+    "sources": "Lähteet",
+    "language": "Kieli",
+    "languageCurrent": "Nykyinen kieli: {name}",
+    "openMenu": "Avaa valikko",
+    "closeMenu": "Sulje valikko"
+  },
+  "graph": {
+    "regionLabel": "Suhdekaavio",
+    "regionDescription": "Interaktiivinen kaavio, jossa on {count} hahmoa ja {links} suhdetta niiden välillä. Käytä alla olevaa luettelonäkymää vastaavaan lineaariseen esitykseen.",
+    "hint": "Kosketa nimeä.",
+    "hintKeyboard": "Siirry sarkaimella kaavioon ja liiku sitten hahmojen välillä nuolinäppäimillä.",
+    "loading": "Herätetään kaaviota",
+    "ready": "Kaavio valmis",
+    "reset": "Palauta näkymä",
+    "zoomControls": "Zoomaus ja keskitys",
+    "zoomIn": "Lähennä",
+    "zoomOut": "Loitonna",
+    "recentre": "Keskitä",
+    "clearSelection": "Näytä kaikki uudelleen",
+    "selectedAnnounce": "{name} valittu. Näytetään {count} yhdistettyä hahmoa.",
+    "neighbourhoodOf": "{name}:n ympäristö",
+    "everything": "Koko kaavio",
+    "motionReduced": "Liike on vähennetty, joten kaavio näyttää asettuneen asettelunsa."
+  },
+  "view": {
+    "label": "Näkymä",
+    "graph": "Kaavio",
+    "list": "Luettelo",
+    "listHeading": "Jokainen hahmo taulukkona",
+    "listDescription": "Sama tieto kuin kaaviossa, muodossa jonka voi lukea suoraan, hakea selaimella tai antaa ruudunlukijalle.",
+    "columnName": "Nimi",
+    "columnOldNorse": "Muinaisnorja",
+    "columnType": "Tyyppi",
+    "columnClasses": "Luokat",
+    "columnRelations": "Suhteet"
+  },
+  "panel": {
+    "label": "Tiedot",
+    "close": "Sulje tiedot",
+    "oldNorse": "Muinaisnorja",
+    "type": "Tyyppi",
+    "classes": "Luokat",
+    "tags": "Teemat",
+    "attestedIn": "Esiintyy teoksissa",
+    "relations": "Suhteet",
+    "relatedByTag": "Liittyvät",
+    "citations": "Lähdeviitteet",
+    "readMore": "Täydellinen kuvaus hahmosta {name}",
+    "empty": "Ei valintaa. Valitse hahmo kaaviosta.",
+    "noRelations": "Suhteita ei ole vielä kirjattu.",
+    "relationCount": "{count} suhdetta",
+    "outgoing": "{name} → ",
+    "incoming": " → {name}"
+  },
+  "filters": {
+    "label": "Suodattimet",
+    "heading": "Näytä",
+    "certainty": "Varmuuden mukaan",
+    "family": "Suhdetyypin mukaan",
+    "disputedOnly": "Vain kun lähteet ovat eri mieltä",
+    "disputedOnlyHint": "Näyttää vaihtoehtoiset ja kiistanalaiset suhteet erikseen.",
+    "ragnarokOverlay": "Vain Ragnarök",
+    "ragnarokOverlayHint": "Himmentää kaiken paitsi maailmanlopun taistelijat ja sukulinjat, jotka synnyttivät heidät.",
+    "clear": "Tyhjennä suodattimet",
+    "activeCount": "{count} suodatinta käytössä",
+    "noResults": "Mikään suhde ei vastaa näitä suodattimia."
+  },
+  "certainty": {
+    "label": "Varmuus",
+    "attested": "Todistettu",
+    "attestedHint": "Lähde toteaa tämän suoraan.",
+    "implied": "Epäsuora",
+    "impliedHint": "Lähde viittaa tähän sanomatta sitä suoraan.",
+    "variant": "Vaihtoehtoinen",
+    "variantHint": "Toinen lähde kertoo asian eri tavalla.",
+    "disputed": "Kiistanalainen",
+    "disputedHint": "Lähteet ovat ristiriidassa keskenään.",
+    "unverified": "Vahvistamaton",
+    "unverifiedHint": "Uskotaan todeksi, mutta kohtaa ei ole vahvistettu. Tarkoituksella ilman lähdeviitettä.",
+    "contradictedBy": "Ristiriidassa: {other}"
+  },
+  "class": {
+    "label": "Luokka",
+    "aesir": "Æsir",
+    "vanir": "Vanir",
+    "jotnar": "Jǫtnar",
+    "beings": "Muut olennot",
+    "worlds": "Maailmat ja paikat",
+    "artifacts": "Aarteet"
+  },
+  "type": {
+    "label": "Tyyppi",
+    "deity": "Jumaluus",
+    "being": "Olento",
+    "world": "Maailma",
+    "artifact": "Tehty esine",
+    "place": "Paikka",
+    "event": "Tapahtuma"
+  },
+  "tag": {
+    "ragnarok-participant": "Läsnä Ragnarökissa",
+    "ragnarok-slain": "Kuolee Ragnarökissa",
+    "ragnarok-slayer": "Tappaa Ragnarökissa",
+    "ragnarok-survivor": "Selviää Ragnarökistä",
+    "loki-kin": "Lokin sukua",
+    "odin-kin": "Óðinnin sukua",
+    "bound": "Kahlittu",
+    "wolf": "Susi",
+    "serpent": "Käärme",
+    "shapeshifter": "Muodonmuuttaja",
+    "contested": "Kiistanalainen",
+    "disputed-parentage": "Kiistanalainen syntyperä",
+    "primordial": "Alkukantainen",
+    "underworld": "Kuolleiden",
+    "fire": "Tuli",
+    "thunder": "Ukkonen",
+    "wisdom": "Viisaus",
+    "war": "Sota",
+    "fertility": "Hedelmällisyys",
+    "sea": "Meri",
+    "watchman": "Vartija",
+    "hostage": "Panttivanki",
+    "dwarf-forged": "Kääpiöiden takoma",
+    "world-tree": "Maailmanpuu",
+    "nine-worlds": "Yksi yhdeksästä maailmasta",
+    "giant-descent": "Jättiläissukua"
+  },
+  "relatedByTag": {
+    "sharedLabel": "Yhteistä:"
+  },
+  "entity": {
+    "backToGraph": "Takaisin kaavioon",
+    "backToGraphFrom": "Näytä {name} kaaviossa",
+    "relationsHeading": "Suhteet",
+    "relatedByTagHeading": "Liittyvät",
+    "sourcesHeading": "Lähdeviitteet",
+    "tagsHeading": "Teemat",
+    "namesHeading": "Nimet",
+    "noDescription": "Tästä hahmosta ei ole vielä kirjoitettu kuvausta. Alla olevat suhteet ovat koko tallennettu tieto.",
+    "metaTitle": "{name} — Yggdrasil Graph",
+    "degree": "{count} kirjattua suhdetta"
+  },
+  "sources": {
+    "heading": "Lähteet",
+    "intro": "Jokainen tämän kaavion suhde viittaa kohtaan jossakin näistä teoksista. Kaikki mainitut painokset ovat vapaasti käytettävissä (public domain); niiden tekstiä ei ole toistettu tässä.",
+    "chapter": "luku {locus}",
+    "stanza": "säk. {locus}",
+    "translatedBy": "Kääntänyt {translator}, {year}",
+    "composed": "Sepitetty {date}",
+    "partOf": "Teoksessa {collection}",
+    "viewText": "Lue koko teksti",
+    "uncited": "Ei lähdeviitettä. Merkitty tarkoituksella vahvistamattomaksi."
+  },
+  "footer": {
+    "codeLicence": "Koodi on MIT-lisensoitu.",
+    "dataLicence": "Aineisto on CC BY-SA 4.0 -lisensoitu.",
+    "sourceCode": "Lähdekoodi",
+    "contribute": "Korjaukset tervetulleita",
+    "editionsNote": "Lähdeviitteet noudattavat Bellowsin (1923) käännöstä Runo-Eddasta ja Brodeurin (1916) käännöstä Proosa-Eddasta."
+  },
+  "a11y": {
+    "nodeRole": "{name}, {type}, {count} suhdetta",
+    "graphInstructions": "Nuolinäppäimet siirtävät yhdistettyjen hahmojen välillä. Enter avaa tiedot. Escape tyhjentää valinnan.",
+    "selectionCleared": "Valinta tyhjennetty. Näytetään koko kaavio.",
+    "externalLink": "avautuu uuteen välilehteen"
+  },
+  "error": {
+    "notFoundTitle": "Sivua ei löydy",
+    "notFoundBody": "Tämä polku ei johda mihinkään. Kaavio johtaa.",
+    "graphFailed": "Interaktiivista kaaviota ei voitu käynnistää. Kaikki alla toimii silti."
+  }
+}

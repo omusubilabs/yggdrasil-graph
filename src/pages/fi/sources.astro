@@ -1,0 +1,17 @@
+---
+import Base from '../../layouts/Base.astro';
+import SourcesView from '../../components/SourcesView.astro';
+import { useTranslations } from '../../i18n/index.ts';
+
+const locale = 'fi' as const;
+const t = useTranslations(locale);
+---
+
+<Base
+  locale={locale}
+  route="/sources"
+  title={`${t('sources.heading')} — ${t('site.title')}`}
+  description={t('sources.intro')}
+>
+  <SourcesView locale={locale} />
+</Base>
