@@ -125,11 +125,23 @@ restores the same accessible description as direct interaction.
 
 ### UXA-004 — Give the graph page a real first-level heading
 
-- [ ] Add a visible or appropriately visually-hidden `h1` that names the page
+- [x] Add a visible or appropriately visually-hidden `h1` that names the page
       and preserves the existing visual hierarchy.
 
 **Evidence:** The home page had no `h1`; its heading outline began with hidden
 `h2` elements. Entity pages already use a proper `h1`.
+
+**Fixed:** `src/components/HomeView.astro` now renders a
+`<h1 class="visually-hidden">{t('site.title')}</h1>` as the first element on
+the page, ahead of the graph. It reuses the existing `site.title` string (the
+same text already visible in the header wordmark and already used to build
+`<title>`), so no new i18n key or translation work was needed. Kept hidden
+rather than visible because the wordmark already shows the site name visibly
+in the header on every page — a second visible copy directly below it would
+have altered the existing visual hierarchy the item asks to preserve. The
+outline is now sequential: `h1` → `h2` (graph region label) → `h2` (panel
+title) → `h2` (table heading). Verified by browser inspection at 1440×900 and
+390×844; native screen reader is still open, as flagged above.
 
 **Done when:** The document outline starts with one descriptive `h1`, heading
 levels remain sequential and the first-level name is useful outside visual

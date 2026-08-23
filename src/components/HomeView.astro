@@ -8,6 +8,7 @@
  * are allowed to see anything.
  */
 import type { Locale } from '../i18n/config.ts';
+import { useTranslations } from '../i18n/index.ts';
 import GraphCanvas from './GraphCanvas.astro';
 import GraphControls from './GraphControls.astro';
 import EntityPanel from './EntityPanel.astro';
@@ -18,7 +19,10 @@ interface Props {
 }
 
 const { locale } = Astro.props;
+const t = useTranslations(locale);
 ---
+
+<h1 class="visually-hidden">{t('site.title')}</h1>
 
 <div class="stage">
   <GraphCanvas locale={locale} />
