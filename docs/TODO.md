@@ -90,15 +90,32 @@ graph or search target; and the behaviour holds at both audited mobile sizes.
 
 ### UXA-003 — Announce Ragnarǫk filter changes
 
-- [ ] Announce whether the overlay is on or off and the resulting figure and
+- [x] Announce whether the overlay is on or off and the resulting figure and
       relation counts through the existing live-status mechanism.
-- [ ] Make query-string rehydration produce the same accurate accessible state
+- [x] Make query-string rehydration produce the same accurate accessible state
       without duplicate announcements.
-- [ ] Localise every new announcement in all complete locales.
+- [x] Localise every new announcement in all complete locales.
 
 **Evidence:** Toggling the overlay updated the SVG description to “45 of 381
 figures and 62 relations”, but the live region stayed empty both after the
 interaction and after URL-state rehydration.
+
+**Fixed:** The root cause was one line, not a missing call: `src/graph/runtime.ts`
+looked up `[data-graph-status]` scoped to `figure.querySelector(...)`, but the
+prior UXA-002 fix had deliberately moved that element to a sibling of
+`<figure>` so the figure's `inert` state couldn't silence it — leaving
+`announce()` a permanent no-op for every existing announcement, not only the
+Ragnarǫk overlay. The lookup now scopes to `document`. On top of that,
+`disputedToggle` and `ragnarokToggle` gained `change` handlers that announce
+one of five new localised keys (`filters.{disputed,ragnarok}{On,Off}Announce`,
+`filters.bothOnAnnounce`) carrying the resulting figure and relation counts,
+mirroring the existing `showAllToggle` pattern. URL rehydration announces the
+restored filter state only when no selection is also being restored — a
+restored selection's own announcement takes priority so the live region never
+receives two writes for one page load, and a plain visit with no query
+string still announces nothing. Verified by browser inspection at 1440×900
+and 390×844: native screen reader, physical touch and real browser zoom/reflow
+are still open, as flagged above.
 
 **Done when:** A screen reader receives one concise, localised status update
 after each filter change, the visible and announced counts agree, and URL state

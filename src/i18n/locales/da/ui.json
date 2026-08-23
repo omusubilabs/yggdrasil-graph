@@ -80,7 +80,12 @@
     "ragnarokOverlayHint": "Dæmper alt undtagen kombattanterne ved verdens ende og de blodlinjer, der frembragte dem.",
     "clear": "Ryd filtre",
     "activeCount": "{count} aktive filtre",
-    "noResults": "Ingen relationer matcher disse filtre."
+    "noResults": "Ingen relationer matcher disse filtre.",
+    "disputedOnAnnounce": "Kun hvor kilderne er uenige. Viser {visible} af {total} skikkelser og {links} relationer.",
+    "disputedOffAnnounce": "Filteret for uenige kilder er ryddet. Viser {visible} af {total} skikkelser og {links} relationer.",
+    "ragnarokOnAnnounce": "Kun Ragnarök. Viser {visible} af {total} skikkelser og {links} relationer.",
+    "ragnarokOffAnnounce": "Ragnarök-overlejring slået fra. Viser {visible} af {total} skikkelser og {links} relationer.",
+    "bothOnAnnounce": "Kun hvor kilderne er uenige, og kun Ragnarök. Viser {visible} af {total} skikkelser og {links} relationer."
   },
   "certainty": {
     "label": "Sikkerhedsgrad",

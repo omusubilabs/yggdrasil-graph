@@ -80,7 +80,12 @@
     "ragnarokOverlayHint": "Dims everything except the combatants at the end of the world and the bloodlines that produced them.",
     "clear": "Clear filters",
     "activeCount": "{count} filters active",
-    "noResults": "No relations match these filters."
+    "noResults": "No relations match these filters.",
+    "disputedOnAnnounce": "Only where the sources disagree. Showing {visible} of {total} figures and {links} relations.",
+    "disputedOffAnnounce": "Disputed-only filter cleared. Showing {visible} of {total} figures and {links} relations.",
+    "ragnarokOnAnnounce": "Only Ragnarök. Showing {visible} of {total} figures and {links} relations.",
+    "ragnarokOffAnnounce": "Ragnarök overlay off. Showing {visible} of {total} figures and {links} relations.",
+    "bothOnAnnounce": "Only where the sources disagree and only Ragnarök. Showing {visible} of {total} figures and {links} relations."
   },
   "certainty": {
     "label": "Certainty",

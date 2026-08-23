@@ -80,7 +80,12 @@
     "ragnarokOverlayHint": "Himmentää kaiken paitsi maailmanlopun taistelijat ja sukulinjat, jotka synnyttivät heidät.",
     "clear": "Tyhjennä suodattimet",
     "activeCount": "{count} suodatinta käytössä",
-    "noResults": "Mikään suhde ei vastaa näitä suodattimia."
+    "noResults": "Mikään suhde ei vastaa näitä suodattimia.",
+    "disputedOnAnnounce": "Vain kun lähteet ovat eri mieltä. Näytetään {visible}/{total} hahmoa ja {links} suhdetta.",
+    "disputedOffAnnounce": "Eri mieltä olevien lähteiden suodatin poistettu. Näytetään {visible}/{total} hahmoa ja {links} suhdetta.",
+    "ragnarokOnAnnounce": "Vain Ragnarök. Näytetään {visible}/{total} hahmoa ja {links} suhdetta.",
+    "ragnarokOffAnnounce": "Ragnarök-korostus pois päältä. Näytetään {visible}/{total} hahmoa ja {links} suhdetta.",
+    "bothOnAnnounce": "Vain kun lähteet ovat eri mieltä ja vain Ragnarök. Näytetään {visible}/{total} hahmoa ja {links} suhdetta."
   },
   "certainty": {
     "label": "Varmuus",

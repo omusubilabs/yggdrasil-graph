@@ -74,7 +74,8 @@ export async function mount(): Promise<void> {
   // search, a filter, or the all-figures toggle asks for it.
   materializeGraph(svg, payload.graph, s, linkTo);
 
-  const status = figure.querySelector<HTMLElement>('[data-graph-status]');
+  // A sibling of <figure>, not a descendant — see GraphCanvas.astro.
+  const status = document.querySelector<HTMLElement>('[data-graph-status]');
   const announce = (message: string) => {
     if (status) status.textContent = message;
   };
@@ -124,7 +125,11 @@ export async function mount(): Promise<void> {
   const ragnarok = ragnarokOverlay(index);
   let showAll = false;
   let visibleNodeIds = new Set(payload.graph.core.nodeIds);
-  let applyVisibility = () => {};
+  let applyVisibility: () => { visible: number; total: number; links: number } = () => ({
+    visible: 0,
+    total: 0,
+    links: 0,
+  });
 
   const panel = document.querySelector<HTMLElement>('[data-entity-panel]');
   const panelTitle = panel?.querySelector<HTMLElement>('#panel-title') ?? null;
@@ -649,6 +654,8 @@ export async function mount(): Promise<void> {
         links: visibleLinks,
       });
     }
+
+    return { visible: nodes.size, total: payload.graph.nodes.length, links: visibleLinks };
   };
 
   showAllToggle?.addEventListener('change', () => {
@@ -660,11 +667,17 @@ export async function mount(): Promise<void> {
     syncUrl();
   });
   disputedToggle?.addEventListener('change', () => {
-    applyVisibility();
+    const counts = applyVisibility();
+    announce(
+      s(disputedToggle.checked ? 'filters.disputedOnAnnounce' : 'filters.disputedOffAnnounce', counts),
+    );
     syncUrl();
   });
   ragnarokToggle?.addEventListener('change', () => {
-    applyVisibility();
+    const counts = applyVisibility();
+    announce(
+      s(ragnarokToggle.checked ? 'filters.ragnarokOnAnnounce' : 'filters.ragnarokOffAnnounce', counts),
+    );
     syncUrl();
   });
 
@@ -696,10 +709,19 @@ export async function mount(): Promise<void> {
   if (initial.ragnarok && ragnarokToggle) {
     ragnarokToggle.checked = true;
   }
-  applyVisibility();
-  if (initial.selected && index.nodeById.has(initial.selected)) {
-    select_(initial.selected);
-    if (!isModal()) focusNode(initial.selected);
+  const hasSelection = Boolean(initial.selected && index.nodeById.has(initial.selected));
+  const hydratedCounts = applyVisibility();
+  if (hasSelection) {
+    // Selection's own announcement takes priority, so the live region isn't
+    // written twice in one page load.
+    select_(initial.selected!);
+    if (!isModal()) focusNode(initial.selected!);
+  } else if (initial.disputed && initial.ragnarok) {
+    announce(s('filters.bothOnAnnounce', hydratedCounts));
+  } else if (initial.disputed) {
+    announce(s('filters.disputedOnAnnounce', hydratedCounts));
+  } else if (initial.ragnarok) {
+    announce(s('filters.ragnarokOnAnnounce', hydratedCounts));
   }
   // Unconditional: normalises away a stale/invalid ?selected= that select_()
   // silently ignored, rather than leaving it dangling in the address bar.

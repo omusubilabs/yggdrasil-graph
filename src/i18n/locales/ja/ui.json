@@ -80,7 +80,12 @@
     "ragnarokOverlayHint": "世界の終わりで戦う者たちと、彼らを生んだ血統だけを残して他を暗くします。",
     "clear": "絞り込みを解除",
     "activeCount": "{count}件の絞り込みが有効",
-    "noResults": "この絞り込み条件に一致する関係はありません。"
+    "noResults": "この絞り込み条件に一致する関係はありません。",
+    "disputedOnAnnounce": "原典が食い違うものだけを表示しています。全{total}体のうち{visible}体、{links}件の関係を表示しています。",
+    "disputedOffAnnounce": "食い違いのみの絞り込みを解除しました。全{total}体のうち{visible}体、{links}件の関係を表示しています。",
+    "ragnarokOnAnnounce": "ラグナロクのみを表示しています。全{total}体のうち{visible}体、{links}件の関係を表示しています。",
+    "ragnarokOffAnnounce": "ラグナロクの強調表示を解除しました。全{total}体のうち{visible}体、{links}件の関係を表示しています。",
+    "bothOnAnnounce": "原典が食い違うものだけ、かつラグナロクのみを表示しています。全{total}体のうち{visible}体、{links}件の関係を表示しています。"
   },
   "certainty": {
     "label": "確度",

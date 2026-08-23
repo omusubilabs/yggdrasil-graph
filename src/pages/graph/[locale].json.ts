@@ -56,6 +56,11 @@ const RUNTIME_KEYS = [
   'sources.page',
   'sources.uncited',
   'filters.noResults',
+  'filters.disputedOnAnnounce',
+  'filters.disputedOffAnnounce',
+  'filters.ragnarokOnAnnounce',
+  'filters.ragnarokOffAnnounce',
+  'filters.bothOnAnnounce',
 ] as const;
 
 const PREFIXED = ['certainty.', 'class.', 'type.', 'tag.', 'family.', 'relation.'];
