@@ -28,17 +28,26 @@ explicit verification.
 
 ### UXA-001 — Make the cold graph legible and reliably targetable
 
-- [ ] Increase the graph's interactive hit areas without making the manuscript
+- [x] Increase the graph's interactive hit areas without making the manuscript
       marks visually heavy.
-- [ ] Rebalance the mobile cold-open scale and label density so a first-time
+- [x] Rebalance the mobile cold-open scale and label density so a first-time
       reader can identify useful starting points before searching.
-- [ ] Check crowded nodes for overlapping or ambiguous hit areas.
+- [x] Check crowded nodes for overlapping or ambiguous hit areas.
 
 **Evidence:** At 390 × 844, all 45 inspected graph anchors measured below
 24 × 24 CSS pixels; the smallest was approximately 5.3 × 6.9 pixels. Twenty-four
 anchor pairs were less than 24 pixels apart centre-to-centre. Search and the
 table view provide alternative access, but the graph itself is the product's
 primary discovery surface.
+
+**Fixed:** `.node__halo` was already sized to widen the hit area but never
+received pointer events; it now does, and `haloRadius()` in
+`src/graph/geometry.ts` sizes it to clear 24×24 CSS px at every audited width
+without overlapping a neighbour. A `[data-graph-scale]` wrapper applies a
+mobile-only CSS scale, gated by a `data-view-scope` attribute so it never
+stacks with a search/selection/"show all" view. Verified by browser
+inspection at all three widths; native screen reader, physical touch and real
+browser zoom/reflow are still open, as flagged above.
 
 **Done when:** The cold graph remains comprehensible at 1440 × 900, 390 × 844
 and 320 × 720; intended graph targets have at least a 24 × 24 CSS-pixel hit area

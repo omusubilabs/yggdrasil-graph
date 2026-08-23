@@ -29,6 +29,33 @@ export const nodeRadius = (degree: number): number =>
 /** Where the label sits relative to the node centre. */
 export const labelOffset = (degree: number): number => nodeRadius(degree) + 11;
 
+/** Distance in viewBox units from `node` to its closest other node, by position. */
+export const nearestNeighbourDistance = (node: GraphNode, allNodes: readonly GraphNode[]): number => {
+  let min = Infinity;
+  for (const other of allNodes) {
+    if (other.id === node.id) continue;
+    const d = Math.hypot(other.x - node.x, other.y - node.y);
+    if (d < min) min = d;
+  }
+  return min;
+};
+
+/**
+ * How far a node's invisible hit-area ring extends past its ink mark, tuned
+ * to clear a 24×24 CSS-pixel target at every audited viewport (docs/TODO.md
+ * UXA-001). Clamped against the *full* node set, not just the cold-open core,
+ * so a halo never overlaps a neighbour that search or "show all" later reveals.
+ */
+const HALO_PAD = 12;
+const HALO_MIN_RADIUS = 30;
+
+export const haloRadius = (node: GraphNode, allNodes: readonly GraphNode[]): number => {
+  const r = nodeRadius(node.degree);
+  const target = Math.max(r + HALO_PAD, HALO_MIN_RADIUS);
+  const cap = nearestNeighbourDistance(node, allNodes) / 2;
+  return round(Math.max(r, Math.min(target, cap)));
+};
+
 /**
  * The `d` of an edge. `curve` is the signed fan offset baked in at build time;
  * zero draws a straight line.

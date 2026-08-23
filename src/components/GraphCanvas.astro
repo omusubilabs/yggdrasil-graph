@@ -20,6 +20,7 @@ import type { Locale } from '../i18n/config.ts';
 import { localePath, useTranslations } from '../i18n/index.ts';
 import {
   edgePath,
+  haloRadius,
   labelOffset,
   labelSize,
   linkClassNames,
@@ -42,6 +43,12 @@ const positions = new Map(data.nodes.map((n) => [n.id, n]));
 const coreNodeIds = new Set(data.core.nodeIds);
 const coreLinkIds = new Set(data.core.linkIds);
 const coreNodes = data.nodes.filter((node) => coreNodeIds.has(node.id));
+
+// Pivot for the narrow-viewport scale below, computed explicitly because
+// `transform-box: view-box` with `transform-origin: center` ignores a
+// non-zero viewBox x/y offset in current browsers.
+const coreCentreX = (data.core.bounds[0] + data.core.bounds[2]) / 2;
+const coreCentreY = (data.core.bounds[1] + data.core.bounds[3]) / 2;
 
 const edges = data.links
   .filter((link) => coreLinkIds.has(link.id))
@@ -115,70 +122,72 @@ const edges = data.links
       </marker>
     </defs>
 
-    <g data-graph-viewport>
-      <g class="edges" data-graph-edges aria-hidden="true">
-        {
-          edges.map((edge) => (
-            <path
-              class={edge.className}
-              d={edge.d}
-              data-link={edge.link.id}
-              data-from={edge.link.from}
-              data-to={edge.link.to}
-              data-certainty={edge.link.certainty}
-              marker-end={
-                edge.link.directed
-                  ? edge.className.includes('is-death')
-                    ? 'url(#arrow-minium)'
-                    : 'url(#arrow-ink)'
-                  : undefined
-              }
-            />
-          ))
-        }
-      </g>
+    <g data-graph-scale style={{ transformOrigin: `${coreCentreX}px ${coreCentreY}px` }}>
+      <g data-graph-viewport>
+        <g class="edges" data-graph-edges aria-hidden="true">
+          {
+            edges.map((edge) => (
+              <path
+                class={edge.className}
+                d={edge.d}
+                data-link={edge.link.id}
+                data-from={edge.link.from}
+                data-to={edge.link.to}
+                data-certainty={edge.link.certainty}
+                marker-end={
+                  edge.link.directed
+                    ? edge.className.includes('is-death')
+                      ? 'url(#arrow-minium)'
+                      : 'url(#arrow-ink)'
+                    : undefined
+                }
+              />
+            ))
+          }
+        </g>
 
-      <g class="nodes" data-graph-nodes>
-        {
-          coreNodes.map((node) => (
-            /*
-             * The <g> carries the position and the id; the <a> inside carries
-             * the link and the focus. Splitting them lets the simulation move a
-             * node by writing one transform, while keeping the thing a keyboard
-             * lands on a real anchor with a real href.
-             */
-            <g
-              class={nodeClassNames(node)}
-              data-node={node.id}
-              data-rank={node.coreRank}
-              data-degree={node.degree}
-              transform={`translate(${node.x},${node.y})`}
-            >
-              <a
-                href={localePath(locale, `/entity/${node.id}`)}
-                aria-label={t('a11y.nodeRole', {
-                  name: node.names.anglicized,
-                  type: t(`type.${node.type}`),
-                  count: node.degree,
-                })}
+        <g class="nodes" data-graph-nodes>
+          {
+            coreNodes.map((node) => (
+              /*
+               * The <g> carries the position and the id; the <a> inside carries
+               * the link and the focus. Splitting them lets the simulation move a
+               * node by writing one transform, while keeping the thing a keyboard
+               * lands on a real anchor with a real href.
+               */
+              <g
+                class={nodeClassNames(node)}
+                data-node={node.id}
+                data-rank={node.coreRank}
+                data-degree={node.degree}
+                transform={`translate(${node.x},${node.y})`}
               >
-                <path
-                  class="node__halo"
-                  d={nodeShapePath(node.type, nodeRadius(node.degree) + 5)}
-                />
-                <path class="node__shape" d={nodeShapePath(node.type, nodeRadius(node.degree))} />
-                {/* i18n-ignore: the Old Norse form is data from data/entities/, identical in every locale */}
-                <text
-                  class="node__label"
-                  y={labelOffset(node.degree)}
-                  font-size={labelSize(node.coreRank)}
+                <a
+                  href={localePath(locale, `/entity/${node.id}`)}
+                  aria-label={t('a11y.nodeRole', {
+                    name: node.names.anglicized,
+                    type: t(`type.${node.type}`),
+                    count: node.degree,
+                  })}
                 >
-                  {node.names.non}
-                </text>
-              </a>
-            </g>
-          ))
-        }
+                  <path
+                    class="node__halo"
+                    d={nodeShapePath(node.type, haloRadius(node, data.nodes))}
+                  />
+                  <path class="node__shape" d={nodeShapePath(node.type, nodeRadius(node.degree))} />
+                  {/* i18n-ignore: the Old Norse form is data from data/entities/, identical in every locale */}
+                  <text
+                    class="node__label"
+                    y={labelOffset(node.degree)}
+                    font-size={labelSize(node.coreRank)}
+                  >
+                    {node.names.non}
+                  </text>
+                </a>
+              </g>
+            ))
+          }
+        </g>
       </g>
     </g>
   </svg>
@@ -299,6 +308,46 @@ const edges = data.links
     touch-action: none;
   }
 
+  /*
+   * `[data-graph-scale]` gives narrow viewports a deliberately zoomed-in cold
+   * open, instead of squeezing the same fixed viewBox smaller.
+   *
+   * Must stay a separate wrapper, never applied to `[data-graph-viewport]`:
+   * the runtime writes a `transform` *attribute* there on every zoom/pan
+   * tick, and a CSS `transform` property on the same element would silently
+   * win over it, freezing pan/zoom once the runtime chunk mounts.
+   *
+   * Gated to `:not([data-view-scope])` — set by the runtime once search,
+   * selection or "show all" re-fits the viewBox — so it never doubles up on
+   * a view the runtime has already scaled to fit.
+   */
+  [data-graph-scale] {
+    transform-box: view-box;
+    /* transform-origin is set inline from data.core.bounds — see this file's
+       frontmatter, above coreCentreX/coreCentreY. */
+  }
+
+  @media (max-width: 25rem) {
+    svg[data-graph]:not([data-view-scope]) [data-graph-scale] {
+      transform: scale(2.3);
+    }
+
+    /* Tied to the font-size tiers labelSize() bakes in src/graph/geometry.ts. */
+    svg[data-graph]:not([data-view-scope]) .node__label[font-size='10.5'] {
+      display: none;
+    }
+  }
+
+  @media (max-width: 20.5rem) {
+    svg[data-graph]:not([data-view-scope]) [data-graph-scale] {
+      transform: scale(2.7);
+    }
+
+    svg[data-graph]:not([data-view-scope]) .node__label[font-size='12'] {
+      display: none;
+    }
+  }
+
   /* ------------------------------------------------------------------ edges */
 
   .edge {
@@ -365,11 +414,14 @@ const edges = data.links
   }
 
   /* An invisible ring that widens the hit area and, on focus, becomes the ring
-     that shows where you are. `outline` does nothing inside SVG. */
+     that shows where you are. `outline` does nothing inside SVG. Transparent
+     fill/stroke alone would leave it untargetable under the default
+     `pointer-events: visiblePainted` — `all` is what actually makes it real. */
   .node__halo {
     fill: transparent;
     stroke: transparent;
     stroke-width: 2.5;
+    pointer-events: all;
   }
 
   .node a:focus-visible .node__halo {

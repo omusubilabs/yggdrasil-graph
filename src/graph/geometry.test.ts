@@ -4,20 +4,37 @@ import { describe, it } from 'node:test';
 import {
   DEATH_RELATION_TYPES,
   edgePath,
+  haloRadius,
   isDeathRelation,
   labelOffset,
   labelSize,
   linkClassNames,
+  nearestNeighbourDistance,
   nodeClassNames,
   nodeRadius,
   nodeShapePath,
   trimToRim,
   viewBoxOf,
 } from './geometry.ts';
+import type { GraphNode } from './types.ts';
 import { sampleGraph } from './fixtures/sample-graph.ts';
 
 const findNode = (id: string) => sampleGraph.nodes.find((n) => n.id === id)!;
 const findLink = (id: string) => sampleGraph.links.find((l) => l.id === id)!;
+
+/** A bare node for pure geometry tests, where only id/x/y/degree matter. */
+const at = (id: string, x: number, y: number, degree = 0): GraphNode => ({
+  id,
+  type: 'being',
+  classes: [],
+  names: { non: id, anglicized: id },
+  attestations: [],
+  tags: [],
+  x,
+  y,
+  degree,
+  coreRank: 0,
+});
 
 describe('isDeathRelation', () => {
   it('is true for every DEATH_RELATION_TYPES entry', () => {
@@ -51,6 +68,51 @@ describe('labelOffset', () => {
   it('is nodeRadius plus 11', () => {
     assert.equal(labelOffset(0), nodeRadius(0) + 11);
     assert.equal(labelOffset(1), nodeRadius(1) + 11);
+  });
+});
+
+describe('nearestNeighbourDistance', () => {
+  it('finds the closest other node on one axis', () => {
+    const target = at('a', 0, 0);
+    const others = [target, at('b', 10, 0), at('c', 30, 0)];
+    assert.equal(nearestNeighbourDistance(target, others), 10);
+  });
+
+  it('finds the true minimum even when the closest pair is not array-adjacent', () => {
+    const target = at('a', 0, 0);
+    const others = [at('far', 100, 0), target, at('near', 3, 4)];
+    assert.equal(nearestNeighbourDistance(target, others), 5);
+  });
+
+  it('is Infinity when no other node exists', () => {
+    const target = at('a', 0, 0);
+    assert.equal(nearestNeighbourDistance(target, [target]), Infinity);
+  });
+});
+
+describe('haloRadius', () => {
+  it('is nodeRadius plus the pad for an isolated degree-0 node', () => {
+    const target = at('a', 0, 0);
+    const others = [target, at('far', 10_000, 0)];
+    assert.equal(haloRadius(target, others), 30);
+  });
+
+  it('floors to the minimum radius for an isolated low-degree node', () => {
+    const target = at('a', 0, 0, 1);
+    const others = [target, at('far', 10_000, 0)];
+    assert.equal(haloRadius(target, others), 30);
+  });
+
+  it('clamps to half the distance to a close neighbour', () => {
+    const target = at('a', 0, 0);
+    const others = [target, at('close', 20, 0)];
+    assert.equal(haloRadius(target, others), 10);
+  });
+
+  it('never shrinks below the node’s own ink radius', () => {
+    const target = at('a', 0, 0);
+    const others = [target, at('touching', 8, 0)];
+    assert.equal(haloRadius(target, others), nodeRadius(0));
   });
 });
 

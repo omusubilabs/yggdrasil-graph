@@ -25,6 +25,7 @@ import {
 } from './model.ts';
 import {
   edgePath,
+  haloRadius,
   isDeathRelation,
   labelOffset,
   labelSize,
@@ -558,6 +559,9 @@ export async function mount(): Promise<void> {
 
     svg.toggleAttribute('data-filtered', disputed);
     svg.toggleAttribute('data-ragnarok', ragnarokOn);
+    // Tells the mobile CSS scale in GraphCanvas.astro the viewBox is no
+    // longer the baked cold-open core, so it doesn't double-apply.
+    svg.toggleAttribute('data-view-scope', focusIds.size > 0 || showAll);
     const bounds =
       focusIds.size > 0
         ? boundsForNodeIds(index, focusIds)
@@ -725,7 +729,7 @@ function materializeGraph(
 
     const halo = document.createElementNS(SVG_NS, 'path');
     halo.setAttribute('class', 'node__halo');
-    halo.setAttribute('d', nodeShapePath(node.type, nodeRadius(node.degree) + 5));
+    halo.setAttribute('d', nodeShapePath(node.type, haloRadius(node, graph.nodes)));
     const shape = document.createElementNS(SVG_NS, 'path');
     shape.setAttribute('class', 'node__shape');
     shape.setAttribute('d', nodeShapePath(node.type, nodeRadius(node.degree)));
