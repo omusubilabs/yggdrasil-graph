@@ -68,15 +68,19 @@ const t = useTranslations(locale);
   }
 
   @media (max-width: 40rem) {
-    .wordmark__tagline {
-      display: none;
-    }
-
     .nav {
       width: 100%;
       flex-wrap: wrap;
       align-items: baseline;
       gap: var(--space-sm);
+    }
+  }
+
+  /* Deliberately narrower than the .nav breakpoint: at 320px the tagline
+     would wrap and re-add height, unlike at 390px where there's now room. */
+  @media (max-width: 22.5rem) {
+    .wordmark__tagline {
+      display: none;
     }
   }
 </style>

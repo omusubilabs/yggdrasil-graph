@@ -149,13 +149,34 @@ context.
 
 ### UXA-005 — Reduce mobile header pressure
 
-- [ ] Replace or compact the always-expanded language list at narrow widths.
-- [ ] Preserve a discoverable language control and restore useful introductory
+- [x] Replace or compact the always-expanded language list at narrow widths.
+- [x] Preserve a discoverable language control and restore useful introductory
       context where space permits.
 
 **Evidence:** At 390 pixels wide, the header consumed about 189 pixels of
 vertical space and the tagline disappeared, delaying the graph while removing
 its clearest statement of purpose.
+
+**Fixed:** `LanguagePicker.astro`'s always-expanded seven-locale list — the
+dominant contributor to the header height, not the tagline — is now a native
+`<details>/<summary>` disclosure, collapsed by default at narrow widths with
+zero JavaScript. The summary shows the current locale's endonym (e.g.
+"English") with an author-drawn `▾`/`▴` indicator, and its accessible name
+comes from the previously unused, already-fully-translated `nav.languageCurrent`
+key ("Current language: {name}") rather than the list's old static "Language"
+label. Above `SiteHeader.astro`'s existing 40rem breakpoint the list is forced
+visible regardless of the `<details>` element's `open` state, via CSS
+overriding the UA stylesheet's collapse rule, so desktop keeps today's
+always-expanded flat list unchanged. With the language list no longer wrapping
+across several rows, `SiteHeader.astro` narrowed the tagline's hide breakpoint
+from 40rem to 22.5rem: the tagline now reappears at 390 pixels, where the
+freed vertical space accommodates it, while staying hidden at 320 pixels,
+where its `44ch` max-width would otherwise wrap and re-add height. Verified by
+browser inspection at 1440×900, 390×844 and 320×720 (including the `nb` locale
+at 320×720, since "Norsk bokmål" is the longest endonym): header height drops
+from ~189px to ~152px at 390 wide and ~107px at 320 wide, with no horizontal
+overflow at either width; native screen reader is still open, as flagged
+above.
 
 **Done when:** The primary graph and its purpose are visible materially earlier
 at 390 × 844 and 320 × 720, every locale remains keyboard-accessible and the

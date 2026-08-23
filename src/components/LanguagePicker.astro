@@ -18,9 +18,14 @@ const { locale, route } = Astro.props;
 const t = useTranslations(locale);
 ---
 
-<div class="picker">
-  <span class="picker__label" id="language-picker-label">{t('nav.language')}</span>
-  <ul class="picker__list" aria-labelledby="language-picker-label">
+<details class="picker">
+  <summary
+    class="picker__summary"
+    aria-label={t('nav.languageCurrent', { name: LOCALE_ENDONYMS[locale] })}
+  >
+    <span aria-hidden="true">{LOCALE_ENDONYMS[locale]}</span>
+  </summary>
+  <ul class="picker__list">
     {
       ACTIVE_LOCALES.map((l) => (
         <li>
@@ -37,22 +42,38 @@ const t = useTranslations(locale);
       ))
     }
   </ul>
-</div>
+</details>
 
 <style>
   .picker {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: var(--space-xs);
     min-width: 0;
   }
 
-  .picker__label {
+  .picker__summary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    padding: var(--space-3xs) var(--space-xs);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+
+  .picker__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .picker__summary::after {
+    content: '▾';
     font-size: var(--text-xs);
-    letter-spacing: var(--tracking-caps);
-    text-transform: uppercase;
     color: var(--ink-faded);
+  }
+
+  .picker[open] .picker__summary::after {
+    content: '▴';
   }
 
   .picker__list {
@@ -60,7 +81,7 @@ const t = useTranslations(locale);
     flex-wrap: wrap;
     gap: var(--space-xs);
     list-style: none;
-    margin: 0;
+    margin: var(--space-2xs) 0 0;
     padding: 0;
   }
 
@@ -68,5 +89,22 @@ const t = useTranslations(locale);
     color: var(--ink);
     text-decoration: none;
     font-weight: var(--weight-medium);
+  }
+
+  /* Mirrors SiteHeader.astro's 40rem breakpoint; offset by .01rem so the two
+     don't fire on the same pixel. */
+  @media (min-width: 40.01rem) {
+    .picker__summary {
+      display: none;
+    }
+
+    .picker__list {
+      margin: 0;
+    }
+
+    .picker:not([open]) > .picker__list,
+    .picker[open] > .picker__list {
+      display: flex;
+    }
   }
 </style>
