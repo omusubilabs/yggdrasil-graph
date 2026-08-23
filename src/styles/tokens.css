@@ -161,6 +161,8 @@
   --edge-width-strong: 1.75px;
   --focus-ring: 2px;
   --focus-offset: 2px;
+
+  --touch-target: 2.75rem;
 }
 
 /*

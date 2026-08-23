@@ -184,12 +184,34 @@ control does not introduce horizontal overflow.
 
 ### UXA-006 — Enlarge compact touch controls
 
-- [ ] Increase the close and zoom controls toward a comfortable 44 × 44
+- [x] Increase the close and zoom controls toward a comfortable 44 × 44
       CSS-pixel touch area without visually overpowering the graph.
 
 **Evidence:** The close control measured roughly 31 × 29 pixels and zoom
 controls roughly 32 × 31 pixels. They clear a 24-pixel minimum but remain small
 for frequent touch use.
+
+**Fixed:** A new `--touch-target: 2.75rem` (44px) token in
+`src/styles/tokens.css` sets `min-width`/`min-height` on `.panel__close` in
+`EntityPanel.astro` and on the zoom-group buttons (`+`, `−`, `Recentre`) in
+`GraphControls.astro`, with `display: inline-flex` centring so the glyph
+stays centred once the box grows past its content size. Neither button's
+visible chrome (border, background, font size) changed, so the hit area grew
+without the controls reading as heavier — `.panel__close` has no background
+or border until hover, and `.controls` buttons keep their existing subtle
+vellum fill. The zoom-group sizing rule is scoped to `.controls__group
+button` rather than the broader `.controls button`, so the separate "clear
+selection" button (not part of this item) was left untouched, confirmed
+unchanged at ~162×31px by inspection. `.controls__group`'s `gap: -1px` — 
+invalid CSS that browsers silently ignore, collapsing to `gap: 0` — was
+replaced with a real `gap: var(--space-2xs)` (4px), giving the three
+now-larger zoom buttons an actual buffer instead of flush borders. Verified
+by browser inspection at 1440×900, 390×844 and 320×720: close and all three
+zoom-group buttons measure exactly 44×44 CSS px with no horizontal overflow,
+the keyboard focus-visible outline (2px verdigris, 2px offset) renders in
+full without being clipped by a neighbouring button, and the "clear
+selection" button's size is unaffected. Native screen reader, physical touch
+and real browser zoom/reflow are still open, as flagged above.
 
 **Done when:** The controls have comfortable, non-overlapping hit areas at both
 mobile audit sizes and retain visible keyboard focus.

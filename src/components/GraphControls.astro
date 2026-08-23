@@ -95,7 +95,7 @@ const t = useTranslations(locale);
 
   .controls__group {
     display: flex;
-    gap: -1px;
+    gap: var(--space-2xs);
   }
 
   .controls__search {
@@ -186,6 +186,14 @@ const t = useTranslations(locale);
   .controls button:hover {
     border-color: var(--verdigris);
     color: var(--verdigris-deep);
+  }
+
+  .controls__group button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--touch-target);
+    min-height: var(--touch-target);
   }
 
   .controls__clear[hidden] {
