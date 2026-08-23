@@ -6,6 +6,11 @@
  * out to be --vellum-deep, not the page background, which had already
  * dropped below 4.5:1 outright.
  *
+ * Also asserts that the --class-* graph-node hues clear the WCAG 1.4.11
+ * non-text 3:1 floor against every vellum surface — see docs/TODO.md
+ * UXA-010. These tokens are only ever used as SVG fill/stroke, never text,
+ * so 3:1 is the rule that applies to them, not the 4.5:1 text floor above.
+ *
  * Reads hex values straight out of tokens.css/global.css rather than
  * duplicating them here, so this can't silently drift out of sync with the
  * tokens it protects.
@@ -16,10 +21,23 @@ import { readFileSync } from 'node:fs';
 // text — not tuned to be the smallest value that happens to pass today.
 const MIN_CONTRAST = 5.0;
 
+// The WCAG 1.4.11 floor for non-text graphical objects (node fill/stroke).
+const MIN_CONTRAST_NONTEXT = 3.0;
+
 // verdigris-deep (link hover) isn't named in UXA-009 but is real text and
 // already clears the margin, so it's a free regression guard to include.
 const FG_TOKENS = ['ink-faded', 'verdigris', 'verdigris-deep'] as const;
 const BG_TOKENS = ['vellum', 'vellum-deep', 'vellum-pale'] as const;
+
+const CLASS_TOKENS = [
+  'class-aesir',
+  'class-vanir',
+  'class-jotnar',
+  'class-humans',
+  'class-beings',
+  'class-worlds',
+  'class-artifacts',
+] as const;
 
 const HEX_RE = /^#[0-9a-fA-F]{6}$/;
 const VAR_RE = /^var\(--([\w-]+)\)$/;
@@ -121,6 +139,32 @@ for (const state of states) {
   }
 }
 
+for (const fg of CLASS_TOKENS) {
+  const fgHex = baseTokens.get(fg);
+  if (!fgHex) {
+    errors.push(`--${fg} not found — has it been renamed or removed?`);
+    continue;
+  }
+  for (const bg of BG_TOKENS) {
+    const bgHex = baseTokens.get(bg);
+    if (!bgHex) {
+      errors.push(`--${bg} not found — has it been renamed or removed?`);
+      continue;
+    }
+    const ratio = contrastRatio(fgHex, bgHex);
+    const ok = ratio >= MIN_CONTRAST_NONTEXT;
+    const pair = `--${fg} on --${bg}`;
+    rows.push(
+      `  ${ok ? '✓' : '✗'} ${'non-text'.padEnd(14)} ${pair.padEnd(28)} ${fgHex} / ${bgHex}  ${ratio.toFixed(3)}:1  (≥ ${MIN_CONTRAST_NONTEXT}:1)`,
+    );
+    if (!ok) {
+      errors.push(
+        `[non-text] ${pair} is only ${ratio.toFixed(3)}:1, below the ${MIN_CONTRAST_NONTEXT}:1 non-text floor (${fgHex} on ${bgHex}).`,
+      );
+    }
+  }
+}
+
 console.log('');
 for (const row of rows) console.log(row);
 
@@ -130,4 +174,4 @@ if (errors.length > 0) {
   console.error('');
   process.exit(1);
 }
-console.log(`\n  all ${rows.length} combinations clear ${MIN_CONTRAST}:1\n`);
+console.log(`\n  all ${rows.length} combinations clear their floor (${MIN_CONTRAST}:1 text, ${MIN_CONTRAST_NONTEXT}:1 non-text)\n`);

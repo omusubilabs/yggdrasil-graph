@@ -304,7 +304,7 @@ decorative colour.
 
 ### UXA-010 — Fix the class-hue tokens' incorrect contrast claim
 
-- [ ] Verify the actual contrast of each `--class-*` token (see
+- [x] Verify the actual contrast of each `--class-*` token (see
       `src/styles/tokens.css`) against the backgrounds it can render on, and
       either correct the values or correct the comment.
 
@@ -317,6 +317,31 @@ graph nodes (`GraphCanvas.astro`), never as text colour, so WCAG's non-text
 3:1 rule (1.4.11) applies today, not the 4.5:1 text rule the comment
 describes — but the comment is factually wrong as written and would mislead
 anyone who reuses these tokens as text colour later.
+
+**Fixed:** The comment was wrong on more than the contrast rule: its
+six-line pigment story (Æsir, Vanir, Jǫtnar, Beings, Worlds, Artifacts) never
+covered `--class-humans` (`#65506f`) at all, so "all six" undercounted the
+seven `--class-*` tokens that actually exist before the contrast math even
+came into it. `src/styles/tokens.css` gains a Humans line — orchil, a
+lichen dye, prized but fugitive, fitting for the one class here that is
+mortal rather than divine, monstrous, elemental or wrought — and the closing
+claim now says "all seven," names the rule that actually governs current
+usage (WCAG 1.4.11's 3:1 non-text floor, since these are SVG fill/stroke and
+never text), and states plainly that not all seven clear 4.5:1 as text
+today (`--class-artifacts` fails against every vellum surface;
+`--class-vanir` fails against `--vellum-deep`), so a future reuse as text
+colour has to re-check rather than trust the old claim. The palette itself
+was left untouched — darkening `--class-artifacts` or `--class-vanir` to
+satisfy a text rule that applies to no current usage would have dulled
+deliberate pigment choices (artifacts is specifically "the closest a scribe
+got to gold") for no live accessibility benefit. `scripts/check-contrast.ts`
+gained a second, parallel check — all seven `--class-*` tokens against the
+three vellum surfaces at the 3:1 non-text floor, reusing the script's
+existing hex-parsing helpers — so the corrected claim is enforced by
+`npm run check:contrast` (already wired into CI) the same way the UXA-009
+claim is, rather than left as an assertion in a comment. Verified by the
+script (39/39 combinations pass, 21 of them the new non-text rows) and
+`npm run build`.
 
 **Done when:** The tokens.css comment accurately describes the actual,
 verified contrast of each `--class-*` token against the backgrounds it is

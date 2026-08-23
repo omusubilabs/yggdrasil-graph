@@ -66,6 +66,9 @@
    *              reserved in real manuscripts for the most important figures.
    *   Vanir      terre verte, green earth — fertility gods get the earth colour.
    *   Jǫtnar     raw umber — unrefined earth, the oldest and cheapest thing here.
+   *   Humans     orchil — a lichen dye, prized but fugitive, fitting for the
+   *              one class here that is mortal rather than divine, monstrous,
+   *              elemental or wrought.
    *   Beings     madder lake — a dark rose-maroon. Deliberately far from minium
    *              in hue so monsters never get mistaken for death itself.
    *   Worlds     indigo — a dye rather than a mineral, cool and recessive, so
@@ -73,9 +76,15 @@
    *   Artifacts  orpiment — arsenic yellow, the closest a scribe got to gold
    *              without gold. Treasure is the one thing allowed to glint.
    *
-   * All six are dark enough to clear 4.5:1 against --vellum as text, and all
-   * six are distinguishable from each other without relying on hue alone —
-   * node shape carries `type` in parallel.
+   * All seven are distinguishable from each other without relying on hue
+   * alone — node shape carries `type` in parallel. They are used only as SVG
+   * fill/stroke on graph nodes (never as text), so the contrast rule that
+   * actually applies is WCAG 1.4.11's 3:1 non-text floor, not the 4.5:1 text
+   * floor: all seven clear 3:1 against every vellum surface (--vellum,
+   * --vellum-deep, --vellum-pale), pinned by scripts/check-contrast.ts. Not
+   * all seven clear 4.5:1 as text today — --class-artifacts fails against
+   * every vellum surface and --class-vanir fails against --vellum-deep — so
+   * re-run that check before reusing any of these as text colour.
    */
   --class-aesir: #33507d;
   --class-vanir: #4f6440;
