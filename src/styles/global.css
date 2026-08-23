@@ -183,6 +183,10 @@ button {
 @media (prefers-contrast: more) {
   :root {
     --ink-faded: #4a4238;
+    /* Reuses --verdigris-deep rather than a new hex — hover on a link becomes
+     * visually identical to its resting state in this mode, which is an
+     * accepted trade-off (the underline and focus ring still change). */
+    --verdigris: var(--verdigris-deep);
     --rule: color-mix(in srgb, var(--ink) 34%, transparent);
     --certainty-attested-opacity: 1;
     --certainty-implied-opacity: 0.9;

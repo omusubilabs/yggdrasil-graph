@@ -268,16 +268,59 @@ when the reader returns.
 
 ### UXA-009 — Protect text-contrast margin
 
-- [ ] Increase the margin above the minimum for faded text and verdigris text,
+- [x] Increase the margin above the minimum for faded text and verdigris text,
       then protect the relevant token combinations with a repeatable check.
 
 **Evidence:** Computed contrast was approximately 4.60:1 for faded text and
 4.55:1 for verdigris text. Both passed the audited normal-text threshold, but
 small token or rendering changes could erase that margin.
 
+**Fixed:** The margin was worse than the evidence above shows: against
+`--vellum-deep` (the darker panel surface), both tokens already failed 4.5:1
+outright (`--ink-faded` 3.86:1, `--verdigris` 3.82:1) — a real, live pairing
+in `RelatedByTag.astro`'s tag pills and `CitationList.astro`'s citation
+pills, not a hypothetical. `src/styles/tokens.css` darkens `--ink-faded` from
+`#6c6153` to `#584d40` and `--verdigris` from `#2e6e5e` to `#215347`, clearing
+5:1 against every vellum surface (`--vellum`, `--vellum-deep`,
+`--vellum-pale`) while staying visibly lighter than their existing darker
+partners (`--ink-faded`'s `prefers-contrast: more` override and
+`--verdigris-deep`). The `prefers-contrast: more` block in `global.css` also
+gained a `--verdigris: var(--verdigris-deep);` override — it previously had
+none, leaving verdigris at the thin default margin even in the
+enhanced-contrast state — accepting that link hover becomes visually
+identical to the resting colour in that mode (the underline and focus ring
+still change). The repeatable guard is `scripts/check-contrast.ts`
+(`npm run check:contrast`, wired into CI): it reads the hex values straight
+out of `tokens.css`/`global.css`, computes WCAG contrast for `--ink-faded`,
+`--verdigris` and `--verdigris-deep` against all three vellum tokens in both
+states, and fails if any combination drops below a 5:1 floor — a deliberate
+margin above the 4.5:1 minimum, not the thinnest value that happens to pass.
+Verified by the script (18/18 combinations pass), `npm run build`, and
+browser inspection of the entity page and graph page.
+
 **Done when:** The affected normal-text combinations retain a deliberate safety
 margin above 4.5:1 across the supported states without reusing `--minium` as a
 decorative colour.
+
+### UXA-010 — Fix the class-hue tokens' incorrect contrast claim
+
+- [ ] Verify the actual contrast of each `--class-*` token (see
+      `src/styles/tokens.css`) against the backgrounds it can render on, and
+      either correct the values or correct the comment.
+
+**Evidence:** While investigating UXA-009, `--class-artifacts` (`#8a6a1c`)
+measured 3.84:1 against `--vellum` and `--class-vanir`/`--class-humans` both
+measured below 4.5:1 against `--vellum-deep` — contradicting the tokens.css
+comment claiming "all six are dark enough to clear 4.5:1 against `--vellum`
+as text." These tokens are currently used only as SVG `fill`/`stroke` on
+graph nodes (`GraphCanvas.astro`), never as text colour, so WCAG's non-text
+3:1 rule (1.4.11) applies today, not the 4.5:1 text rule the comment
+describes — but the comment is factually wrong as written and would mislead
+anyone who reuses these tokens as text colour later.
+
+**Done when:** The tokens.css comment accurately describes the actual,
+verified contrast of each `--class-*` token against the backgrounds it is
+used on, or the values are corrected to make the original claim true.
 
 ## Verification checklist
 

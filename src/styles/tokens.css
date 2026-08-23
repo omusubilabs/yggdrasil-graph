@@ -25,7 +25,11 @@
   --vellum-deep: #d6cebc; /* panels, wells, anything set into the page */
   --vellum-pale: #efeade; /* the one surface that lifts off the ground */
   --ink: #211c16; /* primary text, node strokes */
-  --ink-faded: #6c6153; /* secondary text, inactive edges */
+  /* secondary text, inactive edges. Pinned by scripts/check-contrast.ts
+   * (UXA-009) to keep a deliberate margin above WCAG's 4.5:1 floor against
+   * every vellum surface, including --vellum-deep — do not lighten without
+   * rerunning that check. */
+  --ink-faded: #584d40;
 
   /* Hairlines and washes, derived from ink and the accents rather than picked
    * separately, so nothing drifts out of the family. */
@@ -43,7 +47,9 @@
    * not a style choice — the whole point is that a reader learns in one glance
    * that red means an ending.
    */
-  --verdigris: #2e6e5e;
+  /* Pinned by scripts/check-contrast.ts (UXA-009) alongside --ink-faded — do
+   * not lighten without rerunning that check. */
+  --verdigris: #215347;
   --verdigris-deep: #1f4f43;
   --verdigris-wash: color-mix(in srgb, var(--verdigris) 12%, transparent);
 

@@ -50,6 +50,9 @@ jobs:
       - name: Check Old Norse glyph coverage in shipped fonts
         run: npm run check:glyphs
 
+      - name: Check text-contrast margin
+        run: npm run check:contrast
+
       - name: Typecheck
         run: npm run typecheck
 

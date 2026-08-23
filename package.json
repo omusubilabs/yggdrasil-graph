@@ -21,6 +21,7 @@
     "i18n:check": "tsx scripts/check-i18n.ts",
     "check:strings": "tsx scripts/check-strings.ts",
     "check:glyphs": "tsx scripts/check-glyphs.ts",
+    "check:contrast": "tsx scripts/check-contrast.ts",
     "check:bundle-size": "node scripts/report-bundle-size.mjs",
     "test": "node --import tsx --test",
     "test:coverage": "node --import tsx --experimental-test-coverage --test",
