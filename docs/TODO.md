@@ -202,7 +202,7 @@ or border until hover, and `.controls` buttons keep their existing subtle
 vellum fill. The zoom-group sizing rule is scoped to `.controls__group
 button` rather than the broader `.controls button`, so the separate "clear
 selection" button (not part of this item) was left untouched, confirmed
-unchanged at ~162×31px by inspection. `.controls__group`'s `gap: -1px` — 
+unchanged at ~162×31px by inspection. `.controls__group`'s `gap: -1px` —
 invalid CSS that browsers silently ignore, collapsing to `gap: 0` — was
 replaced with a real `gap: var(--space-2xs)` (4px), giving the three
 now-larger zoom buttons an actual buffer instead of flush borders. Verified
@@ -346,6 +346,92 @@ script (39/39 combinations pass, 21 of them the new non-text rows) and
 **Done when:** The tokens.css comment accurately describes the actual,
 verified contrast of each `--class-*` token against the backgrounds it is
 used on, or the values are corrected to make the original claim true.
+
+## Findings from the completion review
+
+The 23 August 2026 completion review checked the closed items against the
+production build and found four remaining gaps. These entries track the new
+work without rewriting the original audit record above.
+
+### P1 — before public launch
+
+#### UXA-011 — Make graph target sizing shape-aware
+
+- [ ] Size every node halo from the rendered shape's actual width and height,
+      not from a circle-equivalent radius alone.
+- [ ] Add a repeatable regression check for the minimum CSS-pixel target size
+      at 1440 × 900, 390 × 844 and 320 × 720.
+
+**Evidence:** `haloRadius()` floors a halo to 30 viewBox units, which produces a
+60-unit circle but only a `sqrt(3) × 30`-unit vertical span for the hexagon used
+by world and place nodes. In the production build, Midgard's halo measured
+approximately 25.0 × 21.6 CSS px at 1440 × 900, 26.7 × 23.2 at 390 × 844 and
+25.8 × 22.3 at 320 × 720. Its nearest neighbour is far enough away that the
+collision cap is not the constraint, so the target can grow without creating
+an exception to the layout-permits condition in UXA-001.
+
+**Done when:** Every intended cold-graph target measures at least 24 × 24 CSS
+px at all three audited viewports unless a documented collision makes that
+impossible; the check covers every node shape and fails if a later layout,
+shape or scale change drops a dimension below the floor.
+
+#### UXA-012 — Announce the complete active filter state
+
+- [ ] Choose the announcement from the full disputed/Ragnarǫk filter state
+      after every change, including when one filter is cleared while the other
+      remains active.
+- [ ] Use the same state-to-announcement path for direct interaction and
+      query-string rehydration.
+
+**Evidence:** Turning on disputed-only and then Ragnarǫk produced the live
+status “Only Ragnarök. Showing 50 of 381 figures and 7 relations.” at
+`?disputed=1&ragnarok=1`. Reloading that same URL instead produced “Only where
+the sources disagree and only Ragnarök. Showing 50 of 381 figures and 7
+relations.” The `bothOnAnnounce` key is used during hydration but never by the
+change handlers, so the same graph state has two accessible descriptions.
+
+**Done when:** Each direct filter change writes one concise, localised status
+that describes every active filter and agrees with the visible counts; loading
+the resulting URL produces the same state description without an extra write.
+
+#### UXA-013 — Preserve restored state for reduced-motion users
+
+- [ ] Prevent the reduced-motion status from replacing a restored selection or
+      filter announcement in the shared live region.
+- [ ] Keep page-load announcements singular and prioritise the restored graph
+      state when a shareable query string is present.
+
+**Evidence:** URL hydration writes the restored selection or filter state, then
+the `prefersReducedMotion()` branch immediately writes `graph.motionReduced` to
+the same status element. The second write becomes the final DOM state and can
+coalesce the meaningful restoration announcement before assistive technology
+receives it.
+
+**Done when:** With reduced motion enabled, a plain visit may report the motion
+mode once, while a URL carrying selection or filters reports the restored graph
+state once and leaves that accurate status in the live region.
+
+### P2 — next product-quality pass
+
+#### UXA-014 — Align mobile-sheet semantics with its operable scope
+
+- [ ] Use a coherent modal model in which all content outside the open sheet is
+      unavailable, or remove global modal semantics and define a deliberately
+      scoped non-modal sheet model.
+- [ ] Verify the chosen model with pointer, keyboard and a desktop screen
+      reader at both mobile audit sizes.
+
+**Evidence:** The mobile sheet sets `role="dialog"` and `aria-modal="true"`, but
+only the graph figure and graph controls become `inert`. Header navigation, the
+language picker and the entity table remain operable outside a dialog that
+claims the rest of the page is unavailable. The covered graph controls are
+protected, but the declared modal boundary and the actual interaction boundary
+do not match.
+
+**Done when:** Pointer, keyboard and assistive-technology behaviour all agree
+with the chosen semantics; if the sheet remains modal, focus and interaction
+cannot leave it until close, and closing still restores the original graph or
+search invoker across the 52rem breakpoint.
 
 ## Verification checklist
 
