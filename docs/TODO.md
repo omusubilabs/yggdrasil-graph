@@ -57,17 +57,32 @@ lazy graph loading and JavaScript budget must remain intact.
 
 ### UXA-002 — Prevent the mobile detail sheet from hiding active controls
 
-- [ ] Choose and implement one coherent panel model: either make the bottom
+- [x] Choose and implement one coherent panel model: either make the bottom
       sheet modal while open, or reflow the page so covered controls are no
       longer interactive behind it.
-- [ ] Define initial focus, keyboard containment and focus restoration for that
+- [x] Define initial focus, keyboard containment and focus restoration for that
       model.
-- [ ] Ensure pointer, keyboard and assistive-technology users cannot operate
+- [x] Ensure pointer, keyboard and assistive-technology users cannot operate
       controls that are visually covered by the sheet.
 
 **Evidence:** The open sheet covered about 99% of the graph controls at
 390 × 844 and 74% at 320 × 720, while eight covered inputs or buttons remained
 enabled and keyboard-focusable.
+
+**Fixed:** Below the panel's existing `52rem` mobile breakpoint, the sheet now
+behaves as a modal dialog: `src/graph/runtime.ts` marks the graph canvas and
+`GraphControls` `inert` for as long as it is open, so the covered controls
+leave the tab order, stop responding to pointer input and drop out of the
+accessibility tree without any manual per-control bookkeeping. The panel
+gains `role="dialog"` and `aria-modal="true"` only in that state, takes
+initial focus itself (`EntityPanel.astro` now carries `tabindex="-1"`), traps
+Tab/Shift+Tab among its own focusable elements, and closes on Escape from
+anywhere inside it. Closing restores focus to whatever invoked the
+selection — the graph node or the search result — not always the node as
+before. Desktop keeps today's non-modal sidebar untouched. Verified by
+browser inspection at 390 × 844, 320 × 720 and 1440 × 900: native screen
+reader, physical touch and real browser zoom/reflow are still open, as
+flagged above.
 
 **Done when:** Tab and reverse-Tab expose only controls that are visually and
 semantically available; Escape closes the sheet; focus returns to the invoking

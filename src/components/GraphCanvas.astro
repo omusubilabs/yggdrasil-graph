@@ -193,14 +193,6 @@ const edges = data.links
   </svg>
 
   <!--
-    Announcements from the runtime: which figure was selected, how many
-    neighbours are showing, when the selection cleared. Kept separate from the
-    panel so a screen reader hears one short sentence rather than the panel's
-    whole contents re-read on every click.
-  -->
-  <p class="visually-hidden" data-graph-status role="status" aria-live="polite"></p>
-
-  <!--
     Shown only if the runtime chunk fails to load or throws. The sentence is
     rendered here rather than built in JavaScript so it is translated like
     everything else, and so it is available to a script that has already failed.
@@ -212,6 +204,16 @@ const edges = data.links
     <span class="tip__summary" data-tip-summary></span>
   </div>
 </figure>
+
+<!--
+  Announcements from the runtime: which figure was selected, how many
+  neighbours are showing, when the selection cleared. Kept separate from the
+  panel so a screen reader hears one short sentence rather than the panel's
+  whole contents re-read on every click. Deliberately a sibling of <figure>:
+  the runtime marks the figure `inert` while the mobile sheet is modal, which
+  would silence a nested live region too.
+-->
+<p class="visually-hidden" data-graph-status role="status" aria-live="polite"></p>
 
 <style>
   .canvas {

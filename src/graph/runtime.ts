@@ -131,6 +131,47 @@ export async function mount(): Promise<void> {
   const panelBody = panel?.querySelector<HTMLElement>('[data-panel-body]') ?? null;
   const clearButton = controls?.querySelector<HTMLButtonElement>('[data-clear-selection]') ?? null;
 
+  // -------------------------------------------------------- modal mobile sheet
+
+  const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+  // Mirrors EntityPanel.astro's own @media breakpoint — must stay identical.
+  const mobileModalQuery = window.matchMedia('(max-width: 52rem)');
+  const isModal = () => mobileModalQuery.matches;
+  let invoker: (HTMLElement | SVGElement) | null = null;
+
+  const engageModal = () => {
+    if (!panel || !isModal()) return;
+    const active = document.activeElement;
+    invoker = active instanceof HTMLElement || active instanceof SVGElement ? active : null;
+    if (invoker === document.body) invoker = null;
+    figure.inert = true;
+    if (controls) controls.inert = true;
+    panel.setAttribute('role', 'dialog');
+    panel.setAttribute('aria-modal', 'true');
+    panel.focus();
+  };
+
+  const releaseModal = () => {
+    figure.inert = false;
+    if (controls) controls.inert = false;
+    panel?.removeAttribute('role');
+    panel?.removeAttribute('aria-modal');
+  };
+
+  const restoreFocusAfterClose = (wasSelected: string | null) => {
+    const target = invoker;
+    invoker = null;
+    if (target?.isConnected) target.focus();
+    else if (wasSelected) focusNode(wasSelected);
+  };
+
+  // In case the viewport crosses the breakpoint while the sheet is open.
+  mobileModalQuery.addEventListener('change', (event) => {
+    if (!panel || panel.hidden) return;
+    if (event.matches) engageModal();
+    else releaseModal();
+  });
+
   let selected: string | null = null;
 
   const clearSelection = () => {
@@ -139,6 +180,7 @@ export async function mount(): Promise<void> {
     for (const el of nodeEls.values()) el.classList.remove('is-near', 'is-selected');
     for (const el of edgeEls.values()) el.classList.remove('is-near');
     if (panel) panel.hidden = true;
+    releaseModal();
     if (clearButton) clearButton.hidden = true;
     applyVisibility();
     announce(s('a11y.selectionCleared'));
@@ -286,14 +328,41 @@ export async function mount(): Promise<void> {
     panelBody.append(more);
 
     panel.hidden = false;
+    engageModal();
   };
 
   panel?.querySelector<HTMLButtonElement>('[data-panel-close]')?.addEventListener('click', () => {
     const wasSelected = selected;
     clearSelection();
-    if (wasSelected) focusNode(wasSelected);
+    restoreFocusAfterClose(wasSelected);
   });
   clearButton?.addEventListener('click', clearSelection);
+
+  panel?.addEventListener('keydown', (event) => {
+    if (!panel || panel.hidden) return;
+
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      const wasSelected = selected;
+      clearSelection();
+      restoreFocusAfterClose(wasSelected);
+      return;
+    }
+
+    // On desktop the panel is a non-modal sidebar; let Tab carry on past it.
+    if (event.key !== 'Tab' || !isModal()) return;
+    const focusables = [...panel.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)];
+    if (focusables.length === 0) return;
+    const first = focusables[0]!;
+    const last = focusables[focusables.length - 1]!;
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
 
   // ------------------------------------------------------------ pointer
 
@@ -439,7 +508,8 @@ export async function mount(): Promise<void> {
     searchInput.value = node.names.non;
     closeSearch();
     select_(id);
-    focusNode(id);
+    // select_() already focused the panel while modal; don't fight that.
+    if (!isModal()) focusNode(id);
   };
 
   searchInput?.addEventListener('input', renderSearch);
@@ -629,7 +699,7 @@ export async function mount(): Promise<void> {
   applyVisibility();
   if (initial.selected && index.nodeById.has(initial.selected)) {
     select_(initial.selected);
-    focusNode(initial.selected);
+    if (!isModal()) focusNode(initial.selected);
   }
   // Unconditional: normalises away a stale/invalid ?selected= that select_()
   // silently ignored, rather than leaving it dangling in the address bar.
