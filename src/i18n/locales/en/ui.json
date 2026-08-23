@@ -24,7 +24,7 @@
     "showAll": "Show every figure",
     "showAllHint": "Expand the graph from its core argument to the full corpus.",
     "scopeAnnounce": "Showing {visible} of {total} figures.",
-    "hint": "Touch a name.",
+    "hint": "Select a name.",
     "hintKeyboard": "Tab into the graph, then move between figures with the arrow keys.",
     "loading": "Waking the graph",
     "ready": "Graph ready",

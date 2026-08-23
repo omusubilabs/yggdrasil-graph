@@ -260,7 +260,7 @@ when the reader returns.
 
 ### UXA-008 — Use input-neutral graph guidance
 
-- [ ] Replace “Touch a name” and equivalent translations with wording such as
+- [x] Replace “Touch a name” and equivalent translations with wording such as
       “Select a name” that covers pointer, touch and keyboard input.
 
 **Done when:** All complete locales use input-neutral guidance and

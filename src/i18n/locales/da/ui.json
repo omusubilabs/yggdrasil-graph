@@ -24,7 +24,7 @@
     "showAll": "Vis alle skikkelser",
     "showAllHint": "Udvid grafen fra kernen til hele korpusset.",
     "scopeAnnounce": "Viser {visible} af {total} skikkelser.",
-    "hint": "Rør ved et navn.",
+    "hint": "Vælg et navn.",
     "hintKeyboard": "Tab ind i grafen, og bevæg dig derefter mellem skikkelserne med piletasterne.",
     "loading": "Vækker grafen",
     "ready": "Grafen er klar",

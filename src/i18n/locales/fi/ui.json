@@ -24,7 +24,7 @@
     "showAll": "Näytä kaikki hahmot",
     "showAllHint": "Laajenna kaavio ytimestä koko korpukseen.",
     "scopeAnnounce": "Näytetään {visible}/{total} hahmoa.",
-    "hint": "Kosketa nimeä.",
+    "hint": "Valitse nimi.",
     "hintKeyboard": "Siirry sarkaimella kaavioon ja liiku sitten hahmojen välillä nuolinäppäimillä.",
     "loading": "Herätetään kaaviota",
     "ready": "Kaavio valmis",

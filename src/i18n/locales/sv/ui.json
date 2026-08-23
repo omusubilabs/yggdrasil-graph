@@ -24,7 +24,7 @@
     "showAll": "Visa alla gestalter",
     "showAllHint": "Utöka grafen från kärnan till hela korpusen.",
     "scopeAnnounce": "Visar {visible} av {total} gestalter.",
-    "hint": "Rör vid ett namn.",
+    "hint": "Välj ett namn.",
     "hintKeyboard": "Tabba in i grafen och rör dig sedan mellan gestalterna med piltangenterna.",
     "loading": "Väcker grafen",
     "ready": "Grafen är redo",
