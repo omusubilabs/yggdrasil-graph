@@ -133,6 +133,7 @@ export async function mount(): Promise<void> {
 
   const panel = document.querySelector<HTMLElement>('[data-entity-panel]');
   const panelTitle = panel?.querySelector<HTMLElement>('#panel-title') ?? null;
+  const panelViewFull = panel?.querySelector<HTMLAnchorElement>('[data-panel-view-full]') ?? null;
   const panelBody = panel?.querySelector<HTMLElement>('[data-panel-body]') ?? null;
   const clearButton = controls?.querySelector<HTMLButtonElement>('[data-clear-selection]') ?? null;
 
@@ -240,6 +241,12 @@ export async function mount(): Promise<void> {
     titleLink.href = linkTo(`/entity/${id}`);
     titleLink.textContent = node.names.non;
     panelTitle.replaceChildren(titleLink);
+
+    if (panelViewFull) {
+      panelViewFull.href = linkTo(`/entity/${id}`);
+      panelViewFull.textContent = s('panel.viewFull');
+    }
+
     panelBody.replaceChildren();
 
     if (strings?.epithet) panelBody.append(el('p', 'panel__epithet', strings.epithet));

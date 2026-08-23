@@ -62,6 +62,7 @@
     "relations": "Relationer",
     "relatedByTag": "Relateret",
     "citations": "Kildehenvisninger",
+    "viewFull": "Se fuld beretning",
     "readMore": "Fuld beretning om {name}",
     "empty": "Intet valgt. Vælg en skikkelse i grafen.",
     "noRelations": "Ingen relationer registreret endnu.",

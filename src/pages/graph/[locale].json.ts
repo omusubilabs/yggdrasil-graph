@@ -35,6 +35,7 @@ const RUNTIME_KEYS = [
   'panel.relations',
   'panel.relatedByTag',
   'panel.citations',
+  'panel.viewFull',
   'panel.readMore',
   'panel.empty',
   'panel.noRelations',

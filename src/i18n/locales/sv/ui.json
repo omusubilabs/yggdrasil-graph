@@ -62,6 +62,7 @@
     "relations": "Relationer",
     "relatedByTag": "Relaterat",
     "citations": "Källhänvisningar",
+    "viewFull": "Visa fullständig redogörelse",
     "readMore": "Fullständig redogörelse för {name}",
     "empty": "Inget valt. Välj en gestalt i grafen.",
     "noRelations": "Inga relationer registrerade än.",

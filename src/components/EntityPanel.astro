@@ -23,11 +23,14 @@ const t = useTranslations(locale);
 
 <aside class="panel" data-entity-panel hidden aria-labelledby="panel-title" tabindex="-1">
   <div class="panel__bar">
-    <h2 class="panel__title" id="panel-title"></h2>
-    <button type="button" class="panel__close" data-panel-close aria-label={t('panel.close')}>
-      {/* i18n-ignore: a multiplication sign used as a close glyph, not text */}
-      <span aria-hidden="true">×</span>
-    </button>
+    <div class="panel__bar-row">
+      <h2 class="panel__title" id="panel-title"></h2>
+      <button type="button" class="panel__close" data-panel-close aria-label={t('panel.close')}>
+        {/* i18n-ignore: a multiplication sign used as a close glyph, not text */}
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <a class="panel__view-full" data-panel-view-full></a>
   </div>
   <div class="panel__body" data-panel-body></div>
 </aside>
@@ -53,11 +56,37 @@ const t = useTranslations(locale);
 
   .panel__bar {
     display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding: var(--space-md) var(--space-md) var(--space-xs);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .panel__bar-row {
+    display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: var(--space-sm);
-    padding: var(--space-md) var(--space-md) var(--space-xs);
-    border-bottom: 1px solid var(--rule);
+  }
+
+  .panel__view-full {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--touch-target);
+    padding: var(--space-2xs) var(--space-sm);
+    border: 1px solid var(--verdigris);
+    border-radius: var(--radius-sm);
+    background: var(--verdigris-wash);
+    color: var(--verdigris-deep);
+    font-weight: var(--weight-medium);
+    font-size: var(--text-sm);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .panel__view-full:hover {
+    text-decoration: underline;
   }
 
   .panel__title {

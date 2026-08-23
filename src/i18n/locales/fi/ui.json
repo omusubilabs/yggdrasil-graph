@@ -62,6 +62,7 @@
     "relations": "Suhteet",
     "relatedByTag": "Liittyvät",
     "citations": "Lähdeviitteet",
+    "viewFull": "Katso koko kuvaus",
     "readMore": "Täydellinen kuvaus hahmosta {name}",
     "empty": "Ei valintaa. Valitse hahmo kaaviosta.",
     "noRelations": "Suhteita ei ole vielä kirjattu.",

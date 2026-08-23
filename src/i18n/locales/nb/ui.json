@@ -62,6 +62,7 @@
     "relations": "Relasjoner",
     "relatedByTag": "Relatert",
     "citations": "Kildehenvisninger",
+    "viewFull": "Vis fullstendig omtale",
     "readMore": "Fullstendig omtale av {name}",
     "empty": "Ingenting valgt. Velg en skikkelse i grafen.",
     "noRelations": "Ingen relasjoner registrert ennå.",

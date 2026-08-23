@@ -62,6 +62,7 @@
     "relations": "Relations",
     "relatedByTag": "Related",
     "citations": "Citations",
+    "viewFull": "View full account",
     "readMore": "Full account of {name}",
     "empty": "Nothing selected. Choose a figure in the graph.",
     "noRelations": "No relations recorded yet.",

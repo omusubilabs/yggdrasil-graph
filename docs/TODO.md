@@ -218,14 +218,39 @@ mobile audit sizes and retain visible keyboard focus.
 
 ### UXA-007 — Surface the full entity account as an explicit action
 
-- [ ] Add a clearly labelled action near the detail-panel heading that opens
+- [x] Add a clearly labelled action near the detail-panel heading that opens
       the complete entity page.
-- [ ] Keep the current linked title only if it remains useful as a secondary
+- [x] Keep the current linked title only if it remains useful as a secondary
       path.
 
 **Evidence:** The complete-account link appears after a long internal scroll.
 The title is also a link, but that behaviour is not apparent to a first-time
 reader.
+
+**Fixed:** `EntityPanel.astro`'s `.panel__bar` now holds a `.panel__bar-row`
+(title + close, unchanged) followed by a new `.panel__view-full` link, so the
+action sits in the panel's fixed, non-scrolling header — above `.panel__body`,
+which is the only part of the panel that scrolls — and is therefore visible
+the instant a panel opens, on both the desktop sidebar and the mobile sheet.
+It is styled after `.controls__clear`'s existing verdigris-wash "highlighted
+action" treatment, distinct from the plain in-body links, with a
+`--touch-target` (44px) minimum height. `src/graph/runtime.ts`'s `renderPanel`
+sets its `href` and text (`panel.viewFull`, new key in all seven locale
+`ui.json` files and in `RUNTIME_KEYS`) alongside the existing title-link build,
+using a plain `<a href>` rather than JS-driven navigation. The linked title is
+kept unchanged as a secondary path; the existing `panel.readMore` link at the
+foot of the panel body is also kept, since it still works and needed no
+scoped-in changes. Because `selected` is already written into the query
+string via `replaceState` before any click can occur, browser Back from the
+full entity page reopens the graph with the same node selected with no new
+state-handling code. Verified by browser inspection at 1440×900, 390×844 and
+320×720: the action renders without scrolling, measures 44px tall with no
+horizontal overflow at 320px wide, sits in logical tab order between the title
+and the relations list inside the mobile modal dialog, and correctly carries
+selection through a full navigate-away-and-Back round trip; confirmed the
+`ja` translation ("詳細を見る") also fits without wrapping. Native screen
+reader, physical touch and real browser zoom/reflow are still open, as
+flagged above.
 
 **Done when:** The action is visible without scrolling when a panel opens, has
 a descriptive accessible name and preserves selection and URL-state behaviour

@@ -62,6 +62,7 @@
     "relations": "Tengsl",
     "relatedByTag": "Tengt",
     "citations": "Tilvísanir",
+    "viewFull": "Skoða alla umfjöllun",
     "readMore": "Öll umfjöllun um {name}",
     "empty": "Ekkert valið. Veldu persónu í grafinu.",
     "noRelations": "Engin tengsl skráð enn.",

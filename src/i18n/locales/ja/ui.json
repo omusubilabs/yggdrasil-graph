@@ -62,6 +62,7 @@
     "relations": "関係",
     "relatedByTag": "関連",
     "citations": "典拠",
+    "viewFull": "詳細を見る",
     "readMore": "{name}の詳細",
     "empty": "何も選択されていません。グラフから選んでください。",
     "noRelations": "まだ関係が記録されていません。",
