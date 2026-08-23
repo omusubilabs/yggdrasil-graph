@@ -194,6 +194,14 @@ the scaling layer now ship together:
       loci, every entity participates in a cited relation, and all seven
       locales remain complete.
 
+### Next priorities
+
+Product, UX and accessibility follow-up from the August 2026 pre-launch audit
+is tracked in [`docs/TODO.md`](docs/TODO.md). The launch-critical queue starts
+with graph legibility and target size, mobile detail-sheet focus behaviour and
+Ragnarǫk filter announcements; dataset and citation work remains in
+[`data/TODO.md`](data/TODO.md).
+
 ---
 
 ## Deploying
