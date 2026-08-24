@@ -390,6 +390,24 @@ const edges = data.links
     stroke-width: var(--edge-width-strong);
   }
 
+  /* :not(.is-death) keeps --minium reserved even while a row is hovered. */
+  .edge.is-panel-hover:not(.is-death) {
+    stroke: var(--verdigris-deep);
+  }
+  .edge.is-panel-hover {
+    stroke-width: var(--edge-width-strong);
+  }
+
+  /* A contradiction gets the interactive accent, never --minium — that stays
+     reserved for edges that end a life. */
+  .edge.is-contradiction-hover:not(.is-death) {
+    stroke: var(--verdigris);
+  }
+  .edge.is-contradiction-hover {
+    stroke-dasharray: var(--certainty-disputed-dash);
+    stroke-width: var(--edge-width-strong);
+  }
+
   .arrow--ink {
     fill: var(--ink-faded);
   }
@@ -501,18 +519,27 @@ const edges = data.links
    *
    * Set by the runtime on the <svg> element. Until it loads, nothing is dimmed
    * and the whole graph is simply visible, which is the correct default.
+   *
+   * ":not(.is-lineage-node)"/":not(.is-lineage-trace)" exempt an active
+   * bloodline trace, which can reach past the one-hop neighbourhood — without
+   * this it would draw, then instantly dim back into the background.
    */
-  :global([data-graph][data-selected]) .node:not(.is-near),
-  :global([data-graph][data-selected]) .edge:not(.is-near) {
+  :global([data-graph][data-selected]) .node:not(.is-near):not(.is-lineage-node),
+  :global([data-graph][data-selected]) .edge:not(.is-near):not(.is-lineage-trace) {
     opacity: 0.12;
   }
 
-  :global([data-graph][data-selected]) .node:not(.is-near) .node__label {
+  :global([data-graph][data-selected]) .node:not(.is-near):not(.is-lineage-node) .node__label {
     opacity: 0;
   }
 
   :global([data-graph][data-selected]) .node.is-selected .node__shape {
     stroke-width: 3;
+  }
+
+  /* Signals an armed bloodline trace waiting for its second figure. */
+  svg[data-trace-armed] .node {
+    cursor: crosshair;
   }
 
   :global([data-graph][data-filtered]) .edge.is-hidden {

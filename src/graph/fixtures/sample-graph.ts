@@ -271,6 +271,20 @@ const nodes: GraphNode[] = [
     },
     19,
   ),
+  // For bloodlineTrace: ancestor's second child, sibling of champion, else
+  // unconnected — proves a shared-ancestor pair (not ancestor of each other)
+  // resolves to null, without touching any other test's expectations.
+  node(
+    {
+      id: 'heir',
+      type: 'deity',
+      classes: ['aesir'],
+      names: { non: 'Erfingi', anglicized: 'Heir' },
+      attestations: [],
+      tags: [],
+    },
+    20,
+  ),
 ];
 
 const links: GraphLink[] = [
@@ -417,6 +431,15 @@ const links: GraphLink[] = [
     directed: true,
     certainty: 'attested',
     sources: [{ work: 'song-of-crowns', locus: '6' }],
+    family: 'kinship',
+  }),
+  link({
+    from: 'ancestor',
+    to: 'heir',
+    type: 'parent_of',
+    directed: true,
+    certainty: 'attested',
+    sources: [{ work: 'song-of-crowns', locus: '7' }],
     family: 'kinship',
   }),
   link({

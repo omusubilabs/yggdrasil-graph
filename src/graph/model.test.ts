@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
 import {
+  bloodlineTrace,
   buildCore,
   buildIndex,
   locusKey,
@@ -235,6 +236,43 @@ describe('ragnarokOverlay', () => {
 
   it('still counts beast as a combatant via its tagged pairing, despite the excluded one', () => {
     assert.ok(overlay.combatantIds.has('beast'));
+  });
+});
+
+describe('bloodlineTrace', () => {
+  it('finds the chain from descendant to ancestor', () => {
+    const trace = bloodlineTrace(index, 'champion', 'progenitor');
+    assert.deepEqual(trace?.nodeIds, ['champion', 'ancestor', 'progenitor']);
+    assert.deepEqual(trace?.linkIds, [
+      'ancestor--champion--parent_of',
+      'progenitor--ancestor--parent_of',
+    ]);
+  });
+
+  it('returns the same path when the two ids are swapped', () => {
+    const forward = bloodlineTrace(index, 'champion', 'progenitor');
+    const backward = bloodlineTrace(index, 'progenitor', 'champion');
+    assert.deepEqual(forward, backward);
+  });
+
+  it('returns null for unrelated nodes', () => {
+    assert.equal(bloodlineTrace(index, 'champion', 'beast'), null);
+  });
+
+  it('returns null for a pair joined only by a non-parent_of relation', () => {
+    assert.equal(bloodlineTrace(index, 'king', 'queen'), null);
+  });
+
+  it('returns null for the same node twice', () => {
+    assert.equal(bloodlineTrace(index, 'champion', 'champion'), null);
+  });
+
+  it('returns null for an unknown id', () => {
+    assert.equal(bloodlineTrace(index, 'champion', 'nobody'), null);
+  });
+
+  it("returns null for a common-ancestor pair, neither the other's ancestor", () => {
+    assert.equal(bloodlineTrace(index, 'champion', 'heir'), null);
   });
 });
 

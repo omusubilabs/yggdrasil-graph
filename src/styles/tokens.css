@@ -154,9 +154,10 @@
 
   /* ------------------------------------------------------------- motion
    *
-   * The load sequence and the Ragnarǫk overlay are orchestrated. Everything
-   * else is a hover state. These tokens exist so that stays true: there is no
-   * token for a long decorative transition, because nothing else should have one.
+   * The load sequence, the Ragnarǫk overlay, and the bloodline trace are
+   * orchestrated. Everything else is a hover state. These tokens exist so
+   * that stays true: there is no token for a long decorative transition,
+   * because nothing else should have one.
    */
   --motion-fast: 120ms;
   --motion-base: 240ms;

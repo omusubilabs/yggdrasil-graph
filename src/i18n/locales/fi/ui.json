@@ -68,7 +68,9 @@
     "noRelations": "Suhteita ei ole vielä kirjattu.",
     "relationCount": "{count} suhdetta",
     "outgoing": "{name} → ",
-    "incoming": " → {name}"
+    "incoming": " → {name}",
+    "traceStart": "Seuraa sukulinjaa",
+    "traceCancel": "Peruuta sukulinjan jäljitys"
   },
   "filters": {
     "label": "Suodattimet",
@@ -189,7 +191,11 @@
     "nodeRole": "{name}, {type}, {count} suhdetta",
     "graphInstructions": "Nuolinäppäimet siirtävät yhdistettyjen hahmojen välillä. Enter avaa tiedot. Escape tyhjentää valinnan.",
     "selectionCleared": "Valinta tyhjennetty. Näytetään koko kaavio.",
-    "externalLink": "avautuu uuteen välilehteen"
+    "externalLink": "avautuu uuteen välilehteen",
+    "traceArmed": "Sukulinjan jäljitys valmiina hahmosta {name}. Valitse esi-isä tai jälkeläinen jäljitettäväksi.",
+    "traceCancelled": "Sukulinjan jäljitys peruutettu.",
+    "traceFound": "Sukulinja löytyi, kattaen {count} hahmoa.",
+    "traceNotFound": "Näiden kahden hahmon välillä ei ole suoraa sukulinjaa."
   },
   "error": {
     "notFoundTitle": "Sivua ei löydy",

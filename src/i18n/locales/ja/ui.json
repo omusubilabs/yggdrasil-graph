@@ -68,7 +68,9 @@
     "noRelations": "まだ関係が記録されていません。",
     "relationCount": "{count}件の関係",
     "outgoing": "{name} → ",
-    "incoming": " → {name}"
+    "incoming": " → {name}",
+    "traceStart": "血統をたどる",
+    "traceCancel": "血統トレースを取り消す"
   },
   "filters": {
     "label": "絞り込み",
@@ -189,7 +191,11 @@
     "nodeRole": "{name}、{type}、{count}件の関係",
     "graphInstructions": "矢印キーで隣接する存在のあいだを移動します。Enterキーで詳細を開き、Escapeキーで選択を解除します。",
     "selectionCleared": "選択を解除しました。グラフ全体を表示しています。",
-    "externalLink": "新しいタブで開きます"
+    "externalLink": "新しいタブで開きます",
+    "traceArmed": "{name}から血統トレースを開始しました。祖先または子孫を選択してください。",
+    "traceCancelled": "血統トレースを取り消しました。",
+    "traceFound": "血統が見つかりました。{count}人にわたります。",
+    "traceNotFound": "この2人のあいだに直接の血統はありません。"
   },
   "error": {
     "notFoundTitle": "ページが見つかりません",

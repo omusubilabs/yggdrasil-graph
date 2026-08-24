@@ -166,6 +166,10 @@ export const searchEntities = (data: Pick<GraphData, 'nodes'>, query: string, li
     .map(({ node }) => node);
 };
 
+/** `parent_of` links where `id` is the child, i.e. one generation up from `id`. */
+const parentLinksOf = (index: GraphIndex, id: string): GraphLink[] =>
+  (index.incident.get(id) ?? []).filter((link) => link.type === 'parent_of' && link.to === id);
+
 export interface RagnarokOverlay {
   /** Death-relation edges between two entities tagged `ragnarok-participant`. */
   pairingLinkIds: Set<string>;
@@ -205,8 +209,7 @@ export const ragnarokOverlay = (index: GraphIndex): RagnarokOverlay => {
   const queue = [...combatantIds];
   while (queue.length) {
     const id = queue.pop()!;
-    for (const link of index.incident.get(id) ?? []) {
-      if (link.type !== 'parent_of' || link.to !== id) continue; // walk upward only
+    for (const link of parentLinksOf(index, id)) {
       if (lineageNodeIds.has(link.from)) continue;
       lineageNodeIds.add(link.from);
       lineageLinkIds.add(link.id);
@@ -215,6 +218,68 @@ export const ragnarokOverlay = (index: GraphIndex): RagnarokOverlay => {
   }
 
   return { pairingLinkIds, combatantIds, lineageNodeIds, lineageLinkIds };
+};
+
+export interface BloodlineTrace {
+  /** Descendant → ancestor, inclusive. */
+  nodeIds: string[];
+  /** The `parent_of` edges joining them, in the same order as `nodeIds`. */
+  linkIds: string[];
+}
+
+/**
+ * BFS upward from `descendantId` along `parent_of` edges toward `ancestorId`.
+ * BFS, not DFS, so the shortest chain wins when more than one route exists.
+ */
+const walkUpward = (
+  index: GraphIndex,
+  descendantId: string,
+  ancestorId: string,
+): BloodlineTrace | null => {
+  const prev = new Map<string, { child: string; linkId: string }>();
+  const visited = new Set<string>([descendantId]);
+  const queue = [descendantId];
+
+  while (queue.length) {
+    const id = queue.shift()!;
+    if (id === ancestorId) {
+      const nodeIds = [id];
+      const linkIds: string[] = [];
+      let cursor = id;
+      while (cursor !== descendantId) {
+        const step = prev.get(cursor)!;
+        linkIds.push(step.linkId);
+        nodeIds.push(step.child);
+        cursor = step.child;
+      }
+      return { nodeIds: nodeIds.reverse(), linkIds: linkIds.reverse() };
+    }
+    for (const link of parentLinksOf(index, id)) {
+      if (visited.has(link.from)) continue;
+      visited.add(link.from);
+      prev.set(link.from, { child: id, linkId: link.id });
+      queue.push(link.from);
+    }
+  }
+  return null;
+};
+
+/**
+ * The shortest `parent_of` chain between two figures, in whichever direction
+ * one is an ancestor of the other — "follow the bloodline" from the panel.
+ *
+ * Deliberately returns `null` for a shared-ancestor pair (siblings, cousins):
+ * the feature's "ending on the ancestor" semantics only make sense for a
+ * straight-line descent, not a fork.
+ */
+export const bloodlineTrace = (
+  index: GraphIndex,
+  aId: string,
+  bId: string,
+): BloodlineTrace | null => {
+  if (aId === bId) return null;
+  if (!index.nodeById.has(aId) || !index.nodeById.has(bId)) return null;
+  return walkUpward(index, aId, bId) ?? walkUpward(index, bId, aId);
 };
 
 const boundsFor = (nodes: GraphNode[], pad = 60): [number, number, number, number] => {

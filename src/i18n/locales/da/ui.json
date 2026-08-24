@@ -68,7 +68,9 @@
     "noRelations": "Ingen relationer registreret endnu.",
     "relationCount": "{count} relationer",
     "outgoing": "{name} → ",
-    "incoming": " → {name}"
+    "incoming": " → {name}",
+    "traceStart": "Følg blodslinjen",
+    "traceCancel": "Annullér blodslinjesporing"
   },
   "filters": {
     "label": "Filtre",
@@ -189,7 +191,11 @@
     "nodeRole": "{name}, {type}, {count} relationer",
     "graphInstructions": "Piletasterne flytter mellem forbundne skikkelser. Enter åbner detaljer. Escape rydder valget.",
     "selectionCleared": "Valget ryddet. Viser hele grafen.",
-    "externalLink": "åbner i en ny fane"
+    "externalLink": "åbner i en ny fane",
+    "traceArmed": "Blodslinjesporing klar fra {name}. Vælg en forfader eller efterkommer at spore til.",
+    "traceCancelled": "Blodslinjesporing annulleret.",
+    "traceFound": "Blodslinje fundet, over {count} skikkelser.",
+    "traceNotFound": "Ingen direkte blodslinje mellem disse to skikkelser."
   },
   "error": {
     "notFoundTitle": "Ingen sådan side",

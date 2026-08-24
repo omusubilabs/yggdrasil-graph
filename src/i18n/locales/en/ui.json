@@ -68,7 +68,9 @@
     "noRelations": "No relations recorded yet.",
     "relationCount": "{count} relations",
     "outgoing": "{name} → ",
-    "incoming": " → {name}"
+    "incoming": " → {name}",
+    "traceStart": "Follow the bloodline",
+    "traceCancel": "Cancel bloodline trace"
   },
   "filters": {
     "label": "Filters",
@@ -189,7 +191,11 @@
     "nodeRole": "{name}, {type}, {count} relations",
     "graphInstructions": "Arrow keys move between connected figures. Enter opens details. Escape clears the selection.",
     "selectionCleared": "Selection cleared. Showing the whole graph.",
-    "externalLink": "opens in a new tab"
+    "externalLink": "opens in a new tab",
+    "traceArmed": "Bloodline trace armed from {name}. Select an ancestor or descendant to trace.",
+    "traceCancelled": "Bloodline trace cancelled.",
+    "traceFound": "Bloodline found, spanning {count} figures.",
+    "traceNotFound": "No direct bloodline between these two figures."
   },
   "error": {
     "notFoundTitle": "No such page",

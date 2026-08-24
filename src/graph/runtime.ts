@@ -14,6 +14,7 @@
 import { select, type Selection } from 'd3-selection';
 import { zoom, zoomIdentity, type D3ZoomEvent, type ZoomBehavior } from 'd3-zoom';
 import {
+  bloodlineTrace,
   boundsForNodeIds,
   buildIndex,
   neighbourhood,
@@ -21,6 +22,7 @@ import {
   relatedByTag,
   relationsByFamily,
   searchEntities,
+  type BloodlineTrace,
   type GraphIndex,
 } from './model.ts';
 import {
@@ -135,6 +137,7 @@ export async function mount(): Promise<void> {
   const panel = document.querySelector<HTMLElement>('[data-entity-panel]');
   const panelTitle = panel?.querySelector<HTMLElement>('#panel-title') ?? null;
   const panelViewFull = panel?.querySelector<HTMLAnchorElement>('[data-panel-view-full]') ?? null;
+  const traceButton = panel?.querySelector<HTMLButtonElement>('[data-panel-trace]') ?? null;
   const panelBody = panel?.querySelector<HTMLElement>('[data-panel-body]') ?? null;
   const clearButton = controls?.querySelector<HTMLButtonElement>('[data-clear-selection]') ?? null;
 
@@ -178,12 +181,77 @@ export async function mount(): Promise<void> {
 
   let selected: string | null = null;
 
+  // ------------------------------------------------------ bloodline trace
+  let traceMode = false;
+  let traceSourceId: string | null = null;
+  let activeTrace: BloodlineTrace | null = null;
+  let traceTimers: number[] = [];
+
+  /**
+   * Inline dash reveal via getTotalLength(), not the `pathLength` attribute —
+   * that would change the unit basis for the certainty dash tokens already on
+   * the same element. Resets the transition before restarting so a repeat
+   * call on the same element doesn't stack.
+   */
+  const revealEdgeStroke = (path: SVGPathElement, onDone?: () => void) => {
+    const length = path.getTotalLength();
+    path.style.transition = 'none';
+    path.style.strokeDasharray = `${length}`;
+    path.style.strokeDashoffset = `${length}`;
+    path.getBoundingClientRect(); // force reflow
+    path.style.transition = 'stroke-dashoffset var(--motion-entrance) var(--ease-out)';
+    path.style.strokeDashoffset = '0';
+    if (onDone) path.addEventListener('transitionend', onDone, { once: true });
+  };
+
+  const setTraceArmedUi = (armed: boolean) => {
+    traceMode = armed;
+    svg.toggleAttribute('data-trace-armed', armed);
+    if (traceButton) {
+      traceButton.textContent = s(armed ? 'panel.traceCancel' : 'panel.traceStart');
+      traceButton.setAttribute('aria-pressed', String(armed));
+    }
+  };
+
+  const armTrace = () => {
+    if (!selected) return;
+    traceSourceId = selected;
+    setTraceArmedUi(true);
+    const node = index.nodeById.get(selected);
+    if (node) announce(s('a11y.traceArmed', { name: node.names.anglicized }));
+  };
+
+  /** The three cancel paths (button, Escape, a completed attempt) all land here. */
+  const cancelTrace = (announceCancel = true) => {
+    if (!traceMode) return;
+    traceSourceId = null;
+    setTraceArmedUi(false);
+    if (announceCancel) announce(s('a11y.traceCancelled'));
+  };
+
+  /** Clears a previous trace's timers, drawn classes and inline reveal styles. */
+  const clearTraceHighlight = () => {
+    for (const timer of traceTimers) window.clearTimeout(timer);
+    traceTimers = [];
+    for (const el of nodeEls.values()) el.classList.remove('is-lineage-node');
+    for (const el of edgeEls.values()) {
+      el.classList.remove('is-lineage-trace', 'is-death-trace');
+      el.style.removeProperty('transition');
+      el.style.removeProperty('stroke-dasharray');
+      el.style.removeProperty('stroke-dashoffset');
+    }
+  };
+
   const clearSelection = () => {
     selected = null;
+    cancelTrace(false);
+    activeTrace = null;
+    clearTraceHighlight();
     svg.removeAttribute('data-selected');
     for (const el of nodeEls.values()) el.classList.remove('is-near', 'is-selected');
     for (const el of edgeEls.values()) el.classList.remove('is-near');
     if (panel) panel.hidden = true;
+    if (traceButton) traceButton.hidden = true;
     releaseMobileSheet();
     if (clearButton) clearButton.hidden = true;
     applyVisibility();
@@ -191,9 +259,11 @@ export async function mount(): Promise<void> {
     syncUrl();
   };
 
-  const select_ = (id: string) => {
+  const select_ = (id: string, trace: BloodlineTrace | null = null) => {
     const node = index.nodeById.get(id);
     if (!node) return;
+    clearTraceHighlight();
+    activeTrace = trace;
     selected = id;
     const near = neighbourhood(index, id);
 
@@ -201,8 +271,12 @@ export async function mount(): Promise<void> {
     for (const [nodeId, el] of nodeEls) {
       el.classList.toggle('is-near', near.nodes.has(nodeId));
       el.classList.toggle('is-selected', nodeId === id);
+      el.classList.toggle('is-lineage-node', activeTrace?.nodeIds.includes(nodeId) ?? false);
     }
-    for (const [linkId, el] of edgeEls) el.classList.toggle('is-near', near.links.has(linkId));
+    for (const [linkId, el] of edgeEls) {
+      el.classList.toggle('is-near', near.links.has(linkId));
+      el.classList.toggle('is-lineage-trace', activeTrace?.linkIds.includes(linkId) ?? false);
+    }
 
     if (clearButton) clearButton.hidden = false;
     applyVisibility();
@@ -210,7 +284,45 @@ export async function mount(): Promise<void> {
     announce(
       s('graph.selectedAnnounce', { name: node.names.anglicized, count: near.nodes.size - 1 }),
     );
+    triggerDeathTrace(id);
     syncUrl();
+  };
+
+  const runTrace = (fromId: string, toId: string) => {
+    cancelTrace(false);
+    const trace = bloodlineTrace(index, fromId, toId);
+    select_(toId, trace);
+    if (!trace) {
+      announce(s('a11y.traceNotFound'));
+      return;
+    }
+    announce(s('a11y.traceFound', { count: trace.nodeIds.length }));
+    if (prefersReducedMotion()) return;
+    trace.linkIds.forEach((linkId, i) => {
+      const el = edgeEls.get(linkId);
+      if (!el) return;
+      traceTimers.push(window.setTimeout(() => revealEdgeStroke(el), i * 140));
+    });
+  };
+
+  /**
+   * A single --minium reveal per death relation, one shot per selection.
+   * Reduced motion skips it outright — a flourish, not information.
+   */
+  const triggerDeathTrace = (id: string) => {
+    if (prefersReducedMotion()) return;
+    for (const link of index.incident.get(id) ?? []) {
+      if (!isDeathRelation(link.type)) continue;
+      const el = edgeEls.get(link.id);
+      if (!el) continue;
+      el.classList.add('is-death-trace');
+      revealEdgeStroke(el, () => {
+        el.classList.remove('is-death-trace');
+        el.style.removeProperty('transition');
+        el.style.removeProperty('stroke-dasharray');
+        el.style.removeProperty('stroke-dashoffset');
+      });
+    }
   };
 
   // ----------------------------------------------------------- the panel
@@ -245,6 +357,13 @@ export async function mount(): Promise<void> {
       panelViewFull.textContent = s('panel.viewFull');
     }
 
+    if (traceButton) {
+      const armedForThis = traceMode && traceSourceId === id;
+      traceButton.hidden = false;
+      traceButton.textContent = s(armedForThis ? 'panel.traceCancel' : 'panel.traceStart');
+      traceButton.setAttribute('aria-pressed', String(armedForThis));
+    }
+
     panelBody.replaceChildren();
 
     if (strings?.epithet) panelBody.append(el('p', 'panel__epithet', strings.epithet));
@@ -274,6 +393,7 @@ export async function mount(): Promise<void> {
       const list = el('ul', 'panel__relations');
       for (const { link, other, outgoing } of views) {
         const item = el('li', `panel__relation${isDeathRelation(link.type) ? ' is-death' : ''}`);
+        item.dataset.link = link.id;
         item.append(
           el(
             'span',
@@ -294,6 +414,21 @@ export async function mount(): Promise<void> {
         );
         badge.title = s(`certainty.${link.certainty}Hint`);
         item.append(document.createTextNode(' '), badge);
+
+        if (link.contradicts && link.contradicts.length > 0) {
+          // Joins raw relation ids, not names, matching RelationGroups.astro.
+          badge.tabIndex = 0;
+          badge.dataset.contradicts = link.contradicts.join(' ');
+          const describedById = `panel-contradicts-${link.id}`;
+          badge.setAttribute('aria-describedby', describedById);
+          const contradicts = el(
+            'p',
+            'panel__contradicts apparatus',
+            s('certainty.contradictedBy', { other: link.contradicts.join(', ') }),
+          );
+          contradicts.id = describedById;
+          item.append(contradicts);
+        }
 
         const citation = el(
           'span',
@@ -348,6 +483,30 @@ export async function mount(): Promise<void> {
   });
   clearButton?.addEventListener('click', clearSelection);
 
+  traceButton?.addEventListener('click', () => {
+    if (traceMode) cancelTrace();
+    else armTrace();
+  });
+
+  // Registered once here, not inside renderPanel() — which reruns on every
+  // selection and would pile up listeners.
+  const setEdgeHover = (linkIds: string[], on: boolean, className: string) => {
+    for (const id of linkIds) edgeEls.get(id)?.classList.toggle(className, on);
+  };
+  const handlePanelHover = (event: Event, on: boolean) => {
+    const target = event.target as Element | null;
+    const row = target?.closest<HTMLElement>('[data-link]');
+    if (row?.dataset.link) setEdgeHover([row.dataset.link], on, 'is-panel-hover');
+    const badge = target?.closest<HTMLElement>('[data-contradicts]');
+    if (badge?.dataset.contradicts) {
+      setEdgeHover(badge.dataset.contradicts.split(' '), on, 'is-contradiction-hover');
+    }
+  };
+  panelBody?.addEventListener('mouseover', (event) => handlePanelHover(event, true));
+  panelBody?.addEventListener('mouseout', (event) => handlePanelHover(event, false));
+  panelBody?.addEventListener('focusin', (event) => handlePanelHover(event, true));
+  panelBody?.addEventListener('focusout', (event) => handlePanelHover(event, false));
+
   panel?.addEventListener('keydown', (event) => {
     if (!panel || panel.hidden) return;
 
@@ -392,13 +551,30 @@ export async function mount(): Promise<void> {
   svg.addEventListener('click', (event) => {
     const target = (event.target as Element | null)?.closest<SVGGraphicsElement>('[data-node]');
     if (!target?.dataset.node) return;
+    const id = target.dataset.node;
     // The <a> is the no-JavaScript path. With the runtime up, a plain click
     // opens the panel instead — but a modified click still means "open this
     // properly", so leave those alone.
-    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    if (event.metaKey || event.ctrlKey || event.altKey) return;
+
+    // Desktop shortcut for the trace, straight from the current selection.
+    // Nothing selected → no source, so native Shift+click still applies.
+    if (event.shiftKey) {
+      if (!selected) return;
+      event.preventDefault();
+      runTrace(selected, id);
+      return;
+    }
+
     event.preventDefault();
-    if (selected === target.dataset.node) clearSelection();
-    else select_(target.dataset.node);
+    // Armed mode is one-shot: a tap always completes or fails the attempt,
+    // same as search and keyboard below, instead of the usual select/deselect.
+    if (traceMode && traceSourceId) {
+      runTrace(traceSourceId, id);
+      return;
+    }
+    if (selected === id) clearSelection();
+    else select_(id);
   });
 
   // ----------------------------------------------------------- keyboard
@@ -408,6 +584,12 @@ export async function mount(): Promise<void> {
 
     if (event.key === 'Escape') {
       hideTip();
+      // First Escape disarms the trace; a second clears the selection.
+      if (traceMode) {
+        cancelTrace();
+        event.preventDefault();
+        return;
+      }
       if (selected) {
         clearSelection();
         event.preventDefault();
@@ -420,7 +602,8 @@ export async function mount(): Promise<void> {
 
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
-      select_(id);
+      if (traceMode && traceSourceId) runTrace(traceSourceId, id);
+      else select_(id);
       return;
     }
 
@@ -503,7 +686,9 @@ export async function mount(): Promise<void> {
     if (!node || !searchInput) return;
     searchInput.value = node.names.non;
     closeSearch();
-    select_(id);
+    // Consumes an armed trace too — otherwise search could leave it dangling.
+    if (traceMode && traceSourceId) runTrace(traceSourceId, id);
+    else select_(id);
     // select_() already focused the panel below the sheet breakpoint; don't fight that.
     if (!isMobileSheet()) focusNode(id);
   };
@@ -562,6 +747,17 @@ export async function mount(): Promise<void> {
         focusIds.add(id);
       });
       near.links.forEach((id) => links.add(id));
+    }
+
+    // A trace ancestor can be more than one hop out, so it needs the same
+    // widening the Ragnarök lineage set gets below — otherwise it never
+    // renders. Widening focusIds also auto-fits the viewBox to the chain.
+    if (activeTrace) {
+      for (const id of activeTrace.nodeIds) {
+        nodes.add(id);
+        focusIds.add(id);
+      }
+      for (const id of activeTrace.linkIds) links.add(id);
     }
 
     const disputed = disputedToggle?.checked ?? false;

@@ -68,7 +68,9 @@
     "noRelations": "Engin tengsl skráð enn.",
     "relationCount": "{count} tengsl",
     "outgoing": "{name} → ",
-    "incoming": " → {name}"
+    "incoming": " → {name}",
+    "traceStart": "Rekja ættarlínuna",
+    "traceCancel": "Hætta við ættarlínurakningu"
   },
   "filters": {
     "label": "Síur",
@@ -189,7 +191,11 @@
     "nodeRole": "{name}, {type}, {count} tengsl",
     "graphInstructions": "Örvatakkar færa milli tengdra persóna. Enter opnar upplýsingar. Escape hreinsar valið.",
     "selectionCleared": "Val hreinsað. Sýnir allt grafið.",
-    "externalLink": "opnast í nýjum flipa"
+    "externalLink": "opnast í nýjum flipa",
+    "traceArmed": "Ættarlínurakning virk frá {name}. Veldu forföður eða afkomanda til að rekja.",
+    "traceCancelled": "Ættarlínurakningu hætt.",
+    "traceFound": "Ættarlína fannst, nær yfir {count} persónur.",
+    "traceNotFound": "Engin bein ættarlína milli þessara tveggja persóna."
   },
   "error": {
     "notFoundTitle": "Síða fannst ekki",

@@ -31,6 +31,8 @@ const t = useTranslations(locale);
       </button>
     </div>
     <a class="panel__view-full" data-panel-view-full></a>
+    <button type="button" class="panel__trace" data-panel-trace hidden aria-pressed="false"
+    ></button>
   </div>
   <div class="panel__body" data-panel-body></div>
 </aside>
@@ -69,24 +71,51 @@ const t = useTranslations(locale);
     gap: var(--space-sm);
   }
 
-  .panel__view-full {
+  .panel__view-full,
+  .panel__trace {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     min-height: var(--touch-target);
     padding: var(--space-2xs) var(--space-sm);
-    border: 1px solid var(--verdigris);
     border-radius: var(--radius-sm);
-    background: var(--verdigris-wash);
-    color: var(--verdigris-deep);
     font-weight: var(--weight-medium);
     font-size: var(--text-sm);
-    text-decoration: none;
     cursor: pointer;
+  }
+
+  .panel__view-full {
+    border: 1px solid var(--verdigris);
+    background: var(--verdigris-wash);
+    color: var(--verdigris-deep);
+    text-decoration: none;
   }
 
   .panel__view-full:hover {
     text-decoration: underline;
+  }
+
+  /* Neutral at rest so the verdigris-filled [aria-pressed="true"] state
+     below reads as a real change, not a permanently-lit button. */
+  .panel__trace {
+    border: 1px solid var(--rule-strong);
+    background: var(--vellum-pale);
+    color: var(--ink-faded);
+  }
+
+  .panel__trace:hover {
+    border-color: var(--verdigris);
+    color: var(--verdigris-deep);
+  }
+
+  .panel__trace[aria-pressed='true'] {
+    border-color: var(--verdigris);
+    background: var(--verdigris-wash);
+    color: var(--verdigris-deep);
+  }
+
+  .panel__trace[hidden] {
+    display: none;
   }
 
   .panel__title {
@@ -201,6 +230,12 @@ const t = useTranslations(locale);
     font-family: var(--font-mono);
     font-size: var(--text-xs);
     color: var(--ink-faded);
+  }
+
+  /* Spacing mirrors RelationGroups.astro's .relations__contradicts;
+     typography comes from the .apparatus class alongside it. */
+  .panel__body :global(.panel__contradicts) {
+    margin: var(--space-2xs) 0 0;
   }
 
   .panel__body :global(.panel__relation.is-death) {

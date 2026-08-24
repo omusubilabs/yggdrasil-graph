@@ -68,7 +68,9 @@
     "noRelations": "Inga relationer registrerade än.",
     "relationCount": "{count} relationer",
     "outgoing": "{name} → ",
-    "incoming": " → {name}"
+    "incoming": " → {name}",
+    "traceStart": "Följ blodslinjen",
+    "traceCancel": "Avbryt blodslinjespårning"
   },
   "filters": {
     "label": "Filter",
@@ -189,7 +191,11 @@
     "nodeRole": "{name}, {type}, {count} relationer",
     "graphInstructions": "Piltangenterna flyttar mellan anslutna gestalter. Enter öppnar detaljer. Escape rensar valet.",
     "selectionCleared": "Valet rensat. Visar hela grafen.",
-    "externalLink": "öppnas i en ny flik"
+    "externalLink": "öppnas i en ny flik",
+    "traceArmed": "Blodslinjespårning redo från {name}. Välj en förfader eller ättling att spåra.",
+    "traceCancelled": "Blodslinjespårning avbruten.",
+    "traceFound": "Blodslinje funnen, över {count} gestalter.",
+    "traceNotFound": "Ingen direkt blodslinje mellan dessa två gestalter."
   },
   "error": {
     "notFoundTitle": "Ingen sådan sida",
