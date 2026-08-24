@@ -82,10 +82,9 @@
     "clear": "Rensa filter",
     "activeCount": "{count} aktiva filter",
     "noResults": "Inga relationer matchar dessa filter.",
+    "noneOnAnnounce": "Inga filter aktiva. Visar {visible} av {total} gestalter och {links} relationer.",
     "disputedOnAnnounce": "Endast där källorna är oense. Visar {visible} av {total} gestalter och {links} relationer.",
-    "disputedOffAnnounce": "Filtret för oeniga källor har rensats. Visar {visible} av {total} gestalter och {links} relationer.",
     "ragnarokOnAnnounce": "Endast Ragnarök. Visar {visible} av {total} gestalter och {links} relationer.",
-    "ragnarokOffAnnounce": "Ragnarök-överlägg avstängt. Visar {visible} av {total} gestalter och {links} relationer.",
     "bothOnAnnounce": "Endast där källorna är oense och endast Ragnarök. Visar {visible} av {total} gestalter och {links} relationer."
   },
   "certainty": {

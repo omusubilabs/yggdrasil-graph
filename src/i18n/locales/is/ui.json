@@ -82,10 +82,9 @@
     "clear": "Hreinsa síur",
     "activeCount": "{count} síur virkar",
     "noResults": "Engin tengsl passa við þessar síur.",
+    "noneOnAnnounce": "Engar síur virkar. Sýni {visible} af {total} persónum og {links} tengsl.",
     "disputedOnAnnounce": "Aðeins þar sem heimildir eru ósammála. Sýni {visible} af {total} persónum og {links} tengsl.",
-    "disputedOffAnnounce": "Sía fyrir ósammála heimildir hreinsuð. Sýni {visible} af {total} persónum og {links} tengsl.",
     "ragnarokOnAnnounce": "Aðeins Ragnarök. Sýni {visible} af {total} persónum og {links} tengsl.",
-    "ragnarokOffAnnounce": "Ragnarök-yfirlagi slökkt. Sýni {visible} af {total} persónum og {links} tengsl.",
     "bothOnAnnounce": "Aðeins þar sem heimildir eru ósammála og aðeins Ragnarök. Sýni {visible} af {total} persónum og {links} tengsl."
   },
   "certainty": {

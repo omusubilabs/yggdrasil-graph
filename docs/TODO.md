@@ -447,10 +447,10 @@ shape or scale change drops a dimension below the floor.
 
 #### UXA-012 — Announce the complete active filter state
 
-- [ ] Choose the announcement from the full disputed/Ragnarǫk filter state
+- [x] Choose the announcement from the full disputed/Ragnarǫk filter state
       after every change, including when one filter is cleared while the other
       remains active.
-- [ ] Use the same state-to-announcement path for direct interaction and
+- [x] Use the same state-to-announcement path for direct interaction and
       query-string rehydration.
 
 **Evidence:** Turning on disputed-only and then Ragnarǫk produced the live
@@ -459,6 +459,41 @@ status “Only Ragnarök. Showing 50 of 381 figures and 7 relations.” at
 the sources disagree and only Ragnarök. Showing 50 of 381 figures and 7
 relations.” The `bothOnAnnounce` key is used during hydration but never by the
 change handlers, so the same graph state has two accessible descriptions.
+
+**Fixed:** The two change handlers in `src/graph/runtime.ts` each read only
+their own toggle's `.checked` state, so the announcement always described the
+just-touched filter and stayed blind to the other one — that is what produced
+“Only Ragnarök” while disputed was also on. Rehydration read both booleans
+together, but through its own ad hoc `if`/`else if` chain, so the two paths
+had no shared source of truth even though one of them was already correct. A
+new pure module, `src/graph/filterAnnouncement.ts`, exports
+`filterAnnouncementKey(disputed, ragnarok)` — a four-branch lookup with no DOM
+dependency, following the existing `urlState.ts` precedent for logic that
+needs to stay identical across a change handler and a hydration path. Both
+change handlers now call it with both toggles' resulting state (e.g.
+`disputedToggle.checked` alongside `ragnarokToggle?.checked ?? false`,
+mirroring the idiom already used in `applyVisibility()`), and rehydration
+calls the same function instead of its own chain, gated on `initial.disputed
+|| initial.ragnarok` so a plain visit still announces nothing. A new locale
+key, `filters.noneOnAnnounce`, covers the previously-unreachable “both filters
+just turned off” state — a real user action that still needs an announcement,
+unlike a plain page load. The old `disputedOffAnnounce` and
+`ragnarokOffAnnounce` keys described “this toggle turned off” while staying
+blind to the other filter — the mechanism of the bug itself — and were
+confirmed dead by grep and removed from all seven locale files and from
+`RUNTIME_KEYS` in `src/pages/graph/[locale].json.ts`.
+`src/graph/filterAnnouncement.test.ts` covers all four reachable `(disputed,
+ragnarok)` combinations. Verified by `npm run i18n:check`, `npm run
+check:strings`, `npm run typecheck`, `npm test` (130 passing, including the
+four new cases) and `npm run build`, plus direct browser reproduction of the
+evidence scenario: toggling disputed then Ragnarök on now announces “Only
+where the sources disagree and only Ragnarök…”, matching a reload of
+`?disputed=1&ragnarok=1` exactly; toggling disputed back off with Ragnarök
+still on correctly announces “Only Ragnarök…” rather than a disputed-only
+message; toggling the last active filter off announces the new “No filters
+active…” text; and both a plain visit and a reload of the bare URL stay
+silent. Native screen reader, physical touch and real browser zoom/reflow are
+still open, as flagged above.
 
 **Done when:** Each direct filter change writes one concise, localised status
 that describes every active filter and agrees with the visible counts; loading

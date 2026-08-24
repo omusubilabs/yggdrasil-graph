@@ -57,10 +57,9 @@ const RUNTIME_KEYS = [
   'sources.page',
   'sources.uncited',
   'filters.noResults',
+  'filters.noneOnAnnounce',
   'filters.disputedOnAnnounce',
-  'filters.disputedOffAnnounce',
   'filters.ragnarokOnAnnounce',
-  'filters.ragnarokOffAnnounce',
   'filters.bothOnAnnounce',
 ] as const;
 

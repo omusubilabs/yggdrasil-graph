@@ -82,10 +82,9 @@
     "clear": "Ryd filtre",
     "activeCount": "{count} aktive filtre",
     "noResults": "Ingen relationer matcher disse filtre.",
+    "noneOnAnnounce": "Ingen filtre aktive. Viser {visible} af {total} skikkelser og {links} relationer.",
     "disputedOnAnnounce": "Kun hvor kilderne er uenige. Viser {visible} af {total} skikkelser og {links} relationer.",
-    "disputedOffAnnounce": "Filteret for uenige kilder er ryddet. Viser {visible} af {total} skikkelser og {links} relationer.",
     "ragnarokOnAnnounce": "Kun Ragnarök. Viser {visible} af {total} skikkelser og {links} relationer.",
-    "ragnarokOffAnnounce": "Ragnarök-overlejring slået fra. Viser {visible} af {total} skikkelser og {links} relationer.",
     "bothOnAnnounce": "Kun hvor kilderne er uenige, og kun Ragnarök. Viser {visible} af {total} skikkelser og {links} relationer."
   },
   "certainty": {

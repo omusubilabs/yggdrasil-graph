@@ -36,6 +36,7 @@ import {
   trimToRim,
   viewBoxOf,
 } from './geometry.ts';
+import { filterAnnouncementKey } from './filterAnnouncement.ts';
 import { decodeUrlState, encodeUrlState } from './urlState.ts';
 import type { GraphData } from './types.ts';
 
@@ -676,14 +677,14 @@ export async function mount(): Promise<void> {
   disputedToggle?.addEventListener('change', () => {
     const counts = applyVisibility();
     announce(
-      s(disputedToggle.checked ? 'filters.disputedOnAnnounce' : 'filters.disputedOffAnnounce', counts),
+      s(filterAnnouncementKey(disputedToggle.checked, ragnarokToggle?.checked ?? false), counts),
     );
     syncUrl();
   });
   ragnarokToggle?.addEventListener('change', () => {
     const counts = applyVisibility();
     announce(
-      s(ragnarokToggle.checked ? 'filters.ragnarokOnAnnounce' : 'filters.ragnarokOffAnnounce', counts),
+      s(filterAnnouncementKey(disputedToggle?.checked ?? false, ragnarokToggle.checked), counts),
     );
     syncUrl();
   });
@@ -723,12 +724,8 @@ export async function mount(): Promise<void> {
     // written twice in one page load.
     select_(initial.selected!);
     if (!isModal()) focusNode(initial.selected!);
-  } else if (initial.disputed && initial.ragnarok) {
-    announce(s('filters.bothOnAnnounce', hydratedCounts));
-  } else if (initial.disputed) {
-    announce(s('filters.disputedOnAnnounce', hydratedCounts));
-  } else if (initial.ragnarok) {
-    announce(s('filters.ragnarokOnAnnounce', hydratedCounts));
+  } else if (initial.disputed || initial.ragnarok) {
+    announce(s(filterAnnouncementKey(initial.disputed, initial.ragnarok), hydratedCounts));
   }
   // Unconditional: normalises away a stale/invalid ?selected= that select_()
   // silently ignored, rather than leaving it dangling in the address bar.

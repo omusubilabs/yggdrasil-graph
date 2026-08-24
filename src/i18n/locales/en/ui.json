@@ -82,10 +82,9 @@
     "clear": "Clear filters",
     "activeCount": "{count} filters active",
     "noResults": "No relations match these filters.",
+    "noneOnAnnounce": "No filters active. Showing {visible} of {total} figures and {links} relations.",
     "disputedOnAnnounce": "Only where the sources disagree. Showing {visible} of {total} figures and {links} relations.",
-    "disputedOffAnnounce": "Disputed-only filter cleared. Showing {visible} of {total} figures and {links} relations.",
     "ragnarokOnAnnounce": "Only Ragnarök. Showing {visible} of {total} figures and {links} relations.",
-    "ragnarokOffAnnounce": "Ragnarök overlay off. Showing {visible} of {total} figures and {links} relations.",
     "bothOnAnnounce": "Only where the sources disagree and only Ragnarök. Showing {visible} of {total} figures and {links} relations."
   },
   "certainty": {
