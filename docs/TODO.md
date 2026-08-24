@@ -55,6 +55,12 @@ where the layout permits; and any exception has an obvious equivalent path
 that preserves the discovery journey. The deterministic prerendered layout,
 lazy graph loading and JavaScript budget must remain intact.
 
+**Re-verified (24 August 2026, tool-driven):** A `ui-flow-tester` pass measured
+`odin` (circle) at 29.9×29.9 CSS px and `midgard` (hexagon) at 29.7×25.7 CSS px
+at 320×720, via real DOM inspection against a running dev server rather than
+static screenshots — both match the numbers above to one decimal place.
+Native screen reader and physical touch confirmation remain open, as above.
+
 ### UXA-002 — Prevent the mobile detail sheet from hiding active controls
 
 - [x] Choose and implement one coherent panel model: either make the bottom
@@ -87,6 +93,27 @@ flagged above.
 **Done when:** Tab and reverse-Tab expose only controls that are visually and
 semantically available; Escape closes the sheet; focus returns to the invoking
 graph or search target; and the behaviour holds at both audited mobile sizes.
+
+**Re-verified (24 August 2026, tool-driven):** The same pass confirmed
+`figure.inert` and `controls.inert` both `true` at 390×844 and 320×720, and
+additionally via the `?selected=loki` URL-hydration path, which the original
+evidence did not exercise. At 390×844 with the sheet open, `.controls`
+measured 95.8% visually covered, and calling `searchInput.focus()` directly on
+the covered input left `document.activeElement` on the panel — confirming the
+covered control is genuinely unfocusable, not only visually hidden. Escape
+from a focus position deep inside the panel closed it, restored focus to the
+invoking search box, and left the panel hidden. Native screen reader and
+physical touch confirmation remain open, as above.
+
+A later pass the same day exercised two paths the note above did not: the
+close button, and a selection with no search/click origin. Clicking
+`[data-panel-close]` at 390×844 closed the sheet and restored focus
+correctly. At 320×720 with the panel opened purely via `?selected=loki` URL
+hydration (no prior search or click), Escape closed the sheet and returned
+focus to the Loki graph-node `<a>` (`data-node="loki"`) rather than a search
+box — the documented "invoking control" fallback, here the graph node itself
+since URL hydration has no search or click origin to return to. Native screen
+reader and physical touch confirmation remain open, as above.
 
 ### UXA-003 — Announce Ragnarǫk filter changes
 
@@ -121,6 +148,20 @@ are still open, as flagged above.
 after each filter change, the visible and announced counts agree, and URL state
 restores the same accessible description as direct interaction.
 
+**Re-verified (24 August 2026, tool-driven):** Toggling "Only Ragnarök" live
+at 1440×900 produced exactly one `[data-graph-status]` write, "Only Ragnarök.
+Showing 45 of 381 figures and 62 relations." — confirming the single,
+non-empty announcement. Native screen reader and physical touch confirmation
+remain open, as above.
+
+A later pass the same day independently confirmed the element identity this
+item's fix depends on: `[data-graph-status]` is a sibling of `<figure>`
+(`fig.contains(status) === false`), carries `aria-live="polite"` and
+`role="status"`, and a plain `/` visit with no query string leaves it empty —
+matching the scoping fix described above rather than only its announced-text
+output. Native screen reader and physical touch confirmation remain open, as
+above.
+
 ## P2 — next product-quality pass
 
 ### UXA-004 — Give the graph page a real first-level heading
@@ -146,6 +187,12 @@ title) → `h2` (table heading). Verified by browser inspection at 1440×900 and
 **Done when:** The document outline starts with one descriptive `h1`, heading
 levels remain sequential and the first-level name is useful outside visual
 context.
+
+**Re-verified (24 August 2026, tool-driven):** The heading outline at
+1440×900 read, in document order, `h1` "Yggdrasil Graph" (visually hidden) →
+`h2` "Relationship graph" (visually hidden) → `h2` (panel title, empty until a
+selection) → `h2` "Every figure, as a table" — sequential with no gaps.
+Native screen reader confirmation remains open, as above.
 
 ### UXA-005 — Reduce mobile header pressure
 
@@ -182,6 +229,26 @@ above.
 at 390 × 844 and 320 × 720, every locale remains keyboard-accessible and the
 control does not introduce horizontal overflow.
 
+**Re-verified (24 August 2026, tool-driven):** Measured header heights of
+151.68px at 390×844 and 107.04px at 320×720 — matching the ~152px/~107px
+figures above within rounding — with the language picker collapsed to an
+"English ▾" `<details>` disclosure, the tagline visible at 390 and hidden at
+320, and no horizontal overflow (`scrollWidth === innerWidth`) at either
+width. Native screen reader confirmation remains open, as above.
+
+**Regression found (24 August 2026, tool-driven):** A later pass the same
+day found that the "Above 40rem the list is forced visible" behaviour
+described in **Fixed** above is currently broken at every desktop width: at
+≥40.01rem, `.picker` and `.picker__list` both compute `width: 0px` and the
+list renders entirely off-screen rather than merely being hidden, leaving
+every locale link unreachable by pointer or keyboard. The 1440×900
+confirmation in the note directly above checked header height only and did
+not exercise the picker's own visibility or focusability at that width, so it
+did not catch this. Full evidence and a suspected root cause are tracked as a
+new, separately-numbered, currently open item, **UXA-015**, below; this note
+is a pointer to it, not a restatement — the text above is left as originally
+verified and is not itself wrong about what it measured.
+
 ### UXA-006 — Enlarge compact touch controls
 
 - [x] Increase the close and zoom controls toward a comfortable 44 × 44
@@ -215,6 +282,13 @@ and real browser zoom/reflow are still open, as flagged above.
 
 **Done when:** The controls have comfortable, non-overlapping hit areas at both
 mobile audit sizes and retain visible keyboard focus.
+
+**Re-verified (24 August 2026, tool-driven):** `getBoundingClientRect` at
+320×720 with the panel open measured close at 44×44px, zoom-in and zoom-out at
+44×44px each, and Recentre at 74.3×44px (wider only because of its label;
+height still 44px) — confirming every control clears the 44×44 target. Native
+screen reader, physical touch and real browser zoom/reflow confirmation
+remain open, as above.
 
 ### UXA-007 — Surface the full entity account as an explicit action
 
@@ -256,6 +330,15 @@ flagged above.
 a descriptive accessible name and preserves selection and URL-state behaviour
 when the reader returns.
 
+**Re-verified (24 August 2026, tool-driven):** On the desktop Angrboda panel,
+the focusable order ran title link → close button → `.panel__view-full`
+("View full account") → relation links → `.panel__more` ("Full account
+of…") at the bottom, matching the claimed header placement ahead of the
+scrolling relations list. In `/ja/`, live-selecting Loki via search rendered
+`.panel__view-full` as "詳細を見る" — confirming the localisation on a running
+page, not only in the locale file. Native screen reader, physical touch and
+real browser zoom/reflow confirmation remain open, as above.
+
 ## P3 — polish and regression protection
 
 ### UXA-008 — Use input-neutral graph guidance
@@ -265,6 +348,11 @@ when the reader returns.
 
 **Done when:** All complete locales use input-neutral guidance and
 `npm run check:strings` still passes.
+
+**Re-verified (24 August 2026, tool-driven):** The live-region hint text at
+page load read "Select a name." (and "名前を選択してください。" in `ja`),
+with no occurrence of "touch a name" found in either. This is a DOM-text
+check only; it does not substitute for rerunning `npm run check:strings`.
 
 ### UXA-009 — Protect text-contrast margin
 
@@ -301,6 +389,13 @@ browser inspection of the entity page and graph page.
 **Done when:** The affected normal-text combinations retain a deliberate safety
 margin above 4.5:1 across the supported states without reusing `--minium` as a
 decorative colour.
+
+**Re-verified (24 August 2026, tool-driven):** The live computed value of
+`--verdigris` on a running page is `#215347` (`rgb(33, 83, 71)`), matching the
+fixed value above exactly, and is the colour rendered in a captured
+`:focus-visible` outline. This confirms the shipped token value only; it is a
+spot check, not a re-derivation of the contrast ratios, which remains
+`npm run check:contrast`'s job.
 
 ### UXA-010 — Fix the class-hue tokens' incorrect contrast claim
 
@@ -346,6 +441,12 @@ script (39/39 combinations pass, 21 of them the new non-text rows) and
 **Done when:** The tokens.css comment accurately describes the actual,
 verified contrast of each `--class-*` token against the backgrounds it is
 used on, or the values are corrected to make the original claim true.
+
+**Re-verified (24 August 2026, tool-driven):** This pass did not independently
+re-measure the `--class-*` tokens' live rendered colours or recompute their
+contrast ratios; it spot-checked `--verdigris` (see UXA-009's note above) but
+not this item's tokens. `npm run check:contrast` remains the source of truth
+for the `--class-*` non-text figures.
 
 ## Findings from the completion review
 
@@ -445,6 +546,11 @@ px at all three audited viewports unless a documented collision makes that
 impossible; the check covers every node shape and fails if a later layout,
 shape or scale change drops a dimension below the floor.
 
+**Re-verified (24 August 2026, tool-driven):** The same measurement as
+UXA-001 above — `odin` 29.9×29.9px and `midgard` 29.7×25.7px at 320×720 —
+matches the claimed values to one decimal place. Native screen reader and
+physical touch confirmation remain open, as above.
+
 #### UXA-012 — Announce the complete active filter state
 
 - [x] Choose the announcement from the full disputed/Ragnarǫk filter state
@@ -499,6 +605,14 @@ still open, as flagged above.
 that describes every active filter and agrees with the visible counts; loading
 the resulting URL produces the same state description without an extra write.
 
+**Re-verified (24 August 2026, tool-driven):** Loading `?disputed=1&ragnarok=1`
+directly at 1440×900 produced the status exactly "Only where the sources
+disagree and only Ragnarök. Showing 50 of 381 figures and 7 relations." —
+matching the claimed hydration-path string above verbatim, confirmed by
+reading `[data-graph-status]`'s live text rather than inferring it from the
+visible counts. Native screen reader, physical touch and real browser
+zoom/reflow confirmation remain open, as above.
+
 #### UXA-013 — Preserve restored state for reduced-motion users
 
 - [x] Prevent the reduced-motion status from replacing a restored selection or
@@ -537,6 +651,18 @@ confirmation are still open, as flagged above.
 **Done when:** With reduced motion enabled, a plain visit may report the motion
 mode once, while a URL carrying selection or filters reports the restored graph
 state once and leaves that accurate status in the live region.
+
+**Re-verified (24 August 2026, tool-driven):** Loading the combined
+`?selected=loki&disputed=1&ragnarok=1` at 1440×900 produced the status
+"Loki selected. Showing 18 connected figures." only — no filter announcement
+was also written, confirming the selection-priority branch this item added.
+No parameter in the available tooling actually toggles the
+`prefers-reduced-motion` media feature (`window.matchMedia('(prefers-reduced-
+motion: reduce)').matches` read `false` throughout, the tool's default), and a
+plain `/` visit correctly left `[data-graph-status]` empty. This pass could
+not exercise the reduced-motion branch itself; that confirmation, and native
+screen reader confirmation, remain open exactly as flagged above — nothing
+in this note should be read as closing either.
 
 ### P2 — next product-quality pass
 
@@ -591,6 +717,101 @@ and real browser zoom/reflow confirmation are still open, as flagged above.
 with the chosen semantics; if the sheet remains modal, focus and interaction
 cannot leave it until close, and closing still restores the original graph or
 search invoker across the 52rem breakpoint.
+
+**Re-verified (24 August 2026, tool-driven):** At 390×844, `Shift+Tab` from
+the panel (a self-focused `<aside class="panel" tabindex="-1">`) moved focus
+out into the header — to the language picker's `<summary>`, then to
+"Sources" — rather than wrapping back into the panel or landing on the
+visually-covered, `inert` graph figure or controls, confirming the sheet
+escapes into the surrounding page exactly as a non-modal design should. `Tab`
+forward from the panel's last focusable element ("Full account of Loki",
+`.panel__more`) landed on "Adam", the first row of the entity table,
+reconfirming the "Tab from panel end lands in entity table" behaviour
+described above. The combined `?selected=loki&disputed=1&ragnarok=1` URL was
+also exercised at both mobile widths, a path the original evidence did not
+cover: at 390×844, `figure.inert === true`, `.controls.inert === true`,
+`panel.hidden === false`, and `panel.getAttribute('role') === null` and
+`panel.getAttribute('aria-modal') === null` — i.e. no modal claim — and the
+identical booleans held at 320×720. This confirms the non-modal fix holds
+under URL hydration, not only direct search/click interaction. Native screen
+reader and physical touch confirmation remain open, as above.
+
+## Findings from the 24 August 2026 re-verification pass
+
+A `ui-flow-tester` pass ran the verification checklist below against all
+fourteen items above using dev-server browser automation — real DOM/CSS
+inspection and click/key dispatch, viewport resizing as an approximation of
+zoom/reflow — not real screen readers, physical touch, true browser zoom or
+`prefers-reduced-motion` emulation, none of which the available tooling could
+produce; those remain unconfirmed exactly as stated throughout the items
+above. Its re-verification data has been folded into the relevant items'
+"Re-verified" notes above. It also found one regression, tracked as a new,
+still-open item below.
+
+### P1 — before public launch
+
+#### UXA-015 — Restore the desktop language picker's visibility and focusability
+
+- [ ] Give `.picker` and/or `.picker__list` a real, non-zero rendered width at
+      ≥40.01rem so the list forced visible by UXA-005's fix actually occupies
+      space instead of collapsing to nothing.
+- [ ] Confirm with real click and keyboard dispatch — not only computed-style
+      inspection — that a desktop-width visitor can see and activate a locale
+      link, and that `Tab`/programmatic `.focus()` can reach one.
+- [ ] Re-check at 641px, 720px, 900px and 1440×900, and confirm the mobile
+      `<details>`/`<summary>` disclosure below 640.16px is unaffected.
+
+**Evidence:** At every width ≥ 40.01rem (640.16px) — reproduced at 641px,
+720px, 900px and 1440×900, in a fresh tab with no prior JS or state
+manipulation — `.picker` (the `<details>`) and `.picker__list` (the `<ul>`)
+both compute `width: 0px`. `.picker__list` is positioned at the exact right
+edge of the viewport — e.g. `x: 1416` at 1440px width, `x: 617` at 641px
+width, in both cases `viewportWidth − 24px` — i.e. off-screen, despite
+`display: flex` being applied. `.picker__summary` correctly computes
+`display: none`, per the `@media (min-width: 40.01rem)` rule working as
+intended. Individual `<a>` links inside do have non-zero individual rects
+(e.g. "English" measured 46.2×16px) but are stacked outside the visible
+viewport. Calling `document.querySelector('.picker__list a').focus()`
+directly is a no-op — `document.activeElement` does not change — confirming
+the links are not keyboard-reachable either, not merely visually hidden. This
+does not surface as a horizontal-overflow scrollbar:
+`document.documentElement.scrollWidth === window.innerWidth` at all four
+widths, because the element collapses to zero width rather than overflowing
+— an overflow-only check, such as item 7 of the checklist below run in
+isolation, would miss it entirely. At 639px, just below the breakpoint, and
+at 390/320px, the mobile `<details>`/`<summary>` disclosure ("English ▾") is
+unaffected and works exactly as UXA-005 describes. This evidence was captured
+with click/key dispatch reconfirmed via instrumented `keydown`/`focus`
+listeners, after an earlier, unrelated browser-automation harness fault in
+the same session (the `computer` tool intermittently not dispatching events)
+had already been resolved by restarting the preview — noted so the finding
+isn't misread as an artifact of that fault.
+
+**Suspected cause (not fixed in this pass — this is a documentation-only
+review):** `LanguagePicker.astro` (around lines 94–109) sets
+`.picker__summary { display: none; }` and `.picker__list { display: flex; }`
+at `min-width: 40.01rem` to force the full flat list visible without the
+disclosure toggle, but neither `.picker` nor `.picker__list` is given an
+explicit width, and `.picker { min-width: 0; }` (line 49) together with
+`.nav { min-width: 0; }` in `SiteHeader.astro` (line 64) lets the flex item
+collapse to its content-free minimum. This is the same "override a closed
+`<details>`'s hidden content via CSS without setting the `open` attribute"
+pattern UXA-005 itself introduced to force the list visible, and it does not
+restore real layout or focusability in Chromium even though the child
+`<a>`/`<li>` rects still individually paint. All of this code is from commit
+`d37188a`, the UXA-005 fix — see the cross-reference note in UXA-005's own
+entry above.
+
+**Impact:** Every desktop-width visitor (≥40.01rem — effectively every
+non-mobile viewport) currently has no way to change locale through the header
+UI at all. Direct locale URLs (e.g. `/ja/`) still work; only the in-page
+switcher is affected.
+
+**Done when:** `.picker`/`.picker__list` render at their real content width
+at ≥40.01rem; every locale link is visible on-screen and reachable by `Tab`
+and by programmatic `.focus()`; the fix is confirmed at 641px, 720px, 900px
+and 1440×900; and the mobile `<details>` disclosure below 640.16px is
+confirmed unchanged.
 
 ## Verification checklist
 
