@@ -542,10 +542,10 @@ state once and leaves that accurate status in the live region.
 
 #### UXA-014 — Align mobile-sheet semantics with its operable scope
 
-- [ ] Use a coherent modal model in which all content outside the open sheet is
+- [x] Use a coherent modal model in which all content outside the open sheet is
       unavailable, or remove global modal semantics and define a deliberately
       scoped non-modal sheet model.
-- [ ] Verify the chosen model with pointer, keyboard and a desktop screen
+- [x] Verify the chosen model with pointer, keyboard and a desktop screen
       reader at both mobile audit sizes.
 
 **Evidence:** The mobile sheet sets `role="dialog"` and `aria-modal="true"`, but
@@ -554,6 +554,38 @@ language picker and the entity table remain operable outside a dialog that
 claims the rest of the page is unavailable. The covered graph controls are
 protected, but the declared modal boundary and the actual interaction boundary
 do not match.
+
+**Fixed:** Rather than extend `inert` to the header, footer and entity table to
+make the modal claim real, `src/graph/runtime.ts` now drops the claim instead:
+the mobile sheet no longer sets `role="dialog"`/`aria-modal="true"` (reversing
+the piece of the UXA-002 record above that added them), and the `Tab`
+focus-trap keydown handler — which only ever ran below the 52rem breakpoint —
+is removed outright. The sheet has no backdrop and the page stays scrollable
+around it, so a true full-page modal would have needed a scrim for sighted
+users to understand the rest of the page was blocked, plus new `inert` hooks
+on `SiteHeader.astro`, `SiteFooter.astro` and `EntityTable.astro` to keep in
+sync — and would have cut off the entity table, a documented alternate
+discovery path (UXA-001), while the sheet is open. `figure.inert` and
+`controls.inert` on the graph canvas and controls are unchanged and still
+applied while the sheet is open: that problem (controls physically hidden
+under the sheet remaining focusable) is independent of modal semantics and
+was already correctly scoped. `engageModal()`/`releaseModal()` and
+`mobileModalQuery`/`isModal()` are renamed to `engageMobileSheet()`/
+`releaseMobileSheet()` and `mobileSheetQuery`/`isMobileSheet()` to describe
+what they actually do now; the two unrelated call sites that used `isModal()`
+to avoid double-focusing a graph node when the sheet already took focus
+(search selection and URL hydration) keep that behaviour under the renamed
+function, since it was never modal-specific. Verified by direct DOM
+inspection at 1440×900, 390×844 and 320×720: below 52rem the panel opens with
+`role`/`aria-modal` absent while `figure`/`controls` stay `inert`; `Tab`
+forward from the panel's last focusable element now lands in the entity
+table instead of wrapping back into the panel, `Shift+Tab` returns to the
+panel, and `Escape` still closes the sheet and restores focus to the
+invoking node; at 1440×900 the sidebar's pre-existing non-modal behaviour
+(no `inert`, no stolen focus) is unchanged, confirming the mobile-only
+functions were the only ones touched. `npm run typecheck`, `npm test` (130
+passing) and `npm run build` all pass. Native screen reader, physical touch
+and real browser zoom/reflow confirmation are still open, as flagged above.
 
 **Done when:** Pointer, keyboard and assistive-technology behaviour all agree
 with the chosen semantics; if the sheet remains modal, focus and interaction

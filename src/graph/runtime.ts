@@ -138,31 +138,28 @@ export async function mount(): Promise<void> {
   const panelBody = panel?.querySelector<HTMLElement>('[data-panel-body]') ?? null;
   const clearButton = controls?.querySelector<HTMLButtonElement>('[data-clear-selection]') ?? null;
 
-  // -------------------------------------------------------- modal mobile sheet
+  // -------------------------------------------------------------- mobile sheet
 
-  const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+  // Below this breakpoint the panel is a bottom sheet, not a modal dialog:
+  // deliberately no backdrop, and header/footer/table stay reachable.
   // Mirrors EntityPanel.astro's own @media breakpoint — must stay identical.
-  const mobileModalQuery = window.matchMedia('(max-width: 52rem)');
-  const isModal = () => mobileModalQuery.matches;
+  const mobileSheetQuery = window.matchMedia('(max-width: 52rem)');
+  const isMobileSheet = () => mobileSheetQuery.matches;
   let invoker: (HTMLElement | SVGElement) | null = null;
 
-  const engageModal = () => {
-    if (!panel || !isModal()) return;
+  const engageMobileSheet = () => {
+    if (!panel || !isMobileSheet()) return;
     const active = document.activeElement;
     invoker = active instanceof HTMLElement || active instanceof SVGElement ? active : null;
     if (invoker === document.body) invoker = null;
     figure.inert = true;
     if (controls) controls.inert = true;
-    panel.setAttribute('role', 'dialog');
-    panel.setAttribute('aria-modal', 'true');
     panel.focus();
   };
 
-  const releaseModal = () => {
+  const releaseMobileSheet = () => {
     figure.inert = false;
     if (controls) controls.inert = false;
-    panel?.removeAttribute('role');
-    panel?.removeAttribute('aria-modal');
   };
 
   const restoreFocusAfterClose = (wasSelected: string | null) => {
@@ -173,10 +170,10 @@ export async function mount(): Promise<void> {
   };
 
   // In case the viewport crosses the breakpoint while the sheet is open.
-  mobileModalQuery.addEventListener('change', (event) => {
+  mobileSheetQuery.addEventListener('change', (event) => {
     if (!panel || panel.hidden) return;
-    if (event.matches) engageModal();
-    else releaseModal();
+    if (event.matches) engageMobileSheet();
+    else releaseMobileSheet();
   });
 
   let selected: string | null = null;
@@ -187,7 +184,7 @@ export async function mount(): Promise<void> {
     for (const el of nodeEls.values()) el.classList.remove('is-near', 'is-selected');
     for (const el of edgeEls.values()) el.classList.remove('is-near');
     if (panel) panel.hidden = true;
-    releaseModal();
+    releaseMobileSheet();
     if (clearButton) clearButton.hidden = true;
     applyVisibility();
     announce(s('a11y.selectionCleared'));
@@ -341,7 +338,7 @@ export async function mount(): Promise<void> {
     panelBody.append(more);
 
     panel.hidden = false;
-    engageModal();
+    engageMobileSheet();
   };
 
   panel?.querySelector<HTMLButtonElement>('[data-panel-close]')?.addEventListener('click', () => {
@@ -360,20 +357,6 @@ export async function mount(): Promise<void> {
       clearSelection();
       restoreFocusAfterClose(wasSelected);
       return;
-    }
-
-    // On desktop the panel is a non-modal sidebar; let Tab carry on past it.
-    if (event.key !== 'Tab' || !isModal()) return;
-    const focusables = [...panel.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)];
-    if (focusables.length === 0) return;
-    const first = focusables[0]!;
-    const last = focusables[focusables.length - 1]!;
-    if (event.shiftKey && document.activeElement === first) {
-      event.preventDefault();
-      last.focus();
-    } else if (!event.shiftKey && document.activeElement === last) {
-      event.preventDefault();
-      first.focus();
     }
   });
 
@@ -521,8 +504,8 @@ export async function mount(): Promise<void> {
     searchInput.value = node.names.non;
     closeSearch();
     select_(id);
-    // select_() already focused the panel while modal; don't fight that.
-    if (!isModal()) focusNode(id);
+    // select_() already focused the panel below the sheet breakpoint; don't fight that.
+    if (!isMobileSheet()) focusNode(id);
   };
 
   searchInput?.addEventListener('input', renderSearch);
@@ -725,7 +708,7 @@ export async function mount(): Promise<void> {
     // Selection's own announcement takes priority, so the live region isn't
     // written twice in one page load.
     select_(initial.selected!);
-    if (!isModal()) focusNode(initial.selected!);
+    if (!isMobileSheet()) focusNode(initial.selected!);
   } else if (hasRestoredFilters) {
     announce(s(filterAnnouncementKey(initial.disputed, initial.ragnarok), hydratedCounts));
   }
