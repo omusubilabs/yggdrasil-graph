@@ -752,13 +752,13 @@ still-open item below.
 
 #### UXA-015 — Restore the desktop language picker's visibility and focusability
 
-- [ ] Give `.picker` and/or `.picker__list` a real, non-zero rendered width at
+- [x] Give `.picker` and/or `.picker__list` a real, non-zero rendered width at
       ≥40.01rem so the list forced visible by UXA-005's fix actually occupies
       space instead of collapsing to nothing.
-- [ ] Confirm with real click and keyboard dispatch — not only computed-style
+- [x] Confirm with real click and keyboard dispatch — not only computed-style
       inspection — that a desktop-width visitor can see and activate a locale
       link, and that `Tab`/programmatic `.focus()` can reach one.
-- [ ] Re-check at 641px, 720px, 900px and 1440×900, and confirm the mobile
+- [x] Re-check at 641px, 720px, 900px and 1440×900, and confirm the mobile
       `<details>`/`<summary>` disclosure below 640.16px is unaffected.
 
 **Evidence:** At every width ≥ 40.01rem (640.16px) — reproduced at 641px,
@@ -812,6 +812,84 @@ at ≥40.01rem; every locale link is visible on-screen and reachable by `Tab`
 and by programmatic `.focus()`; the fix is confirmed at 641px, 720px, 900px
 and 1440×900; and the mobile `<details>` disclosure below 640.16px is
 confirmed unchanged.
+
+**Fixed:** The suspected cause was right, but the actual mechanism was more
+specific: a closed `<details>` (no `open` attribute) has UA-level layout
+behaviour where non-summary content is excluded from box generation/intrinsic
+sizing, and the forced-visible selector from UXA-005
+(`.picker:not([open]) > .picker__list, .picker[open] > .picker__list {
+display: flex; }`) never restored real participation in layout — it only made
+the content paint without being sized or focusable. No CSS-only override of a
+closed `<details>` fixes this; only genuinely setting `open` does.
+`LanguagePicker.astro` now ships a small module `<script>` that reads
+`matchMedia('(min-width: 40.01rem)')` and sets `picker.open` to match, both
+immediately on load and again on the query's `change` event (with a plain
+`window` `resize` listener as a second, redundant trigger, since the
+automation tooling used to verify this fix could not make either event fire
+under a simulated viewport resize — see Verified below), then marks
+`picker.dataset.jsReady = 'true'`. The broken forced-display selector is
+removed outright rather than left as dead code, since `.picker__list` already
+carries an unconditional `display: flex` base rule that needs no per-state
+override once `open` is real. The desktop media query's
+`.picker__summary { display: none; }` is now gated behind the ready flag
+(`.picker[data-js-ready] .picker__summary { display: none; }`): if the script
+never runs — disabled, blocked, or simply hasn't executed yet — a desktop
+visitor now falls back to the exact same compact "English ▾" toggle mobile
+already used correctly, rather than an invisible, unreachable list. This is a
+deliberate scope change from UXA-005's original "desktop keeps an
+always-expanded flat list" intent, confirmed with the project owner rather
+than assumed.
+
+A second, independent bug surfaced during verification and is fixed in the
+same change: opening the disclosure and then closing it again — via a plain
+native click, with no JS manipulation of `open` involved — left `.picker__list`
+still `display: flex` and visually rendered in a squished, mispositioned box
+instead of properly hidden, because once `open` has been toggled at least
+once, Chromium does not reliably restore the closed-`<details>`
+content-exclusion behaviour on a later close when the child has an explicit
+author `display` override. This reproduced identically at mobile widths (a
+pre-existing defect in UXA-005's shipped disclosure, not something this fix
+introduced) and would have made the desktop no-JS fallback unusable after one
+open/close cycle. The fix no longer depends on that native mechanism at all:
+`.picker:not([open]) > .picker__list { display: none; }` is now an explicit,
+unconditional rule, so hiding is driven by a plain CSS attribute selector
+that Chromium always recalculates correctly, regardless of prior toggle
+history.
+
+**Verified:** `npm run typecheck`, `npm test` (130 passing), `npm run build`
+and `npm run check:bundle-size` (initial route 0.9 KB gzipped of a 150 KB
+budget; the new script is delivered as Astro's own inlined
+`<script type="module">` with no `src`, so `check:bundle-size`'s
+`<script src>`/`modulepreload`-only accounting does not include it — measured
+separately at ~170 bytes gzipped standalone, negligible against the budget
+either way) all pass. Direct browser verification (`getBoundingClientRect`,
+`getComputedStyle`, real `.click()`/`.focus()`, and `Tab` key dispatch against
+a `preview` build, not `dev`) confirmed: at 641px, 720px, 900px and 1440×900,
+`.picker`/`.picker__list` render at their full ~404px content width
+(not `width: 0` flush against the viewport edge), `.picker__summary` computes
+`display: none`, all seven locale links are on-screen, real `Tab` from the
+"Sources" link lands on each locale link in source order, and
+`document.querySelector('.picker__list a').focus()` genuinely moves
+`document.activeElement` — the specific no-op this item reported. At 639px,
+390×844 and 320×720, the mobile disclosure is unaffected: collapsed by
+default on a fresh load, opens on click showing all seven links, and —
+newly confirmed — correctly re-collapses (`display: none`, zero rect) on a
+second click, closing the toggle-close gap described above. The desktop
+no-JS fallback (`data-js-ready` removed, `open` left at its default `false`)
+was confirmed to show the compact toggle and to open/close correctly through
+the same explicit-hide rule. `document.documentElement.scrollWidth ===
+window.innerWidth` held at every tested width, with no horizontal overflow.
+**Not verified:** live resize crossing the 40.01rem breakpoint without a
+reload — the available browser-automation tooling changes `window.innerWidth`
+and re-evaluates CSS media queries on a simulated resize, but does not
+dispatch either a `matchMedia` `change` event or a plain `resize` event, so
+neither of the script's two listeners could be exercised this way; this is a
+known limitation of viewport-override-based automation rather than a gap in
+real browsers, where both events are standard and well-supported, but it
+should still be confirmed by a real window resize or device rotation before
+this is treated as fully closed. Native screen reader, physical touch and
+real browser zoom/reflow confirmation remain open, as flagged throughout this
+file.
 
 ## Verification checklist
 

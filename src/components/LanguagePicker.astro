@@ -44,6 +44,22 @@ const t = useTranslations(locale);
   </ul>
 </details>
 
+<script>
+  const picker = document.querySelector<HTMLDetailsElement>('.picker');
+
+  if (picker) {
+    const desktopQuery = window.matchMedia('(min-width: 40.01rem)');
+    const sync = () => {
+      picker.open = desktopQuery.matches;
+    };
+
+    sync();
+    desktopQuery.addEventListener('change', sync);
+    window.addEventListener('resize', sync);
+    picker.dataset.jsReady = 'true';
+  }
+</script>
+
 <style>
   .picker {
     min-width: 0;
@@ -85,6 +101,11 @@ const t = useTranslations(locale);
     padding: 0;
   }
 
+  /* Chromium doesn't reliably re-hide this via native <details> behaviour once toggled open. */
+  .picker:not([open]) > .picker__list {
+    display: none;
+  }
+
   .picker__link.is-current {
     color: var(--ink);
     text-decoration: none;
@@ -94,17 +115,12 @@ const t = useTranslations(locale);
   /* Mirrors SiteHeader.astro's 40rem breakpoint; offset by .01rem so the two
      don't fire on the same pixel. */
   @media (min-width: 40.01rem) {
-    .picker__summary {
+    .picker[data-js-ready] .picker__summary {
       display: none;
     }
 
     .picker__list {
       margin: 0;
-    }
-
-    .picker:not([open]) > .picker__list,
-    .picker[open] > .picker__list {
-      display: flex;
     }
   }
 </style>
