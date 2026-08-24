@@ -718,13 +718,15 @@ export async function mount(): Promise<void> {
     ragnarokToggle.checked = true;
   }
   const hasSelection = Boolean(initial.selected && index.nodeById.has(initial.selected));
+  const hasRestoredFilters = initial.disputed || initial.ragnarok;
+  const hydrationAnnounced = hasSelection || hasRestoredFilters;
   const hydratedCounts = applyVisibility();
   if (hasSelection) {
     // Selection's own announcement takes priority, so the live region isn't
     // written twice in one page load.
     select_(initial.selected!);
     if (!isModal()) focusNode(initial.selected!);
-  } else if (initial.disputed || initial.ragnarok) {
+  } else if (hasRestoredFilters) {
     announce(s(filterAnnouncementKey(initial.disputed, initial.ragnarok), hydratedCounts));
   }
   // Unconditional: normalises away a stale/invalid ?selected= that select_()
@@ -737,7 +739,8 @@ export async function mount(): Promise<void> {
 
   if (prefersReducedMotion()) {
     // Nothing to freeze: the layout in the markup is already the settled one.
-    announce(s('graph.motionReduced'));
+    // Skip if hydration above already announced a restored selection/filter.
+    if (!hydrationAnnounced) announce(s('graph.motionReduced'));
     return;
   }
 

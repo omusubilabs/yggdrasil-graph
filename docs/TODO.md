@@ -501,9 +501,9 @@ the resulting URL produces the same state description without an extra write.
 
 #### UXA-013 — Preserve restored state for reduced-motion users
 
-- [ ] Prevent the reduced-motion status from replacing a restored selection or
+- [x] Prevent the reduced-motion status from replacing a restored selection or
       filter announcement in the shared live region.
-- [ ] Keep page-load announcements singular and prioritise the restored graph
+- [x] Keep page-load announcements singular and prioritise the restored graph
       state when a shareable query string is present.
 
 **Evidence:** URL hydration writes the restored selection or filter state, then
@@ -511,6 +511,28 @@ the `prefersReducedMotion()` branch immediately writes `graph.motionReduced` to
 the same status element. The second write becomes the final DOM state and can
 coalesce the meaningful restoration announcement before assistive technology
 receives it.
+
+**Fixed:** `mount()` in `src/graph/runtime.ts` had no notion of "hydration
+already wrote the live region" by the time it reached the reduced-motion
+check a few lines later, so `announce(s('graph.motionReduced'))` fired
+unconditionally and always won as the final DOM state. The URL-hydration
+block now also computes `hasRestoredFilters` (the `initial.disputed ||
+initial.ragnarok` condition, previously inlined once in an `else if` and now
+named so it can be reused) and `hydrationAnnounced` (`hasSelection ||
+hasRestoredFilters`), and the reduced-motion branch checks `if
+(!hydrationAnnounced) announce(...)` before writing `graph.motionReduced`. A
+plain visit still announces the motion mode, since neither condition is met.
+No new locale key was needed — `graph.motionReduced`, `graph.selectedAnnounce`
+and the four `filters.*OnAnnounce` keys already cover every announcement this
+produces or suppresses. Verified by browser inspection of the unaffected
+non-reduced-motion path (a plain visit, `?selected=<id>`, and
+`?disputed=1&ragnarok=1` all still produce their expected single
+announcement) and by tracing the gating condition against every reachable
+`(hasSelection, hasRestoredFilters)` combination, including the edge case of
+a stale/invalid `?selected=` with no filters set, where `graph.motionReduced`
+correctly still fires since hydration announced nothing. Live emulation of
+`prefers-reduced-motion: reduce` in the browser and native screen-reader
+confirmation are still open, as flagged above.
 
 **Done when:** With reduced motion enabled, a plain visit may report the motion
 mode once, while a URL carrying selection or filters reports the restored graph
