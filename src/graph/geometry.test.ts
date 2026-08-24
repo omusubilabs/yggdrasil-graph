@@ -22,10 +22,16 @@ import { sampleGraph } from './fixtures/sample-graph.ts';
 const findNode = (id: string) => sampleGraph.nodes.find((n) => n.id === id)!;
 const findLink = (id: string) => sampleGraph.links.find((l) => l.id === id)!;
 
-/** A bare node for pure geometry tests, where only id/x/y/degree matter. */
-const at = (id: string, x: number, y: number, degree = 0): GraphNode => ({
+/** A bare node for pure geometry tests, where only id/x/y/degree/type matter. */
+const at = (
+  id: string,
+  x: number,
+  y: number,
+  degree = 0,
+  type: GraphNode['type'] = 'being',
+): GraphNode => ({
   id,
-  type: 'being',
+  type,
   classes: [],
   names: { non: id, anglicized: id },
   attestations: [],
@@ -113,6 +119,41 @@ describe('haloRadius', () => {
     const target = at('a', 0, 0);
     const others = [target, at('touching', 8, 0)];
     assert.equal(haloRadius(target, others), nodeRadius(0));
+  });
+
+  it('widens a hexagon halo so its narrower vertical span still clears the floor a circle gets directly', () => {
+    const target = at('midgard', 0, 0, 0, 'world');
+    const others = [target, at('far', 10_000, 0)];
+    const r = haloRadius(target, others);
+    // Hexagon's vertical half-span is r·sin(60°), not r, so r must overshoot 30.
+    const verticalHalfSpan = r * Math.sin(Math.PI / 3);
+    assert.ok(
+      verticalHalfSpan >= 30 - 0.05, // tolerate haloRadius's one-decimal rounding
+      `expected hexagon vertical half-span >= 30, got ${verticalHalfSpan}`,
+    );
+  });
+
+  it('cross-checks the hexagon floor against the actual rendered path, not just the formula', () => {
+    const target = at('midgard', 0, 0, 0, 'world');
+    const others = [target, at('far', 10_000, 0)];
+    const r = haloRadius(target, others);
+    const d = nodeShapePath('world', r);
+    const ys = [...d.matchAll(/-?\d+\.?\d*,(-?\d+\.?\d*)/g)].map((m) => Number(m[1]));
+    assert.ok(Math.max(...ys) >= 30 - 0.05);
+  });
+
+  it('leaves circle-family, form and lozenge shapes at the same floor as before the shape-aware fix', () => {
+    for (const type of ['deity', 'human', 'being', 'event', 'form', 'artifact'] as const) {
+      const target = at('a', 0, 0, 0, type);
+      const others = [target, at('far', 10_000, 0)];
+      assert.equal(haloRadius(target, others), 30);
+    }
+  });
+
+  it('still clamps a hexagon halo to half the neighbour distance, same as a circle', () => {
+    const target = at('midgard', 0, 0, 0, 'world');
+    const others = [target, at('close', 20, 0)];
+    assert.equal(haloRadius(target, others), 10);
   });
 });
 

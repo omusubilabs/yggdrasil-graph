@@ -20,6 +20,7 @@ npm run i18n:check   # locale key parity against en
 npm run check:strings # no hardcoded user-facing strings in components
 npm run check:glyphs # every shipped font face can draw Old Norse
 npm run check:bundle-size # initial-route JS budget, see report-bundle-size.mjs
+npm run check:target-size # 24px node-halo regression, needs dist/ + `npx playwright install chromium`
 npm test             # unit tests — node:test via tsx, see src/graph/*.test.ts, src/i18n/*.test.ts
 npm run typecheck    # astro check
 npm run lint         # eslint

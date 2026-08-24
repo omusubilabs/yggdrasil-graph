@@ -30,7 +30,10 @@ export const nodeRadius = (degree: number): number =>
 export const labelOffset = (degree: number): number => nodeRadius(degree) + 11;
 
 /** Distance in viewBox units from `node` to its closest other node, by position. */
-export const nearestNeighbourDistance = (node: GraphNode, allNodes: readonly GraphNode[]): number => {
+export const nearestNeighbourDistance = (
+  node: GraphNode,
+  allNodes: readonly GraphNode[],
+): number => {
   let min = Infinity;
   for (const other of allNodes) {
     if (other.id === node.id) continue;
@@ -49,11 +52,23 @@ export const nearestNeighbourDistance = (node: GraphNode, allNodes: readonly Gra
 const HALO_PAD = 12;
 const HALO_MIN_RADIUS = 30;
 
+/**
+ * The 30-unit floor above is a radius, and every shape but the hexagon has a
+ * half-span equal to that radius in every direction. The hexagon's vertical
+ * half-span is only r·sin(60°) ≈ 0.866r, so it alone needs its target
+ * radius scaled up to still clear the floor vertically (docs/TODO.md UXA-011).
+ */
+const HALO_SHAPE_FACTOR: Partial<Record<GraphNode['type'], number>> = {
+  world: Math.sqrt(3) / 2,
+  place: Math.sqrt(3) / 2,
+};
+
 export const haloRadius = (node: GraphNode, allNodes: readonly GraphNode[]): number => {
   const r = nodeRadius(node.degree);
   const target = Math.max(r + HALO_PAD, HALO_MIN_RADIUS);
+  const shaped = target / (HALO_SHAPE_FACTOR[node.type] ?? 1);
   const cap = nearestNeighbourDistance(node, allNodes) / 2;
-  return round(Math.max(r, Math.min(target, cap)));
+  return round(Math.max(r, Math.min(shaped, cap)));
 };
 
 /**

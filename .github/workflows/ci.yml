@@ -65,5 +65,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Check node-halo target size
+        run: npm run check:target-size
+
       - name: Report initial-route JS budget
         run: npm run check:bundle-size

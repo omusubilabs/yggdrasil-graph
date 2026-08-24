@@ -357,9 +357,9 @@ work without rewriting the original audit record above.
 
 #### UXA-011 — Make graph target sizing shape-aware
 
-- [ ] Size every node halo from the rendered shape's actual width and height,
+- [x] Size every node halo from the rendered shape's actual width and height,
       not from a circle-equivalent radius alone.
-- [ ] Add a repeatable regression check for the minimum CSS-pixel target size
+- [x] Add a repeatable regression check for the minimum CSS-pixel target size
       at 1440 × 900, 390 × 844 and 320 × 720.
 
 **Evidence:** `haloRadius()` floors a halo to 30 viewBox units, which produces a
@@ -369,6 +369,76 @@ approximately 25.0 × 21.6 CSS px at 1440 × 900, 26.7 × 23.2 at 390 × 844 and
 25.8 × 22.3 at 320 × 720. Its nearest neighbour is far enough away that the
 collision cap is not the constraint, so the target can grow without creating
 an exception to the layout-permits condition in UXA-001.
+
+**Fixed:** `haloRadius()` in `src/graph/geometry.ts` computed one
+circle-equivalent scalar and fed it into whichever shape `nodeShapePath()`
+draws, without accounting for a shape's narrowest axis. Of the four shapes,
+only the hexagon (world/place) is narrower than its own radius in any
+direction — its vertical half-span is `r·sin(60°) ≈ 0.866r`, against `1.0r`
+for the circle, the lozenge's horizontal axis, and the double-ring's outer
+circle. A new `HALO_SHAPE_FACTOR` map divides the target radius by that ratio
+for `world`/`place` before the existing neighbour-distance cap is applied, so
+the hexagon's narrow axis reaches the same floor every other shape already
+got directly; the cap itself needed no change; because its _widest_ axis
+factor was already 1 for every shape, including the hexagon, clamping the
+enlarged radius to the same `nearestNeighbourDistance / 2` bound still caps
+the shape's largest extent exactly as before. `nodeShapePath()` and every
+other shape are untouched, and since `GraphCanvas.astro` (build time) and
+`src/graph/runtime.ts` (lazily-materialized nodes) both already call
+`nodeShapePath(node.type, haloRadius(...))` through the same shared function,
+the fix applies identically to both render paths with no duplicated logic.
+`src/graph/geometry.test.ts` gained four cases: one asserting the hexagon's
+vertical half-span analytically clears the 30-unit floor, one cross-checking
+that floor against `nodeShapePath`'s actual emitted coordinates (so a
+regression in the path math itself would also be caught, not only in the
+compensation), one confirming the other five types are unchanged, and one
+confirming the neighbour-distance cap still clamps a hexagon the same way it
+clamps a circle.
+
+The regression check is `scripts/check-target-size.ts`
+(`npm run check:target-size`, wired into CI after `npm run build`, alongside
+a new `npx playwright install --with-deps chromium` step), using a real
+headless Chromium via a new `playwright` devDependency rather than
+recomputing the CSS cascade by hand — a static recomputation would carry the
+same drift risk CLAUDE.md already flags for the duplicated `LINK_DISTANCE`
+constants in `scripts/build-graph.ts`/`src/graph/simulation.ts`, and this
+check exists specifically to catch a future _layout_ regression, which only
+a real renderer can. There are only four distinct node shapes, so it measures
+one representative per shape (`odin` circle, `midgard` hexagon, `mjolnir`
+lozenge, `mare` double-ring) rather than every entity — but not uniformly:
+`odin` and `midgard` are cold-open core members and are measured on a plain
+`/` visit, while `mjolnir` and `mare` have no core member of their shape at
+all (confirmed against the live dataset — of 381 entities, only the
+cold-open core's ~45 are cold-open-visible, and it contains zero `artifact`
+or `form` nodes), so they're measured via `?selected=<id>`, the same
+shareable URL-hydration path search already uses. That is not a workaround:
+selecting a node re-fits the SVG `viewBox` to its neighbourhood
+(`applyVisibility` in `runtime.ts`), so `?selected=` is the _only_ scenario in
+which a reader ever sees those two shapes — an earlier version of this check
+measured all four nodes that way uniformly, which measured `odin`'s
+post-selection focus-zoom size instead of its cold-open size and produced a
+false failure (20.0 × 20.0 px at 320 × 720) caught and corrected during
+implementation, confirmed via direct browser inspection that `odin`'s and
+`midgard`'s actual cold-open halos measure 29.9 × 29.9 and 29.7 × 25.7 px
+respectively at that width. The check waits on
+`document.documentElement.dataset.graphRuntime === 'ready'`, the exact signal
+`runtime.ts` sets after materializing and resolving `?selected=`, rather than
+a `networkidle` heuristic, and emulates `prefers-reduced-motion: reduce` so
+the client-side force simulation never starts and positions stay pinned to
+the deterministic layout.
+
+A live-dataset query while closing this out found 15 of 42 `world`/`place`
+nodes (all `place`, none in the cold-open core) still collision-capped below
+the full uncapped hexagon target — e.g. `east-saxland`'s vertical half-span
+is 25.29 of the ideal 30 viewBox units. None of them are cold-open targets,
+so UXA-001's layout-permits exception does not need to be invoked for them,
+but their real rendered size was checked directly rather than assumed: the
+smallest, measured via `?selected=`, was 65.5 × 58.0 CSS px at 320 × 720 —
+the neighbourhood-refit zoom that reveals them keeps every one comfortably
+clear of the 24 × 24 floor. `npm run check:target-size` currently reports all
+12 shape × viewport combinations passing; `npm run validate && npm run build`
+run twice in a row still produces a byte-identical `src/generated/graph.json`,
+confirming the shape-aware fix did not disturb build determinism.
 
 **Done when:** Every intended cold-graph target measures at least 24 × 24 CSS
 px at all three audited viewports unless a documented collision makes that
