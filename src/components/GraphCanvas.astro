@@ -174,12 +174,17 @@ const edges = data.links
                     class="node__halo"
                     d={nodeShapePath(node.type, haloRadius(node, data.nodes))}
                   />
-                  <path class="node__shape" d={nodeShapePath(node.type, nodeRadius(node.degree))} />
+                  <path
+                    class="node__shape"
+                    d={nodeShapePath(node.type, nodeRadius(node.degree))}
+                    style={`view-transition-name: emblem-${node.id}`}
+                  />
                   {/* i18n-ignore: the Old Norse form is data from data/entities/, identical in every locale */}
                   <text
                     class="node__label"
                     y={labelOffset(node.degree)}
                     font-size={labelSize(node.coreRank)}
+                    style={`view-transition-name: label-${node.id}`}
                   >
                     {node.names.non}
                   </text>

@@ -1073,11 +1073,13 @@ function materializeGraph(
     const shape = document.createElementNS(SVG_NS, 'path');
     shape.setAttribute('class', 'node__shape');
     shape.setAttribute('d', nodeShapePath(node.type, nodeRadius(node.degree)));
+    shape.style.viewTransitionName = `emblem-${node.id}`;
     const label = document.createElementNS(SVG_NS, 'text');
     applyScope(halo, shape, label);
     label.setAttribute('class', 'node__label');
     label.setAttribute('y', String(labelOffset(node.degree)));
     label.setAttribute('font-size', String(labelSize(node.coreRank)));
+    label.style.viewTransitionName = `label-${node.id}`;
     label.textContent = node.names.non;
     anchor.append(halo, shape, label);
     group.append(anchor);

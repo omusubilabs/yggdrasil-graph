@@ -12,6 +12,7 @@
 import graph from '../generated/graph.json';
 import type { GraphData } from '../graph/types.ts';
 import { buildIndex, relatedByTag } from '../graph/model.ts';
+import { nodeShapePath } from '../graph/geometry.ts';
 import type { Locale } from '../i18n/config.ts';
 import { localePath, useTranslations, hasKey } from '../i18n/index.ts';
 import RelationGroups from './RelationGroups.astro';
@@ -28,6 +29,10 @@ const index = buildIndex(graph as unknown as GraphData);
 const node = index.nodeById.get(entityId)!;
 const suggestions = relatedByTag(index, entityId);
 
+// Kept out of the template — check-strings.ts's tag scanner misreads an
+// inline `.map(c => ...)` arrow's `=>` as the SVG tag's closing `>`.
+const emblemClass = ['entity__emblem', ...node.classes.map((c) => `is-${c}`)].join(' ');
+
 const descriptionKey = `entity.${entityId}.description`;
 const epithetKey = `entity.${entityId}.epithet`;
 const attestations = node.attestations
@@ -41,10 +46,24 @@ const attestations = node.attestations
   </p>
 
   <header class="entity__header">
-    {/* i18n-ignore: Old Norse name, data from data/entities/ */}
-    <h1 class="entity__name">{node.names.non}</h1>
-    <p class="entity__anglicized">{node.names.anglicized}</p>
-    {hasKey(locale, epithetKey) ? <p class="entity__epithet">{t(epithetKey)}</p> : null}
+    <svg
+      class={emblemClass}
+      viewBox="-24 -24 48 48"
+      width="128"
+      height="128"
+      aria-hidden="true"
+      style={`view-transition-name: emblem-${entityId}`}
+    >
+      <path class="entity__emblem-shape" d={nodeShapePath(node.type, 18)} />
+    </svg>
+    <div class="entity__heading">
+      {/* i18n-ignore: Old Norse name, data from data/entities/ */}
+      <h1 class="entity__name" style={`view-transition-name: label-${entityId}`}>
+        {node.names.non}
+      </h1>
+      <p class="entity__anglicized">{node.names.anglicized}</p>
+      {hasKey(locale, epithetKey) ? <p class="entity__epithet">{t(epithetKey)}</p> : null}
+    </div>
   </header>
 
   {
@@ -140,7 +159,64 @@ const attestations = node.attestations
   }
 
   .entity__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
     margin-bottom: var(--space-md);
+  }
+
+  .entity__emblem {
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 40rem) {
+    .entity__emblem {
+      width: 88px;
+      height: 88px;
+    }
+  }
+
+  .entity__emblem-shape {
+    fill: var(--vellum-pale);
+    fill-rule: evenodd;
+    stroke: var(--ink);
+    stroke-width: var(--node-stroke);
+  }
+
+  .entity__emblem.is-aesir .entity__emblem-shape {
+    fill: color-mix(in srgb, var(--class-aesir) 22%, var(--vellum-pale));
+    stroke: var(--class-aesir);
+  }
+  .entity__emblem.is-vanir .entity__emblem-shape {
+    fill: color-mix(in srgb, var(--class-vanir) 22%, var(--vellum-pale));
+    stroke: var(--class-vanir);
+  }
+  .entity__emblem.is-jotnar .entity__emblem-shape {
+    fill: color-mix(in srgb, var(--class-jotnar) 22%, var(--vellum-pale));
+    stroke: var(--class-jotnar);
+  }
+  .entity__emblem.is-humans .entity__emblem-shape {
+    fill: color-mix(in srgb, var(--class-humans) 22%, var(--vellum-pale));
+    stroke: var(--class-humans);
+  }
+  .entity__emblem.is-beings .entity__emblem-shape {
+    fill: color-mix(in srgb, var(--class-beings) 22%, var(--vellum-pale));
+    stroke: var(--class-beings);
+  }
+  .entity__emblem.is-worlds .entity__emblem-shape {
+    fill: color-mix(in srgb, var(--class-worlds) 18%, var(--vellum-pale));
+    stroke: var(--class-worlds);
+  }
+  .entity__emblem.is-artifacts .entity__emblem-shape {
+    fill: color-mix(in srgb, var(--class-artifacts) 26%, var(--vellum-pale));
+    stroke: var(--class-artifacts);
+  }
+
+  /* Loki holds two classes; mirrors .node.is-aesir.is-jotnar in GraphCanvas.astro. */
+  .entity__emblem.is-aesir.is-jotnar .entity__emblem-shape {
+    fill: color-mix(in srgb, var(--class-jotnar) 24%, var(--vellum-pale));
+    stroke: var(--class-aesir);
+    stroke-dasharray: 3 2;
   }
 
   .entity__name {

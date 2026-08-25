@@ -1,6 +1,10 @@
 @import './tokens.css';
 @import './fonts.css';
 
+@view-transition {
+  navigation: auto;
+}
+
 *,
 *::before,
 *::after {
@@ -163,7 +167,9 @@ button {
  * build time and baked into the markup precisely so there is a stable, correct
  * thing to freeze to — see scripts/build-graph.ts. With motion reduced, the
  * simulation never starts, and what the reader sees is the settled layout,
- * fully interactive.
+ * fully interactive. `::view-transition-*` pseudo-elements are a separate
+ * namespace from `*::before`/`*::after`, so the node→emblem transition below
+ * needs its own reduced-motion rule.
  */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -178,6 +184,96 @@ button {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+/* ------------------------------------------------------------ view transitions
+ *
+ * The graph node's shape and its label both get a `view-transition-name`,
+ * morphing into the entity page's emblem and heading. Naming only the shape
+ * read as one dot drifting across a wide screen with nothing to connect it
+ * to; the label gives the eye a name to follow instead.
+ *
+ * Root keeps a quick fade (--motion-base) rather than an instant swap, so
+ * ordinary navigation still reads as a page turning, not a cut.
+ */
+@keyframes vt-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Lift-off/landing scale for the carried pair. `animation-name` replaces
+ * the browser's default cross-fade entirely, so opacity has to be written
+ * back into these keyframes too, not just the added transform. */
+@keyframes vt-carry-out {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  30% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+}
+
+@keyframes vt-carry-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+::view-transition-old(*) {
+  animation: var(--motion-transition) var(--ease-out) both vt-carry-out;
+}
+
+::view-transition-new(*) {
+  animation: var(--motion-transition) var(--ease-out) both vt-carry-in;
+}
+
+/* After the wildcard rule above, so it wins for root: the page fade stays
+ * plain, not the carried pair's lift-and-land. */
+::view-transition-old(root) {
+  animation: var(--motion-base) linear both vt-fade-out;
+}
+
+::view-transition-new(root) {
+  animation: var(--motion-base) linear both vt-fade-in;
+}
+
+::view-transition-group(*) {
+  animation-duration: var(--motion-transition);
+  animation-timing-function: var(--ease-out);
 }
 
 @media (prefers-contrast: more) {
