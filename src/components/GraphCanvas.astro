@@ -565,16 +565,22 @@ const edges = data.links
     opacity: 0;
   }
 
-  :global([data-graph][data-ragnarok]) .node.is-ragnarok-combatant .node__shape {
+  /* [data-selected] variants: the Ragnarök Echo, firing on direct selection
+     rather than the overlay toggle. Not added to the dimming rules above —
+     the Echo must never dim the rest of the graph. */
+  :global([data-graph][data-ragnarok]) .node.is-ragnarok-combatant .node__shape,
+  :global([data-graph][data-selected]) .node.is-ragnarok-combatant .node__shape {
     stroke: var(--minium);
     stroke-width: 2.5;
   }
 
-  :global([data-graph][data-ragnarok]) .node.is-ragnarok-lineage .node__shape {
+  :global([data-graph][data-ragnarok]) .node.is-ragnarok-lineage .node__shape,
+  :global([data-graph][data-selected]) .node.is-ragnarok-lineage .node__shape {
     fill: var(--minium-wash);
   }
 
-  :global([data-graph][data-ragnarok]) .edge.is-ragnarok-lineage {
+  :global([data-graph][data-ragnarok]) .edge.is-ragnarok-lineage,
+  :global([data-graph][data-selected]) .edge.is-ragnarok-lineage {
     stroke: var(--minium-wash);
   }
 

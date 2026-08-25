@@ -18,12 +18,15 @@ import {
   boundsForNodeIds,
   buildIndex,
   neighbourhood,
+  ragnarokConnection,
   ragnarokOverlay,
   relatedByTag,
   relationsByFamily,
   searchEntities,
+  structuralInsight,
   type BloodlineTrace,
   type GraphIndex,
+  type RagnarokConnection,
 } from './model.ts';
 import {
   edgePath,
@@ -186,6 +189,8 @@ export async function mount(): Promise<void> {
   let traceSourceId: string | null = null;
   let activeTrace: BloodlineTrace | null = null;
   let traceTimers: number[] = [];
+  // Recomputed for every selection, independent of activeTrace.
+  let ragnarokEcho: RagnarokConnection | null = null;
 
   /**
    * Inline dash reveal via getTotalLength(), not the `pathLength` attribute —
@@ -246,6 +251,7 @@ export async function mount(): Promise<void> {
     selected = null;
     cancelTrace(false);
     activeTrace = null;
+    ragnarokEcho = null;
     clearTraceHighlight();
     svg.removeAttribute('data-selected');
     for (const el of nodeEls.values()) el.classList.remove('is-near', 'is-selected');
@@ -264,6 +270,7 @@ export async function mount(): Promise<void> {
     if (!node) return;
     clearTraceHighlight();
     activeTrace = trace;
+    ragnarokEcho = ragnarokConnection(index, ragnarok, id);
     selected = id;
     const near = neighbourhood(index, id);
 
@@ -271,11 +278,19 @@ export async function mount(): Promise<void> {
     for (const [nodeId, el] of nodeEls) {
       el.classList.toggle('is-near', near.nodes.has(nodeId));
       el.classList.toggle('is-selected', nodeId === id);
-      el.classList.toggle('is-lineage-node', activeTrace?.nodeIds.includes(nodeId) ?? false);
+      el.classList.toggle(
+        'is-lineage-node',
+        (activeTrace?.nodeIds.includes(nodeId) ?? false) ||
+          (ragnarokEcho?.nodeIds.has(nodeId) ?? false),
+      );
     }
     for (const [linkId, el] of edgeEls) {
       el.classList.toggle('is-near', near.links.has(linkId));
-      el.classList.toggle('is-lineage-trace', activeTrace?.linkIds.includes(linkId) ?? false);
+      el.classList.toggle(
+        'is-lineage-trace',
+        (activeTrace?.linkIds.includes(linkId) ?? false) ||
+          (ragnarokEcho?.linkIds.has(linkId) ?? false),
+      );
     }
 
     if (clearButton) clearButton.hidden = false;
@@ -285,6 +300,7 @@ export async function mount(): Promise<void> {
       s('graph.selectedAnnounce', { name: node.names.anglicized, count: near.nodes.size - 1 }),
     );
     triggerDeathTrace(id);
+    if (ragnarokEcho) triggerRagnarokEcho(id, ragnarokEcho);
     syncUrl();
   };
 
@@ -322,6 +338,26 @@ export async function mount(): Promise<void> {
         el.style.removeProperty('stroke-dasharray');
         el.style.removeProperty('stroke-dashoffset');
       });
+    }
+  };
+
+  /**
+   * Draws the reveal toward `id`'s combat pairing and the bloodline that
+   * produced it, even with no death relation of its own. Skips whatever
+   * `triggerDeathTrace` just animated, so a shared edge isn't dashed twice.
+   */
+  const triggerRagnarokEcho = (id: string, echo: RagnarokConnection) => {
+    if (prefersReducedMotion()) return;
+    const alreadyAnimated = new Set(
+      (index.incident.get(id) ?? [])
+        .filter((link) => isDeathRelation(link.type))
+        .map((link) => link.id),
+    );
+    for (const linkId of echo.linkIds) {
+      if (alreadyAnimated.has(linkId)) continue;
+      const el = edgeEls.get(linkId);
+      if (!el) continue;
+      revealEdgeStroke(el);
     }
   };
 
@@ -365,6 +401,18 @@ export async function mount(): Promise<void> {
     }
 
     panelBody.replaceChildren();
+
+    const insight = structuralInsight(index, ragnarok, id);
+    if (insight) {
+      const insightKey =
+        insight.kind === 'ragnarok-indirect'
+          ? 'panel.insight.ragnarokIndirect'
+          : insight.kind === 'contradicted'
+            ? 'panel.insight.contradicted'
+            : 'panel.insight.tagOnly';
+      const insightParams = insight.kind === 'tag-only' ? { name: insight.exampleName } : undefined;
+      panelBody.append(el('p', 'panel__insight', s(insightKey, insightParams)));
+    }
 
     if (strings?.epithet) panelBody.append(el('p', 'panel__epithet', strings.epithet));
     if (strings?.summary) panelBody.append(el('p', 'panel__summary', strings.summary));
@@ -760,6 +808,16 @@ export async function mount(): Promise<void> {
       for (const id of activeTrace.linkIds) links.add(id);
     }
 
+    // Same widening as the trace above, for the Ragnarök Echo — this is what
+    // drives the auto-pan/zoom to fit the revealed chain.
+    if (ragnarokEcho) {
+      for (const id of ragnarokEcho.nodeIds) {
+        nodes.add(id);
+        focusIds.add(id);
+      }
+      for (const id of ragnarokEcho.linkIds) links.add(id);
+    }
+
     const disputed = disputedToggle?.checked ?? false;
     if (disputed) {
       for (const link of payload.graph.links) {
@@ -791,13 +849,16 @@ export async function mount(): Promise<void> {
         if (visible) anchor.removeAttribute('tabindex');
         else anchor.setAttribute('tabindex', '-1');
       }
+      // `|| echoedNode` keeps these on with the toggle off — applyVisibility()
+      // runs right after select_() computes the echo and would strip them otherwise.
+      const echoedNode = ragnarokEcho?.nodeIds.has(id) ?? false;
       element.classList.toggle(
         'is-ragnarok-combatant',
-        ragnarokOn && ragnarok.combatantIds.has(id),
+        (ragnarokOn || echoedNode) && ragnarok.combatantIds.has(id),
       );
       element.classList.toggle(
         'is-ragnarok-lineage',
-        ragnarokOn && ragnarok.lineageNodeIds.has(id),
+        (ragnarokOn || echoedNode) && ragnarok.lineageNodeIds.has(id),
       );
     }
 
@@ -808,13 +869,14 @@ export async function mount(): Promise<void> {
       const visible = Boolean(link && links.has(id) && nodes.has(link.from) && nodes.has(link.to));
       element.classList.toggle('is-out-of-scope', !visible);
       element.classList.toggle('is-hidden', disputed && !contested);
+      const echoedLink = ragnarokEcho?.linkIds.has(id) ?? false;
       element.classList.toggle(
         'is-ragnarok-pairing',
-        ragnarokOn && ragnarok.pairingLinkIds.has(id),
+        (ragnarokOn || echoedLink) && ragnarok.pairingLinkIds.has(id),
       );
       element.classList.toggle(
         'is-ragnarok-lineage',
-        ragnarokOn && ragnarok.lineageLinkIds.has(id),
+        (ragnarokOn || echoedLink) && ragnarok.lineageLinkIds.has(id),
       );
       if (visible && (!disputed || contested)) visibleLinks += 1;
     }

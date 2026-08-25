@@ -70,7 +70,12 @@
     "outgoing": "{name} → ",
     "incoming": " → {name}",
     "traceStart": "Följ blodslinjen",
-    "traceCancel": "Avbryt blodslinjespårning"
+    "traceCancel": "Avbryt blodslinjespårning",
+    "insight": {
+      "ragnarokIndirect": "Ingen direkt dödsrelation är registrerad för denna gestalt, men blodslinjen som spåras nedan leder till ett stridspar vid Ragnarök.",
+      "contradicted": "Minst en relation här motsägs av en annan källa.",
+      "tagOnly": "Kopplad till {name} endast genom ett gemensamt tema, inte genom en registrerad relation."
+    }
   },
   "filters": {
     "label": "Filter",

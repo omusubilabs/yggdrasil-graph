@@ -285,6 +285,29 @@ const nodes: GraphNode[] = [
     },
     20,
   ),
+  // Isolated, untagged pair for structuralInsight's "contradicted" condition.
+  node(
+    {
+      id: 'claimant',
+      type: 'human',
+      classes: ['humans'],
+      names: { non: 'Krefjandi', anglicized: 'Claimant' },
+      attestations: [],
+      tags: [],
+    },
+    21,
+  ),
+  node(
+    {
+      id: 'contender',
+      type: 'human',
+      classes: ['humans'],
+      names: { non: 'Keppinautur', anglicized: 'Contender' },
+      attestations: [],
+      tags: [],
+    },
+    22,
+  ),
 ];
 
 const links: GraphLink[] = [
@@ -423,6 +446,8 @@ const links: GraphLink[] = [
     certainty: 'attested',
     sources: [{ work: 'song-of-crowns', locus: '5' }],
     family: 'kinship',
+    // Unrelated contradiction, added only to test structuralInsight's priority order.
+    contradicts: ['claimant--contender--slays'],
   }),
   link({
     from: 'progenitor',
@@ -450,6 +475,27 @@ const links: GraphLink[] = [
     certainty: 'attested',
     sources: [{ work: 'chronicle-of-halls', locus: '7' }],
     family: 'transformation',
+  }),
+  // Mutually contradicting slays claims — neither more attested than the other.
+  link({
+    from: 'claimant',
+    to: 'contender',
+    type: 'slays',
+    directed: true,
+    certainty: 'disputed',
+    sources: [{ work: 'song-of-crowns', locus: '8' }],
+    family: 'conflict',
+    contradicts: ['contender--claimant--slays'],
+  }),
+  link({
+    from: 'contender',
+    to: 'claimant',
+    type: 'slays',
+    directed: true,
+    certainty: 'disputed',
+    sources: [{ work: 'chronicle-of-halls', locus: '8' }],
+    family: 'conflict',
+    contradicts: ['claimant--contender--slays'],
   }),
 ];
 

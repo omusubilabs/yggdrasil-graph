@@ -70,7 +70,12 @@
     "outgoing": "{name} → ",
     "incoming": " → {name}",
     "traceStart": "Follow the bloodline",
-    "traceCancel": "Cancel bloodline trace"
+    "traceCancel": "Cancel bloodline trace",
+    "insight": {
+      "ragnarokIndirect": "No direct death relation is recorded for this figure, but the bloodline traced below leads into a combat pairing at Ragnarök.",
+      "contradicted": "At least one relation here is contradicted by another source.",
+      "tagOnly": "Connected to {name} only by a shared theme, not by a recorded relation."
+    }
   },
   "filters": {
     "label": "Filters",

@@ -70,7 +70,12 @@
     "outgoing": "{name} → ",
     "incoming": " → {name}",
     "traceStart": "血統をたどる",
-    "traceCancel": "血統トレースを取り消す"
+    "traceCancel": "血統トレースを取り消す",
+    "insight": {
+      "ragnarokIndirect": "この人物には直接の死亡関係は記録されていないが、下でたどれる血統はラグナロクでの対戦へとつながっている。",
+      "contradicted": "ここに示す関係の少なくとも一つは、別の典拠によって異議が唱えられている。",
+      "tagOnly": "{name}とは共通の主題でのみつながっており、記録された関係によるものではない。"
+    }
   },
   "filters": {
     "label": "絞り込み",

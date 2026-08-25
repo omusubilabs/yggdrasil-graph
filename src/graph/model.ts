@@ -220,6 +220,114 @@ export const ragnarokOverlay = (index: GraphIndex): RagnarokOverlay => {
   return { pairingLinkIds, combatantIds, lineageNodeIds, lineageLinkIds };
 };
 
+export interface RagnarokConnection {
+  nodeIds: Set<string>;
+  linkIds: Set<string>;
+}
+
+/**
+ * The Ragnarök thread through `id`, even without a death relation of its
+ * own: a combatant's pairing edge(s) plus its ascending `parent_of` chain,
+ * or a pure lineage node's descending chain down to the combatant(s) it
+ * produced (pulling in their pairing edges too). Both walks are restricted
+ * to `overlay.lineageLinkIds` — the same edges `ragnarokOverlay` itself
+ * recognises — so an unrelated sibling branch can't leak in. `null` outside
+ * the cast.
+ */
+export const ragnarokConnection = (
+  index: GraphIndex,
+  overlay: RagnarokOverlay,
+  id: string,
+): RagnarokConnection | null => {
+  const isCombatant = overlay.combatantIds.has(id);
+  const isLineage = overlay.lineageNodeIds.has(id);
+  if (!isCombatant && !isLineage) return null;
+
+  const nodeIds = new Set<string>([id]);
+  const linkIds = new Set<string>();
+
+  const addPairingsOf = (combatantId: string) => {
+    for (const link of index.incident.get(combatantId) ?? []) {
+      if (!overlay.pairingLinkIds.has(link.id)) continue;
+      linkIds.add(link.id);
+      nodeIds.add(link.from);
+      nodeIds.add(link.to);
+    }
+  };
+
+  if (isCombatant) {
+    addPairingsOf(id);
+    // Ascend through parent_of within the lineage.
+    const visited = new Set<string>([id]);
+    const queue = [id];
+    while (queue.length) {
+      const cur = queue.pop()!;
+      for (const link of index.incident.get(cur) ?? []) {
+        if (link.type !== 'parent_of' || link.to !== cur) continue;
+        if (!overlay.lineageLinkIds.has(link.id)) continue;
+        if (visited.has(link.from)) continue;
+        visited.add(link.from);
+        nodeIds.add(link.from);
+        linkIds.add(link.id);
+        queue.push(link.from);
+      }
+    }
+  } else {
+    // Descend through parent_of within the lineage, pulling in any combatant reached.
+    const visited = new Set<string>([id]);
+    const queue = [id];
+    while (queue.length) {
+      const cur = queue.shift()!;
+      if (overlay.combatantIds.has(cur)) addPairingsOf(cur);
+      for (const link of index.incident.get(cur) ?? []) {
+        if (link.type !== 'parent_of' || link.from !== cur) continue;
+        if (!overlay.lineageLinkIds.has(link.id)) continue;
+        if (visited.has(link.to)) continue;
+        visited.add(link.to);
+        nodeIds.add(link.to);
+        linkIds.add(link.id);
+        queue.push(link.to);
+      }
+    }
+  }
+
+  return { nodeIds, linkIds };
+};
+
+export type StructuralInsight =
+  | { kind: 'ragnarok-indirect' }
+  | { kind: 'contradicted' }
+  | { kind: 'tag-only'; exampleName: string };
+
+/**
+ * The single most surprising structural fact about `id`, in priority order —
+ * first match wins, at most one shown. Mirrors `panel.insight.*` in i18n; the
+ * `kind` → string mapping lives in runtime.ts, not here.
+ */
+export const structuralInsight = (
+  index: GraphIndex,
+  overlay: RagnarokOverlay,
+  id: string,
+): StructuralInsight | null => {
+  const inCast = overlay.combatantIds.has(id) || overlay.lineageNodeIds.has(id);
+  if (inCast) {
+    const hasDirectDeathEdge = (index.incident.get(id) ?? []).some((link) =>
+      isDeathRelation(link.type),
+    );
+    if (!hasDirectDeathEdge) return { kind: 'ragnarok-indirect' };
+  }
+
+  const hasContradiction = (index.incident.get(id) ?? []).some(
+    (link) => (link.contradicts?.length ?? 0) > 0,
+  );
+  if (hasContradiction) return { kind: 'contradicted' };
+
+  const tagOnly = relatedByTag(index, id, 1);
+  if (tagOnly.length > 0) return { kind: 'tag-only', exampleName: tagOnly[0]!.node.names.non };
+
+  return null;
+};
+
 export interface BloodlineTrace {
   /** Descendant → ancestor, inclusive. */
   nodeIds: string[];

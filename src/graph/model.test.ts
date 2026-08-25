@@ -7,10 +7,12 @@ import {
   buildIndex,
   locusKey,
   neighbourhood,
+  ragnarokConnection,
   ragnarokOverlay,
   relatedByTag,
   relationsByFamily,
   searchEntities,
+  structuralInsight,
 } from './model.ts';
 import { sampleGraph } from './fixtures/sample-graph.ts';
 import type { GraphNode } from './types.ts';
@@ -236,6 +238,110 @@ describe('ragnarokOverlay', () => {
 
   it('still counts beast as a combatant via its tagged pairing, despite the excluded one', () => {
     assert.ok(overlay.combatantIds.has('beast'));
+  });
+});
+
+describe('ragnarokConnection', () => {
+  const overlay = ragnarokOverlay(index);
+
+  it('returns null for an entity with no involvement in the cast', () => {
+    assert.equal(ragnarokConnection(index, overlay, 'king'), null);
+  });
+
+  it('returns null for an unrelated sibling branch, despite sharing an ancestor with a combatant', () => {
+    assert.equal(ragnarokConnection(index, overlay, 'heir'), null);
+  });
+
+  it('gives a combatant with no parent just its pairing edge', () => {
+    const connection = ragnarokConnection(index, overlay, 'beast');
+    assert.deepEqual([...connection!.nodeIds].sort(), ['beast', 'champion']);
+    assert.deepEqual([...connection!.linkIds], ['champion--beast--slays']);
+  });
+
+  it("excludes an untagged pairing from a combatant's connection", () => {
+    const connection = ragnarokConnection(index, overlay, 'beast');
+    assert.ok(!connection!.linkIds.has('rogue--beast--slays'));
+  });
+
+  it('ascends a combatant through multiple generations of ancestors', () => {
+    const connection = ragnarokConnection(index, overlay, 'champion');
+    assert.deepEqual(
+      [...connection!.nodeIds].sort(),
+      ['ancestor', 'beast', 'champion', 'progenitor'],
+    );
+    assert.deepEqual(
+      [...connection!.linkIds].sort(),
+      [
+        'champion--beast--slays',
+        'ancestor--champion--parent_of',
+        'progenitor--ancestor--parent_of',
+      ].sort(),
+    );
+  });
+
+  it("excludes a combatant's unrelated sibling from its ancestor walk", () => {
+    const connection = ragnarokConnection(index, overlay, 'champion');
+    assert.ok(!connection!.nodeIds.has('heir'));
+    assert.ok(!connection!.linkIds.has('ancestor--heir--parent_of'));
+  });
+
+  it('descends a pure lineage node to its combatant and pairing', () => {
+    const connection = ragnarokConnection(index, overlay, 'ancestor');
+    assert.deepEqual([...connection!.nodeIds].sort(), ['ancestor', 'beast', 'champion']);
+    assert.deepEqual(
+      [...connection!.linkIds].sort(),
+      ['ancestor--champion--parent_of', 'champion--beast--slays'].sort(),
+    );
+  });
+
+  it('descends a more distant lineage node through the full chain', () => {
+    const connection = ragnarokConnection(index, overlay, 'progenitor');
+    assert.deepEqual(
+      [...connection!.nodeIds].sort(),
+      ['ancestor', 'beast', 'champion', 'progenitor'],
+    );
+    assert.deepEqual(
+      [...connection!.linkIds].sort(),
+      [
+        'progenitor--ancestor--parent_of',
+        'ancestor--champion--parent_of',
+        'champion--beast--slays',
+      ].sort(),
+    );
+  });
+});
+
+describe('structuralInsight', () => {
+  const overlay = ragnarokOverlay(index);
+
+  it('flags a pure lineage node as an indirect Ragnarök connection', () => {
+    // ancestor also has a contradicted relation (see the fixture comment) —
+    // this proves condition 1 outranks condition 2, not merely that it fires.
+    assert.deepEqual(structuralInsight(index, overlay, 'ancestor'), { kind: 'ragnarok-indirect' });
+  });
+
+  it('does not flag a combatant that has its own direct death relation', () => {
+    const insight = structuralInsight(index, overlay, 'champion');
+    assert.notEqual(insight?.kind, 'ragnarok-indirect');
+  });
+
+  it('flags an entity with a contradicted relation', () => {
+    assert.deepEqual(structuralInsight(index, overlay, 'claimant'), { kind: 'contradicted' });
+  });
+
+  it('flags an entity connected to a notable figure only by a shared tag', () => {
+    assert.deepEqual(structuralInsight(index, overlay, 'queen'), {
+      kind: 'tag-only',
+      exampleName: 'Sendiboði',
+    });
+  });
+
+  it('returns null when none of the conditions apply', () => {
+    assert.equal(structuralInsight(index, overlay, 'smith'), null);
+  });
+
+  it('returns null for an unknown id', () => {
+    assert.equal(structuralInsight(index, overlay, 'nobody'), null);
   });
 });
 

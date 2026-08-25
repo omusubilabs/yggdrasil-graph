@@ -70,7 +70,12 @@
     "outgoing": "{name} → ",
     "incoming": " → {name}",
     "traceStart": "Seuraa sukulinjaa",
-    "traceCancel": "Peruuta sukulinjan jäljitys"
+    "traceCancel": "Peruuta sukulinjan jäljitys",
+    "insight": {
+      "ragnarokIndirect": "Tälle hahmolle ei ole kirjattu suoraa kuolinsuhdetta, mutta alla jäljitetty sukulinja johtaa taisteluun Ragnarökissa.",
+      "contradicted": "Ainakin yhtä tässä esitettyä suhdetta kiistää toinen lähde.",
+      "tagOnly": "Yhteydessä hahmoon {name} vain yhteisen teeman kautta, ei kirjatun suhteen kautta."
+    }
   },
   "filters": {
     "label": "Suodattimet",

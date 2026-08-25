@@ -70,7 +70,12 @@
     "outgoing": "{name} → ",
     "incoming": " → {name}",
     "traceStart": "Rekja ættarlínuna",
-    "traceCancel": "Hætta við ættarlínurakningu"
+    "traceCancel": "Hætta við ættarlínurakningu",
+    "insight": {
+      "ragnarokIndirect": "Engin bein dauðatengsl eru skráð fyrir þessa persónu, en ættarlínan sem rakin er hér að neðan leiðir til bardaga við Ragnarök.",
+      "contradicted": "Að minnsta kosti eitt tengsl hér er véfengt af annarri heimild.",
+      "tagOnly": "Tengt {name} aðeins með sameiginlegu þema, ekki með skráðum tengslum."
+    }
   },
   "filters": {
     "label": "Síur",

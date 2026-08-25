@@ -164,6 +164,18 @@ const t = useTranslations(locale);
   }
 
   /* Scoped globally: these classes come from src/graph/runtime.ts at runtime, past Astro's scoping. */
+
+  /* Structural Insight Line: same verdigris-wash treatment as
+     .panel__badge.is-disputed below, reused here at paragraph scale. */
+  .panel__body :global(.panel__insight) {
+    margin: 0 0 var(--space-sm);
+    padding: var(--space-2xs) var(--space-sm);
+    border: 1px solid var(--verdigris);
+    border-radius: var(--radius-sm);
+    background: var(--verdigris-wash);
+    color: var(--verdigris-deep);
+  }
+
   .panel__body :global(.panel__epithet) {
     font-family: var(--font-display);
     font-style: italic;
