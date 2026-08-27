@@ -34,6 +34,7 @@
     "zoomOut": "Renna frá",
     "recentre": "Miðja",
     "clearSelection": "Sýna allt aftur",
+    "expandView": "Renna frá til að sjá allt",
     "selectedAnnounce": "Valið: {name}. Sýnir {count} tengdar persónur.",
     "neighbourhoodOf": "Í kringum {name}",
     "everything": "Allt grafið",
@@ -72,7 +73,7 @@
     "traceStart": "Rekja ættarlínuna",
     "traceCancel": "Hætta við ættarlínurakningu",
     "insight": {
-      "ragnarokIndirect": "Engin bein dauðatengsl eru skráð fyrir þessa persónu, en ættarlínan sem rakin er hér að neðan leiðir til bardaga við Ragnarök.",
+      "ragnarokIndirect": "Engin bein dauðatengsl eru skráð fyrir þessa persónu, en ættarlínan sem rakin er hér að neðan leiðir til bardaga við Ragnarök, {count} kynslóðum aftur í tímann.",
       "contradicted": "Að minnsta kosti eitt tengsl hér er véfengt af annarri heimild.",
       "tagOnly": "Tengt {name} aðeins með sameiginlegu þema, ekki með skráðum tengslum."
     }
@@ -82,6 +83,8 @@
     "heading": "Sýna",
     "certainty": "Eftir vissu",
     "family": "Eftir tengslategund",
+    "everyRelation": "Sýna öll bein tengsl",
+    "everyRelationHint": "Sýnir ráðgjöf, eignir, bústaði og átök umfram nánustu fjölskyldu.",
     "disputedOnly": "Aðeins þar sem heimildir eru ósammála",
     "disputedOnlyHint": "Sýnir eingöngu breytileg og umdeild tengsl.",
     "ragnarokOverlay": "Aðeins Ragnarök",

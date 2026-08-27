@@ -5,17 +5,21 @@ import {
   bloodlineTrace,
   buildCore,
   buildIndex,
+  clampBoundsAroundPoint,
+  coreNeighbourhood,
   locusKey,
   neighbourhood,
+  padForOverlay,
   ragnarokConnection,
   ragnarokOverlay,
   relatedByTag,
   relationsByFamily,
   searchEntities,
   structuralInsight,
+  unionBounds,
 } from './model.ts';
 import { sampleGraph } from './fixtures/sample-graph.ts';
-import type { GraphNode } from './types.ts';
+import type { GraphData, GraphNode } from './types.ts';
 
 const index = buildIndex(sampleGraph);
 
@@ -81,6 +85,26 @@ describe('neighbourhood', () => {
     const { nodes, links } = neighbourhood(index, 'wolf');
     assert.deepEqual([...nodes].sort(), ['serpent', 'wolf']);
     assert.equal(links.size, 2);
+  });
+});
+
+describe('coreNeighbourhood', () => {
+  it('narrows to kinship, dropping counsel, social, location and transformation', () => {
+    const { nodes, links } = coreNeighbourhood(index, 'envoy');
+    assert.deepEqual([...nodes].sort(), ['aide', 'confidant', 'envoy', 'mentor']);
+    assert.equal(links.size, 3);
+  });
+
+  it('falls back to the full neighbourhood when there is no kinship at all', () => {
+    const core = coreNeighbourhood(index, 'wolf');
+    const full = neighbourhood(index, 'wolf');
+    assert.deepEqual(core, full);
+  });
+
+  it('includes the origin even when it has no relations', () => {
+    const { nodes, links } = coreNeighbourhood(index, 'loner');
+    assert.deepEqual([...nodes], ['loner']);
+    assert.equal(links.size, 0);
   });
 });
 
@@ -239,6 +263,113 @@ describe('ragnarokOverlay', () => {
   it('still counts beast as a combatant via its tagged pairing, despite the excluded one', () => {
     assert.ok(overlay.combatantIds.has('beast'));
   });
+
+  it('marks every combatant at depth 0', () => {
+    assert.equal(overlay.lineageDepth.get('champion'), 0);
+    assert.equal(overlay.lineageDepth.get('beast'), 0);
+  });
+
+  it('increases lineage depth by one per parent_of hop from the nearest combatant', () => {
+    assert.equal(overlay.lineageDepth.get('ancestor'), 1);
+    assert.equal(overlay.lineageDepth.get('progenitor'), 2);
+  });
+});
+
+describe('ragnarokOverlay disjointness', () => {
+  it('never lets a combatant who is also another combatant\'s ancestor leak into lineageNodeIds', () => {
+    // combatant-a fights combatant-b (so both are tagged ragnarok-participant
+    // and share a death relation) AND is combatant-b's parent_of ancestor —
+    // mirrors the real dataset, where Óðinn is both a combatant in his own
+    // right and Þórr's parent, and Þórr is also a combatant. combatant-a must
+    // stay a combatant only, never also gain a bogus lineage depth.
+    const data: GraphData = {
+      version: 1,
+      generatedAt: '2026-01-01T00:00:00.000Z',
+      nodes: [
+        {
+          id: 'combatant-a',
+          type: 'deity',
+          classes: ['aesir'],
+          names: { non: 'A', anglicized: 'A' },
+          attestations: [],
+          tags: ['ragnarok-participant'],
+          x: 0,
+          y: 0,
+          degree: 0,
+          coreRank: 0,
+        },
+        {
+          id: 'combatant-b',
+          type: 'being',
+          classes: ['beings'],
+          names: { non: 'B', anglicized: 'B' },
+          attestations: [],
+          tags: ['ragnarok-participant'],
+          x: 0,
+          y: 0,
+          degree: 0,
+          coreRank: 1,
+        },
+        {
+          id: 'ancestor-c',
+          type: 'deity',
+          classes: ['aesir'],
+          names: { non: 'C', anglicized: 'C' },
+          attestations: [],
+          tags: [],
+          x: 0,
+          y: 0,
+          degree: 0,
+          coreRank: 2,
+        },
+      ],
+      links: [
+        {
+          id: 'combatant-a--combatant-b--slays',
+          from: 'combatant-a',
+          to: 'combatant-b',
+          type: 'slays',
+          directed: true,
+          certainty: 'attested',
+          sources: [],
+          family: 'conflict',
+          curve: 0,
+        },
+        {
+          id: 'combatant-a--combatant-b--parent_of',
+          from: 'combatant-a',
+          to: 'combatant-b',
+          type: 'parent_of',
+          directed: true,
+          certainty: 'attested',
+          sources: [],
+          family: 'kinship',
+          curve: 0,
+        },
+        {
+          id: 'ancestor-c--combatant-a--parent_of',
+          from: 'ancestor-c',
+          to: 'combatant-a',
+          type: 'parent_of',
+          directed: true,
+          certainty: 'attested',
+          sources: [],
+          family: 'kinship',
+          curve: 0,
+        },
+      ],
+      sources: [],
+      tagIndex: {},
+      bounds: [0, 0, 0, 0],
+      core: { nodeIds: [], linkIds: [], bounds: [0, 0, 0, 0] },
+    };
+    const overlay = ragnarokOverlay(buildIndex(data));
+    assert.deepEqual([...overlay.combatantIds].sort(), ['combatant-a', 'combatant-b']);
+    assert.deepEqual([...overlay.lineageNodeIds], ['ancestor-c']);
+    assert.equal(overlay.lineageDepth.get('combatant-a'), 0);
+    assert.equal(overlay.lineageDepth.get('combatant-b'), 0);
+    assert.equal(overlay.lineageDepth.get('ancestor-c'), 1);
+  });
 });
 
 describe('ragnarokConnection', () => {
@@ -309,6 +440,21 @@ describe('ragnarokConnection', () => {
       ].sort(),
     );
   });
+
+  it('records node depth as hops from the nearest combat pairing', () => {
+    const connection = ragnarokConnection(index, overlay, 'progenitor');
+    assert.equal(connection!.nodeDepth.get('champion'), 0);
+    assert.equal(connection!.nodeDepth.get('beast'), 0);
+    assert.equal(connection!.nodeDepth.get('ancestor'), 1);
+    assert.equal(connection!.nodeDepth.get('progenitor'), 2);
+  });
+
+  it('records link depth as the minimum depth of its two endpoints', () => {
+    const connection = ragnarokConnection(index, overlay, 'progenitor');
+    assert.equal(connection!.linkDepth.get('champion--beast--slays'), 0);
+    assert.equal(connection!.linkDepth.get('ancestor--champion--parent_of'), 0);
+    assert.equal(connection!.linkDepth.get('progenitor--ancestor--parent_of'), 1);
+  });
 });
 
 describe('structuralInsight', () => {
@@ -317,7 +463,10 @@ describe('structuralInsight', () => {
   it('flags a pure lineage node as an indirect Ragnarök connection', () => {
     // ancestor also has a contradicted relation (see the fixture comment) —
     // this proves condition 1 outranks condition 2, not merely that it fires.
-    assert.deepEqual(structuralInsight(index, overlay, 'ancestor'), { kind: 'ragnarok-indirect' });
+    assert.deepEqual(structuralInsight(index, overlay, 'ancestor'), {
+      kind: 'ragnarok-indirect',
+      hops: 1,
+    });
   });
 
   it('does not flag a combatant that has its own direct death relation', () => {
@@ -445,5 +594,108 @@ describe('locusKey', () => {
       locusKey(index, { work: 'song-of-crowns', locus: '332-336', unit: 'page' }),
       'sources.page',
     );
+  });
+});
+
+describe('unionBounds', () => {
+  it('returns the smallest box containing both inputs', () => {
+    assert.deepEqual(unionBounds([0, 0, 10, 10], [5, -5, 20, 8]), [0, -5, 20, 10]);
+  });
+});
+
+describe('clampBoundsAroundPoint', () => {
+  it('returns the bounds unchanged when already within maxSpan on both axes', () => {
+    assert.deepEqual(clampBoundsAroundPoint([0, 0, 100, 100], [50, 50], 200), [0, 0, 100, 100]);
+  });
+
+  it('clamps to a maxSpan box centred on the point when width exceeds maxSpan', () => {
+    assert.deepEqual(
+      clampBoundsAroundPoint([0, 0, 1000, 100], [500, 50], 200),
+      [400, -50, 600, 150],
+    );
+  });
+
+  it('clamps when only height exceeds maxSpan, even if width is within it', () => {
+    assert.deepEqual(
+      clampBoundsAroundPoint([0, 0, 100, 1000], [50, 500], 200),
+      [-50, 400, 150, 600],
+    );
+  });
+});
+
+describe('padForOverlay', () => {
+  it('returns bounds unchanged when both fractions are zero or negative', () => {
+    assert.deepEqual(padForOverlay([0, 0, 100, 100], 'x', 0, 0, 800, 600), [0, 0, 100, 100]);
+    assert.deepEqual(padForOverlay([0, 0, 100, 100], 'x', -0.2, -0.1, 800, 600), [0, 0, 100, 100]);
+  });
+
+  it('returns bounds unchanged for non-finite fractions', () => {
+    assert.deepEqual(padForOverlay([0, 0, 100, 100], 'x', NaN, NaN, 800, 600), [0, 0, 100, 100]);
+  });
+
+  it('returns bounds unchanged when the canvas has no size', () => {
+    assert.deepEqual(padForOverlay([0, 0, 100, 100], 'x', 0, 0.5, 0, 600), [0, 0, 100, 100]);
+    assert.deepEqual(padForOverlay([0, 0, 100, 100], 'x', 0, 0.5, 800, 0), [0, 0, 100, 100]);
+  });
+
+  it('extends the far edge only when nearFraction is zero, using the direct formula when already axis-bound', () => {
+    // 200x100 box against an 800x600 canvas: proportionally wider than the
+    // canvas already, so aspectForcingSpan is smaller than directSpan.
+    assert.deepEqual(padForOverlay([0, 0, 200, 100], 'x', 0, 0.5, 800, 600), [0, 0, 400, 100]);
+  });
+
+  it('extends the near edge only when farFraction is zero, by the same magnitude', () => {
+    // Mirror of the far-only case above: the edge that moves flips, but the
+    // amount (200 -> extra 200) is identical.
+    assert.deepEqual(padForOverlay([0, 0, 200, 100], 'x', 0.5, 0, 800, 600), [-200, 0, 200, 100]);
+  });
+
+  it('mirrors on the y axis for the mobile sheet', () => {
+    assert.deepEqual(padForOverlay([0, 0, 100, 200], 'y', 0, 0.5, 600, 800), [0, 0, 100, 400]);
+    assert.deepEqual(padForOverlay([0, 0, 100, 200], 'y', 0.5, 0, 600, 800), [0, -200, 100, 200]);
+  });
+
+  it('forces the box to at least the canvas aspect ratio when still cross-bound after the direct extension', () => {
+    // A 146x333 portrait box (a real kinship neighbourhood's shape) against a
+    // 1200x700 canvas: the direct extension alone (146 -> 219) stays
+    // portrait, so the near edges (x0, y0, y1) must stay fixed while the far
+    // edge (x1) grows until the box's own ratio reaches the canvas's.
+    const [x0, y0, x1, y1] = padForOverlay([-96, 420, 50, 753], 'x', 0, 1 / 3, 1200, 700);
+    assert.equal(x0, -96);
+    assert.equal(y0, 420);
+    assert.equal(y1, 753);
+    assert.ok((x1 - x0) / (y1 - y0) >= 1200 / 700 - 1e-9);
+  });
+
+  it('reserves both sides their exact fraction at once, without eroding either when combined', () => {
+    // The bug this guards against: composing two independent single-sided
+    // calls on the same axis (near then far, or vice versa) changes the
+    // scale each one assumed, silently eating into the other's margin. A
+    // 300-wide box with a 0.3 near fraction and a 0.2 far fraction against a
+    // 1000-wide canvas must place the ORIGINAL content's near edge at
+    // exactly 30% and far edge at exactly 80% of the final rendered width —
+    // both, simultaneously, not approximately.
+    const contentX0 = 50;
+    const contentX1 = 350;
+    const [x0, y0, x1, y1] = padForOverlay([contentX0, 0, contentX1, 100], 'x', 0.3, 0.2, 1000, 1000);
+    const span = x1 - x0;
+    const scale = 1000 / span;
+    assert.ok(Math.abs((contentX0 - x0) * scale - 0.3 * 1000) < 1e-6);
+    assert.ok(Math.abs((contentX1 - x0) * scale - 0.8 * 1000) < 1e-6);
+    assert.equal(y0, 0);
+    assert.equal(y1, 100);
+  });
+
+  it('scales both fractions down proportionally when their sum would exceed the safety ceiling', () => {
+    const [x0, , x1] = padForOverlay([0, 0, 100, 100], 'x', 0.6, 0.6, 800, 600);
+    assert.ok(Number.isFinite(x0));
+    assert.ok(Number.isFinite(x1));
+    // The 1:1 input ratio is preserved even after scaling down.
+    assert.ok(Math.abs(0 - x0 - (x1 - 100)) < 1e-6);
+  });
+
+  it('clamps fractions near 1 so the multiplier stays finite', () => {
+    const [, , x1] = padForOverlay([0, 0, 100, 100], 'x', 0, 0.999999, 800, 600);
+    assert.ok(Number.isFinite(x1));
   });
 });

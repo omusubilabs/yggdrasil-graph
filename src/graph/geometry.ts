@@ -22,6 +22,17 @@ export const DEATH_RELATION_TYPES: readonly RelationType[] = [
 
 export const isDeathRelation = (type: RelationType) => DEATH_RELATION_TYPES.includes(type);
 
+/**
+ * Depth tiers for the Ragnarök echo, in hops from the nearest combat pairing.
+ * Three discrete steps rather than a continuous scale, since depths cluster
+ * at 1-2 hops with a long sparse tail — nobody could perceive hop 8 vs 11.
+ */
+export const ECHO_NEAR_MAX_DEPTH = 2;
+export const ECHO_MID_MAX_DEPTH = 5;
+
+export const echoDepthClass = (depth: number): 'is-echo-near' | 'is-echo-mid' | 'is-echo-far' =>
+  depth <= ECHO_NEAR_MAX_DEPTH ? 'is-echo-near' : depth <= ECHO_MID_MAX_DEPTH ? 'is-echo-mid' : 'is-echo-far';
+
 /** Radius grows with degree, but sub-linearly, so Óðinn does not swallow the page. */
 export const nodeRadius = (degree: number): number =>
   Math.round((5.5 + Math.sqrt(degree) * 3.1) * 10) / 10;

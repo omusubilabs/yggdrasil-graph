@@ -3,6 +3,9 @@ import { describe, it } from 'node:test';
 
 import {
   DEATH_RELATION_TYPES,
+  ECHO_MID_MAX_DEPTH,
+  ECHO_NEAR_MAX_DEPTH,
+  echoDepthClass,
   edgePath,
   haloRadius,
   isDeathRelation,
@@ -53,6 +56,23 @@ describe('isDeathRelation', () => {
 
   it('is false for a type from another family', () => {
     assert.equal(isDeathRelation('owns'), false);
+  });
+});
+
+describe('echoDepthClass', () => {
+  it('is near at depth 0 and at the near/mid boundary', () => {
+    assert.equal(echoDepthClass(0), 'is-echo-near');
+    assert.equal(echoDepthClass(ECHO_NEAR_MAX_DEPTH), 'is-echo-near');
+  });
+
+  it('is mid just past the near boundary and at the mid/far boundary', () => {
+    assert.equal(echoDepthClass(ECHO_NEAR_MAX_DEPTH + 1), 'is-echo-mid');
+    assert.equal(echoDepthClass(ECHO_MID_MAX_DEPTH), 'is-echo-mid');
+  });
+
+  it('is far past the mid boundary, however deep the chain goes', () => {
+    assert.equal(echoDepthClass(ECHO_MID_MAX_DEPTH + 1), 'is-echo-far');
+    assert.equal(echoDepthClass(13), 'is-echo-far');
   });
 });
 

@@ -34,6 +34,7 @@
     "zoomOut": "Zoom ut",
     "recentre": "Sentrer på nytt",
     "clearSelection": "Vis alt igjen",
+    "expandView": "Zoom ut for å vise alt",
     "selectedAnnounce": "{name} valgt. Viser {count} tilknyttede skikkelser.",
     "neighbourhoodOf": "Rundt {name}",
     "everything": "Hele grafen",
@@ -72,7 +73,7 @@
     "traceStart": "Følg blodslinjen",
     "traceCancel": "Avbryt blodslinjesporing",
     "insight": {
-      "ragnarokIndirect": "Ingen direkte dødsrelasjon er registrert for denne skikkelsen, men blodslinjen sporet nedenfor leder til et kamppar ved Ragnarök.",
+      "ragnarokIndirect": "Ingen direkte dødsrelasjon er registrert for denne skikkelsen, men blodslinjen sporet nedenfor leder til et kamppar ved Ragnarök, {count} generasjoner tilbake.",
       "contradicted": "Minst én relasjon her motsies av en annen kilde.",
       "tagOnly": "Knyttet til {name} bare gjennom et felles tema, ikke gjennom en registrert relasjon."
     }
@@ -82,6 +83,8 @@
     "heading": "Vis",
     "certainty": "Etter sikkerhet",
     "family": "Etter relasjonstype",
+    "everyRelation": "Vis alle direkte relasjoner",
+    "everyRelationHint": "Viser rådgivning, eiendeler, bosteder og konflikter utover den nærmeste familien.",
     "disputedOnly": "Kun der kildene er uenige",
     "disputedOnlyHint": "Viser bare varierende og omstridte relasjoner.",
     "ragnarokOverlay": "Kun Ragnarök",

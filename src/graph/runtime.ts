@@ -17,18 +17,23 @@ import {
   bloodlineTrace,
   boundsForNodeIds,
   buildIndex,
+  clampBoundsAroundPoint,
+  coreNeighbourhood,
   neighbourhood,
+  padForOverlay,
   ragnarokConnection,
   ragnarokOverlay,
   relatedByTag,
   relationsByFamily,
   searchEntities,
   structuralInsight,
+  unionBounds,
   type BloodlineTrace,
   type GraphIndex,
   type RagnarokConnection,
 } from './model.ts';
 import {
+  echoDepthClass,
   edgePath,
   haloRadius,
   isDeathRelation,
@@ -43,7 +48,7 @@ import {
 } from './geometry.ts';
 import { filterAnnouncementKey } from './filterAnnouncement.ts';
 import { decodeUrlState, encodeUrlState } from './urlState.ts';
-import type { GraphData } from './types.ts';
+import type { GraphData, GraphNode } from './types.ts';
 
 interface Payload {
   locale: string;
@@ -128,9 +133,18 @@ export async function mount(): Promise<void> {
   const disputedToggle = controls?.querySelector<HTMLInputElement>('[data-filter="disputed"]');
   const ragnarokToggle = controls?.querySelector<HTMLInputElement>('[data-filter="ragnarok"]');
   const showAllToggle = controls?.querySelector<HTMLInputElement>('[data-show-all]');
+  const everyRelationToggle = controls?.querySelector<HTMLInputElement>(
+    '[data-show-every-relation]',
+  );
   const ragnarok = ragnarokOverlay(index);
   let showAll = false;
+  let showEveryRelation = false;
+  // Camera state, not a filter: reset on every new selection, never in the URL.
+  let viewExpanded = false;
   let visibleNodeIds = new Set(payload.graph.core.nodeIds);
+  // Last bounds applyVisibility() drew, so arrow-key nav can detect landing
+  // outside the current frame.
+  let currentViewBounds: readonly [number, number, number, number] = payload.graph.core.bounds;
   let applyVisibility: () => { visible: number; total: number; links: number } = () => ({
     visible: 0,
     total: 0,
@@ -143,6 +157,8 @@ export async function mount(): Promise<void> {
   const traceButton = panel?.querySelector<HTMLButtonElement>('[data-panel-trace]') ?? null;
   const panelBody = panel?.querySelector<HTMLElement>('[data-panel-body]') ?? null;
   const clearButton = controls?.querySelector<HTMLButtonElement>('[data-clear-selection]') ?? null;
+  const expandViewButton =
+    controls?.querySelector<HTMLButtonElement>('[data-expand-view]') ?? null;
 
   // -------------------------------------------------------------- mobile sheet
 
@@ -180,6 +196,8 @@ export async function mount(): Promise<void> {
     if (!panel || panel.hidden) return;
     if (event.matches) engageMobileSheet();
     else releaseMobileSheet();
+    // The panel just switched sides, so its avoidance axis needs to follow.
+    applyVisibility();
   });
 
   let selected: string | null = null;
@@ -265,16 +283,22 @@ export async function mount(): Promise<void> {
     syncUrl();
   };
 
-  const select_ = (id: string, trace: BloodlineTrace | null = null) => {
-    const node = index.nodeById.get(id);
-    if (!node) return;
-    clearTraceHighlight();
-    activeTrace = trace;
-    ragnarokEcho = ragnarokConnection(index, ragnarok, id);
-    selected = id;
-    const near = neighbourhood(index, id);
+  // Default selection view is kinship only; "show every direct relation"
+  // widens it back to the full 1-hop neighbourhood.
+  const currentNear = (id: string) =>
+    showEveryRelation ? neighbourhood(index, id) : coreNeighbourhood(index, id);
 
-    svg.setAttribute('data-selected', id);
+  // No entry in the depth map means not part of the echo at all.
+  const applyEchoDepthClass = (el: Element, depth: number | undefined) => {
+    const tier = depth === undefined ? null : echoDepthClass(depth);
+    el.classList.toggle('is-echo-near', tier === 'is-echo-near');
+    el.classList.toggle('is-echo-mid', tier === 'is-echo-mid');
+    el.classList.toggle('is-echo-far', tier === 'is-echo-far');
+  };
+
+  // Split out of select_() so the "show every direct relation" toggle can
+  // recompute the highlight without repeating the rest of select_()'s work.
+  const applyNearClasses = (id: string, near: { nodes: Set<string>; links: Set<string> }) => {
     for (const [nodeId, el] of nodeEls) {
       el.classList.toggle('is-near', near.nodes.has(nodeId));
       el.classList.toggle('is-selected', nodeId === id);
@@ -283,6 +307,7 @@ export async function mount(): Promise<void> {
         (activeTrace?.nodeIds.includes(nodeId) ?? false) ||
           (ragnarokEcho?.nodeIds.has(nodeId) ?? false),
       );
+      applyEchoDepthClass(el, ragnarokEcho?.nodeDepth.get(nodeId));
     }
     for (const [linkId, el] of edgeEls) {
       el.classList.toggle('is-near', near.links.has(linkId));
@@ -291,11 +316,28 @@ export async function mount(): Promise<void> {
         (activeTrace?.linkIds.includes(linkId) ?? false) ||
           (ragnarokEcho?.linkIds.has(linkId) ?? false),
       );
+      applyEchoDepthClass(el, ragnarokEcho?.linkDepth.get(linkId));
     }
+  };
+
+  const select_ = (id: string, trace: BloodlineTrace | null = null) => {
+    const node = index.nodeById.get(id);
+    if (!node) return;
+    clearTraceHighlight();
+    activeTrace = trace;
+    ragnarokEcho = ragnarokConnection(index, ragnarok, id);
+    selected = id;
+    viewExpanded = false;
+    const near = currentNear(id);
+
+    svg.setAttribute('data-selected', id);
+    applyNearClasses(id, near);
 
     if (clearButton) clearButton.hidden = false;
-    applyVisibility();
+    // renderPanel() must unhide the panel before applyVisibility() measures
+    // it, or it reads a still-hidden (zero-size) panel.
     renderPanel(id);
+    applyVisibility();
     announce(
       s('graph.selectedAnnounce', { name: node.names.anglicized, count: near.nodes.size - 1 }),
     );
@@ -341,10 +383,16 @@ export async function mount(): Promise<void> {
     }
   };
 
+  // Capped at --motion-entrance (640ms) so even a 13-hop chain settles in
+  // about a second instead of growing unbounded with the dataset.
+  const ECHO_STAGGER_MS = 90;
+  const ECHO_STAGGER_CAP_MS = 640;
+
   /**
    * Draws the reveal toward `id`'s combat pairing and the bloodline that
    * produced it, even with no death relation of its own. Skips whatever
    * `triggerDeathTrace` just animated, so a shared edge isn't dashed twice.
+   * Staggered by hop distance so a long chain unfolds rather than detonating.
    */
   const triggerRagnarokEcho = (id: string, echo: RagnarokConnection) => {
     if (prefersReducedMotion()) return;
@@ -353,11 +401,12 @@ export async function mount(): Promise<void> {
         .filter((link) => isDeathRelation(link.type))
         .map((link) => link.id),
     );
-    for (const linkId of echo.linkIds) {
+    for (const [linkId, depth] of echo.linkDepth) {
       if (alreadyAnimated.has(linkId)) continue;
       const el = edgeEls.get(linkId);
       if (!el) continue;
-      revealEdgeStroke(el);
+      const delay = Math.min(depth * ECHO_STAGGER_MS, ECHO_STAGGER_CAP_MS);
+      traceTimers.push(window.setTimeout(() => revealEdgeStroke(el), delay));
     }
   };
 
@@ -410,7 +459,12 @@ export async function mount(): Promise<void> {
           : insight.kind === 'contradicted'
             ? 'panel.insight.contradicted'
             : 'panel.insight.tagOnly';
-      const insightParams = insight.kind === 'tag-only' ? { name: insight.exampleName } : undefined;
+      const insightParams =
+        insight.kind === 'tag-only'
+          ? { name: insight.exampleName }
+          : insight.kind === 'ragnarok-indirect'
+            ? { count: insight.hops }
+            : undefined;
       panelBody.append(el('p', 'panel__insight', s(insightKey, insightParams)));
     }
 
@@ -660,11 +714,17 @@ export async function mount(): Promise<void> {
     const next = nearestNeighbour(index, id, direction, visibleNodeIds);
     if (!next) return;
     event.preventDefault();
+    const nextNode = index.nodeById.get(next);
+    // A neighbour can sit outside the clamped viewBox (overflow: hidden) —
+    // expand rather than focus something rendered but invisible.
+    if (nextNode && !viewExpanded && !isWithinBounds(nextNode, currentViewBounds)) {
+      viewExpanded = true;
+      applyVisibility();
+    }
     focusNode(next);
     // Moving focus should describe where you have landed without opening
     // anything — that is what Enter is for.
-    const node = index.nodeById.get(next);
-    if (node) announce(node.names.anglicized);
+    if (nextNode) announce(nextNode.names.anglicized);
   });
 
   // ------------------------------------------------------------- search
@@ -779,6 +839,11 @@ export async function mount(): Promise<void> {
 
   // ------------------------------------------------------------ scope
 
+  // Fixed legibility ceiling for incidental highlighting's initial viewBox
+  // span — deliberately not derived from the near-set's own footprint, which
+  // can itself be very wide. Adjust by eye if it starts feeling off.
+  const INCIDENTAL_VIEW_MAX_SPAN = 700;
+
   applyVisibility = () => {
     const nodes = new Set(
       showAll ? payload.graph.nodes.map((node) => node.id) : payload.graph.core.nodeIds,
@@ -787,33 +852,38 @@ export async function mount(): Promise<void> {
       showAll ? payload.graph.links.map((link) => link.id) : payload.graph.core.linkIds,
     );
     const focusIds = new Set<string>();
+    // For framing only — nodes/links/focusIds above are unaffected either
+    // way. "Incidental" (nobody asked for it) gets clamped to a legible span
+    // below; "deliberate" (a toggle, a two-click trace) keeps its full fit.
+    const incidentalIds = new Set<string>();
+    const deliberateIds = new Set<string>();
 
     if (selected) {
-      const near = neighbourhood(index, selected);
+      const near = currentNear(selected);
       near.nodes.forEach((id) => {
         nodes.add(id);
         focusIds.add(id);
+        incidentalIds.add(id);
       });
       near.links.forEach((id) => links.add(id));
     }
 
-    // A trace ancestor can be more than one hop out, so it needs the same
-    // widening the Ragnarök lineage set gets below — otherwise it never
-    // renders. Widening focusIds also auto-fits the viewBox to the chain.
+    // Deliberate — two clicks to arm and aim it — so it keeps its full fit.
     if (activeTrace) {
       for (const id of activeTrace.nodeIds) {
         nodes.add(id);
         focusIds.add(id);
+        deliberateIds.add(id);
       }
       for (const id of activeTrace.linkIds) links.add(id);
     }
 
-    // Same widening as the trace above, for the Ragnarök Echo — this is what
-    // drives the auto-pan/zoom to fit the revealed chain.
+    // Incidental — a click can surface a combat pairing many generations away.
     if (ragnarokEcho) {
       for (const id of ragnarokEcho.nodeIds) {
         nodes.add(id);
         focusIds.add(id);
+        incidentalIds.add(id);
       }
       for (const id of ragnarokEcho.linkIds) links.add(id);
     }
@@ -827,6 +897,8 @@ export async function mount(): Promise<void> {
         nodes.add(link.to);
         focusIds.add(link.from);
         focusIds.add(link.to);
+        deliberateIds.add(link.from);
+        deliberateIds.add(link.to);
       }
     }
 
@@ -835,6 +907,7 @@ export async function mount(): Promise<void> {
       for (const id of [...ragnarok.combatantIds, ...ragnarok.lineageNodeIds]) {
         nodes.add(id);
         focusIds.add(id);
+        deliberateIds.add(id);
       }
       for (const id of [...ragnarok.pairingLinkIds, ...ragnarok.lineageLinkIds]) links.add(id);
     }
@@ -886,12 +959,64 @@ export async function mount(): Promise<void> {
     // Tells the mobile CSS scale in GraphCanvas.astro the viewBox is no
     // longer the baked cold-open core, so it doesn't double-apply.
     svg.toggleAttribute('data-view-scope', focusIds.size > 0 || showAll);
-    const bounds =
-      focusIds.size > 0
-        ? boundsForNodeIds(index, focusIds)
-        : showAll
-          ? payload.graph.bounds
-          : payload.graph.core.bounds;
+
+    const deliberateBounds = deliberateIds.size > 0 ? boundsForNodeIds(index, deliberateIds) : null;
+    const rawIncidentalBounds =
+      incidentalIds.size > 0 ? boundsForNodeIds(index, incidentalIds) : null;
+    const origin = selected ? index.nodeById.get(selected) : undefined;
+    const clampedIncidentalBounds =
+      rawIncidentalBounds && origin && !viewExpanded
+        ? clampBoundsAroundPoint(rawIncidentalBounds, [origin.x, origin.y], INCIDENTAL_VIEW_MAX_SPAN)
+        : rawIncidentalBounds;
+    // clampBoundsAroundPoint returns its input unchanged when nothing
+    // exceeded maxSpan, so reference equality tells us whether it clamped.
+    const isClamped = Boolean(
+      rawIncidentalBounds && !viewExpanded && clampedIncidentalBounds !== rawIncidentalBounds,
+    );
+    if (expandViewButton) expandViewButton.hidden = !isClamped;
+
+    let bounds: readonly [number, number, number, number] | null = deliberateBounds;
+    if (clampedIncidentalBounds) {
+      bounds = bounds ? unionBounds(bounds, clampedIncidentalBounds) : clampedIncidentalBounds;
+    }
+    if (!bounds) bounds = showAll ? payload.graph.bounds : payload.graph.core.bounds;
+
+    // EntityPanel and GraphControls both float over the canvas rather than
+    // reserving a CSS column, so widen whichever edges they occupy. Gated on
+    // `selected` (not the panels' own visibility) so the cold-open view is
+    // untouched. Controls avoidance is desktop-only — on the mobile sheet it
+    // would compete with EntityPanel's own bottom sheet for the same region;
+    // left as a follow-up.
+    if (selected) {
+      const figureRect = figure.getBoundingClientRect();
+      const mobile = isMobileSheet();
+
+      const controlsNearX =
+        !mobile && controls && figureRect.width > 0
+          ? (controls.getBoundingClientRect().right - figureRect.left) / figureRect.width
+          : 0;
+
+      let panelFarX = 0;
+      let panelFarY = 0;
+      if (panel && !panel.hidden) {
+        const panelRect = panel.getBoundingClientRect();
+        if (mobile) {
+          panelFarY = figureRect.height > 0 ? (figureRect.bottom - panelRect.top) / figureRect.height : 0;
+        } else {
+          panelFarX = figureRect.width > 0 ? (figureRect.right - panelRect.left) / figureRect.width : 0;
+        }
+      }
+
+      // Resolved independently from the SAME starting `bounds`, then merged
+      // — not chained. padForOverlay's aspect-forcing term reads the other
+      // axis's size, so chaining would let one axis's widening compound
+      // into the other's instead of just adding.
+      const xPadded = padForOverlay(bounds, 'x', controlsNearX, panelFarX, figureRect.width, figureRect.height);
+      const yPadded =
+        panelFarY > 0 ? padForOverlay(bounds, 'y', 0, panelFarY, figureRect.width, figureRect.height) : bounds;
+      bounds = [xPadded[0], yPadded[1], xPadded[2], yPadded[3]];
+    }
+    currentViewBounds = bounds;
     svg.setAttribute('viewBox', viewBoxOf(bounds));
     behaviour.transform(svgSelection, zoomIdentity);
 
@@ -929,6 +1054,29 @@ export async function mount(): Promise<void> {
     );
     syncUrl();
   });
+  everyRelationToggle?.addEventListener('change', () => {
+    showEveryRelation = everyRelationToggle.checked;
+    if (selected) {
+      const near = currentNear(selected);
+      applyNearClasses(selected, near);
+      applyVisibility();
+      const node = index.nodeById.get(selected);
+      if (node) {
+        announce(
+          s('graph.selectedAnnounce', { name: node.names.anglicized, count: near.nodes.size - 1 }),
+        );
+      }
+    } else {
+      applyVisibility();
+    }
+    syncUrl();
+  });
+
+  // A camera move, not a filter — like Recentre, never synced to the URL.
+  expandViewButton?.addEventListener('click', () => {
+    viewExpanded = true;
+    applyVisibility();
+  });
 
   // Mirrors selection, scope and filters to the query string so a copied link
   // reopens the same view. Deliberately replaceState, not pushState — toggling
@@ -941,6 +1089,7 @@ export async function mount(): Promise<void> {
       disputed: disputedToggle?.checked ?? false,
       ragnarok: ragnarokToggle?.checked ?? false,
       all: showAll,
+      everyRelation: showEveryRelation,
     });
     history.replaceState(null, '', `${window.location.pathname}${query}${window.location.hash}`);
   }
@@ -958,9 +1107,20 @@ export async function mount(): Promise<void> {
   if (initial.ragnarok && ragnarokToggle) {
     ragnarokToggle.checked = true;
   }
+  if (initial.everyRelation && everyRelationToggle) {
+    showEveryRelation = true;
+    everyRelationToggle.checked = true;
+  }
   const hasSelection = Boolean(initial.selected && index.nodeById.has(initial.selected));
   const hasRestoredFilters = initial.disputed || initial.ragnarok;
   const hydrationAnnounced = hasSelection || hasRestoredFilters;
+
+  // Must be set before the applyVisibility()/select_() calls below: it's the
+  // only thing that makes GraphControls visible, and applyVisibility()
+  // measures its rendered size. Moving it here has no visible effect on its
+  // own — nothing paints mid-function.
+  document.documentElement.dataset.graphRuntime = 'ready';
+
   const hydratedCounts = applyVisibility();
   if (hasSelection) {
     // Selection's own announcement takes priority, so the live region isn't
@@ -975,8 +1135,6 @@ export async function mount(): Promise<void> {
   syncUrl();
 
   // --------------------------------------------------- optional motion
-
-  document.documentElement.dataset.graphRuntime = 'ready';
 
   if (prefersReducedMotion()) {
     // Nothing to freeze: the layout in the markup is already the settled one.
@@ -1093,6 +1251,14 @@ const ARROWS: Record<string, [number, number] | undefined> = {
   ArrowUp: [0, -1],
   ArrowDown: [0, 1],
 };
+
+/** Whether `node` falls inside `bounds` (used by arrow-key navigation). */
+function isWithinBounds(
+  node: Pick<GraphNode, 'x' | 'y'>,
+  bounds: readonly [number, number, number, number],
+): boolean {
+  return node.x >= bounds[0] && node.x <= bounds[2] && node.y >= bounds[1] && node.y <= bounds[3];
+}
 
 /**
  * The connected figure that lies most nearly in `direction`.

@@ -589,6 +589,28 @@ const edges = data.links
     stroke: var(--minium-wash);
   }
 
+  /* Echo depth grading: quieter the further a lineage node/edge sits from
+   * the actual combat pairing. Scoped to [data-selected] only, never
+   * [data-ragnarok] — the manual toggle shows the whole argument evenly on
+   * purpose. 0.45/0.65 reuse the certainty ladder's unverified/variant
+   * opacities. Targets .node__shape, not the whole node, so labels stay legible.
+   */
+  :global([data-graph][data-selected]) .node.is-ragnarok-lineage.is-echo-mid .node__shape {
+    opacity: 0.65;
+  }
+
+  :global([data-graph][data-selected]) .node.is-ragnarok-lineage.is-echo-far .node__shape {
+    opacity: 0.45;
+  }
+
+  :global([data-graph][data-selected]) .edge.is-ragnarok-lineage.is-echo-mid {
+    opacity: 0.65;
+  }
+
+  :global([data-graph][data-selected]) .edge.is-ragnarok-lineage.is-echo-far {
+    opacity: 0.45;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .edge,
     .node__shape,

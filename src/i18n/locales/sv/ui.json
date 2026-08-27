@@ -34,6 +34,7 @@
     "zoomOut": "Zooma ut",
     "recentre": "Centrera om",
     "clearSelection": "Visa allt igen",
+    "expandView": "Zooma ut för att visa allt",
     "selectedAnnounce": "{name} vald. Visar {count} anslutna gestalter.",
     "neighbourhoodOf": "Kring {name}",
     "everything": "Hela grafen",
@@ -72,7 +73,7 @@
     "traceStart": "Följ blodslinjen",
     "traceCancel": "Avbryt blodslinjespårning",
     "insight": {
-      "ragnarokIndirect": "Ingen direkt dödsrelation är registrerad för denna gestalt, men blodslinjen som spåras nedan leder till ett stridspar vid Ragnarök.",
+      "ragnarokIndirect": "Ingen direkt dödsrelation är registrerad för denna gestalt, men blodslinjen som spåras nedan leder till ett stridspar vid Ragnarök, {count} generationer tillbaka.",
       "contradicted": "Minst en relation här motsägs av en annan källa.",
       "tagOnly": "Kopplad till {name} endast genom ett gemensamt tema, inte genom en registrerad relation."
     }
@@ -82,6 +83,8 @@
     "heading": "Visa",
     "certainty": "Efter säkerhetsgrad",
     "family": "Efter typ av relation",
+    "everyRelation": "Visa alla direkta relationer",
+    "everyRelationHint": "Visar rådgivning, ägodelar, boningar och konflikter utöver den närmaste familjen.",
     "disputedOnly": "Endast där källorna är oense",
     "disputedOnlyHint": "Visar enbart varianter och omtvistade relationer.",
     "ragnarokOverlay": "Endast Ragnarök",

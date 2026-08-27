@@ -50,11 +50,23 @@ const t = useTranslations(locale);
     {t('graph.clearSelection')}
   </button>
 
+  <button type="button" class="controls__expand-view" data-expand-view hidden>
+    {t('graph.expandView')}
+  </button>
+
   <label class="controls__toggle">
     <input type="checkbox" data-show-all />
     <span>
       <span class="controls__toggle-label">{t('graph.showAll')}</span>
       <span class="controls__toggle-hint">{t('graph.showAllHint')}</span>
+    </span>
+  </label>
+
+  <label class="controls__toggle">
+    <input type="checkbox" data-show-every-relation />
+    <span>
+      <span class="controls__toggle-label">{t('filters.everyRelation')}</span>
+      <span class="controls__toggle-hint">{t('filters.everyRelationHint')}</span>
     </span>
   </label>
 
@@ -204,6 +216,10 @@ const t = useTranslations(locale);
     border-color: var(--verdigris) !important;
     color: var(--verdigris-deep);
     background: var(--verdigris-wash) !important;
+  }
+
+  .controls__expand-view[hidden] {
+    display: none;
   }
 
   .controls__toggle {

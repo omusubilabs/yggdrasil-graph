@@ -34,6 +34,7 @@
     "zoomOut": "Zoom out",
     "recentre": "Recentre",
     "clearSelection": "Show everything again",
+    "expandView": "Zoom out to fit",
     "selectedAnnounce": "{name} selected. Showing {count} connected figures.",
     "neighbourhoodOf": "Around {name}",
     "everything": "The whole graph",
@@ -72,7 +73,7 @@
     "traceStart": "Follow the bloodline",
     "traceCancel": "Cancel bloodline trace",
     "insight": {
-      "ragnarokIndirect": "No direct death relation is recorded for this figure, but the bloodline traced below leads into a combat pairing at Ragnarök.",
+      "ragnarokIndirect": "No direct death relation is recorded for this figure, but the bloodline traced below leads into a combat pairing at Ragnarök, {count} generations back.",
       "contradicted": "At least one relation here is contradicted by another source.",
       "tagOnly": "Connected to {name} only by a shared theme, not by a recorded relation."
     }
@@ -82,6 +83,8 @@
     "heading": "Show",
     "certainty": "By certainty",
     "family": "By kind of relation",
+    "everyRelation": "Show every direct relation",
+    "everyRelationHint": "Reveals consultations, possessions, dwellings and conflicts beyond the immediate family.",
     "disputedOnly": "Only where the sources disagree",
     "disputedOnlyHint": "Shows variant and disputed relations by themselves.",
     "ragnarokOverlay": "Only Ragnarök",

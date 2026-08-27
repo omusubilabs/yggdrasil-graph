@@ -34,6 +34,7 @@
     "zoomOut": "Loitonna",
     "recentre": "Keskitä",
     "clearSelection": "Näytä kaikki uudelleen",
+    "expandView": "Loitonna nähdäksesi kaiken",
     "selectedAnnounce": "{name} valittu. Näytetään {count} yhdistettyä hahmoa.",
     "neighbourhoodOf": "{name}:n ympäristö",
     "everything": "Koko kaavio",
@@ -72,7 +73,7 @@
     "traceStart": "Seuraa sukulinjaa",
     "traceCancel": "Peruuta sukulinjan jäljitys",
     "insight": {
-      "ragnarokIndirect": "Tälle hahmolle ei ole kirjattu suoraa kuolinsuhdetta, mutta alla jäljitetty sukulinja johtaa taisteluun Ragnarökissa.",
+      "ragnarokIndirect": "Tälle hahmolle ei ole kirjattu suoraa kuolinsuhdetta, mutta alla jäljitetty sukulinja johtaa taisteluun Ragnarökissa, {count} sukupolvea aiemmin.",
       "contradicted": "Ainakin yhtä tässä esitettyä suhdetta kiistää toinen lähde.",
       "tagOnly": "Yhteydessä hahmoon {name} vain yhteisen teeman kautta, ei kirjatun suhteen kautta."
     }
@@ -82,6 +83,8 @@
     "heading": "Näytä",
     "certainty": "Varmuuden mukaan",
     "family": "Suhdetyypin mukaan",
+    "everyRelation": "Näytä kaikki suorat suhteet",
+    "everyRelationHint": "Näyttää neuvonannon, omistukset, asuinpaikat ja konfliktit lähisuvun ulkopuolella.",
     "disputedOnly": "Vain kun lähteet ovat eri mieltä",
     "disputedOnlyHint": "Näyttää vaihtoehtoiset ja kiistanalaiset suhteet erikseen.",
     "ragnarokOverlay": "Vain Ragnarök",
