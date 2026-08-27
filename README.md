@@ -21,7 +21,7 @@ readings instead of picking one.
   Capture the default view, not a selected state — the cold open is the point.
 -->
 
-**Live:** _not yet deployed — see [Deploying](#deploying)._
+**Live:** <https://yggdrasil-graph.omusubilabs.fi>
 
 ---
 
@@ -223,6 +223,11 @@ secrets are required:
 
 Never commit a token. Set both under **Settings → Secrets and variables →
 Actions**.
+
+The site is served from `yggdrasil-graph.omusubilabs.fi`, a `custom_domain`
+route in `wrangler.toml`. Its zone must be on the same account as
+`CLOUDFLARE_API_TOKEN`, which then needs **Workers Routes: Edit** on that zone.
+Cloudflare provisions the DNS record and certificate on the first deploy.
 
 ---
 

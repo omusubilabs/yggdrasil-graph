@@ -7,6 +7,13 @@
 name = "yggdrasil-graph"
 compatibility_date = "2026-08-01"
 
+# Serve only from the custom domain; keep *.workers.dev closed so there is one
+# canonical origin. Cloudflare provisions the DNS record and cert on first deploy.
+workers_dev = false
+routes = [
+  { pattern = "yggdrasil-graph.omusubilabs.fi", custom_domain = true }
+]
+
 [assets]
 directory = "./dist"
 # Astro emits a prerendered 404 page; hand it to the client with a real 404.

@@ -5,9 +5,8 @@ import { defineConfig } from 'astro/config';
 // Assets. There is deliberately no adapter and no server output: every route
 // prerenders to HTML at build time. See CLAUDE.md, "hard constraints".
 export default defineConfig({
-  // Replace with the production origin once the Worker is deployed. Used for
-  // canonical URLs and hreflang alternates.
-  site: 'https://yggdrasil-graph.example.workers.dev',
+  // Canonical origin for canonical URLs and hreflang alternates.
+  site: 'https://yggdrasil-graph.omusubilabs.fi',
   output: 'static',
   trailingSlash: 'ignore',
   build: {
