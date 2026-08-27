@@ -1,6 +1,7 @@
 # CLAUDE.md
 
-Working notes for future sessions. Read this before changing anything.
+Orientation for contributors and coding agents. Read this before changing
+anything.
 
 ## What this is
 
@@ -70,8 +71,8 @@ These are not preferences. Breaking one is a bug.
   kind. All data ships as build-time JSON.
 - **No SSR, no server islands.** Everything prerenders to static HTML.
 - **Self-host all fonts** via `@fontsource`. Never link a third-party font CDN
-  at runtime — the operating entity is EU-incorporated and a font fetch hands
-  the reader's IP to whoever serves it.
+  at runtime — a runtime font fetch hands the reader's IP to whoever serves the
+  file, so self-hosting is a privacy requirement, not an optimisation.
 - **No analytics.** If added later, cookieless only (Cloudflare Web Analytics).
 - **Initial route < 150 KB gzipped JS.** Currently 0.9 KB. Graph data and the
   force-simulation module load lazily. `scripts/report-bundle-size.mjs` enforces
@@ -89,7 +90,7 @@ a build artifact and is gitignored. Never edit it, never commit it.
 {
   "id": "odin", // stable, lowercase ASCII, ^[a-z0-9-]+$
   // never localized, NEVER renamed once merged
-  "type": "deity", // deity | being | world | artifact | place | event
+  "type": "deity", // deity | human | being | world | artifact | place | event | form
   "classes": ["aesir"], // colour/grouping; an entity may hold several
   "names": {
     "non": "Óðinn", // Old Norse — DATA, not a translation
@@ -193,18 +194,18 @@ types that qualify are listed in `DEATH_RELATION_TYPES` in
 - **`en` is the source of truth for locale key structure.** Other locales add
   values, never keys.
 
-## Where this diverges from the original brief, and why
+## Design decisions that need explaining
 
-Recorded here rather than silently, as the brief asked.
+Non-obvious calls, recorded so they are not silently reverted.
 
-1. **Relation ids use the full type.** The brief's example id was
-   `odin--thor--parent` while its rule said ids match the `from`/`to`/`type`
-   triple, and the type is `parent_of`. The rule wins; the validator derives the
-   id and rejects any mismatch.
+1. **Relation ids use the full type.** An early sketch used `odin--thor--parent`
+   while the rule said ids match the `from`/`to`/`type` triple, and the type is
+   `parent_of`. The rule wins; the validator derives the id and rejects any
+   mismatch.
 
-2. **The cold open is prerendered, not simulated on load.** The brief asked for
-   the graph to be "already alive on load" _and_ for the force module to "load
-   lazily on interaction". Both are satisfied by solving the layout at build
+2. **The cold open is prerendered, not simulated on load.** The graph must be
+   "already alive on load" _and_ the force module must load lazily on
+   interaction. Both are satisfied by solving the layout at build
    time (`scripts/build-graph.ts`), serialising it into the SVG, and letting the
    simulation warm up from those positions afterwards. This is also what makes
    `prefers-reduced-motion` meaningful — freezing to a stable precomputed layout
@@ -218,20 +219,21 @@ Recorded here rather than silently, as the brief asked.
    `scripts/build-graph.ts` and `src/graph/simulation.ts` and **must stay
    identical**, or the graph rearranges itself when the chunk lands.
 
-4. **36 entities, one over the brief's 25–35.** Mímir is the extra. He buys the
-   sharpest contradiction in the corpus: Gylfaginning 27 gives Gjallarhorn to
-   Heimdallr and Gylfaginning 15 has Mímir drinking from it — one work, two
-   owners. Both edges are recorded, each pointing at the other via `contradicts`.
-   "Contradiction is content" needed something to be content about.
+4. **Mímir earns his place through contradiction.** He carries the sharpest one
+   in the corpus: Gylfaginning 27 gives Gjallarhorn to Heimdallr and
+   Gylfaginning 15 has Mímir drinking from it — one work, two owners. Both edges
+   are recorded, each pointing at the other via `contradicts`. "Contradiction is
+   content" needed something to be content about.
 
-5. **Integrity rules the brief did not list.** A relation type may only appear in
-   its own family's file; symmetric types may not be marked directed or recorded
-   twice in mirror image; `contradicts` must be mutual; entities attest to
-   collections while relations cite works. All in `scripts/validate-data.ts`.
+5. **Integrity rules enforced beyond the schema.** A relation type may only
+   appear in its own family's file; symmetric types may not be marked directed
+   or recorded twice in mirror image; `contradicts` must be mutual; entities
+   attest to collections while relations cite works. All in
+   `scripts/validate-data.ts`.
 
-6. **`unverified` must have empty sources**, not merely may. The brief only
-   forbade empty sources on other values. If you have a locus it is not
-   unverified, and allowing both would make the field mean nothing.
+6. **`unverified` must have empty sources**, not merely may. If you have a locus
+   it is not unverified, and allowing both a locus and the `unverified` flag
+   would make the field mean nothing.
 
 7. **The i18n checker has four locale states, not two.** `source`, `complete`,
    `partial`, `planned`, declared in `src/i18n/config.ts`. "Fail on drift" means
@@ -239,9 +241,9 @@ Recorded here rather than silently, as the brief asked.
    are measured debt, extra keys are always a bug. It also diffs `{placeholder}`
    sets, which a key-set comparison would miss.
 
-8. **The mono face is Source Code Pro, not IBM Plex Mono.** The brief said to
-   verify diacritic coverage rather than assume it; `npm run check:glyphs` reads
-   the shipped binaries' character maps and Plex has no `ǫ` or `Ǫ`. That would
+8. **The mono face is Source Code Pro, not IBM Plex Mono.** Diacritic coverage
+   is verified, not assumed: `npm run check:glyphs` reads the shipped binaries'
+   character maps and Plex has no `ǫ` or `Ǫ`. That would
    have put tofu in the middle of Vǫluspá, Mjǫllnir, Jǫrmungandr and Skǫll.
    Note that `þ ð æ ø` live in the `latin` subset and `ǫ ę ǿ` in `latin-ext`, so
    coverage is only sound as the union of both.
@@ -258,17 +260,9 @@ Recorded here rather than silently, as the brief asked.
 11. **`.claude/` is gitignored.** Local editor config does not belong in a public
     repository.
 
-## Owed work, prioritized
+## Owed work
 
-Beyond the "Out of scope for v1" list below, the remaining data gaps and
-unverified relations in [`data/TODO.md`](data/TODO.md) are tracked and
-prioritized in [README.md](README.md)'s Roadmap. Do not duplicate that detail
-here — check the Roadmap first.
-
-## Out of scope for v1 — leave the seams clean
-
-Do not build these without being asked. The data and the seams for them exist.
-
-- **Locales beyond `en` and the `ja` stub.**
-- **The full 300–400 entity dataset.** `data/TODO.md` lists what is missing and
-  why each one matters.
+Open data gaps and any unverified relations live in
+[`data/TODO.md`](data/TODO.md); the delivery history and what is still deferred
+are in [README.md](README.md)'s Roadmap. Check both before starting data work
+rather than restating their detail here.

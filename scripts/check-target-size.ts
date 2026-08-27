@@ -1,7 +1,6 @@
 /**
- * Regression check for docs/TODO.md UXA-011: every node-halo shape must
- * clear a 24×24 CSS-pixel minimum target size at 1440×900, 390×844 and
- * 320×720.
+ * Regression check: every node-halo shape must clear a 24×24 CSS-pixel
+ * minimum target size at 1440×900, 390×844 and 320×720.
  *
  * Runs against a built, served app with real Chromium layout rather than
  * recomputing the CSS cascade by hand, so a real layout regression can't
@@ -15,8 +14,9 @@
  * There are only four distinct node shapes (nodeShapePath in
  * src/graph/geometry.ts), so this checks one representative per shape, each
  * via the route a reader actually sees it through. `odin` (circle) and
- * `midgard` (hexagon — the node in UXA-011's evidence) are in the cold-open
- * core, so they're measured on a plain `/` visit. `mjolnir` (lozenge) and
+ * `midgard` (hexagon — the tightest case, since its vertical half-span is
+ * only ~0.866r) are in the cold-open core, so they're measured on a plain `/`
+ * visit. `mjolnir` (lozenge) and
  * `mare` (double-ring) have no member in the core at all — selecting a node
  * re-fits the SVG viewBox to its neighbourhood (`applyVisibility` in
  * src/graph/runtime.ts), so `?selected=<id>` is the only scenario in which a

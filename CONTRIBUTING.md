@@ -64,7 +64,7 @@ would fix it. Here is that change end to end.
 ### 1. Set up
 
 ```bash
-git clone https://github.com/OWNER/yggdrasil-graph.git
+git clone https://github.com/omusubilabs/yggdrasil-graph.git
 cd yggdrasil-graph
 nvm use          # the Node version is pinned in .nvmrc
 npm ci

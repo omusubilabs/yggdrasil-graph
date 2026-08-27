@@ -60,9 +60,9 @@ export const nearestNeighbourDistance = (
 
 /**
  * How far a node's invisible hit-area ring extends past its ink mark, tuned
- * to clear a 24×24 CSS-pixel target at every audited viewport (docs/TODO.md
- * UXA-001). Clamped against the *full* node set, not just the cold-open core,
- * so a halo never overlaps a neighbour that search or "show all" later reveals.
+ * to clear a 24×24 CSS-pixel target at every supported viewport. Clamped
+ * against the *full* node set, not just the cold-open core, so a halo never
+ * overlaps a neighbour that search or "show all" later reveals.
  */
 const HALO_PAD = 12;
 const HALO_MIN_RADIUS = 30;
@@ -71,7 +71,7 @@ const HALO_MIN_RADIUS = 30;
  * The 30-unit floor above is a radius, and every shape but the hexagon has a
  * half-span equal to that radius in every direction. The hexagon's vertical
  * half-span is only r·sin(60°) ≈ 0.866r, so it alone needs its target
- * radius scaled up to still clear the floor vertically (docs/TODO.md UXA-011).
+ * radius scaled up to still clear the floor vertically.
  */
 const HALO_SHAPE_FACTOR: Partial<Record<GraphNode['type'], number>> = {
   world: Math.sqrt(3) / 2,

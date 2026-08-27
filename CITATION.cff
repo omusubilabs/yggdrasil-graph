@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+title: 'Yggdrasil Graph'
+message: 'If you use this dataset or software, please cite it using this metadata.'
+type: software
+authors:
+  - family-names: Ueshima
+    given-names: Yuichi
+repository-code: 'https://github.com/omusubilabs/yggdrasil-graph'
+url: 'https://yggdrasil-graph.omusubilabs.fi'
+abstract: >-
+  An interactive relationship graph of Norse mythology, built from cited
+  primary sources. Entities are gods, giants, heroes, monsters, worlds and
+  named things; edges are kinship, enmity, ownership, marriage and location.
+  Every relation is traced to a chapter, stanza or printed page in a
+  public-domain edition of the Poetic or Prose Edda, and where the sources
+  disagree the graph records both readings.
+keywords:
+  - norse-mythology
+  - poetic-edda
+  - prose-edda
+  - knowledge-graph
+  - graph-visualization
+  - digital-humanities
+  - old-norse
+  - open-data
+# Split licensing: source code is MIT, the dataset under data/ is CC BY-SA 4.0.
+# See README.md "Licensing".
+license:
+  - MIT
+  - CC-BY-SA-4.0

@@ -4,7 +4,28 @@
   "private": true,
   "type": "module",
   "description": "An interactive relationship graph of Norse mythology, built from cited primary sources.",
+  "keywords": [
+    "norse-mythology",
+    "poetic-edda",
+    "prose-edda",
+    "knowledge-graph",
+    "graph-visualization",
+    "d3-force",
+    "astro",
+    "digital-humanities",
+    "old-norse",
+    "open-data"
+  ],
+  "homepage": "https://yggdrasil-graph.omusubilabs.fi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omusubilabs/yggdrasil-graph.git"
+  },
+  "bugs": {
+    "url": "https://github.com/omusubilabs/yggdrasil-graph/issues"
+  },
   "license": "MIT",
+  "author": "Yuichi Ueshima",
   "engines": {
     "node": ">=22.12.0",
     "npm": ">=10.0.0"

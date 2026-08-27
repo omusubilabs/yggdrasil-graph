@@ -2,14 +2,13 @@
  * Asserts that --ink-faded and --verdigris keep a deliberate safety margin
  * above the WCAG AA 4.5:1 floor for normal text, against every vellum
  * surface they can sit on, in both supported states (default and
- * prefers-contrast: more) — see docs/TODO.md UXA-009. The binding case turned
- * out to be --vellum-deep, not the page background, which had already
- * dropped below 4.5:1 outright.
+ * prefers-contrast: more). The binding case is --vellum-deep, not the page
+ * background.
  *
  * Also asserts that the --class-* graph-node hues clear the WCAG 1.4.11
- * non-text 3:1 floor against every vellum surface — see docs/TODO.md
- * UXA-010. These tokens are only ever used as SVG fill/stroke, never text,
- * so 3:1 is the rule that applies to them, not the 4.5:1 text floor above.
+ * non-text 3:1 floor against every vellum surface. These tokens are only ever
+ * used as SVG fill/stroke, never text, so 3:1 is the rule that applies to
+ * them, not the 4.5:1 text floor above.
  *
  * Reads hex values straight out of tokens.css/global.css rather than
  * duplicating them here, so this can't silently drift out of sync with the
@@ -24,8 +23,8 @@ const MIN_CONTRAST = 5.0;
 // The WCAG 1.4.11 floor for non-text graphical objects (node fill/stroke).
 const MIN_CONTRAST_NONTEXT = 3.0;
 
-// verdigris-deep (link hover) isn't named in UXA-009 but is real text and
-// already clears the margin, so it's a free regression guard to include.
+// verdigris-deep (link hover) is real text and already clears the margin, so
+// it's a free regression guard to include.
 const FG_TOKENS = ['ink-faded', 'verdigris', 'verdigris-deep'] as const;
 const BG_TOKENS = ['vellum', 'vellum-deep', 'vellum-pale'] as const;
 

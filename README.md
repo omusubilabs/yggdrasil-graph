@@ -28,7 +28,7 @@ readings instead of picking one.
 ## Quickstart
 
 ```bash
-git clone https://github.com/OWNER/yggdrasil-graph.git
+git clone https://github.com/omusubilabs/yggdrasil-graph.git
 cd yggdrasil-graph
 nvm use          # Node version is pinned in .nvmrc
 npm ci
@@ -196,11 +196,9 @@ the scaling layer now ship together:
 
 ### Next priorities
 
-Product, UX and accessibility follow-up from the August 2026 pre-launch audit
-is tracked in [`docs/TODO.md`](docs/TODO.md). The launch-critical queue starts
-with graph legibility and target size, mobile detail-sheet focus behaviour and
-Ragnarǫk filter announcements; dataset and citation work remains in
-[`data/TODO.md`](data/TODO.md).
+Remaining dataset and citation work — data gaps and any unverified relations —
+is tracked in [`data/TODO.md`](data/TODO.md). Product, UX and accessibility
+follow-up is tracked in the issue tracker.
 
 ---
 
@@ -267,24 +265,3 @@ different edition and it does not line up, that is expected; say which edition
 you used when you report it.
 
 Never paste text from a modern copyrighted translation into this repository.
-
----
-
-<!--
-  FOR THE MAINTAINER — apply these under Settings, then delete this block.
-
-  Description (350 char max):
-    An interactive relationship graph of Norse mythology, built from cited
-    primary sources. Every edge points at a chapter or stanza in a public-domain
-    edition, and where the Eddas contradict each other the graph shows both
-    readings instead of picking one.
-
-  Topics:
-    norse-mythology, mythology, poetic-edda, prose-edda, knowledge-graph,
-    graph-visualization, d3, d3-force, astro, typescript, cloudflare-workers,
-    static-site, open-data, digital-humanities, medieval-literature,
-    old-norse, i18n, accessibility
-
-  Also worth enabling: Discussions (the issue template config links to it),
-  and a branch protection rule on `main` requiring the CI check to pass.
--->
