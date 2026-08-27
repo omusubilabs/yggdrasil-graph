@@ -157,8 +157,7 @@ export async function mount(): Promise<void> {
   const traceButton = panel?.querySelector<HTMLButtonElement>('[data-panel-trace]') ?? null;
   const panelBody = panel?.querySelector<HTMLElement>('[data-panel-body]') ?? null;
   const clearButton = controls?.querySelector<HTMLButtonElement>('[data-clear-selection]') ?? null;
-  const expandViewButton =
-    controls?.querySelector<HTMLButtonElement>('[data-expand-view]') ?? null;
+  const expandViewButton = controls?.querySelector<HTMLButtonElement>('[data-expand-view]') ?? null;
 
   // -------------------------------------------------------------- mobile sheet
 
@@ -966,7 +965,11 @@ export async function mount(): Promise<void> {
     const origin = selected ? index.nodeById.get(selected) : undefined;
     const clampedIncidentalBounds =
       rawIncidentalBounds && origin && !viewExpanded
-        ? clampBoundsAroundPoint(rawIncidentalBounds, [origin.x, origin.y], INCIDENTAL_VIEW_MAX_SPAN)
+        ? clampBoundsAroundPoint(
+            rawIncidentalBounds,
+            [origin.x, origin.y],
+            INCIDENTAL_VIEW_MAX_SPAN,
+          )
         : rawIncidentalBounds;
     // clampBoundsAroundPoint returns its input unchanged when nothing
     // exceeded maxSpan, so reference equality tells us whether it clamped.
@@ -1001,9 +1004,11 @@ export async function mount(): Promise<void> {
       if (panel && !panel.hidden) {
         const panelRect = panel.getBoundingClientRect();
         if (mobile) {
-          panelFarY = figureRect.height > 0 ? (figureRect.bottom - panelRect.top) / figureRect.height : 0;
+          panelFarY =
+            figureRect.height > 0 ? (figureRect.bottom - panelRect.top) / figureRect.height : 0;
         } else {
-          panelFarX = figureRect.width > 0 ? (figureRect.right - panelRect.left) / figureRect.width : 0;
+          panelFarX =
+            figureRect.width > 0 ? (figureRect.right - panelRect.left) / figureRect.width : 0;
         }
       }
 
@@ -1011,9 +1016,18 @@ export async function mount(): Promise<void> {
       // — not chained. padForOverlay's aspect-forcing term reads the other
       // axis's size, so chaining would let one axis's widening compound
       // into the other's instead of just adding.
-      const xPadded = padForOverlay(bounds, 'x', controlsNearX, panelFarX, figureRect.width, figureRect.height);
+      const xPadded = padForOverlay(
+        bounds,
+        'x',
+        controlsNearX,
+        panelFarX,
+        figureRect.width,
+        figureRect.height,
+      );
       const yPadded =
-        panelFarY > 0 ? padForOverlay(bounds, 'y', 0, panelFarY, figureRect.width, figureRect.height) : bounds;
+        panelFarY > 0
+          ? padForOverlay(bounds, 'y', 0, panelFarY, figureRect.width, figureRect.height)
+          : bounds;
       bounds = [xPadded[0], yPadded[1], xPadded[2], yPadded[3]];
     }
     currentViewBounds = bounds;

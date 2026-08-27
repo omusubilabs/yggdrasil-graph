@@ -174,4 +174,6 @@ if (errors.length > 0) {
   console.error('');
   process.exit(1);
 }
-console.log(`\n  all ${rows.length} combinations clear their floor (${MIN_CONTRAST}:1 text, ${MIN_CONTRAST_NONTEXT}:1 non-text)\n`);
+console.log(
+  `\n  all ${rows.length} combinations clear their floor (${MIN_CONTRAST}:1 text, ${MIN_CONTRAST_NONTEXT}:1 non-text)\n`,
+);

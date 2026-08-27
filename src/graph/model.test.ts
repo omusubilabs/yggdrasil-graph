@@ -276,7 +276,7 @@ describe('ragnarokOverlay', () => {
 });
 
 describe('ragnarokOverlay disjointness', () => {
-  it('never lets a combatant who is also another combatant\'s ancestor leak into lineageNodeIds', () => {
+  it("never lets a combatant who is also another combatant's ancestor leak into lineageNodeIds", () => {
     // combatant-a fights combatant-b (so both are tagged ragnarok-participant
     // and share a death relation) AND is combatant-b's parent_of ancestor —
     // mirrors the real dataset, where Óðinn is both a combatant in his own
@@ -396,10 +396,12 @@ describe('ragnarokConnection', () => {
 
   it('ascends a combatant through multiple generations of ancestors', () => {
     const connection = ragnarokConnection(index, overlay, 'champion');
-    assert.deepEqual(
-      [...connection!.nodeIds].sort(),
-      ['ancestor', 'beast', 'champion', 'progenitor'],
-    );
+    assert.deepEqual([...connection!.nodeIds].sort(), [
+      'ancestor',
+      'beast',
+      'champion',
+      'progenitor',
+    ]);
     assert.deepEqual(
       [...connection!.linkIds].sort(),
       [
@@ -427,10 +429,12 @@ describe('ragnarokConnection', () => {
 
   it('descends a more distant lineage node through the full chain', () => {
     const connection = ragnarokConnection(index, overlay, 'progenitor');
-    assert.deepEqual(
-      [...connection!.nodeIds].sort(),
-      ['ancestor', 'beast', 'champion', 'progenitor'],
-    );
+    assert.deepEqual([...connection!.nodeIds].sort(), [
+      'ancestor',
+      'beast',
+      'champion',
+      'progenitor',
+    ]);
     assert.deepEqual(
       [...connection!.linkIds].sort(),
       [
@@ -677,7 +681,14 @@ describe('padForOverlay', () => {
     // both, simultaneously, not approximately.
     const contentX0 = 50;
     const contentX1 = 350;
-    const [x0, y0, x1, y1] = padForOverlay([contentX0, 0, contentX1, 100], 'x', 0.3, 0.2, 1000, 1000);
+    const [x0, y0, x1, y1] = padForOverlay(
+      [contentX0, 0, contentX1, 100],
+      'x',
+      0.3,
+      0.2,
+      1000,
+      1000,
+    );
     const span = x1 - x0;
     const scale = 1000 / span;
     assert.ok(Math.abs((contentX0 - x0) * scale - 0.3 * 1000) < 1e-6);
