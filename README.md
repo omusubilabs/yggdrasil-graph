@@ -14,12 +14,7 @@ Not an encyclopaedia with a graph bolted on — a machine for noticing
 structure, built to be checked: where sources disagree, the graph shows both
 readings instead of picking one.
 
-<!--
-  SCREENSHOT PLACEHOLDER
-  Drop a 1440×900 capture of the graph at docs/screenshot.png and replace this
-  comment with:  ![The graph on load](docs/screenshot.png)
-  Capture the default view, not a selected state — the cold open is the point.
--->
+![The graph on load](docs/screenshot.png)
 
 **Live:** <https://yggdrasil-graph.omusubilabs.fi>
 
