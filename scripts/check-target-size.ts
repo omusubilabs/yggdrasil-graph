@@ -21,9 +21,9 @@
  * Requires `dist/` to already be built (`npm run build`) and the Playwright
  * Chromium browser installed (`npx playwright install chromium`).
  */
-import { spawn, type ChildProcess } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import { chromium, type Page } from 'playwright';
+import { startPreviewServer, type PreviewServer } from './preview-server.ts';
 
 const PORT = 4322; // distinct from astro dev's 4321, so both can run at once locally
 const BASE_URL = `http://127.0.0.1:${PORT}`;
@@ -48,39 +48,17 @@ if (!existsSync('dist')) {
   process.exit(1);
 }
 
-async function waitForServer(url: string, timeoutMs = 15_000): Promise<void> {
-  const deadline = Date.now() + timeoutMs;
-  while (Date.now() < deadline) {
-    try {
-      const res = await fetch(url);
-      if (res.ok) return;
-    } catch {
-      // retry below
-    }
-    await new Promise((r) => setTimeout(r, 200));
-  }
-  throw new Error(`${url} did not respond within ${timeoutMs}ms`);
-}
-
 async function ready(page: Page): Promise<void> {
   // Set by runtime.ts only after materializing the graph and resolving
   // ?selected= — a precise signal, unlike a networkidle heuristic.
   await page.waitForFunction(() => document.documentElement.dataset.graphRuntime === 'ready');
 }
 
-let server: ChildProcess | undefined;
+let server: PreviewServer | undefined;
 let exitCode = 0;
 
 try {
-  server = spawn('npx', ['astro', 'preview', '--port', String(PORT), '--host', '127.0.0.1'], {
-    env: { ...process.env, ASTRO_PREVIEW_BACKGROUND: '0' },
-    stdio: 'pipe',
-  });
-  server.on('error', (err) => {
-    console.error('Failed to start `astro preview`:', err);
-    process.exit(1);
-  });
-  await waitForServer(`${BASE_URL}/`);
+  server = await startPreviewServer(PORT);
 
   const browser = await chromium.launch();
   const rows: string[] = [];
@@ -131,7 +109,7 @@ try {
     );
   }
 } finally {
-  server?.kill();
+  await server?.stop();
 }
 
 process.exit(exitCode);
