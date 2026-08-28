@@ -136,7 +136,7 @@ describe('buildEntityJsonLd: certainty filter', () => {
   ];
 
   const graph: GraphData = {
-    version: 3,
+    version: 4,
     generatedAt: '2026-01-01T00:00:00.000Z',
     nodes: [
       node({
@@ -188,6 +188,11 @@ describe('buildEntityJsonLd: certainty filter', () => {
     tagIndex: {},
     bounds: [0, 0, 0, 0],
     core: { nodeIds: ['alpha', 'beta', 'gamma'], linkIds: [], bounds: [0, 0, 0, 0] },
+    mobileFocus: {
+      nodeIds: ['alpha', 'beta'],
+      linkIds: ['alpha--beta--married_to'],
+      bounds: [0, 0, 0, 0],
+    },
   };
 
   const certaintyIndex = buildIndex(graph);

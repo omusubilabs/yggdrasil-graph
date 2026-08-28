@@ -17,74 +17,109 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 ---
 
-<div class="controls" data-graph-controls>
-  <div class="controls__search">
-    <label for="graph-entity-search">{t('graph.searchLabel')}</label>
-    <input
-      id="graph-entity-search"
-      type="search"
-      autocomplete="off"
-      placeholder={t('graph.searchPlaceholder')}
-      role="combobox"
-      aria-autocomplete="list"
+<div class="controls" data-graph-controls role="group" aria-label={t('graph.controlsLabel')}>
+  <div class="controls__bar" data-controls-bar>
+    <div class="controls__search">
+      <label for="graph-entity-search">{t('graph.searchLabel')}</label>
+      <input
+        id="graph-entity-search"
+        type="search"
+        autocomplete="off"
+        placeholder={t('graph.searchPlaceholder')}
+        role="combobox"
+        aria-autocomplete="list"
+        aria-expanded="false"
+        aria-controls="graph-search-results"
+        data-entity-search
+      />
+      <ul id="graph-search-results" class="controls__results" role="listbox" hidden></ul>
+    </div>
+
+    <button
+      type="button"
+      class="controls__drawer-toggle"
+      aria-controls="graph-display-options"
       aria-expanded="false"
-      aria-controls="graph-search-results"
-      data-entity-search
-    />
-    <ul id="graph-search-results" class="controls__results" role="listbox" hidden></ul>
+      aria-label={t('filters.openMenu')}
+      data-controls-drawer-toggle
+      data-open-label={t('filters.openMenu')}
+      data-close-label={t('filters.closeMenu')}
+    >
+      <span>{t('filters.mobileMenu')}</span>
+      <span class="controls__filter-count" data-filter-count hidden></span>
+    </button>
+
+    <div class="controls__group" role="group" aria-label={t('graph.zoomControls')}>
+      <button type="button" data-zoom="in" aria-label={t('graph.zoomIn')}>
+        {/* i18n-ignore: mathematical symbols used as icons */}
+        <span aria-hidden="true">+</span>
+      </button>
+      <button type="button" data-zoom="out" aria-label={t('graph.zoomOut')}>
+        {/* i18n-ignore: mathematical symbols used as icons */}
+        <span aria-hidden="true">−</span>
+      </button>
+      <button type="button" data-zoom="reset">{t('graph.recentre')}</button>
+    </div>
+
+    <button
+      type="button"
+      class="controls__mobile-focus"
+      aria-pressed="false"
+      data-mobile-focus-toggle
+      data-focus-label={t('graph.mobileShowFocus')}
+      data-overview-label={t('graph.mobileShowOverview')}
+    >
+      {t('graph.mobileShowOverview')}
+    </button>
+
+    <button type="button" class="controls__clear" data-clear-selection hidden>
+      {t('graph.clearSelection')}
+    </button>
+
+    <button type="button" class="controls__expand-view" data-expand-view hidden>
+      {t('graph.expandView')}
+    </button>
   </div>
 
-  <div class="controls__group" role="group" aria-label={t('graph.zoomControls')}>
-    <button type="button" data-zoom="in" aria-label={t('graph.zoomIn')}>
-      {/* i18n-ignore: mathematical symbols used as icons */}
-      <span aria-hidden="true">+</span>
-    </button>
-    <button type="button" data-zoom="out" aria-label={t('graph.zoomOut')}>
-      {/* i18n-ignore: mathematical symbols used as icons */}
-      <span aria-hidden="true">−</span>
-    </button>
-    <button type="button" data-zoom="reset">{t('graph.recentre')}</button>
+  <div
+    id="graph-display-options"
+    class="controls__drawer"
+    role="group"
+    aria-label={t('filters.heading')}
+    data-controls-drawer
+  >
+    <label class="controls__toggle">
+      <input type="checkbox" data-show-all />
+      <span>
+        <span class="controls__toggle-label">{t('graph.showAll')}</span>
+        <span class="controls__toggle-hint">{t('graph.showAllHint')}</span>
+      </span>
+    </label>
+
+    <label class="controls__toggle">
+      <input type="checkbox" data-show-every-relation />
+      <span>
+        <span class="controls__toggle-label">{t('filters.everyRelation')}</span>
+        <span class="controls__toggle-hint">{t('filters.everyRelationHint')}</span>
+      </span>
+    </label>
+
+    <label class="controls__toggle">
+      <input type="checkbox" data-filter="disputed" />
+      <span>
+        <span class="controls__toggle-label">{t('filters.disputedOnly')}</span>
+        <span class="controls__toggle-hint">{t('filters.disputedOnlyHint')}</span>
+      </span>
+    </label>
+
+    <label class="controls__toggle">
+      <input type="checkbox" data-filter="ragnarok" />
+      <span>
+        <span class="controls__toggle-label">{t('filters.ragnarokOverlay')}</span>
+        <span class="controls__toggle-hint">{t('filters.ragnarokOverlayHint')}</span>
+      </span>
+    </label>
   </div>
-
-  <button type="button" class="controls__clear" data-clear-selection hidden>
-    {t('graph.clearSelection')}
-  </button>
-
-  <button type="button" class="controls__expand-view" data-expand-view hidden>
-    {t('graph.expandView')}
-  </button>
-
-  <label class="controls__toggle">
-    <input type="checkbox" data-show-all />
-    <span>
-      <span class="controls__toggle-label">{t('graph.showAll')}</span>
-      <span class="controls__toggle-hint">{t('graph.showAllHint')}</span>
-    </span>
-  </label>
-
-  <label class="controls__toggle">
-    <input type="checkbox" data-show-every-relation />
-    <span>
-      <span class="controls__toggle-label">{t('filters.everyRelation')}</span>
-      <span class="controls__toggle-hint">{t('filters.everyRelationHint')}</span>
-    </span>
-  </label>
-
-  <label class="controls__toggle">
-    <input type="checkbox" data-filter="disputed" />
-    <span>
-      <span class="controls__toggle-label">{t('filters.disputedOnly')}</span>
-      <span class="controls__toggle-hint">{t('filters.disputedOnlyHint')}</span>
-    </span>
-  </label>
-
-  <label class="controls__toggle">
-    <input type="checkbox" data-filter="ragnarok" />
-    <span>
-      <span class="controls__toggle-label">{t('filters.ragnarokOverlay')}</span>
-      <span class="controls__toggle-hint">{t('filters.ragnarokOverlayHint')}</span>
-    </span>
-  </label>
 </div>
 
 <style>
@@ -98,6 +133,16 @@ const t = useTranslations(locale);
     align-items: flex-start;
     gap: var(--space-xs);
     font-size: var(--text-sm);
+  }
+
+  .controls__bar,
+  .controls__drawer {
+    display: contents;
+  }
+
+  .controls__drawer-toggle,
+  .controls__mobile-focus {
+    display: none;
   }
 
   /* Set by src/graph/runtime.ts once it has mounted successfully. */
@@ -195,6 +240,10 @@ const t = useTranslations(locale);
     font-size: var(--text-sm);
   }
 
+  .controls button[hidden] {
+    display: none;
+  }
+
   .controls button:hover {
     border-color: var(--verdigris);
     color: var(--verdigris-deep);
@@ -246,5 +295,150 @@ const t = useTranslations(locale);
     display: block;
     font-size: var(--text-xs);
     color: var(--ink-faded);
+  }
+
+  @media (max-width: 52rem) {
+    .controls {
+      inset-inline: var(--space-xs);
+      inset-block-start: var(--space-xs);
+      inset-block-end: auto;
+      align-items: stretch;
+      gap: var(--space-2xs);
+    }
+
+    .controls__bar {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-areas:
+        'search drawer'
+        'zoom focus';
+      gap: var(--space-2xs);
+      max-height: 6.5rem;
+      padding: var(--space-2xs);
+      background: color-mix(in srgb, var(--vellum-pale) 96%, transparent);
+      border: 1px solid var(--rule-strong);
+      border-radius: var(--radius-sm);
+    }
+
+    .controls__search {
+      grid-area: search;
+      width: auto;
+      min-width: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    .controls__search label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .controls__search input {
+      min-height: var(--touch-target);
+      padding-block: var(--space-2xs);
+    }
+
+    .controls__results {
+      inset-block-start: calc(100% + var(--space-2xs));
+      inset-block-end: auto;
+      max-height: min(40svh, 18rem);
+    }
+
+    .controls__drawer-toggle {
+      grid-area: drawer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2xs);
+      min-width: var(--touch-target);
+      min-height: var(--touch-target);
+    }
+
+    .controls__filter-count {
+      min-width: 1.35rem;
+      padding-inline: var(--space-2xs);
+      border-radius: var(--radius-sm);
+      background: var(--verdigris-wash);
+      color: var(--verdigris-deep);
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      line-height: 1.5;
+    }
+
+    .controls__filter-count[hidden] {
+      display: none;
+    }
+
+    .controls__group {
+      grid-area: zoom;
+    }
+
+    .controls__group button {
+      min-width: var(--touch-target);
+      padding-inline: var(--space-xs);
+    }
+
+    .controls__mobile-focus {
+      grid-area: focus;
+      display: inline-flex;
+      min-width: 0;
+      min-height: var(--touch-target);
+      align-items: center;
+      justify-content: center;
+      padding-inline: var(--space-xs);
+      font-size: var(--text-xs);
+      line-height: var(--leading-snug);
+    }
+
+    .controls__mobile-focus[aria-pressed='true'] {
+      border-color: var(--verdigris);
+      background: var(--verdigris-wash);
+      color: var(--verdigris-deep);
+    }
+
+    .controls__clear {
+      display: none !important;
+    }
+
+    .controls__expand-view:not([hidden]) {
+      grid-area: focus;
+      display: inline-flex;
+      min-height: var(--touch-target);
+      align-items: center;
+      justify-content: center;
+      font-size: var(--text-xs);
+    }
+
+    .controls__drawer {
+      position: absolute;
+      inset-inline: 0;
+      inset-block-start: calc(100% + var(--space-2xs));
+      display: none;
+      max-height: min(60svh, 28rem);
+      overflow-y: auto;
+      gap: var(--space-xs);
+      padding: var(--space-xs);
+      background: color-mix(in srgb, var(--vellum-pale) 98%, transparent);
+      border: 1px solid var(--rule-strong);
+      border-radius: var(--radius-sm);
+    }
+
+    .controls[data-drawer-open] .controls__drawer {
+      display: grid;
+    }
+
+    .controls__toggle {
+      width: 100%;
+      max-width: none;
+      background: var(--vellum);
+    }
   }
 </style>

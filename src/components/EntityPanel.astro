@@ -21,7 +21,14 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 ---
 
-<aside class="panel" data-entity-panel hidden aria-labelledby="panel-title" tabindex="-1">
+<aside
+  class="panel"
+  data-entity-panel
+  data-sheet-state="peek"
+  hidden
+  aria-labelledby="panel-title"
+  tabindex="-1"
+>
   <div class="panel__bar">
     <div class="panel__bar-row">
       <h2 class="panel__title" id="panel-title"></h2>
@@ -30,9 +37,22 @@ const t = useTranslations(locale);
         <span aria-hidden="true">×</span>
       </button>
     </div>
-    <a class="panel__view-full" data-panel-view-full></a>
-    <button type="button" class="panel__trace" data-panel-trace hidden aria-pressed="false"
-    ></button>
+    <p class="panel__peek-summary" data-panel-peek-summary></p>
+    <button
+      type="button"
+      class="panel__expand"
+      aria-expanded="false"
+      data-panel-expand
+      data-expand-label={t('panel.expand')}
+      data-collapse-label={t('panel.collapse')}
+    >
+      {t('panel.expand')}
+    </button>
+    <div class="panel__actions">
+      <a class="panel__view-full" data-panel-view-full></a>
+      <button type="button" class="panel__trace" data-panel-trace hidden aria-pressed="false"
+      ></button>
+    </div>
   </div>
   <div class="panel__body" data-panel-body></div>
 </aside>
@@ -71,8 +91,20 @@ const t = useTranslations(locale);
     gap: var(--space-sm);
   }
 
+  .panel__peek-summary,
+  .panel__expand {
+    display: none;
+  }
+
+  .panel__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
   .panel__view-full,
-  .panel__trace {
+  .panel__trace,
+  .panel__expand {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -158,6 +190,7 @@ const t = useTranslations(locale);
   }
 
   .panel__body {
+    min-height: 0;
     overflow-y: auto;
     padding: var(--space-md);
     font-size: var(--text-sm);
@@ -291,8 +324,85 @@ const t = useTranslations(locale);
       inset-block-start: auto;
       inset-inline: var(--space-xs);
       inset-block-end: var(--space-xs);
-      max-height: 55%;
+      height: 9.5rem;
+      max-height: 9.5rem;
       width: auto;
+    }
+
+    .panel[data-sheet-state='expanded'] {
+      height: min(70svh, 36rem, calc(100% - 15rem));
+      max-height: min(70svh, 36rem, calc(100% - 15rem));
+    }
+
+    .panel__bar {
+      gap: var(--space-2xs);
+      padding: var(--space-2xs) var(--space-sm);
+      border-bottom: 0;
+    }
+
+    .panel[data-sheet-state='expanded'] .panel__bar {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+      padding: var(--space-xs);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .panel[data-sheet-state='expanded'] .panel__bar-row {
+      grid-column: 1 / -1;
+    }
+
+    .panel__bar-row {
+      min-height: var(--touch-target);
+      align-items: center;
+    }
+
+    .panel__peek-summary {
+      display: -webkit-box;
+      min-height: 2.7em;
+      margin: 0;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      color: var(--ink-faded);
+      font-size: var(--text-sm);
+      line-height: var(--leading-snug);
+    }
+
+    .panel__expand {
+      display: inline-flex;
+      width: 100%;
+      min-height: var(--touch-target);
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--rule-strong);
+      background: var(--vellum-pale);
+      color: var(--ink);
+    }
+
+    .panel[data-sheet-state='expanded'] .panel__peek-summary {
+      display: none;
+    }
+
+    .panel__actions,
+    .panel__body {
+      display: none;
+    }
+
+    .panel[data-sheet-state='expanded'] .panel__actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .panel[data-sheet-state='expanded'] .panel__actions > * {
+      min-width: 0;
+      padding-inline: var(--space-2xs);
+      font-size: var(--text-xs);
+      line-height: var(--leading-snug);
+    }
+
+    .panel[data-sheet-state='expanded'] .panel__body {
+      display: block;
+      flex: 1;
     }
   }
 </style>
