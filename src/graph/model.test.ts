@@ -5,6 +5,7 @@ import {
   bloodlineTrace,
   buildCore,
   buildIndex,
+  buildMobileFocus,
   clampBoundsAroundPoint,
   coreNeighbourhood,
   locusKey,
@@ -283,7 +284,7 @@ describe('ragnarokOverlay disjointness', () => {
     // right and Þórr's parent, and Þórr is also a combatant. combatant-a must
     // stay a combatant only, never also gain a bogus lineage depth.
     const data: GraphData = {
-      version: 1,
+      version: 4,
       generatedAt: '2026-01-01T00:00:00.000Z',
       nodes: [
         {
@@ -362,6 +363,7 @@ describe('ragnarokOverlay disjointness', () => {
       tagIndex: {},
       bounds: [0, 0, 0, 0],
       core: { nodeIds: [], linkIds: [], bounds: [0, 0, 0, 0] },
+      mobileFocus: { nodeIds: [], linkIds: [], bounds: [0, 0, 0, 0] },
     };
     const overlay = ragnarokOverlay(buildIndex(data));
     assert.deepEqual([...overlay.combatantIds].sort(), ['combatant-a', 'combatant-b']);
@@ -573,6 +575,32 @@ describe('buildCore', () => {
       assert.ok(ids.has(link.from));
       assert.ok(ids.has(link.to));
     }
+  });
+});
+
+describe('buildMobileFocus', () => {
+  const ids = ['king', 'queen', 'envoy'] as const;
+
+  it('keeps the requested order and only links whose endpoints are in the focus', () => {
+    const focus = buildMobileFocus(sampleGraph, ids);
+    assert.deepEqual(focus.nodeIds, ids);
+    assert.deepEqual(focus.linkIds, ['king--queen--married_to']);
+    assert.deepEqual(focus.bounds, [-60, -60, 80, 80]);
+  });
+
+  it('sorts link ids so generation is deterministic across input order', () => {
+    const reversed = buildMobileFocus(
+      { nodes: sampleGraph.nodes, links: [...sampleGraph.links].reverse() },
+      ids,
+    );
+    assert.deepEqual(reversed, buildMobileFocus(sampleGraph, ids));
+  });
+
+  it('rejects a focus that references an unknown node', () => {
+    assert.throws(
+      () => buildMobileFocus(sampleGraph, ['king', 'missing']),
+      /mobile focus references unknown nodes: missing/,
+    );
   });
 });
 

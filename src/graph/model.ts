@@ -449,6 +449,41 @@ const boundsFor = (nodes: GraphNode[], pad = 60): [number, number, number, numbe
   ];
 };
 
+export const MOBILE_FOCUS_NODE_IDS = [
+  'loki',
+  'angrboda',
+  'fenrir',
+  'jormungandr',
+  'odin',
+  'thor',
+  'heimdall',
+  'tyr',
+] as const;
+
+/**
+ * The deliberately small mobile cold open. Stable ids make this a product
+ * decision rather than an accident of degree ranking as the corpus grows.
+ */
+export const buildMobileFocus = (
+  data: Pick<GraphData, 'nodes' | 'links'>,
+  ids: readonly string[] = MOBILE_FOCUS_NODE_IDS,
+): GraphData['mobileFocus'] => {
+  const nodeById = new Map(data.nodes.map((node) => [node.id, node]));
+  const missing = ids.filter((id) => !nodeById.has(id));
+  if (missing.length > 0)
+    throw new Error(`mobile focus references unknown nodes: ${missing.join(', ')}`);
+
+  const wanted = new Set(ids);
+  return {
+    nodeIds: [...ids],
+    linkIds: data.links
+      .filter((link) => wanted.has(link.from) && wanted.has(link.to))
+      .map((link) => link.id)
+      .sort(),
+    bounds: boundsFor(ids.map((id) => nodeById.get(id)!)),
+  };
+};
+
 /**
  * The cold-open slice: the Ragnarǫk argument first, then the highest-degree
  * figures until the graph reaches the fixed legibility limit.
@@ -458,7 +493,7 @@ export const buildCore = (
   limit = 36,
 ): GraphData['core'] => {
   const provisional: GraphData = {
-    version: 3,
+    version: 4,
     generatedAt: '',
     nodes: data.nodes,
     links: data.links,
@@ -466,6 +501,7 @@ export const buildCore = (
     tagIndex: data.tagIndex,
     bounds: [0, 0, 0, 0],
     core: { nodeIds: [], linkIds: [], bounds: [0, 0, 0, 0] },
+    mobileFocus: { nodeIds: [], linkIds: [], bounds: [0, 0, 0, 0] },
   };
   const overlay = ragnarokOverlay(buildIndex(provisional));
   const ids = new Set([...overlay.combatantIds, ...overlay.lineageNodeIds]);

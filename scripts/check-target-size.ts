@@ -13,14 +13,10 @@
  *
  * There are only four distinct node shapes (nodeShapePath in
  * src/graph/geometry.ts), so this checks one representative per shape, each
- * via the route a reader actually sees it through. `odin` (circle) and
- * `midgard` (hexagon — the tightest case, since its vertical half-span is
- * only ~0.866r) are in the cold-open core, so they're measured on a plain `/`
- * visit. `mjolnir` (lozenge) and
- * `mare` (double-ring) have no member in the core at all — selecting a node
- * re-fits the SVG viewBox to its neighbourhood (`applyVisibility` in
- * src/graph/runtime.ts), so `?selected=<id>` is the only scenario in which a
- * reader ever sees those two shapes, not a stand-in for the cold-open one.
+ * via the route a reader actually sees it through. `odin` represents the
+ * circle family in the mobile cold open. The mobile focus deliberately has no
+ * world, artifact or form, so `midgard`, `mjolnir` and `mare` are measured in
+ * their selected views, after runtime.ts re-fits the SVG to each neighbourhood.
  *
  * Requires `dist/` to already be built (`npm run build`) and the Playwright
  * Chromium browser installed (`npx playwright install chromium`).
@@ -42,7 +38,7 @@ const VIEWPORTS = [
 // One id per shape; otherwise arbitrary within each shape family.
 const REPRESENTATIVE_NODES = [
   { id: 'odin', shape: 'circle (deity/human/being/event)', via: 'cold-open' },
-  { id: 'midgard', shape: 'hexagon (world/place)', via: 'cold-open' },
+  { id: 'midgard', shape: 'hexagon (world/place)', via: 'selected' },
   { id: 'mjolnir', shape: 'lozenge (artifact)', via: 'selected' },
   { id: 'mare', shape: 'double-ring (form)', via: 'selected' },
 ] as const;
@@ -77,6 +73,7 @@ let exitCode = 0;
 
 try {
   server = spawn('npx', ['astro', 'preview', '--port', String(PORT), '--host', '127.0.0.1'], {
+    env: { ...process.env, ASTRO_PREVIEW_BACKGROUND: '0' },
     stdio: 'pipe',
   });
   server.on('error', (err) => {

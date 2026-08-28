@@ -39,11 +39,11 @@ import {
   type RelationFamily,
   type Source,
 } from '../src/graph/types.ts';
-import { buildCore } from '../src/graph/model.ts';
+import { buildCore, buildMobileFocus } from '../src/graph/model.ts';
 
 const OUT_DIR = 'src/generated';
 const OUT_FILE = join(OUT_DIR, 'graph.json');
-const GRAPH_VERSION = 3;
+const GRAPH_VERSION = 4;
 
 /** Deterministic PRNG. Any fixed seed will do; this one is arbitrary. */
 const mulberry32 = (seed: number) => () => {
@@ -216,6 +216,7 @@ const graph: GraphData = {
   tagIndex,
   bounds,
   core: buildCore({ nodes, links, sources, tagIndex }),
+  mobileFocus: buildMobileFocus({ nodes, links }),
 };
 
 mkdirSync(OUT_DIR, { recursive: true });

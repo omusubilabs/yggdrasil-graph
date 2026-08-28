@@ -42,13 +42,22 @@ const data = graph as unknown as GraphData;
 const positions = new Map(data.nodes.map((n) => [n.id, n]));
 const coreNodeIds = new Set(data.core.nodeIds);
 const coreLinkIds = new Set(data.core.linkIds);
+const mobileFocusNodeIds = new Set(data.mobileFocus.nodeIds);
+const mobileFocusLinkIds = new Set(data.mobileFocus.linkIds);
 const coreNodes = data.nodes.filter((node) => coreNodeIds.has(node.id));
 
 // Pivot for the narrow-viewport scale below, computed explicitly because
 // `transform-box: view-box` with `transform-origin: center` ignores a
 // non-zero viewBox x/y offset in current browsers.
-const coreCentreX = (data.core.bounds[0] + data.core.bounds[2]) / 2;
-const coreCentreY = (data.core.bounds[1] + data.core.bounds[3]) / 2;
+const mobileFocusCentreX = (data.mobileFocus.bounds[0] + data.mobileFocus.bounds[2]) / 2;
+const mobileFocusCentreY = (data.mobileFocus.bounds[1] + data.mobileFocus.bounds[3]) / 2;
+const coreWidth = data.core.bounds[2] - data.core.bounds[0];
+const coreHeight = data.core.bounds[3] - data.core.bounds[1];
+const mobileFocusWidth = data.mobileFocus.bounds[2] - data.mobileFocus.bounds[0];
+const mobileFocusHeight = data.mobileFocus.bounds[3] - data.mobileFocus.bounds[1];
+const mobileFocusScale =
+  Math.round(Math.min(coreWidth / mobileFocusWidth, coreHeight / mobileFocusHeight) * 0.96 * 1000) /
+  1000;
 
 const edges = data.links
   .filter((link) => coreLinkIds.has(link.id))
@@ -73,7 +82,8 @@ const edges = data.links
   <figcaption class="canvas__caption">
     <h2 class="visually-hidden">{t('graph.regionLabel')}</h2>
     <p class="canvas__hint">
-      <span>{t('graph.hint')}</span>
+      <span class="canvas__hint-default">{t('graph.hint')}</span>
+      <span class="canvas__hint-mobile">{t('graph.mobileHint')}</span>
       <span class="canvas__hint-kbd">{t('graph.hintKeyboard')}</span>
     </p>
   </figcaption>
@@ -122,7 +132,13 @@ const edges = data.links
       </marker>
     </defs>
 
-    <g data-graph-scale style={{ transformOrigin: `${coreCentreX}px ${coreCentreY}px` }}>
+    <g
+      data-graph-scale
+      style={{
+        transformOrigin: `${mobileFocusCentreX}px ${mobileFocusCentreY}px`,
+        '--mobile-focus-scale': mobileFocusScale,
+      }}
+    >
       <g data-graph-viewport>
         <g class="edges" data-graph-edges aria-hidden="true">
           {
@@ -134,6 +150,7 @@ const edges = data.links
                 data-from={edge.link.from}
                 data-to={edge.link.to}
                 data-certainty={edge.link.certainty}
+                data-mobile-focus={mobileFocusLinkIds.has(edge.link.id) ? '' : undefined}
                 marker-end={
                   edge.link.directed
                     ? edge.className.includes('is-death')
@@ -160,6 +177,7 @@ const edges = data.links
                 data-node={node.id}
                 data-rank={node.coreRank}
                 data-degree={node.degree}
+                data-mobile-focus={mobileFocusNodeIds.has(node.id) ? '' : undefined}
                 transform={`translate(${node.x},${node.y})`}
               >
                 <a
@@ -215,8 +233,8 @@ const edges = data.links
   neighbours are showing, when the selection cleared. Kept separate from the
   panel so a screen reader hears one short sentence rather than the panel's
   whole contents re-read on every click. Deliberately a sibling of <figure>:
-  the runtime marks the figure `inert` while the mobile sheet is modal, which
-  would silence a nested live region too.
+  keeping it outside the visual surface also prevents graph pointer handling
+  from ever swallowing an announcement.
 -->
 <p class="visually-hidden" data-graph-status role="status" aria-live="polite"></p>
 
@@ -247,6 +265,10 @@ const edges = data.links
     font-size: var(--text-sm);
     color: var(--ink-faded);
     max-width: 24ch;
+  }
+
+  .canvas__hint-mobile {
+    display: none;
   }
 
   .canvas__hint-kbd {
@@ -330,27 +352,55 @@ const edges = data.links
    */
   [data-graph-scale] {
     transform-box: view-box;
-    /* transform-origin is set inline from data.core.bounds — see this file's
-       frontmatter, above coreCentreX/coreCentreY. */
+    /* transform-origin is set inline from data.mobileFocus.bounds — see this
+       file's frontmatter, above mobileFocusCentreX/mobileFocusCentreY. */
+  }
+
+  @media (max-width: 52rem) {
+    .canvas__caption {
+      inset-inline: var(--space-sm);
+      inset-block-start: 7.25rem;
+    }
+
+    .canvas__hint {
+      max-width: 31ch;
+      font-size: var(--text-xs);
+    }
+
+    .canvas__hint-default {
+      display: none;
+    }
+
+    .canvas__hint-mobile {
+      display: inline;
+    }
+
+    svg[data-graph]:not([data-view-scope]):not([data-mobile-overview]) [data-graph-scale] {
+      transform: scale(var(--mobile-focus-scale));
+    }
+
+    svg[data-graph]:not([data-view-scope]):not([data-mobile-overview])
+      .node:not([data-mobile-focus]),
+    svg[data-graph]:not([data-view-scope]):not([data-mobile-overview])
+      .edge:not([data-mobile-focus]) {
+      display: none;
+    }
+
+    svg[data-graph]:not([data-view-scope]):not([data-mobile-overview])
+      .node[data-mobile-focus]
+      .node__label {
+      font-size: 32px;
+    }
   }
 
   @media (max-width: 25rem) {
-    svg[data-graph]:not([data-view-scope]) [data-graph-scale] {
-      transform: scale(2.3);
-    }
-
-    /* Tied to the font-size tiers labelSize() bakes in src/graph/geometry.ts. */
-    svg[data-graph]:not([data-view-scope]) .node__label[font-size='10.5'] {
+    svg[data-graph][data-mobile-overview]:not([data-view-scope]) .node__label[font-size='10.5'] {
       display: none;
     }
   }
 
   @media (max-width: 20.5rem) {
-    svg[data-graph]:not([data-view-scope]) [data-graph-scale] {
-      transform: scale(2.7);
-    }
-
-    svg[data-graph]:not([data-view-scope]) .node__label[font-size='12'] {
+    svg[data-graph][data-mobile-overview]:not([data-view-scope]) .node__label[font-size='12'] {
       display: none;
     }
   }

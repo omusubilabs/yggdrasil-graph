@@ -45,6 +45,7 @@
     "check:contrast": "tsx scripts/check-contrast.ts",
     "check:bundle-size": "node scripts/report-bundle-size.mjs",
     "check:target-size": "tsx scripts/check-target-size.ts",
+    "check:mobile-ux": "tsx scripts/check-mobile-ux.ts",
     "test": "node --import tsx --test",
     "test:coverage": "node --import tsx --experimental-test-coverage --test",
     "typecheck": "astro check",

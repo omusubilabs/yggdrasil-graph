@@ -105,6 +105,14 @@ export async function mount(): Promise<void> {
   svg.style.userSelect = 'none';
 
   const controls = document.querySelector<HTMLElement>('[data-graph-controls]');
+  const controlsBar = controls?.querySelector<HTMLElement>('[data-controls-bar]') ?? null;
+  const drawerToggle =
+    controls?.querySelector<HTMLButtonElement>('[data-controls-drawer-toggle]') ?? null;
+  const filterCount = controls?.querySelector<HTMLElement>('[data-filter-count]') ?? null;
+  const mobileFocusToggle =
+    controls?.querySelector<HTMLButtonElement>('[data-mobile-focus-toggle]') ?? null;
+  const searchInput = controls?.querySelector<HTMLInputElement>('[data-entity-search]') ?? null;
+  const searchList = controls?.querySelector<HTMLUListElement>('[role="listbox"]') ?? null;
   controls?.querySelectorAll<HTMLButtonElement>('[data-zoom]').forEach((button) => {
     button.addEventListener('click', () => {
       const action = button.dataset.zoom;
@@ -156,31 +164,28 @@ export async function mount(): Promise<void> {
   const panelViewFull = panel?.querySelector<HTMLAnchorElement>('[data-panel-view-full]') ?? null;
   const traceButton = panel?.querySelector<HTMLButtonElement>('[data-panel-trace]') ?? null;
   const panelBody = panel?.querySelector<HTMLElement>('[data-panel-body]') ?? null;
+  const panelPeekSummary = panel?.querySelector<HTMLElement>('[data-panel-peek-summary]') ?? null;
+  const panelExpandButton = panel?.querySelector<HTMLButtonElement>('[data-panel-expand]') ?? null;
   const clearButton = controls?.querySelector<HTMLButtonElement>('[data-clear-selection]') ?? null;
   const expandViewButton = controls?.querySelector<HTMLButtonElement>('[data-expand-view]') ?? null;
 
   // -------------------------------------------------------------- mobile sheet
 
-  // Below this breakpoint the panel is a bottom sheet, not a modal dialog:
-  // deliberately no backdrop, and header/footer/table stay reachable.
+  // Below this breakpoint the panel is a non-modal bottom sheet. The graph
+  // remains pannable and its nodes remain selectable while the sheet is open.
   // Mirrors EntityPanel.astro's own @media breakpoint — must stay identical.
   const mobileSheetQuery = window.matchMedia('(max-width: 52rem)');
   const isMobileSheet = () => mobileSheetQuery.matches;
   let invoker: (HTMLElement | SVGElement) | null = null;
+  let selected: string | null = null;
 
-  const engageMobileSheet = () => {
-    if (!panel || !isMobileSheet()) return;
-    const active = document.activeElement;
-    invoker = active instanceof HTMLElement || active instanceof SVGElement ? active : null;
-    if (invoker === document.body) invoker = null;
-    figure.inert = true;
-    if (controls) controls.inert = true;
-    panel.focus();
-  };
-
-  const releaseMobileSheet = () => {
-    figure.inert = false;
-    if (controls) controls.inert = false;
+  const setMobileSheetExpanded = (expanded: boolean, moveFocus = false) => {
+    if (!panel || !panelExpandButton) return;
+    panel.dataset.sheetState = expanded ? 'expanded' : 'peek';
+    panelExpandButton.setAttribute('aria-expanded', String(expanded));
+    panelExpandButton.textContent =
+      panelExpandButton.dataset[expanded ? 'collapseLabel' : 'expandLabel'] ?? '';
+    if (moveFocus) panelExpandButton.focus();
   };
 
   const restoreFocusAfterClose = (wasSelected: string | null) => {
@@ -193,13 +198,57 @@ export async function mount(): Promise<void> {
   // In case the viewport crosses the breakpoint while the sheet is open.
   mobileSheetQuery.addEventListener('change', (event) => {
     if (!panel || panel.hidden) return;
-    if (event.matches) engageMobileSheet();
-    else releaseMobileSheet();
+    if (event.matches) setMobileSheetExpanded(false);
     // The panel just switched sides, so its avoidance axis needs to follow.
     applyVisibility();
   });
 
-  let selected: string | null = null;
+  const setDrawerOpen = (open: boolean) => {
+    if (!controls || !drawerToggle) return;
+    controls.toggleAttribute('data-drawer-open', open);
+    drawerToggle.setAttribute('aria-expanded', String(open));
+    drawerToggle.setAttribute(
+      'aria-label',
+      drawerToggle.dataset[open ? 'closeLabel' : 'openLabel'] ?? '',
+    );
+  };
+
+  drawerToggle?.addEventListener('click', () => {
+    setDrawerOpen(drawerToggle.getAttribute('aria-expanded') !== 'true');
+  });
+  controls?.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape' || !controls.hasAttribute('data-drawer-open')) return;
+    event.preventDefault();
+    setDrawerOpen(false);
+    drawerToggle?.focus();
+  });
+
+  const syncFilterCount = () => {
+    if (!filterCount) return;
+    const count = controls?.querySelectorAll<HTMLInputElement>(
+      'input[type="checkbox"]:checked',
+    ).length;
+    filterCount.hidden = !count;
+    filterCount.textContent = count ? String(count) : '';
+  };
+
+  // Camera state only: unlike filters and selection, this never enters the URL.
+  let mobileOverview = false;
+  const syncMobileFocusUi = () => {
+    svg.toggleAttribute('data-mobile-overview', mobileOverview);
+    if (!mobileFocusToggle) return;
+    mobileFocusToggle.hidden = Boolean(selected || showAll || !isMobileSheet());
+    mobileFocusToggle.setAttribute('aria-pressed', String(mobileOverview));
+    mobileFocusToggle.textContent =
+      mobileFocusToggle.dataset[mobileOverview ? 'focusLabel' : 'overviewLabel'] ?? '';
+  };
+
+  mobileFocusToggle?.addEventListener('click', () => {
+    mobileOverview = !mobileOverview;
+    syncMobileFocusUi();
+    applyVisibility();
+    announce(s(mobileOverview ? 'graph.mobileOverviewAnnounce' : 'graph.mobileFocusAnnounce'));
+  });
 
   // ------------------------------------------------------ bloodline trace
   let traceMode = false;
@@ -275,7 +324,6 @@ export async function mount(): Promise<void> {
     for (const el of edgeEls.values()) el.classList.remove('is-near');
     if (panel) panel.hidden = true;
     if (traceButton) traceButton.hidden = true;
-    releaseMobileSheet();
     if (clearButton) clearButton.hidden = true;
     applyVisibility();
     announce(s('a11y.selectionCleared'));
@@ -319,9 +367,24 @@ export async function mount(): Promise<void> {
     }
   };
 
-  const select_ = (id: string, trace: BloodlineTrace | null = null) => {
+  type SelectionOrigin = 'graph' | 'search' | 'restore';
+
+  const select_ = (
+    id: string,
+    trace: BloodlineTrace | null = null,
+    origin: SelectionOrigin = 'graph',
+  ) => {
     const node = index.nodeById.get(id);
     if (!node) return;
+    if (origin === 'search') {
+      invoker = searchInput;
+    } else if (origin === 'graph') {
+      const active = document.activeElement;
+      invoker = active instanceof HTMLElement || active instanceof SVGElement ? active : null;
+      if (invoker === document.body) invoker = null;
+    } else {
+      invoker = null;
+    }
     clearTraceHighlight();
     activeTrace = trace;
     ragnarokEcho = ragnarokConnection(index, ragnarok, id);
@@ -336,7 +399,12 @@ export async function mount(): Promise<void> {
     // renderPanel() must unhide the panel before applyVisibility() measures
     // it, or it reads a still-hidden (zero-size) panel.
     renderPanel(id);
+    if (isMobileSheet()) setMobileSheetExpanded(false);
     applyVisibility();
+    if (origin === 'search' && isMobileSheet()) {
+      searchInput?.blur();
+      panelExpandButton?.focus();
+    }
     announce(
       s('graph.selectedAnnounce', { name: node.names.anglicized, count: near.nodes.size - 1 }),
     );
@@ -345,10 +413,10 @@ export async function mount(): Promise<void> {
     syncUrl();
   };
 
-  const runTrace = (fromId: string, toId: string) => {
+  const runTrace = (fromId: string, toId: string, origin: SelectionOrigin = 'graph') => {
     cancelTrace(false);
     const trace = bloodlineTrace(index, fromId, toId);
-    select_(toId, trace);
+    select_(toId, trace, origin);
     if (!trace) {
       announce(s('a11y.traceNotFound'));
       return;
@@ -427,6 +495,8 @@ export async function mount(): Promise<void> {
     const node = index.nodeById.get(id);
     if (!node) return;
     const strings = payload.entities[id];
+
+    if (panelPeekSummary) panelPeekSummary.textContent = strings?.summary ?? '';
 
     // The title is itself the route to the full account, as well as the link at
     // the foot of the panel — the reader should not have to scroll a panel to
@@ -574,7 +644,6 @@ export async function mount(): Promise<void> {
     panelBody.append(more);
 
     panel.hidden = false;
-    engageMobileSheet();
   };
 
   panel?.querySelector<HTMLButtonElement>('[data-panel-close]')?.addEventListener('click', () => {
@@ -583,6 +652,12 @@ export async function mount(): Promise<void> {
     restoreFocusAfterClose(wasSelected);
   });
   clearButton?.addEventListener('click', clearSelection);
+
+  panelExpandButton?.addEventListener('click', () => {
+    const expanded = panelExpandButton.getAttribute('aria-expanded') !== 'true';
+    setMobileSheetExpanded(expanded, true);
+    applyVisibility();
+  });
 
   traceButton?.addEventListener('click', () => {
     if (traceMode) cancelTrace();
@@ -657,6 +732,7 @@ export async function mount(): Promise<void> {
     // opens the panel instead — but a modified click still means "open this
     // properly", so leave those alone.
     if (event.metaKey || event.ctrlKey || event.altKey) return;
+    hideTip();
 
     // Desktop shortcut for the trace, straight from the current selection.
     // Nothing selected → no source, so native Shift+click still applies.
@@ -728,8 +804,6 @@ export async function mount(): Promise<void> {
 
   // ------------------------------------------------------------- search
 
-  const searchInput = controls?.querySelector<HTMLInputElement>('[data-entity-search]');
-  const searchList = controls?.querySelector<HTMLUListElement>('[role="listbox"]');
   let searchResultIds: string[] = [];
   let activeResult = -1;
 
@@ -794,9 +868,8 @@ export async function mount(): Promise<void> {
     searchInput.value = node.names.non;
     closeSearch();
     // Consumes an armed trace too — otherwise search could leave it dangling.
-    if (traceMode && traceSourceId) runTrace(traceSourceId, id);
-    else select_(id);
-    // select_() already focused the panel below the sheet breakpoint; don't fight that.
+    if (traceMode && traceSourceId) runTrace(traceSourceId, id, 'search');
+    else select_(id, null, 'search');
     if (!isMobileSheet()) focusNode(id);
   };
 
@@ -844,11 +917,20 @@ export async function mount(): Promise<void> {
   const INCIDENTAL_VIEW_MAX_SPAN = 700;
 
   applyVisibility = () => {
+    const useMobileFocus = isMobileSheet() && !mobileOverview && !selected && !showAll;
     const nodes = new Set(
-      showAll ? payload.graph.nodes.map((node) => node.id) : payload.graph.core.nodeIds,
+      showAll
+        ? payload.graph.nodes.map((node) => node.id)
+        : useMobileFocus
+          ? payload.graph.mobileFocus.nodeIds
+          : payload.graph.core.nodeIds,
     );
     const links = new Set(
-      showAll ? payload.graph.links.map((link) => link.id) : payload.graph.core.linkIds,
+      showAll
+        ? payload.graph.links.map((link) => link.id)
+        : useMobileFocus
+          ? payload.graph.mobileFocus.linkIds
+          : payload.graph.core.linkIds,
     );
     const focusIds = new Set<string>();
     // For framing only — nodes/links/focusIds above are unaffected either
@@ -977,6 +1059,7 @@ export async function mount(): Promise<void> {
       rawIncidentalBounds && !viewExpanded && clampedIncidentalBounds !== rawIncidentalBounds,
     );
     if (expandViewButton) expandViewButton.hidden = !isClamped;
+    syncMobileFocusUi();
 
     let bounds: readonly [number, number, number, number] | null = deliberateBounds;
     if (clampedIncidentalBounds) {
@@ -985,11 +1068,9 @@ export async function mount(): Promise<void> {
     if (!bounds) bounds = showAll ? payload.graph.bounds : payload.graph.core.bounds;
 
     // EntityPanel and GraphControls both float over the canvas rather than
-    // reserving a CSS column, so widen whichever edges they occupy. Gated on
+    // reserving CSS space, so widen whichever edges they occupy. Gated on
     // `selected` (not the panels' own visibility) so the cold-open view is
-    // untouched. Controls avoidance is desktop-only — on the mobile sheet it
-    // would compete with EntityPanel's own bottom sheet for the same region;
-    // left as a follow-up.
+    // untouched.
     if (selected) {
       const figureRect = figure.getBoundingClientRect();
       const mobile = isMobileSheet();
@@ -997,6 +1078,10 @@ export async function mount(): Promise<void> {
       const controlsNearX =
         !mobile && controls && figureRect.width > 0
           ? (controls.getBoundingClientRect().right - figureRect.left) / figureRect.width
+          : 0;
+      const controlsNearY =
+        mobile && controlsBar && figureRect.height > 0
+          ? (controlsBar.getBoundingClientRect().bottom - figureRect.top) / figureRect.height
           : 0;
 
       let panelFarX = 0;
@@ -1025,8 +1110,15 @@ export async function mount(): Promise<void> {
         figureRect.height,
       );
       const yPadded =
-        panelFarY > 0
-          ? padForOverlay(bounds, 'y', 0, panelFarY, figureRect.width, figureRect.height)
+        controlsNearY > 0 || panelFarY > 0
+          ? padForOverlay(
+              bounds,
+              'y',
+              controlsNearY,
+              panelFarY,
+              figureRect.width,
+              figureRect.height,
+            )
           : bounds;
       bounds = [xPadded[0], yPadded[1], xPadded[2], yPadded[3]];
     }
@@ -1048,6 +1140,7 @@ export async function mount(): Promise<void> {
 
   showAllToggle?.addEventListener('change', () => {
     showAll = showAllToggle.checked;
+    syncFilterCount();
     applyVisibility();
     announce(
       s('graph.scopeAnnounce', { visible: visibleNodeIds.size, total: payload.graph.nodes.length }),
@@ -1055,6 +1148,7 @@ export async function mount(): Promise<void> {
     syncUrl();
   });
   disputedToggle?.addEventListener('change', () => {
+    syncFilterCount();
     const counts = applyVisibility();
     announce(
       s(filterAnnouncementKey(disputedToggle.checked, ragnarokToggle?.checked ?? false), counts),
@@ -1062,6 +1156,7 @@ export async function mount(): Promise<void> {
     syncUrl();
   });
   ragnarokToggle?.addEventListener('change', () => {
+    syncFilterCount();
     const counts = applyVisibility();
     announce(
       s(filterAnnouncementKey(disputedToggle?.checked ?? false, ragnarokToggle.checked), counts),
@@ -1070,6 +1165,7 @@ export async function mount(): Promise<void> {
   });
   everyRelationToggle?.addEventListener('change', () => {
     showEveryRelation = everyRelationToggle.checked;
+    syncFilterCount();
     if (selected) {
       const near = currentNear(selected);
       applyNearClasses(selected, near);
@@ -1135,11 +1231,12 @@ export async function mount(): Promise<void> {
   // own — nothing paints mid-function.
   document.documentElement.dataset.graphRuntime = 'ready';
 
+  syncFilterCount();
   const hydratedCounts = applyVisibility();
   if (hasSelection) {
     // Selection's own announcement takes priority, so the live region isn't
     // written twice in one page load.
-    select_(initial.selected!);
+    select_(initial.selected!, null, 'restore');
     if (!isMobileSheet()) focusNode(initial.selected!);
   } else if (hasRestoredFilters) {
     announce(s(filterAnnouncementKey(initial.disputed, initial.ragnarok), hydratedCounts));

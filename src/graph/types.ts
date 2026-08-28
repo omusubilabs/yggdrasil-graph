@@ -139,6 +139,12 @@ export interface GraphLink extends Relation {
   curve: number;
 }
 
+export interface GraphSlice {
+  nodeIds: string[];
+  linkIds: string[];
+  bounds: [number, number, number, number];
+}
+
 export interface GraphData {
   /** Bumped whenever the compiled shape changes, so a stale cached copy is detectable. */
   version: number;
@@ -151,9 +157,7 @@ export interface GraphData {
   /** Extent of the baked layout: [minX, minY, maxX, maxY]. */
   bounds: [number, number, number, number];
   /** The thesis-led cold-open slice rendered before the lazy payload arrives. */
-  core: {
-    nodeIds: string[];
-    linkIds: string[];
-    bounds: [number, number, number, number];
-  };
+  core: GraphSlice;
+  /** The compact Loki-led slice used for the mobile cold open. */
+  mobileFocus: GraphSlice;
 }

@@ -535,7 +535,7 @@ const tagIndex: Record<string, string[]> = {
 };
 
 export const sampleGraph: GraphData = {
-  version: 3,
+  version: 4,
   generatedAt: '2026-01-01T00:00:00.000Z',
   nodes,
   links,
@@ -546,5 +546,16 @@ export const sampleGraph: GraphData = {
     nodeIds: nodes.map((node) => node.id),
     linkIds: links.map((entry) => entry.id),
     bounds: [0, 0, 130, 130],
+  },
+  mobileFocus: {
+    nodeIds: ['king', 'queen', 'envoy'],
+    linkIds: links
+      .filter(
+        (entry) =>
+          ['king', 'queen', 'envoy'].includes(entry.from) &&
+          ['king', 'queen', 'envoy'].includes(entry.to),
+      )
+      .map((entry) => entry.id),
+    bounds: [-60, -60, 80, 80],
   },
 };

@@ -71,5 +71,8 @@ jobs:
       - name: Check node-halo target size
         run: npm run check:target-size
 
+      - name: Check mobile graph UX
+        run: npm run check:mobile-ux
+
       - name: Report initial-route JS budget
         run: npm run check:bundle-size
