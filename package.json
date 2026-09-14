@@ -76,16 +76,16 @@
     "@types/node": "^22.10.0",
     "ajv": "^8.20.0",
     "ajv-formats": "^3.0.1",
-    "eslint": "^10.9.0",
+    "eslint": "^10.10.0",
     "eslint-plugin-astro": "^3.1.0",
     "fontkit": "^2.0.4",
     "globals": "^17.11.0",
     "playwright": "^1.62.1",
     "prettier": "^3.4.2",
-    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-astro": "^1.0.0",
     "tsx": "^4.23.12",
     "typescript": "^5.7.0",
-    "typescript-eslint": "^8.67.0",
+    "typescript-eslint": "^8.70.0",
     "wrangler": "^4.125.0"
   }
 }
