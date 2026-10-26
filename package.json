@@ -60,14 +60,14 @@
     "@fontsource-variable/noto-sans-jp": "^5.3.0",
     "@fontsource/alegreya": "^5.3.0",
     "@fontsource/source-code-pro": "^5.3.0",
-    "astro": "^7.2.4",
+    "astro": "^7.4.2",
     "d3-drag": "^3.0.0",
     "d3-force": "^3.0.0",
     "d3-selection": "^3.0.0",
     "d3-zoom": "^3.0.0"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.10",
+    "@astrojs/check": "^0.9.12",
     "@eslint/js": "^10.0.1",
     "@types/d3-drag": "^3.0.7",
     "@types/d3-force": "^3.0.10",
